@@ -152,13 +152,13 @@ export default function SolutionsGrid({ searchTerm, activeCategory, onEnquire })
           <p style={{ fontWeight: '700', color: 'var(--text-dark)' }}>No Solutions Found</p>
         </div>
       ) : (
-        <div className="solutions-row-desktop" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(200px, 1fr))', gap: '20px' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(220px, 1fr))', gap: '20px' }}>
           {filteredSolutions.map((sol) => (
             <div
               key={sol.id}
-              className="glass-panel solutions-card-desktop hover-card"
+              className="glass-panel hover-card"
               style={{
-                padding: '12px 10px',
+                padding: '24px 20px',
                 display: 'flex',
                 flexDirection: 'column',
                 alignItems: 'stretch',
@@ -169,39 +169,39 @@ export default function SolutionsGrid({ searchTerm, activeCategory, onEnquire })
                 border: '1px solid var(--border-color)'
               }}
             >
-              {/* Central Icon */}
+              {/* Circular Orange Icon */}
               <div style={{
                 background: 'var(--primary-light)',
                 color: 'var(--primary)',
-                width: '32px',
-                height: '32px',
-                borderRadius: '8px',
+                width: '52px',
+                height: '52px',
+                borderRadius: '50%',
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
-                marginBottom: '8px',
+                marginBottom: '16px',
                 flexShrink: 0
               }}>
                 {sol.icon}
               </div>
 
               {/* Title */}
-              <h3 style={{ fontSize: '0.75rem', fontWeight: '800', marginBottom: '4px', color: 'var(--text-dark)', letterSpacing: '-0.01em', minHeight: '28px', display: 'flex', alignItems: 'center', lineHeight: '1.2' }}>
+              <h3 style={{ fontSize: '1.05rem', fontWeight: '800', marginBottom: '8px', color: 'var(--text-dark)', letterSpacing: '-0.01em', minHeight: '36px', display: 'flex', alignItems: 'center', lineHeight: '1.2' }}>
                 {sol.title}
               </h3>
 
               {/* Pricing */}
-              <div style={{ display: 'flex', alignItems: 'baseline', gap: '3px', marginBottom: '8px' }}>
-                <span style={{ fontSize: '0.58rem', color: 'var(--text-light)', fontWeight: '500' }}>Starting from</span>
-                <span style={{ fontSize: '0.9rem', fontWeight: '800', color: 'var(--primary)', fontFamily: 'var(--font-display)' }}>{sol.price}</span>
-                {sol.period && <span style={{ fontSize: '0.58rem', color: 'var(--text-light)', fontWeight: '500' }}>{sol.period}</span>}
+              <div style={{ display: 'flex', alignItems: 'baseline', gap: '3px', marginBottom: '12px' }}>
+                <span style={{ fontSize: '0.75rem', color: 'var(--text-light)', fontWeight: '500' }}>Starting from</span>
+                <span style={{ fontSize: '1.25rem', fontWeight: '900', color: 'var(--primary)', fontFamily: 'var(--font-display)' }}>{sol.price}</span>
+                {sol.period && <span style={{ fontSize: '0.75rem', color: 'var(--text-light)', fontWeight: '500' }}>{sol.period}</span>}
               </div>
 
               {/* Bullet Features */}
-              <ul style={{ listStyle: 'none', padding: 0, margin: '0 0 10px 0', flex: 1, display: 'flex', flexDirection: 'column', gap: '4px' }}>
+              <ul style={{ listStyle: 'none', padding: 0, margin: '0 0 16px 0', flex: 1, display: 'flex', flexDirection: 'column', gap: '6px' }}>
                 {sol.features.map((feat, idx) => (
-                  <li key={idx} style={{ display: 'flex', alignItems: 'flex-start', gap: '4px', fontSize: '0.58rem', color: 'var(--text-medium)', lineHeight: '1.2' }}>
-                    <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#22C55E" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" style={{ marginTop: '1px', flexShrink: 0 }}>
+                  <li key={idx} style={{ display: 'flex', alignItems: 'flex-start', gap: '6px', fontSize: '0.72rem', color: 'var(--text-medium)', lineHeight: '1.3' }}>
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#22C55E" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" style={{ marginTop: '2px', flexShrink: 0 }}>
                       <polyline points="20 6 9 17 4 12"></polyline>
                     </svg>
                     <span>{feat}</span>
@@ -210,17 +210,17 @@ export default function SolutionsGrid({ searchTerm, activeCategory, onEnquire })
               </ul>
 
               {/* Buttons */}
-              <div style={{ display: 'flex', gap: '4px', marginTop: 'auto' }}>
+              <div style={{ display: 'flex', gap: '6px', marginTop: 'auto' }}>
                 <Link
                   href={`/services/${sol.id}`}
                   style={{
                     flex: 1,
-                    padding: '5px 2px',
-                    fontSize: '0.62rem',
+                    padding: '8px 10px',
+                    fontSize: '0.75rem',
                     fontWeight: '700',
                     color: 'var(--primary)',
                     border: '1px solid var(--primary)',
-                    borderRadius: '4px',
+                    borderRadius: '6px',
                     textAlign: 'center',
                     background: 'transparent',
                     display: 'block',
@@ -234,12 +234,12 @@ export default function SolutionsGrid({ searchTerm, activeCategory, onEnquire })
                   onClick={() => onEnquire && onEnquire(sol)}
                   style={{
                     flex: 1,
-                    padding: '5px 2px',
-                    fontSize: '0.62rem',
+                    padding: '8px 10px',
+                    fontSize: '0.75rem',
                     fontWeight: '700',
                     color: 'white',
                     background: 'var(--primary)',
-                    borderRadius: '4px',
+                    borderRadius: '6px',
                     textAlign: 'center',
                     border: 'none',
                     cursor: 'pointer',

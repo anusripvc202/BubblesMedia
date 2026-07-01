@@ -39,7 +39,7 @@ export default function Hero({ onSearch, onExploreOffers }) {
 
         {/* Left Info Column */}
         <div style={{ display: 'flex', flexDirection: 'column', gap: '10px', zIndex: 2 }}>
-          
+
           {/* Main Headline */}
           <h1 style={{ fontSize: '2.1rem', fontWeight: '900', lineHeight: '1.1', color: 'white', margin: 0 }}>
             One Platform.<br />All Digital Solutions.
@@ -106,9 +106,9 @@ export default function Hero({ onSearch, onExploreOffers }) {
                 )
               }
             ].map((stat, idx) => (
-              <div key={idx} style={{ 
-                display: 'flex', 
-                alignItems: 'center', 
+              <div key={idx} style={{
+                display: 'flex',
+                alignItems: 'center',
                 gap: '5px',
                 borderRight: idx < 3 ? '1px solid rgba(0, 0, 0, 0.08)' : 'none',
                 paddingRight: idx < 3 ? '5px' : '0'
@@ -217,22 +217,22 @@ export default function Hero({ onSearch, onExploreOffers }) {
         </div>
 
         {/* Column 2 (Right): Combined Mockup & Badge Image */}
-        <div style={{ 
-          position: 'relative', 
-          width: '100%', 
-          height: '100%', 
-          display: 'flex', 
-          alignItems: 'center', 
-          justifyContent: 'center', 
+        <div style={{
+          position: 'relative',
+          width: '100%',
+          height: '100%',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
           zIndex: 2,
           transform: 'translateX(-50px)' // Moves the entire graphic block further leftward
         }}>
-          <img 
-            src="/hero-combined.png?v=3" 
-            alt="Hero Showcase" 
+          <img
+            src="/hero-combined.png?v=3"
+            alt="Hero Showcase"
             style={{
-              maxHeight: '295px', // Increased height
-              width: '140%',       // Increased width
+              maxHeight: '395px', // Increased height
+              width: '240%',       // Increased width
               height: 'auto',
               objectFit: 'contain',
               pointerEvents: 'none'

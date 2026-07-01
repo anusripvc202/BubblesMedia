@@ -7,6 +7,7 @@ const solutions = [
     category: 'websites',
     title: 'Business Websites',
     price: '₹9,999',
+    features: ['5 Pages Responsive Layout', 'SEO Setup & Custom Domains', '1 Year Free Hosting & Email', 'Contact Forms & WhatsApp Link'],
     icon: (
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
         <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
@@ -20,6 +21,7 @@ const solutions = [
     category: 'websites',
     title: 'E-commerce Websites',
     price: '₹14,999',
+    features: ['Unlimited Products & Categories', 'Payment Gateway Integration', 'Inventory & Order Tracking', 'Admin Dashboard & Reports'],
     icon: (
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
         <circle cx="8" cy="21" r="1"></circle>
@@ -33,6 +35,7 @@ const solutions = [
     category: 'mobile-apps',
     title: 'Mobile App Development',
     price: '₹49,999',
+    features: ['Android & iOS App Versions', 'Custom UI/UX & Prototypes', 'Push Notifications Integration', 'Google Play & App Store Submit'],
     icon: (
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
         <rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect>
@@ -44,7 +47,9 @@ const solutions = [
     id: 'seo-services',
     category: 'digital-marketing',
     title: 'SEO Services',
-    price: '₹7,999/mo',
+    price: '₹7,999',
+    period: '/mo',
+    features: ['On-Page Optimization', 'Keywords & Backlinks Research', 'Monthly Growth Reports', 'Google Search Console Connect'],
     icon: (
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
         <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline>
@@ -56,7 +61,9 @@ const solutions = [
     id: 'social-media-marketing',
     category: 'digital-marketing',
     title: 'Social Media Marketing',
-    price: '₹9,999/mo',
+    price: '₹9,999',
+    period: '/mo',
+    features: ['12 Custom Graphics /mo', 'Audience Growth & Analytics', 'Ad Campaign Setup & Spend Management', 'Brand Strategy Planning'],
     icon: (
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
         <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
@@ -68,7 +75,9 @@ const solutions = [
     id: 'whatsapp-marketing',
     category: 'whatsapp-marketing',
     title: 'WhatsApp Marketing',
-    price: '₹4,999/mo',
+    price: '₹4,999',
+    period: '/mo',
+    features: ['WhatsApp Business API Setup', 'Bulk Message Senders & Templates', 'Custom Chatbot Workflows & Automation', 'Green Tick Verification Assistance'],
     icon: (
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
         <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
@@ -80,6 +89,7 @@ const solutions = [
     category: 'gmb',
     title: 'Google Business Profile',
     price: '₹2,999',
+    features: ['Google Maps Listing Setup', 'Profile Verification Assistance', 'Local SEO & Keyword Keywords Optimization', 'Review Management & Citation Boost'],
     icon: (
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
         <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
@@ -92,6 +102,7 @@ const solutions = [
     category: 'branding-graphics',
     title: 'Logo & Branding',
     price: '₹2,999',
+    features: ['3 Unique Custom Logo Concepts', 'Complete Brand Style Guide (Colors, Fonts)', 'Business Card & Letterhead Layouts', 'Social Media Kit (Banners, Profiles)'],
     icon: (
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
         <path d="M12 20h9"></path>

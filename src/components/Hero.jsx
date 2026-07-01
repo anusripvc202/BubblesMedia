@@ -185,35 +185,18 @@ export default function Hero({ onSearch, onExploreOffers }) {
           />
         </div>
 
-        {/* Column 3 (Right): Offers Badge */}
-        <div className="hero-badge-col" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', width: '100%', height: '100%', position: 'relative', zIndex: 3 }}>
+        {/* Column 2 (Right): Centered Mockup Devices */}
+        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', width: '100%', height: '100%', zIndex: 2 }}>
           <img 
-            src="/hero-badge.png?v=3" 
-            alt="Mega Offers Badge" 
+            src="/hero-devices.png?v=3" 
+            alt="Hero Mockups" 
             style={{
-              maxHeight: '185px',
+              maxHeight: '215px',
               width: '100%',
               height: 'auto',
               objectFit: 'contain',
               pointerEvents: 'none'
             }}
-          />
-          {/* Overlay Clickable Hotspot for the Explore Offers button inside the badge graphic */}
-          <button
-            onClick={onExploreOffers}
-            style={{
-              position: 'absolute',
-              bottom: '18px',
-              left: '50%',
-              transform: 'translateX(-50%)',
-              width: '84px',
-              height: '24px',
-              background: 'transparent',
-              border: 'none',
-              cursor: 'pointer',
-              zIndex: 10
-            }}
-            title="Explore Offers"
           />
         </div>
 

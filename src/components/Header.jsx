@@ -22,7 +22,7 @@ export default function Header({ cartCount, wishlistCount, onCartOpen, onQuoteOp
   return (
     <header style={{ width: '100%', background: 'var(--bg-white)', borderBottom: '1px solid var(--border-color)', zIndex: 100 }}>
       {/* Top Utility Bar - Modern Deep Slate */}
-      <div style={{ background: 'var(--secondary)', color: '#F1F5F9', padding: '8px 0', fontSize: '0.75rem', fontWeight: '500' }}>
+      <div style={{ background: 'var(--primary)', color: '#F1F5F9', padding: '8px 0', fontSize: '0.75rem', fontWeight: '500' }}>
         <div className="container-layout" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
             <span style={{ color: 'var(--primary)', fontWeight: 'bold' }}>⭐</span> 
@@ -62,7 +62,7 @@ export default function Header({ cartCount, wishlistCount, onCartOpen, onQuoteOp
 
         {/* All Categories Selector */}
         <button style={{
-          background: 'var(--secondary)',
+          background: 'var(--primary)',
           color: 'white',
           padding: '10px 16px',
           borderRadius: '6px',
@@ -101,7 +101,7 @@ export default function Header({ cartCount, wishlistCount, onCartOpen, onQuoteOp
               color: 'var(--text-dark)'
             }}
           />
-          <button type="submit" style={{ background: 'var(--secondary)', color: 'white', padding: '0 16px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+          <button type="submit" style={{ background: 'var(--primary)', color: 'white', padding: '0 16px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
               <circle cx="11" cy="11" r="8"></circle>
               <path d="m21 21-4.3-4.3"></path>

@@ -3,7 +3,7 @@ import React from 'react';
 export default function ReadyToGrow({ onOpenQuote }) {
   return (
     <div style={{
-      background: 'var(--bg-gradient-slate)',
+      background: 'var(--bg-gradient-orange)',
       borderRadius: 'var(--radius-lg)',
       padding: '36px 48px',
       color: 'white',
@@ -24,14 +24,14 @@ export default function ReadyToGrow({ onOpenQuote }) {
         <h3 style={{ fontSize: '1.6rem', fontWeight: '900', color: 'white', marginBottom: '8px', letterSpacing: '-0.02em' }}>
           Ready to Grow Your Business?
         </h3>
-        <p style={{ fontSize: '0.85rem', opacity: 0.8, lineHeight: '1.6', marginBottom: '24px', maxWidth: '420px', fontWeight: '500', color: '#CBD5E1' }}>
+        <p style={{ fontSize: '0.85rem', opacity: 0.9, lineHeight: '1.6', marginBottom: '24px', maxWidth: '420px', fontWeight: '500', color: 'white' }}>
           Tell us about your requirement and our expert team will contact you within 2 hours with a custom roadmap!
         </p>
         <button
           onClick={onOpenQuote}
           style={{
-            background: 'var(--primary)',
-            color: 'white',
+            background: 'white',
+            color: 'var(--primary)',
             padding: '12px 24px',
             borderRadius: 'var(--radius-md)',
             fontWeight: '800',

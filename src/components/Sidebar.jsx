@@ -121,7 +121,7 @@ export default function Sidebar({ selectedCategory, onSelectCategory }) {
   return (
     <aside style={{ background: 'var(--bg-white)', borderRadius: 'var(--radius-md)', border: '1px solid var(--border-color)', overflow: 'hidden', height: 'fit-content', boxShadow: 'var(--shadow-sm)' }}>
       {/* Title Bar - Sleek Dark Slate */}
-      <div style={{ background: 'var(--secondary)', color: 'white', padding: '14px 20px', display: 'flex', alignItems: 'center', gap: '10px' }}>
+      <div style={{ background: 'var(--primary)', color: 'white', padding: '14px 20px', display: 'flex', alignItems: 'center', gap: '10px' }}>
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
           <line x1="3" y1="12" x2="21" y2="12"></line>
           <line x1="3" y1="6" x2="21" y2="6"></line>

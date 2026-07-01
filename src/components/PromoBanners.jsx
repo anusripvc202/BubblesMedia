@@ -86,7 +86,7 @@ export default function PromoBanners({ onSelectPackage }) {
         
         {/* Deal of the Day Card - Redesigned to look extremely premium */}
         <div style={{
-          background: 'var(--bg-gradient-slate)',
+          background: 'var(--bg-gradient-orange)',
           borderRadius: 'var(--radius-lg)',
           padding: '28px',
           color: 'white',
@@ -98,8 +98,8 @@ export default function PromoBanners({ onSelectPackage }) {
           position: 'relative',
           border: '1px solid rgba(255,255,255,0.06)'
         }}>
-          {/* Subtle Orange Glow Dot */}
-          <div style={{ position: 'absolute', top: '15px', right: '15px', width: '8px', height: '8px', background: 'var(--primary)', borderRadius: '50%', boxShadow: '0 0 10px var(--primary)' }}></div>
+          {/* Subtle White Glow Dot */}
+          <div style={{ position: 'absolute', top: '15px', right: '15px', width: '8px', height: '8px', background: 'white', borderRadius: '50%', boxShadow: '0 0 10px white' }}></div>
 
           <div>
             <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '10px' }}>

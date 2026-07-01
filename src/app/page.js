@@ -1,6 +1,7 @@
 "use client";
 
-import React, { useState } from 'react';
+import React, { useState, useEffect, Suspense } from 'react';
+import { useSearchParams } from 'next/navigation';
 import Header from '../components/Header';
 import Sidebar from '../components/Sidebar';
 import Hero from '../components/Hero';
@@ -17,11 +18,21 @@ import ReadyToGrow from '../components/ReadyToGrow';
 import CalculatorModal from '../components/CalculatorModal';
 import QuoteModal from '../components/QuoteModal';
 
-export default function Home() {
+function HomeContent() {
+  const searchParams = useSearchParams();
+
   // Global App States
   const [searchTerm, setSearchTerm] = useState('');
   const [activeCategory, setActiveCategory] = useState(null);
   const [wishlistCount, setWishlistCount] = useState(0);
+
+  // Read search term from URL query parameters if present (e.g. /?search=websites)
+  useEffect(() => {
+    const query = searchParams.get('search');
+    if (query) {
+      setSearchTerm(query);
+    }
+  }, [searchParams]);
 
   // Modals Visibility States
   const [isCalculatorOpen, setIsCalculatorOpen] = useState(false);
@@ -48,18 +59,16 @@ export default function Home() {
   const handleCalculatorSubmit = (specs) => {
     setIsCalculatorOpen(false);
     setQuoteInitialData({
-      estimatedPrice: specs.estimatedPrice,
-      type: specs.type,
-      pages: specs.pages,
-      design: specs.design,
-      integrations: specs.integrations
+      title: 'Quote from Calculator',
+      price: `Estimate: ${specs.totalPrice}`,
+      description: `Selected specifications:\n- Technology: ${specs.tech}\n- Pages: ${specs.pages}\n- Custom Graphics: ${specs.graphics ? 'Yes' : 'No'}\n- SEO Setup: ${specs.seo ? 'Yes' : 'No'}\n- Maintenance: ${specs.maintenance ? 'Yes' : 'No'}`
     });
     setIsQuoteOpen(true);
   };
 
   return (
     <div style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
-      {/* Header */}
+      {/* Header component */}
       <Header
         cartCount={0}
         wishlistCount={wishlistCount}
@@ -67,125 +76,106 @@ export default function Home() {
           setQuoteInitialData(null);
           setIsQuoteOpen(true);
         }}
-        onSearch={setSearchTerm}
+        onSearch={(term) => setSearchTerm(term)}
       />
 
-      {/* Main Grid Wrapper */}
-      <main className="container-layout main-wrapper">
-        
-        {/* Left Category Navigation Sidebar */}
-        <Sidebar
-          selectedCategory={activeCategory}
-          onSelectCategory={setActiveCategory}
-        />
-
-        {/* Right Main Content */}
-        <div style={{ display: 'flex', flexDirection: 'column', minWidth: 0 }}>
-          
-          {/* Hero Slider/Toggle */}
-          <Hero
-            onSearch={setSearchTerm}
-            onExploreOffers={() => {
-              setQuoteInitialData({ title: 'Mega Offers Explorer', price: 'Up to 50% Off' });
-              setIsQuoteOpen(true);
-            }}
+      {/* Main Container Layout */}
+      <main className="container-layout" style={{ flex: 1 }}>
+        <div className="main-wrapper">
+          {/* Sidebar Area */}
+          <Sidebar
+            selectedCategory={activeCategory}
+            onSelectCategory={(cat) => setActiveCategory(cat)}
           />
 
-          {/* Trust points */}
-          <TrustBanner />
-
-          {/* Service Cards list (filtered by search and category) */}
-          <SolutionsGrid
-            searchTerm={searchTerm}
-            activeCategory={activeCategory}
-            onEnquire={handleEnquire}
-          />
-
-          {/* Mid Promos & Packages */}
-          <PromoBanners
-            onSelectPackage={handleSelectPackage}
-          />
-
-          {/* Target Industries */}
-          <IndustriesRow
-            onSelectIndustry={(industry) => {
-              setQuoteInitialData({ title: `Industry Specific Bundle: ${industry}`, price: 'Tailored pricing' });
-              setIsQuoteOpen(true);
-            }}
-          />
-
-          {/* Triple Grid Column Footer details */}
-          <div style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
-            gap: '24px',
-            marginBottom: '36px'
-          }}>
-            {/* Why Choose Us */}
-            <WhyChooseUs />
-
-            {/* Free calculators and tools */}
-            <FreeTools
-              onOpenCalculator={() => setIsCalculatorOpen(true)}
-              onOpenSEOAudit={() => {
-                setQuoteInitialData({ title: 'Free SEO Audit Request', price: 'Free' });
+          {/* Core Content Area */}
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '32px' }}>
+            <Hero
+              onSearch={(term) => setSearchTerm(term)}
+              onExploreOffers={() => window.location.href = '/offers'}
+            />
+            <TrustBanner />
+            <SolutionsGrid
+              searchTerm={searchTerm}
+              activeCategory={activeCategory}
+              onEnquire={handleEnquire}
+            />
+            <PromoBanners
+              onSelectPackage={handleSelectPackage}
+            />
+            <IndustriesRow
+              onSelectIndustry={(indName) => {
+                setQuoteInitialData({
+                  title: `Enquiry: Industry Specific for ${indName}`,
+                  price: 'Request Custom Proposal'
+                });
                 setIsQuoteOpen(true);
               }}
             />
 
-            {/* Client feedback testimonials slider */}
-            <Testimonials />
+            {/* Sub Info grids */}
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '24px' }}>
+              <WhyChooseUs />
+              <FreeTools
+                onOpenCalculator={() => setIsCalculatorOpen(true)}
+                onOpenSEOAudit={() => {
+                  setQuoteInitialData({
+                    title: 'Free SEO Audit Request',
+                    price: 'Free Service'
+                  });
+                  setIsQuoteOpen(true);
+                }}
+              />
+              <Testimonials />
+            </div>
+
+            <ReadyToGrow
+              onOpenQuote={() => {
+                setQuoteInitialData(null);
+                setIsQuoteOpen(true);
+              }}
+            />
           </div>
-
-          {/* Bottom Rocket Launch CTA */}
-          <ReadyToGrow
-            onOpenQuote={() => {
-              setQuoteInitialData(null);
-              setIsQuoteOpen(true);
-            }}
-          />
-
         </div>
       </main>
 
-      {/* Footer */}
+      {/* Footer Area */}
       <footer style={{
         background: 'var(--secondary)',
         color: 'white',
         borderTop: '1px solid var(--border-color)',
-        padding: '36px 0 24px 0',
+        padding: '48px 0 32px 0',
         marginTop: 'auto'
       }}>
-        <div className="container-layout" style={{
-          display: 'flex',
-          flexDirection: 'column',
-          gap: '24px'
-        }}>
-          <div style={{
-            display: 'flex',
-            justifyContent: 'space-between',
-            alignItems: 'center',
-            flexWrap: 'wrap',
-            gap: '20px',
-            borderBottom: '1px solid rgba(255,255,255,0.1)',
-            paddingBottom: '24px'
-          }}>
-            {/* Branding */}
-            <div>
-              <span style={{ fontSize: '1.25rem', fontWeight: '900', color: 'white', letterSpacing: '-0.5px' }}>
+        <div className="container-layout" style={{ display: 'flex', flexDirection: 'column', gap: '32px' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '32px', borderBottom: '1px solid rgba(255,255,255,0.1)', paddingBottom: '32px' }} className="footer-links-grid">
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
+              <span style={{ fontSize: '1.4rem', fontWeight: '900', color: 'white', letterSpacing: '-0.5px' }}>
                 BUBBLES <span style={{ color: 'var(--primary)' }}>MEDIA</span>
               </span>
-              <p style={{ fontSize: '0.75rem', color: 'var(--text-light)', marginTop: '4px' }}>
-                India's Premium Digital Solutions Marketplace.
+              <p style={{ fontSize: '0.8rem', color: 'var(--text-light)', lineHeight: '1.6' }}>
+                India's largest digital solutions marketplace. Delivering high-quality websites, SEO, automation, and tech tools with fixed transparent pricing.
               </p>
             </div>
-            
-            {/* Footer menu links */}
-            <div style={{ display: 'flex', gap: '24px', fontSize: '0.8rem', color: 'var(--text-light)' }}>
-              <a href="#about" onClick={(e) => { e.preventDefault(); alert('Bubbles Media is India\'s largest integrated digital agency platform.'); }} style={{ color: 'white' }}>About Us</a>
-              <a href="#privacy" onClick={(e) => { e.preventDefault(); alert('Privacy policy is standard GDPR compliant.'); }} style={{ color: 'white' }}>Privacy Policy</a>
-              <a href="#terms" onClick={(e) => { e.preventDefault(); alert('Standard terms of service apply to all contract blueprint specifications.'); }} style={{ color: 'white' }}>Terms of Service</a>
-              <a href="#contact" onClick={(e) => { e.preventDefault(); setIsQuoteOpen(true); }} style={{ color: 'white' }}>Contact Us</a>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
+              <h4 style={{ fontSize: '0.85rem', fontWeight: '800', textTransform: 'uppercase', letterSpacing: '0.5px', color: 'white' }}>Quick Links</h4>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', fontSize: '0.8rem', color: 'var(--text-light)' }}>
+                <a href="/about">About Us</a>
+                <a href="/contact">Contact Us</a>
+                <a href="/offers">Mega Offers</a>
+                <a href="/help">Help Center</a>
+                <a href="/track">Track Order Roadmap</a>
+              </div>
+            </div>
+
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
+              <h4 style={{ fontSize: '0.85rem', fontWeight: '800', textTransform: 'uppercase', letterSpacing: '0.5px', color: 'white' }}>Support Office</h4>
+              <p style={{ fontSize: '0.8rem', color: 'var(--text-light)', lineHeight: '1.6' }}>
+                Bubbles Media Tech Tower<br />
+                HSR Layout Sector 4, Bangalore, India<br />
+                Email: sales@bubblesmedia.in<br />
+                Phone: +91 93815 66798
+              </p>
             </div>
           </div>
 
@@ -212,3 +202,12 @@ export default function Home() {
     </div>
   );
 }
+
+export default function Home() {
+  return (
+    <Suspense fallback={<div style={{ minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center', background: 'var(--bg-base)' }}>Loading...</div>}>
+      <HomeContent />
+    </Suspense>
+  );
+}
+

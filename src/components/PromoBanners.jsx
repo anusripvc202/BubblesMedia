@@ -32,52 +32,65 @@ export default function PromoBanners({ onSelectPackage }) {
   const formatNumber = (num) => String(num).padStart(2, '0');
 
   return (
-    <section style={{ marginBottom: '40px' }}>
-      <div style={{ display: 'grid', gridTemplateColumns: '0.9fr 1.1fr', gap: '24px' }} className="promo-grid-responsive">
+    <section style={{ marginBottom: '24px' }}>
+      <div style={{ display: 'grid', gridTemplateColumns: '0.92fr 1.08fr', gap: '16px' }} className="promo-grid-responsive">
         
         {/* Deal of the Day Card - Solid Orange background */}
         <div style={{
-          background: 'linear-gradient(135deg, #FF7E21 0%, #FF5100 100%)',
-          borderRadius: '12px',
-          padding: '24px',
+          background: '#FF6004',
+          borderRadius: '8px',
+          padding: '16px 20px',
           color: 'white',
           display: 'flex',
           justifyContent: 'space-between',
           alignItems: 'center',
-          flexWrap: 'wrap',
-          gap: '20px',
-          boxShadow: 'var(--shadow-sm)'
+          gap: '12px',
+          boxShadow: 'var(--shadow-sm)',
+          minHeight: '94px'
         }}>
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
-              <span style={{ fontSize: '1.25rem' }}>⚡</span>
-              <h3 style={{ fontSize: '1.05rem', fontWeight: '900', textTransform: 'uppercase', letterSpacing: '0.5px' }}>
-                Mega Deals of the Day
-              </h3>
-            </div>
-            <span style={{ fontSize: '0.75rem', opacity: 0.9 }}>Limited Time Offers on Top Services</span>
-            <button
-              onClick={() => onSelectPackage({ title: 'Mega Deals of the Day', price: 'Special Offer' })}
+          {/* Left badge & text info */}
+          <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+            {/* White Rosette % Badge */}
+            <img 
+              src="/promo-rosette.png?v=1" 
+              alt="Rosette" 
               style={{
-                background: 'white',
-                color: 'var(--primary)',
-                padding: '8px 16px',
-                borderRadius: '6px',
-                fontWeight: '800',
-                fontSize: '0.75rem',
-                marginTop: '8px',
-                width: 'fit-content'
+                width: '38px',
+                height: 'auto',
+                objectFit: 'contain',
+                flexShrink: 0
               }}
-              className="hover-card"
-            >
-              Grab Now
-            </button>
+            />
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
+              <h3 style={{ fontSize: '0.98rem', fontWeight: '800', color: 'white', display: 'flex', alignItems: 'center', gap: '4px', margin: 0, letterSpacing: '-0.01em' }}>
+                Mega Deals of the Day 🔥
+              </h3>
+              <span style={{ fontSize: '0.72rem', opacity: 0.95, fontWeight: '500' }}>Limited Time Offers on Top Services</span>
+              <button
+                onClick={() => onSelectPackage({ title: 'Mega Deals of the Day', price: 'Special Offer' })}
+                style={{
+                  background: 'white',
+                  color: '#FF6004',
+                  padding: '5px 12px',
+                  borderRadius: '4px',
+                  fontWeight: '800',
+                  fontSize: '0.72rem',
+                  marginTop: '4px',
+                  width: 'fit-content',
+                  border: 'none',
+                  cursor: 'pointer'
+                }}
+                className="hover-card"
+              >
+                Grab Now
+              </button>
+            </div>
           </div>
 
           {/* Countdown Clock */}
           <div style={{ display: 'flex', flexDirection: 'column', gap: '4px', alignItems: 'center' }}>
-            <span style={{ fontSize: '0.65rem', fontWeight: '800', textTransform: 'uppercase', opacity: 0.9 }}>Offer Ends In:</span>
-            <div className="timer-container" style={{ gap: '8px' }}>
+            <span style={{ fontSize: '0.62rem', fontWeight: '800', textTransform: 'uppercase', opacity: 0.9 }}>Offer Ends In:</span>
+            <div className="timer-container" style={{ gap: '4px' }}>
               {[
                 { val: formatNumber(timeLeft.days), label: 'Days' },
                 { val: formatNumber(timeLeft.hours), label: 'Hours' },
@@ -85,18 +98,19 @@ export default function PromoBanners({ onSelectPackage }) {
                 { val: formatNumber(timeLeft.seconds), label: 'Secs' }
               ].map((time, idx) => (
                 <div key={idx} style={{
-                  background: 'rgba(255, 255, 255, 0.15)',
-                  border: '1px solid rgba(255, 255, 255, 0.25)',
-                  borderRadius: '6px',
-                  width: '42px',
-                  height: '42px',
+                  background: 'rgba(255, 255, 255, 0.12)',
+                  border: '1px solid rgba(255, 255, 255, 0.3)',
+                  borderRadius: '4px',
+                  width: '38px',
+                  height: '38px',
                   display: 'flex',
                   flexDirection: 'column',
                   alignItems: 'center',
-                  justifyContent: 'center'
+                  justifyContent: 'center',
+                  color: 'white'
                 }}>
-                  <span style={{ fontSize: '0.95rem', fontWeight: '900' }}>{time.val}</span>
-                  <span style={{ fontSize: '0.5rem', opacity: 0.8, textTransform: 'uppercase' }}>{time.label}</span>
+                  <span style={{ fontSize: '0.9rem', fontWeight: '900', lineHeight: 1.1 }}>{time.val}</span>
+                  <span style={{ fontSize: '0.45rem', opacity: 0.85, textTransform: 'uppercase', marginTop: '1px' }}>{time.label}</span>
                 </div>
               ))}
             </div>
@@ -105,60 +119,81 @@ export default function PromoBanners({ onSelectPackage }) {
 
         {/* Startup Special Pack Card - Matches Image 1 precisely */}
         <div style={{
-          background: 'var(--primary-light)',
-          borderRadius: '12px',
-          padding: '24px 32px',
+          background: 'linear-gradient(135deg, #FFF6F2 0%, #FFF1E9 100%)',
+          borderRadius: '8px',
+          padding: '16px 20px',
           border: '1px solid rgba(255, 107, 0, 0.15)',
           display: 'flex',
           justifyContent: 'space-between',
           alignItems: 'center',
-          gap: '20px',
+          gap: '12px',
           boxShadow: 'var(--shadow-sm)',
-          position: 'relative',
-          overflow: 'hidden'
+          minHeight: '94px'
         }}>
-          {/* Info Details */}
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', zIndex: 2 }}>
-            <div style={{ display: 'flex', gap: '10px', alignItems: 'center' }}>
-              {/* Gift SVG */}
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <polyline points="20 12 20 22 4 22 4 12"></polyline>
-                <rect x="2" y="7" width="20" height="5"></rect>
-                <line x1="12" y1="22" x2="12" y2="7"></line>
-                <path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"></path>
-                <path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"></path>
-              </svg>
-              <h3 style={{ fontSize: '1.25rem', fontWeight: '900', color: 'var(--secondary)', letterSpacing: '-0.01em' }}>
+          {/* Left blocks badge & text info */}
+          <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+            {/* Startup Isometric Building Blocks */}
+            <img 
+              src="/promo-blocks.png?v=1" 
+              alt="Startup pack" 
+              style={{
+                width: '42px',
+                height: 'auto',
+                objectFit: 'contain',
+                flexShrink: 0
+              }}
+            />
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
+              <h3 style={{ fontSize: '0.98rem', fontWeight: '800', color: 'var(--secondary)', margin: 0, letterSpacing: '-0.01em' }}>
                 Startup Special Pack
               </h3>
+              <p style={{ fontSize: '0.72rem', color: 'var(--text-medium)', fontWeight: '600', margin: 0 }}>
+                All You Need to Launch Your Business Online
+              </p>
+              <button
+                onClick={() => onSelectPackage({ title: 'Startup Special Pack', price: '₹14,999' })}
+                style={{
+                  background: '#FF6004',
+                  color: 'white',
+                  padding: '5px 12px',
+                  borderRadius: '4px',
+                  fontWeight: '800',
+                  fontSize: '0.72rem',
+                  marginTop: '4px',
+                  width: 'fit-content',
+                  border: 'none',
+                  cursor: 'pointer'
+                }}
+                className="hover-card"
+              >
+                View Package
+              </button>
             </div>
-            <p style={{ fontSize: '0.8rem', color: 'var(--text-medium)', fontWeight: '600' }}>
-              All You Need to Launch Your Business Online
-            </p>
-            <button
-              onClick={() => onSelectPackage({ title: 'Startup Special Pack', price: '₹14,999' })}
-              className="btn-primary"
-              style={{ padding: '8px 18px', width: 'fit-content', fontSize: '0.75rem', marginTop: '6px' }}
-            >
-              View Package
-            </button>
           </div>
 
           {/* Pricing & Gift Box Graphic */}
-          <div style={{ display: 'flex', alignItems: 'center', gap: '16px', zIndex: 2 }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+            {/* Gift Box Graphic */}
+            <img 
+              src="/promo-gift.png?v=1" 
+              alt="Gift box" 
+              style={{
+                width: '42px',
+                height: 'auto',
+                objectFit: 'contain',
+                animation: 'float 3.5s ease-in-out infinite',
+                flexShrink: 0
+              }}
+            />
+            
             <div style={{ textAlign: 'right' }}>
-              <span style={{ display: 'block', fontSize: '0.65rem', color: 'var(--text-light)', fontWeight: '700' }}>Starts from</span>
-              <span style={{ display: 'block', fontSize: '1.35rem', fontWeight: '900', color: 'var(--secondary)', fontFamily: 'var(--font-display)' }}>
+              <span style={{ display: 'block', fontSize: '0.62rem', color: 'var(--text-light)', fontWeight: '700', textTransform: 'uppercase' }}>Starts from</span>
+              <span style={{ display: 'block', fontSize: '1.25rem', fontWeight: '900', color: 'var(--secondary)', fontFamily: 'var(--font-display)', lineHeight: 1.1 }}>
                 ₹14,999
               </span>
-              <span style={{ display: 'block', fontSize: '0.6rem', color: 'var(--primary)', fontWeight: '800', textTransform: 'uppercase', marginTop: '2px' }}>
+              <span style={{ display: 'block', fontSize: '0.58rem', color: '#FF6004', fontWeight: '800', textTransform: 'uppercase', marginTop: '2px' }}>
                 Limited Time Offer
               </span>
-            </div>
-
-            {/* Gift Box 3D graphic */}
-            <div style={{ fontSize: '2.5rem', animation: 'float 3.5s ease-in-out infinite' }}>
-              🎁
             </div>
           </div>
         </div>

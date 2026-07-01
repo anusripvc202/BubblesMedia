@@ -26,10 +26,12 @@ export default function Hero({ onSearch, onExploreOffers }) {
         boxShadow: 'var(--shadow-sm)',
         position: 'relative',
         overflow: 'hidden',
+        display: 'grid',
+        gridTemplateColumns: '1.2fr 0.8fr',
+        gap: '16px',
         padding: '16px 24px',
         alignItems: 'center',
-        minHeight: '235px',
-        display: 'grid'
+        minHeight: '235px'
       }}>
         {/* Decorative background grid pattern */}
         <div style={{
@@ -41,7 +43,7 @@ export default function Hero({ onSearch, onExploreOffers }) {
           pointerEvents: 'none'
         }}></div>
 
-        {/* Column 1 (Left): Info Content */}
+        {/* Left Info Column */}
         <div style={{ display: 'flex', flexDirection: 'column', gap: '10px', zIndex: 2 }}>
           
           {/* Main Headline */}
@@ -58,50 +60,93 @@ export default function Hero({ onSearch, onExploreOffers }) {
           <div style={{
             display: 'grid',
             gridTemplateColumns: 'repeat(4, 1fr)',
-            background: 'rgba(255, 255, 255, 0.08)',
-            border: '1px solid rgba(255, 255, 255, 0.15)',
+            gap: '6px',
+            background: 'rgba(255, 255, 255, 0.12)',
+            border: '1px solid rgba(255, 255, 255, 0.2)',
+            padding: '8px 10px',
             borderRadius: '6px',
-            padding: '8px 12px',
-            gap: '8px',
-            maxWidth: '430px'
+            maxWidth: '450px'
           }}>
             {[
-              { num: '5000+', label: 'HAPPY CLIENTS', icon: '👥' },
-              { num: '15000+', label: 'PROJECTS DELIVERED', icon: '💼' },
-              { num: '50+', label: 'EXPERT TEAM', icon: '🧑‍💻' },
-              { num: '24/7', label: 'SUPPORT', icon: '📞' }
-            ].map((s, idx) => (
-              <div key={idx} style={{
-                display: 'flex',
-                alignItems: 'center',
-                gap: '4px',
-                borderRight: idx < 3 ? '1px solid rgba(255,255,255,0.15)' : 'none',
-                paddingRight: idx < 3 ? '4px' : '0'
-              }}>
-                <span style={{ fontSize: '0.9rem', flexShrink: 0 }}>{s.icon}</span>
-                <div style={{ display: 'flex', flexDirection: 'column', minWidth: 0 }}>
-                  <span style={{ fontSize: '0.62rem', fontWeight: '900', color: 'white', letterSpacing: '-0.2px', whiteSpace: 'nowrap' }}>
-                    {s.num}
+              {
+                num: '5000+',
+                label: 'Happy Clients',
+                icon: (
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+                    <circle cx="12" cy="7" r="4" />
+                  </svg>
+                )
+              },
+              {
+                num: '15000+',
+                label: 'Projects Delivered',
+                icon: (
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                    <rect x="2" y="7" width="20" height="14" rx="2" ry="2" />
+                    <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" />
+                  </svg>
+                )
+              },
+              {
+                num: '50+',
+                label: 'Expert Team',
+                icon: (
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                    <circle cx="9" cy="7" r="4" />
+                    <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+                    <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+                  </svg>
+                )
+              },
+              {
+                num: '24/7',
+                label: 'Support',
+                icon: (
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                    <circle cx="12" cy="12" r="10" />
+                    <polyline points="12 6 12 12 16 14" />
+                  </svg>
+                )
+              }
+            ].map((stat, idx) => (
+              <div key={idx} style={{ display: 'flex', alignItems: 'center', gap: '4px' }}>
+                <div style={{
+                  background: 'rgba(255, 255, 255, 0.15)',
+                  borderRadius: '50%',
+                  width: '20px',
+                  height: '20px',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  flexShrink: 0
+                }}>
+                  {stat.icon}
+                </div>
+                <div style={{ display: 'flex', flexDirection: 'column', textAlign: 'left' }}>
+                  <span style={{ fontSize: '0.78rem', fontWeight: '900', color: 'white', lineHeight: 1.1, fontFamily: 'var(--font-display)' }}>
+                    {stat.num}
                   </span>
-                  <span style={{ fontSize: '0.45rem', fontWeight: '800', color: 'white', opacity: 0.95, whiteSpace: 'nowrap', textTransform: 'uppercase', overflow: 'hidden', textOverflow: 'ellipsis' }}>
-                    {s.label}
+                  <span style={{ fontSize: '0.45rem', opacity: 0.9, fontWeight: '700', color: 'white', textTransform: 'uppercase', marginTop: '1px', lineHeight: 1 }}>
+                    {stat.label}
                   </span>
                 </div>
               </div>
             ))}
           </div>
 
-          {/* Inline Search Bar inside Hero Card */}
+          {/* Inner Search Box */}
           <form onSubmit={handleSearchSubmit} style={{
             display: 'flex',
             background: 'white',
             borderRadius: '6px',
-            padding: '4px',
-            alignItems: 'center',
-            maxWidth: '430px',
-            boxShadow: '0 4px 10px rgba(0, 0, 0, 0.1)'
+            padding: '2px',
+            boxShadow: 'var(--shadow-sm)',
+            maxWidth: '450px',
+            width: '100%'
           }}>
-            <span style={{ color: 'var(--text-light)', marginLeft: '8px', display: 'flex', alignItems: 'center' }}>
+            <span style={{ paddingLeft: '10px', display: 'flex', alignItems: 'center', color: 'var(--text-light)' }}>
               <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                 <circle cx="11" cy="11" r="8"></circle>
                 <path d="m21 21-4.3-4.3"></path>
@@ -153,7 +198,7 @@ export default function Hero({ onSearch, onExploreOffers }) {
                 key={tag}
                 onClick={() => handlePopularSearch(tag)}
                 style={{
-                  fontSize: '0.65rem',
+                  fontSize: '0.6rem',
                   fontWeight: '700',
                   padding: '2px 6px',
                   borderRadius: '4px',
@@ -170,34 +215,65 @@ export default function Hero({ onSearch, onExploreOffers }) {
           </div>
         </div>
 
-        {/* Column 2 (Center): Centered Mockup Devices */}
-        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', width: '100%', height: '100%', zIndex: 2 }}>
+        {/* Right graphic column rendering the separate transparent graphics */}
+        <div style={{ position: 'relative', width: '100%', height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+          
+          {/* Mockup Devices - Centered */}
           <img 
             src="/hero-devices.png?v=3" 
             alt="Hero Mockups" 
             style={{
               maxHeight: '215px',
-              width: '100%',
+              width: 'auto',
               height: 'auto',
               objectFit: 'contain',
-              pointerEvents: 'none'
+              zIndex: 2,
+              pointerEvents: 'none',
+              transform: 'translateX(-20px)' // Shifts it slightly left to leave room for the badge overlap
             }}
           />
-        </div>
 
-        {/* Column 2 (Right): Centered Mockup Devices */}
-        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', width: '100%', height: '100%', zIndex: 2 }}>
-          <img 
-            src="/hero-devices.png?v=3" 
-            alt="Hero Mockups" 
-            style={{
-              maxHeight: '215px',
-              width: '100%',
-              height: 'auto',
-              objectFit: 'contain',
-              pointerEvents: 'none'
-            }}
-          />
+          {/* Mega Offers Badge - Floats Absolute on the Right */}
+          <div style={{ 
+            position: 'absolute', 
+            right: '8px', 
+            top: '50%',
+            transform: 'translateY(-50%)',
+            zIndex: 3, 
+            display: 'flex', 
+            flexDirection: 'column', 
+            alignItems: 'center', 
+            width: '90px' 
+          }}>
+            <img 
+              src="/hero-badge.png?v=3" 
+              alt="Mega Offers Badge" 
+              style={{
+                maxHeight: '185px',
+                width: 'auto',
+                height: 'auto',
+                objectFit: 'contain',
+                pointerEvents: 'none'
+              }}
+            />
+            {/* Overlay Clickable Hotspot for the Explore Offers button inside the badge graphic */}
+            <button
+              onClick={onExploreOffers}
+              style={{
+                position: 'absolute',
+                bottom: '10px',
+                left: '50%',
+                transform: 'translateX(-50%)',
+                width: '84px',
+                height: '24px',
+                background: 'transparent',
+                border: 'none',
+                cursor: 'pointer',
+                zIndex: 10
+              }}
+              title="Explore Offers"
+            />
+          </div>
         </div>
 
       </div>

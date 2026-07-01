@@ -237,20 +237,20 @@ export default function Hero({ onSearch, onExploreOffers }) {
         {/* Mega Offers Badge - Floats Absolute on the Right */}
         <div style={{ 
           position: 'absolute', 
-          right: '16px', 
+          right: '28px', 
           top: '50%',
           transform: 'translateY(-50%)',
           zIndex: 3, 
           display: 'flex', 
           flexDirection: 'column', 
           alignItems: 'center', 
-          width: '90px' 
+          width: '130px' 
         }} className="hero-badge-column">
           <img 
             src="/hero-badge.png?v=3" 
             alt="Mega Offers Badge" 
             style={{
-              maxHeight: '185px',
+              maxHeight: '170px',
               width: 'auto',
               height: 'auto',
               objectFit: 'contain',
@@ -262,11 +262,11 @@ export default function Hero({ onSearch, onExploreOffers }) {
             onClick={onExploreOffers}
             style={{
               position: 'absolute',
-              bottom: '10px',
+              bottom: '8px',
               left: '50%',
               transform: 'translateX(-50%)',
-              width: '84px',
-              height: '24px',
+              width: '115px',
+              height: '28px',
               background: 'transparent',
               border: 'none',
               cursor: 'pointer',

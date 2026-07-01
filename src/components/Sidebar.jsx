@@ -119,7 +119,7 @@ const categories = [
 
 export default function Sidebar({ selectedCategory, onSelectCategory }) {
   return (
-    <aside style={{ background: 'var(--bg-white)', borderRadius: '6px', border: '1px solid var(--border-color)', overflow: 'hidden', boxShadow: 'var(--shadow-sm)', position: 'sticky', top: '120px', alignSelf: 'start' }}>
+    <aside style={{ background: 'var(--bg-white)', borderRadius: '6px', border: '1px solid var(--border-color)', overflowY: 'auto', maxHeight: 'calc(100vh - 140px)', boxShadow: 'var(--shadow-sm)', position: 'sticky', top: '120px', alignSelf: 'start' }}>
       {/* Title Bar - Solid Orange "ALL CATEGORIES" */}
       <div style={{ background: 'var(--primary)', color: 'white', padding: '10px 16px', display: 'flex', alignItems: 'center', gap: '8px' }}>
         <span style={{ fontSize: '0.75rem', fontWeight: '800', letterSpacing: '0.5px', textTransform: 'uppercase', fontFamily: 'var(--font-display)' }}>

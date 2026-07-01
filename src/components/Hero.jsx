@@ -236,7 +236,7 @@ export default function Hero({ onSearch, onExploreOffers }) {
               objectFit: 'contain',
               zIndex: 2,
               pointerEvents: 'none',
-              transform: 'translateX(-40px)' // Shifts it leftwards to align closer to the text column
+              transform: 'translateX(15px)' // Shifts it rightwards to align towards the right side of the card
             }}
           />
 

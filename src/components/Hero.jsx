@@ -216,7 +216,6 @@ export default function Hero({ onSearch, onExploreOffers }) {
           </div>
         </div>
 
-        {/* Column 2 (Middle): Mockup Devices */}
         {/* Column 2 (Right): Mockup Devices */}
         <div style={{ position: 'relative', width: '100%', height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', zIndex: 2 }}>
           <img 
@@ -228,51 +227,8 @@ export default function Hero({ onSearch, onExploreOffers }) {
               height: 'auto',
               objectFit: 'contain',
               zIndex: 2,
-              pointerEvents: 'none',
-              transform: 'translateX(-20px)' // Shifts it slightly left to leave room for the badge overlap
-            }}
-          />
-        </div>
-
-        {/* Mega Offers Badge - Floats Absolute on the Right */}
-        <div style={{ 
-          position: 'absolute', 
-          right: '28px', 
-          top: '50%',
-          transform: 'translateY(-50%)',
-          zIndex: 3, 
-          display: 'flex', 
-          flexDirection: 'column', 
-          alignItems: 'center', 
-          width: '130px' 
-        }} className="hero-badge-column">
-          <img 
-            src="/hero-badge.png?v=3" 
-            alt="Mega Offers Badge" 
-            style={{
-              maxHeight: '170px',
-              width: 'auto',
-              height: 'auto',
-              objectFit: 'contain',
               pointerEvents: 'none'
             }}
-          />
-          {/* Overlay Clickable Hotspot for the Explore Offers button inside the badge graphic */}
-          <button
-            onClick={onExploreOffers}
-            style={{
-              position: 'absolute',
-              bottom: '8px',
-              left: '50%',
-              transform: 'translateX(-50%)',
-              width: '115px',
-              height: '28px',
-              background: 'transparent',
-              border: 'none',
-              cursor: 'pointer',
-              zIndex: 10
-            }}
-            title="Explore Offers"
           />
         </div>
 

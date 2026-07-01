@@ -216,7 +216,36 @@ export default function Hero({ onSearch, onExploreOffers }) {
           </div>
         </div>
 
-
+        {/* Column 2 (Right): Combined Mockup & Badge Image */}
+        <div style={{ position: 'relative', width: '100%', height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', zIndex: 2 }}>
+          <img 
+            src="/hero-combined.png?v=1" 
+            alt="Hero Showcase" 
+            style={{
+              maxHeight: '215px',
+              width: '100%',
+              height: 'auto',
+              objectFit: 'contain',
+              pointerEvents: 'none'
+            }}
+          />
+          {/* Clickable hotspot overlay on the badge button */}
+          <button
+            onClick={onExploreOffers}
+            style={{
+              position: 'absolute',
+              bottom: '18px',
+              right: '12px',
+              width: '110px',
+              height: '28px',
+              background: 'transparent',
+              border: 'none',
+              cursor: 'pointer',
+              zIndex: 10
+            }}
+            title="Explore Offers"
+          />
+        </div>
 
       </div>
     </div>

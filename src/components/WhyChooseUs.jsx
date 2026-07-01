@@ -12,8 +12,8 @@ export default function WhyChooseUs() {
     <div style={{
       background: 'var(--bg-white)',
       border: '1px solid var(--border-color)',
-      borderRadius: '16px',
-      padding: '24px',
+      borderRadius: 'var(--radius-lg)',
+      padding: '28px',
       height: '100%',
       display: 'flex',
       flexDirection: 'column',
@@ -21,25 +21,25 @@ export default function WhyChooseUs() {
       boxShadow: 'var(--shadow-sm)'
     }}>
       <div>
-        <h3 style={{ fontSize: '1.2rem', fontWeight: '800', marginBottom: '16px', color: 'var(--text-dark)' }}>
+        <h3 style={{ fontSize: '1.15rem', fontWeight: '800', marginBottom: '18px', color: 'var(--secondary)', letterSpacing: '-0.01em' }}>
           Why Choose Bubbles Media?
         </h3>
         
-        <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '14px' }}>
+        <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '12px' }}>
           {reasons.map((reason, index) => (
-            <li key={index} style={{ display: 'flex', alignItems: 'center', gap: '10px', fontSize: '0.85rem', color: 'var(--text-medium)', fontWeight: '600' }}>
+            <li key={index} style={{ display: 'flex', alignItems: 'center', gap: '10px', fontSize: '0.8rem', color: 'var(--text-medium)', fontWeight: '600' }}>
               <span style={{
-                background: '#DEF7EC',
-                color: '#03543F',
-                width: '20px',
-                height: '20px',
+                background: '#ECFDF5',
+                color: '#047857',
+                width: '18px',
+                height: '18px',
                 borderRadius: '50%',
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
                 flexShrink: 0
               }}>
-                <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round">
+                <svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="4.5" strokeLinecap="round" strokeLinejoin="round">
                   <polyline points="20 6 9 17 4 12"></polyline>
                 </svg>
               </span>
@@ -49,9 +49,9 @@ export default function WhyChooseUs() {
         </ul>
       </div>
 
-      <div style={{ display: 'flex', justifyContent: 'center', marginTop: '20px' }}>
-        {/* SVG Gold Trophy Cup */}
-        <svg width="70" height="70" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" style={{ opacity: 0.9 }}>
+      <div style={{ display: 'flex', justifyContent: 'center', marginTop: '24px' }}>
+        {/* Minimalist SVG Gold Trophy Cup */}
+        <svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" style={{ opacity: 0.85, animation: 'float 4s ease-in-out infinite' }}>
           <path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"></path>
           <path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"></path>
           <path d="M4 22h16"></path>

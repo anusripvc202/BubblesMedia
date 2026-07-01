@@ -38,8 +38,8 @@ export default function Testimonials() {
     <div style={{
       background: 'var(--bg-white)',
       border: '1px solid var(--border-color)',
-      borderRadius: '16px',
-      padding: '24px',
+      borderRadius: 'var(--radius-lg)',
+      padding: '28px',
       height: '100%',
       display: 'flex',
       flexDirection: 'column',
@@ -47,42 +47,43 @@ export default function Testimonials() {
       boxShadow: 'var(--shadow-sm)'
     }}>
       <div>
-        <h3 style={{ fontSize: '1.2rem', fontWeight: '800', marginBottom: '8px', color: 'var(--text-dark)' }}>
+        <h3 style={{ fontSize: '1.15rem', fontWeight: '800', marginBottom: '8px', color: 'var(--secondary)', letterSpacing: '-0.01em' }}>
           Our Work Speaks
         </h3>
         
         {/* Rating Row */}
         <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '16px' }}>
-          <span style={{ fontSize: '1.4rem', fontWeight: '900', color: 'var(--text-dark)', fontFamily: 'var(--font-display)' }}>
+          <span style={{ fontSize: '1.3rem', fontWeight: '800', color: 'var(--secondary)', fontFamily: 'var(--font-display)' }}>
             4.9/5
           </span>
-          <div style={{ display: 'flex', color: '#FBBF24' }}>
+          <div style={{ display: 'flex', color: '#F59E0B' }}>
             {[...Array(5)].map((_, i) => (
-              <span key={i} style={{ fontSize: '1rem' }}>★</span>
+              <span key={i} style={{ fontSize: '0.95rem' }}>★</span>
             ))}
           </div>
           <span style={{ fontSize: '0.75rem', color: 'var(--text-light)', fontWeight: '600' }}>
-            (5000+ Reviews)
+            (5,000+ Reviews)
           </span>
         </div>
 
         {/* Dynamic testimonial quote box */}
         <div style={{
-          background: 'var(--primary-light)',
-          borderRadius: '12px',
-          padding: '16px',
+          background: 'var(--bg-base)',
+          border: '1px solid var(--border-color-light)',
+          borderRadius: 'var(--radius-md)',
+          padding: '16px 20px',
           minHeight: '110px',
           display: 'flex',
           flexDirection: 'column',
           justifyContent: 'center',
           position: 'relative'
         }}>
-          <span style={{ position: 'absolute', top: '2px', left: '8px', fontSize: '2.5rem', opacity: 0.15, fontWeight: 'bold', color: 'var(--primary)', lineHeight: '1' }}>“</span>
-          <p style={{ fontSize: '0.8rem', fontStyle: 'italic', color: 'var(--text-medium)', lineHeight: '1.5', margin: 0, padding: '0 8px', zIndex: 2 }}>
+          <span style={{ position: 'absolute', top: '4px', left: '8px', fontSize: '2.2rem', opacity: 0.1, fontWeight: 'bold', color: 'var(--secondary)', lineHeight: '1' }}>“</span>
+          <p style={{ fontSize: '0.8rem', fontStyle: 'italic', color: 'var(--text-medium)', lineHeight: '1.5', margin: 0, padding: '0 4px', zIndex: 2 }}>
             {current.quote}
           </p>
-          <div style={{ marginTop: '8px', paddingLeft: '8px' }}>
-            <span style={{ fontSize: '0.75rem', fontWeight: '800', color: 'var(--primary)', display: 'block' }}>{current.author}</span>
+          <div style={{ marginTop: '10px', paddingLeft: '4px' }}>
+            <span style={{ fontSize: '0.75rem', fontWeight: '800', color: 'var(--secondary)', display: 'block' }}>{current.author}</span>
             <span style={{ fontSize: '0.65rem', color: 'var(--text-light)' }}>{current.company}</span>
           </div>
         </div>
@@ -101,8 +102,8 @@ export default function Testimonials() {
             <div
               key={idx}
               style={{
-                width: '26px',
-                height: '26px',
+                width: '24px',
+                height: '24px',
                 borderRadius: '50%',
                 background: color,
                 border: '2px solid white',
@@ -111,7 +112,7 @@ export default function Testimonials() {
                 alignItems: 'center',
                 justifyContent: 'center',
                 color: 'white',
-                fontSize: '0.55rem',
+                fontSize: '0.5rem',
                 fontWeight: '900',
                 boxShadow: 'var(--shadow-sm)'
               }}
@@ -129,8 +130,8 @@ export default function Testimonials() {
           <button
             onClick={prev}
             style={{
-              width: '28px',
-              height: '28px',
+              width: '26px',
+              height: '26px',
               borderRadius: '50%',
               border: '1px solid var(--border-color)',
               display: 'flex',
@@ -146,8 +147,8 @@ export default function Testimonials() {
           <button
             onClick={next}
             style={{
-              width: '28px',
-              height: '28px',
+              width: '26px',
+              height: '26px',
               borderRadius: '50%',
               border: '1px solid var(--border-color)',
               display: 'flex',

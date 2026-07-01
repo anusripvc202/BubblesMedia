@@ -12,8 +12,8 @@ export default function FreeTools({ onOpenCalculator, onOpenSEOAudit }) {
     <div style={{
       background: 'var(--bg-white)',
       border: '1px solid var(--border-color)',
-      borderRadius: '16px',
-      padding: '24px',
+      borderRadius: 'var(--radius-lg)',
+      padding: '28px',
       height: '100%',
       display: 'flex',
       flexDirection: 'column',
@@ -21,11 +21,11 @@ export default function FreeTools({ onOpenCalculator, onOpenSEOAudit }) {
       boxShadow: 'var(--shadow-sm)'
     }}>
       <div>
-        <h3 style={{ fontSize: '1.2rem', fontWeight: '800', marginBottom: '16px', color: 'var(--text-dark)' }}>
+        <h3 style={{ fontSize: '1.15rem', fontWeight: '800', marginBottom: '18px', color: 'var(--secondary)', letterSpacing: '-0.01em' }}>
           Free Tools & Resources
         </h3>
         
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
           {tools.map((tool, index) => (
             <button
               key={index}
@@ -35,17 +35,19 @@ export default function FreeTools({ onOpenCalculator, onOpenSEOAudit }) {
                 alignItems: 'center',
                 justifyContent: 'space-between',
                 padding: '10px 14px',
-                borderRadius: '8px',
+                borderRadius: '6px',
                 background: 'var(--bg-base)',
+                border: '1px solid var(--border-color-light)',
                 textAlign: 'left',
-                width: '100%'
+                width: '100%',
+                transition: 'all 0.2s ease'
               }}
               className="hover-card"
             >
-              <span style={{ fontSize: '0.85rem', fontWeight: '700', color: 'var(--text-dark)' }}>
+              <span style={{ fontSize: '0.8rem', fontWeight: '700', color: 'var(--secondary)' }}>
                 {tool.name}
               </span>
-              <span style={{ color: 'var(--primary)', fontWeight: 'bold' }}>
+              <span style={{ color: 'var(--primary)', fontWeight: 'bold', fontSize: '0.9rem' }}>
                 →
               </span>
             </button>
@@ -54,30 +56,31 @@ export default function FreeTools({ onOpenCalculator, onOpenSEOAudit }) {
       </div>
 
       {/* Screen Chart Mockup */}
-      <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', marginTop: '20px', gap: '12px' }}>
+      <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', marginTop: '24px' }}>
         <div style={{
-          width: '70px',
-          height: '42px',
-          background: '#1F2937',
+          width: '64px',
+          height: '38px',
+          background: '#0F172A',
           borderRadius: '4px',
           position: 'relative',
           padding: '4px',
           display: 'flex',
           alignItems: 'flex-end',
-          gap: '3px'
+          gap: '3px',
+          border: '1px solid rgba(255,255,255,0.06)'
         }}>
-          <div style={{ width: '8px', height: '15px', background: '#34D399', borderRadius: '1px' }}></div>
-          <div style={{ width: '8px', height: '25px', background: '#F59E0B', borderRadius: '1px' }}></div>
-          <div style={{ width: '8px', height: '32px', background: 'var(--primary)', borderRadius: '1px' }}></div>
-          <div style={{ width: '8px', height: '10px', background: '#3B82F6', borderRadius: '1px' }}></div>
+          <div style={{ width: '8px', height: '12px', background: '#10B981', borderRadius: '1px' }}></div>
+          <div style={{ width: '8px', height: '22px', background: '#F59E0B', borderRadius: '1px' }}></div>
+          <div style={{ width: '8px', height: '28px', background: 'var(--primary)', borderRadius: '1px' }}></div>
+          <div style={{ width: '8px', height: '8px', background: '#3B82F6', borderRadius: '1px' }}></div>
           {/* Laptop base */}
           <div style={{
             position: 'absolute',
             bottom: '-4px',
             left: '-6px',
-            width: '82px',
+            width: '76px',
             height: '4px',
-            background: '#9CA3AF',
+            background: '#94A3B8',
             borderRadius: '2px'
           }}></div>
         </div>

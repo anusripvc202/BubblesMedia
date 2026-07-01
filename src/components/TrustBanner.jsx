@@ -5,7 +5,7 @@ const trustItems = [
     title: '100% Satisfaction',
     desc: 'Or Money Back',
     icon: (
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
         <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
         <path d="m9 11 2 2 4-4"></path>
       </svg>
@@ -15,7 +15,7 @@ const trustItems = [
     title: 'On-Time Delivery',
     desc: 'Always on Schedule',
     icon: (
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
         <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
         <line x1="16" y1="2" x2="16" y2="6"></line>
         <line x1="8" y1="2" x2="8" y2="6"></line>
@@ -27,17 +27,17 @@ const trustItems = [
     title: 'Transparent Pricing',
     desc: 'No Hidden Charges',
     icon: (
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
         <line x1="12" y1="1" x2="12" y2="23"></line>
         <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
       </svg>
     )
   },
   {
-    title: 'Easy & Secure Payments',
-    desc: 'Multiple Payment Options',
+    title: 'Secure Payments',
+    desc: 'Multiple Options',
     icon: (
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
         <rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect>
         <line x1="1" y1="10" x2="23" y2="10"></line>
       </svg>
@@ -45,9 +45,9 @@ const trustItems = [
   },
   {
     title: 'Expert Support',
-    desc: '24/7 Friendly Support',
+    desc: '24/7 Priority Help',
     icon: (
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
         <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
       </svg>
     )
@@ -59,12 +59,12 @@ export default function TrustBanner() {
     <div style={{
       background: 'var(--bg-white)',
       border: '1px solid var(--border-color)',
-      borderRadius: '12px',
-      padding: '16px 20px',
+      borderRadius: 'var(--radius-md)',
+      padding: '16px 24px',
       boxShadow: 'var(--shadow-sm)',
       display: 'grid',
-      gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
-      gap: '20px',
+      gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))',
+      gap: '16px',
       marginBottom: '32px'
     }}>
       {trustItems.map((item, index) => (
@@ -78,8 +78,8 @@ export default function TrustBanner() {
           <div style={{
             background: 'var(--primary-light)',
             color: 'var(--primary)',
-            width: '40px',
-            height: '40px',
+            width: '36px',
+            height: '36px',
             borderRadius: '50%',
             display: 'flex',
             alignItems: 'center',
@@ -89,8 +89,8 @@ export default function TrustBanner() {
             {item.icon}
           </div>
           <div>
-            <h4 style={{ fontSize: '0.85rem', fontWeight: '700', color: 'var(--text-dark)' }}>{item.title}</h4>
-            <p style={{ fontSize: '0.75rem', color: 'var(--text-light)', marginTop: '2px' }}>{item.desc}</p>
+            <h4 style={{ fontSize: '0.8rem', fontWeight: '800', color: 'var(--secondary)', letterSpacing: '-0.01em' }}>{item.title}</h4>
+            <p style={{ fontSize: '0.7rem', color: 'var(--text-light)', marginTop: '1px' }}>{item.desc}</p>
           </div>
         </div>
       ))}

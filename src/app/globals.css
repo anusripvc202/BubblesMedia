@@ -375,6 +375,17 @@ a {
 }
 
 @media (min-width: 1025px) {
+  .solutions-row-desktop {
+    display: grid !important;
+    grid-template-columns: repeat(8, 1fr) !important;
+    gap: 8px !important;
+    overflow-x: visible !important;
+  }
+  .solutions-card-desktop {
+    flex: none !important;
+    width: 100% !important;
+    padding: 12px 10px !important;
+  }
   .industries-row-desktop {
     display: grid !important;
     grid-template-columns: repeat(12, 1fr) !important;

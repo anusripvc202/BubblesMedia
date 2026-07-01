@@ -60,19 +60,20 @@ export default function Hero({ onSearch, onExploreOffers }) {
           <div style={{
             display: 'grid',
             gridTemplateColumns: 'repeat(4, 1fr)',
-            gap: '6px',
-            background: 'rgba(255, 255, 255, 0.12)',
-            border: '1px solid rgba(255, 255, 255, 0.2)',
-            padding: '8px 10px',
+            gap: '8px',
+            background: 'rgba(255, 255, 255, 0.96)',
+            border: 'none',
+            padding: '8px 12px',
             borderRadius: '6px',
-            maxWidth: '450px'
+            maxWidth: '450px',
+            boxShadow: '0 2px 8px rgba(0, 0, 0, 0.05)'
           }}>
             {[
               {
                 num: '5000+',
                 label: 'Happy Clients',
                 icon: (
-                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                  <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
                     <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
                     <circle cx="12" cy="7" r="4" />
                   </svg>
@@ -82,7 +83,7 @@ export default function Hero({ onSearch, onExploreOffers }) {
                 num: '15000+',
                 label: 'Projects Delivered',
                 icon: (
-                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                  <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
                     <rect x="2" y="7" width="20" height="14" rx="2" ry="2" />
                     <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" />
                   </svg>
@@ -92,7 +93,7 @@ export default function Hero({ onSearch, onExploreOffers }) {
                 num: '50+',
                 label: 'Expert Team',
                 icon: (
-                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                  <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
                     <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
                     <circle cx="9" cy="7" r="4" />
                     <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
@@ -104,19 +105,25 @@ export default function Hero({ onSearch, onExploreOffers }) {
                 num: '24/7',
                 label: 'Support',
                 icon: (
-                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                  <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
                     <circle cx="12" cy="12" r="10" />
                     <polyline points="12 6 12 12 16 14" />
                   </svg>
                 )
               }
             ].map((stat, idx) => (
-              <div key={idx} style={{ display: 'flex', alignItems: 'center', gap: '4px' }}>
+              <div key={idx} style={{ 
+                display: 'flex', 
+                alignItems: 'center', 
+                gap: '5px',
+                borderRight: idx < 3 ? '1px solid rgba(0, 0, 0, 0.08)' : 'none',
+                paddingRight: idx < 3 ? '5px' : '0'
+              }}>
                 <div style={{
-                  background: 'rgba(255, 255, 255, 0.15)',
+                  background: 'rgba(255, 90, 0, 0.1)',
                   borderRadius: '50%',
-                  width: '20px',
-                  height: '20px',
+                  width: '18px',
+                  height: '18px',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
@@ -124,11 +131,11 @@ export default function Hero({ onSearch, onExploreOffers }) {
                 }}>
                   {stat.icon}
                 </div>
-                <div style={{ display: 'flex', flexDirection: 'column', textAlign: 'left' }}>
-                  <span style={{ fontSize: '0.78rem', fontWeight: '900', color: 'white', lineHeight: 1.1, fontFamily: 'var(--font-display)' }}>
+                <div style={{ display: 'flex', flexDirection: 'column', textAlign: 'left', overflow: 'hidden' }}>
+                  <span style={{ fontSize: '0.72rem', fontWeight: '800', color: 'var(--text-dark)', lineHeight: 1.1, fontFamily: 'var(--font-display)' }}>
                     {stat.num}
                   </span>
-                  <span style={{ fontSize: '0.45rem', opacity: 0.9, fontWeight: '700', color: 'white', textTransform: 'uppercase', marginTop: '1px', lineHeight: 1 }}>
+                  <span style={{ fontSize: '0.45rem', opacity: 0.8, fontWeight: '700', color: 'var(--text-medium)', textTransform: 'capitalize', marginTop: '1px', lineHeight: 1, whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
                     {stat.label}
                   </span>
                 </div>

@@ -236,7 +236,7 @@ export default function Hero({ onSearch, onExploreOffers }) {
               objectFit: 'contain',
               zIndex: 2,
               pointerEvents: 'none',
-              transform: 'translateX(-20px)' // Shifts it slightly left to leave room for the badge overlap
+              transform: 'translateX(-40px)' // Shifts it leftwards to align closer to the text column
             }}
           />
 

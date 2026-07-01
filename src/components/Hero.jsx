@@ -217,13 +217,22 @@ export default function Hero({ onSearch, onExploreOffers }) {
         </div>
 
         {/* Column 2 (Right): Combined Mockup & Badge Image */}
-        <div style={{ position: 'relative', width: '100%', height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', zIndex: 2 }}>
+        <div style={{ 
+          position: 'relative', 
+          width: '100%', 
+          height: '100%', 
+          display: 'flex', 
+          alignItems: 'center', 
+          justifyContent: 'center', 
+          zIndex: 2,
+          transform: 'translateX(-40px)' // Moves the entire graphic block leftward
+        }}>
           <img 
             src="/hero-combined.png?v=3" 
             alt="Hero Showcase" 
             style={{
-              maxHeight: '215px',
-              width: '100%',
+              maxHeight: '260px', // Increased height
+              width: '125%',       // Increased width
               height: 'auto',
               objectFit: 'contain',
               pointerEvents: 'none'
@@ -234,10 +243,10 @@ export default function Hero({ onSearch, onExploreOffers }) {
             onClick={onExploreOffers}
             style={{
               position: 'absolute',
-              bottom: '18px',
-              right: '12px',
-              width: '110px',
-              height: '28px',
+              bottom: '22px',     // Adjusted for the scale increase
+              right: '-10px',      // Adjusted for the scale increase
+              width: '140px',     // Scaled up width
+              height: '35px',     // Scaled up height
               background: 'transparent',
               border: 'none',
               cursor: 'pointer',

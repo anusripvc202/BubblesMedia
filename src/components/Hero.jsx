@@ -17,8 +17,8 @@ export default function Hero({ onSearch, onExploreOffers }) {
 
   return (
     <div style={{ position: 'relative', width: '100%', marginBottom: '24px' }}>
-      
-      {/* Main Hero Card Container - Solid Orange Theme exactly as Image 1 */}
+
+      {/* Main Hero Card Container - Vibrant Orange Theme matching Image 1 exactly */}
       <div className="hero-card" style={{
         background: 'linear-gradient(135deg, #FF7E21 0%, #FF5100 100%)',
         color: 'white',
@@ -26,7 +26,13 @@ export default function Hero({ onSearch, onExploreOffers }) {
         borderRadius: '12px',
         boxShadow: 'var(--shadow-md)',
         position: 'relative',
-        overflow: 'hidden'
+        overflow: 'hidden',
+        display: 'grid',
+        gridTemplateColumns: '1.1fr 0.9fr',
+        gap: '24px',
+        padding: '28px 32px',
+        alignItems: 'center',
+        minHeight: '340px'
       }}>
         {/* Decorative background grid pattern */}
         <div style={{
@@ -39,42 +45,94 @@ export default function Hero({ onSearch, onExploreOffers }) {
         }}></div>
 
         {/* Left Info Column */}
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '20px', zIndex: 2 }}>
-          
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', zIndex: 2 }}>
+
           {/* Main Headline */}
-          <h1 style={{ fontSize: '2.8rem', fontWeight: '900', lineHeight: '1.1', color: 'white' }}>
+          <h1 style={{ fontSize: '2.5rem', fontWeight: '900', lineHeight: '1.1', color: 'white', margin: 0 }}>
             One Platform.<br />All Digital Solutions.
           </h1>
 
           {/* Subtitle */}
-          <p style={{ fontSize: '0.9rem', opacity: 0.95, fontWeight: '500', lineHeight: '1.5', maxWidth: '460px', color: 'white' }}>
+          <p style={{ fontSize: '0.85rem', opacity: 0.95, fontWeight: '500', lineHeight: '1.4', maxWidth: '440px', color: 'white', margin: 0 }}>
             Websites, Apps, Marketing, Branding, AI & More – Everything You Need to Grow Your Business Online.
           </p>
 
-          {/* Stats Row inside Hero - Translucent White Box */}
+          {/* Stats Row inside Hero - Translucent White Box with Icons */}
           <div style={{
             display: 'grid',
             gridTemplateColumns: 'repeat(4, 1fr)',
-            gap: '10px',
+            gap: '8px',
             background: 'rgba(255, 255, 255, 0.12)',
             border: '1px solid rgba(255, 255, 255, 0.2)',
-            padding: '12px 14px',
+            padding: '10px 12px',
             borderRadius: '8px',
-            maxWidth: '480px'
+            maxWidth: '520px'
           }}>
             {[
-              { num: '5000+', label: 'Happy Clients' },
-              { num: '15000+', label: 'Projects Delivered' },
-              { num: '50+', label: 'Expert Team' },
-              { num: '24/7', label: 'Support' }
+              {
+                num: '5000+',
+                label: 'Happy Clients',
+                icon: (
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+                    <circle cx="12" cy="7" r="4" />
+                  </svg>
+                )
+              },
+              {
+                num: '15000+',
+                label: 'Projects Delivered',
+                icon: (
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                    <rect x="2" y="7" width="20" height="14" rx="2" ry="2" />
+                    <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" />
+                  </svg>
+                )
+              },
+              {
+                num: '50+',
+                label: 'Expert Team',
+                icon: (
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                    <circle cx="9" cy="7" r="4" />
+                    <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+                    <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+                  </svg>
+                )
+              },
+              {
+                num: '24/7',
+                label: 'Support',
+                icon: (
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                    <circle cx="12" cy="12" r="10" />
+                    <polyline points="12 6 12 12 16 14" />
+                  </svg>
+                )
+              }
             ].map((stat, idx) => (
-              <div key={idx} style={{ textAlign: 'center' }}>
-                <span style={{ display: 'block', fontSize: '1.05rem', fontWeight: '900', color: 'white', fontFamily: 'var(--font-display)' }}>
-                  {stat.num}
-                </span>
-                <span style={{ display: 'block', fontSize: '0.55rem', opacity: 0.9, fontWeight: '700', color: 'white', textTransform: 'uppercase', marginTop: '2px' }}>
-                  {stat.label}
-                </span>
+              <div key={idx} style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
+                <div style={{
+                  background: 'rgba(255, 255, 255, 0.15)',
+                  borderRadius: '50%',
+                  width: '24px',
+                  height: '24px',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  flexShrink: 0
+                }}>
+                  {stat.icon}
+                </div>
+                <div style={{ display: 'flex', flexDirection: 'column', textAlign: 'left' }}>
+                  <span style={{ fontSize: '0.85rem', fontWeight: '900', color: 'white', lineHeight: 1.1, fontFamily: 'var(--font-display)' }}>
+                    {stat.num}
+                  </span>
+                  <span style={{ fontSize: '0.48rem', opacity: 0.9, fontWeight: '700', color: 'white', textTransform: 'uppercase', marginTop: '1px', lineHeight: 1 }}>
+                    {stat.label}
+                  </span>
+                </div>
               </div>
             ))}
           </div>
@@ -86,7 +144,8 @@ export default function Hero({ onSearch, onExploreOffers }) {
             borderRadius: '6px',
             padding: '3px',
             boxShadow: 'var(--shadow-sm)',
-            maxWidth: '480px'
+            maxWidth: '520px',
+            width: '100%'
           }}>
             <span style={{ paddingLeft: '12px', display: 'flex', alignItems: 'center', color: 'var(--text-light)' }}>
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
@@ -109,7 +168,23 @@ export default function Hero({ onSearch, onExploreOffers }) {
                 color: 'var(--text-dark)'
               }}
             />
-            <button type="submit" className="btn-primary" style={{ padding: '8px 18px', borderRadius: '4px', background: 'var(--primary)', fontWeight: '700' }}>
+            <button type="submit" className="btn-primary" style={{
+              padding: '8px 20px',
+              borderRadius: '4px',
+              background: 'var(--primary)',
+              color: 'white',
+              fontWeight: '700',
+              fontSize: '0.85rem',
+              display: 'flex',
+              alignItems: 'center',
+              gap: '6px',
+              border: 'none',
+              cursor: 'pointer'
+            }}>
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
+                <circle cx="11" cy="11" r="8"></circle>
+                <path d="m21 21-4.3-4.3"></path>
+              </svg>
               Search
             </button>
           </form>
@@ -141,109 +216,40 @@ export default function Hero({ onSearch, onExploreOffers }) {
           </div>
         </div>
 
-        {/* Right Graphic Mockup Column */}
-        <div style={{ position: 'relative', height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', minHeight: '280px' }}>
-          
-          {/* CSS Devices Layout */}
-          <div style={{ position: 'relative', width: '260px', height: '170px', zIndex: 2 }}>
-            {/* MacBook Pro CSS Mockup */}
-            <div style={{
-              width: '240px',
-              height: '140px',
-              background: '#0F172A',
-              border: '6px solid #1E293B',
-              borderRadius: '8px 8px 0 0',
-              position: 'relative',
-              boxShadow: '0 20px 40px rgba(0,0,0,0.25)',
-              overflow: 'hidden'
-            }}>
-              {/* Laptop Screen Content */}
-              <div style={{ width: '100%', height: '100%', background: '#F8FAFC', padding: '6px', display: 'flex', flexDirection: 'column', gap: '4px' }}>
-                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', borderBottom: '1px solid #E2E8F0', paddingBottom: '3px' }}>
-                  <div style={{ fontSize: '0.4rem', fontWeight: '800', color: 'var(--primary)' }}>BUBBLES MEDIA</div>
-                  <div style={{ width: '6px', height: '6px', borderRadius: '50%', background: 'var(--secondary)' }}></div>
-                </div>
-                <div style={{ flex: 1, display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', gap: '3px' }}>
-                  <div style={{ width: '80%', height: '3px', background: '#E2E8F0', borderRadius: '1.5px' }}></div>
-                  <div style={{ width: '60%', height: '3px', background: '#E2E8F0', borderRadius: '1.5px' }}></div>
-                  <div style={{ width: '35%', height: '5px', background: 'var(--primary)', borderRadius: '1.5px', marginTop: '2px' }}></div>
-                </div>
-              </div>
-            </div>
-            {/* Laptop Base */}
-            <div style={{
-              width: '280px',
-              height: '6px',
-              background: '#94A3B8',
-              borderRadius: '0 0 8px 8px',
-              position: 'absolute',
-              bottom: '24px',
-              left: '-20px',
-              boxShadow: '0 4px 6px rgba(0,0,0,0.1)'
-            }}></div>
+        {/* Right graphic column rendering the high-res cropped devices graphic */}
+        <div style={{ position: 'relative', width: '100%', height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+          <img
+            src="/Screenshot 2026-07-01 125319.png"
+            alt="Hero Mockups and Offer Badge"
+            style={{
+              maxWidth: '100%',
+              maxHeight: '360px',
+              width: 'auto',
+              height: 'auto',
+              objectFit: 'contain',
+              zIndex: 2,
+              pointerEvents: 'none'
+            }}
+          />
 
-            {/* iPhone CSS Mockup */}
-            <div style={{
-              width: '60px',
-              height: '110px',
-              background: '#0F172A',
-              border: '2.5px solid #1E293B',
-              borderRadius: '8px',
-              position: 'absolute',
-              bottom: '20px',
-              right: '-10px',
-              zIndex: 3,
-              boxShadow: '0 10px 20px rgba(0,0,0,0.2)',
-              overflow: 'hidden'
-            }}>
-              {/* Screen Content */}
-              <div style={{ width: '100%', height: '100%', background: 'var(--primary)', padding: '4px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', color: 'white' }}>
-                <div style={{ width: '18px', height: '3px', background: '#000', borderRadius: '1.5px', alignSelf: 'center', marginBottom: '2px' }}></div>
-                <div style={{ flex: 1, display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', gap: '3px' }}>
-                  <div style={{ width: '12px', height: '12px', borderRadius: '50%', background: 'rgba(255,255,255,0.2)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '0.35rem', fontWeight: '800' }}>B</div>
-                  <div style={{ width: '70%', height: '2px', background: 'rgba(255,255,255,0.4)', borderRadius: '1px' }}></div>
-                  <div style={{ width: '50%', height: '2px', background: 'rgba(255,255,255,0.4)', borderRadius: '1px' }}></div>
-                </div>
-                <div style={{ height: '6px', background: 'white', borderRadius: '1px' }}></div>
-              </div>
-            </div>
-          </div>
-
-          {/* Floating Mega Offer Circle Badge exactly as Image 1 */}
-          <div
+          {/* Overlay Clickable Hotspot for the Explore Offers button inside the graphic */}
+          <button
             onClick={onExploreOffers}
             style={{
               position: 'absolute',
-              top: '10px',
-              right: '-10px',
-              width: '115px',
-              height: '115px',
-              background: 'white',
-              borderRadius: '50%',
-              padding: '14px 10px',
-              boxShadow: 'var(--shadow-lg)',
-              zIndex: 4,
+              bottom: '22%',
+              right: '12%',
+              width: '100px',
+              height: '32px',
+              background: 'transparent',
+              border: 'none',
               cursor: 'pointer',
-              textAlign: 'center',
-              display: 'flex',
-              flexDirection: 'column',
-              justifyContent: 'center',
-              alignItems: 'center',
-              gap: '2px',
-              animation: 'float 4s ease-in-out infinite'
+              zIndex: 10
             }}
-          >
-            <span style={{ fontSize: '0.55rem', fontWeight: '800', color: 'var(--primary)', textTransform: 'uppercase', letterSpacing: '0.5px' }}>Limited Time</span>
-            <span style={{ fontSize: '1.05rem', fontWeight: '900', color: 'var(--primary)', textTransform: 'uppercase', lineHeight: '1.0' }}>MEGA</span>
-            <span style={{ fontSize: '1.05rem', fontWeight: '900', color: 'var(--primary)', textTransform: 'uppercase', lineHeight: '1.0' }}>OFFERS</span>
-            <span style={{ fontSize: '0.6rem', fontWeight: '800', color: 'var(--secondary)', textTransform: 'uppercase', marginTop: '2px' }}>Up to 50% Off</span>
-            
-            {/* Black button inside circle */}
-            <button style={{ background: '#0F172A', color: 'white', fontSize: '0.55rem', fontWeight: '800', padding: '3px 8px', borderRadius: '4px', border: 'none', marginTop: '4px', width: '90%' }}>
-              EXPLORE OFFERS
-            </button>
-          </div>
+            title="Explore Offers"
+          />
         </div>
+
       </div>
     </div>
   );

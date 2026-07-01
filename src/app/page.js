@@ -113,11 +113,11 @@ function HomeContent() {
               }}
             />
             {/* Bottom Statistics Row matching Image 1 exactly */}
-            <div style={{
+            <div className="stats-row-desktop" style={{
               background: 'var(--bg-white)',
               border: '1px solid var(--border-color)',
               borderRadius: '8px',
-              padding: '24px',
+              padding: '16px',
               boxShadow: 'var(--shadow-sm)',
               display: 'grid',
               gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))',

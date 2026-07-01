@@ -45,12 +45,21 @@ export default function Contact() {
           <a href="/">Home</a> / <span style={{ color: 'var(--secondary)' }}>Contact Us</span>
         </div>
 
-        {/* Header Title */}
-        <div style={{ marginBottom: '36px' }}>
-          <h2 style={{ fontSize: '1.8rem', fontWeight: '900', color: 'var(--secondary)', letterSpacing: '-0.02em' }}>
+        {/* Hero Section */}
+        <div style={{
+          background: 'var(--bg-gradient-orange)',
+          borderRadius: 'var(--radius-lg)',
+          padding: '48px',
+          color: 'white',
+          textAlign: 'center',
+          marginBottom: '48px',
+          position: 'relative',
+          overflow: 'hidden'
+        }}>
+          <h2 style={{ fontSize: '2.2rem', fontWeight: '900', color: 'white', marginBottom: '12px' }}>
             Get In Touch
           </h2>
-          <p style={{ fontSize: '0.85rem', color: 'var(--text-medium)', marginTop: '4px' }}>
+          <p style={{ fontSize: '1rem', color: 'rgba(255, 255, 255, 0.9)', maxWidth: '600px', margin: '0 auto', lineHeight: '1.6' }}>
             Have a project in mind? Fill out the form or reach out directly to our offices.
           </p>
         </div>

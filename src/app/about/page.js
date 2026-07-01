@@ -26,7 +26,7 @@ export default function About() {
 
         {/* Hero Section */}
         <div style={{
-          background: 'var(--bg-gradient-slate)',
+          background: 'var(--bg-gradient-orange)',
           borderRadius: 'var(--radius-lg)',
           padding: '48px',
           color: 'white',
@@ -38,7 +38,7 @@ export default function About() {
           <h2 style={{ fontSize: '2.2rem', fontWeight: '900', color: 'white', marginBottom: '12px' }}>
             Empowering Businesses Globally
           </h2>
-          <p style={{ fontSize: '1rem', color: '#CBD5E1', maxWidth: '600px', margin: '0 auto', lineHeight: '1.6' }}>
+          <p style={{ fontSize: '1rem', color: 'rgba(255, 255, 255, 0.9)', maxWidth: '600px', margin: '0 auto', lineHeight: '1.6' }}>
             Bubbles Media is India's largest integrated digital marketplace, delivering premium web development, branding, SEO, and AI automation solutions.
           </p>
         </div>

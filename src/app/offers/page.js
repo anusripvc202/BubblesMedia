@@ -76,7 +76,7 @@ export default function Offers() {
 
         {/* Hero Section with Large Ticking Clock */}
         <div style={{
-          background: 'var(--bg-gradient-slate)',
+          background: 'var(--bg-gradient-orange)',
           borderRadius: 'var(--radius-lg)',
           padding: '48px',
           color: 'white',
@@ -85,22 +85,22 @@ export default function Offers() {
           alignItems: 'center',
           gap: '32px',
           marginBottom: '48px',
-          border: '1px solid rgba(255,255,255,0.06)'
+          border: '1px solid rgba(255,255,255,0.1)'
         }} className="offers-hero-responsive">
           <div>
-            <span style={{ fontSize: '0.75rem', fontWeight: '800', background: 'var(--primary)', padding: '4px 12px', borderRadius: '4px', textTransform: 'uppercase', letterSpacing: '1px', display: 'inline-block', marginBottom: '14px' }}>
+            <span style={{ fontSize: '0.75rem', fontWeight: '800', background: 'white', color: 'var(--primary)', padding: '4px 12px', borderRadius: '4px', textTransform: 'uppercase', letterSpacing: '1px', display: 'inline-block', marginBottom: '14px' }}>
               Flash Sale
             </span>
             <h2 style={{ fontSize: '2rem', fontWeight: '900', color: 'white', marginBottom: '10px', letterSpacing: '-0.02em' }}>
               Limited Time Mega Offers
             </h2>
-            <p style={{ fontSize: '0.9rem', color: '#CBD5E1', lineHeight: '1.5', marginBottom: '8px' }}>
+            <p style={{ fontSize: '0.9rem', color: 'rgba(255, 255, 255, 0.9)', lineHeight: '1.5', marginBottom: '8px' }}>
               Get up to 50% discount on industry-leading digital services. Setup your business online with certified blueprints.
             </p>
           </div>
 
           <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '10px' }}>
-            <span style={{ fontSize: '0.75rem', fontWeight: '800', textTransform: 'uppercase', color: '#94A3B8', letterSpacing: '0.5px' }}>
+            <span style={{ fontSize: '0.75rem', fontWeight: '800', textTransform: 'uppercase', color: 'rgba(255, 255, 255, 0.85)', letterSpacing: '0.5px' }}>
               Countdown to Expiry:
             </span>
             <div className="timer-container" style={{ gap: '16px' }}>

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 
 export default function PromoBanners({ onSelectPackage }) {
-  // Countdown Timer state: Initialize with 2 days, 14 hours, 36 minutes, 58 seconds
+  // Countdown Timer state
   const [timeLeft, setTimeLeft] = useState({
     days: 2,
     hours: 14,
@@ -21,7 +21,6 @@ export default function PromoBanners({ onSelectPackage }) {
         } else if (prev.days > 0) {
           return { ...prev, days: prev.days - 1, hours: 23, minutes: 59, seconds: 59 };
         } else {
-          // Reset timer to keep demo lively
           return { days: 2, hours: 14, minutes: 36, seconds: 58 };
         }
       });
@@ -32,193 +31,137 @@ export default function PromoBanners({ onSelectPackage }) {
 
   const formatNumber = (num) => String(num).padStart(2, '0');
 
-  const packages = [
-    {
-      id: 'startup-special',
-      title: 'Startup Special Pack',
-      desc: 'All You Need to Launch Your Business Online',
-      price: '₹14,999',
-      badge: 'Popular',
-      color: 'var(--primary-light)',
-      accent: 'var(--primary)',
-      icon: (
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
-          <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
-        </svg>
-      )
-    },
-    {
-      id: 'business-growth',
-      title: 'Business Growth Pack',
-      desc: 'Grow Your Business 10X Faster with Ads & SEO',
-      price: '₹24,999',
-      badge: 'Growth',
-      color: '#EFF6FF',
-      accent: '#2563EB',
-      icon: (
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
-          <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
-        </svg>
-      )
-    },
-    {
-      id: 'premium-digital',
-      title: 'Premium Digital Pack',
-      desc: 'Complete End-to-End Digital Transformation',
-      price: '₹49,999',
-      badge: 'Enterprise',
-      color: '#ECFDF5',
-      accent: '#059669',
-      icon: (
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
-          <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
-          <polyline points="2 17 12 22 22 17"></polyline>
-          <polyline points="2 12 12 17 22 12"></polyline>
-        </svg>
-      )
-    }
-  ];
-
   return (
     <section style={{ marginBottom: '40px' }}>
-      {/* Grid of Deals and Packages */}
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '24px' }}>
+      <div style={{ display: 'grid', gridTemplateColumns: '0.9fr 1.1fr', gap: '24px' }} className="promo-grid-responsive">
         
-        {/* Deal of the Day Card - Redesigned to look extremely premium */}
+        {/* Deal of the Day Card - Solid Orange background */}
         <div style={{
-          background: 'var(--bg-gradient-orange)',
-          borderRadius: 'var(--radius-lg)',
-          padding: '28px',
+          background: 'linear-gradient(135deg, #FF7E21 0%, #FF5100 100%)',
+          borderRadius: '12px',
+          padding: '24px',
           color: 'white',
           display: 'flex',
-          flexDirection: 'column',
           justifyContent: 'space-between',
-          gap: '24px',
-          boxShadow: 'var(--shadow-md)',
-          position: 'relative',
-          border: '1px solid rgba(255,255,255,0.06)'
+          alignItems: 'center',
+          flexWrap: 'wrap',
+          gap: '20px',
+          boxShadow: 'var(--shadow-sm)'
         }}>
-          {/* Subtle White Glow Dot */}
-          <div style={{ position: 'absolute', top: '15px', right: '15px', width: '8px', height: '8px', background: 'white', borderRadius: '50%', boxShadow: '0 0 10px white' }}></div>
-
-          <div>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '10px' }}>
-              <span style={{ fontSize: '1.1rem', color: 'var(--primary)' }}>⚡</span>
-              <h3 style={{ fontSize: '1.25rem', fontWeight: '900', textTransform: 'uppercase', letterSpacing: '0.5px', color: 'white' }}>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
+              <span style={{ fontSize: '1.25rem' }}>⚡</span>
+              <h3 style={{ fontSize: '1.05rem', fontWeight: '900', textTransform: 'uppercase', letterSpacing: '0.5px' }}>
                 Mega Deals of the Day
               </h3>
             </div>
-            <p style={{ fontSize: '0.8rem', color: '#94A3B8', lineHeight: '1.5', fontWeight: '500' }}>
-              Limited Time Offers on Top Digital Services. Grab before it expires!
-            </p>
+            <span style={{ fontSize: '0.75rem', opacity: 0.9 }}>Limited Time Offers on Top Services</span>
+            <button
+              onClick={() => onSelectPackage({ title: 'Mega Deals of the Day', price: 'Special Offer' })}
+              style={{
+                background: 'white',
+                color: 'var(--primary)',
+                padding: '8px 16px',
+                borderRadius: '6px',
+                fontWeight: '800',
+                fontSize: '0.75rem',
+                marginTop: '8px',
+                width: 'fit-content'
+              }}
+              className="hover-card"
+            >
+              Grab Now
+            </button>
           </div>
 
           {/* Countdown Clock */}
-          <div>
-            <span style={{ fontSize: '0.65rem', fontWeight: '800', textTransform: 'uppercase', color: '#64748B', display: 'block', marginBottom: '8px', letterSpacing: '0.5px' }}>
-              Offer Ends In:
-            </span>
-            <div className="timer-container">
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '4px', alignItems: 'center' }}>
+            <span style={{ fontSize: '0.65rem', fontWeight: '800', textTransform: 'uppercase', opacity: 0.9 }}>Offer Ends In:</span>
+            <div className="timer-container" style={{ gap: '8px' }}>
               {[
                 { val: formatNumber(timeLeft.days), label: 'Days' },
-                { val: formatNumber(timeLeft.hours), label: 'Hrs' },
+                { val: formatNumber(timeLeft.hours), label: 'Hours' },
                 { val: formatNumber(timeLeft.minutes), label: 'Mins' },
                 { val: formatNumber(timeLeft.seconds), label: 'Secs' }
               ].map((time, idx) => (
-                <div key={idx} className="timer-box" style={{ borderRadius: '50%', width: '48px', height: '48px' }}>
-                  <span className="timer-num" style={{ fontSize: '1.05rem' }}>{time.val}</span>
-                  <span className="timer-label" style={{ fontSize: '0.55rem', opacity: 0.6 }}>{time.label}</span>
+                <div key={idx} style={{
+                  background: 'rgba(255, 255, 255, 0.15)',
+                  border: '1px solid rgba(255, 255, 255, 0.25)',
+                  borderRadius: '6px',
+                  width: '42px',
+                  height: '42px',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  alignItems: 'center',
+                  justifyContent: 'center'
+                }}>
+                  <span style={{ fontSize: '0.95rem', fontWeight: '900' }}>{time.val}</span>
+                  <span style={{ fontSize: '0.5rem', opacity: 0.8, textTransform: 'uppercase' }}>{time.label}</span>
                 </div>
               ))}
             </div>
           </div>
-
-          <button
-            onClick={() => onSelectPackage({ title: 'Mega Deals of the Day', price: 'Special Quote' })}
-            style={{
-              background: 'var(--primary)',
-              color: 'white',
-              padding: '10px 20px',
-              borderRadius: 'var(--radius-md)',
-              fontWeight: '800',
-              fontSize: '0.8rem',
-              width: '100%',
-              boxShadow: 'var(--shadow-sm)',
-              textTransform: 'uppercase',
-              letterSpacing: '0.5px'
-            }}
-            className="hover-card"
-          >
-            Grab Now
-          </button>
         </div>
 
-        {/* Dynamic packages list */}
-        {packages.map((pkg) => (
-          <div
-            key={pkg.id}
-            className="glass-panel"
-            style={{
-              background: 'var(--bg-white)',
-              borderRadius: 'var(--radius-lg)',
-              padding: '28px',
-              border: '1px solid var(--border-color)',
-              display: 'flex',
-              flexDirection: 'column',
-              justifyContent: 'space-between',
-              position: 'relative',
-              overflow: 'hidden'
-            }}
-          >
-            {/* Background Accent Tint */}
-            <div style={{
-              position: 'absolute',
-              top: 0,
-              left: 0,
-              width: '100%',
-              height: '3px',
-              background: pkg.accent
-            }}></div>
-
-            <div>
-              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '16px' }}>
-                <span className="badge" style={{ background: pkg.color, color: pkg.accent, fontWeight: '800', fontSize: '0.65rem' }}>
-                  {pkg.badge}
-                </span>
-                <span style={{ color: pkg.accent }}>{pkg.icon}</span>
-              </div>
-
-              <h3 style={{ fontSize: '1.2rem', fontWeight: '800', marginBottom: '6px', color: 'var(--secondary)', letterSpacing: '-0.01em' }}>
-                {pkg.title}
+        {/* Startup Special Pack Card - Matches Image 1 precisely */}
+        <div style={{
+          background: 'var(--primary-light)',
+          borderRadius: '12px',
+          padding: '24px 32px',
+          border: '1px solid rgba(255, 107, 0, 0.15)',
+          display: 'flex',
+          justifyContent: 'space-between',
+          alignItems: 'center',
+          gap: '20px',
+          boxShadow: 'var(--shadow-sm)',
+          position: 'relative',
+          overflow: 'hidden'
+        }}>
+          {/* Info Details */}
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', zIndex: 2 }}>
+            <div style={{ display: 'flex', gap: '10px', alignItems: 'center' }}>
+              {/* Gift SVG */}
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <polyline points="20 12 20 22 4 22 4 12"></polyline>
+                <rect x="2" y="7" width="20" height="5"></rect>
+                <line x1="12" y1="22" x2="12" y2="7"></line>
+                <path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"></path>
+                <path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"></path>
+              </svg>
+              <h3 style={{ fontSize: '1.25rem', fontWeight: '900', color: 'var(--secondary)', letterSpacing: '-0.01em' }}>
+                Startup Special Pack
               </h3>
-              <p style={{ fontSize: '0.8rem', color: 'var(--text-medium)', lineHeight: '1.5', marginBottom: '16px' }}>
-                {pkg.desc}
-              </p>
+            </div>
+            <p style={{ fontSize: '0.8rem', color: 'var(--text-medium)', fontWeight: '600' }}>
+              All You Need to Launch Your Business Online
+            </p>
+            <button
+              onClick={() => onSelectPackage({ title: 'Startup Special Pack', price: '₹14,999' })}
+              className="btn-primary"
+              style={{ padding: '8px 18px', width: 'fit-content', fontSize: '0.75rem', marginTop: '6px' }}
+            >
+              View Package
+            </button>
+          </div>
+
+          {/* Pricing & Gift Box Graphic */}
+          <div style={{ display: 'flex', alignItems: 'center', gap: '16px', zIndex: 2 }}>
+            <div style={{ textAlign: 'right' }}>
+              <span style={{ display: 'block', fontSize: '0.65rem', color: 'var(--text-light)', fontWeight: '700' }}>Starts from</span>
+              <span style={{ display: 'block', fontSize: '1.35rem', fontWeight: '900', color: 'var(--secondary)', fontFamily: 'var(--font-display)' }}>
+                ₹14,999
+              </span>
+              <span style={{ display: 'block', fontSize: '0.6rem', color: 'var(--primary)', fontWeight: '800', textTransform: 'uppercase', marginTop: '2px' }}>
+                Limited Time Offer
+              </span>
             </div>
 
-            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', borderTop: '1px solid var(--border-color-light)', paddingTop: '16px', marginTop: '12px' }}>
-              <div>
-                <span style={{ fontSize: '0.65rem', color: 'var(--text-light)', display: 'block' }}>Starts from</span>
-                <span style={{ fontSize: '1.25rem', fontWeight: '900', color: 'var(--secondary)', fontFamily: 'var(--font-display)' }}>
-                  {pkg.price}
-                </span>
-              </div>
-              <button
-                onClick={() => onSelectPackage(pkg)}
-                className="btn-primary"
-                style={{
-                  background: pkg.accent,
-                  fontSize: '0.75rem',
-                  fontWeight: '700',
-                  padding: '8px 14px',
-                  borderRadius: '6px'
-                }}
-              >
-                View Pack
-              </button>
+            {/* Gift Box 3D graphic */}
+            <div style={{ fontSize: '2.5rem', animation: 'float 3.5s ease-in-out infinite' }}>
+              🎁
             </div>
           </div>
-        ))}
+        </div>
 
       </div>
     </section>

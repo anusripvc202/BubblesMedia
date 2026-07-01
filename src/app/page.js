@@ -112,29 +112,57 @@ function HomeContent() {
                 setIsQuoteOpen(true);
               }}
             />
-
-            {/* Sub Info grids */}
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '24px' }}>
-              <WhyChooseUs />
-              <FreeTools
-                onOpenCalculator={() => setIsCalculatorOpen(true)}
-                onOpenSEOAudit={() => {
-                  setQuoteInitialData({
-                    title: 'Free SEO Audit Request',
-                    price: 'Free Service'
-                  });
-                  setIsQuoteOpen(true);
-                }}
-              />
-              <Testimonials />
+            {/* Bottom Statistics Row matching Image 1 exactly */}
+            <div style={{
+              background: 'var(--bg-white)',
+              border: '1px solid var(--border-color)',
+              borderRadius: '8px',
+              padding: '24px',
+              boxShadow: 'var(--shadow-sm)',
+              display: 'grid',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))',
+              gap: '16px',
+              textAlign: 'center',
+              marginBottom: '16px'
+            }}>
+              {[
+                { num: '8+', label: 'Years of Experience' },
+                { num: '5000+', label: 'Happy Clients' },
+                { num: '15000+', label: 'Projects Completed' },
+                { num: '50+', label: 'Team Members' }
+              ].map((stat, idx) => (
+                <div key={idx} style={{
+                  borderRight: '1px solid var(--border-color-light)',
+                  paddingRight: '12px',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  alignItems: 'center',
+                  justifyContent: 'center'
+                }} className="trust-item-responsive">
+                  <span style={{ fontSize: '1.5rem', fontWeight: '900', color: 'var(--primary)', fontFamily: 'var(--font-display)' }}>
+                    {stat.num}
+                  </span>
+                  <span style={{ fontSize: '0.75rem', color: 'var(--text-medium)', fontWeight: '700', marginTop: '4px' }}>
+                    {stat.label}
+                  </span>
+                </div>
+              ))}
+              {/* Rating block */}
+              <div style={{
+                display: 'flex',
+                flexDirection: 'column',
+                alignItems: 'center',
+                justifyContent: 'center'
+              }}>
+                <span style={{ fontSize: '1.5rem', fontWeight: '900', color: 'var(--secondary)', fontFamily: 'var(--font-display)' }}>
+                  4.9/5
+                </span>
+                <span style={{ color: '#F59E0B', fontSize: '0.75rem', marginTop: '2px' }}>★★★★★</span>
+                <span style={{ fontSize: '0.65rem', color: 'var(--text-light)', fontWeight: '700', marginTop: '2px' }}>
+                  Client Rating
+                </span>
+              </div>
             </div>
-
-            <ReadyToGrow
-              onOpenQuote={() => {
-                setQuoteInitialData(null);
-                setIsQuoteOpen(true);
-              }}
-            />
           </div>
         </div>
       </main>

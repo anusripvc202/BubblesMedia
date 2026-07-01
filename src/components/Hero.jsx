@@ -19,7 +19,7 @@ export default function Hero({ onSearch, onExploreOffers }) {
     <div style={{ position: 'relative', width: '100%', marginBottom: '16px' }}>
       {/* Main Hero Card Container - Vibrant Orange Theme matching Image 1 exactly */}
       <div className="hero-card" style={{
-        background: 'linear-gradient(to right, #FD5701, #FB5A02)',
+        background: 'linear-gradient(135deg, #FF7E21 0%, #FF5100 100%)',
         color: 'white',
         border: 'none',
         borderRadius: '8px',

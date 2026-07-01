@@ -135,7 +135,7 @@ export default function IndustriesRow({ onSelectIndustry }) {
       </div>
 
       {/* Grid of Industry blocks */}
-      <div style={{
+      <div className="industries-row-desktop" style={{
         display: 'grid',
         gridTemplateColumns: 'repeat(auto-fill, minmax(130px, 1fr))',
         gap: '16px'
@@ -144,7 +144,7 @@ export default function IndustriesRow({ onSelectIndustry }) {
           <button
             key={idx}
             onClick={() => onSelectIndustry && onSelectIndustry(ind.name)}
-            className="hover-card"
+            className="hover-card industries-card-desktop"
             style={{
               background: 'var(--bg-white)',
               border: '1px solid var(--border-color)',

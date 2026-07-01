@@ -221,9 +221,9 @@ export default function Hero({ onSearch, onExploreOffers }) {
           position: 'absolute', 
           right: '10px', 
           top: '50%',
-          transform: 'translateY(-50%) translateX(-20px)', // Centers vertically and shifts left
-          width: '530px', 
-          height: '370px', 
+          transform: 'translateY(-50%) translateX(-10px)', // Centers vertically and shifts left
+          width: '680px', 
+          height: '390px', 
           display: 'flex', 
           alignItems: 'center', 
           justifyContent: 'center', 
@@ -246,10 +246,10 @@ export default function Hero({ onSearch, onExploreOffers }) {
             onClick={onExploreOffers}
             style={{
               position: 'absolute',
-              bottom: '88px',     // Positioned relative to the 370px height container
-              right: '25px',      // Positioned relative to the 530px width container
-              width: '160px',     // Hotspot width matching the badge button
-              height: '38px',     // Hotspot height matching the badge button
+              bottom: '95px',     // Positioned relative to the 390px height container
+              right: '35px',      // Positioned relative to the 680px width container
+              width: '195px',     // Hotspot width matching the badge button
+              height: '44px',     // Hotspot height matching the badge button
               background: 'transparent',
               border: 'none',
               cursor: 'pointer',

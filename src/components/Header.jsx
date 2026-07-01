@@ -20,7 +20,7 @@ export default function Header({ cartCount, wishlistCount, onCartOpen, onQuoteOp
   };
 
   return (
-    <header style={{ width: '100%', background: 'var(--bg-white)', borderBottom: '1px solid var(--border-color)', zIndex: 100 }}>
+    <header style={{ width: '100%', background: 'var(--bg-white)', borderBottom: '1px solid var(--border-color)', zIndex: 100, position: 'sticky', top: 0 }}>
       {/* Top Utility Bar - Vibrant Orange */}
       <div style={{ background: 'var(--primary)', color: 'white', padding: '8px 0', fontSize: '0.75rem', fontWeight: '600' }}>
         <div className="container-layout" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>

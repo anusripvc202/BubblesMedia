@@ -13,6 +13,7 @@ import WhyChooseUs from '../components/WhyChooseUs';
 import FreeTools from '../components/FreeTools';
 import Testimonials from '../components/Testimonials';
 import ReadyToGrow from '../components/ReadyToGrow';
+import Footer from '../components/Footer';
 
 // Modals
 import CalculatorModal from '../components/CalculatorModal';
@@ -164,52 +165,7 @@ function HomeContent() {
       </main>
 
       {/* Footer Area */}
-      <footer style={{
-        background: 'var(--secondary)',
-        color: 'white',
-        borderTop: '1px solid var(--border-color)',
-        padding: '48px 0 32px 0',
-        marginTop: 'auto'
-      }}>
-        <div className="container-layout" style={{ display: 'flex', flexDirection: 'column', gap: '32px' }}>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '32px', borderBottom: '1px solid rgba(255,255,255,0.1)', paddingBottom: '32px' }} className="footer-links-grid">
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
-              <span style={{ fontSize: '1.4rem', fontWeight: '900', color: 'white', letterSpacing: '-0.5px' }}>
-                BUBBLES <span style={{ color: 'var(--primary)' }}>MEDIA</span>
-              </span>
-              <p style={{ fontSize: '0.8rem', color: 'var(--text-light)', lineHeight: '1.6' }}>
-                India's largest digital solutions marketplace. Delivering high-quality websites, SEO, automation, and tech tools with fixed transparent pricing.
-              </p>
-            </div>
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
-              <h4 style={{ fontSize: '0.85rem', fontWeight: '800', textTransform: 'uppercase', letterSpacing: '0.5px', color: 'white' }}>Quick Links</h4>
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', fontSize: '0.8rem', color: 'var(--text-light)' }}>
-                <a href="/about">About Us</a>
-                <a href="/contact">Contact Us</a>
-                <a href="/offers">Mega Offers</a>
-                <a href="/help">Help Center</a>
-                <a href="/track">Track Order Roadmap</a>
-              </div>
-            </div>
-
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
-              <h4 style={{ fontSize: '0.85rem', fontWeight: '800', textTransform: 'uppercase', letterSpacing: '0.5px', color: 'white' }}>Support Office</h4>
-              <p style={{ fontSize: '0.8rem', color: 'var(--text-light)', lineHeight: '1.6' }}>
-                Bubbles Media Tech Tower<br />
-                HSR Layout Sector 4, Bangalore, India<br />
-                Email: sales@bubblesmedia.in<br />
-                Phone: +91 93815 66798
-              </p>
-            </div>
-          </div>
-
-          {/* Copyright details */}
-          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '10px', fontSize: '0.75rem', color: 'var(--text-light)' }}>
-            <span>© {new Date().getFullYear()} Bubbles Media. All Rights Reserved.</span>
-            <span>Made with ❤️ for Indian Businesses.</span>
-          </div>
-        </div>
-      </footer>
+      <Footer />
 
       {/* Floating Modals */}
       <CalculatorModal

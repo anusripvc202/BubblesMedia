@@ -374,6 +374,24 @@ a {
   box-shadow: 0 0 0 3px rgba(255, 90, 0, 0.08);
 }
 
+/* Footer Hover Effects */
+.footer-link-hover {
+  transition: all 0.2s ease !important;
+}
+.footer-link-hover:hover {
+  color: var(--primary) !important;
+  padding-left: 4px;
+}
+.social-icon-hover {
+  transition: all 0.2s ease !important;
+}
+.social-icon-hover:hover {
+  background: var(--primary) !important;
+  color: white !important;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(255, 107, 0, 0.2);
+}
+
 @media (min-width: 1025px) {
   .solutions-row-desktop {
     display: grid !important;

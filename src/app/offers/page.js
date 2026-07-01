@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import Header from '../../components/Header';
+import Footer from '../../components/Footer';
 import QuoteModal from '../../components/QuoteModal';
 
 export default function Offers() {
@@ -165,33 +166,7 @@ export default function Offers() {
       </main>
 
       {/* Footer */}
-      <footer style={{
-        background: 'var(--secondary)',
-        color: 'white',
-        borderTop: '1px solid var(--border-color)',
-        padding: '36px 0 24px 0'
-      }}>
-        <div className="container-layout" style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
-          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '20px', borderBottom: '1px solid rgba(255,255,255,0.1)', paddingBottom: '24px' }}>
-            <div>
-              <span style={{ fontSize: '1.25rem', fontWeight: '900', color: 'white', letterSpacing: '-0.5px' }}>
-                BUBBLES <span style={{ color: 'var(--primary)' }}>MEDIA</span>
-              </span>
-              <p style={{ fontSize: '0.75rem', color: 'var(--text-light)', marginTop: '4px' }}>
-                India's Premium Digital Solutions Marketplace.
-              </p>
-            </div>
-            <div style={{ display: 'flex', gap: '24px', fontSize: '0.8rem', color: 'var(--text-light)' }}>
-              <a href="/about" style={{ color: 'white' }}>About Us</a>
-              <a href="/contact" style={{ color: 'white' }}>Contact Us</a>
-              <a href="/help" style={{ color: 'white' }}>Help Center</a>
-            </div>
-          </div>
-          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '10px', fontSize: '0.75rem', color: 'var(--text-light)' }}>
-            <span>© {new Date().getFullYear()} Bubbles Media. All Rights Reserved.</span>
-          </div>
-        </div>
-      </footer>
+      <Footer />
 
       {/* Quote Modal */}
       <QuoteModal

@@ -216,21 +216,7 @@ export default function Hero({ onSearch, onExploreOffers }) {
           </div>
         </div>
 
-        {/* Column 2 (Right): Mockup Devices */}
-        <div style={{ position: 'relative', width: '100%', height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', zIndex: 2 }}>
-          <img 
-            src="/hero-devices.png?v=3" 
-            alt="Hero Mockups" 
-            style={{
-              maxHeight: '215px',
-              width: 'auto',
-              height: 'auto',
-              objectFit: 'contain',
-              zIndex: 2,
-              pointerEvents: 'none'
-            }}
-          />
-        </div>
+
 
       </div>
     </div>

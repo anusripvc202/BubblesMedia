@@ -219,14 +219,15 @@ export default function Hero({ onSearch, onExploreOffers }) {
         {/* Column 2 (Right): Combined Mockup & Badge Image */}
         <div style={{ position: 'relative', width: '100%', height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', zIndex: 2 }}>
           <img 
-            src="/hero-combined.png?v=1" 
+            src="/hero-combined.png?v=2" 
             alt="Hero Showcase" 
             style={{
               maxHeight: '215px',
               width: '100%',
               height: 'auto',
               objectFit: 'contain',
-              pointerEvents: 'none'
+              pointerEvents: 'none',
+              clipPath: 'inset(1px 0px 0px 0px)'
             }}
           />
           {/* Clickable hotspot overlay on the badge button */}

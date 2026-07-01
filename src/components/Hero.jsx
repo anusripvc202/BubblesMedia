@@ -217,7 +217,8 @@ export default function Hero({ onSearch, onExploreOffers }) {
         </div>
 
         {/* Column 2 (Middle): Mockup Devices */}
-        <div className="hero-devices-column" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', zIndex: 2, height: '100%', width: '100%', position: 'relative' }}>
+        {/* Column 2 (Right): Mockup Devices */}
+        <div style={{ position: 'relative', width: '100%', height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', zIndex: 2 }}>
           <img 
             src="/hero-devices.png?v=3" 
             alt="Hero Mockups" 
@@ -227,13 +228,24 @@ export default function Hero({ onSearch, onExploreOffers }) {
               height: 'auto',
               objectFit: 'contain',
               zIndex: 2,
-              pointerEvents: 'none'
+              pointerEvents: 'none',
+              transform: 'translateX(-20px)' // Shifts it slightly left to leave room for the badge overlap
             }}
           />
         </div>
 
-        {/* Column 3 (Right): Mega Offers Badge */}
-        <div className="hero-badge-column" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', zIndex: 3, position: 'relative', width: '100%', height: '100%' }}>
+        {/* Mega Offers Badge - Floats Absolute on the Right */}
+        <div style={{ 
+          position: 'absolute', 
+          right: '16px', 
+          top: '50%',
+          transform: 'translateY(-50%)',
+          zIndex: 3, 
+          display: 'flex', 
+          flexDirection: 'column', 
+          alignItems: 'center', 
+          width: '90px' 
+        }} className="hero-badge-column">
           <img 
             src="/hero-badge.png?v=3" 
             alt="Mega Offers Badge" 
@@ -242,7 +254,6 @@ export default function Hero({ onSearch, onExploreOffers }) {
               width: 'auto',
               height: 'auto',
               objectFit: 'contain',
-              zIndex: 2,
               pointerEvents: 'none'
             }}
           />

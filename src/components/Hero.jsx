@@ -27,7 +27,7 @@ export default function Hero({ onSearch, onExploreOffers }) {
         position: 'relative',
         overflow: 'hidden',
         display: 'grid',
-        gridTemplateColumns: '1.2fr 0.8fr',
+        gridTemplateColumns: '0.8fr 1.2fr',
         gap: '16px',
         padding: '16px 24px',
         alignItems: 'center',
@@ -43,7 +43,68 @@ export default function Hero({ onSearch, onExploreOffers }) {
           pointerEvents: 'none'
         }}></div>
 
-        {/* Left Info Column */}
+        {/* Left graphic column rendering the separate transparent graphics */}
+        <div style={{ position: 'relative', width: '100%', height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+          
+          {/* Mockup Devices - Centered */}
+          <img 
+            src="/hero-devices.png?v=3" 
+            alt="Hero Mockups" 
+            style={{
+              maxHeight: '215px',
+              width: 'auto',
+              height: 'auto',
+              objectFit: 'contain',
+              zIndex: 2,
+              pointerEvents: 'none',
+              transform: 'translateX(-20px)' // Shifts it slightly left to leave room for the badge overlap
+            }}
+          />
+
+          {/* Mega Offers Badge - Floats Absolute on the Right */}
+          <div style={{ 
+            position: 'absolute', 
+            right: '8px', 
+            top: '50%',
+            transform: 'translateY(-50%)',
+            zIndex: 3, 
+            display: 'flex', 
+            flexDirection: 'column', 
+            alignItems: 'center', 
+            width: '90px' 
+          }}>
+            <img 
+              src="/hero-badge.png?v=3" 
+              alt="Mega Offers Badge" 
+              style={{
+                maxHeight: '185px',
+                width: 'auto',
+                height: 'auto',
+                objectFit: 'contain',
+                pointerEvents: 'none'
+              }}
+            />
+            {/* Overlay Clickable Hotspot for the Explore Offers button inside the badge graphic */}
+            <button
+              onClick={onExploreOffers}
+              style={{
+                position: 'absolute',
+                bottom: '10px',
+                left: '50%',
+                transform: 'translateX(-50%)',
+                width: '84px',
+                height: '24px',
+                background: 'transparent',
+                border: 'none',
+                cursor: 'pointer',
+                zIndex: 10
+              }}
+              title="Explore Offers"
+            />
+          </div>
+        </div>
+
+        {/* Right Info Column */}
         <div style={{ display: 'flex', flexDirection: 'column', gap: '10px', zIndex: 2 }}>
           
           {/* Main Headline */}
@@ -212,67 +273,6 @@ export default function Hero({ onSearch, onExploreOffers }) {
                 {tag}
               </button>
             ))}
-          </div>
-        </div>
-
-        {/* Right graphic column rendering the separate transparent graphics */}
-        <div style={{ position: 'relative', width: '100%', height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-          
-          {/* Mockup Devices - Centered */}
-          <img 
-            src="/hero-devices.png?v=3" 
-            alt="Hero Mockups" 
-            style={{
-              maxHeight: '215px',
-              width: 'auto',
-              height: 'auto',
-              objectFit: 'contain',
-              zIndex: 2,
-              pointerEvents: 'none',
-              transform: 'translateX(-20px)' // Shifts it slightly left to leave room for the badge overlap
-            }}
-          />
-
-          {/* Mega Offers Badge - Floats Absolute on the Right */}
-          <div style={{ 
-            position: 'absolute', 
-            right: '8px', 
-            top: '50%',
-            transform: 'translateY(-50%)',
-            zIndex: 3, 
-            display: 'flex', 
-            flexDirection: 'column', 
-            alignItems: 'center', 
-            width: '90px' 
-          }}>
-            <img 
-              src="/hero-badge.png?v=3" 
-              alt="Mega Offers Badge" 
-              style={{
-                maxHeight: '185px',
-                width: 'auto',
-                height: 'auto',
-                objectFit: 'contain',
-                pointerEvents: 'none'
-              }}
-            />
-            {/* Overlay Clickable Hotspot for the Explore Offers button inside the badge graphic */}
-            <button
-              onClick={onExploreOffers}
-              style={{
-                position: 'absolute',
-                bottom: '10px',
-                left: '50%',
-                transform: 'translateX(-50%)',
-                width: '84px',
-                height: '24px',
-                background: 'transparent',
-                border: 'none',
-                cursor: 'pointer',
-                zIndex: 10
-              }}
-              title="Explore Offers"
-            />
           </div>
         </div>
 

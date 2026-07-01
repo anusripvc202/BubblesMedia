@@ -225,14 +225,14 @@ export default function Hero({ onSearch, onExploreOffers }) {
           alignItems: 'center', 
           justifyContent: 'center', 
           zIndex: 2,
-          transform: 'translateX(-40px)' // Moves the entire graphic block leftward
+          transform: 'translateX(-50px)' // Moves the entire graphic block further leftward
         }}>
           <img 
             src="/hero-combined.png?v=3" 
             alt="Hero Showcase" 
             style={{
-              maxHeight: '260px', // Increased height
-              width: '125%',       // Increased width
+              maxHeight: '295px', // Increased height
+              width: '140%',       // Increased width
               height: 'auto',
               objectFit: 'contain',
               pointerEvents: 'none'
@@ -243,10 +243,10 @@ export default function Hero({ onSearch, onExploreOffers }) {
             onClick={onExploreOffers}
             style={{
               position: 'absolute',
-              bottom: '22px',     // Adjusted for the scale increase
-              right: '-10px',      // Adjusted for the scale increase
-              width: '140px',     // Scaled up width
-              height: '35px',     // Scaled up height
+              bottom: '25px',     // Adjusted for the scale increase
+              right: '-25px',      // Adjusted for the scale increase
+              width: '160px',     // Scaled up width
+              height: '40px',     // Scaled up height
               background: 'transparent',
               border: 'none',
               cursor: 'pointer',

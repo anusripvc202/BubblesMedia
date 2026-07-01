@@ -158,24 +158,24 @@ export default function SolutionsGrid({ searchTerm, activeCategory, onEnquire })
               key={sol.id}
               className="glass-panel solutions-card-desktop hover-card"
               style={{
-                padding: '12px 10px',
+                padding: '16px 12px',
                 display: 'flex',
                 flexDirection: 'column',
-                alignItems: 'stretch',
-                textAlign: 'left',
+                alignItems: 'center',
+                textAlign: 'center',
                 borderRadius: '8px',
                 background: 'var(--bg-white)',
                 boxShadow: 'var(--shadow-sm)',
                 border: '1px solid var(--border-color)'
               }}
             >
-              {/* Central Icon */}
+              {/* Circular Icon */}
               <div style={{
                 background: 'var(--primary-light)',
                 color: 'var(--primary)',
-                width: '32px',
-                height: '32px',
-                borderRadius: '8px',
+                width: '36px',
+                height: '36px',
+                borderRadius: '50%',
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
@@ -186,70 +186,37 @@ export default function SolutionsGrid({ searchTerm, activeCategory, onEnquire })
               </div>
 
               {/* Title */}
-              <h3 style={{ fontSize: '0.75rem', fontWeight: '800', marginBottom: '4px', color: 'var(--text-dark)', letterSpacing: '-0.01em', minHeight: '28px', display: 'flex', alignItems: 'center', lineHeight: '1.2' }}>
+              <h3 style={{ fontSize: '0.72rem', fontWeight: '800', marginBottom: '4px', color: 'var(--secondary)', letterSpacing: '-0.01em', minHeight: '28px', display: 'flex', alignItems: 'center', lineHeight: '1.2' }}>
                 {sol.title}
               </h3>
 
               {/* Pricing */}
-              <div style={{ display: 'flex', alignItems: 'baseline', gap: '3px', marginBottom: '8px' }}>
-                <span style={{ fontSize: '0.58rem', color: 'var(--text-light)', fontWeight: '500' }}>Starting from</span>
-                <span style={{ fontSize: '0.9rem', fontWeight: '800', color: 'var(--primary)', fontFamily: 'var(--font-display)' }}>{sol.price}</span>
-                {sol.period && <span style={{ fontSize: '0.58rem', color: 'var(--text-light)', fontWeight: '500' }}>{sol.period}</span>}
+              <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '1px', marginBottom: '12px' }}>
+                <span style={{ fontSize: '0.58rem', color: 'var(--text-light)', fontWeight: '600' }}>Starting from</span>
+                <span style={{ fontSize: '0.85rem', fontWeight: '900', color: 'var(--primary)', fontFamily: 'var(--font-display)' }}>{sol.price}</span>
               </div>
 
-              {/* Bullet Features */}
-              <ul style={{ listStyle: 'none', padding: 0, margin: '0 0 10px 0', flex: 1, display: 'flex', flexDirection: 'column', gap: '4px' }}>
-                {sol.features.map((feat, idx) => (
-                  <li key={idx} style={{ display: 'flex', alignItems: 'flex-start', gap: '4px', fontSize: '0.58rem', color: 'var(--text-medium)', lineHeight: '1.2' }}>
-                    <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#22C55E" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" style={{ marginTop: '1px', flexShrink: 0 }}>
-                      <polyline points="20 6 9 17 4 12"></polyline>
-                    </svg>
-                    <span>{feat}</span>
-                  </li>
-                ))}
-              </ul>
-
-              {/* Buttons */}
-              <div style={{ display: 'flex', gap: '4px', marginTop: 'auto' }}>
-                <Link
-                  href={`/services/${sol.id}`}
-                  style={{
-                    flex: 1,
-                    padding: '5px 2px',
-                    fontSize: '0.62rem',
-                    fontWeight: '700',
-                    color: 'var(--primary)',
-                    border: '1px solid var(--primary)',
-                    borderRadius: '4px',
-                    textAlign: 'center',
-                    background: 'transparent',
-                    display: 'block',
-                    transition: 'all 0.2s ease'
-                  }}
-                  className="btn-outline-primary-hover"
-                >
-                  Details
-                </Link>
-                <button
-                  onClick={() => onEnquire && onEnquire(sol)}
-                  style={{
-                    flex: 1,
-                    padding: '5px 2px',
-                    fontSize: '0.62rem',
-                    fontWeight: '700',
-                    color: 'white',
-                    background: 'var(--primary)',
-                    borderRadius: '4px',
-                    textAlign: 'center',
-                    border: 'none',
-                    cursor: 'pointer',
-                    transition: 'all 0.2s ease'
-                  }}
-                  className="hover-card"
-                >
-                  Book Now
-                </button>
-              </div>
+              {/* View Details Button */}
+              <Link
+                href={`/services/${sol.id}`}
+                style={{
+                  width: '100%',
+                  padding: '6px 8px',
+                  fontSize: '0.7rem',
+                  fontWeight: '700',
+                  color: 'var(--primary)',
+                  background: 'var(--primary-light)',
+                  border: 'none',
+                  borderRadius: '4px',
+                  textAlign: 'center',
+                  display: 'block',
+                  marginTop: 'auto',
+                  transition: 'all 0.2s ease'
+                }}
+                className="hover-card"
+              >
+                View Details
+              </Link>
             </div>
           ))}
         </div>

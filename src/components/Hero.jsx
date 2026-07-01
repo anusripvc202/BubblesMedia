@@ -16,23 +16,22 @@ export default function Hero({ onSearch, onExploreOffers }) {
   const popularTags = ['Website', 'SEO', 'Mobile App', 'WhatsApp API', 'Logo Design'];
 
   return (
-    <div style={{ position: 'relative', width: '100%', marginBottom: '24px' }}>
-
+    <div style={{ position: 'relative', width: '100%', marginBottom: '16px' }}>
       {/* Main Hero Card Container - Vibrant Orange Theme matching Image 1 exactly */}
       <div className="hero-card" style={{
         background: 'linear-gradient(135deg, #FF7E21 0%, #FF5100 100%)',
         color: 'white',
         border: 'none',
-        borderRadius: '12px',
-        boxShadow: 'var(--shadow-md)',
+        borderRadius: '8px',
+        boxShadow: 'var(--shadow-sm)',
         position: 'relative',
         overflow: 'hidden',
         display: 'grid',
-        gridTemplateColumns: '1.1fr 0.9fr',
-        gap: '24px',
-        padding: '28px 32px',
+        gridTemplateColumns: '1.2fr 0.8fr',
+        gap: '16px',
+        padding: '16px 24px',
         alignItems: 'center',
-        minHeight: '340px'
+        minHeight: '235px'
       }}>
         {/* Decorative background grid pattern */}
         <div style={{
@@ -45,15 +44,15 @@ export default function Hero({ onSearch, onExploreOffers }) {
         }}></div>
 
         {/* Left Info Column */}
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', zIndex: 2 }}>
-
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '10px', zIndex: 2 }}>
+          
           {/* Main Headline */}
-          <h1 style={{ fontSize: '2.5rem', fontWeight: '900', lineHeight: '1.1', color: 'white', margin: 0 }}>
+          <h1 style={{ fontSize: '2.1rem', fontWeight: '900', lineHeight: '1.1', color: 'white', margin: 0 }}>
             One Platform.<br />All Digital Solutions.
           </h1>
 
           {/* Subtitle */}
-          <p style={{ fontSize: '0.85rem', opacity: 0.95, fontWeight: '500', lineHeight: '1.4', maxWidth: '440px', color: 'white', margin: 0 }}>
+          <p style={{ fontSize: '0.8rem', opacity: 0.95, fontWeight: '500', lineHeight: '1.3', maxWidth: '390px', color: 'white', margin: 0 }}>
             Websites, Apps, Marketing, Branding, AI & More – Everything You Need to Grow Your Business Online.
           </p>
 
@@ -61,19 +60,19 @@ export default function Hero({ onSearch, onExploreOffers }) {
           <div style={{
             display: 'grid',
             gridTemplateColumns: 'repeat(4, 1fr)',
-            gap: '8px',
+            gap: '6px',
             background: 'rgba(255, 255, 255, 0.12)',
             border: '1px solid rgba(255, 255, 255, 0.2)',
-            padding: '10px 12px',
-            borderRadius: '8px',
-            maxWidth: '520px'
+            padding: '8px 10px',
+            borderRadius: '6px',
+            maxWidth: '450px'
           }}>
             {[
               {
                 num: '5000+',
                 label: 'Happy Clients',
                 icon: (
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                     <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
                     <circle cx="12" cy="7" r="4" />
                   </svg>
@@ -83,7 +82,7 @@ export default function Hero({ onSearch, onExploreOffers }) {
                 num: '15000+',
                 label: 'Projects Delivered',
                 icon: (
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                     <rect x="2" y="7" width="20" height="14" rx="2" ry="2" />
                     <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" />
                   </svg>
@@ -93,7 +92,7 @@ export default function Hero({ onSearch, onExploreOffers }) {
                 num: '50+',
                 label: 'Expert Team',
                 icon: (
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                     <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
                     <circle cx="9" cy="7" r="4" />
                     <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
@@ -105,19 +104,19 @@ export default function Hero({ onSearch, onExploreOffers }) {
                 num: '24/7',
                 label: 'Support',
                 icon: (
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                     <circle cx="12" cy="12" r="10" />
                     <polyline points="12 6 12 12 16 14" />
                   </svg>
                 )
               }
             ].map((stat, idx) => (
-              <div key={idx} style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
+              <div key={idx} style={{ display: 'flex', alignItems: 'center', gap: '4px' }}>
                 <div style={{
                   background: 'rgba(255, 255, 255, 0.15)',
                   borderRadius: '50%',
-                  width: '24px',
-                  height: '24px',
+                  width: '20px',
+                  height: '20px',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
@@ -126,10 +125,10 @@ export default function Hero({ onSearch, onExploreOffers }) {
                   {stat.icon}
                 </div>
                 <div style={{ display: 'flex', flexDirection: 'column', textAlign: 'left' }}>
-                  <span style={{ fontSize: '0.85rem', fontWeight: '900', color: 'white', lineHeight: 1.1, fontFamily: 'var(--font-display)' }}>
+                  <span style={{ fontSize: '0.78rem', fontWeight: '900', color: 'white', lineHeight: 1.1, fontFamily: 'var(--font-display)' }}>
                     {stat.num}
                   </span>
-                  <span style={{ fontSize: '0.48rem', opacity: 0.9, fontWeight: '700', color: 'white', textTransform: 'uppercase', marginTop: '1px', lineHeight: 1 }}>
+                  <span style={{ fontSize: '0.45rem', opacity: 0.9, fontWeight: '700', color: 'white', textTransform: 'uppercase', marginTop: '1px', lineHeight: 1 }}>
                     {stat.label}
                   </span>
                 </div>
@@ -142,13 +141,13 @@ export default function Hero({ onSearch, onExploreOffers }) {
             display: 'flex',
             background: 'white',
             borderRadius: '6px',
-            padding: '3px',
+            padding: '2px',
             boxShadow: 'var(--shadow-sm)',
-            maxWidth: '520px',
+            maxWidth: '450px',
             width: '100%'
           }}>
-            <span style={{ paddingLeft: '12px', display: 'flex', alignItems: 'center', color: 'var(--text-light)' }}>
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+            <span style={{ paddingLeft: '10px', display: 'flex', alignItems: 'center', color: 'var(--text-light)' }}>
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                 <circle cx="11" cy="11" r="8"></circle>
                 <path d="m21 21-4.3-4.3"></path>
               </svg>
@@ -162,26 +161,26 @@ export default function Hero({ onSearch, onExploreOffers }) {
                 flex: 1,
                 border: 'none',
                 background: 'transparent',
-                padding: '10px 12px',
-                fontSize: '0.85rem',
+                padding: '6px 8px',
+                fontSize: '0.8rem',
                 outline: 'none',
                 color: 'var(--text-dark)'
               }}
             />
             <button type="submit" className="btn-primary" style={{
-              padding: '8px 20px',
+              padding: '6px 14px',
               borderRadius: '4px',
               background: 'var(--primary)',
               color: 'white',
               fontWeight: '700',
-              fontSize: '0.85rem',
+              fontSize: '0.75rem',
               display: 'flex',
               alignItems: 'center',
-              gap: '6px',
+              gap: '4px',
               border: 'none',
               cursor: 'pointer'
             }}>
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
+              <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
                 <circle cx="11" cy="11" r="8"></circle>
                 <path d="m21 21-4.3-4.3"></path>
               </svg>
@@ -190,8 +189,8 @@ export default function Hero({ onSearch, onExploreOffers }) {
           </form>
 
           {/* Popular searches tags */}
-          <div style={{ display: 'flex', alignItems: 'center', gap: '8px', flexWrap: 'wrap' }}>
-            <span style={{ fontSize: '0.7rem', fontWeight: '700', color: 'white', opacity: 0.95 }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '6px', flexWrap: 'wrap' }}>
+            <span style={{ fontSize: '0.65rem', fontWeight: '700', color: 'white', opacity: 0.95 }}>
               Popular Searches:
             </span>
             {popularTags.map((tag) => (
@@ -199,9 +198,9 @@ export default function Hero({ onSearch, onExploreOffers }) {
                 key={tag}
                 onClick={() => handlePopularSearch(tag)}
                 style={{
-                  fontSize: '0.65rem',
+                  fontSize: '0.6rem',
                   fontWeight: '700',
-                  padding: '3px 8px',
+                  padding: '2px 6px',
                   borderRadius: '4px',
                   background: 'transparent',
                   color: 'white',
@@ -216,38 +215,65 @@ export default function Hero({ onSearch, onExploreOffers }) {
           </div>
         </div>
 
-        {/* Right graphic column rendering the high-res cropped devices graphic */}
+        {/* Right graphic column rendering the separate transparent graphics */}
         <div style={{ position: 'relative', width: '100%', height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-          <img
-            src="/Screenshot 2026-07-01 125319.png"
-            alt="Hero Mockups and Offer Badge"
+          
+          {/* Mockup Devices - Centered */}
+          <img 
+            src="/hero-devices.png?v=3" 
+            alt="Hero Mockups" 
             style={{
-              maxWidth: '100%',
-              maxHeight: '360px',
+              maxHeight: '215px',
               width: 'auto',
               height: 'auto',
               objectFit: 'contain',
               zIndex: 2,
-              pointerEvents: 'none'
+              pointerEvents: 'none',
+              transform: 'translateX(-20px)' // Shifts it slightly left to leave room for the badge overlap
             }}
           />
 
-          {/* Overlay Clickable Hotspot for the Explore Offers button inside the graphic */}
-          <button
-            onClick={onExploreOffers}
-            style={{
-              position: 'absolute',
-              bottom: '22%',
-              right: '12%',
-              width: '100px',
-              height: '32px',
-              background: 'transparent',
-              border: 'none',
-              cursor: 'pointer',
-              zIndex: 10
-            }}
-            title="Explore Offers"
-          />
+          {/* Mega Offers Badge - Floats Absolute on the Right */}
+          <div style={{ 
+            position: 'absolute', 
+            right: '8px', 
+            top: '50%',
+            transform: 'translateY(-50%)',
+            zIndex: 3, 
+            display: 'flex', 
+            flexDirection: 'column', 
+            alignItems: 'center', 
+            width: '90px' 
+          }}>
+            <img 
+              src="/hero-badge.png?v=3" 
+              alt="Mega Offers Badge" 
+              style={{
+                maxHeight: '185px',
+                width: 'auto',
+                height: 'auto',
+                objectFit: 'contain',
+                pointerEvents: 'none'
+              }}
+            />
+            {/* Overlay Clickable Hotspot for the Explore Offers button inside the badge graphic */}
+            <button
+              onClick={onExploreOffers}
+              style={{
+                position: 'absolute',
+                bottom: '10px',
+                left: '50%',
+                transform: 'translateX(-50%)',
+                width: '84px',
+                height: '24px',
+                background: 'transparent',
+                border: 'none',
+                cursor: 'pointer',
+                zIndex: 10
+              }}
+              title="Explore Offers"
+            />
+          </div>
         </div>
 
       </div>

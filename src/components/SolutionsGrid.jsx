@@ -141,13 +141,13 @@ export default function SolutionsGrid({ searchTerm, activeCategory, onEnquire })
           <p style={{ fontWeight: '700', color: 'var(--text-dark)' }}>No Solutions Found</p>
         </div>
       ) : (
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(200px, 1fr))', gap: '20px' }}>
+        <div className="solutions-row-desktop" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(200px, 1fr))', gap: '20px' }}>
           {filteredSolutions.map((sol) => (
             <div
               key={sol.id}
-              className="glass-panel"
+              className="glass-panel solutions-card-desktop hover-card"
               style={{
-                padding: '24px',
+                padding: '16px 12px',
                 display: 'flex',
                 flexDirection: 'column',
                 alignItems: 'center',
@@ -162,27 +162,27 @@ export default function SolutionsGrid({ searchTerm, activeCategory, onEnquire })
               <div style={{
                 background: 'var(--primary-light)',
                 color: 'var(--primary)',
-                width: '52px',
-                height: '52px',
+                width: '36px',
+                height: '36px',
                 borderRadius: '50%',
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
-                marginBottom: '16px',
+                marginBottom: '8px',
                 flexShrink: 0
               }}>
                 {sol.icon}
               </div>
 
               {/* Title */}
-              <h3 style={{ fontSize: '0.95rem', fontWeight: '800', marginBottom: '8px', color: 'var(--secondary)', letterSpacing: '-0.01em', minHeight: '36px', display: 'flex', alignItems: 'center' }}>
+              <h3 style={{ fontSize: '0.78rem', fontWeight: '800', marginBottom: '4px', color: 'var(--secondary)', letterSpacing: '-0.01em', minHeight: '28px', display: 'flex', alignItems: 'center', lineHeight: '1.2' }}>
                 {sol.title}
               </h3>
 
               {/* Pricing */}
-              <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '2px', marginBottom: '20px' }}>
-                <span style={{ fontSize: '0.7rem', color: 'var(--text-light)', fontWeight: '600' }}>Starting from</span>
-                <span style={{ fontSize: '1.1rem', fontWeight: '900', color: 'var(--primary)', fontFamily: 'var(--font-display)' }}>{sol.price}</span>
+              <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '1px', marginBottom: '12px' }}>
+                <span style={{ fontSize: '0.62rem', color: 'var(--text-light)', fontWeight: '600' }}>Starting from</span>
+                <span style={{ fontSize: '0.95rem', fontWeight: '900', color: 'var(--primary)', fontFamily: 'var(--font-display)' }}>{sol.price}</span>
               </div>
 
               {/* A Single Outlined Details Button at bottom */}
@@ -190,8 +190,8 @@ export default function SolutionsGrid({ searchTerm, activeCategory, onEnquire })
                 href={`/services/${sol.id}`}
                 style={{
                   width: '100%',
-                  padding: '8px 12px',
-                  fontSize: '0.75rem',
+                  padding: '6px 8px',
+                  fontSize: '0.7rem',
                   fontWeight: '700',
                   color: 'var(--primary)',
                   border: '1px solid var(--primary)',

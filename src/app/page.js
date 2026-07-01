@@ -94,12 +94,12 @@ function HomeContent() {
               onSearch={(term) => setSearchTerm(term)}
               onExploreOffers={() => window.location.href = '/offers'}
             />
+            <TrustBanner />
             <SolutionsGrid
               searchTerm={searchTerm}
               activeCategory={activeCategory}
               onEnquire={handleEnquire}
             />
-            <TrustBanner />
             <PromoBanners
               onSelectPackage={handleSelectPackage}
             />

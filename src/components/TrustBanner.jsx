@@ -60,26 +60,26 @@ export default function TrustBanner() {
       background: 'var(--bg-white)',
       border: '1px solid var(--border-color)',
       borderRadius: 'var(--radius-md)',
-      padding: '16px 24px',
+      padding: '8px 12px',
       boxShadow: 'var(--shadow-sm)',
       display: 'grid',
-      gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))',
-      gap: '16px',
-      marginBottom: '32px'
+      gridTemplateColumns: 'repeat(5, 1fr)',
+      gap: '8px',
+      marginBottom: '16px'
     }}>
       {trustItems.map((item, index) => (
         <div key={index} style={{
           display: 'flex',
           alignItems: 'center',
-          gap: '12px',
+          gap: '8px',
           borderRight: index === trustItems.length - 1 ? 'none' : '1px solid var(--border-color-light)',
-          paddingRight: '12px'
+          paddingRight: '8px'
         }} className="trust-item-responsive">
           <div style={{
             background: 'var(--primary-light)',
             color: 'var(--primary)',
-            width: '36px',
-            height: '36px',
+            width: '28px',
+            height: '28px',
             borderRadius: '50%',
             display: 'flex',
             alignItems: 'center',
@@ -89,8 +89,8 @@ export default function TrustBanner() {
             {item.icon}
           </div>
           <div>
-            <h4 style={{ fontSize: '0.8rem', fontWeight: '800', color: 'var(--secondary)', letterSpacing: '-0.01em' }}>{item.title}</h4>
-            <p style={{ fontSize: '0.7rem', color: 'var(--text-light)', marginTop: '1px' }}>{item.desc}</p>
+            <h4 style={{ fontSize: '0.72rem', fontWeight: '800', color: 'var(--secondary)', letterSpacing: '-0.01em' }}>{item.title}</h4>
+            <p style={{ fontSize: '0.62rem', color: 'var(--text-light)', marginTop: '1px' }}>{item.desc}</p>
           </div>
         </div>
       ))}

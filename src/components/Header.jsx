@@ -22,19 +22,19 @@ export default function Header({ cartCount, wishlistCount, onCartOpen, onQuoteOp
   return (
     <header style={{ width: '100%', background: 'var(--bg-white)', borderBottom: '1px solid var(--border-color)', zIndex: 100, position: 'sticky', top: 0 }}>
       {/* Top Utility Bar - Vibrant Orange */}
-      <div style={{ background: 'var(--primary)', color: 'white', padding: '8px 0', fontSize: '0.75rem', fontWeight: '600' }}>
+      <div style={{ background: 'var(--primary)', color: 'white', padding: '4px 0', fontSize: '0.72rem', fontWeight: '600' }}>
         <div className="container-layout" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
             <span>⭐</span> 
             <span>India's Largest Digital Solutions Marketplace</span>
           </div>
-          <div style={{ display: 'flex', gap: '24px', alignItems: 'center' }}>
+          <div style={{ display: 'flex', gap: '20px', alignItems: 'center' }}>
             <Link href="/offers" style={{ color: 'white', display: 'flex', alignItems: 'center', gap: '4px' }}>
               🎁 Offers
             </Link>
             <Link href="/help" style={{ color: 'white' }}>❓ Help Center</Link>
             <Link href="/track" style={{ color: 'white' }}>📋 Track Order</Link>
-            <a href="#partner" onClick={(e) => { e.preventDefault(); onQuoteOpen(); }} style={{ color: 'white', background: 'rgba(255,255,255,0.2)', padding: '3px 10px', borderRadius: '4px', fontWeight: '700' }}>
+            <a href="#partner" onClick={(e) => { e.preventDefault(); onQuoteOpen(); }} style={{ color: 'white', background: 'rgba(255,255,255,0.2)', padding: '2px 8px', borderRadius: '4px', fontWeight: '700' }}>
               Become a Partner
             </a>
           </div>
@@ -42,20 +42,20 @@ export default function Header({ cartCount, wishlistCount, onCartOpen, onQuoteOp
       </div>
 
       {/* Main Header Bar */}
-      <div className="container-layout" style={{ padding: '16px 24px', display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '24px', flexWrap: 'wrap' }}>
+      <div className="container-layout" style={{ padding: '8px 24px', display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '16px', flexWrap: 'wrap' }}>
         
         {/* Logo - Bubbles Media matching original */}
-        <a href="/" style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-          <div style={{ display: 'flex', gap: '3px' }}>
-            <span style={{ width: '12px', height: '12px', background: 'var(--primary)', borderRadius: '50%', display: 'inline-block' }}></span>
-            <span style={{ width: '16px', height: '16px', background: 'var(--primary)', borderRadius: '50%', display: 'inline-block', transform: 'translateY(-4px)' }}></span>
-            <span style={{ width: '10px', height: '10px', background: 'var(--primary)', borderRadius: '50%', display: 'inline-block', transform: 'translateY(2px)' }}></span>
+        <a href="/" style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+          <div style={{ display: 'flex', gap: '2px' }}>
+            <span style={{ width: '10px', height: '10px', background: 'var(--primary)', borderRadius: '50%', display: 'inline-block' }}></span>
+            <span style={{ width: '13px', height: '13px', background: 'var(--primary)', borderRadius: '50%', display: 'inline-block', transform: 'translateY(-3px)' }}></span>
+            <span style={{ width: '8px', height: '8px', background: 'var(--primary)', borderRadius: '50%', display: 'inline-block', transform: 'translateY(1px)' }}></span>
           </div>
           <div>
-            <h1 style={{ fontSize: '1.5rem', fontWeight: '900', letterSpacing: '-0.5px', textTransform: 'uppercase', color: 'var(--primary)', lineHeight: '1' }}>
+            <h1 style={{ fontSize: '1.3rem', fontWeight: '900', letterSpacing: '-0.5px', textTransform: 'uppercase', color: 'var(--primary)', lineHeight: '1' }}>
               BUBBLES
             </h1>
-            <span style={{ fontSize: '0.75rem', fontWeight: '800', letterSpacing: '4.5px', textTransform: 'uppercase', color: 'var(--secondary)', display: 'block', marginTop: '1px' }}>
+            <span style={{ fontSize: '0.65rem', fontWeight: '800', letterSpacing: '4.1px', textTransform: 'uppercase', color: 'var(--secondary)', display: 'block', marginTop: '1px' }}>
               MEDIA
             </span>
           </div>

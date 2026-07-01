@@ -216,26 +216,29 @@ export default function Hero({ onSearch, onExploreOffers }) {
           </div>
         </div>
 
-        {/* Column 2 (Right): Combined Mockup & Badge Image */}
-        <div style={{
-          position: 'relative',
-          width: '100%',
-          height: '100%',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
+        {/* Column 2 (Right): Combined Mockup & Badge Image (Absolute Float for Maximum Size) */}
+        <div style={{ 
+          position: 'absolute', 
+          right: '10px', 
+          top: '50%',
+          transform: 'translateY(-50%) translateX(-20px)', // Centers vertically and shifts left
+          width: '530px', 
+          height: '370px', 
+          display: 'flex', 
+          alignItems: 'center', 
+          justifyContent: 'center', 
           zIndex: 2,
-          transform: 'translateX(-50px)' // Moves the entire graphic block further leftward
+          pointerEvents: 'none'
         }}>
-          <img
-            src="/hero-combined.png?v=3"
-            alt="Hero Showcase"
+          <img 
+            src="/hero-combined.png?v=3" 
+            alt="Hero Showcase" 
             style={{
-              maxHeight: '395px', // Increased height
-              width: '240%',       // Increased width
+              maxHeight: '100%',
+              maxWidth: '100%',
+              width: 'auto',
               height: 'auto',
-              objectFit: 'contain',
-              pointerEvents: 'none'
+              objectFit: 'contain'
             }}
           />
           {/* Clickable hotspot overlay on the badge button */}
@@ -243,14 +246,15 @@ export default function Hero({ onSearch, onExploreOffers }) {
             onClick={onExploreOffers}
             style={{
               position: 'absolute',
-              bottom: '25px',     // Adjusted for the scale increase
-              right: '-25px',      // Adjusted for the scale increase
-              width: '160px',     // Scaled up width
-              height: '40px',     // Scaled up height
+              bottom: '88px',     // Positioned relative to the 370px height container
+              right: '25px',      // Positioned relative to the 530px width container
+              width: '160px',     // Hotspot width matching the badge button
+              height: '38px',     // Hotspot height matching the badge button
               background: 'transparent',
               border: 'none',
               cursor: 'pointer',
-              zIndex: 10
+              zIndex: 10,
+              pointerEvents: 'auto' // Re-enable clicks on this button
             }}
             title="Explore Offers"
           />

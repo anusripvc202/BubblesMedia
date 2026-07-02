@@ -121,7 +121,7 @@ export default function SolutionsGrid({ searchTerm, activeCategory, onEnquire })
           <p style={{ fontWeight: '700', color: 'var(--text-dark)' }}>No Solutions Found</p>
         </div>
       ) : (
-        <div className="solutions-row-desktop" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(200px, 1fr))', gap: '20px' }}>
+        <div className="solutions-row-desktop" style={{ display: 'grid' }}>
           {filteredSolutions.map((sol) => (
             <div
               key={sol.id}

@@ -21,6 +21,7 @@ const solutions = [
     category: 'websites',
     title: 'E-commerce Websites',
     price: '₹14,999',
+    popular: true,
     features: ['Unlimited Products & Categories', 'Payment Gateway Integration', 'Inventory & Order Tracking', 'Admin Dashboard & Reports'],
     icon: (
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
@@ -35,6 +36,7 @@ const solutions = [
     category: 'mobile-apps',
     title: 'Mobile App Development',
     price: '₹49,999',
+    popular: true,
     features: ['Android & iOS App Versions', 'Custom UI/UX & Prototypes', 'Push Notifications Integration', 'Google Play & App Store Submit'],
     icon: (
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
@@ -113,6 +115,15 @@ const solutions = [
 ];
 
 export default function SolutionsGrid({ searchTerm, activeCategory, onEnquire }) {
+  const categoryThemes = {
+    'websites': { color: '#3b82f6', bg: '#eff6ff' },
+    'mobile-apps': { color: '#8b5cf6', bg: '#f5f3ff' },
+    'digital-marketing': { color: '#10b981', bg: '#ecfdf5' },
+    'whatsapp-marketing': { color: '#22c55e', bg: '#f0fdf4' },
+    'gmb': { color: '#f97316', bg: '#fff7ed' },
+    'branding-graphics': { color: '#ec4899', bg: '#fdf2f8' }
+  };
+
   const filteredSolutions = solutions.filter((sol) => {
     const matchesSearch = searchTerm
       ? sol.title.toLowerCase().includes(searchTerm.toLowerCase())
@@ -153,72 +164,82 @@ export default function SolutionsGrid({ searchTerm, activeCategory, onEnquire })
         </div>
       ) : (
         <div className="solutions-row-desktop" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(200px, 1fr))', gap: '20px' }}>
-          {filteredSolutions.map((sol) => (
-            <div
-              key={sol.id}
-              className="glass-panel solutions-card-desktop hover-card"
-              style={{
-                padding: '16px 12px',
-                display: 'flex',
-                flexDirection: 'column',
-                alignItems: 'center',
-                textAlign: 'center',
-                borderRadius: '8px',
-                background: 'var(--bg-white)',
-                boxShadow: 'var(--shadow-sm)',
-                border: '1px solid var(--border-color)'
-              }}
-            >
-              {/* Circular Icon */}
-              <div style={{
-                background: 'var(--primary-light)',
-                color: 'var(--primary)',
-                width: '36px',
-                height: '36px',
-                borderRadius: '50%',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                marginBottom: '8px',
-                flexShrink: 0
-              }}>
-                {sol.icon}
-              </div>
-
-              {/* Title */}
-              <h3 style={{ fontSize: '0.72rem', fontWeight: '800', marginBottom: '4px', color: 'var(--secondary)', letterSpacing: '-0.01em', minHeight: '28px', display: 'flex', alignItems: 'center', lineHeight: '1.2' }}>
-                {sol.title}
-              </h3>
-
-              {/* Pricing */}
-              <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '1px', marginBottom: '12px' }}>
-                <span style={{ fontSize: '0.58rem', color: 'var(--text-light)', fontWeight: '600' }}>Starting from</span>
-                <span style={{ fontSize: '0.85rem', fontWeight: '900', color: 'var(--primary)', fontFamily: 'var(--font-display)' }}>{sol.price}</span>
-              </div>
-
-              {/* View Details Button */}
-              <Link
-                href={`/services/${sol.id}`}
+          {filteredSolutions.map((sol) => {
+            const theme = categoryThemes[sol.category] || { color: 'var(--primary)', bg: 'var(--primary-light)' };
+            return (
+              <div
+                key={sol.id}
+                className={`glass-panel solutions-card-desktop hover-card ${sol.popular ? 'popular-highlight' : ''}`}
                 style={{
-                  width: '100%',
-                  padding: '6px 8px',
-                  fontSize: '0.7rem',
-                  fontWeight: '700',
-                  color: 'var(--primary)',
-                  background: 'var(--primary-light)',
-                  border: 'none',
-                  borderRadius: '4px',
+                  '--card-theme': theme.color,
+                  '--card-theme-light': theme.bg,
+                  padding: '16px 12px',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  alignItems: 'center',
                   textAlign: 'center',
-                  display: 'block',
-                  marginTop: 'auto',
-                  transition: 'all 0.2s ease'
+                  borderRadius: '8px',
+                  background: 'var(--bg-white)',
+                  boxShadow: 'var(--shadow-sm)',
+                  border: '1px solid var(--border-color)'
                 }}
-                className="hover-card"
               >
-                View Details
-              </Link>
-            </div>
-          ))}
+                {sol.popular && (
+                  <div className="card-popular-badge">
+                    Popular
+                  </div>
+                )}
+                {/* Circular Icon */}
+                <div className="solutions-icon-container" style={{
+                  background: 'var(--card-theme-light)',
+                  color: 'var(--card-theme)',
+                  width: '36px',
+                  height: '36px',
+                  borderRadius: '50%',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  marginBottom: '8px',
+                  flexShrink: 0
+                }}>
+                  {sol.icon}
+                </div>
+
+                {/* Title */}
+                <h3 style={{ fontSize: '0.72rem', fontWeight: '800', marginBottom: '4px', color: 'var(--secondary)', letterSpacing: '-0.01em', minHeight: '28px', display: 'flex', alignItems: 'center', lineHeight: '1.2' }}>
+                  {sol.title}
+                </h3>
+
+                {/* Pricing */}
+                <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '1px', marginBottom: '12px' }}>
+                  <span style={{ fontSize: '0.58rem', color: 'var(--text-light)', fontWeight: '600' }}>Starting from</span>
+                  <span style={{ fontSize: '0.85rem', fontWeight: '900', color: 'var(--primary)', fontFamily: 'var(--font-display)' }}>{sol.price}</span>
+                </div>
+
+                {/* View Details Button */}
+                <Link
+                  href={`/services/${sol.id}`}
+                  style={{
+                    width: '100%',
+                    padding: '6px 8px',
+                    fontSize: '0.7rem',
+                    fontWeight: '700',
+                    color: 'var(--card-theme)',
+                    background: 'var(--card-theme-light)',
+                    border: 'none',
+                    borderRadius: '4px',
+                    textAlign: 'center',
+                    display: 'block',
+                    marginTop: 'auto',
+                    transition: 'all 0.2s ease'
+                  }}
+                  className="solutions-view-btn"
+                >
+                  View Details
+                </Link>
+              </div>
+            );
+          })}
         </div>
       )}
     </section>

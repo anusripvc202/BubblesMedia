@@ -52,33 +52,6 @@ export default function Hero({ onSearch, onExploreOffers }) {
             Websites, Apps, Marketing, Branding, AI & More – Everything You Need to Grow Your Business Online.
           </p>
 
-          {/* Action Badge - Explore Mega Offers Link (Vibrant, Responsive, and Highly Accessible) */}
-          <div style={{ display: 'flex', gap: '10px', marginTop: '2px', marginBottom: '2px' }}>
-            <Link 
-              href="/offers" 
-              style={{
-                background: '#FFFFFF',
-                color: '#FF6A1A',
-                padding: '8px 16px',
-                borderRadius: '6px',
-                fontWeight: '800',
-                fontSize: '0.75rem',
-                display: 'inline-flex',
-                alignItems: 'center',
-                gap: '8px',
-                boxShadow: '0 4px 14px rgba(0, 0, 0, 0.1)',
-                border: 'none',
-                cursor: 'pointer',
-                textDecoration: 'none',
-                transition: 'all 0.2s ease-in-out'
-              }}
-              className="hover-card"
-            >
-              <span style={{ fontSize: '0.9rem' }}>🎁</span> Explore Mega Offers
-            </Link>
-          </div>
-
-
           {/* Stats Row inside Hero - Translucent White Box with Icons */}
           <div style={{
             display: 'grid',
@@ -256,10 +229,8 @@ export default function Hero({ onSearch, onExploreOffers }) {
             width: '52%',                  // Take up 52% of the card width responsively
             maxWidth: '680px',             // Do not exceed design size
             display: 'flex', 
-            flexDirection: 'column',       // Stack image and button vertically
             alignItems: 'center', 
             justifyContent: 'center', 
-            gap: '8px',                    // Small gap between image and button
             zIndex: 5, 
             pointerEvents: 'none'
           }}
@@ -271,7 +242,7 @@ export default function Hero({ onSearch, onExploreOffers }) {
               alt="Hero Showcase" 
               style={{
                 maxWidth: '100%',
-                maxHeight: '230px',          // Restrict maximum height so it fits within the card height
+                maxHeight: '260px',          // Restrict maximum height so it fits within the card height
                 width: 'auto',
                 height: 'auto',
                 display: 'block'             // Remove any inline block padding
@@ -301,34 +272,6 @@ export default function Hero({ onSearch, onExploreOffers }) {
               title="Explore Offers"
             />
           </div>
-
-          {/* Clickable HTML Button placed under the image */}
-          <Link
-            href="/offers"
-            style={{
-              background: 'rgba(31, 41, 55, 0.95)', // Sleek charcoal matching mockup
-              color: '#FFFFFF',
-              padding: '6px 18px',
-              borderRadius: '6px',
-              fontWeight: '800',
-              fontSize: '0.68rem',
-              letterSpacing: '1px',
-              textTransform: 'uppercase',
-              display: 'inline-flex',
-              alignItems: 'center',
-              gap: '6px',
-              boxShadow: '0 4px 10px rgba(0, 0, 0, 0.15)',
-              border: '1px solid rgba(255, 255, 255, 0.15)',
-              cursor: 'pointer',
-              textDecoration: 'none',
-              zIndex: 10,
-              pointerEvents: 'auto', // Re-enable clicks
-              transition: 'all 0.2s ease-in-out'
-            }}
-            className="hover-card"
-          >
-            Explore Offers
-          </Link>
         </div>
 
       </div>

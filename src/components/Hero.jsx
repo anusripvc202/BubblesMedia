@@ -44,7 +44,7 @@ export default function Hero({ onSearch, onExploreOffers }) {
         {/* Inner grid wrapping the content to prevent background absolute element from counting as a grid column */}
         <div style={{
           display: 'grid',
-          gridTemplateColumns: '1.2fr 0.8fr',
+          gridTemplateColumns: '1fr',
           gap: '24px',
           alignItems: 'center',
           width: '100%',
@@ -61,7 +61,7 @@ export default function Hero({ onSearch, onExploreOffers }) {
           </h1>
 
           {/* Subtitle */}
-          <p style={{ fontSize: '0.8rem', opacity: 0.95, fontWeight: '500', lineHeight: '1.3', maxWidth: '390px', color: 'white', margin: 0 }}>
+          <p style={{ fontSize: '0.8rem', opacity: 0.95, fontWeight: '500', lineHeight: '1.3', maxWidth: '100%', color: 'white', margin: 0 }}>
             Websites, Apps, Marketing, Branding, AI & More – Everything You Need to Grow Your Business Online.
           </p>
 
@@ -71,7 +71,7 @@ export default function Hero({ onSearch, onExploreOffers }) {
             border: 'none',
             padding: '8px 12px',
             borderRadius: '6px',
-            maxWidth: '450px',
+            maxWidth: '100%',
             boxShadow: '0 2px 8px rgba(0, 0, 0, 0.05)'
           }}>
             {[
@@ -154,7 +154,7 @@ export default function Hero({ onSearch, onExploreOffers }) {
             borderRadius: '6px',
             padding: '2px',
             boxShadow: 'var(--shadow-sm)',
-            maxWidth: '450px',
+            maxWidth: '100%',
             width: '100%'
           }}>
             <span style={{ paddingLeft: '10px', display: 'flex', alignItems: 'center', color: 'var(--text-light)' }}>
@@ -224,53 +224,6 @@ export default function Hero({ onSearch, onExploreOffers }) {
               </button>
             ))}
           </div>
-        </div>
-
-        {/* Column 2 (Right): Combined Mockup & Badge Image */}
-        <div 
-          className="hero-graphic-container"
-          style={{ 
-            display: 'flex', 
-            alignItems: 'center', 
-            justifyContent: 'flex-end', 
-            width: '100%',
-            maxWidth: '680px',             // Do not exceed design size
-            zIndex: 5
-          }}
-        >
-          {/* Entire inner wrapper is now a Link! */}
-          <Link 
-            href="/offers"
-            onMouseEnter={() => setIsOffersHovered(true)}
-            onMouseLeave={() => setIsOffersHovered(false)}
-            style={{ 
-              position: 'relative', 
-              display: 'block', 
-              width: '100%',
-              pointerEvents: 'auto',      // Re-enable clicks on the image block!
-              cursor: 'pointer',
-              maxHeight: '260px',
-              transition: 'all 0.25s cubic-bezier(0.4, 0, 0.2, 1)',
-              borderRadius: '8px',
-              overflow: 'hidden',
-              boxShadow: isOffersHovered ? '0 10px 25px rgba(0, 0, 0, 0.25)' : 'none',
-              transform: isOffersHovered ? 'scale(1.025)' : 'scale(1)'
-            }}
-            title="Explore Offers"
-          >
-            <img 
-              src="/hero-combined.png?v=3" 
-              alt="Hero Showcase" 
-              style={{
-                width: '100%',
-                height: 'auto',
-                maxHeight: '260px',          // Restrict height so it fits within the card height
-                objectFit: 'contain',
-                objectPosition: 'right',     // Align to right edge
-                display: 'block'             // Remove inline padding
-              }}
-            />
-          </Link>
         </div>
 
       </div> {/* Closing tag for hero-grid-content */}

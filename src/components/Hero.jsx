@@ -228,39 +228,41 @@ export default function Hero({ onSearch, onExploreOffers }) {
           display: 'flex', 
           alignItems: 'center', 
           justifyContent: 'center', 
-          zIndex: 2,
+          zIndex: 5, // Increased zIndex from 2 to 5 to avoid overlap blocking
           pointerEvents: 'none'
         }}>
-          <img 
-            src="/hero-combined.png?v=3" 
-            alt="Hero Showcase" 
-            style={{
-              maxHeight: '100%',
-              maxWidth: '100%',
-              width: 'auto',
-              height: 'auto',
-              objectFit: 'contain'
-            }}
-          />
-          {/* Clickable hotspot overlay on the badge button */}
-          <Link
-            href="/offers"
-            onClick={onExploreOffers}
-            style={{
-              position: 'absolute',
-              bottom: '95px',     // Positioned relative to the 390px height container
-              right: '35px',      // Positioned relative to the 680px width container
-              width: '195px',     // Hotspot width matching the badge button
-              height: '44px',     // Hotspot height matching the badge button
-              background: 'transparent',
-              border: 'none',
-              cursor: 'pointer',
-              zIndex: 10,
-              pointerEvents: 'auto', // Re-enable clicks on this link
-              display: 'block'
-            }}
-            title="Explore Offers"
-          />
+          {/* Inner relative container that matches the image dimensions exactly */}
+          <div style={{ position: 'relative', display: 'inline-block', maxHeight: '100%', maxWidth: '100%' }}>
+            <img 
+              src="/hero-combined.png?v=3" 
+              alt="Hero Showcase" 
+              style={{
+                maxHeight: '390px', // Constrain to container height
+                maxWidth: '680px',  // Constrain to container width
+                width: 'auto',
+                height: 'auto',
+                display: 'block'     // Remove any inline block padding
+              }}
+            />
+            {/* Clickable hotspot overlay on the badge button - using percentages to always align with the image! */}
+            <Link
+              href="/offers"
+              style={{
+                position: 'absolute',
+                bottom: '24.4%',     // Percentage-based vertical position
+                right: '5.1%',       // Percentage-based horizontal position
+                width: '28.7%',      // Percentage-based width
+                height: '11.3%',     // Percentage-based height
+                background: 'transparent',
+                border: 'none',
+                cursor: 'pointer',
+                zIndex: 10,
+                pointerEvents: 'auto', // Re-enable clicks on this link
+                display: 'block'
+              }}
+              title="Explore Offers"
+            />
+          </div>
         </div>
 
       </div>

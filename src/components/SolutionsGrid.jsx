@@ -130,7 +130,7 @@ export default function SolutionsGrid({ searchTerm, activeCategory, onEnquire })
           <p style={{ fontWeight: '700', color: 'var(--text-dark)' }}>No Solutions Found</p>
         </div>
       ) : (
-        <div className="solutions-row-desktop" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(200px, 1fr))', gap: '20px' }}>
+        <div className="solutions-row-desktop" style={{ display: 'grid', gridAutoFlow: 'column', gridAutoColumns: '1fr', gap: '10px', width: '100%' }}>
           {filteredSolutions.map((sol) => {
             const theme = categoryThemes[sol.category] || { color: 'var(--primary)', bg: 'var(--primary-light)' };
             return (
@@ -141,7 +141,7 @@ export default function SolutionsGrid({ searchTerm, activeCategory, onEnquire })
                 style={{
                   '--card-theme': theme.color,
                   '--card-theme-light': theme.bg,
-                  padding: '16px 12px',
+                  padding: '6px 4px',
                   display: 'flex',
                   flexDirection: 'column',
                   alignItems: 'center',
@@ -149,7 +149,8 @@ export default function SolutionsGrid({ searchTerm, activeCategory, onEnquire })
                   borderRadius: '8px',
                   background: 'var(--bg-white)',
                   boxShadow: 'var(--shadow-sm)',
-                  border: '1px solid var(--border-color)'
+                  border: '1px solid var(--border-color)',
+                  minWidth: '0px'
                 }}
               >
                 {sol.popular && (
@@ -161,27 +162,26 @@ export default function SolutionsGrid({ searchTerm, activeCategory, onEnquire })
                 <div className="solutions-icon-container" style={{
                   background: 'var(--card-theme-light)',
                   color: 'var(--card-theme)',
-                  width: '36px',
-                  height: '36px',
+                  width: '22px',
+                  height: '22px',
                   borderRadius: '50%',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
-                  marginBottom: '8px',
+                  marginBottom: '2px',
                   flexShrink: 0
                 }}>
                   {sol.icon}
                 </div>
 
                 {/* Title */}
-                <h3 style={{ fontSize: '0.72rem', fontWeight: '800', marginBottom: '4px', color: 'var(--secondary)', letterSpacing: '-0.01em', minHeight: '28px', display: 'flex', alignItems: 'center', lineHeight: '1.2' }}>
+                <h3 style={{ fontSize: '0.58rem', fontWeight: '800', marginBottom: '1px', color: 'var(--secondary)', letterSpacing: '-0.01em', minHeight: '18px', display: 'flex', alignItems: 'center', lineHeight: '1.1' }}>
                   {sol.title}
                 </h3>
 
                 {/* Pricing */}
-                <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '1px', marginBottom: '12px' }}>
-                  <span style={{ fontSize: '0.58rem', color: 'var(--text-light)', fontWeight: '600' }}>Starting from</span>
-                  <span style={{ fontSize: '0.85rem', fontWeight: '900', color: 'var(--primary)', fontFamily: 'var(--font-display)' }}>{sol.price}</span>
+                <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '0px', marginBottom: '4px' }}>
+                  <span style={{ fontSize: '0.68rem', fontWeight: '900', color: 'var(--primary)', fontFamily: 'var(--font-display)' }}>{sol.price}</span>
                 </div>
 
                 {/* View Details Button */}
@@ -189,13 +189,13 @@ export default function SolutionsGrid({ searchTerm, activeCategory, onEnquire })
                   href={`/services/${sol.id}`}
                   style={{
                     width: '100%',
-                    padding: '6px 8px',
-                    fontSize: '0.7rem',
+                    padding: '3px 2px',
+                    fontSize: '0.55rem',
                     fontWeight: '700',
                     color: 'var(--card-theme)',
                     background: 'var(--card-theme-light)',
                     border: 'none',
-                    borderRadius: '4px',
+                    borderRadius: '3px',
                     textAlign: 'center',
                     display: 'block',
                     marginTop: 'auto',

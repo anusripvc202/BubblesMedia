@@ -158,11 +158,13 @@ export default function IndustriesRow({ onSelectIndustry }) {
         </a>
       </div>
 
-      {/* Grid of Industry blocks */}
+      {/* Grid of Industry blocks - single row horizontal scroll */}
       <div className="industries-row-desktop" style={{
         display: 'grid',
-        gridTemplateColumns: 'repeat(auto-fill, minmax(130px, 1fr))',
-        gap: '16px'
+        gridAutoFlow: 'column',
+        gridAutoColumns: '1fr',
+        gap: '10px',
+        width: '100%'
       }}>
         {industries.map((ind, idx) => (
           <button
@@ -175,22 +177,23 @@ export default function IndustriesRow({ onSelectIndustry }) {
               background: 'var(--bg-white)',
               border: '1px solid var(--border-color)',
               borderRadius: 'var(--radius-md)',
-              padding: '16px 12px',
+              padding: '6px 3px',
               display: 'flex',
               flexDirection: 'column',
               alignItems: 'center',
               justifyContent: 'center',
               textAlign: 'center',
-              gap: '10px',
-              cursor: 'pointer'
+              gap: '2px',
+              cursor: 'pointer',
+              minWidth: '0px'
             }}
           >
             <div className="industries-icon-container" style={{
               background: '#F8FAFC',
               color: 'var(--secondary)',
               border: '1px solid var(--border-color-light)',
-              width: '36px',
-              height: '36px',
+              width: '22px',
+              height: '22px',
               borderRadius: '50%',
               display: 'flex',
               alignItems: 'center',
@@ -198,7 +201,7 @@ export default function IndustriesRow({ onSelectIndustry }) {
             }}>
               {ind.icon}
             </div>
-            <span className="industries-card-text" style={{ fontSize: '0.75rem', fontWeight: '700', color: 'var(--secondary)', lineHeight: '1.2' }}>
+            <span className="industries-card-text" style={{ fontSize: '0.55rem', fontWeight: '700', color: 'var(--secondary)', lineHeight: '1.1' }}>
               {ind.name}
             </span>
           </button>

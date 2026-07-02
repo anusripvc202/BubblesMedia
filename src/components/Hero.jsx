@@ -27,7 +27,9 @@ export default function Hero({ onSearch, onExploreOffers }) {
         borderRadius: '8px',
         boxShadow: 'var(--shadow-sm)',
         position: 'relative',
-        overflow: 'hidden'
+        overflow: 'hidden',
+        display: 'block',              // Override grid display from CSS
+        padding: '20px 24px'
       }}>
         {/* Decorative background grid pattern */}
         <div style={{
@@ -39,8 +41,19 @@ export default function Hero({ onSearch, onExploreOffers }) {
           pointerEvents: 'none'
         }}></div>
 
-        {/* Left Info Column */}
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '10px', zIndex: 2 }}>
+        {/* Inner grid wrapping the content to prevent background absolute element from counting as a grid column */}
+        <div style={{
+          display: 'grid',
+          gridTemplateColumns: '1.2fr 0.8fr',
+          gap: '24px',
+          alignItems: 'center',
+          width: '100%',
+          position: 'relative',
+          zIndex: 2
+        }} className="hero-grid-content">
+
+          {/* Left Info Column */}
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
 
           {/* Main Headline */}
           <h1 style={{ fontSize: '2.1rem', fontWeight: '900', lineHeight: '1.1', color: 'white', margin: 0 }}>
@@ -213,21 +226,16 @@ export default function Hero({ onSearch, onExploreOffers }) {
           </div>
         </div>
 
-        {/* Column 2 (Right): Combined Mockup & Badge Image (Absolute Float with Responsive Scaling) */}
+        {/* Column 2 (Right): Combined Mockup & Badge Image */}
         <div 
           className="hero-graphic-container"
           style={{ 
-            position: 'absolute', 
-            right: '20px', 
-            top: '0',
-            bottom: '0',                   // Pin to top and bottom of the card
-            width: '52%',                  // Take up 52% of the card width responsively
-            maxWidth: '680px',             // Do not exceed design size
             display: 'flex', 
             alignItems: 'center', 
-            justifyContent: 'center', 
-            zIndex: 5, 
-            pointerEvents: 'none'          // Let events pass through the outer block so it doesn't block the search bar
+            justifyContent: 'flex-end', 
+            width: '100%',
+            maxWidth: '680px',             // Do not exceed design size
+            zIndex: 5
           }}
         >
           {/* Entire inner wrapper is now a Link! */}
@@ -237,7 +245,8 @@ export default function Hero({ onSearch, onExploreOffers }) {
             onMouseLeave={() => setIsOffersHovered(false)}
             style={{ 
               position: 'relative', 
-              display: 'inline-block', 
+              display: 'block', 
+              width: '100%',
               pointerEvents: 'auto',      // Re-enable clicks on the image block!
               cursor: 'pointer',
               maxHeight: '260px',
@@ -253,17 +262,20 @@ export default function Hero({ onSearch, onExploreOffers }) {
               src="/hero-combined.png?v=3" 
               alt="Hero Showcase" 
               style={{
-                maxWidth: '100%',
-                maxHeight: '260px',          // Restrict height so it fits within the card height
-                width: 'auto',
+                width: '100%',
                 height: 'auto',
+                maxHeight: '260px',          // Restrict height so it fits within the card height
+                objectFit: 'contain',
+                objectPosition: 'right',     // Align to right edge
                 display: 'block'             // Remove inline padding
               }}
             />
           </Link>
         </div>
 
-      </div>
+      </div> {/* Closing tag for hero-grid-content */}
+
+    </div>
     </div>
   );
 }

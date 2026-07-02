@@ -235,7 +235,7 @@ export default function Hero({ onSearch, onExploreOffers }) {
             position: 'relative',
             zIndex: 5
           }}>
-            {/* Main mockup image - wrapped to suppress browser visual search overlay */}
+            {/* Main mockup image — mix-blend-mode:multiply dissolves white bg into orange */}
             <div style={{ position: 'relative', width: '65%', flexShrink: 0 }}>
               <img
                 src="/hero-mockup.png"
@@ -247,15 +247,14 @@ export default function Hero({ onSearch, onExploreOffers }) {
                   objectFit: 'contain',
                   display: 'block',
                   mixBlendMode: 'multiply',
-                  filter: 'contrast(1.05)',
+                  filter: 'contrast(1.1) saturate(1.1)',
                   userSelect: 'none',
                   WebkitUserSelect: 'none'
                 }}
               />
-              {/* Transparent overlay to block browser image icons */}
               <div style={{ position: 'absolute', inset: 0, zIndex: 2 }} />
             </div>
-            {/* Badge image - wrapped to suppress browser visual search overlay */}
+            {/* Badge image — no blend mode so white text stays visible and crisp */}
             <div style={{ position: 'relative', width: '32%', flexShrink: 0 }}>
               <img
                 src="/hero-badge.png"
@@ -266,13 +265,11 @@ export default function Hero({ onSearch, onExploreOffers }) {
                   height: '280px',
                   objectFit: 'contain',
                   display: 'block',
-                  mixBlendMode: 'multiply',
-                  filter: 'contrast(1.05)',
+                  filter: 'drop-shadow(0 4px 16px rgba(0,0,0,0.3)) contrast(1.1) brightness(1.05)',
                   userSelect: 'none',
                   WebkitUserSelect: 'none'
                 }}
               />
-              {/* Transparent overlay to block browser image icons */}
               <div style={{ position: 'absolute', inset: 0, zIndex: 2 }} />
             </div>
           </div>

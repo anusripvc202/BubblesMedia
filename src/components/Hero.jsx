@@ -226,12 +226,12 @@ export default function Hero({ onSearch, onExploreOffers }) {
           </div>
         </div>
 
-          {/* Right Column: Images — mockup in center, badge to the side */}
+          {/* Right Column: Images — mockup and badge, equal size, blended into hero color */}
           <div style={{
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
-            gap: '12px',
+            gap: '10px',
             position: 'relative',
             zIndex: 5
           }}>
@@ -240,13 +240,12 @@ export default function Hero({ onSearch, onExploreOffers }) {
               src="/hero-mockup.png"
               alt="Platform Showcase"
               style={{
-                width: '75%',
-                height: 'auto',
-                maxHeight: '240px',
+                width: '48%',
+                height: '280px',
                 objectFit: 'contain',
                 display: 'block',
-                borderRadius: '8px',
-                filter: 'drop-shadow(0 8px 20px rgba(0,0,0,0.25))'
+                mixBlendMode: 'multiply',
+                filter: 'contrast(1.05)'
               }}
             />
             {/* Badge image to the side */}
@@ -254,11 +253,12 @@ export default function Hero({ onSearch, onExploreOffers }) {
               src="/hero-badge.png"
               alt="Mega Offers"
               style={{
-                width: '22%',
-                height: 'auto',
+                width: '48%',
+                height: '280px',
                 objectFit: 'contain',
                 display: 'block',
-                filter: 'drop-shadow(0 4px 12px rgba(0,0,0,0.2))'
+                mixBlendMode: 'multiply',
+                filter: 'contrast(1.05)'
               }}
             />
           </div>

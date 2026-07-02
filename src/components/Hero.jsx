@@ -245,34 +245,36 @@ export default function Hero({ onSearch, onExploreOffers }) {
           </div>
         </div>
 
-        {/* Column 2 (Right): Combined Mockup & Badge Image (Absolute Float for Maximum Size) */}
+        {/* Column 2 (Right): Combined Mockup & Badge Image (Absolute Float with Responsive Scaling) */}
         <div 
           className="hero-graphic-container"
           style={{ 
             position: 'absolute', 
-            right: '10px', 
-            top: '50%',
-            transform: 'translateY(-50%) translateX(15px)', // Centers vertically and shifts right
-            width: '680px', 
-            height: '390px', 
+            right: '20px', 
+            top: '0',
+            bottom: '0',                   // Pin to top and bottom of the card
+            width: '52%',                  // Take up 52% of the card width responsively
+            maxWidth: '680px',             // Do not exceed design size
             display: 'flex', 
+            flexDirection: 'column',       // Stack image and button vertically
             alignItems: 'center', 
             justifyContent: 'center', 
-            zIndex: 5, // Increased zIndex from 2 to 5 to avoid overlap blocking
+            gap: '8px',                    // Small gap between image and button
+            zIndex: 5, 
             pointerEvents: 'none'
           }}
         >
           {/* Inner relative container that matches the image dimensions exactly */}
-          <div style={{ position: 'relative', display: 'inline-block', maxHeight: '100%', maxWidth: '100%', pointerEvents: 'none' }}>
+          <div style={{ position: 'relative', display: 'inline-block', pointerEvents: 'none' }}>
             <img 
               src="/hero-combined.png?v=3" 
               alt="Hero Showcase" 
               style={{
-                maxHeight: '390px', // Constrain to container height
-                maxWidth: '680px',  // Constrain to container width
+                maxWidth: '100%',
+                maxHeight: '230px',          // Restrict maximum height so it fits within the card height
                 width: 'auto',
                 height: 'auto',
-                display: 'block'     // Remove any inline block padding
+                display: 'block'             // Remove any inline block padding
               }}
             />
             {/* Clickable hotspot overlay on the badge button - using percentages to always align with the image! */}
@@ -299,6 +301,34 @@ export default function Hero({ onSearch, onExploreOffers }) {
               title="Explore Offers"
             />
           </div>
+
+          {/* Clickable HTML Button placed under the image */}
+          <Link
+            href="/offers"
+            style={{
+              background: 'rgba(31, 41, 55, 0.95)', // Sleek charcoal matching mockup
+              color: '#FFFFFF',
+              padding: '6px 18px',
+              borderRadius: '6px',
+              fontWeight: '800',
+              fontSize: '0.68rem',
+              letterSpacing: '1px',
+              textTransform: 'uppercase',
+              display: 'inline-flex',
+              alignItems: 'center',
+              gap: '6px',
+              boxShadow: '0 4px 10px rgba(0, 0, 0, 0.15)',
+              border: '1px solid rgba(255, 255, 255, 0.15)',
+              cursor: 'pointer',
+              textDecoration: 'none',
+              zIndex: 10,
+              pointerEvents: 'auto', // Re-enable clicks
+              transition: 'all 0.2s ease-in-out'
+            }}
+            className="hover-card"
+          >
+            Explore Offers
+          </Link>
         </div>
 
       </div>

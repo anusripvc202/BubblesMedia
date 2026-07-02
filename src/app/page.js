@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useEffect, Suspense } from 'react';
-import { useSearchParams } from 'next/navigation';
+import { useSearchParams, useRouter } from 'next/navigation';
 import Header from '../components/Header';
 import Sidebar from '../components/Sidebar';
 import Hero from '../components/Hero';
@@ -21,6 +21,7 @@ import QuoteModal from '../components/QuoteModal';
 
 function HomeContent() {
   const searchParams = useSearchParams();
+  const router = useRouter();
 
   // Global App States
   const [searchTerm, setSearchTerm] = useState('');
@@ -93,7 +94,7 @@ function HomeContent() {
           <div style={{ display: 'flex', flexDirection: 'column', gap: '32px' }}>
             <Hero
               onSearch={(term) => setSearchTerm(term)}
-              onExploreOffers={() => window.location.href = '/offers'}
+              onExploreOffers={() => router.push('/offers')}
             />
             <TrustBanner />
             <SolutionsGrid

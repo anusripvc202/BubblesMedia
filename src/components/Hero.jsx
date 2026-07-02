@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Link from 'next/link';
 
 export default function Hero({ onSearch, onExploreOffers }) {
   const [inputVal, setInputVal] = useState('');
@@ -221,7 +222,7 @@ export default function Hero({ onSearch, onExploreOffers }) {
           position: 'absolute', 
           right: '10px', 
           top: '50%',
-          transform: 'translateY(-50%) translateX(-10px)', // Centers vertically and shifts left
+          transform: 'translateY(-50%) translateX(15px)', // Centers vertically and shifts right
           width: '680px', 
           height: '390px', 
           display: 'flex', 
@@ -242,7 +243,8 @@ export default function Hero({ onSearch, onExploreOffers }) {
             }}
           />
           {/* Clickable hotspot overlay on the badge button */}
-          <button
+          <Link
+            href="/offers"
             onClick={onExploreOffers}
             style={{
               position: 'absolute',
@@ -254,7 +256,8 @@ export default function Hero({ onSearch, onExploreOffers }) {
               border: 'none',
               cursor: 'pointer',
               zIndex: 10,
-              pointerEvents: 'auto' // Re-enable clicks on this button
+              pointerEvents: 'auto', // Re-enable clicks on this link
+              display: 'block'
             }}
             title="Explore Offers"
           />

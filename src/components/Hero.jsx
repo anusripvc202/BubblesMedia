@@ -232,46 +232,40 @@ export default function Hero({ onSearch, onExploreOffers }) {
             alignItems: 'center', 
             justifyContent: 'center', 
             zIndex: 5, 
-            pointerEvents: 'none'
+            pointerEvents: 'none'          // Let events pass through the outer block so it doesn't block the search bar
           }}
         >
-          {/* Inner relative container that matches the image dimensions exactly */}
-          <div style={{ position: 'relative', display: 'inline-block', pointerEvents: 'none' }}>
+          {/* Entire inner wrapper is now a Link! */}
+          <Link 
+            href="/offers"
+            onMouseEnter={() => setIsOffersHovered(true)}
+            onMouseLeave={() => setIsOffersHovered(false)}
+            style={{ 
+              position: 'relative', 
+              display: 'inline-block', 
+              pointerEvents: 'auto',      // Re-enable clicks on the image block!
+              cursor: 'pointer',
+              maxHeight: '260px',
+              transition: 'all 0.25s cubic-bezier(0.4, 0, 0.2, 1)',
+              borderRadius: '8px',
+              overflow: 'hidden',
+              boxShadow: isOffersHovered ? '0 10px 25px rgba(0, 0, 0, 0.25)' : 'none',
+              transform: isOffersHovered ? 'scale(1.025)' : 'scale(1)'
+            }}
+            title="Explore Offers"
+          >
             <img 
               src="/hero-combined.png?v=3" 
               alt="Hero Showcase" 
               style={{
                 maxWidth: '100%',
-                maxHeight: '260px',          // Restrict maximum height so it fits within the card height
+                maxHeight: '260px',          // Restrict height so it fits within the card height
                 width: 'auto',
                 height: 'auto',
-                display: 'block'             // Remove any inline block padding
+                display: 'block'             // Remove inline padding
               }}
             />
-            {/* Clickable hotspot overlay on the badge button - using percentages to always align with the image! */}
-            <Link
-              href="/offers"
-              onMouseEnter={() => setIsOffersHovered(true)}
-              onMouseLeave={() => setIsOffersHovered(false)}
-              style={{
-                position: 'absolute',
-                bottom: '24.4%',     // Percentage-based vertical position
-                right: '5.1%',       // Percentage-based horizontal position
-                width: '28.7%',      // Percentage-based width
-                height: '11.3%',     // Percentage-based height
-                background: isOffersHovered ? 'rgba(255, 107, 0, 0.12)' : 'transparent',
-                border: isOffersHovered ? '1.5px solid rgba(255, 107, 0, 0.4)' : 'none',
-                borderRadius: '6px',
-                cursor: 'pointer',
-                zIndex: 10,
-                pointerEvents: 'auto', // Re-enable clicks on this link
-                display: 'block',
-                transition: 'all 0.2s ease',
-                boxShadow: isOffersHovered ? '0 0 10px rgba(255, 107, 0, 0.3)' : 'none'
-              }}
-              title="Explore Offers"
-            />
-          </div>
+          </Link>
         </div>
 
       </div>

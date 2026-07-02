@@ -235,32 +235,46 @@ export default function Hero({ onSearch, onExploreOffers }) {
             position: 'relative',
             zIndex: 5
           }}>
-            {/* Main mockup image - larger */}
-            <img
-              src="/hero-mockup.png"
-              alt="Platform Showcase"
-              style={{
-                width: '65%',
-                height: '320px',
-                objectFit: 'contain',
-                display: 'block',
-                mixBlendMode: 'multiply',
-                filter: 'contrast(1.05)'
-              }}
-            />
-            {/* Badge image to the side */}
-            <img
-              src="/hero-badge.png"
-              alt="Mega Offers"
-              style={{
-                width: '32%',
-                height: '280px',
-                objectFit: 'contain',
-                display: 'block',
-                mixBlendMode: 'multiply',
-                filter: 'contrast(1.05)'
-              }}
-            />
+            {/* Main mockup image - wrapped to suppress browser visual search overlay */}
+            <div style={{ position: 'relative', width: '65%', flexShrink: 0 }}>
+              <img
+                src="/hero-mockup.png"
+                alt="Platform Showcase"
+                draggable={false}
+                style={{
+                  width: '100%',
+                  height: '320px',
+                  objectFit: 'contain',
+                  display: 'block',
+                  mixBlendMode: 'multiply',
+                  filter: 'contrast(1.05)',
+                  userSelect: 'none',
+                  WebkitUserSelect: 'none'
+                }}
+              />
+              {/* Transparent overlay to block browser image icons */}
+              <div style={{ position: 'absolute', inset: 0, zIndex: 2 }} />
+            </div>
+            {/* Badge image - wrapped to suppress browser visual search overlay */}
+            <div style={{ position: 'relative', width: '32%', flexShrink: 0 }}>
+              <img
+                src="/hero-badge.png"
+                alt="Mega Offers"
+                draggable={false}
+                style={{
+                  width: '100%',
+                  height: '280px',
+                  objectFit: 'contain',
+                  display: 'block',
+                  mixBlendMode: 'multiply',
+                  filter: 'contrast(1.05)',
+                  userSelect: 'none',
+                  WebkitUserSelect: 'none'
+                }}
+              />
+              {/* Transparent overlay to block browser image icons */}
+              <div style={{ position: 'absolute', inset: 0, zIndex: 2 }} />
+            </div>
           </div>
 
       </div> {/* Closing tag for hero-grid-content */}

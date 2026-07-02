@@ -130,7 +130,7 @@ export default function SolutionsGrid({ searchTerm, activeCategory, onEnquire })
           <p style={{ fontWeight: '700', color: 'var(--text-dark)' }}>No Solutions Found</p>
         </div>
       ) : (
-        <div className="solutions-row-desktop" style={{ display: 'grid', gridAutoFlow: 'column', gridAutoColumns: '1fr', gap: '10px', width: '100%' }}>
+        <div className="solutions-row-desktop" style={{ display: 'grid', gridTemplateColumns: 'repeat(6, 1fr)', gap: '10px', width: '100%' }}>
           {filteredSolutions.map((sol) => {
             const theme = categoryThemes[sol.category] || { color: 'var(--primary)', bg: 'var(--primary-light)' };
             return (

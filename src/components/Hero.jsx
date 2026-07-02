@@ -53,10 +53,7 @@ export default function Hero({ onSearch, onExploreOffers }) {
           </p>
 
           {/* Stats Row inside Hero - Translucent White Box with Icons */}
-          <div style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(4, 1fr)',
-            gap: '8px',
+          <div className="hero-stats-grid" style={{
             background: 'rgba(255, 255, 255, 0.96)',
             border: 'none',
             padding: '8px 12px',
@@ -108,12 +105,10 @@ export default function Hero({ onSearch, onExploreOffers }) {
                 )
               }
             ].map((stat, idx) => (
-              <div key={idx} style={{
+              <div key={idx} className="hero-stats-item" style={{
                 display: 'flex',
                 alignItems: 'center',
-                gap: '5px',
-                borderRight: idx < 3 ? '1px solid rgba(0, 0, 0, 0.08)' : 'none',
-                paddingRight: idx < 3 ? '5px' : '0'
+                gap: '5px'
               }}>
                 <div style={{
                   background: 'rgba(255, 90, 0, 0.1)',

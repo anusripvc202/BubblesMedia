@@ -22,16 +22,16 @@ export default function Sidebar({ selectedCategory, onSelectCategory }) {
   };
 
   return (
-    <aside style={{ background: 'var(--bg-white)', borderRadius: '6px', border: '1px solid var(--border-color)', overflowY: 'auto', maxHeight: 'calc(100vh - 110px)', boxShadow: 'var(--shadow-sm)', position: 'sticky', top: '92px', alignSelf: 'start' }}>
+    <aside className="sidebar-mobile-scroll" style={{ background: 'var(--bg-white)', borderRadius: '6px', border: '1px solid var(--border-color)', overflowY: 'auto', maxHeight: 'calc(100vh - 110px)', boxShadow: 'var(--shadow-sm)', position: 'sticky', top: '92px', alignSelf: 'start' }}>
       {/* Title Bar - Solid Orange "ALL CATEGORIES" */}
-      <div style={{ background: 'var(--primary)', color: 'white', padding: '10px 16px', display: 'flex', alignItems: 'center', gap: '8px' }}>
+      <div className="sidebar-title-mobile-hide" style={{ background: 'var(--primary)', color: 'white', padding: '10px 16px', display: 'flex', alignItems: 'center', gap: '8px' }}>
         <span style={{ fontSize: '0.75rem', fontWeight: '800', letterSpacing: '0.5px', textTransform: 'uppercase', fontFamily: 'var(--font-display)' }}>
           ALL CATEGORIES
         </span>
       </div>
 
       {/* Categories List */}
-      <div style={{ display: 'flex', flexDirection: 'column' }}>
+      <div className="sidebar-mobile-scroll" style={{ display: 'flex', flexDirection: 'column' }}>
         {categories.map((cat) => {
           const isActive = selectedCategory === cat.id;
           return (
@@ -48,7 +48,7 @@ export default function Sidebar({ selectedCategory, onSelectCategory }) {
                 background: isActive ? 'var(--primary-light)' : 'transparent',
                 borderLeft: isActive ? '3px solid var(--primary)' : '3px solid transparent'
               }}
-              className="category-item"
+              className={`category-item ${isActive ? 'category-item-active' : ''}`}
             >
               <div style={{ display: 'flex', gap: '10px', alignItems: 'center', flex: 1 }}>
                 <div style={{ color: 'var(--primary)', background: '#FAF9F6', width: '26px', height: '26px', borderRadius: '5px', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
@@ -76,6 +76,7 @@ export default function Sidebar({ selectedCategory, onSelectCategory }) {
 
       {/* Footer link */}
       <button 
+        className="sidebar-title-mobile-hide"
         onClick={handleViewAll}
         style={{
           display: 'flex',

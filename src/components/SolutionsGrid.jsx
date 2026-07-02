@@ -137,6 +137,7 @@ export default function SolutionsGrid({ searchTerm, activeCategory, onEnquire })
               <div
                 key={sol.id}
                 className={`glass-panel solutions-card-desktop hover-card ${sol.popular ? 'popular-highlight' : ''}`}
+
                 style={{
                   '--card-theme': theme.color,
                   '--card-theme-light': theme.bg,

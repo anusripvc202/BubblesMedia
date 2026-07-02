@@ -310,6 +310,13 @@ a {
   }
 }
 
+@media (max-width: 991px) {
+  .hero-graphic-container {
+    display: none !important;
+  }
+}
+
+
 .hero-theme-orange {
   background: var(--bg-gradient-orange);
   color: white;

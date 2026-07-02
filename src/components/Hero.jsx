@@ -52,6 +52,33 @@ export default function Hero({ onSearch, onExploreOffers }) {
             Websites, Apps, Marketing, Branding, AI & More – Everything You Need to Grow Your Business Online.
           </p>
 
+          {/* Action Badge - Explore Mega Offers Link (Vibrant, Responsive, and Highly Accessible) */}
+          <div style={{ display: 'flex', gap: '10px', marginTop: '2px', marginBottom: '2px' }}>
+            <Link 
+              href="/offers" 
+              style={{
+                background: '#FFFFFF',
+                color: '#FF6A1A',
+                padding: '8px 16px',
+                borderRadius: '6px',
+                fontWeight: '800',
+                fontSize: '0.75rem',
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '8px',
+                boxShadow: '0 4px 14px rgba(0, 0, 0, 0.1)',
+                border: 'none',
+                cursor: 'pointer',
+                textDecoration: 'none',
+                transition: 'all 0.2s ease-in-out'
+              }}
+              className="hover-card"
+            >
+              <span style={{ fontSize: '0.9rem' }}>🎁</span> Explore Mega Offers
+            </Link>
+          </div>
+
+
           {/* Stats Row inside Hero - Translucent White Box with Icons */}
           <div style={{
             display: 'grid',
@@ -219,19 +246,22 @@ export default function Hero({ onSearch, onExploreOffers }) {
         </div>
 
         {/* Column 2 (Right): Combined Mockup & Badge Image (Absolute Float for Maximum Size) */}
-        <div style={{ 
-          position: 'absolute', 
-          right: '10px', 
-          top: '50%',
-          transform: 'translateY(-50%) translateX(15px)', // Centers vertically and shifts right
-          width: '680px', 
-          height: '390px', 
-          display: 'flex', 
-          alignItems: 'center', 
-          justifyContent: 'center', 
-          zIndex: 5, // Increased zIndex from 2 to 5 to avoid overlap blocking
-          pointerEvents: 'none'
-        }}>
+        <div 
+          className="hero-graphic-container"
+          style={{ 
+            position: 'absolute', 
+            right: '10px', 
+            top: '50%',
+            transform: 'translateY(-50%) translateX(15px)', // Centers vertically and shifts right
+            width: '680px', 
+            height: '390px', 
+            display: 'flex', 
+            alignItems: 'center', 
+            justifyContent: 'center', 
+            zIndex: 5, // Increased zIndex from 2 to 5 to avoid overlap blocking
+            pointerEvents: 'none'
+          }}
+        >
           {/* Inner relative container that matches the image dimensions exactly */}
           <div style={{ position: 'relative', display: 'inline-block', maxHeight: '100%', maxWidth: '100%', pointerEvents: 'none' }}>
             <img 

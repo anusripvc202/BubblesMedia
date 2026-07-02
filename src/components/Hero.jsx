@@ -3,6 +3,7 @@ import Link from 'next/link';
 
 export default function Hero({ onSearch, onExploreOffers }) {
   const [inputVal, setInputVal] = useState('');
+  const [isOffersHovered, setIsOffersHovered] = useState(false);
 
   const handleSearchSubmit = (e) => {
     e.preventDefault();
@@ -232,7 +233,7 @@ export default function Hero({ onSearch, onExploreOffers }) {
           pointerEvents: 'none'
         }}>
           {/* Inner relative container that matches the image dimensions exactly */}
-          <div style={{ position: 'relative', display: 'inline-block', maxHeight: '100%', maxWidth: '100%' }}>
+          <div style={{ position: 'relative', display: 'inline-block', maxHeight: '100%', maxWidth: '100%', pointerEvents: 'none' }}>
             <img 
               src="/hero-combined.png?v=3" 
               alt="Hero Showcase" 
@@ -247,18 +248,23 @@ export default function Hero({ onSearch, onExploreOffers }) {
             {/* Clickable hotspot overlay on the badge button - using percentages to always align with the image! */}
             <Link
               href="/offers"
+              onMouseEnter={() => setIsOffersHovered(true)}
+              onMouseLeave={() => setIsOffersHovered(false)}
               style={{
                 position: 'absolute',
                 bottom: '24.4%',     // Percentage-based vertical position
                 right: '5.1%',       // Percentage-based horizontal position
                 width: '28.7%',      // Percentage-based width
                 height: '11.3%',     // Percentage-based height
-                background: 'transparent',
-                border: 'none',
+                background: isOffersHovered ? 'rgba(255, 107, 0, 0.12)' : 'transparent',
+                border: isOffersHovered ? '1.5px solid rgba(255, 107, 0, 0.4)' : 'none',
+                borderRadius: '6px',
                 cursor: 'pointer',
                 zIndex: 10,
                 pointerEvents: 'auto', // Re-enable clicks on this link
-                display: 'block'
+                display: 'block',
+                transition: 'all 0.2s ease',
+                boxShadow: isOffersHovered ? '0 0 10px rgba(255, 107, 0, 0.3)' : 'none'
               }}
               title="Explore Offers"
             />

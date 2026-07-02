@@ -44,7 +44,7 @@ export default function Hero({ onSearch, onExploreOffers }) {
         {/* Inner grid wrapping the content to prevent background absolute element from counting as a grid column */}
         <div style={{
           display: 'grid',
-          gridTemplateColumns: '1fr',
+          gridTemplateColumns: '1.2fr 0.8fr',
           gap: '24px',
           alignItems: 'center',
           width: '100%',
@@ -225,6 +225,43 @@ export default function Hero({ onSearch, onExploreOffers }) {
             ))}
           </div>
         </div>
+
+          {/* Right Column: Images — mockup in center, badge to the side */}
+          <div style={{
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            gap: '12px',
+            position: 'relative',
+            zIndex: 5
+          }}>
+            {/* Main mockup image */}
+            <img
+              src="/hero-mockup.png"
+              alt="Platform Showcase"
+              style={{
+                width: '75%',
+                height: 'auto',
+                maxHeight: '240px',
+                objectFit: 'contain',
+                display: 'block',
+                borderRadius: '8px',
+                filter: 'drop-shadow(0 8px 20px rgba(0,0,0,0.25))'
+              }}
+            />
+            {/* Badge image to the side */}
+            <img
+              src="/hero-badge.png"
+              alt="Mega Offers"
+              style={{
+                width: '22%',
+                height: 'auto',
+                objectFit: 'contain',
+                display: 'block',
+                filter: 'drop-shadow(0 4px 12px rgba(0,0,0,0.2))'
+              }}
+            />
+          </div>
 
       </div> {/* Closing tag for hero-grid-content */}
 

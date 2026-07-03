@@ -153,7 +153,14 @@ const industries = [
   }
 ];
 
+const DEFAULT_VISIBLE_IND = 12; // 2 rows × 6
+
 export default function IndustriesRow({ onSelectIndustry }) {
+  const [showAll, setShowAll] = React.useState(false);
+
+  const visibleIndustries = showAll ? industries : industries.slice(0, DEFAULT_VISIBLE_IND);
+  const hiddenCount = industries.length - DEFAULT_VISIBLE_IND;
+
   return (
     <section style={{ marginBottom: '40px' }}>
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', marginBottom: '24px' }}>
@@ -161,13 +168,41 @@ export default function IndustriesRow({ onSelectIndustry }) {
           <h2 style={{ fontSize: '1.5rem', fontWeight: '800', letterSpacing: '-0.02em', color: 'var(--secondary)' }}>Solutions for Every Industry</h2>
           <p style={{ fontSize: '0.85rem', color: 'var(--text-medium)', marginTop: '4px' }}>Custom-tailored digital blueprints built specifically for your business domain</p>
         </div>
-        <a href="#all-industries" style={{ fontSize: '0.85rem', color: 'var(--primary)', fontWeight: '700', display: 'flex', alignItems: 'center', gap: '4px' }}>
-          View All Industries
-          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-            <line x1="5" y1="12" x2="19" y2="12"></line>
-            <polyline points="12 5 19 12 12 19"></polyline>
-          </svg>
-        </a>
+        {hiddenCount > 0 && (
+          <button
+            onClick={() => setShowAll(v => !v)}
+            style={{
+              fontSize: '0.82rem',
+              color: 'var(--primary)',
+              fontWeight: '700',
+              display: 'flex',
+              alignItems: 'center',
+              gap: '5px',
+              background: 'none',
+              border: 'none',
+              cursor: 'pointer',
+              padding: 0,
+              transition: 'opacity 0.15s',
+              whiteSpace: 'nowrap',
+            }}
+            onMouseEnter={e => e.currentTarget.style.opacity = '0.7'}
+            onMouseLeave={e => e.currentTarget.style.opacity = '1'}
+          >
+            {showAll ? (
+              <>Show Less ↑</>
+            ) : (
+              <>View All Industries <span style={{
+                background: 'var(--primary)',
+                color: '#fff',
+                fontSize: '0.65rem',
+                fontWeight: '800',
+                borderRadius: '999px',
+                padding: '1px 7px',
+                marginLeft: '2px',
+              }}>+{hiddenCount}</span> →</>
+            )}
+          </button>
+        )}
       </div>
 
       {/* Grid of Industry blocks */}
@@ -177,7 +212,7 @@ export default function IndustriesRow({ onSelectIndustry }) {
         gap: '10px',
         width: '100%'
       }}>
-        {industries.map((ind, idx) => (
+        {visibleIndustries.map((ind, idx) => (
           <button
             key={idx}
             onClick={() => onSelectIndustry && onSelectIndustry(ind.name)}

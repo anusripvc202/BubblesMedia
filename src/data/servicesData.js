@@ -738,6 +738,117 @@ export const serviceDatabase = {
       { name: 'Service Marketplace', price: '₹49,999', desc: 'Listing and lead buy site for services', features: ['Interactive location searching', 'Service provider account setups', 'Razorpay token checkouts', 'Google Maps search integration', '4 Weeks Delivery'] },
       { name: 'Gold Product Marketplace', price: '₹89,999', desc: 'Complete physical goods seller marketplace', features: ['Real-time seller stock integration', 'Auto payout splits API hookups', 'Review moderation console panels', 'Advanced tax config dashboards', '6 Weeks Delivery'] }
     ]
+  },
+  // ─── Restaurants & Cafes ───────────────────────────────────
+  'restaurant-web-dev': {
+    title: 'Restaurant Website Development',
+    category: 'websites',
+    price: '₹9,999',
+    desc: 'Stunning, fast, and optimized websites for restaurants and cafes with online menu displays.',
+    features: ['Interactive Food Menu Display', 'Online Table Reservation Link', 'Google Maps Location & Hours', 'Social Media Integrations', 'Mobile Optimized Design'],
+    plans: [
+      { name: 'Standard Cafe Website', price: '₹9,999', desc: 'Clean profile & menu site', features: ['5 Pages Layout', 'Interactive PDF Menu display', 'Contact & Location Maps', 'Free Domain & Host (1 Yr)', '1 Week Delivery'] },
+      { name: 'Gold Restaurant Site', price: '₹19,999', desc: 'Premium multi-page custom portal', features: ['10 Pages Custom Layout', 'Interactive filterable food menus', 'SEO optimize local pack maps', 'WordPress Admin Dashboard CMS', '2 Weeks Delivery'] }
+    ]
+  },
+  'table-reservation-system': {
+    title: 'Online Table Reservation System',
+    category: 'business-software',
+    price: '₹14,999',
+    desc: 'Allow guests to reserve tables online, choose seating preferences, and receive automatic confirmation alerts.',
+    features: ['Interactive Floor Plan Selections', 'SMS & WhatsApp Reservation Alerts', 'Real-time Table Status Grids', 'Peak Hours Management Mod', 'Customer Feedback Logs'],
+    plans: [
+      { name: 'Standard Booking Portal', price: '₹14,999', desc: 'Standard slot reservation system', features: ['Online booking form widget', 'SMS auto confirmations', 'Table list management logs', 'Standard admin calendar', '2 Weeks Delivery'] },
+      { name: 'Gold Floor Plan Suite', price: '₹29,999', desc: 'Advanced reservation system with layouts', features: ['Interactive seat selection grids', 'WhatsApp API notifications', 'Payment integration for reservation deposits', 'Defaulter/No-show logs tracking', '3 Weeks Delivery'] }
+    ]
+  },
+  'food-ordering-system': {
+    title: 'Food Ordering System',
+    category: 'websites',
+    price: '₹19,999',
+    desc: 'Direct restaurant food ordering system to accept pickup and home delivery orders with no commission fees.',
+    features: ['Direct Stripe/Razorpay Payments', 'Custom Discount Coupon Engine', 'Delivery Radius Configuration Map', 'Kitchen Receipt Printer Sync', 'Real-time Order Tracker Dashboard'],
+    plans: [
+      { name: 'Ordering Web Flow', price: '₹19,999', desc: 'Standard direct ordering store', features: ['Filterable menu ordering flow', 'Razorpay & UPI payment checkouts', 'SMS status updates', 'Kitchen receipt generator', '2 Weeks Delivery'] },
+      { name: 'Gold Order Dispatch Suite', price: '₹34,999', desc: 'Advanced delivery & checkout hub', features: ['Delivery radius calculations map', 'Advanced order pipeline dashboards', 'WhatsApp catalogue matching', 'Defaulter logs tracking', '4 Weeks Delivery'] }
+    ]
+  },
+  'restaurant-pos-system': {
+    title: 'Restaurant POS System',
+    category: 'business-software',
+    price: '₹24,999',
+    desc: 'All-in-one restaurant billing, kitchen display sync, and table order tracking software.',
+    features: ['Quick Billing & Invoice PDFs', 'Kitchen Order Ticket (KOT) Sync', 'Table-wise Order Logs', 'Multi-payment Splits Methods', 'Detailed Sales Analytics Reports'],
+    plans: [
+      { name: 'Standard Billing POS', price: '₹24,999', desc: 'Standard billing terminal software', features: ['Table billing ledger', 'KOT thermal prints', 'GST compliant billing', 'Basic revenue reports', '2 Weeks Delivery'] },
+      { name: 'Gold Kitchen ERP Suite', price: '₹44,999', desc: 'Complete multi-terminal restaurant suite', features: ['Kitchen display system (KDS) sync', 'Inventory stock tracking sync', 'Staff shifts logs tracking', 'Multi-payment ledger splits', '3 Weeks Delivery'] }
+    ]
+  },
+  'qr-menu-solution': {
+    title: 'QR Menu Solution',
+    category: 'whatsapp-marketing',
+    price: '₹4,999',
+    desc: 'Contactless digital QR menus where guests can scan, browse, order, and pay from their table.',
+    features: ['QR Code Poster Generators', 'Self-ordering Digital Cart', 'Table-wise Order Auto Allocator', 'WhatsApp Order Notifications', 'Payment at Table Gateway'],
+    plans: [
+      { name: 'Scan Only Menu', price: '₹4,999', desc: 'Basic QR scan menu catalog', features: ['Filterable mobile digital menu', 'Unique QR poster layout PDF', 'Admin menu manager panel', 'Standard WhatsApp links', '3 Days Delivery'] },
+      { name: 'Gold Self-Order QR', price: '₹12,999', desc: 'Interactive table self-order suite', features: ['Scan-to-order web checkout', 'Table-wise order notifications dashboard', 'Integrated digital pay-at-table gateways', 'Review collection popup widgets', '1 Week Delivery'] }
+    ]
+  },
+  'delivery-management-system': {
+    title: 'Delivery Management System',
+    category: 'business-software',
+    price: '₹14,999',
+    desc: 'Real-time delivery driver tracking, order dispatching dashboard, and estimated arrival updates.',
+    features: ['Driver Mobile Tracking Maps', 'Auto Order Dispatch Rules', 'Customer Live Status Trackers', 'Delivery Partner API Syncs', 'Driver Payment Ledgers'],
+    plans: [
+      { name: 'Standard Dispatch', price: '₹14,999', desc: 'Basic driver dispatch panel', features: ['Manual order dispatch tracker', 'Driver assignment records', 'SMS tracking links to customers', 'Driver daily logs', '2 Weeks Delivery'] },
+      { name: 'Gold GPS Live Flow', price: '₹29,999', desc: 'Advanced automated mapping suite', features: ['Real-time GPS tracker dashboard', 'Auto-allocation round-robin dispatch', 'WhatsApp API live updates', 'Integration with Dunzo/Shadowfax', '3 Weeks Delivery'] }
+    ]
+  },
+  'loyalty-program': {
+    title: 'Loyalty Program',
+    category: 'business-software',
+    price: '₹9,999',
+    desc: 'Customer loyalty cards, rewards points, discount coupons, and birthday promotion automation.',
+    features: ['Customer Points Balance Accounts', 'Digital Membership Card PDFs', 'Loyalty Tier Rules (Bronze, Gold)', 'Auto Promo SMS Campaigns', 'Detailed Engagement Analytics'],
+    plans: [
+      { name: 'Points Wallet Standard', price: '₹9,999', desc: 'Standard point credit tracker', features: ['Point deposit/redeem panels', 'SMS transaction reports', 'Standard member directory', 'Basic analytics dashboard', '1 Week Delivery'] },
+      { name: 'Gold Loyalty Automation', price: '₹19,999', desc: 'Advanced multi-tier marketing engine', features: ['Multi-tier membership settings', 'Automated Birthday WhatsApp/SMS campaigns', 'Digital card passbook downloads', 'Broker engagement insights', '2 Weeks Delivery'] }
+    ]
+  },
+  'restaurant-mobile-app': {
+    title: 'Restaurant Mobile App',
+    category: 'mobile-apps',
+    price: '₹49,999',
+    desc: 'Native Android & iOS apps for food delivery, table booking, and instant push promotions.',
+    features: ['In-app Menu & Order Cart', 'Table Reservation Scheduler', 'Push Notice Promotions Widget', 'Live Driver GPS Tracking', 'Google Play & Apple App Store Publish'],
+    plans: [
+      { name: 'Standard Food App', price: '₹49,999', desc: 'Direct order customer native app', features: ['Custom category food menus', 'In-app Razorpay and UPI checkout', 'SMS order status alert integrations', 'Android version publish', '4 Weeks Delivery'] },
+      { name: 'Gold Full Campus Suite', price: '₹79,999', desc: 'Double app suite (Customer + Driver)', features: ['Customer App + Driver App', 'Live map route tracking', 'Zoom menu layouts', 'Play Store + Apple App Store publish', '6 Weeks Delivery'] }
+    ]
+  },
+  'restaurant-crm': {
+    title: 'Restaurant CRM',
+    category: 'business-software',
+    price: '₹14,999',
+    desc: 'Track guest databases, order history profiles, dining preferences, and feedback logs.',
+    features: ['Detailed Guest Profiles Directory', 'Order History & Ticket Value logs', 'Dining Preference Trackers', 'Auto review collector SMS', 'Customer Segmentation Models'],
+    plans: [
+      { name: 'Standard Guest CRM', price: '₹14,999', desc: 'Standard client directory tool', features: ['Profile database sheets', 'Standard transaction history', 'Auto email promotions alerts', 'Detailed segmentation tags', '2 Weeks Delivery'] },
+      { name: 'Gold Smart Guest Suite', price: '₹29,999', desc: 'AI customer profiling dashboard', features: ['Average order value (AOV) metrics', 'WhatsApp automation feedback collection', 'Birthday auto campaign engines', 'Bespoke marketing triggers', '3 Weeks Delivery'] }
+    ]
+  },
+  'restaurant-digital-marketing': {
+    title: 'Restaurant Digital Marketing',
+    category: 'digital-marketing',
+    price: '₹12,999/mo',
+    desc: 'High-ROI digital marketing campaigns - Instagram food photography, local SEO, and Meta ads.',
+    features: ['High quality Food Graphic Designs', 'Meta Local Food Lead Ads', 'Google Maps Local search ranking', 'Influencer Tie-up Strategy', 'Monthly ROI Analytics Audits'],
+    plans: [
+      { name: 'Cafe Growth Pack', price: '₹12,999/mo', desc: 'Social + maps local rankings pack', features: ['16 Custom branding food graphics', 'GMB profile local optimizations', 'Local meta ads setup', 'Standard review boost campaign', 'Cancel Anytime'] },
+      { name: 'Restaurant Authority Pack', price: '₹24,999/mo', desc: 'Complete brand authority marketing', features: ['30 Custom posts (daily graphics/reels)', 'Paid local google search ads campaign', 'Influencer partnership outreach', 'WhatsApp lead verification integrations', 'Cancel Anytime'] }
+    ]
   }
 };
 

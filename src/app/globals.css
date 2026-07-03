@@ -693,10 +693,6 @@ a {
     grid-template-columns: 260px 1fr;
     gap: 20px;
   }
-  .industries-row-desktop {
-    grid-template-columns: repeat(12, 1fr) !important;
-    gap: 6px !important;
-  }
   .industries-card-desktop {
     padding: 10px 4px !important;
     min-height: 98px !important;

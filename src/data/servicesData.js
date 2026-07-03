@@ -848,6 +848,120 @@ export const serviceDatabase = {
     plans: [
       { name: 'Cafe Growth Pack', price: '₹12,999/mo', desc: 'Social + maps local rankings pack', features: ['16 Custom branding food graphics', 'GMB profile local optimizations', 'Local meta ads setup', 'Standard review boost campaign', 'Cancel Anytime'] },
       { name: 'Restaurant Authority Pack', price: '₹24,999/mo', desc: 'Complete brand authority marketing', features: ['30 Custom posts (daily graphics/reels)', 'Paid local google search ads campaign', 'Influencer partnership outreach', 'WhatsApp lead verification integrations', 'Cancel Anytime'] }
+    plans: [
+      { name: 'Cafe Growth Pack', price: '₹12,999/mo', desc: 'Social + maps local rankings pack', features: ['16 Custom branding food graphics', 'GMB profile local optimizations', 'Local meta ads setup', 'Standard review boost campaign', 'Cancel Anytime'] },
+      { name: 'Restaurant Authority Pack', price: '₹24,999/mo', desc: 'Complete brand authority marketing', features: ['30 Custom posts (daily graphics/reels)', 'Paid local google search ads campaign', 'Influencer partnership outreach', 'WhatsApp lead verification integrations', 'Cancel Anytime'] }
+    ]
+  },
+  // ─── Salons & Wellness ─────────────────────────────────────
+  'salon-web-dev': {
+    title: 'Salon Website Development',
+    category: 'websites',
+    price: '₹9,999',
+    desc: 'Stunning, fast, and optimized websites for salons, spas, and wellness centers showcasing lists of services.',
+    features: ['Service List & Price Menus', 'Google Maps Local Embed', 'Staff Profile Portfolios', 'Appointment Request Callouts', 'Responsive Mobile Designs'],
+    plans: [
+      { name: 'Standard Salon Site', price: '₹9,999', desc: 'Clean page listing services & team', features: ['5 Pages Layout', 'Online service menu display', 'WhatsApp booking redirect links', 'Free Domain & Host (1 Yr)', '1 Week Delivery'] },
+      { name: 'Gold Salon Portal', price: '₹19,999', desc: 'Premium multi-page custom portal', features: ['10 Pages Custom Layout', 'Stylist portfolio slider widget', 'Local search map citation boost', 'WordPress Admin Dashboard CMS', '2 Weeks Delivery'] }
+    ]
+  },
+  'salon-appointment-booking': {
+    title: 'Appointment Booking System',
+    category: 'business-software',
+    price: '₹14,999',
+    desc: 'Easy online booking software for salons so clients can self-schedule appointments and get reminders.',
+    features: ['Stylist Calendar Views', 'Real-time Slot Bookings', 'WhatsApp/SMS Automated Reminders', 'Reschedule & Cancellation Logs', 'Payment Deposit Collection'],
+    plans: [
+      { name: 'Standard Booking Portal', price: '₹14,999', desc: 'Standard slot reservation system', features: ['Online booking form widget', 'SMS auto confirmations', 'Table list management logs', 'Standard admin calendar', '2 Weeks Delivery'] },
+      { name: 'Gold Stylist Suite', price: '₹24,999', desc: 'Advanced reservation system with staff profiles', features: ['Stylist wise profile bookings', 'WhatsApp API confirmations', 'Deposit collections on checkout', 'Automatic queue distribution', '3 Weeks Delivery'] }
+    ]
+  },
+  'salon-management-software': {
+    title: 'Salon Management Software',
+    category: 'business-software',
+    price: '₹19,999',
+    desc: 'Manage salon operations, staff calendars, service commissions, and daily check-ins easily.',
+    features: ['Stylist Rota Calendars', 'Commission Billing Calculators', 'Quick Check-in Desk', 'Retail Product Stock Sync', 'Revenue Performance Tracker'],
+    plans: [
+      { name: 'Standard Management Panel', price: '₹19,999', desc: 'Basic booking & check-in software', features: ['Daily stylist schedule tables', 'Commission calculation sheet', 'Standard sales reports', 'Retail sales logging', '2 Weeks Delivery'] },
+      { name: 'Gold Multi-Chair Suite', price: '₹39,999', desc: 'Complete enterprise salon management', features: ['Unlimited chair allocation grids', 'Staff check-in biometric hooks', 'Inventory low-stock alerts', 'Multi-payment ledger splits', '4 Weeks Delivery'] }
+    ]
+  },
+  'spa-management-system': {
+    title: 'Spa Management System',
+    category: 'business-software',
+    price: '₹24,999',
+    desc: 'Complete billing, cabin allocations, therapist schedules, and feedback logs software for spas.',
+    features: ['Room & Cabin Grid Allocation', 'Therapist Shift Planners', 'Therapy Service Billing', 'Consent Form Digital Signature', 'Detailed Performance Insights'],
+    plans: [
+      { name: 'Spa Dispatch Basic', price: '₹24,999', desc: 'Standard room allocation portal', features: ['Room assignment log tables', 'Therapist schedules grids', 'Standard billing receipts', 'Basic feedback collector', '2 Weeks Delivery'] },
+      { name: 'Gold Wellness ERP', price: '₹44,999', desc: 'Complete spa booking & resource planning', features: ['Digital client consent forms e-sign', 'Product consumption logging', 'WhatsApp notifications on booking', 'Commissions allocation engine', '3 Weeks Delivery'] }
+    ]
+  },
+  'membership-management': {
+    title: 'Membership Management',
+    category: 'business-software',
+    price: '₹9,999',
+    desc: 'Configure monthly subscriptions, prepaid package logs, and loyalty points balances for salon VIP members.',
+    features: ['Prepaid Services Wallets', 'Loyalty Tier Rules (Bronze, VIP)', 'Recurring Subscription Gateways', 'Digital membership pass PDFs', 'Points Ledger Audit Logs'],
+    plans: [
+      { name: 'Membership Tracker Standard', price: '₹9,999', desc: 'Prepaid package logs tracker', features: ['Prepaid credits directory database', 'SMS points transaction notifications', 'Standard subscriber tag tags', 'Basic usage stats dashboard', '1 Week Delivery'] },
+      { name: 'Gold VIP Subscription Suite', price: '₹19,999', desc: 'Advanced recurring billing suite', features: ['Monthly auto billing integration (Stripe)', 'Custom loyalty tier calculations', 'Auto promotional WhatsApp campaigns', 'Digital wallet passbooks', '2 Weeks Delivery'] }
+    ]
+  },
+  'customer-crm': {
+    title: 'Customer CRM',
+    category: 'business-software',
+    price: '₹14,999',
+    desc: 'Keep complete customer profiles containing service logs, hair/skin preferences, and contact details.',
+    features: ['Detailed Client Profile History', 'Hair/Skin Preference Files', 'Average spend & visit records', 'Review auto-collect SMS widgets', 'Audience Segmentation Tag Tags'],
+    plans: [
+      { name: 'Standard Client CRM', price: '₹14,999', desc: 'Standard client directory tool', features: ['Profile database sheets', 'Standard transaction history', 'Auto email promotions alerts', 'Detailed segmentation tags', '2 Weeks Delivery'] },
+      { name: 'Gold Client Profiler', price: '₹29,999', desc: 'AI customer profiling dashboard', features: ['Average order value (AOV) metrics', 'WhatsApp automation feedback collection', 'Birthday auto campaign engines', 'Bespoke marketing triggers', '3 Weeks Delivery'] }
+    ]
+  },
+  'billing-software': {
+    title: 'Billing Software',
+    category: 'business-software',
+    price: '₹12,999',
+    desc: 'Generate fast invoices, track retail product inventory, and calculate GST logs.',
+    features: ['Fast Thermal Receipt Printing', 'GST Compliant Tax billing', 'Retail product inventory track', 'Cash/Card/UPI transaction logger', 'Daily cash drawer balancing'],
+    plans: [
+      { name: 'Standard Billing POS', price: '₹12,999', desc: 'Standard billing terminal software', features: ['Service billing ledger', 'KOT thermal prints', 'GST compliant billing', 'Basic revenue reports', '1 Week Delivery'] },
+      { name: 'Gold Inventory Billing Suite', price: '₹24,999', desc: 'Advanced inventory-synced billing', features: ['Bar-code scanning inventory tracking', 'Automatic tax billing configurations', 'Supplier inventory checks', 'Advanced digital payment links', '2 Weeks Delivery'] }
+    ]
+  },
+  'wellness-mobile-app': {
+    title: 'Wellness Mobile App',
+    category: 'mobile-apps',
+    price: '₹49,999',
+    desc: 'Native Android & iOS app for online booking, service catalogs, digital membership passes, and push updates.',
+    features: ['Filterable Service Menu Catalog', 'Stylist Booking Calendar Widget', 'In-app Razorpay and UPI checkout', 'Push Notice Promotions Widget', 'Play/App Store Publishing'],
+    plans: [
+      { name: 'Standard Salon App', price: '₹49,999', desc: 'Direct order customer native app', features: ['Custom category services list', 'In-app booking & payments', 'SMS order status alert integrations', 'Android version publish', '5 Weeks Delivery'] },
+      { name: 'Gold Dual App Suite', price: '₹79,999', desc: 'Double app suite (Customer + Staff)', features: ['Customer App + Stylist App', 'Live push alerts notification board', 'Saved booking logs tracking', 'Play Store + Apple App Store publish', '7 Weeks Delivery'] }
+    ]
+  },
+  'marketing-automation': {
+    title: 'Marketing Automation',
+    category: 'whatsapp-marketing',
+    price: '₹9,999',
+    desc: 'Auto reminders for appointments, birthday greeting promotions, and feedback collection via WhatsApp.',
+    features: ['Official WhatsApp Business API setup', 'Bulk SMS/WhatsApp broadcast tools', 'Automated Birthday discount engines', 'Auto feedback review collection', 'Campaign performance statistics'],
+    plans: [
+      { name: 'Standard Auto Broadcast', price: '₹9,999', desc: 'Manual broadcast scheduler portal', features: ['API broadcast portal', 'SMS templates scheduler panel', 'GMB review collection widget', 'Standard contact tags', '1 Week Delivery'] },
+      { name: 'Gold Lead Nurturing Engine', price: '₹19,999', desc: 'AI automated broadcast triggers', features: ['WhatsApp API automated alerts triggers', 'Monthly campaigns analysis reports', 'Automated birthday discount engines', 'Review collections templates sync', '2 Weeks Delivery'] }
+    ]
+  },
+  'salon-seo-services': {
+    title: 'Salon SEO Services',
+    category: 'digital-marketing',
+    price: '₹9,999/mo',
+    desc: 'Local salon SEO to rank high on maps search and keywords like "best haircut/salon near me".',
+    features: ['Local Stylist Keywords', 'Google Maps Business Optimisation', 'Location Specific SEO Setup', 'High DA local citations', 'Monthly GMB reports audit'],
+    plans: [
+      { name: 'Salon Local Rank', price: '₹9,999/mo', desc: 'Local project keywords ranking package', features: ['15 Local project keywords', 'GMB profile local optimizations', 'Project microsite speed checks', 'Standard backlinks (10/mo)', '3 Month Commit'] },
+      { name: 'Beauty Authority SEO', price: '₹19,999/mo', desc: 'Complete brand authority builder package', features: ['40 High volume local keywords', 'Monthly blogs & project reviews writing', 'High-DA local links (25/mo)', 'Real-time rankings tracking panels', 'No Contract'] }
     ]
   }
 };

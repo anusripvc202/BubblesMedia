@@ -693,10 +693,6 @@ a {
     grid-template-columns: 260px 1fr;
     gap: 20px;
   }
-  .solutions-row-desktop {
-    grid-template-columns: repeat(8, 1fr) !important;
-    gap: 10px !important;
-  }
   .industries-row-desktop {
     grid-template-columns: repeat(12, 1fr) !important;
     gap: 6px !important;

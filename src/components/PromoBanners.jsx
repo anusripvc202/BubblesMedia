@@ -33,7 +33,7 @@ export default function PromoBanners({ onSelectPackage }) {
 
   return (
     <section style={{ marginBottom: '24px' }}>
-      <div style={{ display: 'grid' }} className="promo-grid-responsive">
+      <div className="promo-grid-responsive promo-row-scroll">
         
         {/* Deal of the Day Card - Solid Orange background */}
         <div style={{

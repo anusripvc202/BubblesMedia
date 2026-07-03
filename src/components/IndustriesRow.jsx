@@ -3,6 +3,7 @@ import React from 'react';
 const industries = [
   {
     name: 'Doctors & Healthcare',
+    desc: 'Clinics, Hospitals & Doctors',
     color: '#0284c7',
     bg: '#f0f9ff',
     icon: (
@@ -13,6 +14,7 @@ const industries = [
   },
   {
     name: 'Schools & Colleges',
+    desc: 'LMS, Portals & E-learning',
     color: '#6366f1',
     bg: '#eef2ff',
     icon: (
@@ -24,6 +26,7 @@ const industries = [
   },
   {
     name: 'Real Estate & Builders',
+    desc: 'Property Listing & Builders',
     color: '#f97316',
     bg: '#fff7ed',
     icon: (
@@ -35,6 +38,7 @@ const industries = [
   },
   {
     name: 'E-commerce Stores',
+    desc: 'Online Retail & Shops',
     color: '#ec4899',
     bg: '#fdf2f8',
     icon: (
@@ -47,6 +51,7 @@ const industries = [
   },
   {
     name: 'Restaurants & Cafes',
+    desc: 'Digital Menus & Delivery',
     color: '#d97706',
     bg: '#fffbeb',
     icon: (
@@ -61,6 +66,7 @@ const industries = [
   },
   {
     name: 'Salons & Wellness',
+    desc: 'Appointment Booking Systems',
     color: '#10b981',
     bg: '#ecfdf5',
     icon: (
@@ -71,6 +77,7 @@ const industries = [
   },
   {
     name: 'Travel & Tourism',
+    desc: 'Agency Portals & Booking',
     color: '#06b6d4',
     bg: '#ecfeff',
     icon: (
@@ -81,6 +88,7 @@ const industries = [
   },
   {
     name: 'Law Firms & Advocates',
+    desc: 'Legal Portals & Case Tracking',
     color: '#4b5563',
     bg: '#f3f4f6',
     icon: (
@@ -94,6 +102,7 @@ const industries = [
   },
   {
     name: 'Manufacturing & Industries',
+    desc: 'B2B Catalog & ERP Solutions',
     color: '#78716c',
     bg: '#f5f5f4',
     icon: (
@@ -108,6 +117,7 @@ const industries = [
   },
   {
     name: 'NGOs & Non Profits',
+    desc: 'Donations & Campaigns Sites',
     color: '#8b5cf6',
     bg: '#f5f3ff',
     icon: (
@@ -118,6 +128,7 @@ const industries = [
   },
   {
     name: 'Startups & Entrepreneurs',
+    desc: 'MVP & Product Engineering',
     color: '#3b82f6',
     bg: '#eff6ff',
     icon: (
@@ -129,6 +140,7 @@ const industries = [
   },
   {
     name: 'More Industries',
+    desc: 'Custom Domain Digital Blueprints',
     color: '#1e293b',
     bg: '#f8fafc',
     icon: (
@@ -158,11 +170,10 @@ export default function IndustriesRow({ onSelectIndustry }) {
         </a>
       </div>
 
-      {/* Grid of Industry blocks - single row horizontal scroll */}
+      {/* Grid of Industry blocks */}
       <div className="industries-row-desktop" style={{
         display: 'grid',
-        gridAutoFlow: 'column',
-        gridAutoColumns: '1fr',
+        gridTemplateColumns: 'repeat(6, 1fr)',
         gap: '10px',
         width: '100%'
       }}>
@@ -177,32 +188,51 @@ export default function IndustriesRow({ onSelectIndustry }) {
               background: 'var(--bg-white)',
               border: '1px solid var(--border-color)',
               borderRadius: 'var(--radius-md)',
-              padding: '6px 3px',
+              padding: '14px 8px',
               display: 'flex',
               flexDirection: 'column',
               alignItems: 'center',
               justifyContent: 'center',
               textAlign: 'center',
-              gap: '2px',
+              gap: '6px',
               cursor: 'pointer',
-              minWidth: '0px'
+              minWidth: '0px',
+              minHeight: '120px',
+              transition: 'all 0.2s ease',
+            }}
+            onMouseEnter={e => {
+              e.currentTarget.style.borderColor = ind.color;
+              e.currentTarget.style.background = ind.bg;
+              e.currentTarget.style.transform = 'translateY(-3px)';
+              e.currentTarget.style.boxShadow = `0 6px 20px ${ind.color}22`;
+            }}
+            onMouseLeave={e => {
+              e.currentTarget.style.borderColor = 'var(--border-color)';
+              e.currentTarget.style.background = 'var(--bg-white)';
+              e.currentTarget.style.transform = 'translateY(0)';
+              e.currentTarget.style.boxShadow = 'none';
             }}
           >
             <div className="industries-icon-container" style={{
-              background: '#F8FAFC',
-              color: 'var(--secondary)',
+              background: ind.bg,
+              color: ind.color,
               border: '1px solid var(--border-color-light)',
-              width: '22px',
-              height: '22px',
+              width: '28px',
+              height: '28px',
               borderRadius: '50%',
               display: 'flex',
               alignItems: 'center',
-              justifyContent: 'center'
+              justifyContent: 'center',
+              marginBottom: '2px',
+              flexShrink: 0
             }}>
               {ind.icon}
             </div>
-            <span className="industries-card-text" style={{ fontSize: '0.55rem', fontWeight: '700', color: 'var(--secondary)', lineHeight: '1.1' }}>
+            <span className="industries-card-text" style={{ fontSize: '0.62rem', fontWeight: '800', color: 'var(--secondary)', lineHeight: '1.15' }}>
               {ind.name}
+            </span>
+            <span className="industries-card-sub" style={{ fontSize: '0.52rem', color: 'var(--text-light)', fontWeight: '500', display: 'block', marginTop: '2px', lineHeight: '1.2' }}>
+              {ind.desc}
             </span>
           </button>
         ))}

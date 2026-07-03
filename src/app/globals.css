@@ -49,6 +49,11 @@
   padding: 0;
 }
 
+html {
+  overflow-x: hidden;
+  max-width: 100%;
+}
+
 body {
   font-family: var(--font-sans);
   background-color: var(--bg-base);
@@ -56,6 +61,8 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
+  width: 100%;
+  max-width: 100%;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -124,6 +131,7 @@ a {
   max-width: 1300px;
   margin: 0 auto;
   padding: 0 24px;
+  width: 100%;
 }
 
 .flex-center {
@@ -586,27 +594,32 @@ a {
   transition: background var(--transition-fast), color var(--transition-fast), box-shadow var(--transition-fast) !important;
 }
 
-/* Responsive Utilities */
 
-/* ── Utility base states ── */
-.hide-on-mobile      { display: revert !important; }
-.show-on-mobile-flex { display: none !important; }
-.hide-on-tablet      { display: revert !important; }
+/* ============================================================
+   RESPONSIVE UTILITIES & LAYOUTS
+   ============================================================ */
+.show-on-tablet-flex { display: none !important; }
+.hide-on-tablet      { display: flex !important; }
 
-/* ── Header layout ── */
-.header-main-bar {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  width: 100%;
-  padding: 8px 24px;
+/* Desktop category selector style */
+.mobile-category-dropdown-wrapper {
+  display: none !important;
 }
-.header-logo           { order: 1; flex-shrink: 0; }
-.header-categories-btn { order: 2; flex-shrink: 0; }
-.header-search-form    { order: 3; flex: 1; min-width: 160px; }
-.header-right-controls { order: 4; flex-shrink: 0; }
 
-/* ── Hero stats ── */
+/* â”€â”€ Hero Layout Desktop â”€â”€ */
+.hero-card {
+  position: relative;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  padding: 20px 24px;
+  min-height: 235px;
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  align-items: center;
+  gap: 20px;
+}
+
+/* â”€â”€ Hero stats â”€â”€ */
 .hero-stats-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -621,7 +634,39 @@ a {
   padding-right: 0;
 }
 
-/* ── Stats row ── */
+/* â”€â”€ Main Layout Wrapper â”€â”€ */
+.main-wrapper {
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  gap: 16px;
+  margin-top: 12px;
+  margin-bottom: 24px;
+  align-items: start;
+  min-width: 0;
+  max-width: 100%;
+}
+
+/* â”€â”€ Desktop Category Sidebar â”€â”€ */
+.desktop-sidebar-inner {
+  display: block;
+}
+
+/* â”€â”€ Solutions & Industries Desktop Grids â”€â”€ */
+.solutions-row-desktop {
+  display: grid !important;
+  grid-template-columns: repeat(6, 1fr) !important;
+  gap: 10px !important;
+  width: 100% !important;
+}
+.industries-row-desktop {
+  display: grid !important;
+  grid-template-columns: repeat(6, 1fr) !important;
+  grid-auto-flow: row !important;
+  gap: 10px !important;
+  width: 100% !important;
+}
+
+/* â”€â”€ Statistics Banner Desktop â”€â”€ */
 .stats-row-desktop {
   display: grid !important;
   grid-template-columns: repeat(5, 1fr) !important;
@@ -629,138 +674,250 @@ a {
   padding: 20px 24px !important;
 }
 
-.industries-row-desktop {
-  display: grid !important;
-  grid-auto-flow: column !important;
-  grid-auto-columns: 1fr !important;
-  gap: 10px !important;
-  width: 100% !important;
-}
-
-.solutions-row-desktop {
-  display: grid !important;
-  grid-template-columns: repeat(6, 1fr) !important;
-  gap: 10px !important;
-  width: 100% !important;
-}
-
-/* ── Promo grid ── */
+/* ── Promo Banners Grid ── */
 .promo-grid-responsive {
+  display: grid;
   grid-template-columns: 0.92fr 1.08fr;
   gap: 16px;
 }
 
+
 /* ============================================================
-   LG — Tablets / small laptops  (max 1024px)
+   2XL ── Wide / Ultra-Wide Screens (min-width: 1280px)
+   ============================================================ */
+@media (min-width: 1280px) {
+  .container-layout {
+    max-width: 1400px;
+    padding: 0 32px;
+  }
+  .main-wrapper {
+    grid-template-columns: 260px 1fr;
+    gap: 20px;
+  }
+  .solutions-row-desktop {
+    grid-template-columns: repeat(8, 1fr) !important;
+    gap: 10px !important;
+  }
+  .industries-row-desktop {
+    grid-template-columns: repeat(12, 1fr) !important;
+    gap: 6px !important;
+  }
+  .industries-card-desktop {
+    padding: 10px 4px !important;
+    min-height: 98px !important;
+  }
+  .industries-card-desktop span {
+    font-size: 0.65rem !important;
+    line-height: 1.15 !important;
+  }
+  .industries-card-desktop div {
+    width: 28px !important;
+    height: 28px !important;
+  }
+}
+
+
+/* ============================================================
+   LG ── Tablets & Small Laptops (max-width: 1024px)
    ============================================================ */
 @media (max-width: 1024px) {
   .hide-on-tablet { display: none !important; }
+  .show-on-tablet-flex { display: flex !important; }
 
-  /* Main layout — sidebar moves above content */
+  /* ── Navbar ── */
+  .header-main-nav-container {
+    padding: 10px 16px !important;
+    gap: 10px !important;
+  }
+
+  /* ── Core Layout: single-column ── */
   .main-wrapper {
     grid-template-columns: 1fr !important;
     gap: 12px !important;
-    margin-top: 0 !important;
+    margin-top: 8px !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+  }
+  /* Prevent content column from stretching beyond viewport */
+  .main-wrapper > * {
+    min-width: 0 !important;
+    max-width: 100% !important;
   }
 
-  /* Sidebar becomes horizontal scroll pill strip */
-  .sidebar-mobile-scroll {
-    display: flex !important;
-    flex-direction: row !important;
-    overflow-x: auto !important;
-    white-space: nowrap !important;
-    padding: 8px 0 !important;
-    gap: 8px !important;
-    border: none !important;
-    box-shadow: none !important;
-    background: transparent !important;
-    position: relative !important;
-    top: 0 !important;
-  }
-  .sidebar-mobile-scroll .category-item {
-    flex-direction: row !important;
-    align-items: center !important;
-    border: 1px solid var(--border-color) !important;
-    border-radius: var(--radius-full) !important;
-    padding: 6px 14px !important;
-    min-width: max-content !important;
-    background: var(--bg-white) !important;
-  }
-  .sidebar-mobile-scroll .category-item-active {
-    border-color: var(--primary) !important;
-    background: var(--primary-light) !important;
-  }
-  .sidebar-mobile-scroll .category-item > div:last-child,
-  .sidebar-mobile-scroll .category-item span:last-child {
+  /* ── Sidebar: hide desktop, show dropdown ── */
+  .desktop-sidebar-inner {
     display: none !important;
   }
-  .sidebar-title-mobile-hide { display: none !important; }
+  .mobile-category-dropdown-wrapper {
+    display: block !important;
+    position: relative;
+  }
 
-  /* Cards — scrollable row with minimum width per card */
-  .solutions-row-desktop,
+  /* ── Reorder: content first, sidebar/categories second on mobile ── */
+  .responsive-sidebar-container {
+    order: 2 !important;
+    position: static !important;
+  }
+  .main-content-col {
+    order: 1 !important;
+  }
+
+  /* ── Industries Cards: horizontal scroll ── */
   .industries-row-desktop {
-    grid-auto-columns: minmax(130px, 1fr) !important;
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
     overflow-x: auto !important;
-    gap: 8px !important;
-    padding-bottom: 4px !important;
-    scrollbar-width: thin;
-    scrollbar-color: #E2E8F0 transparent;
-  }
-
-  /* Promo — single column */
-  .promo-grid-responsive {
-    grid-template-columns: 1fr !important;
     gap: 12px !important;
+    padding: 6px 2px 14px !important;
+    width: 100% !important;
+    scrollbar-width: thin !important;
+    -webkit-overflow-scrolling: touch !important;
+  }
+  .industries-row-desktop::-webkit-scrollbar { height: 4px; }
+  .industries-row-desktop::-webkit-scrollbar-thumb {
+    background: rgba(0,0,0,0.12); border-radius: 99px;
+  }
+  .industries-card-desktop {
+    flex: 0 0 140px !important;
+    width: 140px !important;
+    min-height: 115px !important;
+    padding: 12px 8px !important;
+    box-sizing: border-box !important;
   }
 
-  /* Container */
-  .container-layout { padding: 0 20px; }
+  /* ── Solutions Cards: horizontal scroll ── */
+  .solutions-row-desktop {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    overflow-x: auto !important;
+    gap: 12px !important;
+    padding: 6px 2px 14px !important;
+    width: 100% !important;
+    scrollbar-width: thin !important;
+    -webkit-overflow-scrolling: touch !important;
+  }
+  .solutions-row-desktop::-webkit-scrollbar { height: 4px; }
+  .solutions-row-desktop::-webkit-scrollbar-thumb {
+    background: rgba(0,0,0,0.12); border-radius: 99px;
+  }
+  .solutions-card-desktop {
+    flex: 0 0 165px !important;
+    width: 165px !important;
+    min-height: 128px !important;
+    padding: 14px 10px !important;
+    box-sizing: border-box !important;
+  }
+
+  /* ── Promo Banners: stacked vertically, fully visible ── */
+  .promo-row-scroll {
+    display: flex !important;
+    flex-direction: column !important;
+    flex-wrap: wrap !important;
+    overflow-x: visible !important;
+    gap: 16px !important;
+    width: 100% !important;
+  }
+  .promo-row-scroll > div {
+    flex: 1 1 auto !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  /* ── Trust Banner: horizontal scroll ── */
+  .trust-banner-scroll {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    overflow-x: auto !important;
+    gap: 12px !important;
+    padding: 10px 8px !important;
+    scrollbar-width: none !important;
+    -webkit-overflow-scrolling: touch !important;
+  }
+  .trust-banner-scroll::-webkit-scrollbar { display: none; }
+  .trust-banner-scroll > div.trust-item-responsive {
+    flex: 0 0 140px !important;
+    width: 140px !important;
+    border-right: 1px solid var(--border-color-light) !important;
+    padding-right: 8px !important;
+    box-sizing: border-box !important;
+  }
+
+  /* ── Stats Row: horizontal scroll ── */
+  .stats-row-scroll {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    overflow-x: auto !important;
+    gap: 12px !important;
+    padding: 14px 12px !important;
+    scrollbar-width: none !important;
+    -webkit-overflow-scrolling: touch !important;
+  }
+  .stats-row-scroll::-webkit-scrollbar { display: none; }
+  .stats-row-scroll > div {
+    flex: 0 0 125px !important;
+    width: 125px !important;
+    border-right: 1px solid var(--border-color-light) !important;
+    padding-right: 8px !important;
+    box-sizing: border-box !important;
+  }
+
+  /* ── Hero: 2-column on tablet ── */
+  .hero-inner-grid {
+    grid-template-columns: 1fr 1fr !important;
+    min-height: 200px !important;
+  }
+  .hero-left-col {
+    padding: 16px 14px !important;
+    gap: 8px !important;
+  }
+
+  /* ── Footer: 2 columns on tablet ── */
+  .footer-links-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 28px !important;
+  }
 }
 
+
 /* ============================================================
-   MD — Large phones / small tablets  (max 768px)
+   MD â€” Large Phones & Mini Tablets (max-width: 768px)
    ============================================================ */
 @media (max-width: 768px) {
-  /* Utilities */
-  .hide-on-mobile { display: none !important; }
-  .show-on-mobile-flex { display: flex !important; }
-  .flex-col-mobile {
-    flex-direction: column !important;
-    align-items: stretch !important;
+
+  /* â”€â”€ Container â”€â”€ */
+  .container-layout {
+    padding: 0 16px !important;
   }
 
-  /* Container */
-  .container-layout { padding: 0 16px; }
-
-  /* Header — wrap: logo + icons on row 1, search on row 2 */
-  .header-main-bar {
-    flex-wrap: wrap !important;
-    gap: 8px !important;
-    padding: 8px 16px !important;
-  }
-  .header-right-controls {
-    order: 2 !important;
-    margin-left: auto !important;
-  }
-  .header-search-form {
-    order: 3 !important;
-    flex: 1 1 100% !important;
-  }
-  .header-categories-btn { display: none !important; }
-
-  /* Hero — single column */
-  .hero-card {
+  /* ── Hero: single column, hide image ── */
+  .hero-inner-grid {
     grid-template-columns: 1fr !important;
-    padding: 16px !important;
-    gap: 12px !important;
     min-height: auto !important;
   }
-  .hero-graphic-container {
-    justify-content: center !important;
-    margin-top: 8px;
+  .hero-left-col {
+    padding: 22px 16px 18px !important;
+    gap: 12px !important;
   }
-
-  /* Hero stats — 2 per row */
+  .hero-right-col {
+    display: flex !important;
+    justify-content: center !important;
+    padding: 0 16px 16px !important;
+  }
+  .hero-img {
+    max-height: 160px !important;
+    transform: scale(1.1) !important;
+    transform-origin: center center !important;
+  }
+  .hero-headline {
+    font-size: 1.6rem !important;
+  }
+  .hero-search-form {
+    max-width: 100% !important;
+  }
   .hero-stats-grid {
     grid-template-columns: repeat(2, 1fr) !important;
     gap: 6px !important;
@@ -770,308 +927,210 @@ a {
     padding-right: 0 !important;
   }
 
-  /* Cards — still scrollable */
-  .solutions-row-desktop,
-  .industries-row-desktop {
-    grid-auto-columns: minmax(110px, 1fr) !important;
-    gap: 6px !important;
+  /* â”€â”€ Industries: slightly smaller cards â”€â”€ */
+  .industries-card-desktop {
+    flex: 0 0 125px !important;
+    width: 125px !important;
+    min-height: 105px !important;
   }
 
-  /* Stats — 2 columns */
-  .stats-row-desktop {
-    grid-template-columns: repeat(2, 1fr) !important;
-    padding: 14px !important;
-    gap: 12px !important;
+  /* â”€â”€ Solutions: slightly smaller â”€â”€ */
+  .solutions-card-desktop {
+    flex: 0 0 150px !important;
+    width: 150px !important;
+    min-height: 120px !important;
   }
 
-  /* Footer grid — 2 columns on tablet, 1 on phone */
+  /* ── Promo: stacked ── */
+  .promo-row-scroll > div {
+    flex: 1 1 auto !important;
+    width: 100% !important;
+  }
+
+  /* â”€â”€ Footer: single column centered â”€â”€ */
   .footer-links-grid {
-    grid-template-columns: repeat(2, 1fr) !important;
+    grid-template-columns: 1fr !important;
+    text-align: center !important;
     gap: 28px !important;
   }
-
-  /* Promo — single column */
-  .promo-grid-responsive {
-    grid-template-columns: 1fr !important;
-    gap: 10px !important;
+  .footer-links-grid > div {
+    align-items: center !important;
+    text-align: center !important;
+  }
+  .footer-links-grid p {
+    text-align: center !important;
+    max-width: 360px !important;
+    margin: 0 auto !important;
+  }
+  .footer-links-grid div[style*="display: flex; gap: 10px"],
+  .footer-links-grid div[style*="display: flex; gap: 8px"] {
+    justify-content: center !important;
+  }
+  .footer-links-grid div[style*="flex-direction: column"] {
+    align-items: center !important;
+  }
+  .footer-links-grid a {
+    text-align: center !important;
   }
 
-  /* Section spacing */
-  section { padding-top: 20px; padding-bottom: 20px; }
+  /* â”€â”€ Typography â”€â”€ */
+  h1 { font-size: 1.55rem !important; line-height: 1.25 !important; }
+  h2 { font-size: 1.25rem !important; }
+  h3 { font-size: 1rem !important; }
 
-  /* Typography */
-  h1 { font-size: clamp(1.4rem, 5vw, 2rem) !important; }
-  h2 { font-size: clamp(1.1rem, 4vw, 1.5rem) !important; }
+  section {
+    padding-top: 14px;
+    padding-bottom: 14px;
+  }
 }
 
+
 /* ============================================================
-   SM — Phones  (max 640px)
+   SM â€” Small Phones (max-width: 640px)
    ============================================================ */
 @media (max-width: 640px) {
-  .container-layout { padding: 0 12px; }
 
-  /* Footer — 1 column */
-  .footer-links-grid {
-    grid-template-columns: 1fr !important;
-    gap: 24px !important;
-  }
-  footer { padding: 40px 0 24px !important; }
-
-  /* Hero tighter */
-  .hero-card { padding: 14px !important; gap: 10px !important; }
-
-  /* Timer smaller */
-  .timer-box { width: 36px !important; height: 36px !important; }
-  .timer-num { font-size: 0.88rem !important; }
-
-  /* Cards — narrower min */
-  .solutions-row-desktop,
-  .industries-row-desktop {
-    grid-auto-columns: minmax(95px, 1fr) !important;
-    gap: 5px !important;
-  }
-}
-
-/* ============================================================
-   XS — Small phones  (max 480px)
-   ============================================================ */
-@media (max-width: 480px) {
-  .container-layout { padding: 0 10px; }
-
-  /* Header logo smaller */
-  .header-logo h1 { font-size: 1.05rem !important; }
-
-  /* Hero stats — 2 per row */
-  .hero-stats-grid {
-    grid-template-columns: repeat(2, 1fr) !important;
+  /* â”€â”€ Navbar: tighter â”€â”€ */
+  .header-main-nav-container {
+    padding: 8px 14px !important;
   }
 
-  /* Stats — 2 columns */
-  .stats-row-desktop {
-    grid-template-columns: repeat(2, 1fr) !important;
-    gap: 8px !important;
-    padding: 10px !important;
+  /* â”€â”€ Hero â”€â”€ */
+  .hero-card {
+    padding: 14px !important;
+    border-radius: 10px !important;
   }
 
-  /* Cards — scroll, minimum 90px */
-  .solutions-row-desktop,
-  .industries-row-desktop {
-    grid-auto-columns: minmax(88px, 1fr) !important;
-    gap: 4px !important;
-  }
-
-  /* Footer */
-  footer { padding: 30px 0 18px !important; }
-  .footer-links-grid { gap: 18px !important; }
-
-  /* Buttons full-width */
-  .btn-primary, .btn-secondary, .btn-outline {
-    width: 100%;
-    justify-content: center;
-  }
-
-  /* Industries card text — keep readable */
-  .industries-card-text { font-size: 0.52rem !important; }
-}
-
-/* ============================================================
-   XL — Desktop  (min 1025px) — explicit overrides
-   ============================================================ */
-@media (min-width: 1025px) {
-  /* Solutions — equal auto columns, full row, no scroll */
-  .solutions-row-desktop {
-    grid-auto-columns: 1fr !important;
-    overflow-x: visible !important;
-    gap: 8px !important;
-  }
-  .solutions-card-desktop {
-    width: 100% !important;
-    padding: 8px 6px !important;
-  }
-
-  /* Industries — equal auto columns */
-  .industries-row-desktop {
-    grid-auto-columns: 1fr !important;
-    gap: 8px !important;
-    overflow-x: visible !important;
-  }
+  /* â”€â”€ Industries â”€â”€ */
   .industries-card-desktop {
-    padding: 8px 4px !important;
+    flex: 0 0 115px !important;
+    width: 115px !important;
+    min-height: 96px !important;
+    padding: 10px 6px !important;
   }
-  .industries-card-desktop span {
-    font-size: 0.58rem !important;
-    line-height: 1.15 !important;
-  }
-  .industries-card-desktop svg {
-    width: 12px !important;
-    height: 12px !important;
+  .industries-card-desktop .industries-card-text {
+    font-size: 0.6rem !important;
   }
 
-  /* Stats — 5 columns */
-  .stats-row-desktop {
-    grid-template-columns: repeat(5, 1fr) !important;
-    padding: 20px 24px !important;
-    gap: 12px !important;
+  /* â”€â”€ Solutions â”€â”€ */
+  .solutions-card-desktop {
+    flex: 0 0 138px !important;
+    width: 138px !important;
+    min-height: 112px !important;
+    padding: 12px 8px !important;
   }
 
-  /* Promo */
-  .promo-grid-responsive {
-    grid-template-columns: 0.92fr 1.08fr !important;
+  /* ── Promo: stacked ── */
+  .promo-row-scroll > div {
+    flex: 1 1 auto !important;
+    width: 100% !important;
   }
 
-  /* Footer — 4 columns */
-  .footer-links-grid {
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)) !important;
+  /* â”€â”€ Trust banner items â”€â”€ */
+  .trust-banner-scroll > div.trust-item-responsive {
+    flex: 0 0 125px !important;
+    width: 125px !important;
+  }
+
+  /* â”€â”€ Stats â”€â”€ */
+  .stats-row-scroll > div {
+    flex: 0 0 110px !important;
+    width: 110px !important;
+  }
+
+  /* â”€â”€ Buttons â”€â”€ */
+  .btn-primary, .btn-secondary, .btn-outline {
+    width: 100% !important;
+    justify-content: center !important;
+    font-size: 0.82rem !important;
+  }
+
+  /* â”€â”€ Countdown Timers â”€â”€ */
+  .timer-box {
+    width: 36px !important;
+    height: 36px !important;
+  }
+  .timer-num {
+    font-size: 0.88rem !important;
   }
 }
 
 
-.hero-stats-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 8px;
-}
-
-.hero-stats-item {
-  border-right: 1px solid rgba(0, 0, 0, 0.08);
-  padding-right: 5px;
-}
-.hero-stats-item:last-child {
-  border-right: none;
-  padding-right: 0;
-}
-
-@media (max-width: 768px) {
-  .flex-col-mobile {
-    flex-direction: column !important;
-    align-items: stretch !important;
-  }
-  .hide-on-mobile {
-    display: none !important;
-  }
-  
-  .container-layout {
-    padding: 0 16px;
-  }
-
-  /* Solutions Grid Mobile - keep as horizontal scroll row */
-
-  /* Industries Row Mobile - keep as horizontal scroll row */
-  
-  .industries-card-desktop span {
-    font-size: 0.65rem !important;
-  }
-
-  /* Promo Banners */
-  .promo-grid-responsive {
-    grid-template-columns: 1fr !important;
-  }
-  
-  /* Hero Stats */
-  .hero-stats-grid {
-    grid-template-columns: repeat(2, 1fr) !important;
-  }
-}
-
+/* ============================================================
+   XS â€” Tiny Phones (max-width: 480px)
+   ============================================================ */
 @media (max-width: 480px) {
-}
 
-/* Base states for mobile specific classes */
-.show-on-mobile-flex {
-  display: none !important;
-}
-
-@media (max-width: 768px) {
-  .show-on-mobile-flex {
-    display: flex !important;
-  }
-}
-
-/* Sidebar Mobile View (Horizontal Scroll) */
-@media (max-width: 1024px) {
-  .sidebar-mobile-scroll {
-    display: flex !important;
-    flex-direction: row !important;
-    overflow-x: auto !important;
-    white-space: nowrap !important;
-    padding-bottom: 8px !important;
-    padding-top: 8px !important;
-    gap: 8px !important;
-    border: none !important;
-    box-shadow: none !important;
-    background: transparent !important;
-    max-height: auto !important;
-    position: relative !important;
-    top: 0 !important;
+  .container-layout {
+    padding: 0 12px !important;
   }
 
-  .sidebar-mobile-scroll .category-item {
-    flex-direction: row !important;
-    align-items: center !important;
-    border: 1px solid var(--border-color) !important;
-    border-radius: var(--radius-full) !important;
-    padding: 6px 14px !important;
-    min-width: max-content !important;
-    background: var(--bg-white) !important;
-  }
-  
-  .sidebar-mobile-scroll .category-item-active {
-    border-color: var(--primary) !important;
-    background: var(--primary-light) !important;
+  /* â”€â”€ Logo text â”€â”€ */
+  .header-main-nav-container span:first-child {
+    font-size: 1.05rem !important;
   }
 
-  .sidebar-mobile-scroll .category-item > div:last-child {
-    display: none !important; /* hide arrow */
+  /* â”€â”€ Industries â”€â”€ */
+  .industries-card-desktop {
+    flex: 0 0 105px !important;
+    width: 105px !important;
+    min-height: 88px !important;
   }
-  
-  .sidebar-mobile-scroll .category-item span:last-child {
-    display: none !important; /* hide desc */
+  .industries-card-desktop .industries-card-text {
+    font-size: 0.57rem !important;
   }
-  
-  .sidebar-title-mobile-hide {
-    display: none !important;
+
+  /* â”€â”€ Solutions â”€â”€ */
+  .solutions-card-desktop {
+    flex: 0 0 128px !important;
+    width: 128px !important;
+    min-height: 108px !important;
   }
+
+  /* ── Promo: stacked ── */
+  .promo-row-scroll > div {
+    flex: 1 1 auto !important;
+    width: 100% !important;
+  }
+
+  /* â”€â”€ Trust â”€â”€ */
+  .trust-banner-scroll > div.trust-item-responsive {
+    flex: 0 0 118px !important;
+    width: 118px !important;
+  }
+
+  /* â”€â”€ Stats â”€â”€ */
+  .stats-row-scroll > div {
+    flex: 0 0 104px !important;
+    width: 104px !important;
+  }
+
+  /* â”€â”€ Countdown â”€â”€ */
+  .timer-box {
+    width: 32px !important;
+    height: 32px !important;
+  }
+  .timer-num {
+    font-size: 0.8rem !important;
+  }
+
+  /* â”€â”€ Footer sub-bar â”€â”€ */
+  footer div[style*="justify-content: space-between"] {
+    justify-content: center !important;
+    text-align: center !important;
+    flex-direction: column !important;
+    gap: 10px !important;
+  }
+  footer {
+    padding: 36px 0 20px !important;
+  }
+
+  /* â”€â”€ Typography â”€â”€ */
+  h1 { font-size: 1.3rem !important; }
+  h2 { font-size: 1.1rem !important; }
 }
 
-/* Responsive Single-Row Header Styling */
-.header-main-bar {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  width: 100%;
-}
 
-.header-logo {
-  order: 1;
-}
 
-.header-categories-btn {
-  order: 2;
-}
 
-.header-search-form {
-  order: 3;
-}
 
-.header-right-controls {
-  order: 4;
-}
-
-@media (max-width: 768px) {
-  .header-main-bar {
-    flex-wrap: wrap !important;
-    gap: 8px !important;
-    padding: 8px 16px !important;
-  }
-  
-  .header-right-controls {
-    order: 2 !important;
-    margin-left: auto !important;
-  }
-  
-  .header-search-form {
-    order: 3 !important;
-    flex: 1 1 100% !important;
-    margin-top: 6px !important;
-  }
-}

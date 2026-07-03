@@ -81,9 +81,9 @@ const solutions = Object.entries(serviceDatabase).map(([key, val]) => ({
   ...val
 }));
 
-const VISIBLE_ROWS = 2;
+const VISIBLE_ROWS = 1;
 const COLS = 6;
-const DEFAULT_VISIBLE = VISIBLE_ROWS * COLS; // 12
+const DEFAULT_VISIBLE = VISIBLE_ROWS * COLS; // 6
 
 export default function SolutionsGrid({ searchTerm, activeCategory, onEnquire }) {
   const [showAll, setShowAll] = React.useState(false);

@@ -50,7 +50,6 @@
 }
 
 html {
-  overflow-x: hidden;
   max-width: 100%;
 }
 
@@ -60,7 +59,7 @@ body {
   color: var(--text-dark);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  overflow-x: hidden;
+  overflow-x: clip; /* Modern CSS clip prevents breaking position: sticky! */
   width: 100%;
   max-width: 100%;
 }

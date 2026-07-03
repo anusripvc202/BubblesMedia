@@ -46,11 +46,7 @@ export default function Header({ cartCount, wishlistCount, onCartOpen, onQuoteOp
 
         {/* Logo */}
         <a href="/" className="header-logo" style={{ display: 'flex', alignItems: 'center', gap: '8px', flexShrink: 0 }}>
-          <div style={{ display: 'flex', gap: '2px' }}>
-            <span style={{ width: '10px', height: '10px', background: 'var(--primary)', borderRadius: '50%', display: 'inline-block' }}></span>
-            <span style={{ width: '13px', height: '13px', background: 'var(--primary)', borderRadius: '50%', display: 'inline-block', transform: 'translateY(-3px)' }}></span>
-            <span style={{ width: '8px', height: '8px', background: 'var(--primary)', borderRadius: '50%', display: 'inline-block', transform: 'translateY(1px)' }}></span>
-          </div>
+
           <div>
             <h1 style={{ fontSize: '1.3rem', fontWeight: '900', letterSpacing: '-0.5px', textTransform: 'uppercase', color: 'var(--primary)', lineHeight: '1' }}>
               BUBBLES

@@ -230,11 +230,17 @@ a {
   }
 }
 
-.solutions-row-desktop,
 .industries-row-desktop {
   display: grid !important;
   grid-auto-flow: column !important;
   grid-auto-columns: 1fr !important;
+  gap: 10px !important;
+  width: 100% !important;
+}
+
+.solutions-row-desktop {
+  display: grid !important;
+  grid-template-columns: repeat(6, 1fr) !important;
   gap: 10px !important;
   width: 100% !important;
 }
@@ -623,12 +629,17 @@ a {
   padding: 20px 24px !important;
 }
 
-/* ── Solutions & Industries — single-row grid (desktop default) ── */
-.solutions-row-desktop,
 .industries-row-desktop {
   display: grid !important;
   grid-auto-flow: column !important;
   grid-auto-columns: 1fr !important;
+  gap: 10px !important;
+  width: 100% !important;
+}
+
+.solutions-row-desktop {
+  display: grid !important;
+  grid-template-columns: repeat(6, 1fr) !important;
   gap: 10px !important;
   width: 100% !important;
 }

@@ -616,8 +616,131 @@ export const serviceDatabase = {
       { name: 'Property Lead Gen', price: '₹14,999/mo', desc: 'Ad campaigns on FB & Instagram', features: ['Meta targeted lead ads setup', 'High conversion ad graphic designs', 'Lead verification WhatsApp bot integration', 'Daily performance analytics reports', 'Cancel Anytime'] },
       { name: 'Builder Multi-Channel Growth', price: '₹29,999/mo', desc: 'Full scale marketing agency coverage', features: ['Meta Ads + Google Search ads campaigns', '3D walk-through ad video scripts', 'Broker communication automation', 'Bi-weekly performance reporting calls', 'Cancel Anytime'] }
     ]
+  },
+  // ─── E-commerce Stores ───────────────────────────────────
+  'ecommerce-web-dev': {
+    title: 'Ecommerce Website Development',
+    category: 'websites',
+    price: '₹14,999',
+    desc: 'Launch a highly optimized online store with secure checkouts, payment integrations, and responsive cart grids.',
+    features: ['Unlimited Products Listing', 'Integrated Payment Gateways', 'Inventory & Stock Tracker', 'Customer Orders Dashboard', 'Mobile Commerce Layouts'],
+    plans: [
+      { name: 'Standard Shop', price: '₹14,999', desc: 'Standard catalog & payment store', features: ['Up to 50 Products', 'Razorpay & UPI gate connections', 'Standard Cart & Checkout', 'Admin stock spreadsheet', '2 Weeks Delivery'] },
+      { name: 'Gold Commerce Portal', price: '₹29,999', desc: 'Advanced storefront with coupons', features: ['Up to 500 Products', 'Razorpay & Stripe premium integration', 'Automated GST Invoices generator', 'Custom discount coupon system', '3 Weeks Delivery'] }
+    ]
+  },
+  'multi-vendor-marketplace': {
+    title: 'Multi Vendor Marketplace',
+    category: 'websites',
+    price: '₹44,999',
+    desc: 'Power an Amazon/Etsy style multi-seller marketplace where multiple vendors register and sell their goods.',
+    features: ['Vendor Registration & Verification', 'Seller Dashboard Panels', 'Automated Commission Splits', 'Vendor-wise Shipping Rules', 'Customer Ratings & Reviews'],
+    plans: [
+      { name: 'Standard Marketplace', price: '₹44,999', desc: 'Marketplace platform with basic splits', features: ['Vendor onboarding panel', 'Basic admin commission management', 'Individual store profile setups', 'Standard payment splits', '4 Weeks Delivery'] },
+      { name: 'Gold Enterprise Hub', price: '₹79,999', desc: 'Advanced multi-seller marketplace suite', features: ['Multi-currency support', 'Advanced payout automation (Razorpay Route)', 'Automated tax billing configuration', 'Vendor mobile dashboards link', '6 Weeks Delivery'] }
+    ]
+  },
+  'shopify-store-dev': {
+    title: 'Shopify Store Development',
+    category: 'websites',
+    price: '₹12,999',
+    desc: 'Bespoke Shopify theme configuration, premium app setups, custom product variants, and complete storefront design.',
+    features: ['Premium Theme Integrations', 'Variant Setup & Inventory Connect', 'Shopify App Configurations', 'Payment Setup & Taxes', 'Speed Optimization Checks'],
+    plans: [
+      { name: 'Basic Shopify Launch', price: '₹12,999', desc: 'Standard Shopify setup', features: ['Standard theme customisations', 'Up to 20 products setup', 'Crucial Shopify app setups', 'Shipping & Taxes configuration', '1 Week Delivery'] },
+      { name: 'Gold Shopify Store', price: '₹24,999', desc: 'Advanced conversion optimized store', features: ['Premium theme design layouts', 'Advanced product customizer apps', 'E-mail marketing funnel hooks', 'SEO optimize speed packages', '2 Weeks Delivery'] }
+    ]
+  },
+  'woocommerce-dev': {
+    title: 'WooCommerce Development',
+    category: 'websites',
+    price: '₹9,999',
+    desc: 'Power your WordPress site into a high-performance, flexible shopping store using WooCommerce.',
+    features: ['WordPress WooCommerce Setup', 'Advanced Product Filtering', 'Custom Cart & Checkout Pages', 'Inventory Synchronizations', 'SEO Plugin Configurations'],
+    plans: [
+      { name: 'Basic WooCommerce', price: '₹9,999', desc: 'Standard WooCommerce store', features: ['WooCommerce setup on WordPress', 'Standard payment configurations', 'Up to 30 products load', 'Standard theme setup', '1 Week Delivery'] },
+      { name: 'Gold WooCommerce Suite', price: '₹19,999', desc: 'Custom high-converting layout', features: ['Custom Elementor shop design', 'Bespoke checkout fields editor', 'Auto invoice PDF generation', 'Speed optimization caching checks', '2 Weeks Delivery'] }
+    ]
+  },
+  'payment-gateway-integration': {
+    title: 'Payment Gateway Integration',
+    category: 'business-software',
+    price: '₹4,999',
+    desc: 'Securely link local and global payment gateways (Razorpay, Stripe, PayPal, UPI) with your online system.',
+    features: ['Multi-Gateway APIs Setup', 'Instant UPI QR Code Collections', 'Auto invoice PDF generator', 'Secure SSL Transaction Logs', 'Recurring Billing Configurations'],
+    plans: [
+      { name: 'Standard Integration', price: '₹4,999', desc: 'Single gateway integration', features: ['Razorpay or Stripe API hookup', 'Standard success redirect setup', 'Transaction email alerts', 'SSL security configurations', '3 Days Delivery'] },
+      { name: 'Gold Smart Payments', price: '₹9,999', desc: 'Multi-gateway with tax splits', features: ['Razorpay + Stripe + UPI QR integration', 'Auto invoice generator PDFs', 'Multi-currency checkout capability', 'Webhooks transaction logs tracking', '5 Days Delivery'] }
+    ]
+  },
+  'inventory-management': {
+    title: 'Inventory Management',
+    category: 'business-software',
+    price: '₹19,999',
+    desc: 'Bespoke warehouse stock tracking software with barcode scanners and multi-location inventory alerts.',
+    features: ['Real-time Stock Audits', 'Barcode/QR Code Scanning Support', 'Low Stock Automatic Alerts', 'Supplier Directory Management', 'Detailed Stock Reports'],
+    plans: [
+      { name: 'Standard Tracker', price: '₹19,999', desc: 'Single warehouse stock manager', features: ['Product list catalog databases', 'Low-stock email notifications', 'Bulk inventory CSV imports', 'Purchase order generator', '2 Weeks Delivery'] },
+      { name: 'Gold Warehouse ERP', price: '₹34,999', desc: 'Multi-location automated stock planner', features: ['Multi-warehouse support', 'QR code generation tools', 'Supplier price quote audits', 'Integration with shopify/woocommerce APIs', '3 Weeks Delivery'] }
+    ]
+  },
+  'order-management-system': {
+    title: 'Order Management System',
+    category: 'business-software',
+    price: '₹14,999',
+    desc: 'Real-time order tracking dashboard from purchase to shipping with automated client notifications.',
+    features: ['Order Status Pipeline Tracker', 'Delivery Partner Integrations', 'WhatsApp/SMS Status updates', 'Return/Refund Processing System', 'Sales Performance Analytics'],
+    plans: [
+      { name: 'Order Tracker Basic', price: '₹14,999', desc: 'Basic order tracking backend', features: ['Order creation and update pipeline', 'SMS status alert templates', 'Invoice print generator', 'Basic analytics dashboard', '2 Weeks Delivery'] },
+      { name: 'Gold Delivery Flow', price: '₹29,999', desc: 'Automated ship-partner dashboard', features: ['Integration with Shiprocket/Delhivery', 'WhatsApp auto shipping notifications', 'Return request processing desk', 'Real-time delivery status tracking', '3 Weeks Delivery'] }
+    ]
+  },
+  'product-catalog-management': {
+    title: 'Product Catalog Management',
+    category: 'branding-graphics',
+    price: '₹5,999',
+    desc: 'Clean digital catalogs, bulk uploads, high-res graphic editing, and SEO product description writing.',
+    features: ['High-Res Product Layouts', 'SEO Copywriting for Descriptions', 'Bulk Import/Export Sheets', 'Standard Category Taxonomies', 'Branded Catalog PDFs'],
+    plans: [
+      { name: 'Standard Catalog Load', price: '₹5,999', desc: 'Basic catalog setup', features: ['Up to 50 products upload', 'Clean product image edits (basic crop)', 'SEO meta descriptions writing', 'Standard category tag configurations', '1 Week Delivery'] },
+      { name: 'Gold Digital Showcase', price: '₹12,999', desc: 'Premium branded catalog assets', features: ['Up to 200 products upload', 'High-end color correction graphic edits', 'Copywritten rich descriptions', 'Digital PDF Catalog design layout', '2 Weeks Delivery'] }
+    ]
+  },
+  'ecommerce-mobile-app': {
+    title: 'Ecommerce Mobile App',
+    category: 'mobile-apps',
+    price: '₹59,999',
+    desc: 'Feature-rich native Android & iOS shopping app with fast checkout flows and smart push notification updates.',
+    features: ['Native Android & iOS Apps', 'Real-time Cart Synchronizations', 'Push Notification Marketing Module', 'Order Tracking Screens', 'Play/App Store Publishing'],
+    plans: [
+      { name: 'Customer Shop App', price: '₹59,999', desc: 'Property finder native app', features: ['Property lists with search filters', 'Interactive Map listings search', 'In-app agent email/call buttons', 'Android version publish', '5 Weeks Delivery'] },
+      { name: 'Gold Dual App Suite', price: '₹99,999', desc: 'Agent App + Customer App suite', features: ['Customer App + Broker App', 'Real-time in-app chats with push', 'Saved search push alerts', 'Play Store + Apple App Store publish', '8 Weeks Delivery'] }
+    ]
+  },
+  'seo-for-ecommerce': {
+    title: 'SEO for Ecommerce',
+    category: 'digital-marketing',
+    price: '₹12,999/mo',
+    desc: 'Rank your product pages first on Google with advanced SEO schema markup, speed fixes, and targeted search keywords.',
+    features: ['Ecommerce Rich Snippets (Price, Stock)', 'Product Category Keyword Rank', 'Page Speed Caching Fixes', 'Bespoke Competitor Pricing Audits', 'Monthly Leads Audit'],
+    plans: [
+      { name: 'Local Shop SEO', price: '₹12,999/mo', desc: 'Local search rankings pack', features: ['20 target product keywords', 'Product schema markup installation', 'GMB profile local optimizations', 'Standard backlinks (15/mo)', '3 Month Commit'] },
+      { name: 'Store Authority SEO', price: '₹24,999/mo', desc: 'National high traffic search rank', features: ['50 competitive product keywords', 'Technical site architecture speed improvements', 'Monthly shopping blogs content', 'High DA backlink acquisitions (30/mo)', 'No Contract'] }
+    ]
+  },
+  'marketplace-development': {
+    title: 'Marketplace Development',
+    category: 'websites',
+    price: '₹49,999',
+    desc: 'Bespoke online service or product marketplaces with vendor commission models, payouts, and reviews.',
+    features: ['Interactive Map Listing Matches', 'Vendor Wallet Pay Systems', 'Admin Central Revenue Dashboards', 'Interactive Location Filters', 'Review Moderation Desks'],
+    plans: [
+      { name: 'Service Marketplace', price: '₹49,999', desc: 'Listing and lead buy site for services', features: ['Interactive location searching', 'Service provider account setups', 'Razorpay token checkouts', 'Google Maps search integration', '4 Weeks Delivery'] },
+      { name: 'Gold Product Marketplace', price: '₹89,999', desc: 'Complete physical goods seller marketplace', features: ['Real-time seller stock integration', 'Auto payout splits API hookups', 'Review moderation console panels', 'Advanced tax config dashboards', '6 Weeks Delivery'] }
+    ]
   }
 };
+
 
 
 export const calculatorConfigs = {

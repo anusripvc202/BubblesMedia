@@ -438,8 +438,187 @@ export const serviceDatabase = {
       { name: 'VPS Hosting Plan', price: '₹9,999/yr', desc: 'Great for high traffic apps', features: ['2 Dedicated vCPU Core & 4GB RAM', 'Managed Webmin Control Panel', '50 Enterprise Business Emails', 'Advanced Redis / Cache Tuning', '3 Days Delivery'] },
       { name: 'Managed AWS Plan', price: '₹24,999/yr', desc: 'Enterprise high scale hosting', features: ['High Availability Failover Nodes', 'Multi-Zone RDS DB Sync', 'Unlimited Enterprise Emails', 'Managed Cloud Security Guardrails', '5 Days Delivery'] }
     ]
+  },
+  // ─── Schools & Colleges ───────────────────────────────────
+  'school-website': {
+    title: 'School Website Development',
+    category: 'websites',
+    price: '₹14,999',
+    desc: 'Professional, highly secure websites for schools, colleges, and educational institutes with integrated online admissions.',
+    features: ['Online Admission Forms', 'Parent & Student Notice Board', 'Event Gallery & Interactive Calendar', 'Staff Directories', 'Fully Mobile Responsive'],
+    plans: [
+      { name: 'Standard Portal', price: '₹14,999', desc: 'Single school website', features: ['8 Pages Layout', 'Google Maps & Contact Forms', 'Free Domain & SSD Hosting (1 Yr)', 'WhatsApp OPD Booking Link', '1 Week Delivery'] },
+      { name: 'Gold Campus Website', price: '₹24,999', desc: 'High-end college website', features: ['Unlimited Pages', 'Multi-Branch Map Locator', 'Interactive Event Calendar', 'WordPress Admin Dashboard CMS', '2 Weeks Delivery'] }
+    ]
+  },
+  'student-management': {
+    title: 'Student Management System',
+    category: 'business-software',
+    price: '₹24,999',
+    desc: 'Complete digital records portal to easily track student directories, grades, timetables, and academic histories.',
+    features: ['Detailed Student Profiles', 'Report Card Generator', 'Class Timetables', 'SMS/Email Alerts for Parents', 'Cloud Database Security'],
+    plans: [
+      { name: 'Standard SMS', price: '₹24,999', desc: 'Standard database tracker', features: ['Student profiles & records', 'Class timetables', 'Teacher-Student assignment logs', 'Secure cloud backup', '2 Weeks Delivery'] },
+      { name: 'Gold Campus SMS', price: '₹44,999', desc: 'Enterprise university platform', features: ['Multi-department databases', 'Auto grade & report card generation', 'Roll number auto-allocations', 'Mobile dashboard access', '4 Weeks Delivery'] }
+    ]
+  },
+  'online-exam-portal': {
+    title: 'Online Examination Portal',
+    category: 'business-software',
+    price: '₹19,999',
+    desc: 'Scalable examination platform for hosting online exams, MCQ tests, and subjective grading workflows.',
+    features: ['Custom Test Maker', 'Automated Instant Grading', 'Anti-cheat Proctoring Aids', 'Performance Analytics Charts', 'Student Login Portals'],
+    plans: [
+      { name: 'Standard Test Engine', price: '₹19,999', desc: 'Basic quiz & test builder', features: ['MCQ exam configurations', 'Instant PDF results maker', 'Student login panel', 'Admin result spreadsheets', '2 Weeks Delivery'] },
+      { name: 'Gold Proctor Engine', price: '₹34,999', desc: 'Secure proctored exam engine', features: ['Anti-cheat screen lock tracking', 'Subjective answer grading flows', 'Leaderboard analytics dashboards', 'Random question pools generator', '3 Weeks Delivery'] }
+    ]
+  },
+  'learning-management-system': {
+    title: 'Learning Management System (LMS)',
+    category: 'business-software',
+    price: '₹29,999',
+    desc: 'E-learning platform to easily share video lectures, assignments, and study materials with students.',
+    features: ['Video Lecture Hosting', 'Interactive Quizzes', 'Assignment Upload System', 'Progress Tracker Dashboard', 'Student Discussion Forum'],
+    plans: [
+      { name: 'Standard LMS', price: '₹29,999', desc: 'Perfect for standard institutes', features: ['Video lectures & file shares', 'Student performance logs', 'Quiz/Exam configurations', 'Standard discussion board', '3 Weeks Delivery'] },
+      { name: 'Gold LMS Suite', price: '₹49,999', desc: 'Advanced interactive virtual campus', features: ['Zoom live class integrations', 'Assignment feedback & reviews flow', 'Certificate auto-generation PDFs', 'Dynamic student reports', '5 Weeks Delivery'] }
+    ]
+  },
+  'attendance-management': {
+    title: 'Attendance Management',
+    category: 'business-software',
+    price: '₹12,999',
+    desc: 'Automated daily class attendance tracking with instant parent SMS/WhatsApp alerts.',
+    features: ['Staff & Student Logs', 'Instant Parent Notification Hooks', 'Monthly/Weekly Reports', 'Biometric Integration Support', 'Easy Mobile App Interface'],
+    plans: [
+      { name: 'Standard Alert System', price: '₹12,999', desc: 'Manual records attendance app', features: ['Daily teacher input dashboard', 'SMS alert templates to parents', 'Monthly CSV export logs', 'Basic attendance dashboard', '1 Week Delivery'] },
+      { name: 'Gold Biometric Sync', price: '₹24,999', desc: 'Biometric hardware synced attendance', features: ['Fingerprint/RF card sync system', 'Real-time server check-in reports', 'WhatsApp check-in alerts to parents', 'Salary calculation hooks', '2 Weeks Delivery'] }
+    ]
+  },
+  'fee-management': {
+    title: 'Fee Management System',
+    category: 'business-software',
+    price: '₹19,999',
+    desc: 'Cloud billing system for schools to collect fees online, generate receipts, and track dues.',
+    features: ['Online Payment Gateways', 'Automatic Invoice Receipts', 'Defaulter Tracker & Alerts', 'GST/Tax Compliant Logs', 'Financial Revenue Reports'],
+    plans: [
+      { name: 'Standard Billing', price: '₹19,999', desc: 'Basic fee receipt generator', features: ['Student fee ledger logs', 'Standard invoice PDF prints', 'Razorpay & UPI integrations', 'GST compliant billing', '2 Weeks Delivery'] },
+      { name: 'Gold Defaulter Engine', price: '₹34,999', desc: 'Auto reminder fee collection suite', features: ['Auto fee SMS/WhatsApp reminders', 'Late fee calculation models', 'Installment payment schedules', 'Detailed bank reconciliation reports', '3 Weeks Delivery'] }
+    ]
+  },
+  'school-mobile-app': {
+    title: 'School Mobile App',
+    category: 'mobile-apps',
+    price: '₹49,999',
+    desc: 'Native Android & iOS mobile app for direct parent-teacher communications, notices, fees, and homework.',
+    features: ['Direct Parent-Teacher Messages', 'Push Notices Notification Board', 'Online Fee Payment', 'Attendance & Progress Cards', 'Google Play & Apple App Store Publish'],
+    plans: [
+      { name: 'Standard Parent App', price: '₹49,999', desc: 'Basic info broadcast app', features: ['Push notice notifications', 'Homework & attendance displays', 'Teacher contact catalog', 'Android version publish', '4 Weeks Delivery'] },
+      { name: 'Gold Multi-Role Suite', price: '₹79,999', desc: 'Double app suite (Parent + Staff)', features: ['Staff App & Parent App', 'Online payment gateways', 'Live chat channels', 'Play Store + Apple App Store publish', '6 Weeks Delivery'] }
+    ]
+  },
+  'education-marketing': {
+    title: 'Education Marketing Services',
+    category: 'digital-marketing',
+    price: '₹14,999/mo',
+    desc: 'Specialized SEO and paid lead generation campaigns to boost admissions and student registrations.',
+    features: ['Local Search Term Rankings', 'Targeted FB/Insta Lead Ads', 'Parent Admission WhatsApp Funnels', 'Social Media Branding Posts', 'Google Search Maps Optimization'],
+    plans: [
+      { name: 'Admission Growth', price: '₹14,999/mo', desc: 'Social + Search ads for school admissions', features: ['Google Search Ads Campaign', 'FB/Insta local targeted ads', 'Lead generation forms integration', '16 Admission branding graphics', 'Cancel Anytime'] },
+      { name: 'Campus Authority', price: '₹24,999/mo', desc: 'Full year branding & reputation suite', features: ['SEO authority audit', 'Google Maps top rankings pack', 'Parent review boost campaigns', 'Reels video production scripts', 'Cancel Anytime'] }
+    ]
+  },
+  // ─── Real Estate & Builders ───────────────────────────────
+  'property-listing-portal': {
+    title: 'Property Listing Portal',
+    category: 'websites',
+    price: '₹24,999',
+    desc: 'Interactive property portals for agencies and developers to catalog apartments, land plots, and commercial spots.',
+    features: ['Advanced Filtering Engine', 'Agent Assignment System', 'Interactive Location Map Views', 'WhatsApp Property Brochure PDF Generator', 'Featured Property Banners'],
+    plans: [
+      { name: 'Agency Catalog', price: '₹24,999', desc: 'Clean listing site for single agency', features: ['Up to 100 Properties listing', 'Advanced filters (price, area, bedroom)', 'Agent contact forms', 'Free Domain & Host (1 Yr)', '2 Weeks Delivery'] },
+      { name: 'Gold Multi-Broker Portal', price: '₹49,999', desc: 'Bespoke marketplace property site', features: ['Broker sign up dashboards', 'Interactive local maps embeds', 'PDF brochures auto-generators', 'WhatsApp API contact buttons', '4 Weeks Delivery'] }
+    ]
+  },
+  'crm-for-builders': {
+    title: 'CRM for Builders',
+    category: 'business-software',
+    price: '₹39,999',
+    desc: 'Client relations management software for builder lead allocations, installment payment tracking, and site visits.',
+    features: ['Lead Assignment Pipeline', 'Site Visit Scheduler', 'Customer Installment Ledger', 'Broker Portal Accounts', 'Automated WhatsApp Promos'],
+    plans: [
+      { name: 'Builder CRM Standard', price: '₹39,999', desc: 'Standard lead pipeline tracker', features: ['Lead source captures (99acres, Magicbricks)', 'Telecaller dashboards', 'Site visit tracker logs', 'Basic payment ledger', '3 Weeks Delivery'] },
+      { name: 'Gold Project ERP', price: '₹74,999', desc: 'All-in-one builder ERP suite', features: ['Interactive floor plan booking grids', 'Installment milestone billings', 'Broker commission pay dashboards', 'Automated WhatsApp reminders', '5 Weeks Delivery'] }
+    ]
+  },
+  'virtual-property-tours': {
+    title: 'Virtual Property Tours',
+    category: 'branding-graphics',
+    price: '₹19,999',
+    desc: 'Interactive 360-degree virtual property walkthroughs and high-quality 3D renders.',
+    features: ['360 Walkthrough Viewer', 'Figma/3D Render Integration', 'Virtual Floor Plan Links', 'Lead capture popup on tour', 'High speed hosting files'],
+    plans: [
+      { name: 'Virtual Walkthrough', price: '₹19,999', desc: '3D walkthrough integration service', features: ['Integration of up to 5 panoramic views', 'Web VR responsive viewer', 'Hotspot information boxes', 'Lead capture popups', '1 Week Delivery'] },
+      { name: 'Gold HD Tour Suite', price: '₹39,999', desc: 'Full HD multi-room tour + 3D floor plan', features: ['Panoramic views (Up to 15 nodes)', '3D dollhouse floor plan layout', 'Custom logo branding embeds', 'Offline offline VR viewer files', '2 Weeks Delivery'] }
+    ]
+  },
+  'lead-management-system': {
+    title: 'Lead Management System',
+    category: 'business-software',
+    price: '₹14,999',
+    desc: 'Automated real estate lead capturing from FB Ads, 99acres, MagicBricks, and Google Forms.',
+    features: ['Multi-channel Lead Captures', 'Instant Broker Alerts', 'Lead Status Pipeline Tracker', 'Call Recording Integration', 'Performance Analytics Reports'],
+    plans: [
+      { name: 'Lead Tracker Basic', price: '₹14,999', desc: 'Single project lead dashboard', features: ['FB/Insta and Google form lead integrations', 'Broker dashboard tables', 'Email & SMS broker alerts', 'Standard CSV export logs', '2 Weeks Delivery'] },
+      { name: 'Gold Multi-Project Flow', price: '₹29,999', desc: 'Enterprise automated distribution', features: ['Auto round-robin lead allocation', 'IVR call connection system', 'Real-time sales performance metrics', 'WhatsApp automation integration', '3 Weeks Delivery'] }
+    ]
+  },
+  'property-booking-platform': {
+    title: 'Property Booking Platform',
+    category: 'business-software',
+    price: '₹29,999',
+    desc: 'Token payment and slot booking platforms for new residential property launches.',
+    features: ['Token Amount Collections', 'Real-time Unit Availability Grid', 'Online Buyer Agreements', 'GST Compliant Receipts', 'Admin Real-time Dashboard'],
+    plans: [
+      { name: 'Token Payment flow', price: '₹29,999', desc: 'Simple token payment gateway', features: ['Razorpay and UPI token collect', 'Buyer registration forms', 'Standard terms PDF downloads', 'Basic admin transaction dashboard', '2 Weeks Delivery'] },
+      { name: 'Gold Builder Inventory Suite', price: '₹59,999', desc: 'Real-time digital layout layout grids', features: ['Interactive project layout map', 'Color coded unit status grid (Available, Booked, Hold)', 'E-Sign buyer agreements', 'SMS ledger confirmations', '4 Weeks Delivery'] }
+    ]
+  },
+  'real-estate-mobile-app': {
+    title: 'Real Estate Mobile App',
+    category: 'mobile-apps',
+    price: '₹59,999',
+    desc: 'Native Android & iOS real estate apps for property searching, virtual tours, and chat channels.',
+    features: ['Interactive Local Searches', 'Agent Real-time Chats', 'Saved Search Alerts', 'Push Notifications Dashboard', 'Play/App Store Publishing'],
+    plans: [
+      { name: 'Customer Search App', price: '₹59,999', desc: 'Property finder native app', features: ['Property lists with search filters', 'Interactive Map listings search', 'In-app agent email/call buttons', 'Android version publish', '5 Weeks Delivery'] },
+      { name: 'Gold Dual App Suite', price: '₹99,999', desc: 'Agent App + Customer App suite', features: ['Customer App + Broker App', 'Real-time in-app chats with push', 'Saved search push alerts', 'Play Store + Apple App Store publish', '8 Weeks Delivery'] }
+    ]
+  },
+  'seo-for-real-estate': {
+    title: 'SEO for Real Estate',
+    category: 'digital-marketing',
+    price: '₹9,999/mo',
+    desc: 'Local property SEO to rank high on maps and search for "flats/plots/apartments for sale near me" keywords.',
+    features: ['Local Property Keywords', 'Google Maps Business Optimisation', 'Micro-site SEO Architecture', 'High DA Local Backlinks', 'Monthly Leads Audit'],
+    plans: [
+      { name: 'Project SEO Growth', price: '₹9,999/mo', desc: 'Local project keywords ranking package', features: ['15 Local project keywords', 'GMB profile local optimizations', 'Project microsite speed checks', 'Standard backlinks (10/mo)', '3 Month Commit'] },
+      { name: 'Builder Authority SEO', price: '₹19,999/mo', desc: 'Complete brand authority builder package', features: ['40 High volume local keywords', 'Monthly blogs & project reviews writing', 'High-DA local links (25/mo)', 'Real-time rankings tracking panels', 'No Contract'] }
+    ]
+  },
+  'real-estate-digital-marketing': {
+    title: 'Real Estate Digital Marketing',
+    category: 'digital-marketing',
+    price: '₹14,999/mo',
+    desc: 'High conversion Meta & Google Ads campaigns optimized to generate site-visit leads for properties.',
+    features: ['Meta Ads (FB/IG) Lead Generation', 'Google Search Ads for Projects', '3D Walkthrough Ad Creatives', 'WhatsApp Lead Nurturing Bots', 'ROI Analysis Reports'],
+    plans: [
+      { name: 'Property Lead Gen', price: '₹14,999/mo', desc: 'Ad campaigns on FB & Instagram', features: ['Meta targeted lead ads setup', 'High conversion ad graphic designs', 'Lead verification WhatsApp bot integration', 'Daily performance analytics reports', 'Cancel Anytime'] },
+      { name: 'Builder Multi-Channel Growth', price: '₹29,999/mo', desc: 'Full scale marketing agency coverage', features: ['Meta Ads + Google Search ads campaigns', '3D walk-through ad video scripts', 'Broker communication automation', 'Bi-weekly performance reporting calls', 'Cancel Anytime'] }
+    ]
   }
 };
+
 
 export const calculatorConfigs = {
   'websites': {

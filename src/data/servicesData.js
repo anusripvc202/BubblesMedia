@@ -438,8 +438,535 @@ export const serviceDatabase = {
       { name: 'VPS Hosting Plan', price: '₹9,999/yr', desc: 'Great for high traffic apps', features: ['2 Dedicated vCPU Core & 4GB RAM', 'Managed Webmin Control Panel', '50 Enterprise Business Emails', 'Advanced Redis / Cache Tuning', '3 Days Delivery'] },
       { name: 'Managed AWS Plan', price: '₹24,999/yr', desc: 'Enterprise high scale hosting', features: ['High Availability Failover Nodes', 'Multi-Zone RDS DB Sync', 'Unlimited Enterprise Emails', 'Managed Cloud Security Guardrails', '5 Days Delivery'] }
     ]
+  },
+  // ─── Schools & Colleges ───────────────────────────────────
+  'school-website': {
+    title: 'School Website Development',
+    category: 'websites',
+    price: '₹14,999',
+    desc: 'Professional, highly secure websites for schools, colleges, and educational institutes with integrated online admissions.',
+    features: ['Online Admission Forms', 'Parent & Student Notice Board', 'Event Gallery & Interactive Calendar', 'Staff Directories', 'Fully Mobile Responsive'],
+    plans: [
+      { name: 'Standard Portal', price: '₹14,999', desc: 'Single school website', features: ['8 Pages Layout', 'Google Maps & Contact Forms', 'Free Domain & SSD Hosting (1 Yr)', 'WhatsApp OPD Booking Link', '1 Week Delivery'] },
+      { name: 'Gold Campus Website', price: '₹24,999', desc: 'High-end college website', features: ['Unlimited Pages', 'Multi-Branch Map Locator', 'Interactive Event Calendar', 'WordPress Admin Dashboard CMS', '2 Weeks Delivery'] }
+    ]
+  },
+  'student-management': {
+    title: 'Student Management System',
+    category: 'business-software',
+    price: '₹24,999',
+    desc: 'Complete digital records portal to easily track student directories, grades, timetables, and academic histories.',
+    features: ['Detailed Student Profiles', 'Report Card Generator', 'Class Timetables', 'SMS/Email Alerts for Parents', 'Cloud Database Security'],
+    plans: [
+      { name: 'Standard SMS', price: '₹24,999', desc: 'Standard database tracker', features: ['Student profiles & records', 'Class timetables', 'Teacher-Student assignment logs', 'Secure cloud backup', '2 Weeks Delivery'] },
+      { name: 'Gold Campus SMS', price: '₹44,999', desc: 'Enterprise university platform', features: ['Multi-department databases', 'Auto grade & report card generation', 'Roll number auto-allocations', 'Mobile dashboard access', '4 Weeks Delivery'] }
+    ]
+  },
+  'online-exam-portal': {
+    title: 'Online Examination Portal',
+    category: 'business-software',
+    price: '₹19,999',
+    desc: 'Scalable examination platform for hosting online exams, MCQ tests, and subjective grading workflows.',
+    features: ['Custom Test Maker', 'Automated Instant Grading', 'Anti-cheat Proctoring Aids', 'Performance Analytics Charts', 'Student Login Portals'],
+    plans: [
+      { name: 'Standard Test Engine', price: '₹19,999', desc: 'Basic quiz & test builder', features: ['MCQ exam configurations', 'Instant PDF results maker', 'Student login panel', 'Admin result spreadsheets', '2 Weeks Delivery'] },
+      { name: 'Gold Proctor Engine', price: '₹34,999', desc: 'Secure proctored exam engine', features: ['Anti-cheat screen lock tracking', 'Subjective answer grading flows', 'Leaderboard analytics dashboards', 'Random question pools generator', '3 Weeks Delivery'] }
+    ]
+  },
+  'learning-management-system': {
+    title: 'Learning Management System (LMS)',
+    category: 'business-software',
+    price: '₹29,999',
+    desc: 'E-learning platform to easily share video lectures, assignments, and study materials with students.',
+    features: ['Video Lecture Hosting', 'Interactive Quizzes', 'Assignment Upload System', 'Progress Tracker Dashboard', 'Student Discussion Forum'],
+    plans: [
+      { name: 'Standard LMS', price: '₹29,999', desc: 'Perfect for standard institutes', features: ['Video lectures & file shares', 'Student performance logs', 'Quiz/Exam configurations', 'Standard discussion board', '3 Weeks Delivery'] },
+      { name: 'Gold LMS Suite', price: '₹49,999', desc: 'Advanced interactive virtual campus', features: ['Zoom live class integrations', 'Assignment feedback & reviews flow', 'Certificate auto-generation PDFs', 'Dynamic student reports', '5 Weeks Delivery'] }
+    ]
+  },
+  'attendance-management': {
+    title: 'Attendance Management',
+    category: 'business-software',
+    price: '₹12,999',
+    desc: 'Automated daily class attendance tracking with instant parent SMS/WhatsApp alerts.',
+    features: ['Staff & Student Logs', 'Instant Parent Notification Hooks', 'Monthly/Weekly Reports', 'Biometric Integration Support', 'Easy Mobile App Interface'],
+    plans: [
+      { name: 'Standard Alert System', price: '₹12,999', desc: 'Manual records attendance app', features: ['Daily teacher input dashboard', 'SMS alert templates to parents', 'Monthly CSV export logs', 'Basic attendance dashboard', '1 Week Delivery'] },
+      { name: 'Gold Biometric Sync', price: '₹24,999', desc: 'Biometric hardware synced attendance', features: ['Fingerprint/RF card sync system', 'Real-time server check-in reports', 'WhatsApp check-in alerts to parents', 'Salary calculation hooks', '2 Weeks Delivery'] }
+    ]
+  },
+  'fee-management': {
+    title: 'Fee Management System',
+    category: 'business-software',
+    price: '₹19,999',
+    desc: 'Cloud billing system for schools to collect fees online, generate receipts, and track dues.',
+    features: ['Online Payment Gateways', 'Automatic Invoice Receipts', 'Defaulter Tracker & Alerts', 'GST/Tax Compliant Logs', 'Financial Revenue Reports'],
+    plans: [
+      { name: 'Standard Billing', price: '₹19,999', desc: 'Basic fee receipt generator', features: ['Student fee ledger logs', 'Standard invoice PDF prints', 'Razorpay & UPI integrations', 'GST compliant billing', '2 Weeks Delivery'] },
+      { name: 'Gold Defaulter Engine', price: '₹34,999', desc: 'Auto reminder fee collection suite', features: ['Auto fee SMS/WhatsApp reminders', 'Late fee calculation models', 'Installment payment schedules', 'Detailed bank reconciliation reports', '3 Weeks Delivery'] }
+    ]
+  },
+  'school-mobile-app': {
+    title: 'School Mobile App',
+    category: 'mobile-apps',
+    price: '₹49,999',
+    desc: 'Native Android & iOS mobile app for direct parent-teacher communications, notices, fees, and homework.',
+    features: ['Direct Parent-Teacher Messages', 'Push Notices Notification Board', 'Online Fee Payment', 'Attendance & Progress Cards', 'Google Play & Apple App Store Publish'],
+    plans: [
+      { name: 'Standard Parent App', price: '₹49,999', desc: 'Basic info broadcast app', features: ['Push notice notifications', 'Homework & attendance displays', 'Teacher contact catalog', 'Android version publish', '4 Weeks Delivery'] },
+      { name: 'Gold Multi-Role Suite', price: '₹79,999', desc: 'Double app suite (Parent + Staff)', features: ['Staff App & Parent App', 'Online payment gateways', 'Live chat channels', 'Play Store + Apple App Store publish', '6 Weeks Delivery'] }
+    ]
+  },
+  'education-marketing': {
+    title: 'Education Marketing Services',
+    category: 'digital-marketing',
+    price: '₹14,999/mo',
+    desc: 'Specialized SEO and paid lead generation campaigns to boost admissions and student registrations.',
+    features: ['Local Search Term Rankings', 'Targeted FB/Insta Lead Ads', 'Parent Admission WhatsApp Funnels', 'Social Media Branding Posts', 'Google Search Maps Optimization'],
+    plans: [
+      { name: 'Admission Growth', price: '₹14,999/mo', desc: 'Social + Search ads for school admissions', features: ['Google Search Ads Campaign', 'FB/Insta local targeted ads', 'Lead generation forms integration', '16 Admission branding graphics', 'Cancel Anytime'] },
+      { name: 'Campus Authority', price: '₹24,999/mo', desc: 'Full year branding & reputation suite', features: ['SEO authority audit', 'Google Maps top rankings pack', 'Parent review boost campaigns', 'Reels video production scripts', 'Cancel Anytime'] }
+    ]
+  },
+  // ─── Real Estate & Builders ───────────────────────────────
+  'property-listing-portal': {
+    title: 'Property Listing Portal',
+    category: 'websites',
+    price: '₹24,999',
+    desc: 'Interactive property portals for agencies and developers to catalog apartments, land plots, and commercial spots.',
+    features: ['Advanced Filtering Engine', 'Agent Assignment System', 'Interactive Location Map Views', 'WhatsApp Property Brochure PDF Generator', 'Featured Property Banners'],
+    plans: [
+      { name: 'Agency Catalog', price: '₹24,999', desc: 'Clean listing site for single agency', features: ['Up to 100 Properties listing', 'Advanced filters (price, area, bedroom)', 'Agent contact forms', 'Free Domain & Host (1 Yr)', '2 Weeks Delivery'] },
+      { name: 'Gold Multi-Broker Portal', price: '₹49,999', desc: 'Bespoke marketplace property site', features: ['Broker sign up dashboards', 'Interactive local maps embeds', 'PDF brochures auto-generators', 'WhatsApp API contact buttons', '4 Weeks Delivery'] }
+    ]
+  },
+  'crm-for-builders': {
+    title: 'CRM for Builders',
+    category: 'business-software',
+    price: '₹39,999',
+    desc: 'Client relations management software for builder lead allocations, installment payment tracking, and site visits.',
+    features: ['Lead Assignment Pipeline', 'Site Visit Scheduler', 'Customer Installment Ledger', 'Broker Portal Accounts', 'Automated WhatsApp Promos'],
+    plans: [
+      { name: 'Builder CRM Standard', price: '₹39,999', desc: 'Standard lead pipeline tracker', features: ['Lead source captures (99acres, Magicbricks)', 'Telecaller dashboards', 'Site visit tracker logs', 'Basic payment ledger', '3 Weeks Delivery'] },
+      { name: 'Gold Project ERP', price: '₹74,999', desc: 'All-in-one builder ERP suite', features: ['Interactive floor plan booking grids', 'Installment milestone billings', 'Broker commission pay dashboards', 'Automated WhatsApp reminders', '5 Weeks Delivery'] }
+    ]
+  },
+  'virtual-property-tours': {
+    title: 'Virtual Property Tours',
+    category: 'branding-graphics',
+    price: '₹19,999',
+    desc: 'Interactive 360-degree virtual property walkthroughs and high-quality 3D renders.',
+    features: ['360 Walkthrough Viewer', 'Figma/3D Render Integration', 'Virtual Floor Plan Links', 'Lead capture popup on tour', 'High speed hosting files'],
+    plans: [
+      { name: 'Virtual Walkthrough', price: '₹19,999', desc: '3D walkthrough integration service', features: ['Integration of up to 5 panoramic views', 'Web VR responsive viewer', 'Hotspot information boxes', 'Lead capture popups', '1 Week Delivery'] },
+      { name: 'Gold HD Tour Suite', price: '₹39,999', desc: 'Full HD multi-room tour + 3D floor plan', features: ['Panoramic views (Up to 15 nodes)', '3D dollhouse floor plan layout', 'Custom logo branding embeds', 'Offline offline VR viewer files', '2 Weeks Delivery'] }
+    ]
+  },
+  'lead-management-system': {
+    title: 'Lead Management System',
+    category: 'business-software',
+    price: '₹14,999',
+    desc: 'Automated real estate lead capturing from FB Ads, 99acres, MagicBricks, and Google Forms.',
+    features: ['Multi-channel Lead Captures', 'Instant Broker Alerts', 'Lead Status Pipeline Tracker', 'Call Recording Integration', 'Performance Analytics Reports'],
+    plans: [
+      { name: 'Lead Tracker Basic', price: '₹14,999', desc: 'Single project lead dashboard', features: ['FB/Insta and Google form lead integrations', 'Broker dashboard tables', 'Email & SMS broker alerts', 'Standard CSV export logs', '2 Weeks Delivery'] },
+      { name: 'Gold Multi-Project Flow', price: '₹29,999', desc: 'Enterprise automated distribution', features: ['Auto round-robin lead allocation', 'IVR call connection system', 'Real-time sales performance metrics', 'WhatsApp automation integration', '3 Weeks Delivery'] }
+    ]
+  },
+  'property-booking-platform': {
+    title: 'Property Booking Platform',
+    category: 'business-software',
+    price: '₹29,999',
+    desc: 'Token payment and slot booking platforms for new residential property launches.',
+    features: ['Token Amount Collections', 'Real-time Unit Availability Grid', 'Online Buyer Agreements', 'GST Compliant Receipts', 'Admin Real-time Dashboard'],
+    plans: [
+      { name: 'Token Payment flow', price: '₹29,999', desc: 'Simple token payment gateway', features: ['Razorpay and UPI token collect', 'Buyer registration forms', 'Standard terms PDF downloads', 'Basic admin transaction dashboard', '2 Weeks Delivery'] },
+      { name: 'Gold Builder Inventory Suite', price: '₹59,999', desc: 'Real-time digital layout layout grids', features: ['Interactive project layout map', 'Color coded unit status grid (Available, Booked, Hold)', 'E-Sign buyer agreements', 'SMS ledger confirmations', '4 Weeks Delivery'] }
+    ]
+  },
+  'real-estate-mobile-app': {
+    title: 'Real Estate Mobile App',
+    category: 'mobile-apps',
+    price: '₹59,999',
+    desc: 'Native Android & iOS real estate apps for property searching, virtual tours, and chat channels.',
+    features: ['Interactive Local Searches', 'Agent Real-time Chats', 'Saved Search Alerts', 'Push Notifications Dashboard', 'Play/App Store Publishing'],
+    plans: [
+      { name: 'Customer Search App', price: '₹59,999', desc: 'Property finder native app', features: ['Property lists with search filters', 'Interactive Map listings search', 'In-app agent email/call buttons', 'Android version publish', '5 Weeks Delivery'] },
+      { name: 'Gold Dual App Suite', price: '₹99,999', desc: 'Agent App + Customer App suite', features: ['Customer App + Broker App', 'Real-time in-app chats with push', 'Saved search push alerts', 'Play Store + Apple App Store publish', '8 Weeks Delivery'] }
+    ]
+  },
+  'seo-for-real-estate': {
+    title: 'SEO for Real Estate',
+    category: 'digital-marketing',
+    price: '₹9,999/mo',
+    desc: 'Local property SEO to rank high on maps and search for "flats/plots/apartments for sale near me" keywords.',
+    features: ['Local Property Keywords', 'Google Maps Business Optimisation', 'Micro-site SEO Architecture', 'High DA Local Backlinks', 'Monthly Leads Audit'],
+    plans: [
+      { name: 'Project SEO Growth', price: '₹9,999/mo', desc: 'Local project keywords ranking package', features: ['15 Local project keywords', 'GMB profile local optimizations', 'Project microsite speed checks', 'Standard backlinks (10/mo)', '3 Month Commit'] },
+      { name: 'Builder Authority SEO', price: '₹19,999/mo', desc: 'Complete brand authority builder package', features: ['40 High volume local keywords', 'Monthly blogs & project reviews writing', 'High-DA local links (25/mo)', 'Real-time rankings tracking panels', 'No Contract'] }
+    ]
+  },
+  'real-estate-digital-marketing': {
+    title: 'Real Estate Digital Marketing',
+    category: 'digital-marketing',
+    price: '₹14,999/mo',
+    desc: 'High conversion Meta & Google Ads campaigns optimized to generate site-visit leads for properties.',
+    features: ['Meta Ads (FB/IG) Lead Generation', 'Google Search Ads for Projects', '3D Walkthrough Ad Creatives', 'WhatsApp Lead Nurturing Bots', 'ROI Analysis Reports'],
+    plans: [
+      { name: 'Property Lead Gen', price: '₹14,999/mo', desc: 'Ad campaigns on FB & Instagram', features: ['Meta targeted lead ads setup', 'High conversion ad graphic designs', 'Lead verification WhatsApp bot integration', 'Daily performance analytics reports', 'Cancel Anytime'] },
+      { name: 'Builder Multi-Channel Growth', price: '₹29,999/mo', desc: 'Full scale marketing agency coverage', features: ['Meta Ads + Google Search ads campaigns', '3D walk-through ad video scripts', 'Broker communication automation', 'Bi-weekly performance reporting calls', 'Cancel Anytime'] }
+    ]
+  },
+  // ─── E-commerce Stores ───────────────────────────────────
+  'ecommerce-web-dev': {
+    title: 'Ecommerce Website Development',
+    category: 'websites',
+    price: '₹14,999',
+    desc: 'Launch a highly optimized online store with secure checkouts, payment integrations, and responsive cart grids.',
+    features: ['Unlimited Products Listing', 'Integrated Payment Gateways', 'Inventory & Stock Tracker', 'Customer Orders Dashboard', 'Mobile Commerce Layouts'],
+    plans: [
+      { name: 'Standard Shop', price: '₹14,999', desc: 'Standard catalog & payment store', features: ['Up to 50 Products', 'Razorpay & UPI gate connections', 'Standard Cart & Checkout', 'Admin stock spreadsheet', '2 Weeks Delivery'] },
+      { name: 'Gold Commerce Portal', price: '₹29,999', desc: 'Advanced storefront with coupons', features: ['Up to 500 Products', 'Razorpay & Stripe premium integration', 'Automated GST Invoices generator', 'Custom discount coupon system', '3 Weeks Delivery'] }
+    ]
+  },
+  'multi-vendor-marketplace': {
+    title: 'Multi Vendor Marketplace',
+    category: 'websites',
+    price: '₹44,999',
+    desc: 'Power an Amazon/Etsy style multi-seller marketplace where multiple vendors register and sell their goods.',
+    features: ['Vendor Registration & Verification', 'Seller Dashboard Panels', 'Automated Commission Splits', 'Vendor-wise Shipping Rules', 'Customer Ratings & Reviews'],
+    plans: [
+      { name: 'Standard Marketplace', price: '₹44,999', desc: 'Marketplace platform with basic splits', features: ['Vendor onboarding panel', 'Basic admin commission management', 'Individual store profile setups', 'Standard payment splits', '4 Weeks Delivery'] },
+      { name: 'Gold Enterprise Hub', price: '₹79,999', desc: 'Advanced multi-seller marketplace suite', features: ['Multi-currency support', 'Advanced payout automation (Razorpay Route)', 'Automated tax billing configuration', 'Vendor mobile dashboards link', '6 Weeks Delivery'] }
+    ]
+  },
+  'shopify-store-dev': {
+    title: 'Shopify Store Development',
+    category: 'websites',
+    price: '₹12,999',
+    desc: 'Bespoke Shopify theme configuration, premium app setups, custom product variants, and complete storefront design.',
+    features: ['Premium Theme Integrations', 'Variant Setup & Inventory Connect', 'Shopify App Configurations', 'Payment Setup & Taxes', 'Speed Optimization Checks'],
+    plans: [
+      { name: 'Basic Shopify Launch', price: '₹12,999', desc: 'Standard Shopify setup', features: ['Standard theme customisations', 'Up to 20 products setup', 'Crucial Shopify app setups', 'Shipping & Taxes configuration', '1 Week Delivery'] },
+      { name: 'Gold Shopify Store', price: '₹24,999', desc: 'Advanced conversion optimized store', features: ['Premium theme design layouts', 'Advanced product customizer apps', 'E-mail marketing funnel hooks', 'SEO optimize speed packages', '2 Weeks Delivery'] }
+    ]
+  },
+  'woocommerce-dev': {
+    title: 'WooCommerce Development',
+    category: 'websites',
+    price: '₹9,999',
+    desc: 'Power your WordPress site into a high-performance, flexible shopping store using WooCommerce.',
+    features: ['WordPress WooCommerce Setup', 'Advanced Product Filtering', 'Custom Cart & Checkout Pages', 'Inventory Synchronizations', 'SEO Plugin Configurations'],
+    plans: [
+      { name: 'Basic WooCommerce', price: '₹9,999', desc: 'Standard WooCommerce store', features: ['WooCommerce setup on WordPress', 'Standard payment configurations', 'Up to 30 products load', 'Standard theme setup', '1 Week Delivery'] },
+      { name: 'Gold WooCommerce Suite', price: '₹19,999', desc: 'Custom high-converting layout', features: ['Custom Elementor shop design', 'Bespoke checkout fields editor', 'Auto invoice PDF generation', 'Speed optimization caching checks', '2 Weeks Delivery'] }
+    ]
+  },
+  'payment-gateway-integration': {
+    title: 'Payment Gateway Integration',
+    category: 'business-software',
+    price: '₹4,999',
+    desc: 'Securely link local and global payment gateways (Razorpay, Stripe, PayPal, UPI) with your online system.',
+    features: ['Multi-Gateway APIs Setup', 'Instant UPI QR Code Collections', 'Auto invoice PDF generator', 'Secure SSL Transaction Logs', 'Recurring Billing Configurations'],
+    plans: [
+      { name: 'Standard Integration', price: '₹4,999', desc: 'Single gateway integration', features: ['Razorpay or Stripe API hookup', 'Standard success redirect setup', 'Transaction email alerts', 'SSL security configurations', '3 Days Delivery'] },
+      { name: 'Gold Smart Payments', price: '₹9,999', desc: 'Multi-gateway with tax splits', features: ['Razorpay + Stripe + UPI QR integration', 'Auto invoice generator PDFs', 'Multi-currency checkout capability', 'Webhooks transaction logs tracking', '5 Days Delivery'] }
+    ]
+  },
+  'inventory-management': {
+    title: 'Inventory Management',
+    category: 'business-software',
+    price: '₹19,999',
+    desc: 'Bespoke warehouse stock tracking software with barcode scanners and multi-location inventory alerts.',
+    features: ['Real-time Stock Audits', 'Barcode/QR Code Scanning Support', 'Low Stock Automatic Alerts', 'Supplier Directory Management', 'Detailed Stock Reports'],
+    plans: [
+      { name: 'Standard Tracker', price: '₹19,999', desc: 'Single warehouse stock manager', features: ['Product list catalog databases', 'Low-stock email notifications', 'Bulk inventory CSV imports', 'Purchase order generator', '2 Weeks Delivery'] },
+      { name: 'Gold Warehouse ERP', price: '₹34,999', desc: 'Multi-location automated stock planner', features: ['Multi-warehouse support', 'QR code generation tools', 'Supplier price quote audits', 'Integration with shopify/woocommerce APIs', '3 Weeks Delivery'] }
+    ]
+  },
+  'order-management-system': {
+    title: 'Order Management System',
+    category: 'business-software',
+    price: '₹14,999',
+    desc: 'Real-time order tracking dashboard from purchase to shipping with automated client notifications.',
+    features: ['Order Status Pipeline Tracker', 'Delivery Partner Integrations', 'WhatsApp/SMS Status updates', 'Return/Refund Processing System', 'Sales Performance Analytics'],
+    plans: [
+      { name: 'Order Tracker Basic', price: '₹14,999', desc: 'Basic order tracking backend', features: ['Order creation and update pipeline', 'SMS status alert templates', 'Invoice print generator', 'Basic analytics dashboard', '2 Weeks Delivery'] },
+      { name: 'Gold Delivery Flow', price: '₹29,999', desc: 'Automated ship-partner dashboard', features: ['Integration with Shiprocket/Delhivery', 'WhatsApp auto shipping notifications', 'Return request processing desk', 'Real-time delivery status tracking', '3 Weeks Delivery'] }
+    ]
+  },
+  'product-catalog-management': {
+    title: 'Product Catalog Management',
+    category: 'branding-graphics',
+    price: '₹5,999',
+    desc: 'Clean digital catalogs, bulk uploads, high-res graphic editing, and SEO product description writing.',
+    features: ['High-Res Product Layouts', 'SEO Copywriting for Descriptions', 'Bulk Import/Export Sheets', 'Standard Category Taxonomies', 'Branded Catalog PDFs'],
+    plans: [
+      { name: 'Standard Catalog Load', price: '₹5,999', desc: 'Basic catalog setup', features: ['Up to 50 products upload', 'Clean product image edits (basic crop)', 'SEO meta descriptions writing', 'Standard category tag configurations', '1 Week Delivery'] },
+      { name: 'Gold Digital Showcase', price: '₹12,999', desc: 'Premium branded catalog assets', features: ['Up to 200 products upload', 'High-end color correction graphic edits', 'Copywritten rich descriptions', 'Digital PDF Catalog design layout', '2 Weeks Delivery'] }
+    ]
+  },
+  'ecommerce-mobile-app': {
+    title: 'Ecommerce Mobile App',
+    category: 'mobile-apps',
+    price: '₹59,999',
+    desc: 'Feature-rich native Android & iOS shopping app with fast checkout flows and smart push notification updates.',
+    features: ['Native Android & iOS Apps', 'Real-time Cart Synchronizations', 'Push Notification Marketing Module', 'Order Tracking Screens', 'Play/App Store Publishing'],
+    plans: [
+      { name: 'Customer Shop App', price: '₹59,999', desc: 'Property finder native app', features: ['Property lists with search filters', 'Interactive Map listings search', 'In-app agent email/call buttons', 'Android version publish', '5 Weeks Delivery'] },
+      { name: 'Gold Dual App Suite', price: '₹99,999', desc: 'Agent App + Customer App suite', features: ['Customer App + Broker App', 'Real-time in-app chats with push', 'Saved search push alerts', 'Play Store + Apple App Store publish', '8 Weeks Delivery'] }
+    ]
+  },
+  'seo-for-ecommerce': {
+    title: 'SEO for Ecommerce',
+    category: 'digital-marketing',
+    price: '₹12,999/mo',
+    desc: 'Rank your product pages first on Google with advanced SEO schema markup, speed fixes, and targeted search keywords.',
+    features: ['Ecommerce Rich Snippets (Price, Stock)', 'Product Category Keyword Rank', 'Page Speed Caching Fixes', 'Bespoke Competitor Pricing Audits', 'Monthly Leads Audit'],
+    plans: [
+      { name: 'Local Shop SEO', price: '₹12,999/mo', desc: 'Local search rankings pack', features: ['20 target product keywords', 'Product schema markup installation', 'GMB profile local optimizations', 'Standard backlinks (15/mo)', '3 Month Commit'] },
+      { name: 'Store Authority SEO', price: '₹24,999/mo', desc: 'National high traffic search rank', features: ['50 competitive product keywords', 'Technical site architecture speed improvements', 'Monthly shopping blogs content', 'High DA backlink acquisitions (30/mo)', 'No Contract'] }
+    ]
+  },
+  'marketplace-development': {
+    title: 'Marketplace Development',
+    category: 'websites',
+    price: '₹49,999',
+    desc: 'Bespoke online service or product marketplaces with vendor commission models, payouts, and reviews.',
+    features: ['Interactive Map Listing Matches', 'Vendor Wallet Pay Systems', 'Admin Central Revenue Dashboards', 'Interactive Location Filters', 'Review Moderation Desks'],
+    plans: [
+      { name: 'Service Marketplace', price: '₹49,999', desc: 'Listing and lead buy site for services', features: ['Interactive location searching', 'Service provider account setups', 'Razorpay token checkouts', 'Google Maps search integration', '4 Weeks Delivery'] },
+      { name: 'Gold Product Marketplace', price: '₹89,999', desc: 'Complete physical goods seller marketplace', features: ['Real-time seller stock integration', 'Auto payout splits API hookups', 'Review moderation console panels', 'Advanced tax config dashboards', '6 Weeks Delivery'] }
+    ]
+  },
+  // ─── Restaurants & Cafes ───────────────────────────────────
+  'restaurant-web-dev': {
+    title: 'Restaurant Website Development',
+    category: 'websites',
+    price: '₹9,999',
+    desc: 'Stunning, fast, and optimized websites for restaurants and cafes with online menu displays.',
+    features: ['Interactive Food Menu Display', 'Online Table Reservation Link', 'Google Maps Location & Hours', 'Social Media Integrations', 'Mobile Optimized Design'],
+    plans: [
+      { name: 'Standard Cafe Website', price: '₹9,999', desc: 'Clean profile & menu site', features: ['5 Pages Layout', 'Interactive PDF Menu display', 'Contact & Location Maps', 'Free Domain & Host (1 Yr)', '1 Week Delivery'] },
+      { name: 'Gold Restaurant Site', price: '₹19,999', desc: 'Premium multi-page custom portal', features: ['10 Pages Custom Layout', 'Interactive filterable food menus', 'SEO optimize local pack maps', 'WordPress Admin Dashboard CMS', '2 Weeks Delivery'] }
+    ]
+  },
+  'table-reservation-system': {
+    title: 'Online Table Reservation System',
+    category: 'business-software',
+    price: '₹14,999',
+    desc: 'Allow guests to reserve tables online, choose seating preferences, and receive automatic confirmation alerts.',
+    features: ['Interactive Floor Plan Selections', 'SMS & WhatsApp Reservation Alerts', 'Real-time Table Status Grids', 'Peak Hours Management Mod', 'Customer Feedback Logs'],
+    plans: [
+      { name: 'Standard Booking Portal', price: '₹14,999', desc: 'Standard slot reservation system', features: ['Online booking form widget', 'SMS auto confirmations', 'Table list management logs', 'Standard admin calendar', '2 Weeks Delivery'] },
+      { name: 'Gold Floor Plan Suite', price: '₹29,999', desc: 'Advanced reservation system with layouts', features: ['Interactive seat selection grids', 'WhatsApp API notifications', 'Payment integration for reservation deposits', 'Defaulter/No-show logs tracking', '3 Weeks Delivery'] }
+    ]
+  },
+  'food-ordering-system': {
+    title: 'Food Ordering System',
+    category: 'websites',
+    price: '₹19,999',
+    desc: 'Direct restaurant food ordering system to accept pickup and home delivery orders with no commission fees.',
+    features: ['Direct Stripe/Razorpay Payments', 'Custom Discount Coupon Engine', 'Delivery Radius Configuration Map', 'Kitchen Receipt Printer Sync', 'Real-time Order Tracker Dashboard'],
+    plans: [
+      { name: 'Ordering Web Flow', price: '₹19,999', desc: 'Standard direct ordering store', features: ['Filterable menu ordering flow', 'Razorpay & UPI payment checkouts', 'SMS status updates', 'Kitchen receipt generator', '2 Weeks Delivery'] },
+      { name: 'Gold Order Dispatch Suite', price: '₹34,999', desc: 'Advanced delivery & checkout hub', features: ['Delivery radius calculations map', 'Advanced order pipeline dashboards', 'WhatsApp catalogue matching', 'Defaulter logs tracking', '4 Weeks Delivery'] }
+    ]
+  },
+  'restaurant-pos-system': {
+    title: 'Restaurant POS System',
+    category: 'business-software',
+    price: '₹24,999',
+    desc: 'All-in-one restaurant billing, kitchen display sync, and table order tracking software.',
+    features: ['Quick Billing & Invoice PDFs', 'Kitchen Order Ticket (KOT) Sync', 'Table-wise Order Logs', 'Multi-payment Splits Methods', 'Detailed Sales Analytics Reports'],
+    plans: [
+      { name: 'Standard Billing POS', price: '₹24,999', desc: 'Standard billing terminal software', features: ['Table billing ledger', 'KOT thermal prints', 'GST compliant billing', 'Basic revenue reports', '2 Weeks Delivery'] },
+      { name: 'Gold Kitchen ERP Suite', price: '₹44,999', desc: 'Complete multi-terminal restaurant suite', features: ['Kitchen display system (KDS) sync', 'Inventory stock tracking sync', 'Staff shifts logs tracking', 'Multi-payment ledger splits', '3 Weeks Delivery'] }
+    ]
+  },
+  'qr-menu-solution': {
+    title: 'QR Menu Solution',
+    category: 'whatsapp-marketing',
+    price: '₹4,999',
+    desc: 'Contactless digital QR menus where guests can scan, browse, order, and pay from their table.',
+    features: ['QR Code Poster Generators', 'Self-ordering Digital Cart', 'Table-wise Order Auto Allocator', 'WhatsApp Order Notifications', 'Payment at Table Gateway'],
+    plans: [
+      { name: 'Scan Only Menu', price: '₹4,999', desc: 'Basic QR scan menu catalog', features: ['Filterable mobile digital menu', 'Unique QR poster layout PDF', 'Admin menu manager panel', 'Standard WhatsApp links', '3 Days Delivery'] },
+      { name: 'Gold Self-Order QR', price: '₹12,999', desc: 'Interactive table self-order suite', features: ['Scan-to-order web checkout', 'Table-wise order notifications dashboard', 'Integrated digital pay-at-table gateways', 'Review collection popup widgets', '1 Week Delivery'] }
+    ]
+  },
+  'delivery-management-system': {
+    title: 'Delivery Management System',
+    category: 'business-software',
+    price: '₹14,999',
+    desc: 'Real-time delivery driver tracking, order dispatching dashboard, and estimated arrival updates.',
+    features: ['Driver Mobile Tracking Maps', 'Auto Order Dispatch Rules', 'Customer Live Status Trackers', 'Delivery Partner API Syncs', 'Driver Payment Ledgers'],
+    plans: [
+      { name: 'Standard Dispatch', price: '₹14,999', desc: 'Basic driver dispatch panel', features: ['Manual order dispatch tracker', 'Driver assignment records', 'SMS tracking links to customers', 'Driver daily logs', '2 Weeks Delivery'] },
+      { name: 'Gold GPS Live Flow', price: '₹29,999', desc: 'Advanced automated mapping suite', features: ['Real-time GPS tracker dashboard', 'Auto-allocation round-robin dispatch', 'WhatsApp API live updates', 'Integration with Dunzo/Shadowfax', '3 Weeks Delivery'] }
+    ]
+  },
+  'loyalty-program': {
+    title: 'Loyalty Program',
+    category: 'business-software',
+    price: '₹9,999',
+    desc: 'Customer loyalty cards, rewards points, discount coupons, and birthday promotion automation.',
+    features: ['Customer Points Balance Accounts', 'Digital Membership Card PDFs', 'Loyalty Tier Rules (Bronze, Gold)', 'Auto Promo SMS Campaigns', 'Detailed Engagement Analytics'],
+    plans: [
+      { name: 'Points Wallet Standard', price: '₹9,999', desc: 'Standard point credit tracker', features: ['Point deposit/redeem panels', 'SMS transaction reports', 'Standard member directory', 'Basic analytics dashboard', '1 Week Delivery'] },
+      { name: 'Gold Loyalty Automation', price: '₹19,999', desc: 'Advanced multi-tier marketing engine', features: ['Multi-tier membership settings', 'Automated Birthday WhatsApp/SMS campaigns', 'Digital card passbook downloads', 'Broker engagement insights', '2 Weeks Delivery'] }
+    ]
+  },
+  'restaurant-mobile-app': {
+    title: 'Restaurant Mobile App',
+    category: 'mobile-apps',
+    price: '₹49,999',
+    desc: 'Native Android & iOS apps for food delivery, table booking, and instant push promotions.',
+    features: ['In-app Menu & Order Cart', 'Table Reservation Scheduler', 'Push Notice Promotions Widget', 'Live Driver GPS Tracking', 'Google Play & Apple App Store Publish'],
+    plans: [
+      { name: 'Standard Food App', price: '₹49,999', desc: 'Direct order customer native app', features: ['Custom category food menus', 'In-app Razorpay and UPI checkout', 'SMS order status alert integrations', 'Android version publish', '4 Weeks Delivery'] },
+      { name: 'Gold Full Campus Suite', price: '₹79,999', desc: 'Double app suite (Customer + Driver)', features: ['Customer App + Driver App', 'Live map route tracking', 'Zoom menu layouts', 'Play Store + Apple App Store publish', '6 Weeks Delivery'] }
+    ]
+  },
+  'restaurant-crm': {
+    title: 'Restaurant CRM',
+    category: 'business-software',
+    price: '₹14,999',
+    desc: 'Track guest databases, order history profiles, dining preferences, and feedback logs.',
+    features: ['Detailed Guest Profiles Directory', 'Order History & Ticket Value logs', 'Dining Preference Trackers', 'Auto review collector SMS', 'Customer Segmentation Models'],
+    plans: [
+      { name: 'Standard Guest CRM', price: '₹14,999', desc: 'Standard client directory tool', features: ['Profile database sheets', 'Standard transaction history', 'Auto email promotions alerts', 'Detailed segmentation tags', '2 Weeks Delivery'] },
+      { name: 'Gold Smart Guest Suite', price: '₹29,999', desc: 'AI customer profiling dashboard', features: ['Average order value (AOV) metrics', 'WhatsApp automation feedback collection', 'Birthday auto campaign engines', 'Bespoke marketing triggers', '3 Weeks Delivery'] }
+    ]
+  },
+  'restaurant-digital-marketing': {
+    title: 'Restaurant Digital Marketing',
+    category: 'digital-marketing',
+    price: '₹12,999/mo',
+    desc: 'High-ROI digital marketing campaigns - Instagram food photography, local SEO, and Meta ads.',
+    features: ['High quality Food Graphic Designs', 'Meta Local Food Lead Ads', 'Google Maps Local search ranking', 'Influencer Tie-up Strategy', 'Monthly ROI Analytics Audits'],
+    plans: [
+      { name: 'Cafe Growth Pack', price: '₹12,999/mo', desc: 'Social + maps local rankings pack', features: ['16 Custom branding food graphics', 'GMB profile local optimizations', 'Local meta ads setup', 'Standard review boost campaign', 'Cancel Anytime'] },
+      { name: 'Restaurant Authority Pack', price: '₹24,999/mo', desc: 'Complete brand authority marketing', features: ['30 Custom posts (daily graphics/reels)', 'Paid local google search ads campaign', 'Influencer partnership outreach', 'WhatsApp lead verification integrations', 'Cancel Anytime'] }
+    plans: [
+      { name: 'Cafe Growth Pack', price: '₹12,999/mo', desc: 'Social + maps local rankings pack', features: ['16 Custom branding food graphics', 'GMB profile local optimizations', 'Local meta ads setup', 'Standard review boost campaign', 'Cancel Anytime'] },
+      { name: 'Restaurant Authority Pack', price: '₹24,999/mo', desc: 'Complete brand authority marketing', features: ['30 Custom posts (daily graphics/reels)', 'Paid local google search ads campaign', 'Influencer partnership outreach', 'WhatsApp lead verification integrations', 'Cancel Anytime'] }
+    ]
+  },
+  // ─── Salons & Wellness ─────────────────────────────────────
+  'salon-web-dev': {
+    title: 'Salon Website Development',
+    category: 'websites',
+    price: '₹9,999',
+    desc: 'Stunning, fast, and optimized websites for salons, spas, and wellness centers showcasing lists of services.',
+    features: ['Service List & Price Menus', 'Google Maps Local Embed', 'Staff Profile Portfolios', 'Appointment Request Callouts', 'Responsive Mobile Designs'],
+    plans: [
+      { name: 'Standard Salon Site', price: '₹9,999', desc: 'Clean page listing services & team', features: ['5 Pages Layout', 'Online service menu display', 'WhatsApp booking redirect links', 'Free Domain & Host (1 Yr)', '1 Week Delivery'] },
+      { name: 'Gold Salon Portal', price: '₹19,999', desc: 'Premium multi-page custom portal', features: ['10 Pages Custom Layout', 'Stylist portfolio slider widget', 'Local search map citation boost', 'WordPress Admin Dashboard CMS', '2 Weeks Delivery'] }
+    ]
+  },
+  'salon-appointment-booking': {
+    title: 'Appointment Booking System',
+    category: 'business-software',
+    price: '₹14,999',
+    desc: 'Easy online booking software for salons so clients can self-schedule appointments and get reminders.',
+    features: ['Stylist Calendar Views', 'Real-time Slot Bookings', 'WhatsApp/SMS Automated Reminders', 'Reschedule & Cancellation Logs', 'Payment Deposit Collection'],
+    plans: [
+      { name: 'Standard Booking Portal', price: '₹14,999', desc: 'Standard slot reservation system', features: ['Online booking form widget', 'SMS auto confirmations', 'Table list management logs', 'Standard admin calendar', '2 Weeks Delivery'] },
+      { name: 'Gold Stylist Suite', price: '₹24,999', desc: 'Advanced reservation system with staff profiles', features: ['Stylist wise profile bookings', 'WhatsApp API confirmations', 'Deposit collections on checkout', 'Automatic queue distribution', '3 Weeks Delivery'] }
+    ]
+  },
+  'salon-management-software': {
+    title: 'Salon Management Software',
+    category: 'business-software',
+    price: '₹19,999',
+    desc: 'Manage salon operations, staff calendars, service commissions, and daily check-ins easily.',
+    features: ['Stylist Rota Calendars', 'Commission Billing Calculators', 'Quick Check-in Desk', 'Retail Product Stock Sync', 'Revenue Performance Tracker'],
+    plans: [
+      { name: 'Standard Management Panel', price: '₹19,999', desc: 'Basic booking & check-in software', features: ['Daily stylist schedule tables', 'Commission calculation sheet', 'Standard sales reports', 'Retail sales logging', '2 Weeks Delivery'] },
+      { name: 'Gold Multi-Chair Suite', price: '₹39,999', desc: 'Complete enterprise salon management', features: ['Unlimited chair allocation grids', 'Staff check-in biometric hooks', 'Inventory low-stock alerts', 'Multi-payment ledger splits', '4 Weeks Delivery'] }
+    ]
+  },
+  'spa-management-system': {
+    title: 'Spa Management System',
+    category: 'business-software',
+    price: '₹24,999',
+    desc: 'Complete billing, cabin allocations, therapist schedules, and feedback logs software for spas.',
+    features: ['Room & Cabin Grid Allocation', 'Therapist Shift Planners', 'Therapy Service Billing', 'Consent Form Digital Signature', 'Detailed Performance Insights'],
+    plans: [
+      { name: 'Spa Dispatch Basic', price: '₹24,999', desc: 'Standard room allocation portal', features: ['Room assignment log tables', 'Therapist schedules grids', 'Standard billing receipts', 'Basic feedback collector', '2 Weeks Delivery'] },
+      { name: 'Gold Wellness ERP', price: '₹44,999', desc: 'Complete spa booking & resource planning', features: ['Digital client consent forms e-sign', 'Product consumption logging', 'WhatsApp notifications on booking', 'Commissions allocation engine', '3 Weeks Delivery'] }
+    ]
+  },
+  'membership-management': {
+    title: 'Membership Management',
+    category: 'business-software',
+    price: '₹9,999',
+    desc: 'Configure monthly subscriptions, prepaid package logs, and loyalty points balances for salon VIP members.',
+    features: ['Prepaid Services Wallets', 'Loyalty Tier Rules (Bronze, VIP)', 'Recurring Subscription Gateways', 'Digital membership pass PDFs', 'Points Ledger Audit Logs'],
+    plans: [
+      { name: 'Membership Tracker Standard', price: '₹9,999', desc: 'Prepaid package logs tracker', features: ['Prepaid credits directory database', 'SMS points transaction notifications', 'Standard subscriber tag tags', 'Basic usage stats dashboard', '1 Week Delivery'] },
+      { name: 'Gold VIP Subscription Suite', price: '₹19,999', desc: 'Advanced recurring billing suite', features: ['Monthly auto billing integration (Stripe)', 'Custom loyalty tier calculations', 'Auto promotional WhatsApp campaigns', 'Digital wallet passbooks', '2 Weeks Delivery'] }
+    ]
+  },
+  'customer-crm': {
+    title: 'Customer CRM',
+    category: 'business-software',
+    price: '₹14,999',
+    desc: 'Keep complete customer profiles containing service logs, hair/skin preferences, and contact details.',
+    features: ['Detailed Client Profile History', 'Hair/Skin Preference Files', 'Average spend & visit records', 'Review auto-collect SMS widgets', 'Audience Segmentation Tag Tags'],
+    plans: [
+      { name: 'Standard Client CRM', price: '₹14,999', desc: 'Standard client directory tool', features: ['Profile database sheets', 'Standard transaction history', 'Auto email promotions alerts', 'Detailed segmentation tags', '2 Weeks Delivery'] },
+      { name: 'Gold Client Profiler', price: '₹29,999', desc: 'AI customer profiling dashboard', features: ['Average order value (AOV) metrics', 'WhatsApp automation feedback collection', 'Birthday auto campaign engines', 'Bespoke marketing triggers', '3 Weeks Delivery'] }
+    ]
+  },
+  'billing-software': {
+    title: 'Billing Software',
+    category: 'business-software',
+    price: '₹12,999',
+    desc: 'Generate fast invoices, track retail product inventory, and calculate GST logs.',
+    features: ['Fast Thermal Receipt Printing', 'GST Compliant Tax billing', 'Retail product inventory track', 'Cash/Card/UPI transaction logger', 'Daily cash drawer balancing'],
+    plans: [
+      { name: 'Standard Billing POS', price: '₹12,999', desc: 'Standard billing terminal software', features: ['Service billing ledger', 'KOT thermal prints', 'GST compliant billing', 'Basic revenue reports', '1 Week Delivery'] },
+      { name: 'Gold Inventory Billing Suite', price: '₹24,999', desc: 'Advanced inventory-synced billing', features: ['Bar-code scanning inventory tracking', 'Automatic tax billing configurations', 'Supplier inventory checks', 'Advanced digital payment links', '2 Weeks Delivery'] }
+    ]
+  },
+  'wellness-mobile-app': {
+    title: 'Wellness Mobile App',
+    category: 'mobile-apps',
+    price: '₹49,999',
+    desc: 'Native Android & iOS app for online booking, service catalogs, digital membership passes, and push updates.',
+    features: ['Filterable Service Menu Catalog', 'Stylist Booking Calendar Widget', 'In-app Razorpay and UPI checkout', 'Push Notice Promotions Widget', 'Play/App Store Publishing'],
+    plans: [
+      { name: 'Standard Salon App', price: '₹49,999', desc: 'Direct order customer native app', features: ['Custom category services list', 'In-app booking & payments', 'SMS order status alert integrations', 'Android version publish', '5 Weeks Delivery'] },
+      { name: 'Gold Dual App Suite', price: '₹79,999', desc: 'Double app suite (Customer + Staff)', features: ['Customer App + Stylist App', 'Live push alerts notification board', 'Saved booking logs tracking', 'Play Store + Apple App Store publish', '7 Weeks Delivery'] }
+    ]
+  },
+  'marketing-automation': {
+    title: 'Marketing Automation',
+    category: 'whatsapp-marketing',
+    price: '₹9,999',
+    desc: 'Auto reminders for appointments, birthday greeting promotions, and feedback collection via WhatsApp.',
+    features: ['Official WhatsApp Business API setup', 'Bulk SMS/WhatsApp broadcast tools', 'Automated Birthday discount engines', 'Auto feedback review collection', 'Campaign performance statistics'],
+    plans: [
+      { name: 'Standard Auto Broadcast', price: '₹9,999', desc: 'Manual broadcast scheduler portal', features: ['API broadcast portal', 'SMS templates scheduler panel', 'GMB review collection widget', 'Standard contact tags', '1 Week Delivery'] },
+      { name: 'Gold Lead Nurturing Engine', price: '₹19,999', desc: 'AI automated broadcast triggers', features: ['WhatsApp API automated alerts triggers', 'Monthly campaigns analysis reports', 'Automated birthday discount engines', 'Review collections templates sync', '2 Weeks Delivery'] }
+    ]
+  },
+  'salon-seo-services': {
+    title: 'Salon SEO Services',
+    category: 'digital-marketing',
+    price: '₹9,999/mo',
+    desc: 'Local salon SEO to rank high on maps search and keywords like "best haircut/salon near me".',
+    features: ['Local Stylist Keywords', 'Google Maps Business Optimisation', 'Location Specific SEO Setup', 'High DA local citations', 'Monthly GMB reports audit'],
+    plans: [
+      { name: 'Salon Local Rank', price: '₹9,999/mo', desc: 'Local project keywords ranking package', features: ['15 Local project keywords', 'GMB profile local optimizations', 'Project microsite speed checks', 'Standard backlinks (10/mo)', '3 Month Commit'] },
+      { name: 'Beauty Authority SEO', price: '₹19,999/mo', desc: 'Complete brand authority builder package', features: ['40 High volume local keywords', 'Monthly blogs & project reviews writing', 'High-DA local links (25/mo)', 'Real-time rankings tracking panels', 'No Contract'] }
+    ]
   }
 };
+
+
 
 export const calculatorConfigs = {
   'websites': {

@@ -14,6 +14,7 @@ import FreeTools from '../components/FreeTools';
 import Testimonials from '../components/Testimonials';
 import ReadyToGrow from '../components/ReadyToGrow';
 import Footer from '../components/Footer';
+import IndustryServicesDrawer from '../components/IndustryServicesDrawer';
 
 // Modals
 import CalculatorModal from '../components/CalculatorModal';
@@ -40,6 +41,7 @@ function HomeContent() {
   const [isCalculatorOpen, setIsCalculatorOpen] = useState(false);
   const [isQuoteOpen, setIsQuoteOpen] = useState(false);
   const [quoteInitialData, setQuoteInitialData] = useState(null);
+  const [selectedIndustry, setSelectedIndustry] = useState(null);
 
   // Handlers
   const handleEnquire = (service) => {
@@ -91,7 +93,7 @@ function HomeContent() {
           />
 
           {/* Core Content Area */}
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '32px' }}>
+          <div className="main-content-col" style={{ display: 'flex', flexDirection: 'column', gap: '32px', minWidth: 0, maxWidth: '100%', overflow: 'hidden' }}>
             <Hero
               onSearch={(term) => setSearchTerm(term)}
               onExploreOffers={() => router.push('/offers')}
@@ -107,15 +109,11 @@ function HomeContent() {
             />
             <IndustriesRow
               onSelectIndustry={(indName) => {
-                setQuoteInitialData({
-                  title: `Enquiry: Industry Specific for ${indName}`,
-                  price: 'Request Custom Proposal'
-                });
-                setIsQuoteOpen(true);
+                setSelectedIndustry(indName);
               }}
             />
             {/* Bottom Statistics Row matching Image 1 exactly */}
-            <div className="stats-row-desktop" style={{
+            <div className="stats-row-desktop stats-row-scroll" style={{
               background: 'var(--bg-white)',
               border: '1px solid var(--border-color)',
               borderRadius: '8px',
@@ -167,6 +165,12 @@ function HomeContent() {
 
       {/* Footer Area */}
       <Footer />
+
+      {/* Industry Services Drawer */}
+      <IndustryServicesDrawer
+        industryName={selectedIndustry}
+        onClose={() => setSelectedIndustry(null)}
+      />
 
       {/* Floating Modals */}
       <CalculatorModal

@@ -1,282 +1,329 @@
-import React, { useState } from 'react';
-import Link from 'next/link';
+import React, { useState, useEffect } from 'react';
+
+const WORDS = ['Websites', 'Mobile Apps', 'SEO & Marketing', 'AI Solutions', 'Branding'];
 
 export default function Hero({ onSearch, onExploreOffers }) {
   const [inputVal, setInputVal] = useState('');
-  const [isOffersHovered, setIsOffersHovered] = useState(false);
+  const [wordIdx, setWordIdx] = useState(0);
+  const [displayed, setDisplayed] = useState('');
+  const [typing, setTyping] = useState(true);
 
-  const handleSearchSubmit = (e) => {
-    e.preventDefault();
-    if (onSearch) onSearch(inputVal);
-  };
+  const handleSubmit = (e) => { e.preventDefault(); if (onSearch) onSearch(inputVal); };
 
-  const handlePopularSearch = (tag) => {
-    setInputVal(tag);
-    if (onSearch) onSearch(tag);
-  };
-
-  const popularTags = ['Website', 'SEO', 'Mobile App', 'WhatsApp API', 'Logo Design'];
+  // Typewriter effect
+  useEffect(() => {
+    const word = WORDS[wordIdx];
+    let timeout;
+    if (typing) {
+      if (displayed.length < word.length) {
+        timeout = setTimeout(() => setDisplayed(word.slice(0, displayed.length + 1)), 80);
+      } else {
+        timeout = setTimeout(() => setTyping(false), 1800);
+      }
+    } else {
+      if (displayed.length > 0) {
+        timeout = setTimeout(() => setDisplayed(displayed.slice(0, -1)), 45);
+      } else {
+        setWordIdx((i) => (i + 1) % WORDS.length);
+        setTyping(true);
+      }
+    }
+    return () => clearTimeout(timeout);
+  }, [displayed, typing, wordIdx]);
 
   return (
-    <div style={{ position: 'relative', width: '100%', marginBottom: '16px' }}>
-      {/* Main Hero Card Container - Vibrant Orange Theme matching Image 1 exactly */}
-      <div className="hero-card" style={{
-        background: 'linear-gradient(135deg, #FF7E21 0%, #FF5100 100%)',
-        color: 'white',
-        border: 'none',
-        borderRadius: '8px',
-        boxShadow: 'var(--shadow-sm)',
-        position: 'relative',
+    <div style={{ width: '100%', marginBottom: '20px', position: 'relative' }}>
+      {/* Background card with overflow hidden to clip orbs and gradient */}
+      <div style={{
+        position: 'absolute',
+        inset: 0,
+        background: 'linear-gradient(135deg, #FF8C2A 0%, #FF4500 60%, #CC3300 100%)',
+        borderRadius: '14px',
+        boxShadow: '0 12px 40px rgba(255,81,0,0.3)',
         overflow: 'hidden',
-        display: 'block',              // Override grid display from CSS
-        padding: '20px 24px'
+        zIndex: 1,
       }}>
-        {/* Decorative background grid pattern */}
+        {/* Animated background orbs */}
+        <div className="hero-orb hero-orb-1" />
+        <div className="hero-orb hero-orb-2" />
+        <div className="hero-orb hero-orb-3" />
+
+        {/* Grid pattern */}
         <div style={{
-          position: 'absolute',
-          top: 0, left: 0, right: 0, bottom: 0,
-          opacity: 0.08,
-          backgroundImage: 'linear-gradient(rgba(255,255,255,0.15) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.15) 1px, transparent 1px)',
-          backgroundSize: '20px 20px',
-          pointerEvents: 'none'
-        }}></div>
+          position: 'absolute', inset: 0, pointerEvents: 'none', opacity: 0.07,
+          backgroundImage: 'linear-gradient(rgba(255,255,255,0.4) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.4) 1px,transparent 1px)',
+          backgroundSize: '26px 26px',
+        }} />
+      </div>
 
-        {/* Inner grid wrapping the content to prevent background absolute element from counting as a grid column */}
-        <div style={{
-          display: 'grid',
-          gridTemplateColumns: '0.7fr 1.3fr',
-          gap: '16px',
-          alignItems: 'center',
-          width: '100%',
-          position: 'relative',
-          zIndex: 2
-        }} className="hero-grid-content">
-
-          {/* Left Info Column */}
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
-
-          {/* Main Headline */}
-          <h1 style={{ fontSize: '2.1rem', fontWeight: '900', lineHeight: '1.1', color: 'white', margin: 0 }}>
-            One Platform.<br />All Digital Solutions.
-          </h1>
-
-          {/* Subtitle */}
-          <p style={{ fontSize: '0.8rem', opacity: 0.95, fontWeight: '500', lineHeight: '1.3', maxWidth: '100%', color: 'white', margin: 0 }}>
-            Websites, Apps, Marketing, Branding, AI & More – Everything You Need to Grow Your Business Online.
-          </p>
-
-          {/* Stats Row inside Hero - Translucent White Box with Icons */}
-          <div className="hero-stats-grid" style={{
-            background: 'rgba(255, 255, 255, 0.96)',
-            border: 'none',
-            padding: '8px 12px',
-            borderRadius: '6px',
-            maxWidth: '100%',
-            boxShadow: '0 2px 8px rgba(0, 0, 0, 0.05)'
-          }}>
-            {[
-              {
-                num: '5000+',
-                label: 'Happy Clients',
-                icon: (
-                  <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
-                    <circle cx="12" cy="7" r="4" />
-                  </svg>
-                )
-              },
-              {
-                num: '15000+',
-                label: 'Projects Delivered',
-                icon: (
-                  <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
-                    <rect x="2" y="7" width="20" height="14" rx="2" ry="2" />
-                    <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" />
-                  </svg>
-                )
-              },
-              {
-                num: '50+',
-                label: 'Expert Team',
-                icon: (
-                  <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
-                    <circle cx="9" cy="7" r="4" />
-                    <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
-                    <path d="M16 3.13a4 4 0 0 1 0 7.75" />
-                  </svg>
-                )
-              },
-              {
-                num: '24/7',
-                label: 'Support',
-                icon: (
-                  <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
-                    <circle cx="12" cy="12" r="10" />
-                    <polyline points="12 6 12 12 16 14" />
-                  </svg>
-                )
-              }
-            ].map((stat, idx) => (
-              <div key={idx} className="hero-stats-item" style={{
-                display: 'flex',
-                alignItems: 'center',
-                gap: '5px'
-              }}>
-                <div style={{
-                  background: 'rgba(255, 90, 0, 0.1)',
-                  borderRadius: '50%',
-                  width: '18px',
-                  height: '18px',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  flexShrink: 0
-                }}>
-                  {stat.icon}
-                </div>
-                <div style={{ display: 'flex', flexDirection: 'column', textAlign: 'left', overflow: 'hidden' }}>
-                  <span style={{ fontSize: '0.72rem', fontWeight: '800', color: 'var(--text-dark)', lineHeight: 1.1, fontFamily: 'var(--font-display)' }}>
-                    {stat.num}
-                  </span>
-                  <span style={{ fontSize: '0.45rem', opacity: 0.8, fontWeight: '700', color: 'var(--text-medium)', textTransform: 'capitalize', marginTop: '1px', lineHeight: 1, whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
-                    {stat.label}
-                  </span>
-                </div>
-              </div>
-            ))}
+      {/* Main Grid Content (no overflow hidden to allow pop-out image) */}
+      <div className="hero-inner-grid" style={{ position: 'relative', zIndex: 2 }}>
+        {/* ── LEFT ── */}
+        <div className="hero-left-col">
+          {/* Animated badge */}
+          <div className="hero-badge-row">
+            <span className="hero-badge-primary">
+              <span className="hero-badge-dot" />
+              🚀 India's #1 Digital Agency
+            </span>
+            <span className="hero-badge-gold">⭐ 4.9/5 Rating</span>
           </div>
 
-          {/* Inner Search Box */}
-          <form onSubmit={handleSearchSubmit} style={{
-            display: 'flex',
-            background: 'white',
-            borderRadius: '6px',
-            padding: '2px',
-            boxShadow: 'var(--shadow-sm)',
-            maxWidth: '100%',
-            width: '100%'
-          }}>
-            <span style={{ paddingLeft: '10px', display: 'flex', alignItems: 'center', color: 'var(--text-light)' }}>
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                <circle cx="11" cy="11" r="8"></circle>
-                <path d="m21 21-4.3-4.3"></path>
+          {/* Headline with typewriter & content */}
+          <div>
+            <h1 className="hero-headline">
+              We Build <span className="hero-headline-accent">{displayed}</span>
+              <span className="hero-cursor">|</span>
+            </h1>
+            <p className="hero-sub">
+              Grow your business online with websites, mobile apps, SEO, and AI marketing.
+            </p>
+            {/* Added compact content bullets */}
+            <div style={{ display: 'flex', gap: '10px', marginTop: '6px', fontSize: '0.68rem', color: 'rgba(255,255,255,0.85)', fontWeight: '600', flexWrap: 'wrap' }}>
+              <span>✓ Free Consultation</span>
+              <span>✓ 100% Satisfaction Guarantee</span>
+              <span>✓ Dedicated Support</span>
+            </div>
+          </div>
+
+          {/* Search */}
+          <form onSubmit={handleSubmit} className="hero-search-form">
+            <span style={{ paddingLeft: '12px', display: 'flex', alignItems: 'center', color: '#bbb', flexShrink: 0 }}>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                <circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/>
               </svg>
             </span>
             <input
-              type="text"
-              placeholder="What do you need today?"
-              value={inputVal}
-              onChange={(e) => setInputVal(e.target.value)}
-              style={{
-                flex: 1,
-                border: 'none',
-                background: 'transparent',
-                padding: '6px 8px',
-                fontSize: '0.8rem',
-                outline: 'none',
-                color: 'var(--text-dark)'
-              }}
+              type="text" placeholder="What do you need today?"
+              value={inputVal} onChange={e => setInputVal(e.target.value)}
+              style={{ flex: 1, border: 'none', background: 'transparent', padding: '9px 8px', fontSize: '0.82rem', outline: 'none', color: '#333', minWidth: 0 }}
             />
-            <button type="submit" className="btn-primary" style={{
-              padding: '6px 14px',
-              borderRadius: '4px',
-              background: 'var(--primary)',
-              color: 'white',
-              fontWeight: '700',
-              fontSize: '0.75rem',
-              display: 'flex',
-              alignItems: 'center',
-              gap: '4px',
-              border: 'none',
-              cursor: 'pointer'
-            }}>
-              <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
-                <circle cx="11" cy="11" r="8"></circle>
-                <path d="m21 21-4.3-4.3"></path>
-              </svg>
-              Search
-            </button>
+            <button type="submit" className="hero-search-btn">Search</button>
           </form>
 
-          {/* Popular searches tags */}
-          <div style={{ display: 'flex', alignItems: 'center', gap: '6px', flexWrap: 'wrap' }}>
-            <span style={{ fontSize: '0.65rem', fontWeight: '700', color: 'white', opacity: 0.95 }}>
-              Popular Searches:
-            </span>
-            {popularTags.map((tag) => (
-              <button
-                key={tag}
-                onClick={() => handlePopularSearch(tag)}
-                style={{
-                  fontSize: '0.6rem',
-                  fontWeight: '700',
-                  padding: '2px 6px',
-                  borderRadius: '4px',
-                  background: 'transparent',
-                  color: 'white',
-                  border: '1px solid rgba(255, 255, 255, 0.4)',
-                  cursor: 'pointer'
-                }}
-                className="hover-card"
-              >
-                {tag}
-              </button>
-            ))}
+          {/* CTA Buttons */}
+          <div style={{ display: 'flex', gap: '10px', flexWrap: 'wrap' }}>
+            <button onClick={onExploreOffers} className="hero-btn-primary">
+              🔥 Explore Mega Offers
+            </button>
+            <button className="hero-btn-outline">Get Free Quote</button>
           </div>
         </div>
 
-          {/* Right Column: Images — mockup large on left, badge smaller on right */}
-          <div style={{
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'flex-start',
-            gap: '8px',
-            position: 'relative',
-            zIndex: 5
-          }}>
-            {/* Main mockup image — mix-blend-mode:multiply dissolves white bg into orange */}
-            <div style={{ position: 'relative', width: '65%', flexShrink: 0 }}>
-              <img
-                src="/hero-mockup.png"
-                alt="Platform Showcase"
-                draggable={false}
-                style={{
-                  width: '100%',
-                  height: '320px',
-                  objectFit: 'contain',
-                  display: 'block',
-                  mixBlendMode: 'multiply',
-                  filter: 'contrast(1.1) saturate(1.1)',
-                  userSelect: 'none',
-                  WebkitUserSelect: 'none'
-                }}
-              />
-              <div style={{ position: 'absolute', inset: 0, zIndex: 2 }} />
-            </div>
-            {/* Badge image — no blend mode so white text stays visible and crisp */}
-            <div style={{ position: 'relative', width: '32%', flexShrink: 0 }}>
-              <img
-                src="/hero-badge.png"
-                alt="Mega Offers"
-                draggable={false}
-                style={{
-                  width: '100%',
-                  height: '280px',
-                  objectFit: 'contain',
-                  display: 'block',
-                  filter: 'drop-shadow(0 4px 16px rgba(0,0,0,0.3)) contrast(1.1) brightness(1.05)',
-                  userSelect: 'none',
-                  WebkitUserSelect: 'none'
-                }}
-              />
-              <div style={{ position: 'absolute', inset: 0, zIndex: 2 }} />
-            </div>
-          </div>
+        {/* ── RIGHT — Image ── */}
+        <div className="hero-right-col">
+          <img
+            src="/image.png"
+            alt="Platform Showcase & Mega Offers"
+            draggable={false}
+            className="hero-img"
+          />
+        </div>
+      </div>
 
-      </div> {/* Closing tag for hero-grid-content */}
+      <style>{`
+        /* ── Animated orbs ── */
+        .hero-orb {
+          position: absolute;
+          border-radius: 50%;
+          pointer-events: none;
+          animation: heroOrb 6s ease-in-out infinite;
+        }
+        .hero-orb-1 {
+          width: 300px; height: 300px;
+          background: radial-gradient(circle, rgba(255,255,255,0.12) 0%, transparent 70%);
+          top: -80px; right: 35%;
+          animation-delay: 0s;
+        }
+        .hero-orb-2 {
+          width: 200px; height: 200px;
+          background: radial-gradient(circle, rgba(255,200,0,0.15) 0%, transparent 70%);
+          bottom: -60px; left: 15%;
+          animation-delay: 2s;
+        }
+        .hero-orb-3 {
+          width: 150px; height: 150px;
+          background: radial-gradient(circle, rgba(255,255,255,0.08) 0%, transparent 70%);
+          top: 40%; left: 40%;
+          animation-delay: 4s;
+        }
+        @keyframes heroOrb {
+          0%, 100% { transform: translateY(0) scale(1); opacity: 1; }
+          50%       { transform: translateY(-18px) scale(1.06); opacity: 0.8; }
+        }
 
-    </div>
+        /* ── Grid ── */
+        .hero-inner-grid {
+          display: grid;
+          grid-template-columns: 1.25fr 0.75fr;
+          min-height: 235px;
+          position: relative;
+          z-index: 2;
+        }
+
+        /* ── Left column ── */
+        .hero-left-col {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          gap: 12px;
+          padding: 20px 24px;
+        }
+
+        /* ── Badges ── */
+        .hero-badge-row { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
+        .hero-badge-primary {
+          display: flex; align-items: center; gap: 6px;
+          background: rgba(255,255,255,0.18);
+          border: 1px solid rgba(255,255,255,0.35);
+          backdrop-filter: blur(8px);
+          border-radius: 20px; padding: 4px 12px;
+          font-size: 0.65rem; font-weight: 800; color: white; letter-spacing: 0.3px;
+          animation: fadeInDown 0.5s ease both;
+        }
+        .hero-badge-dot {
+          width: 6px; height: 6px; border-radius: 50%;
+          background: #4ADE80;
+          box-shadow: 0 0 6px #4ADE80;
+          animation: pulse-dot 1.5s ease-in-out infinite;
+        }
+        @keyframes pulse-dot {
+          0%,100% { box-shadow: 0 0 4px #4ADE80; }
+          50%      { box-shadow: 0 0 10px #4ADE80, 0 0 20px rgba(74,222,128,0.4); }
+        }
+        .hero-badge-gold {
+          background: #FFD700; border-radius: 20px; padding: 4px 12px;
+          font-size: 0.62rem; font-weight: 900; color: #7B3F00;
+          animation: fadeInDown 0.6s ease both;
+        }
+
+        /* ── Headline ── */
+        .hero-headline {
+          font-size: clamp(1.4rem, 2.5vw, 2rem);
+          font-weight: 900; line-height: 1.1; color: white; margin: 0 0 4px;
+          text-shadow: 0 2px 12px rgba(0,0,0,0.2);
+          animation: fadeInUp 0.6s ease both 0.1s;
+        }
+        .hero-headline-accent {
+          color: #FFE08A;
+          display: inline-block;
+          min-width: 10px;
+        }
+        .hero-cursor {
+          color: #FFE08A;
+          animation: blink 0.7s step-end infinite;
+          font-weight: 300;
+        }
+        @keyframes blink { 0%,100% { opacity: 1; } 50% { opacity: 0; } }
+
+        .hero-sub {
+          font-size: 0.78rem; line-height: 1.4;
+          color: rgba(255,255,255,0.9); margin: 0; font-weight: 500;
+          animation: fadeInUp 0.6s ease both 0.2s;
+        }
+
+        /* ── Search ── */
+        .hero-search-form {
+          display: flex; background: white; border-radius: 8px; padding: 2px;
+          box-shadow: 0 4px 14px rgba(0,0,0,0.15);
+          max-width: 380px;
+          animation: fadeInUp 0.5s ease both 0.35s;
+        }
+        .hero-search-btn {
+          padding: 6px 14px; border-radius: 6px;
+          background: linear-gradient(135deg, #FF7E21, #FF4500);
+          color: white; font-weight: 800; font-size: 0.75rem;
+          border: none; cursor: pointer; white-space: nowrap;
+          transition: transform 0.15s;
+          flex-shrink: 0;
+        }
+        .hero-search-btn:hover {
+          transform: translateY(-1px);
+        }
+
+        /* ── CTA Buttons ── */
+        .hero-btn-primary {
+          padding: 8px 18px; border-radius: 8px;
+          background: white; color: #FF4500;
+          font-weight: 900; font-size: 0.78rem; border: none; cursor: pointer;
+          box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+          transition: transform 0.18s, box-shadow 0.18s;
+          animation: pulse-btn 2.5s ease-in-out infinite 1s;
+        }
+        .hero-btn-primary:hover {
+          transform: translateY(-2px);
+          box-shadow: 0 8px 18px rgba(0,0,0,0.2);
+        }
+        @keyframes pulse-btn {
+          0%,100% { box-shadow: 0 4px 12px rgba(0,0,0,0.15); }
+          50%      { box-shadow: 0 4px 20px rgba(255,255,255,0.3), 0 4px 12px rgba(0,0,0,0.15); }
+        }
+        .hero-btn-outline {
+          padding: 8px 18px; border-radius: 8px;
+          background: transparent; color: white;
+          font-weight: 800; font-size: 0.78rem;
+          border: 2px solid rgba(255,255,255,0.6); cursor: pointer;
+          transition: background 0.2s, transform 0.18s, border-color 0.2s;
+        }
+        .hero-btn-outline:hover {
+          background: rgba(255,255,255,0.12);
+          transform: translateY(-2px);
+          border-color: white;
+        }
+
+        /* ── Right column ── */
+        .hero-right-col {
+          position: relative;
+          display: flex; align-items: center; justify-content: flex-end;
+          padding: 0;
+        }
+        .hero-img {
+          width: 100%;
+          max-height: 290px;
+          object-fit: contain;
+          object-position: right center;
+          display: block;
+          mix-blend-mode: multiply;
+          transform: scale(1.42);
+          transform-origin: right center;
+          animation: heroImgFloat 4s ease-in-out infinite;
+          user-select: none;
+          -webkit-user-select: none;
+        }
+        @keyframes heroImgFloat {
+          0%,100% { transform: scale(1.42) translateY(0); }
+          50%      { transform: scale(1.42) translateY(-6px); }
+        }
+
+        /* ── Shared animations ── */
+        @keyframes fadeInDown {
+          from { opacity: 0; transform: translateY(-10px); }
+          to   { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes fadeInUp {
+          from { opacity: 0; transform: translateY(12px); }
+          to   { opacity: 1; transform: translateY(0); }
+        }
+
+        /* ── Responsive ── */
+        @media (max-width: 900px) {
+          .hero-inner-grid { grid-template-columns: 1fr 1fr; min-height: 200px; }
+          .hero-left-col { padding: 16px 14px; gap: 8px; }
+        }
+        @media (max-width: 768px) {
+          .hero-inner-grid { grid-template-columns: 1fr; min-height: auto; }
+          .hero-left-col { padding: 18px 14px 10px; gap: 10px; }
+          .hero-right-col { padding: 0 16px 16px; }
+          .hero-img { max-height: 220px; }
+          .hero-stats-bar { max-width: 100%; }
+          .hero-search-form { max-width: 100%; }
+        }
+        @media (max-width: 480px) {
+          .hero-left-col { padding: 14px 12px 6px; gap: 8px; }
+          .hero-img { max-height: 180px; }
+          .hero-headline { font-size: 1.4rem !important; }
+        }
+      `}</style>
     </div>
   );
 }

@@ -56,7 +56,7 @@ const trustItems = [
 
 export default function TrustBanner() {
   return (
-    <div style={{
+    <div className="trust-banner-scroll" style={{
       background: 'var(--bg-white)',
       border: '1px solid var(--border-color)',
       borderRadius: 'var(--radius-md)',

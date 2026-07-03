@@ -198,11 +198,101 @@ export const categories = [
 ];
 
 export const serviceDatabase = {
+  // ─── Doctors & Healthcare ───────────────────────────────────
+  'hospital-website-dev': {
+    title: 'Hospital Website Development',
+    category: 'websites',
+    price: '₹14,999',
+    desc: 'Professional, responsive websites for hospitals and multi-specialty clinics, optimised for search and patient trust.',
+    features: ['Doctor Profiles & Specializations', 'Department & Services Pages', 'OPD Timings & Location Map', 'Online Appointment Request Form', 'SSL Secured & Mobile Optimized'],
+    plans: [
+      { name: 'Basic Clinic Site', price: '₹14,999', desc: 'Single-branch clinic website', features: ['8 Responsive Pages', 'Doctor Profile Gallery', 'WhatsApp OPD Booking Link', 'Google Maps Embed', '1 Week Delivery'] },
+      { name: 'Multi-Dept Hospital', price: '₹29,999', desc: 'Multi-speciality hospital portal', features: ['Unlimited Pages & Departments', 'Individual Doctor Portals', 'Blog / Health Tips Section', 'Admin CMS Dashboard', '2 Weeks Delivery'] }
+    ]
+  },
+  'appointment-booking': {
+    title: 'Appointment Booking System',
+    category: 'business-software',
+    price: '₹19,999',
+    desc: 'End-to-end online booking platform for clinics — patients can self-schedule, reschedule, and get automated reminders.',
+    features: ['Real-time Slot Availability', 'SMS & WhatsApp Reminders', 'Doctor-wise Calendar Views', 'Patient Account & History Log', 'Admin Dashboard with Reports'],
+    plans: [
+      { name: 'Basic Scheduler', price: '₹19,999', desc: 'Single-doctor booking flow', features: ['Online Slot Booking Widget', 'SMS Auto-Reminders', 'Patient Appointment History', 'Basic Admin Dashboard', '1 Week Delivery'] },
+      { name: 'Multi-Doctor System', price: '₹39,999', desc: 'Full clinic scheduling suite', features: ['Multi-Doctor Calendar Views', 'Payment Collection on Booking', 'WhatsApp + Email Reminders', 'Cancellation & Reschedule Flow', '2 Weeks Delivery'] }
+    ]
+  },
+  'telemedicine-platform': {
+    title: 'Telemedicine Platform',
+    category: 'business-software',
+    price: '₹49,999',
+    desc: 'HIPAA-ready online consultation platform with secure video calls, e-prescriptions, and patient records.',
+    features: ['HD Video Consultation Rooms', 'Digital Prescription Generator', 'Secure Patient File Uploads', 'Payment Gateway for Consultations', 'Mobile App (Android & iOS)'],
+    plans: [
+      { name: 'Web Telemedicine', price: '₹49,999', desc: 'Browser-based consultation tool', features: ['WebRTC Video Consultation', 'E-Prescription PDF Generator', 'Patient Portal Login', 'Razorpay Payment Integration', '3 Weeks Delivery'] },
+      { name: 'Full App Platform', price: '₹89,999', desc: 'Telemedicine app on Play & App Store', features: ['Native Android + iOS App', 'Live Chat + Video Calls', 'Lab Report Upload System', 'Multi-doctor Support', '5 Weeks Delivery'] }
+    ]
+  },
+  'patient-management': {
+    title: 'Patient Management System',
+    category: 'business-software',
+    price: '₹34,999',
+    desc: 'Centralised digital OPD + IPD records system for managing patient history, diagnosis, prescriptions, and billing.',
+    features: ['Digital OPD & IPD Records', 'Patient History & Visit Logs', 'Prescription & Diagnosis Tracking', 'Bed Allocation & Ward Management', 'Staff Role-based Access Control'],
+    plans: [
+      { name: 'OPD System', price: '₹34,999', desc: 'Outpatient management software', features: ['Patient Registration & Queue', 'OPD Prescription Manager', 'Patient Medical History Log', 'Daily Report Generator', '2 Weeks Delivery'] },
+      { name: 'Full Hospital HIS', price: '₹74,999', desc: 'Complete Hospital Information System', features: ['OPD + IPD + Lab Management', 'Bed & Ward Tracking', 'Pharmacy Integration', 'Multi-branch Support', '5 Weeks Delivery'] }
+    ]
+  },
+  'medical-billing': {
+    title: 'Medical Billing Software',
+    category: 'business-software',
+    price: '₹24,999',
+    desc: 'Automate invoice generation, insurance claim tracking, payment ledger, and GST-compliant billing for hospitals.',
+    features: ['Auto Invoice & Receipt PDFs', 'Insurance Claim Management', 'GST-Compliant Billing Engine', 'Outstanding Dues Tracker', 'Daily/Monthly Revenue Reports'],
+    plans: [
+      { name: 'Clinic Billing', price: '₹24,999', desc: 'Basic clinic billing tool', features: ['Invoice & Receipt Generator', 'Payment Tracking Ledger', 'GST Billing', 'Basic Revenue Reports', '1 Week Delivery'] },
+      { name: 'Hospital Billing Suite', price: '₹49,999', desc: 'Multi-dept billing system', features: ['Department-wise Billing', 'Insurance TPA Management', 'OT & Lab Charge Integration', 'Monthly Audit Reports', '3 Weeks Delivery'] }
+    ]
+  },
+  'healthcare-mobile-app': {
+    title: 'Healthcare Mobile App',
+    category: 'mobile-apps',
+    price: '₹59,999',
+    desc: 'Feature-rich patient-facing mobile app for booking, teleconsultation, health records, and pharmacy orders.',
+    features: ['Doctor Booking & Scheduling', 'In-app Teleconsultation', 'Health Records & Lab Reports', 'Medication & Appointment Reminders', 'Published on Play Store & App Store'],
+    plans: [
+      { name: 'Patient App', price: '₹59,999', desc: 'Booking + records app', features: ['Appointment Booking Module', 'Patient Health Dashboard', 'Lab Report Upload & View', 'Push Notifications', '4 Weeks Delivery'] },
+      { name: 'Full Clinic App Suite', price: '₹99,999', desc: 'Doctor + Patient dual app', features: ['Patient App + Doctor App', 'In-app Video Consultations', 'Prescription Management', 'Pharmacy Order Module', '6 Weeks Delivery'] }
+    ]
+  },
+  'hospital-seo': {
+    title: 'SEO for Hospitals',
+    category: 'digital-marketing',
+    price: '₹9,999/mo',
+    desc: 'Rank your hospital or clinic on Google for high-intent medical search keywords in your city and nearby areas.',
+    features: ['Medical Keyword Research', 'Google Maps Local Pack Ranking', 'Doctor Profile Schema Markup', 'Health Blog Content Writing', 'Monthly Rankings Report'],
+    plans: [
+      { name: 'Local Clinic SEO', price: '₹9,999/mo', desc: 'Rank locally for clinic keywords', features: ['15 Medical Keywords', 'GMB Profile Optimisation', 'On-Page Content Fixes', 'Local Citation Building', '3 Month Commit'] },
+      { name: 'Hospital Authority SEO', price: '₹19,999/mo', desc: 'City-wide hospital ranking', features: ['40 Medical Keywords', 'Health Blog Articles (4/mo)', 'High-DA Medical Backlinks', 'Doctor Schema & Rich Snippets', 'No Contract'] }
+    ]
+  },
+  'clinic-digital-marketing': {
+    title: 'Digital Marketing for Clinics',
+    category: 'digital-marketing',
+    price: '₹12,999/mo',
+    desc: 'Full-funnel digital marketing for clinics and hospitals — social media, Google Ads, and WhatsApp patient engagement.',
+    features: ['Facebook & Instagram Health Posts', 'Google Search Ads for Clinics', 'WhatsApp Broadcast Campaigns', 'Patient Review Generation Strategy', 'Monthly ROI Performance Report'],
+    plans: [
+      { name: 'Growth Package', price: '₹12,999/mo', desc: 'Social + Ads for clinics', features: ['16 Health Content Posts/mo', 'Google Search Ads Campaign', 'Facebook/Instagram Ads', 'WhatsApp Patient Broadcast', 'Cancel Anytime'] },
+      { name: 'Authority Package', price: '₹24,999/mo', desc: 'Full-funnel hospital marketing', features: ['Daily Posts + Reels/Videos', 'Multi-platform Ad Campaigns', 'Influencer Tie-up Strategy', 'Review Generation Campaigns', 'Cancel Anytime'] }
+    ]
+  },
   // Websites segment
   'business-websites': {
     title: 'Business Websites Blueprint',
     category: 'websites',
     price: '₹9,999',
+
     desc: 'Establish a credible online presence with a clean, responsive, and search-optimized company profile.',
     features: ['5 Pages Responsive Layout', 'SEO Setup & Custom Domains', '1 Year Free Hosting & Email', 'Contact Forms & WhatsApp Link'],
     plans: [

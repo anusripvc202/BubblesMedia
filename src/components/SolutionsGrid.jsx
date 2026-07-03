@@ -81,7 +81,13 @@ const solutions = Object.entries(serviceDatabase).map(([key, val]) => ({
   ...val
 }));
 
+const VISIBLE_ROWS = 1;
+const COLS = 6;
+const DEFAULT_VISIBLE = VISIBLE_ROWS * COLS; // 6
+
 export default function SolutionsGrid({ searchTerm, activeCategory, onEnquire }) {
+  const [showAll, setShowAll] = React.useState(false);
+
   const categoryThemes = {
     'websites': { color: '#3b82f6', bg: '#eff6ff' },
     'mobile-apps': { color: '#8b5cf6', bg: '#f5f3ff' },
@@ -103,6 +109,9 @@ export default function SolutionsGrid({ searchTerm, activeCategory, onEnquire })
     return matchesSearch && matchesCategory;
   });
 
+  const visibleSolutions = showAll ? filteredSolutions : filteredSolutions.slice(0, DEFAULT_VISIBLE);
+  const hiddenCount = filteredSolutions.length - DEFAULT_VISIBLE;
+
   return (
     <section id="solutions" style={{ marginBottom: '40px' }}>
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', marginBottom: '24px' }}>
@@ -112,9 +121,40 @@ export default function SolutionsGrid({ searchTerm, activeCategory, onEnquire })
             {activeCategory && <span className="badge badge-orange">{activeCategory.replace('-', ' ')}</span>}
           </h2>
         </div>
-        <a href="#all-solutions" style={{ fontSize: '0.85rem', color: 'var(--primary)', fontWeight: '700', display: 'flex', alignItems: 'center', gap: '4px' }}>
-          View All Solutions →
-        </a>
+        {hiddenCount > 0 && (
+          <button
+            onClick={() => setShowAll(v => !v)}
+            style={{
+              fontSize: '0.82rem',
+              color: 'var(--primary)',
+              fontWeight: '700',
+              display: 'flex',
+              alignItems: 'center',
+              gap: '5px',
+              background: 'none',
+              border: 'none',
+              cursor: 'pointer',
+              padding: 0,
+              transition: 'opacity 0.15s',
+            }}
+            onMouseEnter={e => e.currentTarget.style.opacity = '0.7'}
+            onMouseLeave={e => e.currentTarget.style.opacity = '1'}
+          >
+            {showAll ? (
+              <>Show Less ↑</>
+            ) : (
+              <>View All Solutions <span style={{
+                background: 'var(--primary)',
+                color: '#fff',
+                fontSize: '0.65rem',
+                fontWeight: '800',
+                borderRadius: '999px',
+                padding: '1px 7px',
+                marginLeft: '2px',
+              }}>+{hiddenCount}</span> →</>
+            )}
+          </button>
+        )}
       </div>
 
       {filteredSolutions.length === 0 ? (
@@ -130,87 +170,121 @@ export default function SolutionsGrid({ searchTerm, activeCategory, onEnquire })
           <p style={{ fontWeight: '700', color: 'var(--text-dark)' }}>No Solutions Found</p>
         </div>
       ) : (
-        <div className="solutions-row-desktop" style={{ display: 'grid', gridTemplateColumns: 'repeat(6, 1fr)', gap: '10px', width: '100%' }}>
-          {filteredSolutions.map((sol) => {
-            const theme = categoryThemes[sol.category] || { color: 'var(--primary)', bg: 'var(--primary-light)' };
-            return (
-              <div
-                key={sol.id}
-                className={`glass-panel solutions-card-desktop hover-card ${sol.popular ? 'popular-highlight' : ''}`}
-
-                style={{
-                  '--card-theme': theme.color,
-                  '--card-theme-light': theme.bg,
-                  padding: '6px 4px',
-                  display: 'flex',
-                  flexDirection: 'column',
-                  alignItems: 'center',
-                  textAlign: 'center',
-                  borderRadius: '8px',
-                  background: 'var(--bg-white)',
-                  boxShadow: 'var(--shadow-sm)',
-                  border: '1px solid var(--border-color)',
-                  minWidth: '0px'
-                }}
-              >
-                {sol.popular && (
-                  <div className="card-popular-badge">
-                    Popular
-                  </div>
-                )}
-                {/* Circular Icon */}
-                <div className="solutions-icon-container" style={{
-                  background: 'var(--card-theme-light)',
-                  color: 'var(--card-theme)',
-                  width: '22px',
-                  height: '22px',
-                  borderRadius: '50%',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  marginBottom: '2px',
-                  flexShrink: 0
-                }}>
-                  {sol.icon}
-                </div>
-
-                {/* Title */}
-                <h3 style={{ fontSize: '0.58rem', fontWeight: '800', marginBottom: '1px', color: 'var(--secondary)', letterSpacing: '-0.01em', minHeight: '18px', display: 'flex', alignItems: 'center', lineHeight: '1.1' }}>
-                  {sol.title}
-                </h3>
-
-                {/* Pricing */}
-                <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '0px', marginBottom: '4px' }}>
-                  <span style={{ fontSize: '0.68rem', fontWeight: '900', color: 'var(--primary)', fontFamily: 'var(--font-display)' }}>{sol.price}</span>
-                </div>
-
-                {/* View Details Button */}
-                <Link
-                  href={`/services/${sol.id}`}
+        <>
+          <div className="solutions-row-desktop" style={{ display: 'grid', gridTemplateColumns: 'repeat(6, 1fr)', gap: '10px', width: '100%' }}>
+            {visibleSolutions.map((sol) => {
+              const theme = categoryThemes[sol.category] || { color: 'var(--primary)', bg: 'var(--primary-light)' };
+              return (
+                <div
+                  key={sol.id}
+                  className={`glass-panel solutions-card-desktop hover-card ${sol.popular ? 'popular-highlight' : ''}`}
                   style={{
-                    width: '100%',
-                    padding: '3px 2px',
-                    fontSize: '0.55rem',
-                    fontWeight: '700',
-                    color: 'var(--card-theme)',
-                    background: 'var(--card-theme-light)',
-                    border: 'none',
-                    borderRadius: '3px',
+                    '--card-theme': theme.color,
+                    '--card-theme-light': theme.bg,
+                    padding: '12px 8px',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    alignItems: 'center',
                     textAlign: 'center',
-                    display: 'block',
-                    marginTop: 'auto',
-                    transition: 'all 0.2s ease'
+                    borderRadius: '8px',
+                    background: 'var(--bg-white)',
+                    boxShadow: 'var(--shadow-sm)',
+                    border: '1px solid var(--border-color)',
+                    minWidth: '0px',
+                    minHeight: '115px'
                   }}
-                  className="solutions-view-btn"
                 >
-                  View Details
-                </Link>
-              </div>
-            );
-          })}
-        </div>
+                  {sol.popular && (
+                    <div className="card-popular-badge">
+                      Popular
+                    </div>
+                  )}
+                  {/* Circular Icon */}
+                  <div className="solutions-icon-container" style={{
+                    background: 'var(--card-theme-light)',
+                    color: 'var(--card-theme)',
+                    width: '28px',
+                    height: '28px',
+                    borderRadius: '50%',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    marginBottom: '6px',
+                    flexShrink: 0
+                  }}>
+                    {sol.icon}
+                  </div>
+
+                  {/* Title */}
+                  <h3 style={{ fontSize: '0.62rem', fontWeight: '800', marginBottom: '4px', color: 'var(--secondary)', letterSpacing: '-0.01em', minHeight: '20px', display: 'flex', alignItems: 'center', justifyContent: 'center', lineHeight: '1.15' }}>
+                    {sol.title}
+                  </h3>
+
+                  {/* Pricing */}
+                  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '0px', marginBottom: '8px' }}>
+                    <span style={{ fontSize: '0.72rem', fontWeight: '900', color: 'var(--primary)', fontFamily: 'var(--font-display)' }}>{sol.price}</span>
+                  </div>
+
+                  {/* View Details Button */}
+                  <Link
+                    href={`/services/${sol.id}`}
+                    style={{
+                      width: '100%',
+                      padding: '4px 2px',
+                      fontSize: '0.58rem',
+                      fontWeight: '700',
+                      color: 'var(--card-theme)',
+                      background: 'var(--card-theme-light)',
+                      border: 'none',
+                      borderRadius: '4px',
+                      textAlign: 'center',
+                      display: 'block',
+                      marginTop: 'auto',
+                      transition: 'all 0.2s ease'
+                    }}
+                    className="solutions-view-btn"
+                  >
+                    View Details
+                  </Link>
+                </div>
+              );
+            })}
+          </div>
+
+          {/* Collapsed hint bar */}
+          {!showAll && hiddenCount > 0 && (
+            <div
+              onClick={() => setShowAll(true)}
+              style={{
+                marginTop: '10px',
+                padding: '10px',
+                textAlign: 'center',
+                background: 'linear-gradient(to bottom, rgba(255,255,255,0) 0%, var(--bg-white) 100%)',
+                borderRadius: '0 0 8px 8px',
+                cursor: 'pointer',
+                fontSize: '0.75rem',
+                fontWeight: '700',
+                color: 'var(--primary)',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                gap: '6px',
+                transition: 'opacity 0.15s',
+              }}
+              onMouseEnter={e => e.currentTarget.style.opacity = '0.75'}
+              onMouseLeave={e => e.currentTarget.style.opacity = '1'}
+            >
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+              View {hiddenCount} more solutions
+            </div>
+          )}
+        </>
       )}
     </section>
   );
 }
+
+
 

@@ -1390,6 +1390,116 @@ export const serviceDatabase = {
       { name: 'Corporate Profile', price: '₹29,999', desc: 'Professional capability showcase', features: ['Up to 15 Pages', 'Facility Showcase', 'Basic Contact Forms', '4 Weeks Delivery'] },
       { name: 'Digital Catalog', price: '₹59,999', desc: 'Full product & RFQ site', features: ['Dynamic Product Catalog', 'RFQ Engine', 'Spec Downloads', 'SEO Setup', '8 Weeks Delivery'] }
     ]
+  },
+  'ngo-website-development': {
+    title: 'NGO Website Development',
+    category: 'websites',
+    price: '₹19,999',
+    desc: 'A professionally designed, high-impact website for your NGO or non-profit that communicates your mission, builds trust with donors, and drives conversions.',
+    features: ['Impact Storytelling Pages', 'Online Donation Integration', 'Project & Program Showcases', 'Beneficiary Stories & Galleries', 'Volunteer Sign-up Forms'],
+    plans: [
+      { name: 'Impact Starter', price: '₹19,999', desc: 'Essential NGO online presence', features: ['Up to 10 Pages', 'Donation Button', 'Volunteer Form', 'Mobile Responsive', '2 Weeks Delivery'] },
+      { name: 'Mission Pro', price: '₹39,999', desc: 'Full-featured NGO website', features: ['Up to 25 Pages', 'Donation Gateway', 'Project Showcases', 'Blog & News', '4 Weeks Delivery'] }
+    ]
+  },
+  'donation-management-system': {
+    title: 'Donation Management System',
+    category: 'business-software',
+    price: '₹34,999',
+    desc: 'A comprehensive digital system to accept online donations, manage donor records, generate tax receipts (80G), and analyze fundraising performance.',
+    features: ['Online Payment Gateway (UPI, Card, Net Banking)', 'Automated 80G Tax Receipt Generation', 'Donor Database & History', 'Recurring Donation Setup', 'Campaign-wise Donation Tracking'],
+    plans: [
+      { name: 'Standard DMS', price: '₹34,999', desc: 'Core donation tracking', features: ['Online Payment Gateway', '80G Receipt Generation', 'Donor Database', 'Email Alerts', '4 Weeks Delivery'] },
+      { name: 'Advanced DMS', price: '₹69,999', desc: 'Full fundraising intelligence', features: ['Recurring Donations', 'Campaign Tracking', 'Financial Reports', 'WhatsApp Integration', '7 Weeks Delivery'] }
+    ]
+  },
+  'volunteer-management': {
+    title: 'Volunteer Management',
+    category: 'business-software',
+    price: '₹29,999',
+    desc: 'A dedicated platform to manage your volunteer lifecycle — from online applications and onboarding to scheduling, hour tracking, and appreciation.',
+    features: ['Online Volunteer Application Forms', 'Skills & Interest Matching', 'Event & Shift Scheduling', 'Volunteer Hour Tracking', 'Digital Certificate Generation'],
+    plans: [
+      { name: 'Volunteer Hub', price: '₹29,999', desc: 'Core volunteer coordination', features: ['Application Forms', 'Scheduling', 'Hour Tracking', 'Email Alerts', '4 Weeks Delivery'] },
+      { name: 'Volunteer Pro', price: '₹54,999', desc: 'Advanced management with App', features: ['Mobile App', 'Digital Certificates', 'Skills Matching', 'Analytics', '7 Weeks Delivery'] }
+    ]
+  },
+  'event-management-platform': {
+    title: 'Event Management Platform',
+    category: 'business-software',
+    price: '₹24,999',
+    desc: 'A complete digital platform to plan, promote, and manage NGO events — from gala dinners and marathon runs to webinars and community drives.',
+    features: ['Event Creation & Landing Pages', 'Online Ticket & RSVP Management', 'Donation Goal Thermometer', 'Sponsor Management', 'QR Code Check-in System'],
+    plans: [
+      { name: 'Event Starter', price: '₹24,999', desc: 'Single event management', features: ['Event Landing Page', 'RSVP Management', 'QR Check-in', 'Email Blast', '2 Weeks Delivery'] },
+      { name: 'Event Suite', price: '₹49,999', desc: 'Multi-event management platform', features: ['Multi-event Dashboard', 'Ticketing & Donations', 'Sponsor Portal', 'Analytics', '5 Weeks Delivery'] }
+    ]
+  },
+  'membership-management': {
+    title: 'Membership Management',
+    category: 'business-software',
+    price: '₹24,999',
+    desc: 'A structured membership system to define tiers, collect annual fees, provide member benefits, and build a loyal community around your cause.',
+    features: ['Tiered Membership Plans', 'Online Membership Fee Collection', 'Member-only Content & Resources', 'Automatic Renewal Reminders', 'Digital Membership Cards'],
+    plans: [
+      { name: 'Basic Membership', price: '₹24,999', desc: 'Simple membership portal', features: ['2 Membership Tiers', 'Fee Collection', 'Member Database', 'Email Reminders', '3 Weeks Delivery'] },
+      { name: 'Community Pro', price: '₹49,999', desc: 'Full membership community', features: ['Unlimited Tiers', 'Digital Cards', 'Member-only Content', 'Voting & Polls', '6 Weeks Delivery'] }
+    ]
+  },
+  'fundraising-portal': {
+    title: 'Fundraising Portal',
+    category: 'business-software',
+    price: '₹39,999',
+    desc: 'A multi-campaign fundraising portal where donors can browse active causes, make donations, track impact, and share campaigns on social media.',
+    features: ['Multi-campaign Listing', 'Individual Campaign Pages with Goal Tracker', 'Peer-to-Peer Fundraising', 'Social Sharing Integration', 'Donor Wall of Fame'],
+    plans: [
+      { name: 'Campaign Portal', price: '₹39,999', desc: 'Up to 5 active campaigns', features: ['5 Campaign Pages', 'Goal Tracker', 'Donation Gateway', 'Social Sharing', '4 Weeks Delivery'] },
+      { name: 'Impact Platform', price: '₹74,999', desc: 'Full peer-to-peer fundraising', features: ['Unlimited Campaigns', 'Peer-to-Peer Tools', 'Donor Wall', 'Advanced Analytics', '8 Weeks Delivery'] }
+    ]
+  },
+  'campaign-management': {
+    title: 'Campaign Management',
+    category: 'business-software',
+    price: '₹34,999',
+    desc: 'A digital command center to plan and manage awareness campaigns — coordinating messaging, channels, volunteers, and outcomes from a single dashboard.',
+    features: ['Campaign Planning & Calendar', 'Multi-channel Message Scheduling (Email, WhatsApp, Social)', 'Petition & Pledge Collection', 'Supporter Database Segmentation', 'A/B Testing for Messaging'],
+    plans: [
+      { name: 'Campaign Hub', price: '₹34,999', desc: 'Manage one campaign at a time', features: ['Campaign Dashboard', 'Email & WhatsApp Blasts', 'Petition Forms', 'Basic Analytics', '4 Weeks Delivery'] },
+      { name: 'Multi-Campaign Suite', price: '₹64,999', desc: 'Run multiple campaigns simultaneously', features: ['Unlimited Campaigns', 'Supporter Segmentation', 'A/B Testing', 'Full Analytics', '7 Weeks Delivery'] }
+    ]
+  },
+  'ngo-mobile-app': {
+    title: 'NGO Mobile App',
+    category: 'mobile-apps',
+    price: '₹69,999',
+    desc: 'A branded iOS and Android mobile application for your NGO to engage donors, update supporters, register volunteers, and process donations on the go.',
+    features: ['Branded iOS & Android App', 'In-App Donation with UPI/Card', 'Push Notifications for Campaigns & Updates', 'Project Progress Updates', 'Volunteer Registration & Scheduling'],
+    plans: [
+      { name: 'Supporter App', price: '₹69,999', desc: 'Engage donors & supporters', features: ['iOS & Android App', 'Push Notifications', 'In-App Donations', 'News Feed', '8 Weeks Delivery'] },
+      { name: 'Full NGO App', price: '₹1,19,999', desc: 'Complete NGO mobile platform', features: ['Volunteer Management', 'Event RSVPs', 'Campaign Updates', 'Offline Content', '12 Weeks Delivery'] }
+    ]
+  },
+  'crm-for-ngos': {
+    title: 'CRM for NGOs',
+    category: 'business-software',
+    price: '₹29,999',
+    desc: 'A purpose-built CRM for non-profits to consolidate donor data, track interactions, segment audiences, and run targeted communications to build lasting relationships.',
+    features: ['360° Donor Profiles', 'Donation History & RFM Analysis', 'Volunteer & Partner Tracking', 'Automated Follow-up Sequences', 'Grant Application Tracking'],
+    plans: [
+      { name: 'NGO CRM Starter', price: '₹29,999', desc: 'Core donor management', features: ['Donor Profiles', 'Donation History', 'Email Campaigns', 'Basic Reports', '4 Weeks Delivery'] },
+      { name: 'NGO CRM Pro', price: '₹59,999', desc: 'Advanced relationship intelligence', features: ['RFM Analysis', 'Automated Workflows', 'Grant Tracking', 'Advanced Dashboards', '7 Weeks Delivery'] }
+    ]
+  },
+  'digital-marketing-for-ngos': {
+    title: 'Digital Marketing for NGOs',
+    category: 'digital-marketing',
+    price: '₹14,999/mo',
+    desc: 'Specialized digital marketing services for non-profits, including Google Ad Grants management, social media campaigns, SEO for NGO websites, and email marketing.',
+    features: ['Google Ad Grants Management ($10,000/mo)', 'Meta Ads for Cause Awareness & Donations', 'SEO for NGO Websites', 'Social Media Management', 'Email Campaign Automation'],
+    plans: [
+      { name: 'NGO Growth', price: '₹14,999/mo', desc: 'Awareness & social growth', features: ['Social Media Mgt', 'Google Grants Setup', 'Basic SEO', '10 Posts/mo', 'Monthly Report'] },
+      { name: 'NGO Impact', price: '₹29,999/mo', desc: 'Full-funnel digital strategy', features: ['Google Grants Mgt', 'Meta Donation Ads', 'Email Campaigns', 'Advanced SEO', 'Bi-weekly Reports'] }
+    ]
   }
 };
 

@@ -960,6 +960,216 @@ export const serviceDatabase = {
       { name: 'Salon Local Rank', price: '₹9,999/mo', desc: 'Local project keywords ranking package', features: ['15 Local project keywords', 'GMB profile local optimizations', 'Project microsite speed checks', 'Standard backlinks (10/mo)', '3 Month Commit'] },
       { name: 'Beauty Authority SEO', price: '₹19,999/mo', desc: 'Complete brand authority builder package', features: ['40 High volume local keywords', 'Monthly blogs & project reviews writing', 'High-DA local links (25/mo)', 'Real-time rankings tracking panels', 'No Contract'] }
     ]
+  },
+  // ─── Travel & Tourism ─────────────────────────────────────
+  'travel-booking-website': {
+    title: 'Travel Booking Website',
+    category: 'websites',
+    price: '₹14,999',
+    desc: 'Stunning travel booking portals with destination galleries, itinerary displays, and secure online reservations.',
+    features: ['Tour Package Listings', 'Destination Photo Galleries', 'Itinerary Day-by-Day View', 'Online Enquiry & Booking Forms', 'WhatsApp Chat Integration'],
+    plans: [
+      { name: 'Standard Travel Site', price: '₹14,999', desc: 'Basic travel agency website', features: ['10 Pages Layout', 'Package listing catalogs', 'Enquiry form integrations', 'Gallery photo carousels', '1 Week Delivery'] },
+      { name: 'Gold Travel Portal', price: '₹29,999', desc: 'Premium booking portal', features: ['Unlimited package pages', 'Itinerary day planner pages', 'Blog & travel guides CMS', 'Review testimonial widgets', '2 Weeks Delivery'] }
+    ]
+  },
+  'tour-package-management': {
+    title: 'Tour Package Management',
+    category: 'business-software',
+    price: '₹19,999',
+    desc: 'Complete tour package management system with seat availability, pricing tiers, and automated booking confirmations.',
+    features: ['Package Builder Dashboard', 'Seat Availability Calendar', 'Advance Payment Collection', 'Booking Confirmation PDFs', 'Agent B2B Portal'],
+    plans: [
+      { name: 'Standard Package Manager', price: '₹19,999', desc: 'Basic package management tool', features: ['Package creation builder', 'Online booking acceptance', 'Payment gateway checkout', 'Confirmation PDF exports', '2 Weeks Delivery'] },
+      { name: 'Gold Tour Operations Suite', price: '₹39,999', desc: 'Full tour operations platform', features: ['Live availability calendar', 'Agent commission portal', 'Cancellation refund module', 'Revenue analytics reports', '3 Weeks Delivery'] }
+    ]
+  },
+  'hotel-booking-system': {
+    title: 'Hotel Booking System',
+    category: 'business-software',
+    price: '₹24,999',
+    desc: 'Online hotel reservation system with room availability calendars, rate management, and guest check-in portals.',
+    features: ['Room Availability Calendar', 'Rate & Season Management', 'Guest Self Check-in Portal', 'Multi-room Type Listing', 'Booking Confirmation SMS'],
+    plans: [
+      { name: 'Standard Hotel Booking', price: '₹24,999', desc: 'Standard reservation system', features: ['Room listing & calendars', 'Online booking acceptance', 'Payment gateway checkout', 'Email confirmations setup', '2 Weeks Delivery'] },
+      { name: 'Gold Hotel Management Suite', price: '₹49,999', desc: 'Complete hotel management system', features: ['Dynamic rate management', 'OTA channel integrations', 'Guest check-in dashboard', 'Revenue analytics reports', '4 Weeks Delivery'] }
+    ]
+  },
+  'flight-booking-integration': {
+    title: 'Flight Booking Integration',
+    category: 'business-software',
+    price: '₹34,999',
+    desc: 'Integrate real-time flight search, comparison, and booking APIs into your travel portal for direct ticketing.',
+    features: ['Real-time Flight Search API', 'Fare Comparison Engine', 'PNR Booking Generation', 'E-ticket PDF Downloads', 'Multi-airline Support'],
+    plans: [
+      { name: 'Standard Flight Module', price: '₹34,999', desc: 'Basic flight search integration', features: ['Single GDS API integration', 'Flight search widgets', 'Basic fare comparison tool', 'Booking confirmation PDFs', '3 Weeks Delivery'] },
+      { name: 'Gold Flight Booking Suite', price: '₹64,999', desc: 'Full flight booking platform', features: ['Multi-GDS API connections', 'Dynamic fare comparison', 'PNR management dashboard', 'Ancillary service add-ons', '5 Weeks Delivery'] }
+    ]
+  },
+  'travel-crm': {
+    title: 'Travel CRM',
+    category: 'business-software',
+    price: '₹14,999',
+    desc: 'Dedicated CRM for travel agencies to track leads, manage follow-ups, and convert inquiries into confirmed bookings.',
+    features: ['Lead Capture Pipeline', 'Follow-up Task Scheduler', 'WhatsApp & Email Integration', 'Booking Status Tracking', 'Agent Performance Dashboard'],
+    plans: [
+      { name: 'Standard Travel CRM', price: '₹14,999', desc: 'Basic lead tracking tool', features: ['Lead pipeline management', 'Follow-up task reminders', 'Email integration setup', 'Basic analytics dashboard', '2 Weeks Delivery'] },
+      { name: 'Gold Travel CRM Suite', price: '₹29,999', desc: 'Full travel CRM system', features: ['WhatsApp API integrations', 'Booking conversion tracking', 'Agent commission reports', 'Client travel history logs', '3 Weeks Delivery'] }
+    ]
+  },
+  'travel-mobile-app': {
+    title: 'Travel Mobile App',
+    category: 'mobile-apps',
+    price: '₹49,999',
+    desc: 'Branded Android & iOS travel app with package browsing, bookings, live itineraries, and push trip updates.',
+    features: ['Package Browse & Booking', 'Live Trip Itinerary View', 'Push Trip Update Alerts', 'Offline Itinerary Access', 'Play/App Store Publishing'],
+    plans: [
+      { name: 'Standard Travel App', price: '₹49,999', desc: 'Basic travel booking app', features: ['Package catalog browsing', 'In-app booking checkout', 'Push notification setup', 'Android version publish', '5 Weeks Delivery'] },
+      { name: 'Gold Dual Travel App', price: '₹89,999', desc: 'Full travel companion app', features: ['Android + iOS dual publish', 'Live itinerary tracker', 'Offline mode access', 'Review submission portal', '7 Weeks Delivery'] }
+    ]
+  },
+  'visa-management-system': {
+    title: 'Visa Management System',
+    category: 'business-software',
+    price: '₹19,999',
+    desc: 'Track visa applications, document checklists, appointment schedules, and approval status for travel clients.',
+    features: ['Application Status Tracker', 'Document Checklist Manager', 'Appointment Schedule Calendar', 'Client Notification Alerts', 'Country Visa Rules Database'],
+    plans: [
+      { name: 'Standard Visa Tracker', price: '₹19,999', desc: 'Basic visa tracking portal', features: ['Application status board', 'Document checklist forms', 'SMS appointment reminders', 'Standard admin dashboard', '2 Weeks Delivery'] },
+      { name: 'Gold Visa Management Suite', price: '₹39,999', desc: 'Complete visa operations system', features: ['Multi-country visa rules DB', 'Auto document verification', 'Client self-service portal', 'Revenue analytics reports', '4 Weeks Delivery'] }
+    ]
+  },
+  'tour-guide-portal': {
+    title: 'Tour Guide Portal',
+    category: 'websites',
+    price: '₹14,999',
+    desc: 'Online portal for listing tour guides, booking local experiences, and managing guide availability calendars.',
+    features: ['Guide Profile Listings', 'Experience Catalog Display', 'Availability Calendar Widget', 'Review & Rating System', 'Online Booking Integration'],
+    plans: [
+      { name: 'Standard Guide Portal', price: '₹14,999', desc: 'Basic tour guide directory', features: ['Guide profile directory', 'Experience listing pages', 'Enquiry form widget', 'Mobile responsive layout', '1 Week Delivery'] },
+      { name: 'Gold Experience Platform', price: '₹29,999', desc: 'Full experience booking portal', features: ['Live availability calendars', 'In-app booking checkout', 'Review rating engine', 'Guide analytics dashboard', '3 Weeks Delivery'] }
+    ]
+  },
+  'travel-marketing-services': {
+    title: 'Travel Marketing Services',
+    category: 'digital-marketing',
+    price: '₹12,999/mo',
+    desc: 'Inspire wanderlust with stunning destination content, travel reels, and targeted campaigns on Instagram & Facebook.',
+    features: ['Destination Instagram Reels', 'Facebook Travel Lead Ads', 'Influencer Collaborations', 'Seasonal Campaign Planning', 'Monthly Analytics Reports'],
+    plans: [
+      { name: 'Travel Growth Pack', price: '₹12,999/mo', desc: 'Social media brand building', features: ['15 Custom travel posts', 'Instagram + Facebook ads', 'GMB profile management', 'Standard monthly reports', 'Cancel Anytime'] },
+      { name: 'Travel Authority Pack', price: '₹24,999/mo', desc: 'Full travel marketing suite', features: ['30 Posts + destination reels', 'Influencer partnership outreach', 'Seasonal promotional campaigns', 'WhatsApp lead automation', 'Cancel Anytime'] }
+    ]
+  },
+  'seo-for-travel': {
+    title: 'SEO for Travel Business',
+    category: 'digital-marketing',
+    price: '₹9,999/mo',
+    desc: 'Rank for destination and package searches on Google to drive organic travel enquiries without ad spend.',
+    features: ['Destination Page SEO', 'Travel Blog Content Creation', 'Google Maps Local Ranking', 'Package Schema Markup', 'Monthly Rankings Reports'],
+    plans: [
+      { name: 'Travel Local Rank', price: '₹9,999/mo', desc: 'Local travel SEO package', features: ['15 Destination keywords', 'GMB profile optimizations', 'Destination page speed audit', 'Standard backlinks (10/mo)', '3 Month Commit'] },
+      { name: 'Travel Authority SEO', price: '₹19,999/mo', desc: 'Complete travel SEO package', features: ['40 High volume travel keywords', 'Monthly travel blogs (4/mo)', 'High-DA travel links (20/mo)', 'Full schema markup setup', 'No Contract'] }
+    ]
+  },
+  'travel-booking-website': {
+    title: 'Travel Booking Website',
+    category: 'websites',
+    price: '₹29,999',
+    desc: 'Launch a fully functional travel booking website that allows users to search, compare, and book flights, hotels, and tours seamlessly online.',
+    features: ['Real-time Search & Filtering', 'Secure Payment Gateway', 'Multi-currency Support', 'User Accounts & Booking History', 'Reviews & Ratings'],
+    plans: [
+      { name: 'Starter', price: '₹29,999', desc: 'Basic booking website', features: ['5 Pages', 'Contact Forms', 'Basic Search', 'Mobile Responsive', '2 Weeks Delivery'] },
+      { name: 'Professional', price: '₹59,999', desc: 'Advanced booking portal', features: ['15 Pages', 'Payment Integration', 'User Accounts', 'Reviews System', '4 Weeks Delivery'] }
+    ]
+  },
+  'tour-package-management': {
+    title: 'Tour Package Management',
+    category: 'business-software',
+    price: '₹34,999',
+    desc: 'A complete system to create, manage, and sell tour packages online. Includes dynamic itinerary builders, availability calendars, and booking management.',
+    features: ['Dynamic Itinerary Builder', 'Availability & Inventory Management', 'Multi-day Tour Setup', 'Custom Add-ons & Extras', 'B2B & B2C Portals'],
+    plans: [
+      { name: 'Basic', price: '₹34,999', desc: 'Simple package management', features: ['Up to 50 Packages', 'Basic Itineraries', 'Enquiry Forms', 'Admin Dashboard', '3 Weeks Delivery'] },
+      { name: 'Pro', price: '₹69,999', desc: 'Full online booking system', features: ['Unlimited Packages', 'Online Booking', 'Dynamic Pricing', 'Supplier Portal', '6 Weeks Delivery'] }
+    ]
+  },
+  'hotel-booking-system': {
+    title: 'Hotel Booking System',
+    category: 'websites',
+    price: '₹39,999',
+    desc: 'Empower your hotel or resort with a robust direct booking engine. Bypass OTA commissions and take control of your reservations.',
+    features: ['Real-time Room Inventory', 'Secure Online Payments', 'Channel Manager Integration', 'Promo Codes & Discounts', 'Guest Management CRM'],
+    plans: [
+      { name: 'Boutique', price: '₹39,999', desc: 'Single property booking engine', features: ['Up to 50 Rooms', 'Direct Booking', 'Payment Gateway', 'Basic CRM', '4 Weeks Delivery'] },
+      { name: 'Resort', price: '₹79,999', desc: 'Full hotel management system', features: ['Unlimited Rooms', 'Channel Manager Sync', 'Promo Engine', 'Advanced CRM', '8 Weeks Delivery'] }
+    ]
+  },
+  'flight-booking-integration': {
+    title: 'Flight Booking Integration',
+    category: 'business-software',
+    price: '₹74,999',
+    desc: 'Integrate global flight booking capabilities into your travel platform using GDS (Global Distribution System) APIs.',
+    features: ['Global Flight Search', 'Real-time Fares & Availability', 'Multi-city & Round Trip', 'Seat Selection', 'Baggage Allowances'],
+    plans: [
+      { name: 'Integration', price: '₹74,999', desc: 'Basic flight integration', features: ['Single GDS API', 'Flight Search', 'Booking Flow', 'Markup Management', '6 Weeks Delivery'] },
+      { name: 'Advanced', price: '₹1,24,999', desc: 'Multi-GDS integration', features: ['Multi-GDS / LCCs', 'Ancillary Services', 'Advanced Filters', 'B2B Portal', '10 Weeks Delivery'] }
+    ]
+  },
+  'travel-crm': {
+    title: 'Travel CRM',
+    category: 'business-software',
+    price: '₹24,999',
+    desc: 'A specialized CRM designed for the travel industry to manage leads, track inquiries, build quotes, and nurture client relationships effectively.',
+    features: ['Lead Capture & Management', 'Custom Itinerary Quotations', 'Automated Follow-ups', 'Client Booking History', 'Supplier Database'],
+    plans: [
+      { name: 'Starter CRM', price: '₹24,999', desc: 'For small travel agencies', features: ['Up to 5 Users', 'Lead Management', 'Basic Quotes', 'Email Integration', '3 Weeks Delivery'] },
+      { name: 'Pro CRM', price: '₹54,999', desc: 'Advanced automation CRM', features: ['Up to 20 Users', 'Custom Itinerary Builder', 'WhatsApp API', 'Advanced Reports', '6 Weeks Delivery'] }
+    ]
+  },
+  'travel-mobile-app': {
+    title: 'Travel Mobile App',
+    category: 'mobile-apps',
+    price: '₹69,999',
+    desc: 'Build custom iOS and Android applications for your travel business, allowing users to book, manage itineraries, and access travel guides on the go.',
+    features: ['Native iOS & Android Apps', 'Offline Itinerary Access', 'Push Notifications for Updates', 'In-App Booking', 'Location-Based Guides'],
+    plans: [
+      { name: 'Companion App', price: '₹69,999', desc: 'Itinerary management app', features: ['Offline Itineraries', 'Digital Vouchers', 'Push Notifications', 'Basic Chat', '6 Weeks Delivery'] },
+      { name: 'Booking App', price: '₹1,29,999', desc: 'Full booking app', features: ['In-App Booking', 'Payment Gateway', 'User Profiles', 'Location Guides', '10 Weeks Delivery'] }
+    ]
+  },
+  'visa-management-system': {
+    title: 'Visa Management System',
+    category: 'business-software',
+    price: '₹34,999',
+    desc: 'A secure, efficient system for visa consultants and agencies to manage applications, track statuses, and communicate with clients seamlessly.',
+    features: ['Online Application Forms', 'Document Upload & Verification', 'Automated Status Updates', 'Embassy Guidelines Database', 'Payment Collection'],
+    plans: [
+      { name: 'Basic Portal', price: '₹34,999', desc: 'Simple visa management', features: ['Online Forms', 'Document Upload', 'Status Tracking', 'Email Alerts', '4 Weeks Delivery'] },
+      { name: 'Advanced System', price: '₹74,999', desc: 'Full automation system', features: ['Client Portal', 'WhatsApp Alerts', 'Payment Integration', 'Task Manager', '8 Weeks Delivery'] }
+    ]
+  },
+  'tour-guide-portal': {
+    title: 'Tour Guide Portal',
+    category: 'business-software',
+    price: '₹49,999',
+    desc: 'A dedicated platform to manage your network of tour guides, assign tours, track availability, and handle payments efficiently.',
+    features: ['Guide Profiles & Specialties', 'Availability Calendar', 'Automated Tour Assignment', 'GPS Tracking (Optional)', 'In-App Messaging'],
+    plans: [
+      { name: 'Standard Portal', price: '₹49,999', desc: 'Core guide management', features: ['Guide Profiles', 'Availability Calendar', 'Tour Assignment', 'Admin Dashboard', '6 Weeks Delivery'] },
+      { name: 'Pro Portal', price: '₹94,999', desc: 'Advanced management with App', features: ['Mobile App for Guides', 'Automated Payouts', 'In-App Chat', 'Rating System', '10 Weeks Delivery'] }
+    ]
+  },
+  'seo-for-travel-business': {
+    title: 'SEO for Travel Business',
+    category: 'digital-marketing',
+    price: '₹14,999/mo',
+    desc: 'A targeted SEO strategy to help your travel agency, hotel, or tour company rank high on Google for high-intent travel keywords and destination searches.',
+    features: ['Travel Keyword Research', 'Destination Page Optimization', 'Local SEO & GMB Optimization', 'Travel Blog Content Creation', 'High-Quality Backlink Building'],
+    plans: [
+      { name: 'Destination SEO', price: '₹14,999/mo', desc: 'Focus on core offerings', features: ['20 Target Keywords', 'On-page SEO', '2 Blog Posts/mo', 'GMB Management', 'Monthly Reports'] },
+      { name: 'Travel Authority', price: '₹29,999/mo', desc: 'Aggressive growth plan', features: ['50 Target Keywords', 'Technical SEO', '4 Blog Posts/mo', 'Link Building', 'Schema Markup'] }
+    ]
   }
 };
 

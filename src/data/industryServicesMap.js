@@ -174,6 +174,23 @@ export const industryServicesMap = {
       { id: 'cloud-hosting', label: 'Scalable Cloud Infrastructure' },
     ]
   },
+  'Travel & Tourism': {
+    color: '#0ea5e9',
+    bg: '#e0f2fe',
+    tagline: 'Digital solutions for travel agencies, tour operators & hotels',
+    services: [
+      { id: 'travel-booking-website', label: 'Travel Booking Website' },
+      { id: 'tour-package-management', label: 'Tour Package Management' },
+      { id: 'hotel-booking-system', label: 'Hotel Booking System' },
+      { id: 'flight-booking-integration', label: 'Flight Booking Integration' },
+      { id: 'travel-crm', label: 'Travel CRM' },
+      { id: 'travel-mobile-app', label: 'Travel Mobile App' },
+      { id: 'visa-management-system', label: 'Visa Management System' },
+      { id: 'tour-guide-portal', label: 'Tour Guide Portal' },
+      { id: 'travel-marketing-services', label: 'Travel Marketing Services' },
+      { id: 'seo-for-travel-business', label: 'SEO for Travel Business' },
+    ]
+  },
   'More Industries': {
     color: '#1e293b',
     bg: '#f8fafc',

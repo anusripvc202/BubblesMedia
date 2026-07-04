@@ -1170,6 +1170,116 @@ export const serviceDatabase = {
       { name: 'Destination SEO', price: '₹14,999/mo', desc: 'Focus on core offerings', features: ['20 Target Keywords', 'On-page SEO', '2 Blog Posts/mo', 'GMB Management', 'Monthly Reports'] },
       { name: 'Travel Authority', price: '₹29,999/mo', desc: 'Aggressive growth plan', features: ['50 Target Keywords', 'Technical SEO', '4 Blog Posts/mo', 'Link Building', 'Schema Markup'] }
     ]
+  },
+  'law-firm-website-development': {
+    title: 'Law Firm Website Development',
+    category: 'websites',
+    price: '₹24,999',
+    desc: 'A highly professional, secure, and fast-loading website designed specifically for law firms to showcase practice areas, attorney profiles, and generate client leads.',
+    features: ['Practice Area Showcases', 'Attorney Directory & Profiles', 'Secure Client Portal', 'Lead Generation Forms', 'Blog & Legal Insights'],
+    plans: [
+      { name: 'Starter', price: '₹24,999', desc: 'Basic professional website', features: ['Up to 10 Pages', 'Attorney Profiles', 'Contact Form', 'Mobile Responsive', '2 Weeks Delivery'] },
+      { name: 'Professional', price: '₹49,999', desc: 'Advanced firm website', features: ['Up to 25 Pages', 'Client Portal', 'Blog Setup', 'SEO Basics', '4 Weeks Delivery'] }
+    ]
+  },
+  'case-management-system': {
+    title: 'Case Management System',
+    category: 'business-software',
+    price: '₹49,999',
+    desc: 'A secure, cloud-based case management system to track case progress, manage court dates, store documents, and collaborate with your legal team.',
+    features: ['Case Tracking Dashboard', 'Court Date Calendar & Reminders', 'Secure Document Storage', 'Task Management', 'Team Collaboration Tools'],
+    plans: [
+      { name: 'Basic', price: '₹49,999', desc: 'Simple case tracking', features: ['Case Dashboard', 'Calendar', 'Document Storage', 'Up to 5 Users', '4 Weeks Delivery'] },
+      { name: 'Pro', price: '₹99,999', desc: 'Advanced management system', features: ['Client Portal', 'Time Tracking', 'Conflict Checking', 'Up to 20 Users', '8 Weeks Delivery'] }
+    ]
+  },
+  'legal-crm': {
+    title: 'Legal CRM',
+    category: 'business-software',
+    price: '₹29,999',
+    desc: 'A specialized Customer Relationship Management (CRM) tool for law firms to manage client intake, track lead sources, and automate follow-ups.',
+    features: ['Automated Client Intake', 'Lead Source Tracking', 'Email & SMS Automation', 'Consultation Scheduling', 'Custom Intake Forms'],
+    plans: [
+      { name: 'Starter CRM', price: '₹29,999', desc: 'Basic intake management', features: ['Lead Tracking', 'Custom Forms', 'Email Automation', 'Up to 5 Users', '3 Weeks Delivery'] },
+      { name: 'Pro CRM', price: '₹59,999', desc: 'Full pipeline management', features: ['Advanced Automation', 'SMS Integration', 'Analytics Dashboard', 'Up to 15 Users', '6 Weeks Delivery'] }
+    ]
+  },
+  'legal-appointment-booking': {
+    title: 'Appointment Booking',
+    category: 'websites',
+    price: '₹19,999',
+    desc: 'An intelligent scheduling system that allows clients to book consultations based on your real-time availability, with automated reminders and payment processing.',
+    features: ['Real-time Calendar Sync', 'Automated Email/SMS Reminders', 'Online Payment Collection', 'Video Conferencing Integration', 'Time Zone Management'],
+    plans: [
+      { name: 'Standard Booking', price: '₹19,999', desc: 'Automated scheduling', features: ['Calendar Sync', 'Email Reminders', 'Intake Forms', '1 Week Delivery'] },
+      { name: 'Premium Booking', price: '₹34,999', desc: 'Paid & Virtual consultations', features: ['Payment Integration', 'Zoom Integration', 'SMS Reminders', '2 Weeks Delivery'] }
+    ]
+  },
+  'document-management-system': {
+    title: 'Document Management System',
+    category: 'business-software',
+    price: '₹39,999',
+    desc: 'A robust digital filing system tailored for legal professionals, featuring advanced OCR search, version control, and secure sharing capabilities.',
+    features: ['OCR Text Search', 'Version Control & History', 'Secure Document Sharing', 'Access Role Management', 'E-signature Integration'],
+    plans: [
+      { name: 'Cloud Docs', price: '₹39,999', desc: 'Basic document storage', features: ['Secure Storage', 'Folder Management', 'Basic Search', '4 Weeks Delivery'] },
+      { name: 'Advanced DMS', price: '₹79,999', desc: 'Full featured document system', features: ['OCR Search', 'Version Control', 'E-signatures', 'Audit Trails', '8 Weeks Delivery'] }
+    ]
+  },
+  'legal-consultation-portal': {
+    title: 'Legal Consultation Portal',
+    category: 'websites',
+    price: '₹59,999',
+    desc: 'A complete virtual platform allowing advocates to provide secure video consultations, share documents, and chat with clients remotely.',
+    features: ['Secure Video Conferencing', 'Encrypted Chat & Messaging', 'File Sharing', 'Session Recording (Optional)', 'Billing & Invoicing'],
+    plans: [
+      { name: 'Basic Portal', price: '₹59,999', desc: 'Secure chat & file sharing', features: ['Encrypted Chat', 'File Sharing', 'Client Dashboard', '6 Weeks Delivery'] },
+      { name: 'Video Consultation', price: '₹99,999', desc: 'Full virtual office', features: ['Video Conferencing', 'Integrated Billing', 'Session Recording', '10 Weeks Delivery'] }
+    ]
+  },
+  'client-management-system': {
+    title: 'Client Management System',
+    category: 'business-software',
+    price: '₹34,999',
+    desc: 'Keep track of every client detail, from contact information to past case history, billing status, and communication logs in one centralized hub.',
+    features: ['Centralized Client Database', 'Communication Logs', 'Billing & Payment Status', 'Case History Tracking', 'Client Portal Access'],
+    plans: [
+      { name: 'Standard CMS', price: '₹34,999', desc: 'Basic client tracking', features: ['Client Database', 'Communication Logs', 'Basic Reports', '4 Weeks Delivery'] },
+      { name: 'Pro CMS', price: '₹64,999', desc: 'Advanced client portal', features: ['Client Portal', 'Billing Integration', 'Automated Alerts', '6 Weeks Delivery'] }
+    ]
+  },
+  'billing-invoice-management': {
+    title: 'Billing & Invoice Management',
+    category: 'business-software',
+    price: '₹29,999',
+    desc: 'A specialized billing solution for law firms to track billable hours, generate professional invoices, handle retainer accounts, and accept online payments.',
+    features: ['Time & Expense Tracking', 'Automated Invoice Generation', 'Retainer Management (Trust Accounting)', 'Online Payment Gateway', 'Overdue Invoice Reminders'],
+    plans: [
+      { name: 'Basic Billing', price: '₹29,999', desc: 'Simple invoicing & tracking', features: ['Time Tracking', 'Invoice Generation', 'Payment Gateway', '3 Weeks Delivery'] },
+      { name: 'Trust Accounting', price: '₹59,999', desc: 'Advanced legal billing', features: ['Retainer Management', 'Automated Reminders', 'Advanced Reports', '6 Weeks Delivery'] }
+    ]
+  },
+  'legal-mobile-app': {
+    title: 'Legal Mobile App',
+    category: 'mobile-apps',
+    price: '₹79,999',
+    desc: 'Custom iOS and Android apps for law firms to offer on-the-go access to case updates, secure messaging, document uploads, and appointment booking.',
+    features: ['Native iOS & Android Apps', 'Push Notifications', 'Secure Client Messaging', 'Mobile Document Scanner', 'Case Status Updates'],
+    plans: [
+      { name: 'Client Portal App', price: '₹79,999', desc: 'Basic client access app', features: ['Status Updates', 'Secure Messaging', 'Push Notifications', '8 Weeks Delivery'] },
+      { name: 'Full Firm App', price: '₹1,39,999', desc: 'Comprehensive mobile app', features: ['Document Scanner', 'Payments', 'Biometric Login', '12 Weeks Delivery'] }
+    ]
+  },
+  'law-firm-seo-services': {
+    title: 'Law Firm SEO Services',
+    category: 'digital-marketing',
+    price: '₹19,999/mo',
+    desc: 'Specialized Search Engine Optimization for law firms. We target high-intent legal keywords and optimize your local presence to ensure you rank when clients need you most.',
+    features: ['Local SEO & GMB Optimization', 'Legal Keyword Strategy', 'Practice Area Page Optimization', 'High-Authority Legal Backlinks', 'Content Marketing (Legal Blogs)'],
+    plans: [
+      { name: 'Local Domination', price: '₹19,999/mo', desc: 'Focus on local search', features: ['20 Keywords', 'GMB Optimization', '2 Legal Articles/mo', 'Local Backlinks', 'Monthly Report'] },
+      { name: 'Practice Area Growth', price: '₹39,999/mo', desc: 'Aggressive growth strategy', features: ['50 Keywords', 'Technical SEO', '4 Legal Articles/mo', 'High-DA Backlinks', 'Bi-weekly Reports'] }
+    ]
   }
 };
 

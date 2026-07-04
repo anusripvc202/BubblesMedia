@@ -1280,6 +1280,116 @@ export const serviceDatabase = {
       { name: 'Local Domination', price: '₹19,999/mo', desc: 'Focus on local search', features: ['20 Keywords', 'GMB Optimization', '2 Legal Articles/mo', 'Local Backlinks', 'Monthly Report'] },
       { name: 'Practice Area Growth', price: '₹39,999/mo', desc: 'Aggressive growth strategy', features: ['50 Keywords', 'Technical SEO', '4 Legal Articles/mo', 'High-DA Backlinks', 'Bi-weekly Reports'] }
     ]
+  },
+  'manufacturing-erp': {
+    title: 'Manufacturing ERP',
+    category: 'business-software',
+    price: '₹99,999',
+    desc: 'A comprehensive ERP system designed specifically for the manufacturing sector to unify operations, finance, supply chain, and production on a single platform.',
+    features: ['BOM (Bill of Materials) Management', 'Production Scheduling', 'Financial & Cost Accounting', 'Procurement & Vendor Portal', 'Order Management'],
+    plans: [
+      { name: 'Core ERP', price: '₹99,999', desc: 'Essential manufacturing modules', features: ['Inventory & Orders', 'Basic BOM', 'Finance Module', 'Admin Dashboard', '8 Weeks Delivery'] },
+      { name: 'Enterprise ERP', price: '₹1,99,999', desc: 'Full-scale factory management', features: ['Multi-plant Support', 'Advanced Scheduling', 'Quality Control', 'Custom API Ecosystem', '14 Weeks Delivery'] }
+    ]
+  },
+  'inventory-management': {
+    title: 'Inventory Management',
+    category: 'business-software',
+    price: '₹49,999',
+    desc: 'An intelligent inventory tracking system to manage raw materials, work-in-progress (WIP), and finished goods across multiple warehouses with barcode/RFID support.',
+    features: ['Real-time Stock Tracking', 'Barcode & RFID Integration', 'Automated Reorder Alerts', 'Multi-Warehouse Support', 'Batch & Expiry Tracking'],
+    plans: [
+      { name: 'Standard IMS', price: '₹49,999', desc: 'Single warehouse tracking', features: ['Stock Tracking', 'Reorder Alerts', 'Basic Reporting', '4 Weeks Delivery'] },
+      { name: 'Advanced IMS', price: '₹89,999', desc: 'Multi-location with Barcode', features: ['Barcode Integration', 'Multi-warehouse', 'Mobile App for Scanners', '8 Weeks Delivery'] }
+    ]
+  },
+  'production-planning-system': {
+    title: 'Production Planning System',
+    category: 'business-software',
+    price: '₹59,999',
+    desc: 'A dynamic scheduling and planning tool that aligns your production capacity with customer demand, minimizing downtime and maximizing throughput.',
+    features: ['Visual Gantt Chart Scheduling', 'Machine & Labor Capacity Planning', 'Material Requirement Planning (MRP)', 'Downtime Tracking', 'Job Routing & Sequencing'],
+    plans: [
+      { name: 'Basic Planner', price: '₹59,999', desc: 'Simple job scheduling', features: ['Visual Scheduling', 'Job Routing', 'Shift Management', '6 Weeks Delivery'] },
+      { name: 'Smart MRP', price: '₹1,19,999', desc: 'Advanced material & capacity planning', features: ['Full MRP', 'Capacity Planning', 'Downtime Tracking', '10 Weeks Delivery'] }
+    ]
+  },
+  'supply-chain-management': {
+    title: 'Supply Chain Management',
+    category: 'business-software',
+    price: '₹69,999',
+    desc: 'A robust SCM platform to track the flow of goods, information, and finances from suppliers to manufacturers to wholesalers to consumers.',
+    features: ['Supplier Portal', 'Logistics Tracking', 'Demand Forecasting', 'Freight & Shipping Management', 'Purchase Order Automation'],
+    plans: [
+      { name: 'SCM Core', price: '₹69,999', desc: 'Supplier & PO management', features: ['Supplier Portal', 'PO Automation', 'Basic Tracking', '6 Weeks Delivery'] },
+      { name: 'SCM Enterprise', price: '₹1,39,999', desc: 'Full supply chain visibility', features: ['Demand Forecasting', 'Logistics Integration', 'Advanced Analytics', '12 Weeks Delivery'] }
+    ]
+  },
+  'warehouse-management': {
+    title: 'Warehouse Management',
+    category: 'business-software',
+    price: '₹54,999',
+    desc: 'A complete Warehouse Management System (WMS) to optimize storage space, streamline picking and packing, and speed up dispatch operations.',
+    features: ['3D Warehouse Mapping', 'Put-away Optimization', 'Pick & Pack Workflows', 'Cross-docking Support', 'Shipping Label Generation'],
+    plans: [
+      { name: 'Basic WMS', price: '₹54,999', desc: 'Simple pick/pack/ship', features: ['Storage Location Mapping', 'Pick Lists', 'Label Generation', '5 Weeks Delivery'] },
+      { name: 'Smart WMS', price: '₹99,999', desc: 'Advanced routing & courier sync', features: ['Optimized Pick Routing', 'Courier API Integration', 'Returns Management', '9 Weeks Delivery'] }
+    ]
+  },
+  'vendor-management': {
+    title: 'Vendor Management',
+    category: 'business-software',
+    price: '₹39,999',
+    desc: 'A centralized portal to onboard vendors, manage contracts, evaluate supplier performance, and process payments securely.',
+    features: ['Digital Vendor Onboarding', 'Contract Lifecycle Management', 'Supplier Performance Scorecards', 'RFP / Quotation Bidding', 'Invoice Processing'],
+    plans: [
+      { name: 'Vendor Portal', price: '₹39,999', desc: 'Onboarding & Invoicing', features: ['Digital Onboarding', 'Invoice Uploads', 'Basic Directory', '4 Weeks Delivery'] },
+      { name: 'Procurement Suite', price: '₹79,999', desc: 'Bidding & Scorecards', features: ['RFP/Bidding Engine', 'Performance Scorecards', 'Contract Management', '8 Weeks Delivery'] }
+    ]
+  },
+  'crm-for-manufacturing': {
+    title: 'CRM for Manufacturing',
+    category: 'business-software',
+    price: '₹44,999',
+    desc: 'A specialized CRM tailored for the long sales cycles, complex quoting, and distributor relationship management typical in manufacturing.',
+    features: ['B2B Account Management', 'Complex Quote & Proposal Generator', 'Sales Pipeline Tracking', 'Distributor Portal', 'Sample Request Tracking'],
+    plans: [
+      { name: 'Sales Tracker', price: '₹44,999', desc: 'Manage direct B2B sales', features: ['Account Management', 'Pipeline Tracking', 'Basic Quoting', '5 Weeks Delivery'] },
+      { name: 'Channel CRM', price: '₹84,999', desc: 'Direct sales + Distributor portal', features: ['Distributor Portal', 'Complex Quoting', 'Sales Forecasting', '9 Weeks Delivery'] }
+    ]
+  },
+  'quality-control-software': {
+    title: 'Quality Control Software',
+    category: 'business-software',
+    price: '₹49,999',
+    desc: 'A digital QMS (Quality Management System) to standardize inspections, track defects, manage non-conformances (NCR), and ensure ISO compliance.',
+    features: ['Digital Inspection Checklists', 'Defect Tracking & Logging', 'CAPA (Corrective & Preventive Action)', 'SPC (Statistical Process Control) Charts', 'Document Control & SOPs'],
+    plans: [
+      { name: 'Digital QA', price: '₹49,999', desc: 'Digital checklists & tracking', features: ['Digital Checklists', 'Defect Logging', 'Basic Reports', '5 Weeks Delivery'] },
+      { name: 'Full QMS', price: '₹94,999', desc: 'Complete compliance suite', features: ['CAPA Workflows', 'SPC Charts', 'Document Control', '9 Weeks Delivery'] }
+    ]
+  },
+  'factory-automation-dashboard': {
+    title: 'Factory Automation Dashboard',
+    category: 'business-software',
+    price: '₹64,999',
+    desc: 'An Industrial IoT (IIoT) dashboard that connects to your PLC/SCADA systems to provide real-time visibility into machine health, production rates, and OEE.',
+    features: ['Real-time Machine Monitoring', 'OEE (Overall Equipment Effectiveness) Calculation', 'Predictive Maintenance Alerts', 'Energy Consumption Tracking', 'Custom KPI Dashboards'],
+    plans: [
+      { name: 'Basic Monitoring', price: '₹64,999', desc: 'Machine status & counts', features: ['Real-time Status', 'Production Counts', 'Basic Dashboard', '6 Weeks Delivery'] },
+      { name: 'Smart Factory', price: '₹1,24,999', desc: 'OEE & Predictive analytics', features: ['OEE Analytics', 'Predictive Alerts', 'Energy Tracking', '10 Weeks Delivery'] }
+    ]
+  },
+  'industrial-website-development': {
+    title: 'Industrial Website Development',
+    category: 'websites',
+    price: '₹29,999',
+    desc: 'Professional, technical websites designed for manufacturing companies to showcase capabilities, product catalogs, and certifications to global buyers.',
+    features: ['Dynamic Product Catalogs', 'Technical Spec Sheet Downloads', 'Facility & Equipment Showcase', 'Request for Quote (RFQ) Engine', 'Certification Display (ISO, etc.)'],
+    plans: [
+      { name: 'Corporate Profile', price: '₹29,999', desc: 'Professional capability showcase', features: ['Up to 15 Pages', 'Facility Showcase', 'Basic Contact Forms', '4 Weeks Delivery'] },
+      { name: 'Digital Catalog', price: '₹59,999', desc: 'Full product & RFQ site', features: ['Dynamic Product Catalog', 'RFQ Engine', 'Spec Downloads', 'SEO Setup', '8 Weeks Delivery'] }
+    ]
   }
 };
 

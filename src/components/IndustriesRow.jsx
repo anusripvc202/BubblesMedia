@@ -153,7 +153,7 @@ const industries = [
   }
 ];
 
-const DEFAULT_VISIBLE_IND = 12; // 2 rows × 6
+const DEFAULT_VISIBLE_IND = 8; // 2 rows × 4
 
 export default function IndustriesRow({ onSelectIndustry }) {
   const [showAll, setShowAll] = React.useState(false);
@@ -208,8 +208,8 @@ export default function IndustriesRow({ onSelectIndustry }) {
       {/* Grid of Industry blocks */}
       <div className="industries-row-desktop" style={{
         display: 'grid',
-        gridTemplateColumns: 'repeat(6, 1fr)',
-        gap: '10px',
+        gridTemplateColumns: 'repeat(4, 1fr)',
+        gap: '18px',
         width: '100%'
       }}>
         {visibleIndustries.map((ind, idx) => (
@@ -223,16 +223,16 @@ export default function IndustriesRow({ onSelectIndustry }) {
               background: 'var(--bg-white)',
               border: '1px solid var(--border-color)',
               borderRadius: 'var(--radius-md)',
-              padding: '14px 8px',
+              padding: '36px 20px',
               display: 'flex',
               flexDirection: 'column',
               alignItems: 'center',
               justifyContent: 'center',
               textAlign: 'center',
-              gap: '6px',
+              gap: '14px',
               cursor: 'pointer',
               minWidth: '0px',
-              minHeight: '120px',
+              minHeight: '240px',
               transition: 'all 0.2s ease',
             }}
             onMouseEnter={e => {
@@ -252,21 +252,21 @@ export default function IndustriesRow({ onSelectIndustry }) {
               background: ind.bg,
               color: ind.color,
               border: '1px solid var(--border-color-light)',
-              width: '28px',
-              height: '28px',
+              width: '64px',
+              height: '64px',
               borderRadius: '50%',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
-              marginBottom: '2px',
+              marginBottom: '4px',
               flexShrink: 0
             }}>
               {ind.icon}
             </div>
-            <span className="industries-card-text" style={{ fontSize: '0.62rem', fontWeight: '800', color: 'var(--secondary)', lineHeight: '1.15' }}>
+            <span className="industries-card-text" style={{ fontSize: '1.05rem', fontWeight: '800', color: 'var(--secondary)', lineHeight: '1.25' }}>
               {ind.name}
             </span>
-            <span className="industries-card-sub" style={{ fontSize: '0.52rem', color: 'var(--text-light)', fontWeight: '500', display: 'block', marginTop: '2px', lineHeight: '1.2' }}>
+            <span className="industries-card-sub" style={{ fontSize: '0.82rem', color: 'var(--text-light)', fontWeight: '500', display: 'block', marginTop: '2px', lineHeight: '1.4' }}>
               {ind.desc}
             </span>
           </button>

@@ -93,16 +93,12 @@ export default function Header({ cartCount = 0, wishlistCount = 0, onCartOpen, o
         }}>
 
           {/* Logo */}
-          <a href="/" style={{ display: 'flex', alignItems: 'center', gap: '8px', textDecoration: 'none', flexShrink: 0 }}>
-            <svg width="30" height="30" viewBox="0 0 28 28" fill="none" style={{ flexShrink: 0 }}>
-              <circle cx="10" cy="18" r="6" fill="var(--primary)" />
-              <circle cx="18" cy="10" r="4.5" fill="#FF7E21" />
-              <circle cx="20" cy="22" r="4" fill="var(--primary)" />
-            </svg>
-            <div style={{ display: 'flex', flexDirection: 'column' }}>
-              <span style={{ fontSize: '1.25rem', fontWeight: '900', letterSpacing: '-0.5px', color: 'var(--primary)', lineHeight: 1, textTransform: 'uppercase' }}>BUBBLES</span>
-              <span style={{ fontSize: '0.58rem', fontWeight: '800', letterSpacing: '4.1px', color: 'var(--secondary)', textTransform: 'uppercase', display: 'block', marginTop: '1px' }}>MEDIA</span>
-            </div>
+          <a href="/" style={{ display: 'flex', alignItems: 'center', textDecoration: 'none', flexShrink: 0 }}>
+            <img
+              src="/techmart24-logo.png"
+              alt="Tech Mart 24"
+              style={{ height: '68px', width: 'auto', objectFit: 'contain', display: 'block' }}
+            />
           </a>
 
           {/* Categories dropdown (Desktop only) */}
@@ -201,7 +197,7 @@ export default function Header({ cartCount = 0, wishlistCount = 0, onCartOpen, o
           <div className="hide-on-tablet" style={{ display: 'flex', alignItems: 'center', gap: '16px', flexShrink: 0 }}>
             {/* Call */}
             <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-              <div style={{ background: 'rgba(255, 107, 0, 0.08)', color: 'var(--primary)', width: '32px', height: '32px', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+              <div style={{ background: 'rgba(170, 223, 0, 0.12)', color: 'var(--primary)', width: '32px', height: '32px', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                   <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
                 </svg>
@@ -217,7 +213,7 @@ export default function Header({ cartCount = 0, wishlistCount = 0, onCartOpen, o
 
             {/* Account */}
             <div style={{ display: 'flex', alignItems: 'center', gap: '8px', cursor: 'pointer' }} onClick={onQuoteOpen}>
-              <div style={{ background: 'rgba(255, 107, 0, 0.08)', color: 'var(--primary)', width: '32px', height: '32px', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+              <div style={{ background: 'rgba(170, 223, 0, 0.12)', color: 'var(--primary)', width: '32px', height: '32px', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                   <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/>
                 </svg>
@@ -332,8 +328,11 @@ export default function Header({ cartCount = 0, wishlistCount = 0, onCartOpen, o
         {/* Drawer header */}
         <div style={{ background: 'linear-gradient(135deg,#FF7E21,#FF5100)', padding: '18px 16px', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexShrink: 0 }}>
           <div>
-            <div style={{ fontSize: '1rem', fontWeight: '900', color: 'white' }}>BUBBLES MEDIA</div>
-            <div style={{ fontSize: '0.62rem', color: 'rgba(255,255,255,0.8)', marginTop: '1px' }}>India's #1 Digital Agency</div>
+            <img
+              src="/techmart24-logo.png"
+              alt="Tech Mart 24"
+              style={{ height: '54px', width: 'auto', objectFit: 'contain', display: 'block' }}
+            />
           </div>
           <button onClick={() => setMenuOpen(false)}
             style={{ background: 'rgba(255,255,255,0.2)', border: 'none', borderRadius: '6px', width: '30px', height: '30px', cursor: 'pointer', color: 'white', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>

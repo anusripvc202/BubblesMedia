@@ -1,15 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap');
 
 :root {
-  --primary: #FF6B00;
-  --primary-rgb: 255, 107, 0;
-  --primary-hover: #E05E00;
-  --primary-light: #FFF0E5;
-  --primary-dark: #C95400;
+  --primary: #AADF00;
+  --primary-rgb: 170, 223, 0;
+  --primary-hover: #92C200;
+  --primary-light: #F2FFD4;
+  --primary-dark: #7AAA00;
   
-  --secondary: #1F2937;
-  --secondary-rgb: 31, 41, 55;
-  --secondary-light: #374151;
+  --secondary: #0F1E3C;
+  --secondary-rgb: 15, 30, 60;
+  --secondary-light: #1B2F55;
   
   --text-dark: #0F172A;
   --text-medium: #475569;
@@ -17,10 +17,10 @@
   
   --bg-base: #F8FAFC;
   --bg-white: #FFFFFF;
-  --bg-cream: #FFFDFB;
-  --bg-gradient-orange: linear-gradient(135deg, #FF6A1A 0%, #FF3D00 100%);
-  --bg-gradient-cream: linear-gradient(135deg, #FFFDFB 0%, #FFF8F2 100%);
-  --bg-gradient-slate: linear-gradient(135deg, #1E293B 0%, #0F172A 100%);
+  --bg-cream: #FAFFFE;
+  --bg-gradient-orange: linear-gradient(135deg, #AADF00 0%, #7AAA00 100%);
+  --bg-gradient-cream: linear-gradient(135deg, #FAFFFE 0%, #F2FFD4 100%);
+  --bg-gradient-slate: linear-gradient(135deg, #1B2F55 0%, #0F1E3C 100%);
   
   --border-color: rgba(15, 23, 42, 0.08);
   --border-color-light: rgba(15, 23, 42, 0.04);
@@ -29,7 +29,7 @@
   --shadow-md: 0 4px 12px -2px rgba(15, 23, 42, 0.05), 0 2px 6px -1px rgba(15, 23, 42, 0.03);
   --shadow-lg: 0 12px 24px -4px rgba(15, 23, 42, 0.06), 0 4px 12px -2px rgba(15, 23, 42, 0.04);
   --shadow-xl: 0 20px 32px -6px rgba(15, 23, 42, 0.08), 0 8px 16px -4px rgba(15, 23, 42, 0.04);
-  --shadow-orange: 0 8px 20px -4px rgba(255, 90, 0, 0.2);
+  --shadow-orange: 0 8px 20px -4px rgba(170, 223, 0, 0.3);
   
   --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
   --font-display: 'Plus Jakarta Sans', system-ui, sans-serif;
@@ -198,7 +198,7 @@ a {
 }
 
 .btn-secondary:hover {
-  background: rgba(255, 90, 0, 0.1);
+  background: rgba(170, 223, 0, 0.15);
   transform: translateY(-1px);
 }
 
@@ -239,16 +239,16 @@ a {
 
 .industries-row-desktop {
   display: grid !important;
-  grid-auto-flow: column !important;
-  grid-auto-columns: 1fr !important;
-  gap: 10px !important;
+  grid-template-columns: repeat(4, 1fr) !important;
+  grid-auto-flow: row !important;
+  gap: 18px !important;
   width: 100% !important;
 }
 
 .solutions-row-desktop {
   display: grid !important;
-  grid-template-columns: repeat(6, 1fr) !important;
-  gap: 10px !important;
+  grid-template-columns: repeat(3, 1fr) !important;
+  gap: 18px !important;
   width: 100% !important;
 }
 
@@ -406,7 +406,7 @@ a {
 .form-input:focus {
   outline: none;
   border-color: var(--primary);
-  box-shadow: 0 0 0 3px rgba(255, 90, 0, 0.08);
+  box-shadow: 0 0 0 3px rgba(170, 223, 0, 0.12);
 }
 
 /* Footer Hover Effects */
@@ -422,16 +422,16 @@ a {
 }
 .social-icon-hover:hover {
   background: var(--primary) !important;
-  color: white !important;
+  color: var(--secondary) !important;
   transform: translateY(-2px);
-  box-shadow: 0 4px 8px rgba(255, 107, 0, 0.2);
+  box-shadow: 0 4px 8px rgba(170, 223, 0, 0.3);
 }
 
 @media (min-width: 1025px) {
   .solutions-row-desktop {
     display: grid !important;
-    grid-template-columns: repeat(8, 1fr) !important;
-    gap: 8px !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 18px !important;
     overflow-x: visible !important;
   }
   .solutions-card-desktop {
@@ -441,8 +441,8 @@ a {
   }
   .industries-row-desktop {
     display: grid !important;
-    grid-template-columns: repeat(12, 1fr) !important;
-    gap: 6px !important;
+    grid-template-columns: repeat(4, 1fr) !important;
+    gap: 18px !important;
   }
   .industries-card-desktop {
     padding: 10px 4px !important;
@@ -653,15 +653,15 @@ a {
 /* â”€â”€ Solutions & Industries Desktop Grids â”€â”€ */
 .solutions-row-desktop {
   display: grid !important;
-  grid-template-columns: repeat(6, 1fr) !important;
-  gap: 10px !important;
+  grid-template-columns: repeat(3, 1fr) !important;
+  gap: 18px !important;
   width: 100% !important;
 }
 .industries-row-desktop {
   display: grid !important;
-  grid-template-columns: repeat(6, 1fr) !important;
+  grid-template-columns: repeat(4, 1fr) !important;
   grid-auto-flow: row !important;
-  gap: 10px !important;
+  gap: 18px !important;
   width: 100% !important;
 }
 

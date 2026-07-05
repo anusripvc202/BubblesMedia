@@ -136,12 +136,12 @@ export default function Sidebar({ selectedCategory, onSelectCategory }) {
             fontWeight: '700',
             color: 'var(--primary)',
             justifyContent: 'center',
-            background: 'rgba(255, 107, 0, 0.03)',
+            background: 'rgba(170, 223, 0, 0.04)',
             borderTop: '1px solid var(--border-color)',
             transition: 'all 0.2s',
           }}
-          onMouseEnter={e => e.currentTarget.style.background = 'rgba(255, 107, 0, 0.08)'}
-          onMouseLeave={e => e.currentTarget.style.background = 'rgba(255, 107, 0, 0.03)'}
+          onMouseEnter={e => e.currentTarget.style.background = 'rgba(170, 223, 0, 0.1)'}
+          onMouseLeave={e => e.currentTarget.style.background = 'rgba(170, 223, 0, 0.04)'}
         >
           <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
             <rect x="3" y="3" width="7" height="7"></rect>

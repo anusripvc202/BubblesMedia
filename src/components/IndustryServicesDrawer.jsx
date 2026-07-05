@@ -7,7 +7,7 @@ import { industryServicesMap } from '../data/industryServicesMap';
 
 // Accent color map for service categories
 const categoryColorMap = {
-  'websites':           { color: '#FF6B00', bg: '#fff7ed', label: 'Website' },
+  'websites':           { color: '#AADF00', bg: '#F2FFD4', label: 'Website' },
   'mobile-apps':        { color: '#6366f1', bg: '#eef2ff', label: 'Mobile App' },
   'digital-marketing':  { color: '#D946EF', bg: '#fdf4ff', label: 'Marketing' },
   'whatsapp-marketing': { color: '#10B981', bg: '#ecfdf5', label: 'WhatsApp' },

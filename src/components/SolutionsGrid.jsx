@@ -82,8 +82,8 @@ const solutions = Object.entries(serviceDatabase).map(([key, val]) => ({
 }));
 
 const VISIBLE_ROWS = 2;
-const COLS = 6;
-const DEFAULT_VISIBLE = VISIBLE_ROWS * COLS; // 12
+const COLS = 3;
+const DEFAULT_VISIBLE = VISIBLE_ROWS * COLS; // 6
 
 export default function SolutionsGrid({ searchTerm, activeCategory, onEnquire }) {
   const [showAll, setShowAll] = React.useState(false);
@@ -171,7 +171,7 @@ export default function SolutionsGrid({ searchTerm, activeCategory, onEnquire })
         </div>
       ) : (
         <>
-          <div className="solutions-row-desktop" style={{ display: 'grid', gridTemplateColumns: 'repeat(6, 1fr)', gap: '10px', width: '100%' }}>
+          <div className="solutions-row-desktop" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '18px', width: '100%' }}>
             {visibleSolutions.map((sol) => {
               const theme = categoryThemes[sol.category] || { color: 'var(--primary)', bg: 'var(--primary-light)' };
               return (
@@ -181,17 +181,17 @@ export default function SolutionsGrid({ searchTerm, activeCategory, onEnquire })
                   style={{
                     '--card-theme': theme.color,
                     '--card-theme-light': theme.bg,
-                    padding: '12px 8px',
+                    padding: '28px 20px',
                     display: 'flex',
                     flexDirection: 'column',
                     alignItems: 'center',
                     textAlign: 'center',
-                    borderRadius: '8px',
+                    borderRadius: '12px',
                     background: 'var(--bg-white)',
                     boxShadow: 'var(--shadow-sm)',
                     border: '1px solid var(--border-color)',
                     minWidth: '0px',
-                    minHeight: '115px'
+                    minHeight: '220px'
                   }}
                 >
                   {sol.popular && (
@@ -203,26 +203,26 @@ export default function SolutionsGrid({ searchTerm, activeCategory, onEnquire })
                   <div className="solutions-icon-container" style={{
                     background: 'var(--card-theme-light)',
                     color: 'var(--card-theme)',
-                    width: '28px',
-                    height: '28px',
+                    width: '56px',
+                    height: '56px',
                     borderRadius: '50%',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
-                    marginBottom: '6px',
+                    marginBottom: '14px',
                     flexShrink: 0
                   }}>
                     {sol.icon}
                   </div>
 
                   {/* Title */}
-                  <h3 style={{ fontSize: '0.62rem', fontWeight: '800', marginBottom: '4px', color: 'var(--secondary)', letterSpacing: '-0.01em', minHeight: '20px', display: 'flex', alignItems: 'center', justifyContent: 'center', lineHeight: '1.15' }}>
+                  <h3 style={{ fontSize: '0.95rem', fontWeight: '800', marginBottom: '8px', color: 'var(--secondary)', letterSpacing: '-0.01em', display: 'flex', alignItems: 'center', justifyContent: 'center', lineHeight: '1.3' }}>
                     {sol.title}
                   </h3>
 
                   {/* Pricing */}
-                  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '0px', marginBottom: '8px' }}>
-                    <span style={{ fontSize: '0.72rem', fontWeight: '900', color: 'var(--primary)', fontFamily: 'var(--font-display)' }}>{sol.price}</span>
+                  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '0px', marginBottom: '16px' }}>
+                    <span style={{ fontSize: '1.1rem', fontWeight: '900', color: 'var(--primary)', fontFamily: 'var(--font-display)' }}>{sol.price}</span>
                   </div>
 
                   {/* View Details Button */}
@@ -230,13 +230,13 @@ export default function SolutionsGrid({ searchTerm, activeCategory, onEnquire })
                     href={`/services/${sol.id}`}
                     style={{
                       width: '100%',
-                      padding: '4px 2px',
-                      fontSize: '0.58rem',
+                      padding: '10px 16px',
+                      fontSize: '0.82rem',
                       fontWeight: '700',
                       color: 'var(--card-theme)',
                       background: 'var(--card-theme-light)',
                       border: 'none',
-                      borderRadius: '4px',
+                      borderRadius: '6px',
                       textAlign: 'center',
                       display: 'block',
                       marginTop: 'auto',
@@ -244,7 +244,7 @@ export default function SolutionsGrid({ searchTerm, activeCategory, onEnquire })
                     }}
                     className="solutions-view-btn"
                   >
-                    View Details
+                    View Details →
                   </Link>
                 </div>
               );

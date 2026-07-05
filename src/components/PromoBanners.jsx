@@ -37,10 +37,10 @@ export default function PromoBanners({ onSelectPackage }) {
         
         {/* Deal of the Day Card - Solid Orange background */}
         <div style={{
-          background: '#FF6004',
+          background: 'var(--primary)',
           borderRadius: '8px',
           padding: '16px 20px',
-          color: 'white',
+          color: 'var(--secondary)',
           display: 'flex',
           justifyContent: 'space-between',
           alignItems: 'center',
@@ -62,15 +62,15 @@ export default function PromoBanners({ onSelectPackage }) {
               }}
             />
             <div style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
-              <h3 style={{ fontSize: '0.98rem', fontWeight: '800', color: 'white', display: 'flex', alignItems: 'center', gap: '4px', margin: 0, letterSpacing: '-0.01em' }}>
+              <h3 style={{ fontSize: '0.98rem', fontWeight: '800', color: 'var(--secondary)', display: 'flex', alignItems: 'center', gap: '4px', margin: 0, letterSpacing: '-0.01em' }}>
                 Mega Deals of the Day 🔥
               </h3>
-              <span style={{ fontSize: '0.72rem', opacity: 0.95, fontWeight: '500' }}>Limited Time Offers on Top Services</span>
+              <span style={{ fontSize: '0.72rem', opacity: 0.75, fontWeight: '500', color: 'var(--secondary)' }}>Limited Time Offers on Top Services</span>
               <button
                 onClick={() => onSelectPackage({ title: 'Mega Deals of the Day', price: 'Special Offer' })}
                 style={{
-                  background: 'white',
-                  color: '#FF6004',
+                  background: 'var(--secondary)',
+                  color: 'var(--primary)',
                   padding: '5px 12px',
                   borderRadius: '4px',
                   fontWeight: '800',
@@ -119,10 +119,10 @@ export default function PromoBanners({ onSelectPackage }) {
 
         {/* Startup Special Pack Card - Matches Image 1 precisely */}
         <div style={{
-          background: 'linear-gradient(135deg, #FFF6F2 0%, #FFF1E9 100%)',
+          background: 'linear-gradient(135deg, var(--primary-light) 0%, #EAFFC4 100%)',
           borderRadius: '8px',
           padding: '16px 20px',
-          border: '1px solid rgba(255, 107, 0, 0.15)',
+          border: '1px solid rgba(170, 223, 0, 0.2)',
           display: 'flex',
           justifyContent: 'space-between',
           alignItems: 'center',
@@ -153,8 +153,8 @@ export default function PromoBanners({ onSelectPackage }) {
               <button
                 onClick={() => onSelectPackage({ title: 'Startup Special Pack', price: '₹14,999' })}
                 style={{
-                  background: '#FF6004',
-                  color: 'white',
+                  background: 'var(--primary)',
+                  color: 'var(--secondary)',
                   padding: '5px 12px',
                   borderRadius: '4px',
                   fontWeight: '800',
@@ -191,7 +191,7 @@ export default function PromoBanners({ onSelectPackage }) {
               <span style={{ display: 'block', fontSize: '1.25rem', fontWeight: '900', color: 'var(--secondary)', fontFamily: 'var(--font-display)', lineHeight: 1.1 }}>
                 ₹14,999
               </span>
-              <span style={{ display: 'block', fontSize: '0.58rem', color: '#FF6004', fontWeight: '800', textTransform: 'uppercase', marginTop: '2px' }}>
+              <span style={{ display: 'block', fontSize: '0.58rem', color: 'var(--primary-dark)', fontWeight: '800', textTransform: 'uppercase', marginTop: '2px' }}>
                 Limited Time Offer
               </span>
             </div>

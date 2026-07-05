@@ -6,14 +6,14 @@ export default function Footer() {
     <footer style={{
       background: '#0B0F19',
       color: '#E2E8F0',
-      borderTop: '1px solid rgba(255, 90, 0, 0.1)',
+      borderTop: '1px solid rgba(170, 223, 0, 0.12)',
       padding: '64px 0 32px 0',
       marginTop: 'auto',
       fontFamily: 'var(--font-sans)',
       position: 'relative',
       overflow: 'hidden'
     }}>
-      {/* Subtle bottom orange accent glow */}
+      {/* Subtle bottom green accent glow */}
       <div style={{
         position: 'absolute',
         bottom: 0,
@@ -39,8 +39,8 @@ export default function Footer() {
           {/* Column 1: Brand Info */}
           <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
             <Link href="/" style={{ textDecoration: 'none' }}>
-              <span style={{ fontSize: '1.4rem', fontWeight: '900', color: 'white', letterSpacing: '-0.5px' }}>
-                BUBBLES <span style={{ color: 'var(--primary)' }}>MEDIA</span>
+              <span style={{ fontSize: '2rem', fontWeight: '900', color: 'white', letterSpacing: '-0.5px' }}>
+                TECH MART <span style={{ color: 'var(--primary)' }}>24</span>
               </span>
             </Link>
             <p style={{ fontSize: '0.8rem', color: '#94A3B8', lineHeight: '1.6', margin: 0 }}>
@@ -126,13 +126,13 @@ export default function Footer() {
               <div style={{ display: 'flex', gap: '8px', alignItems: 'flex-start' }}>
                 <span style={{ color: 'var(--primary)', flexShrink: 0 }}>📍</span>
                 <span>
-                  Bubbles Media Tech Tower<br />
+                  Tech Mart 24 Tower<br />
                   HSR Layout Sector 4, Bangalore, India
                 </span>
               </div>
               <div style={{ display: 'flex', gap: '8px', alignItems: 'center' }}>
                 <span style={{ color: 'var(--primary)', flexShrink: 0 }}>✉️</span>
-                <a href="mailto:sales@bubblesmedia.in" style={{ color: '#94A3B8', textDecoration: 'none' }} className="footer-link-hover">sales@bubblesmedia.in</a>
+                <a href="mailto:sales@techmart24.in" style={{ color: '#94A3B8', textDecoration: 'none' }} className="footer-link-hover">sales@techmart24.in</a>
               </div>
               <div style={{ display: 'flex', gap: '8px', alignItems: 'center' }}>
                 <span style={{ color: 'var(--primary)', flexShrink: 0 }}>📞</span>
@@ -154,7 +154,7 @@ export default function Footer() {
           color: '#64748B'
         }}>
           <div>
-            <span>© {new Date().getFullYear()} Bubbles Media. All Rights Reserved.</span>
+            <span>© {new Date().getFullYear()} Tech Mart 24. All Rights Reserved.</span>
           </div>
           <div style={{ display: 'flex', gap: '8px', alignItems: 'center' }}>
             <span>Made with ❤️ for Indian Businesses.</span>

@@ -37,9 +37,9 @@ export default function Hero({ onSearch, onExploreOffers }) {
       <div style={{
         position: 'absolute',
         inset: 0,
-        background: 'linear-gradient(135deg, #FF8C2A 0%, #FF4500 60%, #CC3300 100%)',
+        background: 'linear-gradient(135deg, #AADF00 0%, #C8F000 50%, #92C200 100%)',
         borderRadius: '14px',
-        boxShadow: '0 12px 40px rgba(255,81,0,0.3)',
+        boxShadow: '0 12px 48px rgba(170,223,0,0.5)',
         overflow: 'hidden',
         zIndex: 1,
       }}>
@@ -50,8 +50,8 @@ export default function Hero({ onSearch, onExploreOffers }) {
 
         {/* Grid pattern */}
         <div style={{
-          position: 'absolute', inset: 0, pointerEvents: 'none', opacity: 0.07,
-          backgroundImage: 'linear-gradient(rgba(255,255,255,0.4) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.4) 1px,transparent 1px)',
+          position: 'absolute', inset: 0, pointerEvents: 'none', opacity: 0.08,
+          backgroundImage: 'linear-gradient(rgba(15,30,60,0.5) 1px,transparent 1px),linear-gradient(90deg,rgba(15,30,60,0.5) 1px,transparent 1px)',
           backgroundSize: '26px 26px',
         }} />
       </div>
@@ -79,7 +79,7 @@ export default function Hero({ onSearch, onExploreOffers }) {
               Grow your business online with websites, mobile apps, SEO, and AI marketing.
             </p>
             {/* Added compact content bullets */}
-            <div style={{ display: 'flex', gap: '10px', marginTop: '6px', fontSize: '0.68rem', color: 'rgba(255,255,255,0.85)', fontWeight: '600', flexWrap: 'wrap' }}>
+            <div style={{ display: 'flex', gap: '10px', marginTop: '6px', fontSize: '0.68rem', color: 'rgba(15,30,60,0.75)', fontWeight: '700', flexWrap: 'wrap' }}>
               <span>✓ Free Consultation</span>
               <span>✓ 100% Satisfaction Guarantee</span>
               <span>✓ Dedicated Support</span>
@@ -130,20 +130,20 @@ export default function Hero({ onSearch, onExploreOffers }) {
           animation: heroOrb 6s ease-in-out infinite;
         }
         .hero-orb-1 {
-          width: 300px; height: 300px;
-          background: radial-gradient(circle, rgba(255,255,255,0.12) 0%, transparent 70%);
+          width: 340px; height: 340px;
+          background: radial-gradient(circle, rgba(255,255,255,0.35) 0%, transparent 70%);
           top: -80px; right: 35%;
           animation-delay: 0s;
         }
         .hero-orb-2 {
-          width: 200px; height: 200px;
-          background: radial-gradient(circle, rgba(255,200,0,0.15) 0%, transparent 70%);
+          width: 240px; height: 240px;
+          background: radial-gradient(circle, rgba(15,30,60,0.10) 0%, transparent 70%);
           bottom: -60px; left: 15%;
           animation-delay: 2s;
         }
         .hero-orb-3 {
-          width: 150px; height: 150px;
-          background: radial-gradient(circle, rgba(255,255,255,0.08) 0%, transparent 70%);
+          width: 180px; height: 180px;
+          background: radial-gradient(circle, rgba(255,255,255,0.20) 0%, transparent 70%);
           top: 40%; left: 40%;
           animation-delay: 4s;
         }
@@ -156,7 +156,7 @@ export default function Hero({ onSearch, onExploreOffers }) {
         .hero-inner-grid {
           display: grid;
           grid-template-columns: 1.25fr 0.75fr;
-          min-height: 235px;
+          min-height: 340px;
           position: relative;
           z-index: 2;
         }
@@ -174,43 +174,46 @@ export default function Hero({ onSearch, onExploreOffers }) {
         .hero-badge-row { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
         .hero-badge-primary {
           display: flex; align-items: center; gap: 6px;
-          background: rgba(255,255,255,0.18);
-          border: 1px solid rgba(255,255,255,0.35);
+          background: rgba(15,30,60,0.15);
+          border: 1px solid rgba(15,30,60,0.25);
           backdrop-filter: blur(8px);
           border-radius: 20px; padding: 4px 12px;
-          font-size: 0.65rem; font-weight: 800; color: white; letter-spacing: 0.3px;
+          font-size: 0.65rem; font-weight: 800; color: #0F1E3C; letter-spacing: 0.3px;
           animation: fadeInDown 0.5s ease both;
         }
         .hero-badge-dot {
           width: 6px; height: 6px; border-radius: 50%;
-          background: #4ADE80;
-          box-shadow: 0 0 6px #4ADE80;
+          background: #0F1E3C;
+          box-shadow: 0 0 6px rgba(15,30,60,0.5);
           animation: pulse-dot 1.5s ease-in-out infinite;
         }
         @keyframes pulse-dot {
-          0%,100% { box-shadow: 0 0 4px #4ADE80; }
-          50%      { box-shadow: 0 0 10px #4ADE80, 0 0 20px rgba(74,222,128,0.4); }
+          0%,100% { box-shadow: 0 0 4px rgba(15,30,60,0.4); }
+          50%      { box-shadow: 0 0 10px rgba(15,30,60,0.7), 0 0 20px rgba(15,30,60,0.3); }
         }
         .hero-badge-gold {
-          background: #FFD700; border-radius: 20px; padding: 4px 12px;
-          font-size: 0.62rem; font-weight: 900; color: #7B3F00;
+          background: #0F1E3C; border-radius: 20px; padding: 4px 12px;
+          font-size: 0.62rem; font-weight: 900; color: #AADF00;
           animation: fadeInDown 0.6s ease both;
         }
 
         /* ── Headline ── */
         .hero-headline {
           font-size: clamp(1.4rem, 2.5vw, 2rem);
-          font-weight: 900; line-height: 1.1; color: white; margin: 0 0 4px;
-          text-shadow: 0 2px 12px rgba(0,0,0,0.2);
+          font-weight: 900; line-height: 1.1; color: #0F1E3C; margin: 0 0 4px;
+          text-shadow: 0 2px 8px rgba(255,255,255,0.3);
           animation: fadeInUp 0.6s ease both 0.1s;
         }
         .hero-headline-accent {
-          color: #FFE08A;
+          color: #0F1E3C;
           display: inline-block;
           min-width: 10px;
+          text-decoration: underline;
+          text-decoration-color: rgba(15,30,60,0.35);
+          text-underline-offset: 4px;
         }
         .hero-cursor {
-          color: #FFE08A;
+          color: #0F1E3C;
           animation: blink 0.7s step-end infinite;
           font-weight: 300;
         }
@@ -218,57 +221,59 @@ export default function Hero({ onSearch, onExploreOffers }) {
 
         .hero-sub {
           font-size: 0.78rem; line-height: 1.4;
-          color: rgba(255,255,255,0.9); margin: 0; font-weight: 500;
+          color: rgba(15,30,60,0.8); margin: 0; font-weight: 600;
           animation: fadeInUp 0.6s ease both 0.2s;
         }
 
         /* ── Search ── */
         .hero-search-form {
-          display: flex; background: white; border-radius: 8px; padding: 2px;
-          box-shadow: 0 4px 14px rgba(0,0,0,0.15);
+          display: flex; background: rgba(255,255,255,0.9); border-radius: 8px; padding: 2px;
+          box-shadow: 0 4px 20px rgba(15,30,60,0.2);
           max-width: 380px;
           animation: fadeInUp 0.5s ease both 0.35s;
+          border: 1.5px solid rgba(15,30,60,0.12);
         }
         .hero-search-btn {
           padding: 6px 14px; border-radius: 6px;
-          background: linear-gradient(135deg, #FF7E21, #FF4500);
-          color: white; font-weight: 800; font-size: 0.75rem;
+          background: #0F1E3C;
+          color: #AADF00; font-weight: 800; font-size: 0.75rem;
           border: none; cursor: pointer; white-space: nowrap;
-          transition: transform 0.15s;
+          transition: transform 0.15s, box-shadow 0.15s;
           flex-shrink: 0;
         }
         .hero-search-btn:hover {
           transform: translateY(-1px);
+          box-shadow: 0 4px 14px rgba(15,30,60,0.4);
         }
 
         /* ── CTA Buttons ── */
         .hero-btn-primary {
           padding: 8px 18px; border-radius: 8px;
-          background: white; color: #FF4500;
+          background: #0F1E3C; color: white;
           font-weight: 900; font-size: 0.78rem; border: none; cursor: pointer;
-          box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+          box-shadow: 0 4px 16px rgba(15,30,60,0.35);
           transition: transform 0.18s, box-shadow 0.18s;
           animation: pulse-btn 2.5s ease-in-out infinite 1s;
         }
         .hero-btn-primary:hover {
           transform: translateY(-2px);
-          box-shadow: 0 8px 18px rgba(0,0,0,0.2);
+          box-shadow: 0 8px 24px rgba(15,30,60,0.5);
         }
         @keyframes pulse-btn {
-          0%,100% { box-shadow: 0 4px 12px rgba(0,0,0,0.15); }
-          50%      { box-shadow: 0 4px 20px rgba(255,255,255,0.3), 0 4px 12px rgba(0,0,0,0.15); }
+          0%,100% { box-shadow: 0 4px 16px rgba(15,30,60,0.35); }
+          50%      { box-shadow: 0 4px 28px rgba(15,30,60,0.5), 0 4px 12px rgba(15,30,60,0.2); }
         }
         .hero-btn-outline {
           padding: 8px 18px; border-radius: 8px;
-          background: transparent; color: white;
+          background: rgba(255,255,255,0.25); color: #0F1E3C;
           font-weight: 800; font-size: 0.78rem;
-          border: 2px solid rgba(255,255,255,0.6); cursor: pointer;
+          border: 2px solid rgba(15,30,60,0.4); cursor: pointer;
           transition: background 0.2s, transform 0.18s, border-color 0.2s;
         }
         .hero-btn-outline:hover {
-          background: rgba(255,255,255,0.12);
+          background: rgba(255,255,255,0.45);
           transform: translateY(-2px);
-          border-color: white;
+          border-color: #0F1E3C;
         }
 
         /* ── Right column ── */
@@ -279,7 +284,7 @@ export default function Hero({ onSearch, onExploreOffers }) {
         }
         .hero-img {
           width: 100%;
-          max-height: 290px;
+          max-height: 380px;
           object-fit: contain;
           object-position: right center;
           display: block;
@@ -307,7 +312,7 @@ export default function Hero({ onSearch, onExploreOffers }) {
 
         /* ── Responsive ── */
         @media (max-width: 900px) {
-          .hero-inner-grid { grid-template-columns: 1fr 1fr; min-height: 200px; }
+          .hero-inner-grid { grid-template-columns: 1fr 1fr; min-height: 270px; }
           .hero-left-col { padding: 16px 14px; gap: 8px; }
         }
         @media (max-width: 768px) {

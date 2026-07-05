@@ -6,8 +6,8 @@ export const categories = [
     name: 'Websites',
     desc: 'Business, E-commerce, Portfolio',
     tagline: 'Stunning, fast, and secure websites built to convert visitors into loyal customers.',
-    colorTheme: 'linear-gradient(135deg, #FF6B00 0%, #FF8E3C 100%)',
-    accentColor: '#FF6B00',
+    colorTheme: 'linear-gradient(135deg, #AADF00 0%, #7AAA00 100%)',
+    accentColor: '#AADF00',
     stats: [
       { label: 'Websites Launched', value: '450+' },
       { label: 'Average Speed Index', value: '98%' },

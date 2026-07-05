@@ -1694,7 +1694,7 @@ export const faqsDatabase = {
 
 export const testimonialsDatabase = {
   'websites': [
-    { name: 'Rajesh Kumar', role: 'Founder, OrganicBites', content: 'Bubbles Media built our e-commerce portal and it handles over 500 orders a day with zero lag. The checkout flow is extremely smooth!' },
+    { name: 'Rajesh Kumar', role: 'Founder, OrganicBites', content: 'Tech Mart 24 built our e-commerce portal and it handles over 500 orders a day with zero lag. The checkout flow is extremely smooth!' },
     { name: 'Sneha Patel', role: 'Marketing Dir, Apex Builders', content: 'Our company website looks incredibly professional. The loading speed on mobile is under 1.5 seconds, which improved our Google ranks.' }
   ],
   'mobile-apps': [

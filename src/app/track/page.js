@@ -75,7 +75,7 @@ export default function Track() {
 
       {/* Main Content */}
       <main className="container-layout" style={{ marginTop: '48px', marginBottom: '64px', flex: 1 }}>
-        
+
         {/* Breadcrumb */}
         <div style={{ fontSize: '0.8rem', color: 'var(--text-light)', marginBottom: '16px', fontWeight: '600' }}>
           <a href="/">Home</a> / <span style={{ color: 'var(--secondary)' }}>Track Order</span>
@@ -87,7 +87,7 @@ export default function Track() {
             Track Your Project Roadmap
           </h2>
           <p style={{ fontSize: '0.85rem', color: 'var(--text-medium)', marginTop: '4px' }}>
-            Enter your Bubbles Media tracking ID (e.g. BM-101, BM-202, BM-303) below to verify execution milestones.
+            Enter your Tech Mart 24 tracking ID (e.g. BM-101, BM-202, BM-303) below to verify execution milestones.
           </p>
         </div>
 
@@ -134,7 +134,7 @@ export default function Track() {
 
                 {/* Progress Vertical Layout */}
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '24px', position: 'relative', paddingLeft: '24px' }}>
-                  
+
                   {/* Vertical Connection Line */}
                   <div style={{
                     position: 'absolute',
@@ -149,7 +149,7 @@ export default function Track() {
                   {searchResult.timeline.map((step, sIdx) => {
                     const isDone = step.done === true;
                     const isActive = step.done === 'active';
-                    
+
                     return (
                       <div key={sIdx} style={{ display: 'flex', alignItems: 'flex-start', gap: '16px', position: 'relative', zIndex: 2 }}>
                         {/* Dot indicator */}

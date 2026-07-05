@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 const testimonials = [
   {
-    quote: "Bubbles Media delivered our e-commerce portal in record time. Sales went up 40% in two months!",
+    quote: "Tech Mart 24 delivered our e-commerce portal in record time. Sales went up 40% in two months!",
     author: "Rajesh Kumar",
     company: "FreshMart CEO",
     rating: 5
@@ -50,7 +50,7 @@ export default function Testimonials() {
         <h3 style={{ fontSize: '1.15rem', fontWeight: '800', marginBottom: '8px', color: 'var(--secondary)', letterSpacing: '-0.01em' }}>
           Our Work Speaks
         </h3>
-        
+
         {/* Rating Row */}
         <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '16px' }}>
           <span style={{ fontSize: '1.3rem', fontWeight: '800', color: 'var(--secondary)', fontFamily: 'var(--font-display)' }}>

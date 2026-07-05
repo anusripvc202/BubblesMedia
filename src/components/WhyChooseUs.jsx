@@ -22,9 +22,9 @@ export default function WhyChooseUs() {
     }}>
       <div>
         <h3 style={{ fontSize: '1.15rem', fontWeight: '800', marginBottom: '18px', color: 'var(--secondary)', letterSpacing: '-0.01em' }}>
-          Why Choose Bubbles Media?
+          Why Choose Tech Mart 24?
         </h3>
-        
+
         <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '12px' }}>
           {reasons.map((reason, index) => (
             <li key={index} style={{ display: 'flex', alignItems: 'center', gap: '10px', fontSize: '0.8rem', color: 'var(--text-medium)', fontWeight: '600' }}>

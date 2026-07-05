@@ -1,5 +1,5 @@
 // ============================================================
-// BUBBLES MEDIA — INDUSTRIES & SERVICES DATA CONFIG
+// Tech Mart 24 — INDUSTRIES & SERVICES DATA CONFIG
 // Single source of truth for all industry routes + content
 // ============================================================
 

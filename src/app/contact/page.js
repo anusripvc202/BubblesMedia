@@ -40,7 +40,7 @@ export default function Contact() {
 
       {/* Main Content */}
       <main className="container-layout" style={{ marginTop: '48px', marginBottom: '64px', flex: 1 }}>
-        
+
         {/* Breadcrumb */}
         <div style={{ fontSize: '0.8rem', color: 'var(--text-light)', marginBottom: '16px', fontWeight: '600' }}>
           <a href="/">Home</a> / <span style={{ color: 'var(--secondary)' }}>Contact Us</span>
@@ -67,7 +67,7 @@ export default function Contact() {
 
         {/* Contact Grid */}
         <div style={{ display: 'grid', gridTemplateColumns: '1.2fr 0.8fr', gap: '48px' }} className="contact-grid">
-          
+
           {/* Contact Form */}
           <div className="glass-panel" style={{ padding: '32px', background: 'white' }}>
             {isSubmitted ? (
@@ -160,7 +160,7 @@ export default function Contact() {
             {/* Quick Contact Box */}
             <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
               <h3 style={{ fontSize: '1.15rem', fontWeight: '800', color: 'var(--secondary)' }}>Direct Contacts</h3>
-              
+
               <div style={{ display: 'flex', gap: '16px', alignItems: 'flex-start' }}>
                 <div style={{ background: 'var(--primary-light)', color: 'var(--primary)', width: '36px', height: '36px', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
                   📞
@@ -189,7 +189,7 @@ export default function Contact() {
                 </div>
                 <div>
                   <span style={{ fontSize: '0.75rem', color: 'var(--text-light)', display: 'block' }}>Headquarters</span>
-                  <span style={{ fontSize: '0.85rem', fontWeight: '700', color: 'var(--secondary)', display: 'block', marginTop: '2px' }}>Bubbles Media Tech Tower</span>
+                  <span style={{ fontSize: '0.85rem', fontWeight: '700', color: 'var(--secondary)', display: 'block', marginTop: '2px' }}>Tech Mart 24 Tech Tower</span>
                   <span style={{ fontSize: '0.75rem', color: 'var(--text-medium)', display: 'block', marginTop: '2px' }}>HSR Layout Sector 4, Bangalore, India</span>
                 </div>
               </div>

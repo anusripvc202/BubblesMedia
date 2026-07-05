@@ -19,7 +19,7 @@ export default function About() {
 
       {/* Main Content */}
       <main className="container-layout" style={{ marginTop: '48px', marginBottom: '64px', flex: 1 }}>
-        
+
         {/* Breadcrumb */}
         <div style={{ fontSize: '0.8rem', color: 'var(--text-light)', marginBottom: '16px', fontWeight: '600' }}>
           <a href="/">Home</a> / <span style={{ color: 'var(--secondary)' }}>About Us</span>
@@ -40,7 +40,7 @@ export default function About() {
             Empowering Businesses Globally
           </h2>
           <p style={{ fontSize: '1rem', color: 'rgba(255, 255, 255, 0.9)', maxWidth: '600px', margin: '0 auto', lineHeight: '1.6' }}>
-            Bubbles Media is India's largest integrated digital marketplace, delivering premium web development, branding, SEO, and AI automation solutions.
+            Tech Mart 24 is India's largest integrated digital marketplace, delivering premium web development, branding, SEO, and AI automation solutions.
           </p>
         </div>
 
@@ -51,7 +51,7 @@ export default function About() {
               Our Story & Philosophy
             </h3>
             <p style={{ fontSize: '0.9rem', color: 'var(--text-medium)', lineHeight: '1.7', marginBottom: '16px' }}>
-              Founded with the vision of bridging the digital divide for small and medium enterprises, Bubbles Media provides transparent pricing, high-quality engineering, and verified digital workflows.
+              Founded with the vision of bridging the digital divide for small and medium enterprises, Tech Mart 24 provides transparent pricing, high-quality engineering, and verified digital workflows.
             </p>
             <p style={{ fontSize: '0.9rem', color: 'var(--text-medium)', lineHeight: '1.7' }}>
               We believe in result-driven execution. Every line of code, every marketing campaign, and every design framework is tailored to drive measurable ROI for our partners.

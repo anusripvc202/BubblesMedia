@@ -75,11 +75,17 @@ const getServiceIcon = (serviceId, categoryId) => {
   }
 };
 
+const parsePrice = (priceStr) => {
+  if (!priceStr) return 0;
+  const num = parseInt(priceStr.replace(/[^\d]/g, ''), 10);
+  return isNaN(num) ? 0 : num;
+};
+
 const solutions = Object.entries(serviceDatabase).map(([key, val]) => ({
   id: key,
   icon: getServiceIcon(key, val.category),
   ...val
-}));
+})).sort((a, b) => parsePrice(a.price) - parsePrice(b.price));
 
 const VISIBLE_ROWS = 2;
 const COLS = 3;

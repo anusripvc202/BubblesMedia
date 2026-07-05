@@ -960,6 +960,546 @@ export const serviceDatabase = {
       { name: 'Salon Local Rank', price: '₹9,999/mo', desc: 'Local project keywords ranking package', features: ['15 Local project keywords', 'GMB profile local optimizations', 'Project microsite speed checks', 'Standard backlinks (10/mo)', '3 Month Commit'] },
       { name: 'Beauty Authority SEO', price: '₹19,999/mo', desc: 'Complete brand authority builder package', features: ['40 High volume local keywords', 'Monthly blogs & project reviews writing', 'High-DA local links (25/mo)', 'Real-time rankings tracking panels', 'No Contract'] }
     ]
+  },
+  // ─── Travel & Tourism ─────────────────────────────────────
+  'travel-booking-website': {
+    title: 'Travel Booking Website',
+    category: 'websites',
+    price: '₹14,999',
+    desc: 'Stunning travel booking portals with destination galleries, itinerary displays, and secure online reservations.',
+    features: ['Tour Package Listings', 'Destination Photo Galleries', 'Itinerary Day-by-Day View', 'Online Enquiry & Booking Forms', 'WhatsApp Chat Integration'],
+    plans: [
+      { name: 'Standard Travel Site', price: '₹14,999', desc: 'Basic travel agency website', features: ['10 Pages Layout', 'Package listing catalogs', 'Enquiry form integrations', 'Gallery photo carousels', '1 Week Delivery'] },
+      { name: 'Gold Travel Portal', price: '₹29,999', desc: 'Premium booking portal', features: ['Unlimited package pages', 'Itinerary day planner pages', 'Blog & travel guides CMS', 'Review testimonial widgets', '2 Weeks Delivery'] }
+    ]
+  },
+  'tour-package-management': {
+    title: 'Tour Package Management',
+    category: 'business-software',
+    price: '₹19,999',
+    desc: 'Complete tour package management system with seat availability, pricing tiers, and automated booking confirmations.',
+    features: ['Package Builder Dashboard', 'Seat Availability Calendar', 'Advance Payment Collection', 'Booking Confirmation PDFs', 'Agent B2B Portal'],
+    plans: [
+      { name: 'Standard Package Manager', price: '₹19,999', desc: 'Basic package management tool', features: ['Package creation builder', 'Online booking acceptance', 'Payment gateway checkout', 'Confirmation PDF exports', '2 Weeks Delivery'] },
+      { name: 'Gold Tour Operations Suite', price: '₹39,999', desc: 'Full tour operations platform', features: ['Live availability calendar', 'Agent commission portal', 'Cancellation refund module', 'Revenue analytics reports', '3 Weeks Delivery'] }
+    ]
+  },
+  'hotel-booking-system': {
+    title: 'Hotel Booking System',
+    category: 'business-software',
+    price: '₹24,999',
+    desc: 'Online hotel reservation system with room availability calendars, rate management, and guest check-in portals.',
+    features: ['Room Availability Calendar', 'Rate & Season Management', 'Guest Self Check-in Portal', 'Multi-room Type Listing', 'Booking Confirmation SMS'],
+    plans: [
+      { name: 'Standard Hotel Booking', price: '₹24,999', desc: 'Standard reservation system', features: ['Room listing & calendars', 'Online booking acceptance', 'Payment gateway checkout', 'Email confirmations setup', '2 Weeks Delivery'] },
+      { name: 'Gold Hotel Management Suite', price: '₹49,999', desc: 'Complete hotel management system', features: ['Dynamic rate management', 'OTA channel integrations', 'Guest check-in dashboard', 'Revenue analytics reports', '4 Weeks Delivery'] }
+    ]
+  },
+  'flight-booking-integration': {
+    title: 'Flight Booking Integration',
+    category: 'business-software',
+    price: '₹34,999',
+    desc: 'Integrate real-time flight search, comparison, and booking APIs into your travel portal for direct ticketing.',
+    features: ['Real-time Flight Search API', 'Fare Comparison Engine', 'PNR Booking Generation', 'E-ticket PDF Downloads', 'Multi-airline Support'],
+    plans: [
+      { name: 'Standard Flight Module', price: '₹34,999', desc: 'Basic flight search integration', features: ['Single GDS API integration', 'Flight search widgets', 'Basic fare comparison tool', 'Booking confirmation PDFs', '3 Weeks Delivery'] },
+      { name: 'Gold Flight Booking Suite', price: '₹64,999', desc: 'Full flight booking platform', features: ['Multi-GDS API connections', 'Dynamic fare comparison', 'PNR management dashboard', 'Ancillary service add-ons', '5 Weeks Delivery'] }
+    ]
+  },
+  'travel-crm': {
+    title: 'Travel CRM',
+    category: 'business-software',
+    price: '₹14,999',
+    desc: 'Dedicated CRM for travel agencies to track leads, manage follow-ups, and convert inquiries into confirmed bookings.',
+    features: ['Lead Capture Pipeline', 'Follow-up Task Scheduler', 'WhatsApp & Email Integration', 'Booking Status Tracking', 'Agent Performance Dashboard'],
+    plans: [
+      { name: 'Standard Travel CRM', price: '₹14,999', desc: 'Basic lead tracking tool', features: ['Lead pipeline management', 'Follow-up task reminders', 'Email integration setup', 'Basic analytics dashboard', '2 Weeks Delivery'] },
+      { name: 'Gold Travel CRM Suite', price: '₹29,999', desc: 'Full travel CRM system', features: ['WhatsApp API integrations', 'Booking conversion tracking', 'Agent commission reports', 'Client travel history logs', '3 Weeks Delivery'] }
+    ]
+  },
+  'travel-mobile-app': {
+    title: 'Travel Mobile App',
+    category: 'mobile-apps',
+    price: '₹49,999',
+    desc: 'Branded Android & iOS travel app with package browsing, bookings, live itineraries, and push trip updates.',
+    features: ['Package Browse & Booking', 'Live Trip Itinerary View', 'Push Trip Update Alerts', 'Offline Itinerary Access', 'Play/App Store Publishing'],
+    plans: [
+      { name: 'Standard Travel App', price: '₹49,999', desc: 'Basic travel booking app', features: ['Package catalog browsing', 'In-app booking checkout', 'Push notification setup', 'Android version publish', '5 Weeks Delivery'] },
+      { name: 'Gold Dual Travel App', price: '₹89,999', desc: 'Full travel companion app', features: ['Android + iOS dual publish', 'Live itinerary tracker', 'Offline mode access', 'Review submission portal', '7 Weeks Delivery'] }
+    ]
+  },
+  'visa-management-system': {
+    title: 'Visa Management System',
+    category: 'business-software',
+    price: '₹19,999',
+    desc: 'Track visa applications, document checklists, appointment schedules, and approval status for travel clients.',
+    features: ['Application Status Tracker', 'Document Checklist Manager', 'Appointment Schedule Calendar', 'Client Notification Alerts', 'Country Visa Rules Database'],
+    plans: [
+      { name: 'Standard Visa Tracker', price: '₹19,999', desc: 'Basic visa tracking portal', features: ['Application status board', 'Document checklist forms', 'SMS appointment reminders', 'Standard admin dashboard', '2 Weeks Delivery'] },
+      { name: 'Gold Visa Management Suite', price: '₹39,999', desc: 'Complete visa operations system', features: ['Multi-country visa rules DB', 'Auto document verification', 'Client self-service portal', 'Revenue analytics reports', '4 Weeks Delivery'] }
+    ]
+  },
+  'tour-guide-portal': {
+    title: 'Tour Guide Portal',
+    category: 'websites',
+    price: '₹14,999',
+    desc: 'Online portal for listing tour guides, booking local experiences, and managing guide availability calendars.',
+    features: ['Guide Profile Listings', 'Experience Catalog Display', 'Availability Calendar Widget', 'Review & Rating System', 'Online Booking Integration'],
+    plans: [
+      { name: 'Standard Guide Portal', price: '₹14,999', desc: 'Basic tour guide directory', features: ['Guide profile directory', 'Experience listing pages', 'Enquiry form widget', 'Mobile responsive layout', '1 Week Delivery'] },
+      { name: 'Gold Experience Platform', price: '₹29,999', desc: 'Full experience booking portal', features: ['Live availability calendars', 'In-app booking checkout', 'Review rating engine', 'Guide analytics dashboard', '3 Weeks Delivery'] }
+    ]
+  },
+  'travel-marketing-services': {
+    title: 'Travel Marketing Services',
+    category: 'digital-marketing',
+    price: '₹12,999/mo',
+    desc: 'Inspire wanderlust with stunning destination content, travel reels, and targeted campaigns on Instagram & Facebook.',
+    features: ['Destination Instagram Reels', 'Facebook Travel Lead Ads', 'Influencer Collaborations', 'Seasonal Campaign Planning', 'Monthly Analytics Reports'],
+    plans: [
+      { name: 'Travel Growth Pack', price: '₹12,999/mo', desc: 'Social media brand building', features: ['15 Custom travel posts', 'Instagram + Facebook ads', 'GMB profile management', 'Standard monthly reports', 'Cancel Anytime'] },
+      { name: 'Travel Authority Pack', price: '₹24,999/mo', desc: 'Full travel marketing suite', features: ['30 Posts + destination reels', 'Influencer partnership outreach', 'Seasonal promotional campaigns', 'WhatsApp lead automation', 'Cancel Anytime'] }
+    ]
+  },
+  'seo-for-travel': {
+    title: 'SEO for Travel Business',
+    category: 'digital-marketing',
+    price: '₹9,999/mo',
+    desc: 'Rank for destination and package searches on Google to drive organic travel enquiries without ad spend.',
+    features: ['Destination Page SEO', 'Travel Blog Content Creation', 'Google Maps Local Ranking', 'Package Schema Markup', 'Monthly Rankings Reports'],
+    plans: [
+      { name: 'Travel Local Rank', price: '₹9,999/mo', desc: 'Local travel SEO package', features: ['15 Destination keywords', 'GMB profile optimizations', 'Destination page speed audit', 'Standard backlinks (10/mo)', '3 Month Commit'] },
+      { name: 'Travel Authority SEO', price: '₹19,999/mo', desc: 'Complete travel SEO package', features: ['40 High volume travel keywords', 'Monthly travel blogs (4/mo)', 'High-DA travel links (20/mo)', 'Full schema markup setup', 'No Contract'] }
+    ]
+  },
+  'travel-booking-website': {
+    title: 'Travel Booking Website',
+    category: 'websites',
+    price: '₹29,999',
+    desc: 'Launch a fully functional travel booking website that allows users to search, compare, and book flights, hotels, and tours seamlessly online.',
+    features: ['Real-time Search & Filtering', 'Secure Payment Gateway', 'Multi-currency Support', 'User Accounts & Booking History', 'Reviews & Ratings'],
+    plans: [
+      { name: 'Starter', price: '₹29,999', desc: 'Basic booking website', features: ['5 Pages', 'Contact Forms', 'Basic Search', 'Mobile Responsive', '2 Weeks Delivery'] },
+      { name: 'Professional', price: '₹59,999', desc: 'Advanced booking portal', features: ['15 Pages', 'Payment Integration', 'User Accounts', 'Reviews System', '4 Weeks Delivery'] }
+    ]
+  },
+  'tour-package-management': {
+    title: 'Tour Package Management',
+    category: 'business-software',
+    price: '₹34,999',
+    desc: 'A complete system to create, manage, and sell tour packages online. Includes dynamic itinerary builders, availability calendars, and booking management.',
+    features: ['Dynamic Itinerary Builder', 'Availability & Inventory Management', 'Multi-day Tour Setup', 'Custom Add-ons & Extras', 'B2B & B2C Portals'],
+    plans: [
+      { name: 'Basic', price: '₹34,999', desc: 'Simple package management', features: ['Up to 50 Packages', 'Basic Itineraries', 'Enquiry Forms', 'Admin Dashboard', '3 Weeks Delivery'] },
+      { name: 'Pro', price: '₹69,999', desc: 'Full online booking system', features: ['Unlimited Packages', 'Online Booking', 'Dynamic Pricing', 'Supplier Portal', '6 Weeks Delivery'] }
+    ]
+  },
+  'hotel-booking-system': {
+    title: 'Hotel Booking System',
+    category: 'websites',
+    price: '₹39,999',
+    desc: 'Empower your hotel or resort with a robust direct booking engine. Bypass OTA commissions and take control of your reservations.',
+    features: ['Real-time Room Inventory', 'Secure Online Payments', 'Channel Manager Integration', 'Promo Codes & Discounts', 'Guest Management CRM'],
+    plans: [
+      { name: 'Boutique', price: '₹39,999', desc: 'Single property booking engine', features: ['Up to 50 Rooms', 'Direct Booking', 'Payment Gateway', 'Basic CRM', '4 Weeks Delivery'] },
+      { name: 'Resort', price: '₹79,999', desc: 'Full hotel management system', features: ['Unlimited Rooms', 'Channel Manager Sync', 'Promo Engine', 'Advanced CRM', '8 Weeks Delivery'] }
+    ]
+  },
+  'flight-booking-integration': {
+    title: 'Flight Booking Integration',
+    category: 'business-software',
+    price: '₹74,999',
+    desc: 'Integrate global flight booking capabilities into your travel platform using GDS (Global Distribution System) APIs.',
+    features: ['Global Flight Search', 'Real-time Fares & Availability', 'Multi-city & Round Trip', 'Seat Selection', 'Baggage Allowances'],
+    plans: [
+      { name: 'Integration', price: '₹74,999', desc: 'Basic flight integration', features: ['Single GDS API', 'Flight Search', 'Booking Flow', 'Markup Management', '6 Weeks Delivery'] },
+      { name: 'Advanced', price: '₹1,24,999', desc: 'Multi-GDS integration', features: ['Multi-GDS / LCCs', 'Ancillary Services', 'Advanced Filters', 'B2B Portal', '10 Weeks Delivery'] }
+    ]
+  },
+  'travel-crm': {
+    title: 'Travel CRM',
+    category: 'business-software',
+    price: '₹24,999',
+    desc: 'A specialized CRM designed for the travel industry to manage leads, track inquiries, build quotes, and nurture client relationships effectively.',
+    features: ['Lead Capture & Management', 'Custom Itinerary Quotations', 'Automated Follow-ups', 'Client Booking History', 'Supplier Database'],
+    plans: [
+      { name: 'Starter CRM', price: '₹24,999', desc: 'For small travel agencies', features: ['Up to 5 Users', 'Lead Management', 'Basic Quotes', 'Email Integration', '3 Weeks Delivery'] },
+      { name: 'Pro CRM', price: '₹54,999', desc: 'Advanced automation CRM', features: ['Up to 20 Users', 'Custom Itinerary Builder', 'WhatsApp API', 'Advanced Reports', '6 Weeks Delivery'] }
+    ]
+  },
+  'travel-mobile-app': {
+    title: 'Travel Mobile App',
+    category: 'mobile-apps',
+    price: '₹69,999',
+    desc: 'Build custom iOS and Android applications for your travel business, allowing users to book, manage itineraries, and access travel guides on the go.',
+    features: ['Native iOS & Android Apps', 'Offline Itinerary Access', 'Push Notifications for Updates', 'In-App Booking', 'Location-Based Guides'],
+    plans: [
+      { name: 'Companion App', price: '₹69,999', desc: 'Itinerary management app', features: ['Offline Itineraries', 'Digital Vouchers', 'Push Notifications', 'Basic Chat', '6 Weeks Delivery'] },
+      { name: 'Booking App', price: '₹1,29,999', desc: 'Full booking app', features: ['In-App Booking', 'Payment Gateway', 'User Profiles', 'Location Guides', '10 Weeks Delivery'] }
+    ]
+  },
+  'visa-management-system': {
+    title: 'Visa Management System',
+    category: 'business-software',
+    price: '₹34,999',
+    desc: 'A secure, efficient system for visa consultants and agencies to manage applications, track statuses, and communicate with clients seamlessly.',
+    features: ['Online Application Forms', 'Document Upload & Verification', 'Automated Status Updates', 'Embassy Guidelines Database', 'Payment Collection'],
+    plans: [
+      { name: 'Basic Portal', price: '₹34,999', desc: 'Simple visa management', features: ['Online Forms', 'Document Upload', 'Status Tracking', 'Email Alerts', '4 Weeks Delivery'] },
+      { name: 'Advanced System', price: '₹74,999', desc: 'Full automation system', features: ['Client Portal', 'WhatsApp Alerts', 'Payment Integration', 'Task Manager', '8 Weeks Delivery'] }
+    ]
+  },
+  'tour-guide-portal': {
+    title: 'Tour Guide Portal',
+    category: 'business-software',
+    price: '₹49,999',
+    desc: 'A dedicated platform to manage your network of tour guides, assign tours, track availability, and handle payments efficiently.',
+    features: ['Guide Profiles & Specialties', 'Availability Calendar', 'Automated Tour Assignment', 'GPS Tracking (Optional)', 'In-App Messaging'],
+    plans: [
+      { name: 'Standard Portal', price: '₹49,999', desc: 'Core guide management', features: ['Guide Profiles', 'Availability Calendar', 'Tour Assignment', 'Admin Dashboard', '6 Weeks Delivery'] },
+      { name: 'Pro Portal', price: '₹94,999', desc: 'Advanced management with App', features: ['Mobile App for Guides', 'Automated Payouts', 'In-App Chat', 'Rating System', '10 Weeks Delivery'] }
+    ]
+  },
+  'seo-for-travel-business': {
+    title: 'SEO for Travel Business',
+    category: 'digital-marketing',
+    price: '₹14,999/mo',
+    desc: 'A targeted SEO strategy to help your travel agency, hotel, or tour company rank high on Google for high-intent travel keywords and destination searches.',
+    features: ['Travel Keyword Research', 'Destination Page Optimization', 'Local SEO & GMB Optimization', 'Travel Blog Content Creation', 'High-Quality Backlink Building'],
+    plans: [
+      { name: 'Destination SEO', price: '₹14,999/mo', desc: 'Focus on core offerings', features: ['20 Target Keywords', 'On-page SEO', '2 Blog Posts/mo', 'GMB Management', 'Monthly Reports'] },
+      { name: 'Travel Authority', price: '₹29,999/mo', desc: 'Aggressive growth plan', features: ['50 Target Keywords', 'Technical SEO', '4 Blog Posts/mo', 'Link Building', 'Schema Markup'] }
+    ]
+  },
+  'law-firm-website-development': {
+    title: 'Law Firm Website Development',
+    category: 'websites',
+    price: '₹24,999',
+    desc: 'A highly professional, secure, and fast-loading website designed specifically for law firms to showcase practice areas, attorney profiles, and generate client leads.',
+    features: ['Practice Area Showcases', 'Attorney Directory & Profiles', 'Secure Client Portal', 'Lead Generation Forms', 'Blog & Legal Insights'],
+    plans: [
+      { name: 'Starter', price: '₹24,999', desc: 'Basic professional website', features: ['Up to 10 Pages', 'Attorney Profiles', 'Contact Form', 'Mobile Responsive', '2 Weeks Delivery'] },
+      { name: 'Professional', price: '₹49,999', desc: 'Advanced firm website', features: ['Up to 25 Pages', 'Client Portal', 'Blog Setup', 'SEO Basics', '4 Weeks Delivery'] }
+    ]
+  },
+  'case-management-system': {
+    title: 'Case Management System',
+    category: 'business-software',
+    price: '₹49,999',
+    desc: 'A secure, cloud-based case management system to track case progress, manage court dates, store documents, and collaborate with your legal team.',
+    features: ['Case Tracking Dashboard', 'Court Date Calendar & Reminders', 'Secure Document Storage', 'Task Management', 'Team Collaboration Tools'],
+    plans: [
+      { name: 'Basic', price: '₹49,999', desc: 'Simple case tracking', features: ['Case Dashboard', 'Calendar', 'Document Storage', 'Up to 5 Users', '4 Weeks Delivery'] },
+      { name: 'Pro', price: '₹99,999', desc: 'Advanced management system', features: ['Client Portal', 'Time Tracking', 'Conflict Checking', 'Up to 20 Users', '8 Weeks Delivery'] }
+    ]
+  },
+  'legal-crm': {
+    title: 'Legal CRM',
+    category: 'business-software',
+    price: '₹29,999',
+    desc: 'A specialized Customer Relationship Management (CRM) tool for law firms to manage client intake, track lead sources, and automate follow-ups.',
+    features: ['Automated Client Intake', 'Lead Source Tracking', 'Email & SMS Automation', 'Consultation Scheduling', 'Custom Intake Forms'],
+    plans: [
+      { name: 'Starter CRM', price: '₹29,999', desc: 'Basic intake management', features: ['Lead Tracking', 'Custom Forms', 'Email Automation', 'Up to 5 Users', '3 Weeks Delivery'] },
+      { name: 'Pro CRM', price: '₹59,999', desc: 'Full pipeline management', features: ['Advanced Automation', 'SMS Integration', 'Analytics Dashboard', 'Up to 15 Users', '6 Weeks Delivery'] }
+    ]
+  },
+  'legal-appointment-booking': {
+    title: 'Appointment Booking',
+    category: 'websites',
+    price: '₹19,999',
+    desc: 'An intelligent scheduling system that allows clients to book consultations based on your real-time availability, with automated reminders and payment processing.',
+    features: ['Real-time Calendar Sync', 'Automated Email/SMS Reminders', 'Online Payment Collection', 'Video Conferencing Integration', 'Time Zone Management'],
+    plans: [
+      { name: 'Standard Booking', price: '₹19,999', desc: 'Automated scheduling', features: ['Calendar Sync', 'Email Reminders', 'Intake Forms', '1 Week Delivery'] },
+      { name: 'Premium Booking', price: '₹34,999', desc: 'Paid & Virtual consultations', features: ['Payment Integration', 'Zoom Integration', 'SMS Reminders', '2 Weeks Delivery'] }
+    ]
+  },
+  'document-management-system': {
+    title: 'Document Management System',
+    category: 'business-software',
+    price: '₹39,999',
+    desc: 'A robust digital filing system tailored for legal professionals, featuring advanced OCR search, version control, and secure sharing capabilities.',
+    features: ['OCR Text Search', 'Version Control & History', 'Secure Document Sharing', 'Access Role Management', 'E-signature Integration'],
+    plans: [
+      { name: 'Cloud Docs', price: '₹39,999', desc: 'Basic document storage', features: ['Secure Storage', 'Folder Management', 'Basic Search', '4 Weeks Delivery'] },
+      { name: 'Advanced DMS', price: '₹79,999', desc: 'Full featured document system', features: ['OCR Search', 'Version Control', 'E-signatures', 'Audit Trails', '8 Weeks Delivery'] }
+    ]
+  },
+  'legal-consultation-portal': {
+    title: 'Legal Consultation Portal',
+    category: 'websites',
+    price: '₹59,999',
+    desc: 'A complete virtual platform allowing advocates to provide secure video consultations, share documents, and chat with clients remotely.',
+    features: ['Secure Video Conferencing', 'Encrypted Chat & Messaging', 'File Sharing', 'Session Recording (Optional)', 'Billing & Invoicing'],
+    plans: [
+      { name: 'Basic Portal', price: '₹59,999', desc: 'Secure chat & file sharing', features: ['Encrypted Chat', 'File Sharing', 'Client Dashboard', '6 Weeks Delivery'] },
+      { name: 'Video Consultation', price: '₹99,999', desc: 'Full virtual office', features: ['Video Conferencing', 'Integrated Billing', 'Session Recording', '10 Weeks Delivery'] }
+    ]
+  },
+  'client-management-system': {
+    title: 'Client Management System',
+    category: 'business-software',
+    price: '₹34,999',
+    desc: 'Keep track of every client detail, from contact information to past case history, billing status, and communication logs in one centralized hub.',
+    features: ['Centralized Client Database', 'Communication Logs', 'Billing & Payment Status', 'Case History Tracking', 'Client Portal Access'],
+    plans: [
+      { name: 'Standard CMS', price: '₹34,999', desc: 'Basic client tracking', features: ['Client Database', 'Communication Logs', 'Basic Reports', '4 Weeks Delivery'] },
+      { name: 'Pro CMS', price: '₹64,999', desc: 'Advanced client portal', features: ['Client Portal', 'Billing Integration', 'Automated Alerts', '6 Weeks Delivery'] }
+    ]
+  },
+  'billing-invoice-management': {
+    title: 'Billing & Invoice Management',
+    category: 'business-software',
+    price: '₹29,999',
+    desc: 'A specialized billing solution for law firms to track billable hours, generate professional invoices, handle retainer accounts, and accept online payments.',
+    features: ['Time & Expense Tracking', 'Automated Invoice Generation', 'Retainer Management (Trust Accounting)', 'Online Payment Gateway', 'Overdue Invoice Reminders'],
+    plans: [
+      { name: 'Basic Billing', price: '₹29,999', desc: 'Simple invoicing & tracking', features: ['Time Tracking', 'Invoice Generation', 'Payment Gateway', '3 Weeks Delivery'] },
+      { name: 'Trust Accounting', price: '₹59,999', desc: 'Advanced legal billing', features: ['Retainer Management', 'Automated Reminders', 'Advanced Reports', '6 Weeks Delivery'] }
+    ]
+  },
+  'legal-mobile-app': {
+    title: 'Legal Mobile App',
+    category: 'mobile-apps',
+    price: '₹79,999',
+    desc: 'Custom iOS and Android apps for law firms to offer on-the-go access to case updates, secure messaging, document uploads, and appointment booking.',
+    features: ['Native iOS & Android Apps', 'Push Notifications', 'Secure Client Messaging', 'Mobile Document Scanner', 'Case Status Updates'],
+    plans: [
+      { name: 'Client Portal App', price: '₹79,999', desc: 'Basic client access app', features: ['Status Updates', 'Secure Messaging', 'Push Notifications', '8 Weeks Delivery'] },
+      { name: 'Full Firm App', price: '₹1,39,999', desc: 'Comprehensive mobile app', features: ['Document Scanner', 'Payments', 'Biometric Login', '12 Weeks Delivery'] }
+    ]
+  },
+  'law-firm-seo-services': {
+    title: 'Law Firm SEO Services',
+    category: 'digital-marketing',
+    price: '₹19,999/mo',
+    desc: 'Specialized Search Engine Optimization for law firms. We target high-intent legal keywords and optimize your local presence to ensure you rank when clients need you most.',
+    features: ['Local SEO & GMB Optimization', 'Legal Keyword Strategy', 'Practice Area Page Optimization', 'High-Authority Legal Backlinks', 'Content Marketing (Legal Blogs)'],
+    plans: [
+      { name: 'Local Domination', price: '₹19,999/mo', desc: 'Focus on local search', features: ['20 Keywords', 'GMB Optimization', '2 Legal Articles/mo', 'Local Backlinks', 'Monthly Report'] },
+      { name: 'Practice Area Growth', price: '₹39,999/mo', desc: 'Aggressive growth strategy', features: ['50 Keywords', 'Technical SEO', '4 Legal Articles/mo', 'High-DA Backlinks', 'Bi-weekly Reports'] }
+    ]
+  },
+  'manufacturing-erp': {
+    title: 'Manufacturing ERP',
+    category: 'business-software',
+    price: '₹99,999',
+    desc: 'A comprehensive ERP system designed specifically for the manufacturing sector to unify operations, finance, supply chain, and production on a single platform.',
+    features: ['BOM (Bill of Materials) Management', 'Production Scheduling', 'Financial & Cost Accounting', 'Procurement & Vendor Portal', 'Order Management'],
+    plans: [
+      { name: 'Core ERP', price: '₹99,999', desc: 'Essential manufacturing modules', features: ['Inventory & Orders', 'Basic BOM', 'Finance Module', 'Admin Dashboard', '8 Weeks Delivery'] },
+      { name: 'Enterprise ERP', price: '₹1,99,999', desc: 'Full-scale factory management', features: ['Multi-plant Support', 'Advanced Scheduling', 'Quality Control', 'Custom API Ecosystem', '14 Weeks Delivery'] }
+    ]
+  },
+  'inventory-management': {
+    title: 'Inventory Management',
+    category: 'business-software',
+    price: '₹49,999',
+    desc: 'An intelligent inventory tracking system to manage raw materials, work-in-progress (WIP), and finished goods across multiple warehouses with barcode/RFID support.',
+    features: ['Real-time Stock Tracking', 'Barcode & RFID Integration', 'Automated Reorder Alerts', 'Multi-Warehouse Support', 'Batch & Expiry Tracking'],
+    plans: [
+      { name: 'Standard IMS', price: '₹49,999', desc: 'Single warehouse tracking', features: ['Stock Tracking', 'Reorder Alerts', 'Basic Reporting', '4 Weeks Delivery'] },
+      { name: 'Advanced IMS', price: '₹89,999', desc: 'Multi-location with Barcode', features: ['Barcode Integration', 'Multi-warehouse', 'Mobile App for Scanners', '8 Weeks Delivery'] }
+    ]
+  },
+  'production-planning-system': {
+    title: 'Production Planning System',
+    category: 'business-software',
+    price: '₹59,999',
+    desc: 'A dynamic scheduling and planning tool that aligns your production capacity with customer demand, minimizing downtime and maximizing throughput.',
+    features: ['Visual Gantt Chart Scheduling', 'Machine & Labor Capacity Planning', 'Material Requirement Planning (MRP)', 'Downtime Tracking', 'Job Routing & Sequencing'],
+    plans: [
+      { name: 'Basic Planner', price: '₹59,999', desc: 'Simple job scheduling', features: ['Visual Scheduling', 'Job Routing', 'Shift Management', '6 Weeks Delivery'] },
+      { name: 'Smart MRP', price: '₹1,19,999', desc: 'Advanced material & capacity planning', features: ['Full MRP', 'Capacity Planning', 'Downtime Tracking', '10 Weeks Delivery'] }
+    ]
+  },
+  'supply-chain-management': {
+    title: 'Supply Chain Management',
+    category: 'business-software',
+    price: '₹69,999',
+    desc: 'A robust SCM platform to track the flow of goods, information, and finances from suppliers to manufacturers to wholesalers to consumers.',
+    features: ['Supplier Portal', 'Logistics Tracking', 'Demand Forecasting', 'Freight & Shipping Management', 'Purchase Order Automation'],
+    plans: [
+      { name: 'SCM Core', price: '₹69,999', desc: 'Supplier & PO management', features: ['Supplier Portal', 'PO Automation', 'Basic Tracking', '6 Weeks Delivery'] },
+      { name: 'SCM Enterprise', price: '₹1,39,999', desc: 'Full supply chain visibility', features: ['Demand Forecasting', 'Logistics Integration', 'Advanced Analytics', '12 Weeks Delivery'] }
+    ]
+  },
+  'warehouse-management': {
+    title: 'Warehouse Management',
+    category: 'business-software',
+    price: '₹54,999',
+    desc: 'A complete Warehouse Management System (WMS) to optimize storage space, streamline picking and packing, and speed up dispatch operations.',
+    features: ['3D Warehouse Mapping', 'Put-away Optimization', 'Pick & Pack Workflows', 'Cross-docking Support', 'Shipping Label Generation'],
+    plans: [
+      { name: 'Basic WMS', price: '₹54,999', desc: 'Simple pick/pack/ship', features: ['Storage Location Mapping', 'Pick Lists', 'Label Generation', '5 Weeks Delivery'] },
+      { name: 'Smart WMS', price: '₹99,999', desc: 'Advanced routing & courier sync', features: ['Optimized Pick Routing', 'Courier API Integration', 'Returns Management', '9 Weeks Delivery'] }
+    ]
+  },
+  'vendor-management': {
+    title: 'Vendor Management',
+    category: 'business-software',
+    price: '₹39,999',
+    desc: 'A centralized portal to onboard vendors, manage contracts, evaluate supplier performance, and process payments securely.',
+    features: ['Digital Vendor Onboarding', 'Contract Lifecycle Management', 'Supplier Performance Scorecards', 'RFP / Quotation Bidding', 'Invoice Processing'],
+    plans: [
+      { name: 'Vendor Portal', price: '₹39,999', desc: 'Onboarding & Invoicing', features: ['Digital Onboarding', 'Invoice Uploads', 'Basic Directory', '4 Weeks Delivery'] },
+      { name: 'Procurement Suite', price: '₹79,999', desc: 'Bidding & Scorecards', features: ['RFP/Bidding Engine', 'Performance Scorecards', 'Contract Management', '8 Weeks Delivery'] }
+    ]
+  },
+  'crm-for-manufacturing': {
+    title: 'CRM for Manufacturing',
+    category: 'business-software',
+    price: '₹44,999',
+    desc: 'A specialized CRM tailored for the long sales cycles, complex quoting, and distributor relationship management typical in manufacturing.',
+    features: ['B2B Account Management', 'Complex Quote & Proposal Generator', 'Sales Pipeline Tracking', 'Distributor Portal', 'Sample Request Tracking'],
+    plans: [
+      { name: 'Sales Tracker', price: '₹44,999', desc: 'Manage direct B2B sales', features: ['Account Management', 'Pipeline Tracking', 'Basic Quoting', '5 Weeks Delivery'] },
+      { name: 'Channel CRM', price: '₹84,999', desc: 'Direct sales + Distributor portal', features: ['Distributor Portal', 'Complex Quoting', 'Sales Forecasting', '9 Weeks Delivery'] }
+    ]
+  },
+  'quality-control-software': {
+    title: 'Quality Control Software',
+    category: 'business-software',
+    price: '₹49,999',
+    desc: 'A digital QMS (Quality Management System) to standardize inspections, track defects, manage non-conformances (NCR), and ensure ISO compliance.',
+    features: ['Digital Inspection Checklists', 'Defect Tracking & Logging', 'CAPA (Corrective & Preventive Action)', 'SPC (Statistical Process Control) Charts', 'Document Control & SOPs'],
+    plans: [
+      { name: 'Digital QA', price: '₹49,999', desc: 'Digital checklists & tracking', features: ['Digital Checklists', 'Defect Logging', 'Basic Reports', '5 Weeks Delivery'] },
+      { name: 'Full QMS', price: '₹94,999', desc: 'Complete compliance suite', features: ['CAPA Workflows', 'SPC Charts', 'Document Control', '9 Weeks Delivery'] }
+    ]
+  },
+  'factory-automation-dashboard': {
+    title: 'Factory Automation Dashboard',
+    category: 'business-software',
+    price: '₹64,999',
+    desc: 'An Industrial IoT (IIoT) dashboard that connects to your PLC/SCADA systems to provide real-time visibility into machine health, production rates, and OEE.',
+    features: ['Real-time Machine Monitoring', 'OEE (Overall Equipment Effectiveness) Calculation', 'Predictive Maintenance Alerts', 'Energy Consumption Tracking', 'Custom KPI Dashboards'],
+    plans: [
+      { name: 'Basic Monitoring', price: '₹64,999', desc: 'Machine status & counts', features: ['Real-time Status', 'Production Counts', 'Basic Dashboard', '6 Weeks Delivery'] },
+      { name: 'Smart Factory', price: '₹1,24,999', desc: 'OEE & Predictive analytics', features: ['OEE Analytics', 'Predictive Alerts', 'Energy Tracking', '10 Weeks Delivery'] }
+    ]
+  },
+  'industrial-website-development': {
+    title: 'Industrial Website Development',
+    category: 'websites',
+    price: '₹29,999',
+    desc: 'Professional, technical websites designed for manufacturing companies to showcase capabilities, product catalogs, and certifications to global buyers.',
+    features: ['Dynamic Product Catalogs', 'Technical Spec Sheet Downloads', 'Facility & Equipment Showcase', 'Request for Quote (RFQ) Engine', 'Certification Display (ISO, etc.)'],
+    plans: [
+      { name: 'Corporate Profile', price: '₹29,999', desc: 'Professional capability showcase', features: ['Up to 15 Pages', 'Facility Showcase', 'Basic Contact Forms', '4 Weeks Delivery'] },
+      { name: 'Digital Catalog', price: '₹59,999', desc: 'Full product & RFQ site', features: ['Dynamic Product Catalog', 'RFQ Engine', 'Spec Downloads', 'SEO Setup', '8 Weeks Delivery'] }
+    ]
+  },
+  'ngo-website-development': {
+    title: 'NGO Website Development',
+    category: 'websites',
+    price: '₹19,999',
+    desc: 'A professionally designed, high-impact website for your NGO or non-profit that communicates your mission, builds trust with donors, and drives conversions.',
+    features: ['Impact Storytelling Pages', 'Online Donation Integration', 'Project & Program Showcases', 'Beneficiary Stories & Galleries', 'Volunteer Sign-up Forms'],
+    plans: [
+      { name: 'Impact Starter', price: '₹19,999', desc: 'Essential NGO online presence', features: ['Up to 10 Pages', 'Donation Button', 'Volunteer Form', 'Mobile Responsive', '2 Weeks Delivery'] },
+      { name: 'Mission Pro', price: '₹39,999', desc: 'Full-featured NGO website', features: ['Up to 25 Pages', 'Donation Gateway', 'Project Showcases', 'Blog & News', '4 Weeks Delivery'] }
+    ]
+  },
+  'donation-management-system': {
+    title: 'Donation Management System',
+    category: 'business-software',
+    price: '₹34,999',
+    desc: 'A comprehensive digital system to accept online donations, manage donor records, generate tax receipts (80G), and analyze fundraising performance.',
+    features: ['Online Payment Gateway (UPI, Card, Net Banking)', 'Automated 80G Tax Receipt Generation', 'Donor Database & History', 'Recurring Donation Setup', 'Campaign-wise Donation Tracking'],
+    plans: [
+      { name: 'Standard DMS', price: '₹34,999', desc: 'Core donation tracking', features: ['Online Payment Gateway', '80G Receipt Generation', 'Donor Database', 'Email Alerts', '4 Weeks Delivery'] },
+      { name: 'Advanced DMS', price: '₹69,999', desc: 'Full fundraising intelligence', features: ['Recurring Donations', 'Campaign Tracking', 'Financial Reports', 'WhatsApp Integration', '7 Weeks Delivery'] }
+    ]
+  },
+  'volunteer-management': {
+    title: 'Volunteer Management',
+    category: 'business-software',
+    price: '₹29,999',
+    desc: 'A dedicated platform to manage your volunteer lifecycle — from online applications and onboarding to scheduling, hour tracking, and appreciation.',
+    features: ['Online Volunteer Application Forms', 'Skills & Interest Matching', 'Event & Shift Scheduling', 'Volunteer Hour Tracking', 'Digital Certificate Generation'],
+    plans: [
+      { name: 'Volunteer Hub', price: '₹29,999', desc: 'Core volunteer coordination', features: ['Application Forms', 'Scheduling', 'Hour Tracking', 'Email Alerts', '4 Weeks Delivery'] },
+      { name: 'Volunteer Pro', price: '₹54,999', desc: 'Advanced management with App', features: ['Mobile App', 'Digital Certificates', 'Skills Matching', 'Analytics', '7 Weeks Delivery'] }
+    ]
+  },
+  'event-management-platform': {
+    title: 'Event Management Platform',
+    category: 'business-software',
+    price: '₹24,999',
+    desc: 'A complete digital platform to plan, promote, and manage NGO events — from gala dinners and marathon runs to webinars and community drives.',
+    features: ['Event Creation & Landing Pages', 'Online Ticket & RSVP Management', 'Donation Goal Thermometer', 'Sponsor Management', 'QR Code Check-in System'],
+    plans: [
+      { name: 'Event Starter', price: '₹24,999', desc: 'Single event management', features: ['Event Landing Page', 'RSVP Management', 'QR Check-in', 'Email Blast', '2 Weeks Delivery'] },
+      { name: 'Event Suite', price: '₹49,999', desc: 'Multi-event management platform', features: ['Multi-event Dashboard', 'Ticketing & Donations', 'Sponsor Portal', 'Analytics', '5 Weeks Delivery'] }
+    ]
+  },
+  'membership-management': {
+    title: 'Membership Management',
+    category: 'business-software',
+    price: '₹24,999',
+    desc: 'A structured membership system to define tiers, collect annual fees, provide member benefits, and build a loyal community around your cause.',
+    features: ['Tiered Membership Plans', 'Online Membership Fee Collection', 'Member-only Content & Resources', 'Automatic Renewal Reminders', 'Digital Membership Cards'],
+    plans: [
+      { name: 'Basic Membership', price: '₹24,999', desc: 'Simple membership portal', features: ['2 Membership Tiers', 'Fee Collection', 'Member Database', 'Email Reminders', '3 Weeks Delivery'] },
+      { name: 'Community Pro', price: '₹49,999', desc: 'Full membership community', features: ['Unlimited Tiers', 'Digital Cards', 'Member-only Content', 'Voting & Polls', '6 Weeks Delivery'] }
+    ]
+  },
+  'fundraising-portal': {
+    title: 'Fundraising Portal',
+    category: 'business-software',
+    price: '₹39,999',
+    desc: 'A multi-campaign fundraising portal where donors can browse active causes, make donations, track impact, and share campaigns on social media.',
+    features: ['Multi-campaign Listing', 'Individual Campaign Pages with Goal Tracker', 'Peer-to-Peer Fundraising', 'Social Sharing Integration', 'Donor Wall of Fame'],
+    plans: [
+      { name: 'Campaign Portal', price: '₹39,999', desc: 'Up to 5 active campaigns', features: ['5 Campaign Pages', 'Goal Tracker', 'Donation Gateway', 'Social Sharing', '4 Weeks Delivery'] },
+      { name: 'Impact Platform', price: '₹74,999', desc: 'Full peer-to-peer fundraising', features: ['Unlimited Campaigns', 'Peer-to-Peer Tools', 'Donor Wall', 'Advanced Analytics', '8 Weeks Delivery'] }
+    ]
+  },
+  'campaign-management': {
+    title: 'Campaign Management',
+    category: 'business-software',
+    price: '₹34,999',
+    desc: 'A digital command center to plan and manage awareness campaigns — coordinating messaging, channels, volunteers, and outcomes from a single dashboard.',
+    features: ['Campaign Planning & Calendar', 'Multi-channel Message Scheduling (Email, WhatsApp, Social)', 'Petition & Pledge Collection', 'Supporter Database Segmentation', 'A/B Testing for Messaging'],
+    plans: [
+      { name: 'Campaign Hub', price: '₹34,999', desc: 'Manage one campaign at a time', features: ['Campaign Dashboard', 'Email & WhatsApp Blasts', 'Petition Forms', 'Basic Analytics', '4 Weeks Delivery'] },
+      { name: 'Multi-Campaign Suite', price: '₹64,999', desc: 'Run multiple campaigns simultaneously', features: ['Unlimited Campaigns', 'Supporter Segmentation', 'A/B Testing', 'Full Analytics', '7 Weeks Delivery'] }
+    ]
+  },
+  'ngo-mobile-app': {
+    title: 'NGO Mobile App',
+    category: 'mobile-apps',
+    price: '₹69,999',
+    desc: 'A branded iOS and Android mobile application for your NGO to engage donors, update supporters, register volunteers, and process donations on the go.',
+    features: ['Branded iOS & Android App', 'In-App Donation with UPI/Card', 'Push Notifications for Campaigns & Updates', 'Project Progress Updates', 'Volunteer Registration & Scheduling'],
+    plans: [
+      { name: 'Supporter App', price: '₹69,999', desc: 'Engage donors & supporters', features: ['iOS & Android App', 'Push Notifications', 'In-App Donations', 'News Feed', '8 Weeks Delivery'] },
+      { name: 'Full NGO App', price: '₹1,19,999', desc: 'Complete NGO mobile platform', features: ['Volunteer Management', 'Event RSVPs', 'Campaign Updates', 'Offline Content', '12 Weeks Delivery'] }
+    ]
+  },
+  'crm-for-ngos': {
+    title: 'CRM for NGOs',
+    category: 'business-software',
+    price: '₹29,999',
+    desc: 'A purpose-built CRM for non-profits to consolidate donor data, track interactions, segment audiences, and run targeted communications to build lasting relationships.',
+    features: ['360° Donor Profiles', 'Donation History & RFM Analysis', 'Volunteer & Partner Tracking', 'Automated Follow-up Sequences', 'Grant Application Tracking'],
+    plans: [
+      { name: 'NGO CRM Starter', price: '₹29,999', desc: 'Core donor management', features: ['Donor Profiles', 'Donation History', 'Email Campaigns', 'Basic Reports', '4 Weeks Delivery'] },
+      { name: 'NGO CRM Pro', price: '₹59,999', desc: 'Advanced relationship intelligence', features: ['RFM Analysis', 'Automated Workflows', 'Grant Tracking', 'Advanced Dashboards', '7 Weeks Delivery'] }
+    ]
+  },
+  'digital-marketing-for-ngos': {
+    title: 'Digital Marketing for NGOs',
+    category: 'digital-marketing',
+    price: '₹14,999/mo',
+    desc: 'Specialized digital marketing services for non-profits, including Google Ad Grants management, social media campaigns, SEO for NGO websites, and email marketing.',
+    features: ['Google Ad Grants Management ($10,000/mo)', 'Meta Ads for Cause Awareness & Donations', 'SEO for NGO Websites', 'Social Media Management', 'Email Campaign Automation'],
+    plans: [
+      { name: 'NGO Growth', price: '₹14,999/mo', desc: 'Awareness & social growth', features: ['Social Media Mgt', 'Google Grants Setup', 'Basic SEO', '10 Posts/mo', 'Monthly Report'] },
+      { name: 'NGO Impact', price: '₹29,999/mo', desc: 'Full-funnel digital strategy', features: ['Google Grants Mgt', 'Meta Donation Ads', 'Email Campaigns', 'Advanced SEO', 'Bi-weekly Reports'] }
+    ]
   }
 };
 

@@ -94,31 +94,68 @@ export default function Header({ cartCount = 0, wishlistCount = 0, onCartOpen, o
           gap: '20px',
         }}>
 
-          {/* Logo */}
-          <a href="/" style={{ display: 'flex', alignItems: 'center', textDecoration: 'none', flexShrink: 0 }}>
-            <img
-              src="/techmart24-logo.png"
-              alt="Tech Mart 24"
-              className="header-logo-img nav-logo-diag"
-              style={{ height: '68px', width: 'auto', objectFit: 'contain', display: 'block' }}
-            />
+          {/* Logo — diagonal shape + bubble animation */}
+          <a href="/" style={{ textDecoration: 'none', flexShrink: 0 }}>
+            <div className="logo-diag-wrap">
+              {/* Rising bubbles */}
+              <span className="logo-bubble lb1" />
+              <span className="logo-bubble lb2" />
+              <span className="logo-bubble lb3" />
+              <span className="logo-bubble lb4" />
+              <span className="logo-bubble lb5" />
+              <span className="logo-bubble lb6" />
+              <span className="logo-bubble lb7" />
+              {/* Logo image — un-skewed */}
+              <img
+                src="/techmart24-logo.png"
+                alt="Tech Mart 24"
+                className="header-logo-img logo-diag-inner"
+                style={{ height: '62px', width: 'auto', objectFit: 'contain', display: 'block', position: 'relative', zIndex: 2 }}
+              />
+            </div>
           </a>
           <style>{`
-            @keyframes logoDiagonal {
-              0%   { transform: translate(0px, 0px) rotate(-1deg); }
-              25%  { transform: translate(3px, -3px) rotate(0.5deg); }
-              50%  { transform: translate(5px, -5px) rotate(1deg); }
-              75%  { transform: translate(2px, -2px) rotate(0deg); }
-              100% { transform: translate(0px, 0px) rotate(-1deg); }
+            .logo-diag-wrap {
+              position: relative;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              padding: 8px 22px 8px 16px;
+              background: linear-gradient(135deg, #AADF00 0%, #C8F000 60%, #92C200 100%);
+              transform: skewX(-14deg);
+              border-radius: 6px;
+              overflow: hidden;
+              box-shadow: 0 4px 18px rgba(170,223,0,0.45);
             }
-            .nav-logo-diag {
-              animation: logoDiagonal 3s ease-in-out infinite;
-              transform-origin: center center;
-              transition: filter 0.2s;
+            .logo-diag-inner {
+              transform: skewX(14deg);
             }
-            .nav-logo-diag:hover {
-              filter: drop-shadow(0 4px 12px rgba(170,223,0,0.6));
-              animation-play-state: paused;
+            /* Bubble particles */
+            .logo-bubble {
+              position: absolute;
+              border-radius: 50%;
+              background: rgba(255,255,255,0.55);
+              transform: skewX(14deg);
+              animation: logoBubbleRise 3s ease-in infinite;
+              bottom: -12px;
+            }
+            .lb1 { width: 7px;  height: 7px;  left: 8%;  animation-delay: 0s;    animation-duration: 2.4s; }
+            .lb2 { width: 5px;  height: 5px;  left: 20%; animation-delay: 0.5s;  animation-duration: 3.1s; }
+            .lb3 { width: 9px;  height: 9px;  left: 35%; animation-delay: 0.9s;  animation-duration: 2.7s; }
+            .lb4 { width: 6px;  height: 6px;  left: 50%; animation-delay: 1.3s;  animation-duration: 3.4s; }
+            .lb5 { width: 8px;  height: 8px;  left: 63%; animation-delay: 0.2s;  animation-duration: 2.9s; }
+            .lb6 { width: 4px;  height: 4px;  left: 77%; animation-delay: 1.7s;  animation-duration: 3.2s; }
+            .lb7 { width: 6px;  height: 6px;  left: 90%; animation-delay: 0.7s;  animation-duration: 2.6s; }
+            @keyframes logoBubbleRise {
+              0%   { transform: skewX(14deg) translateY(0)    scale(0.4); opacity: 0;   }
+              15%  { opacity: 0.9; }
+              80%  { opacity: 0.4; }
+              100% { transform: skewX(14deg) translateY(-70px) scale(1);  opacity: 0;   }
+            }
+            .logo-diag-wrap:hover {
+              box-shadow: 0 6px 24px rgba(170,223,0,0.65);
+              transform: skewX(-14deg) scale(1.03);
+              transition: box-shadow 0.2s, transform 0.2s;
             }
           `}</style>
 

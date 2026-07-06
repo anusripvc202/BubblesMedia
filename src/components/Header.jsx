@@ -99,10 +99,29 @@ export default function Header({ cartCount = 0, wishlistCount = 0, onCartOpen, o
             <img
               src="/techmart24-logo.png"
               alt="Tech Mart 24"
-              className="header-logo-img"
+              className="header-logo-img nav-logo-diag"
               style={{ height: '68px', width: 'auto', objectFit: 'contain', display: 'block' }}
             />
           </a>
+          <style>{`
+            @keyframes logoDiagonal {
+              0%   { transform: translate(0px, 0px) rotate(-1deg); }
+              25%  { transform: translate(3px, -3px) rotate(0.5deg); }
+              50%  { transform: translate(5px, -5px) rotate(1deg); }
+              75%  { transform: translate(2px, -2px) rotate(0deg); }
+              100% { transform: translate(0px, 0px) rotate(-1deg); }
+            }
+            .nav-logo-diag {
+              animation: logoDiagonal 3s ease-in-out infinite;
+              transform-origin: center center;
+              transition: filter 0.2s;
+            }
+            .nav-logo-diag:hover {
+              filter: drop-shadow(0 4px 12px rgba(170,223,0,0.6));
+              animation-play-state: paused;
+            }
+          `}</style>
+
 
           {/* Categories dropdown (Desktop only) */}
           <div className="hide-on-tablet" ref={desktopCatRef} style={{ position: 'relative' }}>

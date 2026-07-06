@@ -177,7 +177,14 @@ export default function SolutionsGrid({ searchTerm, activeCategory, onEnquire })
         </div>
       ) : (
         <>
-          <div className="solutions-row-desktop" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '18px', width: '100%' }}>
+          <div className="solutions-row-desktop" style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(3, 1fr)',
+            gap: '18px',
+            width: '100%',
+            padding: '6px 6px 12px',
+            boxSizing: 'border-box'
+          }}>
             {visibleSolutions.map((sol) => {
               const theme = categoryThemes[sol.category] || { color: 'var(--primary)', bg: 'var(--primary-light)' };
               return (

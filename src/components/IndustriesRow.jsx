@@ -347,7 +347,9 @@ export default function IndustriesRow({ onSelectIndustry }) {
         display: 'grid',
         gridTemplateColumns: 'repeat(4, 1fr)',
         gap: '18px',
-        width: '100%'
+        width: '100%',
+        padding: '6px 6px 12px',
+        boxSizing: 'border-box'
       }}>
         {visibleIndustries.map((ind, idx) => (
           <button

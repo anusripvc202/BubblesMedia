@@ -110,28 +110,16 @@ export default function CategoryPage() {
       }
     });
 
-    setQuoteInitialData({
-      title: `Calculator Estimate: ${currentCategory.name}`,
-      price: `₹${estimatedPrice.toLocaleString('en-IN')}`,
-      description: `User selected specifications:\n${specDetails.join('\n')}`
-    });
-    setIsQuoteOpen(true);
+    const subjectStr = `Calculator Estimate for ${currentCategory.name} (₹${estimatedPrice.toLocaleString('en-IN')}) - Specs: ${specDetails.join(', ')}`;
+    router.push(`/contact?subject=${encodeURIComponent(subjectStr)}`);
   };
 
   const handleEnquireService = (service) => {
-    setQuoteInitialData({
-      title: `Enquiry: ${service.title}`,
-      price: `Starts from ${service.price}`
-    });
-    setIsQuoteOpen(true);
+    router.push(`/contact?subject=${encodeURIComponent(service.title + ' (' + service.price + ')')}`);
   };
 
   const handleEnquirePlan = (serviceTitle, plan) => {
-    setQuoteInitialData({
-      title: `Book Plan: ${serviceTitle} - ${plan.name}`,
-      price: `Plan Price: ${plan.price}`
-    });
-    setIsQuoteOpen(true);
+    router.push(`/contact?subject=${encodeURIComponent(serviceTitle + ' - ' + plan.name + ' Plan (' + plan.price + ')')}`);
   };
 
   const accentColor = currentCategory.accentColor || 'var(--primary)';

@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from 'react';
-import { useParams } from 'next/navigation';
+import { useParams, useRouter } from 'next/navigation';
 import Header from '../../../components/Header';
 import Footer from '../../../components/Footer';
 import QuoteModal from '../../../components/QuoteModal';
@@ -9,6 +9,7 @@ import { serviceDatabase } from '../../../data/servicesData';
 
 export default function ServiceDetails() {
   const { id } = useParams();
+  const router = useRouter();
   const [isQuoteOpen, setIsQuoteOpen] = useState(false);
   const [quoteData, setQuoteData] = useState(null);
 
@@ -25,11 +26,7 @@ export default function ServiceDetails() {
   }
 
   const handleBookPlan = (plan) => {
-    setQuoteData({
-      title: `Book Plan: ${service.title} - ${plan.name}`,
-      price: `Plan Price: ${plan.price}`
-    });
-    setIsQuoteOpen(true);
+    router.push(`/contact?subject=${encodeURIComponent('Book Plan: ' + service.title + ' - ' + plan.name + ' Plan (' + plan.price + ')')}`);
   };
 
   return (

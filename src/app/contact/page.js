@@ -1,17 +1,27 @@
 "use client";
 
-import React, { useState } from 'react';
+import React, { useState, useEffect, Suspense } from 'react';
+import { useSearchParams } from 'next/navigation';
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
 import QuoteModal from '../../components/QuoteModal';
 
-export default function Contact() {
+function ContactFormContent() {
+  const searchParams = useSearchParams();
+  const subject = searchParams.get('subject');
+
   const [isQuoteOpen, setIsQuoteOpen] = useState(false);
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [phone, setPhone] = useState('');
   const [message, setMessage] = useState('');
   const [isSubmitted, setIsSubmitted] = useState(false);
+
+  useEffect(() => {
+    if (subject) {
+      setMessage(`Hello, I would like to enquire about: ${subject}`);
+    }
+  }, [subject]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -217,5 +227,13 @@ export default function Contact() {
         onClose={() => setIsQuoteOpen(false)}
       />
     </div>
+  );
+}
+
+export default function Contact() {
+  return (
+    <Suspense fallback={<div style={{ minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center', background: 'var(--bg-base)' }}>Loading...</div>}>
+      <ContactFormContent />
+    </Suspense>
   );
 }

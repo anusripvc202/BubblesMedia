@@ -108,10 +108,11 @@ export default function PromoBanners({ onSelectPackage }) {
                 objectFit: 'contain',
                 borderRadius: '12px',
                 boxShadow: leftHovered 
-                  ? '0 15px 30px rgba(0, 0, 0, 0.3)' 
-                  : '0 8px 20px rgba(0, 0, 0, 0.2)',
+                  ? '0 15px 30px rgba(0, 0, 0, 0.25)' 
+                  : '0 8px 20px rgba(0, 0, 0, 0.15)',
                 transform: leftHovered ? 'translateY(-6px) scale(1.03)' : 'translateY(0) scale(1)',
-                transition: 'all 0.3s cubic-bezier(0.16, 1, 0.3, 1)'
+                transition: 'all 0.3s cubic-bezier(0.16, 1, 0.3, 1)',
+                filter: 'hue-rotate(55deg)'
               }}
             />
           </div>
@@ -289,28 +290,36 @@ export default function PromoBanners({ onSelectPackage }) {
 
           {/* BOX 3: Enterprise Custom Solutions Pack */}
           <div style={{
-            background: 'linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%)',
+            background: 'linear-gradient(135deg, #0F1E3C 0%, #1e293b 100%)',
             borderRadius: '16px',
             padding: '18px 24px',
-            border: '1px solid rgba(59, 130, 246, 0.15)',
+            border: '1px solid rgba(255, 255, 255, 0.08)',
             display: 'flex',
             justifyContent: 'space-between',
             alignItems: 'center',
             gap: '16px',
             boxShadow: 'var(--shadow-sm)',
             minHeight: '120px',
-            transition: 'transform 0.2s ease',
-            cursor: 'pointer'
+            transition: 'all 0.2s ease',
+            cursor: 'pointer',
+            color: '#white'
           }}
           onClick={() => onSelectPackage({ title: 'Enterprise Custom Solutions', price: 'Custom Quote' })}
-          onMouseEnter={e => e.currentTarget.style.transform = 'translateY(-2px)'}
-          onMouseLeave={e => e.currentTarget.style.transform = 'translateY(0)'}
+          onMouseEnter={e => {
+            e.currentTarget.style.transform = 'translateY(-2px)';
+            e.currentTarget.style.boxShadow = '0 8px 24px rgba(15, 30, 60, 0.2)';
+          }}
+          onMouseLeave={e => {
+            e.currentTarget.style.transform = 'translateY(0)';
+            e.currentTarget.style.boxShadow = 'var(--shadow-sm)';
+          }}
           >
             {/* Left custom badge & info */}
             <div style={{ display: 'flex', alignItems: 'center', gap: '14px' }}>
               <div style={{
-                background: '#3b82f6',
-                color: '#fff',
+                background: 'rgba(255, 255, 255, 0.08)',
+                color: 'var(--primary)',
+                border: '1px solid rgba(255, 255, 255, 0.12)',
                 width: '42px',
                 height: '42px',
                 borderRadius: '10px',
@@ -319,21 +328,20 @@ export default function PromoBanners({ onSelectPackage }) {
                 justifyContent: 'center',
                 fontSize: '1.25rem',
                 fontWeight: 'bold',
-                flexShrink: 0,
-                boxShadow: '0 4px 10px rgba(59, 130, 246, 0.2)'
+                flexShrink: 0
               }}>
                 ⚙️
               </div>
               <div style={{ display: 'flex', flexDirection: 'column', gap: '3px' }}>
-                <h3 style={{ fontSize: '0.98rem', fontWeight: '900', color: '#1e3a8a', margin: 0, letterSpacing: '-0.01em' }}>
+                <h3 style={{ fontSize: '0.98rem', fontWeight: '900', color: '#fff', margin: 0, letterSpacing: '-0.01em' }}>
                   Enterprise Solutions Suite
                 </h3>
-                <p style={{ fontSize: '0.72rem', color: '#2563eb', fontWeight: '600', margin: 0 }}>
+                <p style={{ fontSize: '0.72rem', color: 'rgba(255, 255, 255, 0.7)', fontWeight: '600', margin: 0 }}>
                   Custom ERPs, API Systems & Scale Consultations
                 </p>
                 <span style={{
-                  background: '#3b82f6',
-                  color: '#fff',
+                  background: 'var(--primary)',
+                  color: 'var(--secondary)',
                   padding: '4px 12px',
                   borderRadius: '6px',
                   fontWeight: '800',
@@ -341,7 +349,7 @@ export default function PromoBanners({ onSelectPackage }) {
                   marginTop: '6px',
                   width: 'fit-content',
                   textAlign: 'center',
-                  boxShadow: '0 3px 8px rgba(59, 130, 246, 0.25)'
+                  boxShadow: '0 3px 8px rgba(170, 223, 0, 0.15)'
                 }}>
                   Enquire Now
                 </span>
@@ -350,11 +358,11 @@ export default function PromoBanners({ onSelectPackage }) {
 
             {/* Right checklist badge */}
             <div style={{ textAlign: 'right', flexShrink: 0 }}>
-              <span style={{ display: 'block', fontSize: '0.62rem', color: '#60a5fa', fontWeight: '800', textTransform: 'uppercase' }}>Consultation</span>
-              <span style={{ display: 'block', fontSize: '1.12rem', fontWeight: '900', color: '#1e3a8a', fontFamily: 'var(--font-display)', lineHeight: 1.1, marginTop: '2px' }}>
+              <span style={{ display: 'block', fontSize: '0.62rem', color: 'rgba(255, 255, 255, 0.4)', fontWeight: '800', textTransform: 'uppercase' }}>Consultation</span>
+              <span style={{ display: 'block', fontSize: '1.12rem', fontWeight: '900', color: 'var(--primary)', fontFamily: 'var(--font-display)', lineHeight: 1.1, marginTop: '2px' }}>
                 FREE AUDIT
               </span>
-              <span style={{ display: 'block', fontSize: '0.58rem', color: '#2563eb', fontWeight: '800', textTransform: 'uppercase', marginTop: '2px' }}>
+              <span style={{ display: 'block', fontSize: '0.58rem', color: 'rgba(255, 255, 255, 0.5)', fontWeight: '800', textTransform: 'uppercase', marginTop: '2px' }}>
                 1-on-1 Strategy
               </span>
             </div>

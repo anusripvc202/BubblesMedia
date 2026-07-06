@@ -94,8 +94,8 @@ export default function Header({ cartCount = 0, wishlistCount = 0, onCartOpen, o
           gap: '20px',
         }}>
 
-          {/* Logo — diagonal tilt */}
-          <a href="/" style={{ textDecoration: 'none', flexShrink: 0 }}>
+          {/* Logo — fully diagonal */}
+          <a href="/" style={{ textDecoration: 'none', flexShrink: 0, display: 'flex', alignItems: 'center' }}>
             <img
               src="/techmart24-logo.png"
               alt="Tech Mart 24"
@@ -105,11 +105,11 @@ export default function Header({ cartCount = 0, wishlistCount = 0, onCartOpen, o
                 width: 'auto',
                 objectFit: 'contain',
                 display: 'block',
-                transform: 'skewX(-12deg)',
-                transition: 'transform 0.2s ease',
+                transform: 'rotate(-15deg)',
+                transition: 'transform 0.3s ease',
               }}
-              onMouseEnter={e => e.currentTarget.style.transform = 'skewX(-12deg) scale(1.05)'}
-              onMouseLeave={e => e.currentTarget.style.transform = 'skewX(-12deg)'}
+              onMouseEnter={e => e.currentTarget.style.transform = 'rotate(0deg) scale(1.05)'}
+              onMouseLeave={e => e.currentTarget.style.transform = 'rotate(-15deg)'}
             />
           </a>
 

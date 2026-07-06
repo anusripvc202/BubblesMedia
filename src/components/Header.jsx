@@ -94,24 +94,69 @@ export default function Header({ cartCount = 0, wishlistCount = 0, onCartOpen, o
           gap: '20px',
         }}>
 
-          {/* Logo — fully diagonal */}
-          <a href="/" style={{ textDecoration: 'none', flexShrink: 0, display: 'flex', alignItems: 'center' }}>
-            <img
-              src="/techmart24-logo.png"
-              alt="Tech Mart 24"
-              className="header-logo-img"
-              style={{
-                height: '68px',
-                width: 'auto',
-                objectFit: 'contain',
-                display: 'block',
-                transform: 'rotate(-15deg)',
-                transition: 'transform 0.3s ease',
-              }}
-              onMouseEnter={e => e.currentTarget.style.transform = 'rotate(0deg) scale(1.05)'}
-              onMouseLeave={e => e.currentTarget.style.transform = 'rotate(-15deg)'}
-            />
+          {/* Logo — diagonal + visible bubble effect (no solid background) */}
+          <a href="/" style={{ textDecoration: 'none', flexShrink: 0, display: 'flex', alignItems: 'center', position: 'relative' }}>
+            <div className="logo-bubble-container" style={{ position: 'relative', overflow: 'hidden', padding: '10px 15px' }}>
+              {/* Colored rising bubbles visible on white background */}
+              <span className="logo-bubble-colored lbc1" />
+              <span className="logo-bubble-colored lbc2" />
+              <span className="logo-bubble-colored lbc3" />
+              <span className="logo-bubble-colored lbc4" />
+              <span className="logo-bubble-colored lbc5" />
+              <span className="logo-bubble-colored lbc6" />
+              
+              <img
+                src="/techmart24-logo.png"
+                alt="Tech Mart 24"
+                className="header-logo-img"
+                style={{
+                  height: '68px',
+                  width: 'auto',
+                  objectFit: 'contain',
+                  display: 'block',
+                  transform: 'rotate(-10deg)',
+                  position: 'relative',
+                  zIndex: 2,
+                  transition: 'transform 0.3s ease',
+                }}
+                onMouseEnter={e => e.currentTarget.style.transform = 'rotate(0deg) scale(1.05)'}
+                onMouseLeave={e => e.currentTarget.style.transform = 'rotate(-10deg)'}
+              />
+            </div>
           </a>
+          <style>{`
+            .logo-bubble-container {
+              border-radius: 8px;
+              transition: background 0.3s;
+            }
+            .logo-bubble-container:hover {
+              background: rgba(170,223,0,0.05);
+            }
+            /* Colored bubbles visible on white background */
+            .logo-bubble-colored {
+              position: absolute;
+              border-radius: 50%;
+              bottom: -15px;
+              z-index: 1;
+              pointer-events: none;
+              animation: logoBubbleRiseColored 3.5s ease-in infinite;
+            }
+            /* Mix of green and dark blue/grey translucent bubbles */
+            .lbc1 { width: 8px;  height: 8px;  left: 15%; background: rgba(170,223,0,0.4);  animation-delay: 0s;   animation-duration: 2.8s; }
+            .lbc2 { width: 6px;  height: 6px;  left: 35%; background: rgba(15,30,60,0.2);    animation-delay: 0.7s; animation-duration: 3.5s; }
+            .lbc3 { width: 10px; height: 10px; left: 55%; background: rgba(170,223,0,0.3);  animation-delay: 1.4s; animation-duration: 3.0s; }
+            .lbc4 { width: 5px;  height: 5px;  left: 75%; background: rgba(15,30,60,0.15);   animation-delay: 2.0s; animation-duration: 4.0s; }
+            .lbc5 { width: 9px;  height: 9px;  left: 25%; background: rgba(170,223,0,0.35);  animation-delay: 2.5s; animation-duration: 2.5s; }
+            .lbc6 { width: 7px;  height: 7px;  left: 85%; background: rgba(170,223,0,0.5);   animation-delay: 1.0s; animation-duration: 3.2s; }
+            
+            @keyframes logoBubbleRiseColored {
+              0%   { transform: translateY(0) scale(0.3); opacity: 0; }
+              15%  { opacity: 0.8; }
+              85%  { opacity: 0.4; }
+              100% { transform: translateY(-85px) scale(1.2); opacity: 0; }
+            }
+          `}</style>
+
 
 
           {/* Categories dropdown (Desktop only) */}

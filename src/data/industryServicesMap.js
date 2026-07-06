@@ -165,21 +165,25 @@ export const industryServicesMap = {
       { id: 'digital-marketing-for-ngos', label: 'Digital Marketing for NGOs' },
     ]
   },
-  'Startups & Entrepreneurs': {
+    'Startups & Entrepreneurs': {
     color: '#3b82f6',
     bg: '#eff6ff',
     tagline: 'MVP development, product engineering & startup branding',
     services: [
-      { id: 'business-websites', label: 'Startup Landing Page / Website' },
-      { id: 'mobile-app-dev', label: 'MVP Mobile App Development' },
-      { id: 'ai-agents', label: 'AI-Powered Product Feature' },
-      { id: 'logo-branding', label: 'Startup Brand Identity & Logo' },
-      { id: 'custom-software', label: 'SaaS / Product Engineering' },
-      { id: 'seo-services', label: 'Product SEO & Content Strategy' },
-      { id: 'social-media-marketing', label: 'Startup Growth Marketing' },
-      { id: 'cloud-hosting', label: 'Scalable Cloud Infrastructure' },
+      { id: 'startup-website', label: 'Startup Website Development' },
+      { id: 'mvp-development', label: 'MVP Development' },
+      { id: 'saas-product-development', label: 'SaaS Product Development' },
+      { id: 'crm-development', label: 'CRM Development' },
+      { id: 'mobile-app-development', label: 'Mobile App Development' },
+      { id: 'ai-integration-services', label: 'AI Integration Services' },
+      { id: 'cloud-solutions', label: 'Cloud Solutions' },
+      { id: 'branding-services', label: 'Branding Services' },
+      { id: 'seo-services', label: 'SEO Services' },
+      { id: 'digital-marketing', label: 'Digital Marketing' },
+      { id: 'growth-consulting', label: 'Growth Consulting' },
     ]
   },
+
   'Travel & Tourism': {
     color: '#0ea5e9',
     bg: '#e0f2fe',
@@ -210,6 +214,161 @@ export const industryServicesMap = {
       { id: 'cloud-hosting', label: 'Cloud Hosting & Infrastructure' },
       { id: 'logo-branding', label: 'Brand Identity & Design' },
       { id: 'social-media-marketing', label: 'Digital Marketing Services' },
+    ]
+  },
+  'Finance & Banking': {
+    color: '#1d4ed8',
+    bg: '#eff6ff',
+    tagline: 'Fintech apps, banking portals & financial management solutions',
+    services: [
+      { id: 'fintech-app-development', label: 'Fintech App Development' },
+      { id: 'banking-website', label: 'Banking & Finance Website' },
+      { id: 'loan-management-software', label: 'Loan Management Software' },
+      { id: 'nbfc-portal', label: 'NBFC / Lending Portal' },
+      { id: 'investment-platform', label: 'Investment Platform' },
+      { id: 'finance-crm', label: 'Finance CRM' },
+      { id: 'digital-wallet-app', label: 'Digital Wallet App' },
+      { id: 'financial-analytics-dashboard', label: 'Financial Analytics Dashboard' },
+    ]
+  },
+  'Insurance Solutions': {
+    color: '#0f766e',
+    bg: '#f0fdfa',
+    tagline: 'Policy portals, claims management & insurance CRM systems',
+    services: [
+      { id: 'insurance-website', label: 'Insurance Company Website' },
+      { id: 'policy-management-system', label: 'Policy Management System' },
+      { id: 'claims-management', label: 'Claims Management System' },
+      { id: 'insurance-agent-portal', label: 'Insurance Agent Portal' },
+      { id: 'insurance-crm', label: 'Insurance CRM' },
+      { id: 'insurance-mobile-app', label: 'Insurance Mobile App' },
+      { id: 'insurance-comparison-portal', label: 'Insurance Comparison Portal' },
+    ]
+  },
+  'Logistics Solutions': {
+    color: '#b45309',
+    bg: '#fffbeb',
+    tagline: 'Fleet management, shipment tracking & logistics automation',
+    services: [
+      { id: 'logistics-website', label: 'Logistics Company Website' },
+      { id: 'fleet-management-system', label: 'Fleet Management System' },
+      { id: 'shipment-tracking-platform', label: 'Shipment Tracking Platform' },
+      { id: 'transport-management-system', label: 'Transport Management System (TMS)' },
+      { id: 'delivery-tracking-app', label: 'Delivery Tracking App' },
+      { id: 'logistics-crm', label: 'Logistics CRM' },
+      { id: 'route-optimization-software', label: 'Route Optimization Software' },
+    ]
+  },
+  'Automobile Solutions': {
+    color: '#374151',
+    bg: '#f9fafb',
+    tagline: 'Dealership portals, service management & auto e-commerce',
+    services: [
+      { id: 'automobile-dealership-website', label: 'Automobile Dealership Website' },
+      { id: 'vehicle-inventory-management', label: 'Vehicle Inventory Management' },
+      { id: 'car-booking-system', label: 'Car Booking & Test Drive System' },
+      { id: 'service-center-management', label: 'Service Center Management' },
+      { id: 'automobile-mobile-app', label: 'Automobile Mobile App' },
+      { id: 'auto-parts-ecommerce', label: 'Auto Parts E-commerce Store' },
+      { id: 'automobile-crm', label: 'Automobile CRM' },
+    ]
+  },
+  'Fitness Solutions': {
+    color: '#16a34a',
+    bg: '#f0fdf4',
+    tagline: 'Gym management, member apps & online fitness platforms',
+    services: [
+      { id: 'fitness-gym-website', label: 'Gym & Fitness Center Website' },
+      { id: 'gym-member-management', label: 'Gym Member Management Software' },
+      { id: 'online-class-booking', label: 'Online Class Booking System' },
+      { id: 'fitness-mobile-app', label: 'Fitness Mobile App' },
+      { id: 'workout-nutrition-app', label: 'Workout & Nutrition Tracking App' },
+      { id: 'gym-crm', label: 'Gym CRM' },
+      { id: 'fitness-digital-marketing', label: 'Fitness Digital Marketing' },
+    ]
+  },
+  'Event Management Solutions': {
+    color: '#7c3aed',
+    bg: '#faf5ff',
+    tagline: 'Event company websites, booking portals & vendor management',
+    services: [
+      { id: 'event-company-website', label: 'Event Company Website' },
+      { id: 'event-booking-platform', label: 'Event Booking Platform' },
+      { id: 'ticketing-rsvp-system', label: 'Ticketing & RSVP System' },
+      { id: 'event-vendor-management', label: 'Event Vendor Management' },
+      { id: 'event-mobile-app', label: 'Event Mobile App' },
+      { id: 'event-crm', label: 'Event CRM' },
+      { id: 'digital-invitations-platform', label: 'Digital Invitations Platform' },
+    ]
+  },
+  'Agriculture Solutions': {
+    color: '#65a30d',
+    bg: '#f7fee7',
+    tagline: 'AgriTech portals, farm management & crop monitoring systems',
+    services: [
+      { id: 'agri-website', label: 'Agriculture Company Website' },
+      { id: 'farm-management-system', label: 'Farm Management System' },
+      { id: 'crop-monitoring-dashboard', label: 'Crop Monitoring Dashboard' },
+      { id: 'agriculture-ecommerce', label: 'Agricultural E-commerce Store' },
+      { id: 'cold-chain-management', label: 'Cold Chain Management System' },
+      { id: 'farmer-mobile-app', label: 'Farmer Mobile App' },
+      { id: 'agriculture-crm', label: 'Agriculture CRM' },
+    ]
+  },
+  'Recruitment Solutions': {
+    color: '#0369a1',
+    bg: '#e0f2fe',
+    tagline: 'Job portals, ATS systems & recruitment agency platforms',
+    services: [
+      { id: 'recruitment-agency-website', label: 'Recruitment Agency Website' },
+      { id: 'job-portal-development', label: 'Job Portal Development' },
+      { id: 'applicant-tracking-system', label: 'Applicant Tracking System (ATS)' },
+      { id: 'hr-management-system', label: 'HR Management System' },
+      { id: 'recruitment-crm', label: 'Recruitment CRM' },
+      { id: 'candidate-mobile-app', label: 'Candidate Mobile App' },
+      { id: 'recruitment-marketing', label: 'Recruitment Marketing Services' },
+    ]
+  },
+  'Hospitality Solutions': {
+    color: '#b45309',
+    bg: '#fef3c7',
+    tagline: 'Hotel booking engines, PMS & hospitality management systems',
+    services: [
+      { id: 'hotel-website-development', label: 'Hotel & Resort Website' },
+      { id: 'hotel-booking-engine', label: 'Hotel Booking Engine' },
+      { id: 'property-management-system', label: 'Property Management System (PMS)' },
+      { id: 'restaurant-management-system', label: 'Restaurant Management System' },
+      { id: 'loyalty-program-app', label: 'Guest Loyalty Program App' },
+      { id: 'hospitality-crm', label: 'Hospitality CRM' },
+      { id: 'revenue-management-system', label: 'Revenue Management System' },
+    ]
+  },
+  'Media & Entertainment Solutions': {
+    color: '#dc2626',
+    bg: '#fff1f2',
+    tagline: 'OTT platforms, content portals & entertainment mobile apps',
+    services: [
+      { id: 'media-company-website', label: 'Media Company Website' },
+      { id: 'content-streaming-platform', label: 'Content Streaming Platform' },
+      { id: 'ott-app-development', label: 'OTT App Development' },
+      { id: 'digital-magazine-portal', label: 'Digital Magazine & News Portal' },
+      { id: 'talent-artist-portal', label: 'Talent & Artist Portfolio Portal' },
+      { id: 'media-crm', label: 'Media & Publisher CRM' },
+      { id: 'entertainment-marketing', label: 'Entertainment Digital Marketing' },
+    ]
+  },
+  'Sports Management Solutions': {
+    color: '#ea580c',
+    bg: '#fff7ed',
+    tagline: 'Sports club portals, team management & athlete performance apps',
+    services: [
+      { id: 'sports-club-website', label: 'Sports Club & Academy Website' },
+      { id: 'team-management-system', label: 'Team Management System' },
+      { id: 'sports-booking-platform', label: 'Sports Venue Booking Platform' },
+      { id: 'athlete-performance-app', label: 'Athlete Performance App' },
+      { id: 'sports-ecommerce', label: 'Sports Equipment E-commerce' },
+      { id: 'sports-crm', label: 'Sports CRM' },
+      { id: 'tournament-management', label: 'Tournament Management System' },
     ]
   }
 };

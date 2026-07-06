@@ -139,6 +139,143 @@ const industries = [
     )
   },
   {
+    name: 'Finance & Banking',
+    desc: 'Fintech apps & banking portals',
+    color: '#1d4ed8',
+    bg: '#eff6ff',
+    icon: (
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+        <line x1="3" y1="21" x2="21" y2="21"></line>
+        <line x1="3" y1="10" x2="21" y2="10"></line>
+        <polyline points="3 10 12 3 21 10"></polyline>
+        <line x1="6" y1="10" x2="6" y2="21"></line>
+        <line x1="10" y1="10" x2="10" y2="21"></line>
+        <line x1="14" y1="10" x2="14" y2="21"></line>
+        <line x1="18" y1="10" x2="18" y2="21"></line>
+      </svg>
+    )
+  },
+  {
+    name: 'Insurance Solutions',
+    desc: 'Policy & claims management systems',
+    color: '#0f766e',
+    bg: '#f0fdfa',
+    icon: (
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+      </svg>
+    )
+  },
+  {
+    name: 'Logistics Solutions',
+    desc: 'Fleet & shipment tracking systems',
+    color: '#b45309',
+    bg: '#fffbeb',
+    icon: (
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+        <rect x="1" y="3" width="15" height="13" rx="2" ry="2"></rect>
+        <polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon>
+        <circle cx="5.5" cy="18.5" r="2.5"></circle>
+        <circle cx="18.5" cy="18.5" r="2.5"></circle>
+      </svg>
+    )
+  },
+  {
+    name: 'Automobile Solutions',
+    desc: 'Dealership & service center portals',
+    color: '#374151',
+    bg: '#f9fafb',
+    icon: (
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.4 2.9C1.4 11.3 1 12.1 1 13v3c0 .6.4 1 1 1h2"></path>
+        <circle cx="7" cy="17" r="2"></circle>
+        <circle cx="17" cy="17" r="2"></circle>
+        <path d="M5 17h10"></path>
+      </svg>
+    )
+  },
+  {
+    name: 'Fitness Solutions',
+    desc: 'Gym membership & workout apps',
+    color: '#16a34a',
+    bg: '#f0fdf4',
+    icon: (
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M6.5 6.5h11M6.5 17.5h11M12 3v18M3 6.5h3.5v11H3zM17.5 6.5H21v11h-3.5z"></path>
+      </svg>
+    )
+  },
+  {
+    name: 'Event Management Solutions',
+    desc: 'Event booking & ticketing systems',
+    color: '#7c3aed',
+    bg: '#faf5ff',
+    icon: (
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M2 9a3 3 0 0 1 0 6v2a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-2a3 3 0 0 1 0-6V7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v2z"></path>
+        <line x1="12" y1="5" x2="12" y2="19"></line>
+      </svg>
+    )
+  },
+  {
+    name: 'Agriculture Solutions',
+    desc: 'AgriTech portals & farm management',
+    color: '#65a30d',
+    bg: '#f7fee7',
+    icon: (
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M12 2a10 10 0 0 1 10 10c0 5.52-4.48 10-10 10S2 17.52 2 12a10 10 0 0 1 10-10z"></path>
+        <path d="M12 6a6 6 0 0 1 6 6c0 3.31-2.69 6-6 6s-6-2.69-6-6a6 6 0 0 1 6-6z" opacity="0.3"></path>
+        <path d="M12 2v20M12 10a4 4 0 0 1 4-4M12 14a4 4 0 0 0-4 4"></path>
+      </svg>
+    )
+  },
+  {
+    name: 'Recruitment Solutions',
+    desc: 'Job portals & applicant tracking',
+    color: '#0369a1',
+    bg: '#e0f2fe',
+    icon: (
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+        <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+        <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+      </svg>
+    )
+  },
+  {
+    name: 'Hospitality Solutions',
+    desc: 'Hotel booking & property PMS',
+    color: '#b45309',
+    bg: '#fef3c7',
+    icon: (
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M2 4v16M2 11h20M22 4v16M6 11V7a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v4M12 15h.01"></path>
+      </svg>
+    )
+  },
+  {
+    name: 'Media & Entertainment Solutions',
+    desc: 'OTT apps & content streaming portals',
+    color: '#dc2626',
+    bg: '#fff1f2',
+    icon: (
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+        <polygon points="5 3 19 12 5 21 5 3"></polygon>
+      </svg>
+    )
+  },
+  {
+    name: 'Sports Management Solutions',
+    desc: 'Sports club & tournament management',
+    color: '#ea580c',
+    bg: '#fff7ed',
+    icon: (
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6M18 9h1.5a2.5 2.5 0 0 0 0-5H18M4 22h16M10 14.66V17c0 .55-.45 1-1 1H4v2h16v-2h-5c-.55 0-1-.45-1-1v-2.34M12 2a4 4 0 0 1 4 4v7H8V6a4 4 0 0 1 4-4z"></path>
+      </svg>
+    )
+  },
+  {
     name: 'More Industries',
     desc: 'Custom Domain Digital Blueprints',
     color: '#1e293b',

@@ -6,8 +6,8 @@ export const categories = [
     name: 'Websites',
     desc: 'Business, E-commerce, Portfolio',
     tagline: 'Stunning, fast, and secure websites built to convert visitors into loyal customers.',
-    colorTheme: 'linear-gradient(135deg, #AADF00 0%, #7AAA00 100%)',
-    accentColor: '#AADF00',
+    colorTheme: 'linear-gradient(135deg, #FF6B00 0%, #FF8E3C 100%)',
+    accentColor: '#FF6B00',
     stats: [
       { label: 'Websites Launched', value: '450+' },
       { label: 'Average Speed Index', value: '98%' },
@@ -1500,6 +1500,1230 @@ export const serviceDatabase = {
       { name: 'NGO Growth', price: '₹14,999/mo', desc: 'Awareness & social growth', features: ['Social Media Mgt', 'Google Grants Setup', 'Basic SEO', '10 Posts/mo', 'Monthly Report'] },
       { name: 'NGO Impact', price: '₹29,999/mo', desc: 'Full-funnel digital strategy', features: ['Google Grants Mgt', 'Meta Donation Ads', 'Email Campaigns', 'Advanced SEO', 'Bi-weekly Reports'] }
     ]
+  },
+  'hospital-website-development': {
+    title: "Hospital Website Development",
+    category: "business-software",
+    price: "₹14,999",
+    desc: "A modern hospital website is your digital front desk. We build fast, secure, mobile-first websites that showcase your specialties, doctors, facilities, and allow patients to book appointments online.",
+    features: ["Doctor Profile Pages","Online Appointment Booking","Department & Specialty Listings","Patient Testimonials","Emergency Contact Banner","Health Blog/News Section","Insurance Partner Listings","HIPAA-Compliant Contact Forms"],
+    plans: [{"name":"Silver Plan","price":"₹14,999","desc":"Perfect for small clinics","features":["5 Pages","Doctor Profiles","Appointment Form","Mobile Responsive","1 Week Delivery","1 Month Support"]},{"name":"Gold Plan","price":"₹29,999","desc":"For multi-specialty hospitals","features":["15 Pages","Online Booking System","Patient Portal","Blog/News CMS","SEO Optimization","2 Weeks Delivery","3 Months Support"]},{"name":"Platinum Plan","price":"₹54,999","desc":"Full custom hospital portal","features":["Unlimited Pages","Custom Patient Dashboard","Appointment + Billing Integration","Telemedicine Module","Advanced Analytics","4 Weeks Delivery","6 Months Support"]}]
+  },
+  'appointment-booking-system': {
+    title: "Appointment Booking System",
+    category: "business-software",
+    price: "₹19,999",
+    desc: "Our appointment booking systems eliminate manual scheduling chaos. Patients book online 24/7, doctors get organized calendars, and you reduce no-shows with automated reminders.",
+    features: ["Real-time Calendar Availability","SMS & Email Reminders","Multi-doctor Scheduling","Patient Self-rescheduling","Video Consultation Links","Waiting List Management","Insurance Verification","Appointment History"],
+    plans: [{"name":"Silver Plan","price":"₹19,999","desc":"Single-doctor scheduling","features":["1 Doctor Profile","Online Booking Form","Email Confirmations","Basic Calendar","1 Week Delivery"]},{"name":"Gold Plan","price":"₹39,999","desc":"Multi-doctor clinic system","features":["Up to 10 Doctors","SMS + Email Reminders","Patient Portal","Reporting Dashboard","Rescheduling Self-service","2 Weeks Delivery"]},{"name":"Platinum Plan","price":"₹69,999","desc":"Hospital-grade booking suite","features":["Unlimited Doctors","Video Consultation Integration","Insurance Module","Advanced Analytics","API Integration","4 Weeks Delivery"]}]
+  },
+  'patient-management-system': {
+    title: "Patient Management System",
+    category: "business-software",
+    price: "₹24,999",
+    desc: "A complete digital system to manage patient registrations, medical histories, diagnoses, prescriptions, and follow-ups — replacing paper files with an organized, searchable digital database.",
+    features: ["Patient Registration & Profiles","Medical History & Diagnosis Records","Prescription Management","Lab Report Uploads","Follow-up Scheduling","Ward/Bed Management","Discharge Summary Generator","Role-based Staff Access"],
+    plans: [{"name":"Silver Plan","price":"₹24,999","desc":"Small clinic system","features":["Up to 1,000 Patient Records","Basic Medical History","Prescription Module","Search & Filter","2 Weeks Delivery"]},{"name":"Gold Plan","price":"₹49,999","desc":"Hospital-grade PMS","features":["Unlimited Records","Lab Report Management","Ward/Bed Tracking","Multi-staff Roles","Advanced Reports","4 Weeks Delivery"]},{"name":"Platinum Plan","price":"₹89,999","desc":"Enterprise hospital suite","features":["Full EHR System","HL7/FHIR Integration","Billing Module","Insurance Claims","Analytics Dashboard","8 Weeks Delivery"]}]
+  },
+  'medical-billing-software': {
+    title: "Medical Billing Software",
+    category: "business-software",
+    price: "₹19,999",
+    desc: "Automate medical billing, generate GST-compliant invoices, track payments, and manage insurance claims — all from one clean dashboard. Reduce billing errors and speed up cash flow.",
+    features: ["GST Invoice Generation","Insurance Claim Management","OPD/IPD Billing","Payment Tracking","Outstanding Balance Alerts","Daily/Monthly Reports","Discount & Concession Module","Multi-payment Gateway Support"],
+    plans: [{"name":"Silver Plan","price":"₹19,999","desc":"Basic billing system","features":["Invoice Generation","Payment Tracking","Basic Reports","OPD Billing","1 Week Delivery"]},{"name":"Gold Plan","price":"₹39,999","desc":"Full medical billing suite","features":["OPD + IPD Billing","Insurance Claims Module","Outstanding Alerts","Detailed Analytics","3 Weeks Delivery"]},{"name":"Platinum Plan","price":"₹69,999","desc":"Enterprise billing platform","features":["Multi-branch Billing","Third-party HMS Integration","Custom Reports","Automated Insurance Claims","Dedicated Support","5 Weeks Delivery"]}]
+  },
+  'seo-for-hospitals': {
+    title: "SEO for Hospitals",
+    category: "business-software",
+    price: "₹9,999/mo",
+    desc: "When patients search for \"best hospital near me\" or specific treatments, we ensure your hospital appears at the top. Our healthcare SEO strategy drives organic traffic and qualified patient leads.",
+    features: ["Local SEO & Google Maps Ranking","Medical Keyword Research","On-page Optimization","Technical SEO Audit & Fixes","Healthcare Backlink Building","Google Business Profile Management","Content Writing (Medical Blogs)","Competitor Analysis"],
+    plans: [{"name":"Silver Plan","price":"₹9,999/mo","desc":"Local clinic visibility","features":["15 Keywords","On-page Optimization","GMB Management","Monthly Report","3-month minimum"]},{"name":"Gold Plan","price":"₹19,999/mo","desc":"Hospital authority building","features":["35 Keywords","Technical SEO","Medical Blog Writing (4/mo)","High-DA Backlinks (8/mo)","Competitor Tracking","3-month minimum"]},{"name":"Platinum Plan","price":"₹34,999/mo","desc":"Dominant market leader SEO","features":["60+ Keywords","Daily Monitoring","Medical Blogs (8/mo)","Backlinks (20/mo)","Weekly Reports","No Contract"]}]
+  },
+  'digital-marketing-for-clinics': {
+    title: "Digital Marketing for Clinics",
+    category: "business-software",
+    price: "₹12,999/mo",
+    desc: "Attract, engage, and retain patients with targeted digital marketing — Facebook/Instagram ads, Google Ads, WhatsApp campaigns, and reputation management — all handled by our healthcare marketing team.",
+    features: ["Facebook & Instagram Ad Campaigns","Google Search Ads (PPC)","WhatsApp Broadcast Campaigns","Review & Reputation Management","Patient Retargeting Ads","Landing Page Design","Lead Tracking Dashboard","Monthly Performance Reports"],
+    plans: [{"name":"Silver Plan","price":"₹12,999/mo","desc":"Clinic brand awareness","features":["Facebook + Instagram Ads","12 Creative Posts/month","Basic Lead Tracking","Monthly Report","Cancel anytime"]},{"name":"Gold Plan","price":"₹24,999/mo","desc":"Growth-focused campaign","features":["FB + Instagram + Google Ads","20 Posts + 4 Video Reels","WhatsApp Campaign","Reputation Management","Bi-weekly Reports","Cancel anytime"]},{"name":"Platinum Plan","price":"₹44,999/mo","desc":"Full digital domination","features":["All Platforms","Daily Posts","Google + Meta + YouTube Ads","Influencer Collaboration","Weekly Strategy Calls","Cancel anytime"]}]
+  },
+  'school-website-development': {
+    title: "School Website Development",
+    category: "business-software",
+    price: "₹12,999",
+    desc: "Create a powerful digital presence for your educational institution. Showcase courses, faculty, events, achievements, and allow online admission enquiries with a professionally designed school website.",
+    features: ["Course & Program Listings","Faculty Profiles","Online Admission Enquiry","Events Calendar","Gallery & Virtual Tour","Notice Board / Announcements","Alumni Section","Transport & Hostel Info"],
+    plans: [{"name":"Silver Plan","price":"₹12,999","desc":"Small school/coaching","features":["8 Pages","Course Listings","Enquiry Form","Mobile Responsive","1 Week Delivery"]},{"name":"Gold Plan","price":"₹24,999","desc":"School/college portal","features":["20 Pages","Faculty Profiles","Events Calendar","Gallery","Announcement Board","2 Weeks Delivery"]},{"name":"Platinum Plan","price":"₹44,999","desc":"Full institution portal","features":["Unlimited Pages","Alumni Network","Virtual Tour","CMS Dashboard","Multi-language","4 Weeks Delivery"]}]
+  },
+  'student-management-system': {
+    title: "Student Management System",
+    category: "business-software",
+    price: "₹19,999",
+    desc: "Manage student registrations, academic records, attendance, results, and communications — all in one central system. Replace manual paperwork with an efficient, searchable digital platform.",
+    features: ["Student Enrollment & Profiles","Class & Section Management","Academic Performance Tracking","Parent Communication Portal","Document Management","ID Card Generation","Transfer Certificate Management","Report Card Generation"],
+    plans: [{"name":"Silver Plan","price":"₹19,999","desc":"Small school (up to 500 students)","features":["Student Profiles","Class Management","Attendance Module","Basic Reports","2 Weeks Delivery"]},{"name":"Gold Plan","price":"₹39,999","desc":"Medium school (up to 2000 students)","features":["Full Student Management","Parent Portal","Result Management","ID Card Generator","Detailed Analytics","3 Weeks Delivery"]},{"name":"Platinum Plan","price":"₹74,999","desc":"Large institution suite","features":["Unlimited Students","Multi-campus Support","Transfer Certificates","Govt. Report Formats","API Integration","6 Weeks Delivery"]}]
+  },
+  'online-examination-portal': {
+    title: "Online Examination Portal",
+    category: "business-software",
+    price: "₹24,999",
+    desc: "Replace physical exam papers with a powerful online examination system. Create MCQ and descriptive tests, set time limits, prevent cheating, and auto-generate results — saving enormous time and costs.",
+    features: ["MCQ & Descriptive Question Banks","Timed Exam Sessions","Anti-Cheating (Tab Switch Detection)","Auto Result Calculation","Randomized Question Order","Instant Score Reports","Multiple Attempt Configurations","Admin Dashboard"],
+    plans: [{"name":"Silver Plan","price":"₹24,999","desc":"Small batch exams","features":["Up to 200 Students","MCQ Exams","Auto Scoring","Basic Reports","2 Weeks Delivery"]},{"name":"Gold Plan","price":"₹44,999","desc":"School/college platform","features":["Up to 2000 Students","MCQ + Descriptive","Anti-cheat Controls","Detailed Analytics","Question Bank CMS","3 Weeks Delivery"]},{"name":"Platinum Plan","price":"₹84,999","desc":"Institution-wide platform","features":["Unlimited Students","All Exam Types","Live Proctoring","Custom Reports","Multi-tenant Support","6 Weeks Delivery"]}]
+  },
+  'fee-management-system': {
+    title: "Fee Management System",
+    category: "business-software",
+    price: "₹14,999",
+    desc: "Automate fee collection with online payment options, automatic reminders for due fees, digital receipts, and detailed financial reports — eliminating manual fee collection chaos.",
+    features: ["Online Fee Payment (UPI/Card)","Fee Structure Configuration","Automatic Due Date Reminders","Digital Receipt Generation","Installment Plan Support","Defaulter Reports","Scholarship & Concession Module","Financial Dashboard"],
+    plans: [{"name":"Silver Plan","price":"₹14,999","desc":"Basic fee collection","features":["Online Payment","Digital Receipts","Basic Reports","Due Reminders","1 Week Delivery"]},{"name":"Gold Plan","price":"₹29,999","desc":"Complete fee management","features":["Installment Plans","Scholarship Module","Defaulter Reports","SMS Reminders","Financial Dashboard","2 Weeks Delivery"]},{"name":"Platinum Plan","price":"₹54,999","desc":"Multi-campus fee platform","features":["Multi-branch Fees","ERP Integration","Custom Report Builder","WhatsApp Reminders","Audit Logs","4 Weeks Delivery"]}]
+  },
+  'education-marketing-services': {
+    title: "Education Marketing Services",
+    category: "business-software",
+    price: "₹9,999/mo",
+    desc: "Get more admissions with data-driven digital marketing. We run Facebook, Instagram, and Google ads targeting parents in your area, manage your social media, and build your school's online reputation.",
+    features: ["Facebook & Instagram Ads","Google Ads for Admissions","Social Media Management","Google Business Profile","Video Reel Production","Review Management","Landing Page Design","Lead Tracking Dashboard"],
+    plans: [{"name":"Silver Plan","price":"₹9,999/mo","desc":"Brand awareness","features":["Social Media Management","12 Posts/month","GMB Optimization","Basic Ad Campaign","Monthly Report"]},{"name":"Gold Plan","price":"₹19,999/mo","desc":"Active admission leads","features":["FB + Google Ads","20 Posts + 4 Reels","Lead Tracking","WhatsApp Campaign","Bi-weekly Reporting"]},{"name":"Platinum Plan","price":"₹34,999/mo","desc":"Full admission funnel","features":["All Platforms","Daily Posts","YouTube Ads","Video Production","Weekly Strategy Calls"]}]
+  },
+  'digital-marketing-services': {
+    title: "Digital Marketing for Real Estate",
+    category: "business-software",
+    price: "₹14,999/mo",
+    desc: "Run targeted Facebook, Instagram, and Google campaigns to reach buyers actively searching for properties in your area — with lead tracking, retargeting, and regular creative campaigns.",
+    features: ["Facebook & Instagram Lead Ads","Google Search & Display Ads","Video Ad Production","Retargeting Campaigns","Landing Page Design","WhatsApp Lead Campaigns","Lead CRM Integration","ROI Reporting Dashboard"],
+    plans: [{"name":"Silver Plan","price":"₹14,999/mo","desc":"Brand awareness ads","features":["FB + Instagram Ads","Landing Page","Basic Lead Tracking","12 Creatives/month","Monthly Report"]},{"name":"Gold Plan","price":"₹29,999/mo","desc":"Active lead generation","features":["FB + Instagram + Google","20 Creatives + 4 Reels","Retargeting","CRM Integration","Bi-weekly Reports"]},{"name":"Platinum Plan","price":"₹54,999/mo","desc":"Full-funnel campaign","features":["All Channels","Video Production","YouTube Ads","WhatsApp Campaign","Weekly Strategy Calls"]}]
+  },
+  'ecommerce-website-development': {
+    title: "E-commerce Website Development",
+    category: "business-software",
+    price: "₹14,999",
+    desc: "Launch a fully-featured e-commerce store with product catalog, secure checkout, payment gateway, inventory management, and admin dashboard — optimized for Indian buyers.",
+    features: ["Product Catalog Management","Secure Checkout","Multiple Payment Gateways","Order Management","Inventory Tracking","Customer Accounts","Discount & Coupon System","GST Invoice Generation"],
+    plans: [{"name":"Silver Plan","price":"₹14,999","desc":"Basic store (up to 50 products)","features":["Product Catalog","Cart & Checkout","Payment Gateway","Mobile Responsive","2 Weeks Delivery"]},{"name":"Gold Plan","price":"₹29,999","desc":"Full e-commerce store","features":["Unlimited Products","GST Invoicing","Coupon System","Admin Dashboard","Order Management","3 Weeks Delivery"]},{"name":"Platinum Plan","price":"₹54,999","desc":"Multi-vendor marketplace","features":["Vendor Dashboard","Advanced Analytics","Return Management","Loyalty Points","Custom App","6 Weeks Delivery"]}]
+  },
+  'inventory-management-system': {
+    title: "Inventory Management System",
+    category: "business-software",
+    price: "₹14,999",
+    desc: "Manage product stock levels across multiple warehouses, get low-stock alerts, track purchase orders from suppliers, and sync inventory with your online store automatically.",
+    features: ["Real-time Stock Tracking","Multi-warehouse Management","Purchase Order Management","Low Stock Alerts","Barcode / QR Scanning","Supplier Management","Stock Valuation Reports","E-commerce Sync"],
+    plans: [{"name":"Silver Plan","price":"₹14,999","desc":"Basic stock management","features":["Single Warehouse","Stock Tracking","Low Stock Alerts","Basic Reports","1 Week Delivery"]},{"name":"Gold Plan","price":"₹29,999","desc":"Full inventory system","features":["Multi-warehouse","Purchase Orders","Barcode Scanning","E-commerce Sync","Detailed Reports","3 Weeks Delivery"]},{"name":"Platinum Plan","price":"₹54,999","desc":"Enterprise IMS","features":["ERP Integration","Supplier Portal","AI Demand Forecasting","Custom Analytics","5 Weeks Delivery"]}]
+  },
+  'order-tracking-system': {
+    title: "Order Tracking System",
+    category: "business-software",
+    price: "₹9,999",
+    desc: "Integrate with Shiprocket, Delhivery, BlueDart, and other logistics providers to give customers a branded real-time tracking experience — reducing support calls significantly.",
+    features: ["Multi-carrier Tracking Integration","Branded Tracking Page","SMS & Email Status Updates","Delivery ETA Display","Return & Refund Portal","Failed Delivery Management","Admin Shipment Dashboard","NDR (Non-Delivery Report) Handling"],
+    plans: [{"name":"Silver Plan","price":"₹9,999","desc":"Basic tracking","features":["1 Carrier","Tracking Page","Email Updates","Basic Dashboard","1 Week Delivery"]},{"name":"Gold Plan","price":"₹19,999","desc":"Multi-carrier tracking","features":["3 Carriers","SMS + Email Updates","Return Portal","NDR Management","2 Weeks Delivery"]},{"name":"Platinum Plan","price":"₹34,999","desc":"Enterprise logistics suite","features":["Unlimited Carriers","Custom Branded Portal","Analytics Dashboard","Smart Routing","3 Weeks Delivery"]}]
+  },
+  'social-media-marketing-ecommerce': {
+    title: "Social Media Marketing for E-commerce",
+    category: "business-software",
+    price: "₹12,999/mo",
+    desc: "Grow your online store with high-converting social media campaigns — product showcases, influencer collaborations, Instagram shopping, retargeting ads, and seasonal sale campaigns.",
+    features: ["Instagram & Facebook Product Ads","Instagram Shopping Setup","Influencer Collaboration","Retargeting Campaigns","Seasonal Sale Campaigns","Video Reel Production","UGC Strategy","ROI Tracking Dashboard"],
+    plans: [{"name":"Silver Plan","price":"₹12,999/mo","desc":"Brand building","features":["FB + Instagram Management","15 Posts/month","Product Showcase Ads","Basic Retargeting","Monthly Report"]},{"name":"Gold Plan","price":"₹24,999/mo","desc":"Sales-focused campaigns","features":["Instagram Shopping","20 Posts + 6 Reels","Influencer (2/month)","Retargeting Ads","Bi-weekly Reports"]},{"name":"Platinum Plan","price":"₹44,999/mo","desc":"Full e-commerce growth","features":["All Platforms","Daily Content","Influencer (5/month)","YouTube Ads","Weekly Calls"]}]
+  },
+  'restaurant-website-development': {
+    title: "Restaurant Website Development",
+    category: "business-software",
+    price: "₹9,999",
+    desc: "Create an appetizing online presence with a stunning restaurant website featuring your menu, photo gallery, table reservations, online ordering, and Google Maps integration.",
+    features: ["Digital Menu with Photos","Online Table Reservation","Photo Gallery","Online Food Ordering","Google Maps Integration","Chef & Team Profiles","Reviews & Testimonials","Social Media Feed"],
+    plans: [{"name":"Silver Plan","price":"₹9,999","desc":"Basic restaurant site","features":["6 Pages","Digital Menu","Reservation Form","Gallery","Mobile Responsive","1 Week Delivery"]},{"name":"Gold Plan","price":"₹19,999","desc":"Full restaurant portal","features":["Unlimited Pages","Online Ordering","Table Reservation System","Blog/Events","CMS Dashboard","2 Weeks Delivery"]},{"name":"Platinum Plan","price":"₹39,999","desc":"Multi-outlet restaurant","features":["Multi-branch Support","Loyalty Program Integration","Custom Design","Analytics","4 Weeks Delivery"]}]
+  },
+  'online-food-ordering-system': {
+    title: "Online Food Ordering System",
+    category: "business-software",
+    price: "₹14,999",
+    desc: "Get your own food ordering platform — free from Zomato and Swiggy commissions. Customers order directly, you keep 100% revenue. Includes payment, order tracking, and kitchen display.",
+    features: ["Custom Online Menu","Cart & Checkout","Payment Gateway Integration","Order Confirmation via SMS","Kitchen Display System","Delivery Zone Setup","Order History","Admin Order Dashboard"],
+    plans: [{"name":"Silver Plan","price":"₹14,999","desc":"Basic ordering system","features":["Online Menu","Cart + Checkout","Payment Gateway","Email Confirmation","2 Weeks Delivery"]},{"name":"Gold Plan","price":"₹29,999","desc":"Full ordering platform","features":["Kitchen Display System","SMS Confirmation","Order Dashboard","Delivery Zones","Analytics","3 Weeks Delivery"]},{"name":"Platinum Plan","price":"₹54,999","desc":"Multi-branch ordering system","features":["Multiple Outlets","Real-time Order Tracking","Driver Management","Loyalty Integration","5 Weeks Delivery"]}]
+  },
+  'food-delivery-app': {
+    title: "Food Delivery App",
+    category: "business-software",
+    price: "₹74,999",
+    desc: "Build your own food delivery app for Android and iOS with real-time order tracking, driver management, push notifications, and multi-restaurant support — complete commission-free delivery.",
+    features: ["Customer App (Android + iOS)","Restaurant Partner Dashboard","Driver/Delivery Boy App","Real-time GPS Tracking","Push Notifications","Payment Gateway","Rating & Review System","Analytics Dashboard"],
+    plans: [{"name":"Silver Plan","price":"₹74,999","desc":"Single restaurant delivery app","features":["Customer App (Android)","Driver App","GPS Tracking","Basic Analytics","6 Weeks Delivery"]},{"name":"Gold Plan","price":"₹1,29,999","desc":"Multi-restaurant delivery platform","features":["Customer App (Android + iOS)","Restaurant Dashboard","Driver App","Real-time Tracking","Analytics","10 Weeks Delivery"]},{"name":"Platinum Plan","price":"₹1,99,999","desc":"Full delivery marketplace","features":["All Three Apps","Multi-city Support","Surge Pricing","AI Recommendations","Full Analytics Suite","14 Weeks Delivery"]}]
+  },
+  'pos-system': {
+    title: "Restaurant POS System",
+    category: "business-software",
+    price: "₹14,999",
+    desc: "Replace traditional billing machines with a cloud-based POS that handles table orders, kitchen tickets, inventory, and daily reports — accessible from tablet or PC.",
+    features: ["Touch-based Order Taking","Kitchen Display/Printer","Split Bill & Multiple Payments","Menu & Price Management","Daily Sales Reports","Inventory Integration","Staff Login & Role Control","GST Invoice Generation"],
+    plans: [{"name":"Silver Plan","price":"₹14,999","desc":"Basic restaurant POS","features":["Touch POS Interface","Order Management","GST Billing","Basic Reports","Single Outlet","1 Week Setup"]},{"name":"Gold Plan","price":"₹29,999","desc":"Full restaurant POS","features":["Kitchen Display System","Inventory Integration","Multi-payment","Staff Roles","Analytics","2 Weeks Setup"]},{"name":"Platinum Plan","price":"₹54,999","desc":"Multi-outlet POS chain","features":["Multi-branch","Central Dashboard","Franchise Reports","Custom Integrations","4 Weeks Setup"]}]
+  },
+  'seo-for-restaurants': {
+    title: "SEO for Restaurants",
+    category: "business-software",
+    price: "₹7,999/mo",
+    desc: "When hungry diners search for restaurants in your area, your restaurant should appear first. Our local restaurant SEO and Google Maps optimization drives hungry customers to your door.",
+    features: ["Google Maps Ranking","Local Restaurant SEO","Menu Page SEO Optimization","Review Generation Strategy","Google Business Profile Management","Food Keyword Targeting","Local Backlink Building","Monthly Performance Reports"],
+    plans: [{"name":"Silver Plan","price":"₹7,999/mo","desc":"Local restaurant visibility","features":["GMB Optimization","10 Keywords","Monthly Report","Review Strategy","3-month minimum"]},{"name":"Gold Plan","price":"₹14,999/mo","desc":"Restaurant SEO growth","features":["25 Keywords","Menu SEO","Food Blogs (2/mo)","Backlinks (5/mo)","Local Citations","3-month minimum"]},{"name":"Platinum Plan","price":"₹24,999/mo","desc":"Dominant local presence","features":["50 Keywords","4 Blogs/mo","Backlinks (15/mo)","Schema Markup","Weekly Reports","No Contract"]}]
+  },
+  'instagram-marketing-restaurant': {
+    title: "Social Media Marketing for Restaurants",
+    category: "business-software",
+    price: "₹9,999/mo",
+    desc: "Grow your restaurant's social following, showcase your dishes with mouth-watering content, run targeted local ad campaigns, and turn followers into diners.",
+    features: ["Instagram & Facebook Management","Food Photography Direction","Video Reel Production","Targeted Local Ads","Story Campaigns","Influencer Food Review Collaborations","Contest & Giveaway Campaigns","Analytics & Growth Reports"],
+    plans: [{"name":"Silver Plan","price":"₹9,999/mo","desc":"Brand awareness","features":["Instagram + Facebook","15 Posts/month","Story Updates","Basic Ads","Monthly Report"]},{"name":"Gold Plan","price":"₹19,999/mo","desc":"Growth + leads","features":["20 Posts + 6 Reels","Targeted Local Ads","Influencer (1/month)","Contest Campaign","Bi-weekly Reports"]},{"name":"Platinum Plan","price":"₹34,999/mo","desc":"Full social domination","features":["All Platforms","Daily Content","Influencer (3/month)","YouTube Shorts","Weekly Strategy Calls"]}]
+  },
+  'salon-website-development': {
+    title: "Salon & Spa Website",
+    category: "business-software",
+    price: "₹8,999",
+    desc: "A stunning salon website showcasing your services, team, gallery, pricing, and online booking — designed to attract premium clients and grow your brand online.",
+    features: ["Service Menu with Pricing","Online Appointment Booking","Staff Portfolio Pages","Before/After Gallery","Gift Voucher Sales","Google Maps Integration","Client Testimonials","Social Media Feed"],
+    plans: [{"name":"Silver Plan","price":"₹8,999","desc":"Basic salon website","features":["6 Pages","Service Menu","Booking Form","Gallery","Mobile Responsive","1 Week Delivery"]},{"name":"Gold Plan","price":"₹17,999","desc":"Full salon portal","features":["15 Pages","Online Appointment Booking","Team Profiles","Gift Voucher Sales","CMS Dashboard","2 Weeks Delivery"]},{"name":"Platinum Plan","price":"₹32,999","desc":"Premium spa brand website","features":["Custom Design","E-commerce Products","Loyalty Integration","Multi-branch","3 Weeks Delivery"]}]
+  },
+  'appointment-booking-salon': {
+    title: "Salon Appointment Booking System",
+    category: "business-software",
+    price: "₹7,999",
+    desc: "Let clients book appointments online 24/7, choose their preferred stylist, get reminders, and reschedule easily — while you manage your full schedule from a single dashboard.",
+    features: ["Online Booking with Staff Selection","Real-time Slot Availability","SMS & WhatsApp Reminders","Cancellation & Rescheduling","Multi-service Booking","Walk-in + Online Combo","Waitlist Management","Daily Schedule Dashboard"],
+    plans: [{"name":"Silver Plan","price":"₹7,999","desc":"Basic booking","features":["Online Booking","Email Confirmations","Admin Calendar","Basic Reports","1 Week Delivery"]},{"name":"Gold Plan","price":"₹14,999","desc":"Smart booking system","features":["Staff Selection","SMS + WhatsApp Reminders","Rescheduling","Waitlist","Analytics","2 Weeks Delivery"]},{"name":"Platinum Plan","price":"₹29,999","desc":"Multi-outlet booking","features":["Multi-branch","Customer History","Service Packages","Loyalty Points","3 Weeks Delivery"]}]
+  },
+  'loyalty-rewards-salon': {
+    title: "Salon Loyalty & Rewards Program",
+    category: "business-software",
+    price: "₹7,999",
+    desc: "Implement a digital loyalty program that rewards clients for every visit and purchase — creating a habit loop that brings them back and increases spend per visit.",
+    features: ["Points per Visit/Service","Reward Redemption","Membership Tiers","Birthday & Anniversary Offers","WhatsApp Loyalty Notifications","Referral Bonus Program","Gift Voucher Integration","Client Retention Analytics"],
+    plans: [{"name":"Silver Plan","price":"₹7,999","desc":"Basic rewards card","features":["Points System","Digital Card","Email Updates","Basic Dashboard","1 Week Delivery"]},{"name":"Gold Plan","price":"₹14,999","desc":"Full loyalty program","features":["Membership Tiers","WhatsApp Alerts","Birthday Offers","Referral Program","Analytics","2 Weeks Delivery"]},{"name":"Platinum Plan","price":"₹29,999","desc":"Multi-outlet loyalty","features":["Multi-branch Points","CRM Integration","AI Personalization","Custom Branding","3 Weeks Delivery"]}]
+  },
+  'online-store-salon-products': {
+    title: "Online Store for Salon Products",
+    category: "business-software",
+    price: "₹9,999",
+    desc: "Launch an e-commerce store selling professional beauty products, salon-brand retail items, and gift vouchers — creating a revenue stream that works even when the salon is closed.",
+    features: ["Product Catalog","Secure Checkout","Gift Voucher Sales","Subscription Box Option","Customer Accounts","Order Tracking","Inventory Management","Discount & Coupon System"],
+    plans: [{"name":"Silver Plan","price":"₹9,999","desc":"Basic product store","features":["Up to 30 Products","Cart + Checkout","Payment Gateway","Gift Vouchers","1 Week Delivery"]},{"name":"Gold Plan","price":"₹19,999","desc":"Full beauty e-commerce","features":["Unlimited Products","Subscription Boxes","Customer Accounts","Inventory Tracking","Analytics","2 Weeks Delivery"]},{"name":"Platinum Plan","price":"₹34,999","desc":"Premium beauty marketplace","features":["Multi-brand Products","Loyalty Integration","AR Try-on (Optional)","Full Custom Design","4 Weeks Delivery"]}]
+  },
+  'seo-for-salons': {
+    title: "SEO for Salons",
+    category: "business-software",
+    price: "₹6,999/mo",
+    desc: "When people search for a haircut or facial in your city, your salon should be the first result. Our local salon SEO drives organic foot traffic and Google Maps visibility.",
+    features: ["Google Maps Ranking","Local Salon SEO","Service Page Optimization","Review Generation","GMB Management","Local Backlinks","Beauty Blog Content","Competitor Analysis"],
+    plans: [{"name":"Silver Plan","price":"₹6,999/mo","desc":"Local salon visibility","features":["GMB Management","10 Keywords","Review Strategy","Monthly Report","3-month minimum"]},{"name":"Gold Plan","price":"₹12,999/mo","desc":"Salon SEO growth","features":["20 Keywords","Service Page SEO","Beauty Blogs (2/mo)","Backlinks (5/mo)","3-month minimum"]},{"name":"Platinum Plan","price":"₹22,999/mo","desc":"Dominant local presence","features":["40 Keywords","Blogs (4/mo)","Backlinks (12/mo)","Schema Markup","No Contract"]}]
+  },
+  'instagram-marketing-salon': {
+    title: "Instagram Marketing for Salons",
+    category: "business-software",
+    price: "₹8,999/mo",
+    desc: "Grow your salon on Instagram with stunning before/after content, trend-driven reels, beauty tips, and targeted local ad campaigns that turn followers into booked appointments.",
+    features: ["Before/After Content Strategy","Instagram Reels Production","Targeted Local Ads","Influencer Collaborations","Story Campaigns & Polls","Beauty Trend Content","Hashtag Strategy","Booking Link in Bio Optimization"],
+    plans: [{"name":"Silver Plan","price":"₹8,999/mo","desc":"Brand presence","features":["Instagram Management","15 Posts/month","Stories","Basic Ads","Monthly Report"]},{"name":"Gold Plan","price":"₹16,999/mo","desc":"Active growth","features":["20 Posts + 8 Reels","Targeted Local Ads","Influencer (1/month)","Booking Link Optimization","Bi-weekly Reports"]},{"name":"Platinum Plan","price":"₹29,999/mo","desc":"Premium brand domination","features":["All Platforms","Daily Content","Influencer (3/month)","YouTube Shorts","Weekly Strategy Calls"]}]
+  },
+  'travel-agency-website': {
+    title: "Travel Agency Website",
+    category: "business-software",
+    price: "₹12,999",
+    desc: "Build a visually stunning travel website with tour packages, destination guides, booking forms, photo galleries, and customer testimonials — designed to inspire travel and drive direct bookings.",
+    features: ["Tour Package Listings","Destination Photo Galleries","Online Enquiry & Booking Forms","Trip Itinerary Display","Customer Reviews","Blog/Travel Guides","WhatsApp Chat Integration","Mobile Responsive Design"],
+    plans: [{"name":"Silver Plan","price":"₹12,999","desc":"Basic travel site","features":["10 Pages","Package Listings","Enquiry Forms","Gallery","Mobile Responsive","1 Week Delivery"]},{"name":"Gold Plan","price":"₹24,999","desc":"Full travel portal","features":["Unlimited Packages","Itinerary Pages","Blog/Guides CMS","Review System","WhatsApp Integration","2 Weeks Delivery"]},{"name":"Platinum Plan","price":"₹44,999","desc":"Premium travel marketplace","features":["Booking System","Multi-operator","Live Availability","Payment Integration","4 Weeks Delivery"]}]
+  },
+  'tour-booking-system': {
+    title: "Tour Booking & Management System",
+    category: "business-software",
+    price: "₹19,999",
+    desc: "Accept online tour bookings, manage availability, collect advance payments, generate booking confirmations, and track all your tours from a single dashboard.",
+    features: ["Online Tour Booking","Real-time Seat Availability","Advance Payment Collection","Booking Confirmation PDF","Passenger List Management","Tour Calendar Dashboard","Cancellation & Refund Module","Agent/B2B Booking Portal"],
+    plans: [{"name":"Silver Plan","price":"₹19,999","desc":"Basic booking system","features":["Online Bookings","Payment Collection","Confirmation PDF","Basic Dashboard","2 Weeks Delivery"]},{"name":"Gold Plan","price":"₹39,999","desc":"Full tour management","features":["Availability Calendar","Agent Portal","Cancellation Module","Revenue Reports","Passenger Lists","3 Weeks Delivery"]},{"name":"Platinum Plan","price":"₹74,999","desc":"Enterprise tour platform","features":["Multi-operator","Dynamic Pricing","OTA Integration","Full Analytics","6 Weeks Delivery"]}]
+  },
+  'hotel-booking-platform': {
+    title: "Hotel Booking Platform",
+    category: "business-software",
+    price: "₹24,999",
+    desc: "Build your own hotel booking engine to accept direct reservations, manage room inventory, process payments, and reduce dependence on OTAs like MakeMyTrip and Booking.com.",
+    features: ["Room Type Listings with Photos","Real-time Availability Calendar","Direct Online Booking","Payment Integration","Booking Confirmation Emails","Check-in/Check-out Management","Rate Management","Guest Review System"],
+    plans: [{"name":"Silver Plan","price":"₹24,999","desc":"Basic hotel booking","features":["Room Listings","Availability Calendar","Online Booking","Payment Gateway","2 Weeks Delivery"]},{"name":"Gold Plan","price":"₹49,999","desc":"Full hotel booking engine","features":["Rate Management","Review System","Channel Manager Integration","Analytics Dashboard","4 Weeks Delivery"]},{"name":"Platinum Plan","price":"₹89,999","desc":"Multi-property PMS","features":["Multi-property","PMS Integration","Dynamic Pricing","Corporate Rates","6 Weeks Delivery"]}]
+  },
+  'itinerary-planner': {
+    title: "Custom Itinerary Planner",
+    category: "business-software",
+    price: "₹14,999",
+    desc: "Build a custom itinerary planning tool where travelers input their preferences and get a personalized day-by-day trip plan — with hotel suggestions, activity recommendations, and booking options.",
+    features: ["Preference Input Form","AI-generated Itinerary","Day-by-Day Activity Schedule","Map Integration","Hotel & Activity Recommendations","PDF Itinerary Export","Budget Calculator","Shareable Trip Links"],
+    plans: [{"name":"Silver Plan","price":"₹14,999","desc":"Manual itinerary builder","features":["Template-based Builder","Day Plans","PDF Export","Map View","2 Weeks Delivery"]},{"name":"Gold Plan","price":"₹29,999","desc":"Semi-automated planner","features":["Preference-based Generation","Hotel Recommendations","Budget Calculator","Shareable Links","3 Weeks Delivery"]},{"name":"Platinum Plan","price":"₹54,999","desc":"Full AI itinerary platform","features":["Full AI Generation","Real-time Availability","Dynamic Pricing","CRM Integration","5 Weeks Delivery"]}]
+  },
+  'crm-for-travel': {
+    title: "Travel CRM & Lead Management",
+    category: "business-software",
+    price: "₹14,999",
+    desc: "A dedicated CRM for travel agencies to track every lead, manage follow-ups, send automated tour recommendations, and convert more inquiries into confirmed bookings.",
+    features: ["Lead Capture & Management","Follow-up Scheduler","Tour Recommendation Engine","WhatsApp & Email Integration","Booking Status Tracking","Agent Performance Dashboard","Revenue Reports","Client Travel History"],
+    plans: [{"name":"Silver Plan","price":"₹14,999","desc":"Basic lead tracker","features":["Lead Management","Follow-up Reminders","Basic Dashboard","Email Integration","1 Week Delivery"]},{"name":"Gold Plan","price":"₹29,999","desc":"Full travel CRM","features":["WhatsApp Integration","Booking Tracking","Agent Dashboard","Revenue Reports","Client History","3 Weeks Delivery"]},{"name":"Platinum Plan","price":"₹54,999","desc":"Enterprise travel CRM","features":["AI Follow-up Sequences","Multi-branch","Advanced Analytics","API Integrations","5 Weeks Delivery"]}]
+  },
+  'social-media-travel': {
+    title: "Social Media Marketing for Travel",
+    category: "business-software",
+    price: "₹9,999/mo",
+    desc: "Grow your travel brand with stunning destination content, travel reels, and targeted campaigns to travelers in your demographic — turning dreamers into booked customers.",
+    features: ["Destination Instagram Reels","Facebook Travel Ads","Influencer Travel Collaborations","Story Campaigns","User-Generated Content Strategy","Seasonal Campaign Planning","Engagement Campaigns","Monthly Analytics Reports"],
+    plans: [{"name":"Silver Plan","price":"₹9,999/mo","desc":"Travel brand building","features":["Instagram + Facebook","15 Posts/month","Basic Ads","Story Updates","Monthly Report"]},{"name":"Gold Plan","price":"₹19,999/mo","desc":"Active booking campaigns","features":["20 Posts + 8 Reels","FB + Instagram Ads","Influencer (1/month)","Seasonal Campaigns","Bi-weekly Reports"]},{"name":"Platinum Plan","price":"₹34,999/mo","desc":"Travel media domination","features":["All Platforms","Daily Travel Content","Influencer (3/month)","YouTube Travel","Weekly Strategy Calls"]}]
+  },
+  'law-firm-website': {
+    title: "Law Firm Website Development",
+    category: "business-software",
+    price: "₹12,999",
+    desc: "Create a credibility-building law firm website that showcases your practice areas, attorney profiles, case results, client testimonials, and allows online consultation scheduling.",
+    features: ["Practice Area Pages","Attorney Profiles","Case Study Showcases","Online Consultation Booking","Blog/Legal Articles","Client Testimonials","Secure Contact Forms","Bar Council Compliance"],
+    plans: [{"name":"Silver Plan","price":"₹12,999","desc":"Basic law firm site","features":["8 Pages","Practice Areas","Attorney Profiles","Contact Form","Mobile Responsive","1 Week Delivery"]},{"name":"Gold Plan","price":"₹24,999","desc":"Full law firm portal","features":["20 Pages","Online Consultation Booking","Blog/Articles","Testimonials","Case Studies","2 Weeks Delivery"]},{"name":"Platinum Plan","price":"₹44,999","desc":"Multi-attorney firm website","features":["Unlimited Pages","Client Portal","Document Sharing","CMS Dashboard","Multi-language","4 Weeks Delivery"]}]
+  },
+  'legal-document-automation': {
+    title: "Legal Document Automation",
+    category: "business-software",
+    price: "₹14,999",
+    desc: "Automate repetitive legal document creation with template-based generation — create contracts, notices, affidavits, and agreements in seconds by filling a simple form.",
+    features: ["Document Template Library","Form-based Document Generation","E-signature Integration","PDF Download & Print","Template Management","Client Data Auto-fill","Version Control","Secure Document Sharing"],
+    plans: [{"name":"Silver Plan","price":"₹14,999","desc":"Basic template system","features":["10 Document Templates","Form-based Generation","PDF Download","Basic Sharing","1 Week Delivery"]},{"name":"Gold Plan","price":"₹29,999","desc":"Full document automation","features":["50 Templates","E-signature Integration","Auto-fill from Database","Version Control","3 Weeks Delivery"]},{"name":"Platinum Plan","price":"₹54,999","desc":"Enterprise legal document suite","features":["Unlimited Templates","Custom Workflow","API Integration","Audit Trails","5 Weeks Delivery"]}]
+  },
+  'client-portal': {
+    title: "Client Portal for Law Firms",
+    category: "business-software",
+    price: "₹14,999",
+    desc: "Give clients a secure portal to view their case status, upload documents, communicate with their lawyer, and pay bills — reducing phone calls and improving client satisfaction.",
+    features: ["Secure Client Login","Case Status Dashboard","Document Upload & Download","Secure Messaging with Lawyer","Invoice & Payment Module","Court Date Notifications","Case Timeline View","Mobile Responsive"],
+    plans: [{"name":"Silver Plan","price":"₹14,999","desc":"Basic client access portal","features":["Client Login","Case Status View","Document Download","Messaging","2 Weeks Delivery"]},{"name":"Gold Plan","price":"₹29,999","desc":"Full client portal","features":["Document Upload","Payment Integration","Court Date Alerts","Secure Messaging","Timeline View","3 Weeks Delivery"]},{"name":"Platinum Plan","price":"₹54,999","desc":"Enterprise client management portal","features":["Multi-firm Support","Custom Branding","Analytics","API Integration","5 Weeks Delivery"]}]
+  },
+  'appointment-scheduling-law': {
+    title: "Online Appointment Scheduling",
+    category: "business-software",
+    price: "₹9,999",
+    desc: "A professional consultation booking system for law firms allowing clients to schedule meetings with specific attorneys, pay consultation fees, and receive automated reminders.",
+    features: ["Attorney-specific Booking","Online Consultation Fee Collection","Video Consultation Link Generation","Calendar Sync","SMS & Email Reminders","Client Pre-consultation Form","Cancellation Management","Admin Dashboard"],
+    plans: [{"name":"Silver Plan","price":"₹9,999","desc":"Basic booking system","features":["Online Scheduling","Email Confirmations","Admin Calendar","Basic Reports","1 Week Delivery"]},{"name":"Gold Plan","price":"₹19,999","desc":"Smart legal scheduling","features":["Fee Collection","SMS Reminders","Video Meeting Link","Multi-attorney","2 Weeks Delivery"]},{"name":"Platinum Plan","price":"₹34,999","desc":"Enterprise legal scheduling","features":["Full Practice Integration","CRM Sync","Analytics","Custom Workflow","3 Weeks Delivery"]}]
+  },
+  'seo-for-law-firms': {
+    title: "SEO for Law Firms",
+    category: "business-software",
+    price: "₹9,999/mo",
+    desc: "When people need a lawyer, they Google. Our legal SEO strategy gets your firm to the top of search results for high-intent legal queries in your practice areas and city.",
+    features: ["Legal Keyword Research","Practice Area Page SEO","Google Maps for Lawyers","Legal Blog Writing","E-A-T Optimization (Expertise, Authority, Trust)","Backlink Building","Review Generation","Monthly Reports"],
+    plans: [{"name":"Silver Plan","price":"₹9,999/mo","desc":"Local law firm visibility","features":["15 Keywords","GMB Management","Practice Page SEO","Monthly Report","3-month minimum"]},{"name":"Gold Plan","price":"₹19,999/mo","desc":"Legal authority building","features":["30 Keywords","Legal Blog (2/mo)","E-A-T Optimization","Backlinks (8/mo)","3-month minimum"]},{"name":"Platinum Plan","price":"₹34,999/mo","desc":"Dominant legal SEO","features":["60 Keywords","Blogs (5/mo)","Backlinks (20/mo)","Schema Markup","No Contract"]}]
+  },
+  'content-marketing-law': {
+    title: "Legal Content Marketing",
+    category: "business-software",
+    price: "₹7,999/mo",
+    desc: "Position your law firm as the go-to legal authority through high-quality blog posts, legal guides, FAQ pages, and video content that educates potential clients and earns search rankings.",
+    features: ["Legal Blog Post Writing","FAQ Page Creation","Case Study Articles","Legal Guide E-books","Video Script Writing","Social Media Content","Newsletter Campaigns","Content Calendar Management"],
+    plans: [{"name":"Silver Plan","price":"₹7,999/mo","desc":"Basic content presence","features":["2 Blog Posts/month","SEO Optimization","Social Distribution","Monthly Analytics","3-month minimum"]},{"name":"Gold Plan","price":"₹14,999/mo","desc":"Active content authority","features":["4 Blog Posts/month","FAQ Pages","Legal Guides (1/quarter)","Newsletter (1/month)","3-month minimum"]},{"name":"Platinum Plan","price":"₹24,999/mo","desc":"Comprehensive content domination","features":["8 Posts/month","Video Scripts","E-book per Quarter","LinkedIn Strategy","No Contract"]}]
+  },
+  'manufacturing-website': {
+    title: "Manufacturing Company Website",
+    category: "business-software",
+    price: "₹14,999",
+    desc: "Build a credibility-establishing manufacturing website showcasing your products, capabilities, certifications, and case studies — designed to attract B2B buyers, distributors, and international clients.",
+    features: ["Product/Catalogue Pages","Manufacturing Capabilities Showcase","Certification & Quality Badges","B2B Inquiry Form","Factory Video/Gallery","Export Markets Section","Case Study Pages","Request for Quote (RFQ) System"],
+    plans: [{"name":"Silver Plan","price":"₹14,999","desc":"Basic industrial website","features":["10 Pages","Product Catalog","RFQ Form","Gallery","Mobile Responsive","1 Week Delivery"]},{"name":"Gold Plan","price":"₹29,999","desc":"Full manufacturing portal","features":["25 Pages","Product Downloads (Specs)","Case Studies","Certification Pages","Blog/News","2 Weeks Delivery"]},{"name":"Platinum Plan","price":"₹54,999","desc":"B2B marketplace portal","features":["Unlimited Pages","B2B Login Portal","Custom RFQ System","Distributor Section","4 Weeks Delivery"]}]
+  },
+  'erp-system': {
+    title: "ERP System for Manufacturing",
+    category: "business-software",
+    price: "₹49,999",
+    desc: "Streamline your entire manufacturing operation with a custom ERP — from raw material procurement to production planning, inventory, quality control, billing, and dispatch.",
+    features: ["Production Planning & Scheduling","Raw Material Procurement","Inventory Management","Quality Control Module","Machine Downtime Tracking","Dispatch & Logistics","Financial Accounting","Management Dashboard"],
+    plans: [{"name":"Silver Plan","price":"₹49,999","desc":"Basic manufacturing system","features":["Inventory Module","Production Planning","Basic Billing","Reports","4 Weeks Delivery"]},{"name":"Gold Plan","price":"₹99,999","desc":"Full manufacturing ERP","features":["All Core Modules","Quality Control","Machine Tracking","Detailed Analytics","Staff Roles","8 Weeks Delivery"]},{"name":"Platinum Plan","price":"₹1,99,999","desc":"Enterprise ERP platform","features":["Multi-plant","Full Financial Module","API Ecosystem","BI Dashboard","Custom Reports","14 Weeks Delivery"]}]
+  },
+  'inventory-manufacturing': {
+    title: "Inventory Management for Manufacturing",
+    category: "business-software",
+    price: "₹19,999",
+    desc: "Track raw materials, WIP (Work-In-Progress), and finished goods across your factory in real-time — with purchase order management, supplier tracking, and automated reorder points.",
+    features: ["Raw Material Tracking","WIP Monitoring","Finished Goods Inventory","Purchase Order Management","Supplier Management","Barcode/QR Scanning","Reorder Point Automation","Inventory Valuation Reports"],
+    plans: [{"name":"Silver Plan","price":"₹19,999","desc":"Basic inventory system","features":["Raw Material Tracking","Finished Goods","PO Management","Basic Reports","2 Weeks Delivery"]},{"name":"Gold Plan","price":"₹39,999","desc":"Full manufacturing IMS","features":["WIP Tracking","Barcode Scanning","Supplier Management","Reorder Automation","Detailed Analytics","4 Weeks Delivery"]},{"name":"Platinum Plan","price":"₹69,999","desc":"Enterprise inventory platform","features":["Multi-plant","ERP Integration","Advanced Analytics","Custom Reports","6 Weeks Delivery"]}]
+  },
+  'b2b-portal': {
+    title: "B2B Dealer & Distributor Portal",
+    category: "business-software",
+    price: "₹29,999",
+    desc: "Give your dealers and distributors a dedicated online portal to place orders, view catalogs, check stock, track shipments, and access marketing materials — eliminating manual order taking.",
+    features: ["Dealer Login & Registration","Product Catalog with Pricing Tiers","Online Order Placement","Stock Availability View","Shipment Tracking","Invoice & Account Statement","Marketing Asset Downloads","Admin Dealer Management"],
+    plans: [{"name":"Silver Plan","price":"₹29,999","desc":"Basic dealer portal","features":["Dealer Login","Product Catalog","Order Placement","Basic Reports","2 Weeks Delivery"]},{"name":"Gold Plan","price":"₹54,999","desc":"Full B2B portal","features":["Pricing Tiers","Stock Availability","Shipment Tracking","Invoice Module","Analytics","4 Weeks Delivery"]},{"name":"Platinum Plan","price":"₹94,999","desc":"Enterprise dealer management","features":["Multi-brand Portal","Credit Limit Management","Marketing Assets","Full Analytics Suite","6 Weeks Delivery"]}]
+  },
+  'quality-control-system': {
+    title: "Quality Control System",
+    category: "business-software",
+    price: "₹19,999",
+    desc: "Digitize your quality inspection process — define inspection parameters, record QC results at each production stage, generate non-conformance reports, and track defect trends for continuous improvement.",
+    features: ["Inspection Checklist Builder","QC Data Entry (Mobile/Web)","Non-conformance Report (NCR)","Defect Analytics & Trend Reports","ISO Compliance Documentation","Supplier Quality Audit","Customer Complaint Tracking","Real-time QC Dashboard"],
+    plans: [{"name":"Silver Plan","price":"₹19,999","desc":"Basic QC system","features":["Inspection Checklists","QC Entry","Basic Reports","NCR Generation","2 Weeks Delivery"]},{"name":"Gold Plan","price":"₹39,999","desc":"Full quality management","features":["Defect Analytics","ISO Documentation","Supplier QA","QC Dashboard","Mobile QC Entry","4 Weeks Delivery"]},{"name":"Platinum Plan","price":"₹69,999","desc":"Enterprise QMS platform","features":["Multi-plant","Advanced Analytics","Customer Complaint CRM","Custom Reports","6 Weeks Delivery"]}]
+  },
+  'industrial-mobile-app': {
+    title: "Industrial Operations Mobile App",
+    category: "business-software",
+    price: "₹34,999",
+    desc: "Empower factory supervisors and managers with a mobile app to monitor production, log machine downtime, capture quality issues, and view real-time dashboards — from any location.",
+    features: ["Live Production Dashboard","Machine Downtime Logging","Quality Issue Capture (Photo)","Shift Report Submission","Inventory Check","Push Alert Notifications","Worker Attendance","Management Analytics"],
+    plans: [{"name":"Silver Plan","price":"₹34,999","desc":"Basic factory floor app","features":["Android App","Production Dashboard","Downtime Logging","Basic Reports","3 Weeks Delivery"]},{"name":"Gold Plan","price":"₹64,999","desc":"Full operations app","features":["Android + iOS","Quality Capture","Shift Reports","Inventory Check","Push Alerts","5 Weeks Delivery"]},{"name":"Platinum Plan","price":"₹1,09,999","desc":"Enterprise industrial app","features":["Full ERP Integration","AI Anomaly Detection","Multi-plant","Custom Analytics","8 Weeks Delivery"]}]
+  },
+  'digital-marketing-manufacturing': {
+    title: "B2B Digital Marketing for Manufacturing",
+    category: "business-software",
+    price: "₹12,999/mo",
+    desc: "Attract B2B buyers, distributors, and export partners through LinkedIn campaigns, Google B2B ads, industry directories, and content marketing that establishes your manufacturing authority.",
+    features: ["LinkedIn B2B Campaigns","Google Industrial Search Ads","Industry Directory Listings","Trade Show Digital Campaigns","Technical Content Marketing","Email Campaign to Distributors","Export Market Campaigns","B2B Lead Generation"],
+    plans: [{"name":"Silver Plan","price":"₹12,999/mo","desc":"B2B brand visibility","features":["LinkedIn Company Page","10 Posts/month","Google Ads Setup","Directory Listings","Monthly Report"]},{"name":"Gold Plan","price":"₹24,999/mo","desc":"Active B2B lead generation","features":["LinkedIn Lead Ads","Google Search Ads","Email Campaigns","Technical Blog (2/mo)","Bi-weekly Reports"]},{"name":"Platinum Plan","price":"₹44,999/mo","desc":"Export market campaigns","features":["Multi-platform","Export Market Targeting","Video Production","Trade Show Campaigns","Weekly Strategy Calls"]}]
+  },
+  'ngo-website': {
+    title: "NGO & Non-Profit Website",
+    category: "business-software",
+    price: "₹9,999",
+    desc: "Create a compelling website that tells your story, showcases your impact, attracts donors, and connects volunteers with your cause — with online donation functionality built-in.",
+    features: ["Impact Stories & Statistics","Online Donation Button","Volunteer Registration","Program/Project Pages","Gallery & Field Reports","Newsletter Signup","Corporate Partner Section","Annual Report Downloads"],
+    plans: [{"name":"Silver Plan","price":"₹9,999","desc":"Basic NGO website","features":["6 Pages","Mission & Programs","Donation Button","Volunteer Form","Gallery","1 Week Delivery"]},{"name":"Gold Plan","price":"₹19,999","desc":"Full NGO portal","features":["20 Pages","Impact Dashboard","Newsletter Integration","Annual Reports","Blog/Updates","2 Weeks Delivery"]},{"name":"Platinum Plan","price":"₹34,999","desc":"Comprehensive cause platform","features":["Donor Portal","Volunteer Management","Corporate Partnership Section","Multi-language","3 Weeks Delivery"]}]
+  },
+  'online-donation-platform': {
+    title: "Online Donation Platform",
+    category: "business-software",
+    price: "₹14,999",
+    desc: "A dedicated donation platform supporting one-time and recurring donations, campaign-specific fundraising, donor dashboards, 80G receipt generation, and complete analytics.",
+    features: ["One-time & Recurring Donations","Campaign-based Fundraising Pages","Multiple Payment Gateways","80G Receipt Generation","Donor Login & History","Donation Matching Feature","Fundraiser Creation Tool","Analytics Dashboard"],
+    plans: [{"name":"Silver Plan","price":"₹14,999","desc":"Basic donation system","features":["One-time Donations","Payment Gateway","80G Receipts","Basic Dashboard","1 Week Delivery"]},{"name":"Gold Plan","price":"₹29,999","desc":"Full fundraising platform","features":["Recurring Donations","Campaign Pages","Donor Portal","Analytics","Email Automation","3 Weeks Delivery"]},{"name":"Platinum Plan","price":"₹54,999","desc":"Enterprise donor management","features":["Fundraiser Creator Tool","Donation Matching","Corporate Donation Module","Full Analytics","5 Weeks Delivery"]}]
+  },
+  'fundraising-campaigns': {
+    title: "Digital Fundraising Campaigns",
+    category: "business-software",
+    price: "₹9,999/campaign",
+    desc: "Run powerful digital fundraising campaigns — Giving Tuesday drives, birthday fundraisers, emergency campaigns, and year-end appeals — with compelling stories, social media distribution, and donation tracking.",
+    features: ["Campaign Landing Page Design","Countdown Timer & Goal Meter","Social Media Distribution","Email Campaign to Donors","WhatsApp Broadcast","Donor Update Stories","Matching Gift Feature","Real-time Campaign Analytics"],
+    plans: [{"name":"Silver Plan","price":"₹9,999/campaign","desc":"Basic campaign setup","features":["Landing Page","Donation Gateway","Email Blast (1)","Social Posts (5)","Campaign Report"]},{"name":"Gold Plan","price":"₹19,999/campaign","desc":"Full campaign management","features":["Custom Landing Page","Email Sequence (5)","WhatsApp Broadcast","Social Ads","Real-time Analytics","Donor Thank-you"]},{"name":"Platinum Plan","price":"₹34,999/campaign","desc":"Maximum impact campaign","features":["Multi-phase Campaign","Video Production","Influencer Outreach","Press Release","Post-campaign Report"]}]
+  },
+  'event-management-ngo': {
+    title: "NGO Event Management System",
+    category: "business-software",
+    price: "₹9,999",
+    desc: "Manage charity events — gala dinners, marathons, benefit concerts, and awareness campaigns — with online ticketing, registration, volunteer coordination, and post-event reporting.",
+    features: ["Online Event Registration","Ticket Sales & Payment","Volunteer Assignment for Events","Attendee Management","Event Sponsor Management","QR Code Check-in","Post-event Donation Drive","Impact Report Generation"],
+    plans: [{"name":"Silver Plan","price":"₹9,999","desc":"Basic event system","features":["Online Registration","Payment Gateway","Basic Reports","Email Confirmations","1 Week Delivery"]},{"name":"Gold Plan","price":"₹19,999","desc":"Full event management","features":["Ticketing","QR Check-in","Volunteer Module","Sponsor Tracking","Analytics","2 Weeks Delivery"]},{"name":"Platinum Plan","price":"₹34,999","desc":"Multi-event platform","features":["Multi-event Management","Live Fundraiser Board","Post-event Donations","Custom Branding","3 Weeks Delivery"]}]
+  },
+  'impact-reporting': {
+    title: "Impact Reporting Dashboard",
+    category: "business-software",
+    price: "₹12,999",
+    desc: "Create a beautiful, data-driven impact dashboard that shows donors, CSR partners, and government agencies exactly how their contributions are creating change — with live statistics and stories.",
+    features: ["Live Impact Metrics Dashboard","Beneficiary Count Tracking","Fund Utilization Visualization","Program Progress Reports","Geographic Impact Maps","Photo & Story Integration","Donor-specific Impact Statements","Annual Report Generation"],
+    plans: [{"name":"Silver Plan","price":"₹12,999","desc":"Basic impact dashboard","features":["Key Metrics Display","Program Progress","Fund Utilization Chart","PDF Export","1 Week Delivery"]},{"name":"Gold Plan","price":"₹24,999","desc":"Full impact reporting suite","features":["Live Dashboard","Geographic Maps","Beneficiary Stories","Donor Statements","Annual Report Generator","2 Weeks Delivery"]},{"name":"Platinum Plan","price":"₹44,999","desc":"Enterprise impact platform","features":["Multi-program","Custom Metrics","Donor Portal Integration","BI Integration","4 Weeks Delivery"]}]
+  },
+  'social-media-ngo': {
+    title: "Social Media for NGOs",
+    category: "business-software",
+    price: "₹7,999/mo",
+    desc: "Build a powerful social media presence for your NGO — sharing impact stories, volunteer highlights, campaign updates, and awareness content that attracts donors, volunteers, and media attention.",
+    features: ["Story-driven Content Creation","Campaign Social Posts","Volunteer Spotlights","Donor Recognition Posts","Awareness Day Campaigns","Video/Reel Production","Crowdfunding Social Drives","Engagement & Community Management"],
+    plans: [{"name":"Silver Plan","price":"₹7,999/mo","desc":"Basic cause presence","features":["Instagram + Facebook","12 Posts/month","Basic Ads","Community Management","Monthly Report"]},{"name":"Gold Plan","price":"₹14,999/mo","desc":"Active donor engagement","features":["20 Posts + 6 Reels","Campaign Support","Paid Awareness Ads","Donor Recognition","Bi-weekly Reports"]},{"name":"Platinum Plan","price":"₹24,999/mo","desc":"Full digital cause campaign","features":["All Platforms","Daily Stories","Influencer Collaboration","Video Production","Media Outreach"]}]
+  },
+  'beneficiary-management': {
+    title: "Beneficiary Management System",
+    category: "business-software",
+    price: "₹14,999",
+    desc: "Digitize your beneficiary records — track who receives aid, what program they're enrolled in, their progress, and generate reports for donor transparency and government compliance.",
+    features: ["Beneficiary Registration & Profiles","Program Enrollment Tracking","Aid/Service Delivery Logging","Progress Milestone Tracking","Document Storage","Geographic Distribution Map","Government Report Generation","Outcome Analytics"],
+    plans: [{"name":"Silver Plan","price":"₹14,999","desc":"Basic beneficiary tracker","features":["Beneficiary Profiles","Program Enrollment","Basic Reports","Document Storage","1 Week Delivery"]},{"name":"Gold Plan","price":"₹29,999","desc":"Full beneficiary management","features":["Progress Tracking","Geographic Maps","Outcome Analytics","Govt Report Formats","Mobile Data Entry","3 Weeks Delivery"]},{"name":"Platinum Plan","price":"₹54,999","desc":"Enterprise impact management","features":["Multi-program","Advanced Analytics","Donor Reporting Integration","Custom Reports","5 Weeks Delivery"]}]
+  },
+  'startup-website': {
+    title: "Startup Website Development",
+    category: "business-software",
+    price: "₹12,999",
+    desc: "Build a compelling startup website with your value proposition, product demo, team showcase, investor pitch, and lead capture — designed to convert visitors into signups and investors.",
+    features: ["Hero with Clear Value Proposition","Product Feature Highlights","Demo Video/GIF Section","Founder & Team Profiles","Investor Section","Newsletter/Waitlist Signup","Press/Media Mentions","Contact & Partnership Enquiry"],
+    plans: [{"name":"Silver Plan","price":"₹12,999","desc":"MVP landing page","features":["3–5 Pages","Value Proposition Hero","Feature List","Waitlist Form","Mobile Responsive","1 Week Delivery"]},{"name":"Gold Plan","price":"₹24,999","desc":"Full startup website","features":["10 Pages","Product Demo Section","Team Profiles","Investor Section","Blog","Animations","2 Weeks Delivery"]},{"name":"Platinum Plan","price":"₹44,999","desc":"Premium startup brand","features":["Custom Animations","Micro-interactions","Investor Portal","Press Kit","A/B Testing Ready","3 Weeks Delivery"]}]
+  },
+  'mvp-development': {
+    title: "MVP Development",
+    category: "business-software",
+    price: "₹49,999",
+    desc: "Turn your startup idea into a working product fast. We build focused MVPs with core features that validate your hypothesis, attract early users, and impress investors — without overbuilding.",
+    features: ["Core Feature Development","User Authentication","Database & API Architecture","Admin Dashboard","Analytics Integration","Payment Integration (if needed)","Mobile Responsive","Deployment & DevOps"],
+    plans: [{"name":"Silver Plan","price":"₹49,999","desc":"Simple MVP (Web)","features":["Web App","Core Feature Set","Auth + Database","Admin Dashboard","6 Weeks Delivery"]},{"name":"Gold Plan","price":"₹89,999","desc":"Full-featured MVP","features":["Web + Mobile Responsive","Payment Integration","Analytics","Admin + User Dashboards","API Architecture","8 Weeks Delivery"]},{"name":"Platinum Plan","price":"₹1,49,999","desc":"Investor-grade MVP","features":["Web + Mobile App","Scalable Architecture","Advanced Analytics","CI/CD Pipeline","12 Weeks Delivery"]}]
+  },
+  'saas-platform-development': {
+    title: "SaaS Platform Development",
+    category: "business-software",
+    price: "₹74,999",
+    desc: "We build production-ready SaaS platforms with multi-tenancy, subscription billing, onboarding flows, usage analytics, and enterprise security — ready to scale to thousands of users.",
+    features: ["Multi-tenant Architecture","Subscription Billing (Stripe)","User Onboarding Flows","Role-based Access Control","Usage Analytics & Metering","API & Webhook System","Admin Super Dashboard","Enterprise Security (SSO, 2FA)"],
+    plans: [{"name":"Silver Plan","price":"₹74,999","desc":"Basic SaaS (single tier)","features":["Single-tenant Architecture","Core Features","Stripe Billing","Admin Dashboard","8 Weeks Delivery"]},{"name":"Gold Plan","price":"₹1,49,999","desc":"Full multi-tenant SaaS","features":["Multi-tenant","Subscription Plans","Onboarding Flows","Analytics","API System","12 Weeks Delivery"]},{"name":"Platinum Plan","price":"₹2,49,999","desc":"Enterprise SaaS platform","features":["SSO/2FA","Usage Metering","Webhooks","White-label Option","DevOps Setup","18 Weeks Delivery"]}]
+  },
+  'startup-mobile-app': {
+    title: "Startup Mobile App Development",
+    category: "business-software",
+    price: "₹59,999",
+    desc: "From consumer apps to B2B tools, we build startup mobile apps with clean UX, fast performance, scalable backends, and app store optimization to get early adopters fast.",
+    features: ["React Native/Flutter Development","Backend API Development","User Auth & Profiles","Push Notifications","Analytics & Crash Reporting","App Store Optimization","In-app Purchases","Social Login"],
+    plans: [{"name":"Silver Plan","price":"₹59,999","desc":"MVP mobile app (Android)","features":["Android App","Core Features","Firebase Backend","Push Notifications","4 Weeks Delivery"]},{"name":"Gold Plan","price":"₹99,999","desc":"Full startup mobile app","features":["Android + iOS","Custom Backend","Analytics","In-app Purchases","Social Login","6 Weeks Delivery"]},{"name":"Platinum Plan","price":"₹1,69,999","desc":"Enterprise-grade startup app","features":["All Platforms","Scalable Architecture","Advanced Analytics","CI/CD","ASO Optimization","10 Weeks Delivery"]}]
+  },
+  'crm-for-startups': {
+    title: "Startup CRM & Sales System",
+    category: "business-software",
+    price: "₹9,999",
+    desc: "Stop managing sales in spreadsheets. A startup-optimized CRM to track leads, manage customer conversations, follow up systematically, and understand your early sales funnel performance.",
+    features: ["Lead & Deal Pipeline","Contact & Company Management","Activity & Follow-up Tracking","Email Integration","Sales Reporting Dashboard","Team Collaboration","Product Demo Scheduling","Investor Pipeline (Optional)"],
+    plans: [{"name":"Silver Plan","price":"₹9,999","desc":"Basic startup CRM","features":["Up to 3 Users","Lead Pipeline","Contact Management","Basic Reports","1 Week Setup"]},{"name":"Gold Plan","price":"₹19,999","desc":"Growing team CRM","features":["Up to 15 Users","Email Integration","Activity Tracking","Dashboard Analytics","Follow-up Automation","2 Weeks Setup"]},{"name":"Platinum Plan","price":"₹34,999","desc":"Scale-up sales system","features":["Unlimited Users","Investor Pipeline","Advanced Analytics","API Integrations","3 Weeks Setup"]}]
+  },
+  'investor-pitch-deck': {
+    title: "Investor Pitch Deck Design",
+    category: "business-software",
+    price: "₹9,999",
+    desc: "A professionally designed startup pitch deck that tells your story, demonstrates traction, presents your market opportunity, and convinces investors to take the next meeting.",
+    features: ["Problem & Solution Slides","Market Size (TAM/SAM/SOM)","Business Model Clarity","Traction & Metrics Visualization","Team Slide","Financial Projections","Ask & Use of Funds","One-Pager Summary"],
+    plans: [{"name":"Silver Plan","price":"₹9,999","desc":"Standard pitch deck (10–15 slides)","features":["10–15 Slides","Custom Design","Infographics","PDF + PPT Export","1 Week Delivery","2 Revisions"]},{"name":"Gold Plan","price":"₹19,999","desc":"Investor-grade pitch deck","features":["20 Slides","Financial Chart Design","Market Visualization","Multiple Versions","2 Weeks Delivery","Unlimited Revisions"]},{"name":"Platinum Plan","price":"₹34,999","desc":"Premium fundraising package","features":["Full Deck","One-pager","Pitch Coaching Session","VC-specific Customization","Data Room Setup","2 Weeks Delivery"]}]
+  },
+  'growth-hacking-seo': {
+    title: "Startup Growth Hacking & SEO",
+    category: "business-software",
+    price: "₹14,999/mo",
+    desc: "Accelerate your startup growth with data-driven growth hacking experiments — product-led growth strategies, SEO content engines, viral loops, and channel experiments that find what works fastest.",
+    features: ["Growth Funnel Audit","SEO Content Engine Setup","Product-led Growth Tactics","Viral Referral Loop","A/B Testing Framework","Acquisition Channel Experiments","Retention Optimization","Growth Analytics Dashboard"],
+    plans: [{"name":"Silver Plan","price":"₹14,999/mo","desc":"Growth foundation","features":["Funnel Audit","SEO Setup","4 Experiments/month","Monthly Report","3-month minimum"]},{"name":"Gold Plan","price":"₹29,999/mo","desc":"Active growth sprints","features":["8 Experiments/month","SEO Content (4 pieces)","Referral Program","Retention Analysis","Bi-weekly Reports"]},{"name":"Platinum Plan","price":"₹54,999/mo","desc":"Full-stack growth team","features":["Unlimited Experiments","Dedicated Growth PM","Product Analytics","Weekly Strategy","Investor Metrics Reports"]}]
+  },
+  'social-media-startup': {
+    title: "Social Media & Brand Building for Startups",
+    category: "business-software",
+    price: "₹9,999/mo",
+    desc: "Establish your startup's brand voice, build founder credibility on LinkedIn, attract talent and users on Instagram, and create a community of early adopters through strategic social presence.",
+    features: ["Founder Personal Branding (LinkedIn)","Startup Instagram & Twitter/X Management","Product Launch Campaigns","User Community Building","PR & Media Outreach","Influencer Collaborations","Content Series Development","Monthly Analytics Reports"],
+    plans: [{"name":"Silver Plan","price":"₹9,999/mo","desc":"Startup brand presence","features":["LinkedIn + Instagram","12 Posts/month","Basic Founder Content","Community Engagement","Monthly Report"]},{"name":"Gold Plan","price":"₹19,999/mo","desc":"Active startup marketing","features":["All Channels","20 Posts + 6 Reels","Founder LinkedIn Strategy","Product Launch Support","Bi-weekly Reports"]},{"name":"Platinum Plan","price":"₹34,999/mo","desc":"Full startup brand domination","features":["All Channels","PR Outreach","Influencer","Product Hunt Launch","Investor Visibility Strategy"]}]
+  },
+  'custom-web-development': {
+    title: "Custom Web Development",
+    category: "business-software",
+    price: "₹29,999",
+    desc: "When off-the-shelf solutions don't fit, we build custom web applications — portals, platforms, tools, and systems — engineered precisely for your business logic and workflow.",
+    features: ["Custom Architecture Design","Frontend & Backend Development","API Development & Integration","Database Design","Admin & User Dashboards","Third-party Integration","Security & Performance","DevOps & Deployment"],
+    plans: [{"name":"Silver Plan","price":"₹29,999","desc":"Simple web tool/portal","features":["Core Features","User + Admin Dashboard","Database + API","Mobile Responsive","4 Weeks Delivery"]},{"name":"Gold Plan","price":"₹74,999","desc":"Medium complexity web app","features":["Advanced Features","Third-party Integrations","Custom Workflows","Analytics","8 Weeks Delivery"]},{"name":"Platinum Plan","price":"₹1,49,999+","desc":"Enterprise web platform","features":["Full Custom Platform","Microservices Architecture","DevOps Pipeline","Security Audit","12+ Weeks Delivery"]}]
+  },
+  'custom-mobile-app': {
+    title: "Custom Mobile App Development",
+    category: "business-software",
+    price: "₹49,999",
+    desc: "From simple utility apps to complex platform applications, we build custom mobile apps that solve real business problems — with clean UX, reliable backends, and app store publishing.",
+    features: ["Android & iOS Development","Custom UI/UX Design","Backend API Development","Third-party SDK Integration","Push Notification System","Offline Mode Support","Analytics & Crash Reporting","App Store Submission"],
+    plans: [{"name":"Silver Plan","price":"₹49,999","desc":"Android-only MVP app","features":["Android App","Core Features","Firebase Backend","Basic Analytics","4 Weeks Delivery"]},{"name":"Gold Plan","price":"₹89,999","desc":"Cross-platform mobile app","features":["Android + iOS","Custom Backend","Payment Integration","Advanced Features","6 Weeks Delivery"]},{"name":"Platinum Plan","price":"₹1,49,999","desc":"Enterprise mobile platform","features":["All Platforms","Scalable Backend","CI/CD Pipeline","Security Audit","10 Weeks Delivery"]}]
+  },
+  'ai-ml-solutions': {
+    title: "AI & Machine Learning Solutions",
+    category: "business-software",
+    price: "₹29,999",
+    desc: "Add AI capabilities to your business — chatbots, recommendation engines, document processing, predictive analytics, image recognition, and NLP — built with the latest AI APIs and custom models.",
+    features: ["AI Chatbot Development","Recommendation Engine","Document OCR & Processing","Predictive Analytics","Image Recognition","Natural Language Processing","OpenAI API Integration","Custom ML Model Training"],
+    plans: [{"name":"Silver Plan","price":"₹29,999","desc":"Basic AI feature integration","features":["Chatbot or 1 AI Feature","OpenAI Integration","Basic Training","API Endpoint","2 Weeks Delivery"]},{"name":"Gold Plan","price":"₹74,999","desc":"Custom AI module","features":["Custom AI Feature","Data Pipeline","Model Fine-tuning","Dashboard","API + Documentation","4 Weeks Delivery"]},{"name":"Platinum Plan","price":"₹1,49,999","desc":"Enterprise AI platform","features":["Multiple AI Features","Custom ML Models","Real-time Inference","MLOps Pipeline","8 Weeks Delivery"]}]
+  },
+  'crm-development': {
+    title: "Custom CRM Development",
+    category: "business-software",
+    price: "₹19,999",
+    desc: "Off-the-shelf CRMs like Salesforce or HubSpot are expensive and rigid. We build custom CRMs tailored to your exact sales workflow, industry terminology, and reporting needs — at a fraction of the cost.",
+    features: ["Custom Sales Pipeline","Contact & Company Management","Task & Follow-up Automation","Email & WhatsApp Integration","Custom Reporting & Analytics","Role-based Access","Mobile CRM App","Third-party Integrations"],
+    plans: [{"name":"Silver Plan","price":"₹19,999","desc":"Basic custom CRM","features":["Up to 5 Users","Pipeline","Contact Management","Basic Reports","Email Integration","2 Weeks Delivery"]},{"name":"Gold Plan","price":"₹44,999","desc":"Full custom CRM","features":["Up to 25 Users","WhatsApp Integration","Automation Rules","Custom Reports","Mobile App","4 Weeks Delivery"]},{"name":"Platinum Plan","price":"₹89,999","desc":"Enterprise CRM platform","features":["Unlimited Users","Multi-branch","Advanced Analytics","Full API Ecosystem","6 Weeks Delivery"]}]
+  },
+  'digital-marketing': {
+    title: "Full-Service Digital Marketing",
+    category: "business-software",
+    price: "₹14,999/mo",
+    desc: "From brand awareness to lead generation and customer retention — our full-service digital marketing team manages your SEO, social media, paid ads, email marketing, and content strategy.",
+    features: ["SEO Strategy & Execution","Social Media Management","Google & Meta Paid Ads","Email Marketing","Content Marketing","WhatsApp Marketing","Analytics & Reporting","Brand Strategy"],
+    plans: [{"name":"Silver Plan","price":"₹14,999/mo","desc":"Basic digital presence","features":["Social Media (2 platforms)","15 Posts/month","GMB Management","SEO Basics","Monthly Report"]},{"name":"Gold Plan","price":"₹29,999/mo","desc":"Active growth marketing","features":["All Social + Google Ads","25 Posts + 6 Reels","SEO (25 keywords)","Email Campaign/mo","Bi-weekly Reports"]},{"name":"Platinum Plan","price":"₹54,999/mo","desc":"Full-stack digital domination","features":["All Channels","Daily Content","YouTube Ads","WhatsApp Automation","Weekly Strategy Calls"]}]
+  },
+  'cloud-solutions': {
+    title: "Cloud Solutions & DevOps",
+    category: "business-software",
+    price: "₹24,999",
+    desc: "Migrate to the cloud, optimize your infrastructure, set up CI/CD pipelines, and ensure 99.9% uptime — with expert DevOps engineering on AWS, GCP, or Azure.",
+    features: ["Cloud Migration (AWS/GCP/Azure)","CI/CD Pipeline Setup","Docker & Kubernetes","Auto-scaling Architecture","Database Optimization","Security & Compliance","Monitoring & Alerting","Cost Optimization"],
+    plans: [{"name":"Silver Plan","price":"₹24,999","desc":"Basic cloud setup","features":["Cloud Server Setup","Domain + SSL","Basic CI/CD","Backup Config","1 Week Delivery"]},{"name":"Gold Plan","price":"₹49,999","desc":"Full cloud architecture","features":["Multi-server Setup","CI/CD Pipeline","Auto-scaling","Monitoring","Security Hardening","2 Weeks Delivery"]},{"name":"Platinum Plan","price":"₹89,999","desc":"Enterprise cloud platform","features":["Kubernetes Cluster","Multi-region","DR Setup","Cost Optimization","On-call Support","4 Weeks Delivery"]}]
+  },
+  'erp-solutions': {
+    title: "Custom ERP Solutions",
+    category: "business-software",
+    price: "₹49,999",
+    desc: "Replace disconnected spreadsheets and tools with a unified ERP that manages your operations, finance, HR, inventory, and customer relationships in one integrated platform.",
+    features: ["Finance & Accounting Module","HR & Payroll Management","Inventory & Procurement","CRM & Sales Pipeline","Project Management","Reporting & BI Dashboard","Role-based Access","API Ecosystem"],
+    plans: [{"name":"Silver Plan","price":"₹49,999","desc":"2–3 core modules","features":["2–3 Modules","Basic Integration","Reporting","User Roles","6 Weeks Delivery"]},{"name":"Gold Plan","price":"₹1,24,999","desc":"Full business ERP (5–7 modules)","features":["5–7 Modules","Full Integration","BI Dashboard","API Ecosystem","10 Weeks Delivery"]},{"name":"Platinum Plan","price":"₹2,49,999","desc":"Enterprise ERP platform","features":["All Modules","Multi-entity","Custom Reports","Full DevOps","16 Weeks Delivery"]}]
+  },
+  'seo-services-general': {
+    title: "SEO & Content Marketing",
+    category: "business-software",
+    price: "₹7,999/mo",
+    desc: "A comprehensive SEO and content strategy that targets your ideal customers through Google search, builds your domain authority, and generates consistent organic leads month after month.",
+    features: ["Full SEO Audit","Keyword Research & Strategy","On-page & Technical SEO","Content Strategy & Writing","Link Building","Google Business Profile","Analytics & Reporting","Competitor Analysis"],
+    plans: [{"name":"Silver Plan","price":"₹7,999/mo","desc":"Basic SEO foundation","features":["15 Keywords","On-page Optimization","GMB Setup","Monthly Report","3-month minimum"]},{"name":"Gold Plan","price":"₹14,999/mo","desc":"Active SEO growth","features":["30 Keywords","Technical SEO","Content (3/mo)","Backlinks (8/mo)","Bi-weekly Reports"]},{"name":"Platinum Plan","price":"₹29,999/mo","desc":"SEO market domination","features":["60+ Keywords","Content (8/mo)","Backlinks (20/mo)","Schema Markup","No Contract"]}]
+  },
+  'fintech-app-development': {
+    title: "Fintech App Development",
+    category: "mobile-apps",
+    price: "₹1,49,999",
+    desc: "Custom fintech applications including digital banking, payments, lending, and investment platforms built with security and regulatory compliance at the core.",
+    features: ["UPI & Payment Gateway Integration","eKYC & Aadhaar Verification","Real-time Transaction Monitoring","Multi-factor Authentication","Loan Origination Module","Investment Portfolio Tracker","Spending Analytics","Compliance & Audit Logs"],
+    plans: [{"name":"Fintech MVP","price":"₹1,49,999","desc":"Core fintech application","features":["Payment Integration","eKYC","User Dashboard","Security Hardening","10 Weeks Delivery"]},{"name":"Enterprise Fintech","price":"₹2,99,999","desc":"Full-scale fintech platform","features":["Multi-product Suite","Advanced Analytics","Admin Panel","API Marketplace","18 Weeks Delivery"]}]
+  },
+  'banking-website': {
+    title: "Banking & Finance Website",
+    category: "websites",
+    price: "₹39,999",
+    desc: "Secure, trust-inspiring websites for banks, NBFCs, credit unions, and financial advisory firms that drive customer acquisition and provide self-service portals.",
+    features: ["Product & Scheme Showcases","EMI Calculator Tools","Branch & ATM Locator","Loan Application Forms","Customer Login Portal","Regulatory Disclosure Pages","Mobile-Responsive Design","ADA Accessibility"],
+    plans: [{"name":"Institutional Website","price":"₹39,999","desc":"Professional finance website","features":["Up to 20 Pages","EMI Calculators","Lead Forms","Mobile Responsive","4 Weeks Delivery"]},{"name":"Enterprise Portal","price":"₹74,999","desc":"Full self-service website","features":["Customer Login Portal","Branch Locator","Application Forms","ADA Compliant","7 Weeks Delivery"]}]
+  },
+  'loan-management-software': {
+    title: "Loan Management Software",
+    category: "business-software",
+    price: "₹79,999",
+    desc: "A comprehensive software system to manage the complete loan lifecycle from origination, underwriting, and disbursement to repayment tracking and collections.",
+    features: ["Digital Loan Application & Origination","Automated Credit Scoring","Document Management (eKYC)","Loan Disbursement Workflows","EMI Schedule Generation","Collections & Recovery Module","Repayment Reminders (SMS/Email)","NPA Reporting & Analytics"],
+    plans: [{"name":"LMS Core","price":"₹79,999","desc":"Essential loan management","features":["Origination","EMI Scheduling","Repayment Tracking","Basic Reports","7 Weeks Delivery"]},{"name":"LMS Enterprise","price":"₹1,49,999","desc":"Full-cycle lending platform","features":["Credit Scoring","Collections Module","NPA Analytics","Multi-branch Support","12 Weeks Delivery"]}]
+  },
+  'nbfc-portal': {
+    title: "NBFC / Lending Portal",
+    category: "business-software",
+    price: "₹54,999",
+    desc: "A complete web and mobile portal for NBFCs allowing customers to apply for loans, track status, make payments, and agents to manage their portfolios.",
+    features: ["Customer Loan Application Portal","Agent / DSA Management Portal","Document Upload (eKYC)","Loan Status Tracker","Online Repayment Gateway","Statement Downloads","Agent Commission Tracking","Admin Dashboard"],
+    plans: [{"name":"Customer Portal","price":"₹54,999","desc":"Customer & loan tracking portal","features":["Loan Application","Status Tracker","Repayment Gateway","Document Upload","6 Weeks Delivery"]},{"name":"NBFC Suite","price":"₹99,999","desc":"Customer + Agent portal","features":["Customer Portal","DSA Portal","Commission Tracking","Admin Dashboard","10 Weeks Delivery"]}]
+  },
+  'investment-platform': {
+    title: "Investment Platform",
+    category: "business-software",
+    price: "₹99,999",
+    desc: "A secure investment platform enabling investors to discover, analyze, and invest in mutual funds, stocks, bonds, or other financial instruments with real-time data.",
+    features: ["Investment Discovery & Filtering","Real-time Market Data Integration","Portfolio Dashboard & Analytics","SIP (Systematic Investment Plans)","KYC & SEBI Compliance","Transaction History","Goal-based Investing Tools","Mobile App"],
+    plans: [{"name":"MF Platform","price":"₹99,999","desc":"Mutual fund investment portal","features":["Fund Discovery","KYC Integration","SIP Setup","Portfolio View","10 Weeks Delivery"]},{"name":"Wealth Platform","price":"₹1,99,999","desc":"Full-stack wealth management","features":["Multi-asset Classes","Goal Planning Tools","Real-time Market Data","Mobile App","16 Weeks Delivery"]}]
+  },
+  'finance-crm': {
+    title: "Finance CRM",
+    category: "business-software",
+    price: "₹44,999",
+    desc: "A specialized CRM built for banks, NBFCs, and financial advisors to manage the complete client lifecycle from lead to conversion and long-term relationship management.",
+    features: ["Lead Capture & Qualification","Client Financial Profile","Product Interest Tracking (Loans, FD, MF)","Follow-up Automation","Agent Assignment","Revenue & Commission Tracking","Cross-sell & Upsell Prompts","Regulatory Audit Logs"],
+    plans: [{"name":"Finance CRM","price":"₹44,999","desc":"Core financial CRM","features":["Lead Management","Client Profiles","Follow-up Automation","Basic Reports","5 Weeks Delivery"]},{"name":"Enterprise CRM","price":"₹84,999","desc":"Advanced financial relationship platform","features":["Cross-sell Engine","Commission Tracking","Audit Logs","Advanced Analytics","9 Weeks Delivery"]}]
+  },
+  'digital-wallet-app': {
+    title: "Digital Wallet App",
+    category: "mobile-apps",
+    price: "₹99,999",
+    desc: "A feature-rich digital wallet application enabling users to add money, make payments, transfer funds, split bills, and manage transactions from their smartphones.",
+    features: ["UPI & Bank Account Linking","P2P Money Transfers","QR Code Payments","Bill Payments (Utility, Mobile, DTH)","Transaction History & Statements","Cashback & Rewards Engine","Biometric Authentication","Multi-currency Support"],
+    plans: [{"name":"Basic Wallet","price":"₹99,999","desc":"Core payment wallet app","features":["UPI Payments","P2P Transfers","Bill Payments","Android & iOS","10 Weeks Delivery"]},{"name":"Rewards Wallet","price":"₹1,79,999","desc":"Full-featured wallet with rewards","features":["Cashback Engine","Multi-currency","QR Payments","Analytics Dashboard","16 Weeks Delivery"]}]
+  },
+  'financial-analytics-dashboard': {
+    title: "Financial Analytics Dashboard",
+    category: "business-software",
+    price: "₹49,999",
+    desc: "A powerful BI and analytics dashboard that aggregates financial data across portfolios, branches, and products to give leadership real-time visibility and insights.",
+    features: ["Revenue & P&L Dashboards","Portfolio Quality Analytics (NPA tracking)","Branch-wise Performance Reports","Agent / Channel Performance","Cash Flow Forecasting","Regulatory Report Automation (RBI)","Drill-down Data Exploration","Scheduled PDF Reports"],
+    plans: [{"name":"Standard Dashboard","price":"₹49,999","desc":"Core financial reports","features":["P&L Dashboard","Branch Reports","NPA Tracking","Monthly Reports","5 Weeks Delivery"]},{"name":"Intelligence Suite","price":"₹94,999","desc":"Full BI & analytics platform","features":["Forecasting","Regulatory Reports","Custom KPIs","Drill-down Explorer","9 Weeks Delivery"]}]
+  },
+  'insurance-website': {
+    title: "Insurance Company Website",
+    category: "websites",
+    price: "₹24,999",
+    desc: "A secure, professional website for insurance companies, brokers, and agents to showcase products, generate leads, and provide customer self-service portals.",
+    features: ["Insurance Product Showcases","Premium Calculator Tools","Online Inquiry & Lead Forms","Agent / Branch Locator","Customer Login Portal","Claims Reporting Form","Blog & Resource Center","Mobile-Responsive Design"],
+    plans: [{"name":"Agency Website","price":"₹24,999","desc":"For insurance agents & brokers","features":["Up to 15 Pages","Lead Forms","Premium Calculator","Mobile Responsive","3 Weeks Delivery"]},{"name":"Corporate Website","price":"₹54,999","desc":"For insurance companies","features":["Customer Portal","Agent Locator","Claims Form","Blog","6 Weeks Delivery"]}]
+  },
+  'policy-management-system': {
+    title: "Policy Management System",
+    category: "business-software",
+    price: "₹69,999",
+    desc: "A comprehensive Policy Management System (PMS) to manage the complete lifecycle of insurance policies from issuance, endorsements, and renewals to cancellations.",
+    features: ["Policy Issuance & Numbering","Endorsement Management","Automated Renewal Reminders","Premium Payment Tracking","Policy Document Generation (PDF)","Agent & Broker Portal","Customer Self-service Portal","Reporting & Analytics"],
+    plans: [{"name":"Basic PMS","price":"₹69,999","desc":"Core policy management","features":["Policy Issuance","Renewal Reminders","Document Generation","Agent Portal","7 Weeks Delivery"]},{"name":"Enterprise PMS","price":"₹1,39,999","desc":"Full lifecycle management","features":["Endorsements","Customer Portal","Advanced Analytics","Multi-product Support","12 Weeks Delivery"]}]
+  },
+  'claims-management': {
+    title: "Claims Management System",
+    category: "business-software",
+    price: "₹59,999",
+    desc: "A digital claims management platform to streamline FNOL (First Notice of Loss), document collection, adjudication, and settlement, reducing TAT and improving customer satisfaction.",
+    features: ["Online FNOL (Claim Intimation)","Digital Document Submission","Claim Status Tracker for Customers","Surveyor Assignment & Workflow","Automated Approval Workflows","Fraud Detection Flags","Settlement Processing","Claims Analytics Dashboard"],
+    plans: [{"name":"Basic Claims","price":"₹59,999","desc":"Digital claim submission & tracking","features":["Online FNOL","Document Upload","Status Tracker","Basic Workflow","6 Weeks Delivery"]},{"name":"Smart Claims","price":"₹1,19,999","desc":"Full automated claims platform","features":["Surveyor Portal","Fraud Flags","Auto Approvals","Settlement Processing","11 Weeks Delivery"]}]
+  },
+  'insurance-agent-portal': {
+    title: "Insurance Agent Portal",
+    category: "business-software",
+    price: "₹39,999",
+    desc: "A dedicated web and mobile portal for insurance agents and POSPs to manage their clients, issue policies, track commissions, and access product training materials.",
+    features: ["Client Portfolio Management","Online Policy Issuance & Quoting","Commission Tracking & Statements","Lead Management","Product Rate Cards","Training & Exam Portal","Document Repository","Instant Chat Support"],
+    plans: [{"name":"Agent Hub","price":"₹39,999","desc":"Core agent management portal","features":["Client Management","Commission Tracker","Document Repository","Mobile Responsive","4 Weeks Delivery"]},{"name":"Agent Pro Suite","price":"₹74,999","desc":"Full-featured agent platform with app","features":["Online Quoting","Training Portal","Mobile App","Performance Analytics","8 Weeks Delivery"]}]
+  },
+  'insurance-crm': {
+    title: "Insurance CRM",
+    category: "business-software",
+    price: "₹34,999",
+    desc: "A purpose-built CRM for insurance companies and agents to track leads, manage renewals, automate follow-ups, and maximize customer lifetime value.",
+    features: ["Lead Capture (Web, WhatsApp, Referral)","Policy Renewal Pipeline","Automated SMS/Email/WhatsApp Reminders","Cross-sell & Upsell Prompts","Agent Assignment & Tracking","Customer 360° Profile","Renewal Due Alerts","Performance Analytics"],
+    plans: [{"name":"Insurance CRM","price":"₹34,999","desc":"Core lead & renewal management","features":["Lead Management","Renewal Reminders","Email/SMS Automation","Basic Reports","4 Weeks Delivery"]},{"name":"InsureCRM Pro","price":"₹64,999","desc":"Advanced pipeline & analytics","features":["360° Profiles","Cross-sell Engine","WhatsApp Automation","Performance Analytics","7 Weeks Delivery"]}]
+  },
+  'insurance-mobile-app': {
+    title: "Insurance Mobile App",
+    category: "mobile-apps",
+    price: "₹74,999",
+    desc: "A branded mobile application for policyholders to view policies, pay premiums, file claims, and chat with support — all from their smartphone.",
+    features: ["Policy Dashboard & Details","Premium Payment (UPI/Card)","Instant Claim Filing (FNOL)","Digital Policy Cards","Push Notifications for Renewals","Agent Connect & Chat","Loyalty Rewards","Biometric Login"],
+    plans: [{"name":"Policyholder App","price":"₹74,999","desc":"View, pay & claim mobile app","features":["Policy Dashboard","Premium Payments","Claim Filing","Push Notifications","8 Weeks Delivery"]},{"name":"Full Insurance App","price":"₹1,29,999","desc":"Complete digital insurance experience","features":["Loyalty Rewards","Agent Connect","Digital Cards","Biometric Login","12 Weeks Delivery"]}]
+  },
+  'insurance-comparison-portal': {
+    title: "Insurance Comparison Portal",
+    category: "websites",
+    price: "₹99,999",
+    desc: "An aggregator-style insurance comparison portal where users can compare policies across providers on price, features, and ratings and purchase directly online.",
+    features: ["Multi-insurer Policy Comparison","Premium Calculator by Profile","Feature-wise Comparison Table","Online Application & KYC","Integrated Payment Gateway","Policy Delivery via Email","Customer Reviews & Ratings","SEO-optimized Content Pages"],
+    plans: [{"name":"Comparison Portal","price":"₹99,999","desc":"Core comparison & quoting portal","features":["Multi-insurer Comparison","Premium Calculator","Lead Capture","Basic SEO","10 Weeks Delivery"]},{"name":"Aggregator Platform","price":"₹1,99,999","desc":"Full-featured insurance marketplace","features":["Online Purchase","Payment Gateway","Policy Delivery","Advanced SEO","16 Weeks Delivery"]}]
+  },
+  'logistics-website': {
+    title: "Logistics Company Website",
+    category: "websites",
+    price: "₹24,999",
+    desc: "A high-impact website for logistics, freight, and transport companies to showcase services, generate B2B leads, and provide shipment enquiry tools.",
+    features: ["Service Showcase (FTL, LTL, Air, Sea)","Instant Rate/Quote Request Forms","Shipment Tracking Widget","Branch & Network Map","Fleet Photo Gallery","Customer Testimonials","Mobile-Responsive Design","SEO Optimized"],
+    plans: [{"name":"Business Website","price":"₹24,999","desc":"Professional logistics website","features":["Up to 15 Pages","Quote Request Form","Fleet Gallery","Mobile Responsive","3 Weeks Delivery"]},{"name":"Lead Gen Website","price":"₹49,999","desc":"Tracking widget & full B2B site","features":["Tracking Widget","Rate Calculator","SEO Optimization","Network Map","5 Weeks Delivery"]}]
+  },
+  'fleet-management-system': {
+    title: "Fleet Management System",
+    category: "business-software",
+    price: "₹44,999",
+    desc: "A comprehensive fleet management platform integrating GPS tracking, driver management, maintenance scheduling, and fuel monitoring for complete fleet control.",
+    features: ["Real-time GPS Vehicle Tracking","Driver Management & Behavior Scoring","Fuel Consumption Monitoring","Preventive Maintenance Alerts","Route History & Playback","Geo-fencing & Alerts","Vehicle Documents & Compliance","Fleet Performance Dashboard"],
+    plans: [{"name":"Fleet Tracker","price":"₹44,999","desc":"GPS tracking & basic management","features":["Real-time Tracking","Driver Management","Geo-fencing","Basic Reports","5 Weeks Delivery"]},{"name":"Fleet Pro","price":"₹84,999","desc":"Full fleet intelligence platform","features":["Fuel Monitoring","Maintenance Alerts","Driver Scoring","Advanced Analytics","9 Weeks Delivery"]}]
+  },
+  'shipment-tracking-platform': {
+    title: "Shipment Tracking Platform",
+    category: "business-software",
+    price: "₹34,999",
+    desc: "A multi-courier, multi-modal shipment tracking platform providing real-time visibility across all your logistics partners in a single unified dashboard.",
+    features: ["Multi-courier API Integration","Real-time Shipment Status","Customer-facing Tracking Page","Automated SMS/WhatsApp Notifications","Exception & Delay Alerts","Proof of Delivery (ePOD)","Analytics & SLA Reporting","Branded Tracking Experience"],
+    plans: [{"name":"Tracking Hub","price":"₹34,999","desc":"Unified tracking dashboard","features":["3 Courier Integrations","Status Dashboard","Email Notifications","Tracking Page","4 Weeks Delivery"]},{"name":"Track Pro","price":"₹69,999","desc":"Full-scale tracking platform","features":["Unlimited Couriers","SMS/WhatsApp Alerts","ePOD","SLA Analytics","7 Weeks Delivery"]}]
+  },
+  'transport-management-system': {
+    title: "Transport Management System (TMS)",
+    category: "business-software",
+    price: "₹69,999",
+    desc: "A full-featured TMS to manage order creation, carrier selection, load planning, dispatch, proof of delivery, and freight billing in one integrated platform.",
+    features: ["Order & Load Management","Carrier / Transporter Assignment","Route Planning & Optimization","Driver App (Mobile)","Live Tracking Integration","ePOD (Digital Proof of Delivery)","Freight Invoice & Billing","Analytics & Performance Reports"],
+    plans: [{"name":"TMS Core","price":"₹69,999","desc":"Essential transport management","features":["Order Management","Carrier Assignment","Basic Tracking","ePOD","7 Weeks Delivery"]},{"name":"TMS Enterprise","price":"₹1,39,999","desc":"Full-scale transport platform","features":["Route Optimization","Driver App","Freight Billing","Advanced Analytics","12 Weeks Delivery"]}]
+  },
+  'delivery-tracking-app': {
+    title: "Delivery Tracking App",
+    category: "mobile-apps",
+    price: "₹39,999",
+    desc: "A mobile application for delivery executives to manage daily deliveries, navigate to addresses, capture proof of delivery, and handle cash collections.",
+    features: ["Optimized Daily Delivery Route","Google Maps Navigation","Photo & Signature ePOD","Cash Collection & COD Management","Failed Delivery Workflow","Real-time Status Updates to Customer","Offline Mode Support","Performance Analytics"],
+    plans: [{"name":"Delivery App","price":"₹39,999","desc":"Core delivery agent app","features":["Route Display","ePOD","Status Updates","Cash Collection","5 Weeks Delivery"]},{"name":"Smart Delivery","price":"₹74,999","desc":"Advanced with optimization & analytics","features":["Route Optimization","Offline Mode","Customer Notifications","Analytics Dashboard","8 Weeks Delivery"]}]
+  },
+  'logistics-crm': {
+    title: "Logistics CRM",
+    category: "business-software",
+    price: "₹34,999",
+    desc: "A specialized CRM for logistics and freight companies to manage corporate clients, track shipments per client, generate invoices, and grow their B2B business.",
+    features: ["Corporate Client Management","Shipment Enquiry & Quote Tracking","Rate Card Management","Invoice & Credit Management","Automated Follow-up Sequences","Service Complaint Tracking","Client Performance Reports","Business Development Pipeline"],
+    plans: [{"name":"Logistics CRM","price":"₹34,999","desc":"Core client & quote management","features":["Client Management","Quote Tracking","Invoice Management","Basic Reports","4 Weeks Delivery"]},{"name":"Freight CRM Pro","price":"₹64,999","desc":"Advanced B2B sales platform","features":["Rate Card Management","Business Dev Pipeline","Client Analytics","Complaint Tracking","7 Weeks Delivery"]}]
+  },
+  'route-optimization-software': {
+    title: "Route Optimization Software",
+    category: "business-software",
+    price: "₹54,999",
+    desc: "An AI-powered route optimization engine that calculates the most efficient delivery routes for multiple stops, reducing fuel costs and delivery time.",
+    features: ["Multi-stop Route Optimization","Time Window Constraints","Vehicle Capacity Constraints","Real-time Traffic Integration","Dynamic Re-routing","Driver App Integration","Savings vs Manual Report","API for Integration with TMS/ERP"],
+    plans: [{"name":"Route Optimizer","price":"₹54,999","desc":"Core route optimization","features":["Multi-stop Optimization","Time Windows","Driver App Integration","5 Weeks Delivery"]},{"name":"Smart Router Pro","price":"₹94,999","desc":"Full-featured with real-time re-routing","features":["Dynamic Re-routing","Capacity Constraints","TMS API Integration","Savings Analytics","9 Weeks Delivery"]}]
+  },
+  'automobile-dealership-website': {
+    title: "Automobile Dealership Website",
+    category: "websites",
+    price: "₹34,999",
+    desc: "A high-performance website for car dealerships with dynamic vehicle inventory, virtual showrooms, loan EMI calculators, and test drive booking systems.",
+    features: ["Dynamic Vehicle Inventory Listings","Advanced Filter & Search (Brand, Model, Price)","Online Test Drive Booking","EMI Calculator","Comparison Tool","360° Virtual Car Tour","Lead Capture Forms","Mobile-Responsive Design"],
+    plans: [{"name":"Dealer Website","price":"₹34,999","desc":"Core dealership web presence","features":["Vehicle Inventory","EMI Calculator","Test Drive Booking","Lead Forms","4 Weeks Delivery"]},{"name":"Virtual Showroom","price":"₹64,999","desc":"Premium online showroom experience","features":["360° Car Tour","Comparison Tool","Loan Calculator","SEO Optimization","7 Weeks Delivery"]}]
+  },
+  'vehicle-inventory-management': {
+    title: "Vehicle Inventory Management",
+    category: "business-software",
+    price: "₹39,999",
+    desc: "A digital inventory management system for car dealerships and used car platforms to manage stock, track vehicle status, and sync inventory across the website and showroom.",
+    features: ["Vehicle Stock Register","VIN-based Vehicle Tracking","Stock Aging Alerts","Automated Website Sync","Multi-location Stock Management","Procurement & Delivery Tracking","PDI (Pre-delivery Inspection) Checklist","Sales Performance by Model"],
+    plans: [{"name":"Inventory System","price":"₹39,999","desc":"Core vehicle stock management","features":["Stock Register","Website Sync","Aging Alerts","Basic Reports","4 Weeks Delivery"]},{"name":"Multi-location IMS","price":"₹74,999","desc":"Advanced multi-showroom management","features":["Multi-location Stock","VIN Tracking","PDI Checklist","Sales Analytics","8 Weeks Delivery"]}]
+  },
+  'car-booking-system': {
+    title: "Car Booking & Test Drive System",
+    category: "business-software",
+    price: "₹24,999",
+    desc: "An online platform enabling customers to book test drives, reserve vehicles, track order status, and schedule delivery — all with automated communications.",
+    features: ["Online Test Drive Slot Booking","Vehicle Reservation with Token Payment","Booking Confirmation & Reminders","Order Status Tracker","Delivery Scheduling","Customer Communication Portal","Sales Executive Assignment","Admin Dashboard"],
+    plans: [{"name":"Test Drive Booking","price":"₹24,999","desc":"Simple test drive scheduler","features":["Online Booking","Email/SMS Reminders","Admin Dashboard","Calendar Sync","3 Weeks Delivery"]},{"name":"Full Booking System","price":"₹49,999","desc":"Token payments & delivery tracking","features":["Token Payment","Order Tracker","Delivery Scheduling","Customer Portal","5 Weeks Delivery"]}]
+  },
+  'service-center-management': {
+    title: "Service Center Management",
+    category: "business-software",
+    price: "₹44,999",
+    desc: "A comprehensive management system for automobile service centers to handle job cards, parts inventory, technician assignment, customer updates, and invoicing.",
+    features: ["Digital Job Card Creation","Service History per Vehicle (VIN)","Technician Assignment & Tracking","Spare Parts Inventory","Customer Update Notifications (WhatsApp)","Video/Photo of Issues Shared to Customer","Invoice & GST Billing","Service Due Reminders"],
+    plans: [{"name":"Service Manager","price":"₹44,999","desc":"Core service center management","features":["Digital Job Cards","Technician Assignment","Basic Invoice","Email Alerts","5 Weeks Delivery"]},{"name":"Service Pro","price":"₹84,999","desc":"Full-featured service center suite","features":["WhatsApp Updates","Parts Inventory","Service History","GST Billing","9 Weeks Delivery"]}]
+  },
+  'automobile-mobile-app': {
+    title: "Automobile Mobile App",
+    category: "mobile-apps",
+    price: "₹69,999",
+    desc: "A branded mobile app for your automotive brand or dealership allowing customers to browse vehicles, book services, track orders, and access roadside assistance.",
+    features: ["Vehicle Browsing & Comparison","Service Booking & History","Service Status Tracker","Emergency Roadside Assistance","Loyalty Points & Rewards","Insurance & RC Reminder","Push Notifications","In-app Chat Support"],
+    plans: [{"name":"Service App","price":"₹69,999","desc":"Service booking & tracking app","features":["Service Booking","Status Tracker","Push Notifications","iOS & Android","8 Weeks Delivery"]},{"name":"Full Auto App","price":"₹1,24,999","desc":"Complete automotive experience","features":["Vehicle Browsing","Roadside Assistance","Loyalty Program","In-app Chat","12 Weeks Delivery"]}]
+  },
+  'auto-parts-ecommerce': {
+    title: "Auto Parts E-commerce Store",
+    category: "websites",
+    price: "₹54,999",
+    desc: "A specialized e-commerce platform for auto parts retailers with vehicle compatibility search, bulk ordering for garages, and multi-brand product catalogs.",
+    features: ["Vehicle Compatibility Filter (Year/Make/Model)","Multi-brand Parts Catalog","Garage / B2B Bulk Ordering","Real-time Stock Availability","GST-compliant Invoicing","Shipping & Delivery Integration","Parts Enquiry for Rare Items","Mobile-Responsive Store"],
+    plans: [{"name":"Parts Store","price":"₹54,999","desc":"Core auto parts e-commerce","features":["Product Catalog","Compatibility Filter","Payment Gateway","GST Invoicing","6 Weeks Delivery"]},{"name":"B2B Auto Store","price":"₹94,999","desc":"B2C + B2B garage ordering platform","features":["Bulk Ordering","Garage Accounts","Credit Management","Advanced Analytics","10 Weeks Delivery"]}]
+  },
+  'automobile-crm': {
+    title: "Automobile CRM",
+    category: "business-software",
+    price: "₹39,999",
+    desc: "A specialized CRM for car dealerships and service centers to manage walk-in and digital leads, track test drives, schedule follow-ups, and maximize customer lifetime value.",
+    features: ["Lead Management (Walk-in, Web, Digital)","Test Drive & Enquiry Tracking","Sales Pipeline & Follow-up Scheduler","Customer Purchase & Service History","Insurance Renewal Alerts","Service Due Reminders","Lost Deal Analysis","Showroom Performance Dashboard"],
+    plans: [{"name":"Auto CRM","price":"₹39,999","desc":"Core dealership lead management","features":["Lead Tracking","Test Drive Pipeline","Follow-up Scheduler","Basic Reports","4 Weeks Delivery"]},{"name":"Dealership Pro CRM","price":"₹74,999","desc":"Full-lifecycle automotive CRM","features":["Service Reminders","Insurance Alerts","Lost Deal Analysis","Performance Dashboard","8 Weeks Delivery"]}]
+  },
+  'fitness-gym-website': {
+    title: "Gym & Fitness Center Website",
+    category: "websites",
+    price: "₹19,999",
+    desc: "A high-energy, visually stunning website for gyms and fitness studios to showcase facilities, membership plans, classes, and generate lead enquiries.",
+    features: ["Facility & Equipment Showcase","Membership Plan Display","Class Schedule & Timetable","Trainer Profiles","Free Trial Lead Form","Transformation Gallery (Before/After)","Testimonials & Reviews","Mobile-Responsive Design"],
+    plans: [{"name":"Gym Website","price":"₹19,999","desc":"Professional gym web presence","features":["Up to 10 Pages","Class Schedule","Lead Form","Mobile Responsive","2 Weeks Delivery"]},{"name":"Fitness Pro Site","price":"₹39,999","desc":"Full-featured fitness website","features":["Membership Plans","Trainer Profiles","Transformation Gallery","SEO Basics","4 Weeks Delivery"]}]
+  },
+  'gym-member-management': {
+    title: "Gym Member Management Software",
+    category: "business-software",
+    price: "₹29,999",
+    desc: "A complete gym management platform to handle member onboarding, biometric attendance, membership expiry, fee collection, and communications.",
+    features: ["Member Onboarding & Profiles","Biometric / QR Code Attendance","Membership Expiry Alerts","Online & Offline Fee Collection","Membership Plan Management","Freeze & Pause Features","Staff & Trainer Management","Revenue & Attendance Reports"],
+    plans: [{"name":"Gym Manager","price":"₹29,999","desc":"Core membership management","features":["Member Profiles","Attendance Tracking","Fee Collection","Renewal Alerts","4 Weeks Delivery"]},{"name":"Fitness Suite","price":"₹54,999","desc":"Full-featured gym management","features":["Biometric Integration","Staff Management","Revenue Reports","Online Payments","7 Weeks Delivery"]}]
+  },
+  'online-class-booking': {
+    title: "Online Class Booking System",
+    category: "business-software",
+    price: "₹24,999",
+    desc: "An intelligent booking system for fitness studios allowing members to browse class schedules, book spots, pay for sessions, and manage their fitness calendar.",
+    features: ["Live Class Schedule Display","Spot Booking & Waitlist","One-on-one Trainer Booking","Online Payment & Prepaid Packs","Cancellation & Reschedule Rules","Automated Reminders (SMS/WhatsApp)","Attendance Tracking","Class Capacity Management"],
+    plans: [{"name":"Class Scheduler","price":"₹24,999","desc":"Basic class booking","features":["Schedule Display","Spot Booking","Reminders","Admin Dashboard","3 Weeks Delivery"]},{"name":"Booking Pro","price":"₹44,999","desc":"Full booking & payment system","features":["Online Payments","Prepaid Packs","Trainer Booking","Capacity Management","5 Weeks Delivery"]}]
+  },
+  'fitness-mobile-app': {
+    title: "Fitness Mobile App",
+    category: "mobile-apps",
+    price: "₹69,999",
+    desc: "A branded fitness mobile app for gyms and studios to engage members with schedules, workout content, class booking, progress tracking, and community features.",
+    features: ["Class Schedule & Booking","Workout Video Library","Progress Tracker (Weight, Reps, Measurements)","Membership Card & QR Code Entry","Push Notifications for Classes & Offers","Trainer Chat","Community Feed & Challenges","In-app Payment"],
+    plans: [{"name":"Member App","price":"₹69,999","desc":"Core gym engagement app","features":["Class Booking","Membership Card","Push Notifications","iOS & Android","8 Weeks Delivery"]},{"name":"Fitness App Pro","price":"₹1,19,999","desc":"Full fitness community app","features":["Workout Library","Progress Tracker","Community Feed","In-app Payments","12 Weeks Delivery"]}]
+  },
+  'workout-nutrition-app': {
+    title: "Workout & Nutrition Tracking App",
+    category: "mobile-apps",
+    price: "₹99,999",
+    desc: "A consumer fitness app featuring personalized workout plans, nutrition tracking, calorie counting, progress photos, and AI-powered fitness recommendations.",
+    features: ["Personalized Workout Plan Builder","Exercise Library (Video Demonstrations)","Nutrition & Calorie Tracker","Food Database (Indian Food Included)","Progress Photos & Measurements","Body Composition Tracker","AI Workout Suggestions","Water & Sleep Tracking"],
+    plans: [{"name":"Fitness Tracker","price":"₹99,999","desc":"Core workout & nutrition app","features":["Workout Plans","Exercise Library","Calorie Tracker","Progress Photos","10 Weeks Delivery"]},{"name":"AI Fitness App","price":"₹1,79,999","desc":"AI-powered personalized fitness","features":["AI Recommendations","Indian Food Database","Body Composition","Subscriptions","16 Weeks Delivery"]}]
+  },
+  'gym-crm': {
+    title: "Gym CRM",
+    category: "business-software",
+    price: "₹29,999",
+    desc: "A specialized CRM for gyms and fitness studios to manage walk-in and online leads, track trial conversions, and build long-term member relationships.",
+    features: ["Lead Capture (Walk-in, Web, Social)","Trial Visit Tracking & Follow-up","Sales Pipeline to Membership Conversion","Automated WhatsApp/SMS Drip Sequences","Member Engagement Score","Re-engagement Campaigns for Inactive Members","Staff Performance Dashboard","Revenue Forecasting"],
+    plans: [{"name":"Gym CRM","price":"₹29,999","desc":"Core lead & trial management","features":["Lead Management","Trial Tracking","Follow-up Automation","Basic Reports","4 Weeks Delivery"]},{"name":"Fitness CRM Pro","price":"₹54,999","desc":"Advanced member growth platform","features":["Re-engagement Campaigns","Engagement Scoring","Revenue Forecasting","Staff Dashboard","7 Weeks Delivery"]}]
+  },
+  'fitness-digital-marketing': {
+    title: "Fitness Digital Marketing",
+    category: "digital-marketing",
+    price: "₹12,999/mo",
+    desc: "Specialized digital marketing for gyms and fitness studios, including local Meta Ads, Google Ads, SEO, and social media campaigns to attract new members.",
+    features: ["Local Google & Meta Ads Management","Instagram & Facebook Content Creation","Transformation Video Campaigns","Local SEO & Google My Business","Influencer Marketing","Referral Campaign Setup","WhatsApp Broadcast Campaigns","Monthly Analytics Reports"],
+    plans: [{"name":"Local Fitness Ads","price":"₹12,999/mo","desc":"Local ads & social media","features":["Meta Ads","Google My Business","Social Content","12 Posts/mo","Monthly Report"]},{"name":"Fitness Growth","price":"₹24,999/mo","desc":"Full-funnel fitness marketing","features":["Google + Meta Ads","Transformation Campaigns","Influencer Outreach","WhatsApp Broadcasts","Bi-weekly Reports"]}]
+  },
+  'event-company-website': {
+    title: "Event Company Website",
+    category: "websites",
+    price: "₹24,999",
+    desc: "A visually stunning website for event management companies to showcase past events, services, team, and generate corporate and wedding event enquiries.",
+    features: ["Portfolio Gallery (Events Showcase)","Service Category Pages (Weddings, Corporate, etc.)","Client Enquiry & Lead Forms","Testimonials & Case Studies","Vendor Partner Listings","Blog & Event Tips","Instagram Feed Integration","Mobile-Responsive Design"],
+    plans: [{"name":"Event Website","price":"₹24,999","desc":"Professional event company presence","features":["Up to 15 Pages","Portfolio Gallery","Lead Forms","Mobile Responsive","3 Weeks Delivery"]},{"name":"Premium Event Site","price":"₹44,999","desc":"Premium portfolio & lead gen site","features":["Unlimited Portfolio","Video Showcases","Instagram Feed","SEO Optimization","5 Weeks Delivery"]}]
+  },
+  'event-booking-platform': {
+    title: "Event Booking Platform",
+    category: "websites",
+    price: "₹39,999",
+    desc: "A comprehensive event booking platform for clients to explore event packages, request quotations, approve proposals, and manage event planning digitally.",
+    features: ["Event Package Browsing","Online Quotation Builder","Client Proposal Approval Portal","Event Checklist & Timeline","Vendor Coordination Module","Budget Tracking","Document Sharing","Communication Hub"],
+    plans: [{"name":"Event Portal","price":"₹39,999","desc":"Quotation & client management","features":["Quote Builder","Client Approval Portal","Document Sharing","Basic Comms","5 Weeks Delivery"]},{"name":"Event Suite","price":"₹74,999","desc":"Full event planning platform","features":["Vendor Module","Budget Tracker","Event Checklist","Full Collaboration","8 Weeks Delivery"]}]
+  },
+  'ticketing-rsvp-system': {
+    title: "Ticketing & RSVP System",
+    category: "business-software",
+    price: "₹29,999",
+    desc: "A complete online ticketing and RSVP management system for concerts, conferences, exhibitions, and social events with payment integration and QR code check-in.",
+    features: ["Event Landing Pages","Multiple Ticket Tiers (Early Bird, VIP, etc.)","Online Payment Gateway","QR Code Ticket Generation","On-site QR Code Scanner App","Attendee Data Management","Refund & Transfer Management","Post-event Email & Feedback"],
+    plans: [{"name":"Event Tickets","price":"₹29,999","desc":"Core ticketing system","features":["Event Landing Page","Ticket Tiers","Payment Gateway","QR Code Tickets","3 Weeks Delivery"]},{"name":"Ticketing Pro","price":"₹54,999","desc":"Full-featured ticketing suite","features":["Check-in Scanner App","Multiple Events","Attendee Management","Refund Management","6 Weeks Delivery"]}]
+  },
+  'event-vendor-management': {
+    title: "Event Vendor Management",
+    category: "business-software",
+    price: "₹34,999",
+    desc: "A centralized portal to manage your network of event vendors (caterers, decorators, photographers, etc.) including contracts, payments, and event assignments.",
+    features: ["Vendor Profile & Category Directory","Availability Calendar","Event Assignment & Briefing","Digital Contract Management","Invoice & Payment Tracking","Performance Rating System","Communication Hub","Vendor Performance Analytics"],
+    plans: [{"name":"Vendor Hub","price":"₹34,999","desc":"Core vendor directory & assignment","features":["Vendor Directory","Event Assignment","Invoice Tracking","Rating System","4 Weeks Delivery"]},{"name":"Vendor Pro","price":"₹64,999","desc":"Full vendor management suite","features":["Contract Management","Payment Workflows","Availability Calendar","Performance Analytics","7 Weeks Delivery"]}]
+  },
+  'event-mobile-app': {
+    title: "Event Mobile App",
+    category: "mobile-apps",
+    price: "₹64,999",
+    desc: "A mobile application for events — providing attendees with the schedule, speaker info, networking, live polls, and real-time event updates on their smartphones.",
+    features: ["Event Agenda & Schedule","Speaker & Session Profiles","Attendee Networking (Connect & Chat)","Live Polls & Q&A","Push Notifications for Updates","Venue Map & Directions","Exhibitor Directory","Photo Gallery & Social Sharing"],
+    plans: [{"name":"Event App","price":"₹64,999","desc":"Core event companion app","features":["Agenda & Schedule","Push Notifications","Venue Map","iOS & Android","6 Weeks Delivery"]},{"name":"Engagement App","price":"₹1,09,999","desc":"Full attendee engagement platform","features":["Networking Module","Live Polls & Q&A","Exhibitor Directory","Social Sharing","10 Weeks Delivery"]}]
+  },
+  'event-crm': {
+    title: "Event CRM",
+    category: "business-software",
+    price: "₹29,999",
+    desc: "A specialized CRM for event management companies to track client leads, manage quotations, follow up on proposals, and maintain long-term relationships.",
+    features: ["Lead Source Tracking","Event Enquiry Pipeline","Quotation & Proposal Tracker","Follow-up Automation","Client Communication Logs","Won / Lost Deal Analysis","Revenue Forecasting","Event Calendar Integration"],
+    plans: [{"name":"Event CRM","price":"₹29,999","desc":"Core enquiry management","features":["Enquiry Pipeline","Follow-up Automation","Proposal Tracker","Basic Analytics","3 Weeks Delivery"]},{"name":"Event CRM Pro","price":"₹54,999","desc":"Full business development suite","features":["Won/Lost Analysis","Revenue Forecasting","Client History","Advanced Analytics","6 Weeks Delivery"]}]
+  },
+  'digital-invitations-platform': {
+    title: "Digital Invitations Platform",
+    category: "websites",
+    price: "₹29,999",
+    desc: "A platform to create and distribute stunning digital invitations (wedding cards, corporate event invites) with RSVP collection, guest management, and personalization.",
+    features: ["Custom Invitation Design Templates","Personalized E-invites (Animated)","RSVP Collection & Management","WhatsApp & Email Distribution","Guest List Management","Event Countdown Timer","Venue Map Integration","Guest Meal Preference Collection"],
+    plans: [{"name":"Invitation Platform","price":"₹29,999","desc":"Core digital invitation system","features":["Template Library","RSVP Collection","WhatsApp Sharing","Guest Management","3 Weeks Delivery"]},{"name":"Premium Invites","price":"₹54,999","desc":"Animated invites & full guest management","features":["Animated Designs","Meal Preferences","Seating Arrangements","Event Microsite","5 Weeks Delivery"]}]
+  },
+  'agri-website': {
+    title: "Agriculture Company Website",
+    category: "websites",
+    price: "₹19,999",
+    desc: "A professional website for agricultural companies, seed manufacturers, agri-input distributors, and cooperatives to showcase products and reach more customers.",
+    features: ["Product & Crop Solution Showcases","Dealer & Distributor Locator","Crop Advisory Blog","Contact & Enquiry Forms","Certification & Compliance Display","Weather Widget Integration","Mobile-Responsive Design","SEO Optimized"],
+    plans: [{"name":"Agri Website","price":"₹19,999","desc":"Core agricultural web presence","features":["Up to 12 Pages","Product Catalog","Lead Forms","Mobile Responsive","2 Weeks Delivery"]},{"name":"Agri Business Site","price":"₹39,999","desc":"Full-featured agri company website","features":["Dealer Locator","Crop Advisory Blog","Multiple Languages","SEO Setup","4 Weeks Delivery"]}]
+  },
+  'farm-management-system': {
+    title: "Farm Management System",
+    category: "business-software",
+    price: "₹29,999",
+    desc: "A comprehensive farm management platform for farmers and agri-businesses to track crops, manage inputs, record labor, and analyze farm productivity.",
+    features: ["Farm & Field Mapping","Crop Season Planning","Input (Fertilizer, Pesticide) Records","Labor & Equipment Management","Irrigation Scheduling","Harvest & Yield Records","Cost of Cultivation Tracking","Farm Performance Analytics"],
+    plans: [{"name":"Farm Manager","price":"₹29,999","desc":"Core farm recordkeeping","features":["Crop Records","Input Tracking","Labor Management","Basic Analytics","4 Weeks Delivery"]},{"name":"Smart Farm","price":"₹59,999","desc":"Full farm intelligence platform","features":["Field Mapping","Irrigation Scheduling","Cost Analysis","Mobile App","7 Weeks Delivery"]}]
+  },
+  'crop-monitoring-dashboard': {
+    title: "Crop Monitoring Dashboard",
+    category: "business-software",
+    price: "₹49,999",
+    desc: "An IIoT and satellite-based crop monitoring dashboard providing real-time insights on crop health, soil moisture, weather, and pest risk alerts.",
+    features: ["Satellite Imagery (NDVI Analysis)","IoT Soil Moisture & Temperature Sensors","Weather Forecast Integration","Pest & Disease Risk Alerts","Crop Growth Stage Tracking","Irrigation Advisory","Historical Crop Performance","Mobile Alerts for Farmers"],
+    plans: [{"name":"Crop Monitor","price":"₹49,999","desc":"Satellite & weather dashboard","features":["NDVI Maps","Weather Forecast","Crop Stage Tracker","Mobile Alerts","5 Weeks Delivery"]},{"name":"Smart Agri Dashboard","price":"₹94,999","desc":"IoT + Satellite precision farming","features":["IoT Sensor Integration","Irrigation Advisory","Pest Risk Alerts","Historical Analysis","9 Weeks Delivery"]}]
+  },
+  'agriculture-ecommerce': {
+    title: "Agricultural E-commerce Store",
+    category: "websites",
+    price: "₹49,999",
+    desc: "A specialized e-commerce platform for agri-businesses to sell seeds, fertilizers, pesticides, farm equipment, and fresh produce directly to farmers or consumers.",
+    features: ["Agri Product Catalog","Crop-based Product Recommendations","Bulk Order Management","Farmer / B2B Pricing Tiers","COD & UPI Payment Options","Rural Delivery Management","Multi-language Product Pages","Agri Advisory Content"],
+    plans: [{"name":"Agri Store","price":"₹49,999","desc":"Core agricultural e-commerce","features":["Product Catalog","UPI Payments","COD","Bulk Orders","5 Weeks Delivery"]},{"name":"Agri Marketplace","price":"₹89,999","desc":"Full-featured agri marketplace","features":["Multi-seller","Farmer Pricing","Advisory Content","Rural Delivery","9 Weeks Delivery"]}]
+  },
+  'cold-chain-management': {
+    title: "Cold Chain Management System",
+    category: "business-software",
+    price: "₹59,999",
+    desc: "A specialized cold chain management system for agri-businesses, dairy companies, and food processors to monitor temperature, track shipments, and ensure product quality.",
+    features: ["Real-time Temperature Monitoring (IoT)","Cold Storage Inventory Tracking","Shipment Tracking with Temp Data","Breach Alerts & Notifications","Quality Compliance Documentation","Multi-location Cold Storage View","Expiry & Batch Tracking","Regulatory Compliance Reports"],
+    plans: [{"name":"Cold Monitor","price":"₹59,999","desc":"Temperature monitoring & alerts","features":["Real-time Temp Monitoring","Breach Alerts","Basic Reports","5 Locations","6 Weeks Delivery"]},{"name":"Cold Chain Pro","price":"₹1,09,999","desc":"Full cold chain intelligence","features":["Inventory Tracking","Compliance Reports","Shipment Tracking","Unlimited Locations","10 Weeks Delivery"]}]
+  },
+  'farmer-mobile-app': {
+    title: "Farmer Mobile App",
+    category: "mobile-apps",
+    price: "₹79,999",
+    desc: "A vernacular farmer mobile app providing crop advisories, market price information, weather forecasts, and direct market access through their smartphones.",
+    features: ["Crop Advisory (Vernacular Languages)","Daily Mandi Price Updates","7-day Weather Forecast","Pest & Disease Identification (AI)","Soil Test Request & Report","Government Scheme Information","Direct Market Selling Portal","Farm Record Diary"],
+    plans: [{"name":"Farmer App","price":"₹79,999","desc":"Core farmer advisory app","features":["Crop Advisory","Mandi Prices","Weather","2 Regional Languages","8 Weeks Delivery"]},{"name":"Smart Farmer App","price":"₹1,39,999","desc":"Full-featured AI farmer companion","features":["AI Pest ID","Market Selling","Scheme Info","5 Regional Languages","14 Weeks Delivery"]}]
+  },
+  'agriculture-crm': {
+    title: "Agriculture CRM",
+    category: "business-software",
+    price: "₹34,999",
+    desc: "A specialized CRM for agri-businesses to manage their dealer and distributor networks, track farmer outreach, and monitor field executive activities.",
+    features: ["Dealer & Distributor Management","Farmer Database & Geo-tagging","Field Executive Activity Tracking","Sales Order & Indent Management","Product Demo & Trial Tracking","Seasonal Campaign Management","Territory & Beat Plan Management","Sales Performance Analytics"],
+    plans: [{"name":"Agri CRM","price":"₹34,999","desc":"Dealer & sales management","features":["Dealer Management","Sales Orders","Field Executive App","Basic Reports","4 Weeks Delivery"]},{"name":"Agri Sales Suite","price":"₹64,999","desc":"Full field sales intelligence","features":["Farmer Geo-tagging","Territory Planning","Campaign Tracking","Advanced Analytics","7 Weeks Delivery"]}]
+  },
+  'recruitment-agency-website': {
+    title: "Recruitment Agency Website",
+    category: "websites",
+    price: "₹24,999",
+    desc: "A professional, conversion-optimized website for recruitment agencies and HR consultancies to attract both corporate clients and job seekers.",
+    features: ["Live Job Listings Integration","Employer & Candidate Portals","Service Showcase (Temp, Perm, Executive)","Case Studies & Success Stories","Team & Specialist Profiles","Online CV Submission Form","Employer Enquiry Forms","SEO-Optimized Job Pages"],
+    plans: [{"name":"Agency Website","price":"₹24,999","desc":"Core recruitment agency site","features":["Job Listings","CV Upload Form","Employer Enquiry","Mobile Responsive","3 Weeks Delivery"]},{"name":"Recruitment Portal","price":"₹49,999","desc":"Full employer & candidate portal","features":["Employer Portal","Candidate Dashboard","Job SEO Pages","ATS Integration","5 Weeks Delivery"]}]
+  },
+  'job-portal-development': {
+    title: "Job Portal Development",
+    category: "websites",
+    price: "₹74,999",
+    desc: "A custom job portal platform for specific industries or geographies, connecting employers and job seekers with advanced search, profile matching, and application management.",
+    features: ["Employer & Job Seeker Registration","Job Posting & Application Management","Resume / CV Database","Advanced Search & Filters","AI-based Job Matching","Verified Employer Badges","Premium Listing & Featured Jobs","Email & SMS Alerts for New Jobs"],
+    plans: [{"name":"Job Board","price":"₹74,999","desc":"Core niche job portal","features":["Job Listings","CV Database","Advanced Search","Employer & Seeker Portals","8 Weeks Delivery"]},{"name":"Job Marketplace","price":"₹1,39,999","desc":"Full-featured job platform with AI","features":["AI Job Matching","Premium Listings","Monetization Engine","SEO-optimized Pages","14 Weeks Delivery"]}]
+  },
+  'applicant-tracking-system': {
+    title: "Applicant Tracking System (ATS)",
+    category: "business-software",
+    price: "₹49,999",
+    desc: "A custom ATS to manage the complete hiring pipeline for agencies and corporate HR teams, from job posting and application screening to interviews and offer management.",
+    features: ["Multi-source Job Posting (Job Boards, Website)","CV Parsing & Database","Kanban Hiring Pipeline","Automated Interview Scheduling","Interview Feedback Forms","Offer Letter Generation","Background Verification Tracking","Hiring Analytics Dashboard"],
+    plans: [{"name":"ATS Core","price":"₹49,999","desc":"Essential applicant tracking","features":["CV Database","Hiring Pipeline","Interview Scheduling","Basic Reports","5 Weeks Delivery"]},{"name":"ATS Enterprise","price":"₹89,999","desc":"Full-featured hiring suite","features":["CV Parsing","Offer Management","Background Check Integration","Analytics Dashboard","9 Weeks Delivery"]}]
+  },
+  'hr-management-system': {
+    title: "HR Management System",
+    category: "business-software",
+    price: "₹69,999",
+    desc: "A comprehensive HRMS to manage employee records, leaves, attendance, payroll, performance reviews, and HR compliance in one integrated system.",
+    features: ["Employee Master Records","Leave & Attendance Management","Payroll Processing (Salary, PF, ESI)","Performance Appraisal Module","Onboarding & Offboarding Workflows","HR Policy Document Library","Employee Self-service Portal","HR Analytics Dashboard"],
+    plans: [{"name":"HRMS Core","price":"₹69,999","desc":"Core HR management","features":["Employee Records","Leave Management","Attendance","Basic Reports","7 Weeks Delivery"]},{"name":"HRMS Complete","price":"₹1,29,999","desc":"Full-featured HRMS with Payroll","features":["Payroll Processing","Performance Reviews","Employee Portal","HR Analytics","12 Weeks Delivery"]}]
+  },
+  'recruitment-crm': {
+    title: "Recruitment CRM",
+    category: "business-software",
+    price: "₹34,999",
+    desc: "A recruitment-specific CRM for staffing agencies to manage client relationships, candidate pipelines, placements, and revenue tracking in a unified platform.",
+    features: ["Client Company Management","Candidate Database & Tagging","Job Order Management","Candidate-to-Job Matching","Interview & Placement Tracker","Invoice & Placement Fee Management","Consultant Performance Dashboard","Activity & Communication Logs"],
+    plans: [{"name":"Recruitment CRM","price":"₹34,999","desc":"Core candidate & job management","features":["Candidate Database","Job Orders","Placement Tracker","Basic Reports","4 Weeks Delivery"]},{"name":"Staffing CRM Pro","price":"₹64,999","desc":"Full recruitment business suite","features":["Fee Management","Consultant Dashboard","Activity Tracking","Revenue Analytics","7 Weeks Delivery"]}]
+  },
+  'candidate-mobile-app': {
+    title: "Candidate Mobile App",
+    category: "mobile-apps",
+    price: "₹69,999",
+    desc: "A mobile application for job seekers to browse jobs, upload profiles, apply, track application status, and receive interview alerts from their smartphones.",
+    features: ["Personalized Job Feed","One-tap Job Application","Profile & CV Builder","Application Status Tracker","Interview Slot Booking","Push Notifications for New Jobs","Skill Assessment Quizzes","Salary Insights & Benchmarks"],
+    plans: [{"name":"Candidate App","price":"₹69,999","desc":"Core job search mobile app","features":["Job Browsing","One-tap Apply","Status Tracker","Push Notifications","8 Weeks Delivery"]},{"name":"Talent App Pro","price":"₹1,19,999","desc":"Full-featured candidate platform","features":["AI Job Matching","Skill Assessments","Salary Insights","Video Profile","12 Weeks Delivery"]}]
+  },
+  'recruitment-marketing': {
+    title: "Recruitment Marketing Services",
+    category: "digital-marketing",
+    price: "₹19,999/mo",
+    desc: "Specialized digital marketing for recruitment agencies to attract job seekers and employer clients through LinkedIn, Google Ads, job board SEO, and content marketing.",
+    features: ["LinkedIn Ads for Recruiters & Employers","Google Ads for Job Seeker Traffic","Job Board SEO Optimization","Social Media Management (LinkedIn, Instagram)","Employer Branding Campaigns","Candidate Testimonial Content","Email & WhatsApp Campaigns to Candidates","Monthly Hiring Analytics Reports"],
+    plans: [{"name":"Recruitment Marketing","price":"₹19,999/mo","desc":"Core digital presence","features":["LinkedIn Management","Google Ads","Job SEO","10 Posts/mo","Monthly Report"]},{"name":"Hiring Brand Pro","price":"₹39,999/mo","desc":"Full recruitment marketing suite","features":["LinkedIn + Meta Ads","Employer Branding","Content Marketing","Bi-weekly Reports","WhatsApp Campaigns"]}]
+  },
+  'hotel-website-development': {
+    title: "Hotel & Resort Website",
+    category: "websites",
+    price: "₹34,999",
+    desc: "A visually stunning, conversion-optimized hotel website designed to drive direct bookings, reduce OTA commissions, and showcase the property beautifully.",
+    features: ["Virtual Property Tour (360° Photos)","Real-time Room Availability & Booking","Rate & Room Type Comparison","Restaurant & Spa Booking","Special Offers & Packages","Guest Reviews Section","Photo & Video Gallery","Mobile-Responsive Design"],
+    plans: [{"name":"Hotel Website","price":"₹34,999","desc":"Professional hotel web presence","features":["Up to 15 Pages","Photo Gallery","Enquiry Form","Mobile Responsive","4 Weeks Delivery"]},{"name":"Booking Website","price":"₹64,999","desc":"Direct booking hotel website","features":["Real-time Booking Engine","Room Comparison","Online Payments","SEO Optimization","7 Weeks Delivery"]}]
+  },
+  'hotel-booking-engine': {
+    title: "Hotel Booking Engine",
+    category: "business-software",
+    price: "₹49,999",
+    desc: "A seamless, mobile-friendly booking engine integrated with your website and PMS to enable direct online room reservations with real-time availability.",
+    features: ["Real-time Room Availability Calendar","Multiple Rate Plans & Room Types","Promo Code & Corporate Rate Engine","Multi-currency & Multi-language","Upsell Add-ons (Breakfast, Spa, Late Checkout)","Secure Payment Gateway","Booking Confirmation Emails","Channel Manager Integration"],
+    plans: [{"name":"Booking Engine","price":"₹49,999","desc":"Core direct booking engine","features":["Real-time Availability","Payment Gateway","Booking Emails","Promo Codes","5 Weeks Delivery"]},{"name":"Smart Booking Engine","price":"₹84,999","desc":"Advanced engine with upsells","features":["Rate Plan Management","Upsell Add-ons","Multi-currency","Channel Integration","8 Weeks Delivery"]}]
+  },
+  'property-management-system': {
+    title: "Property Management System (PMS)",
+    category: "business-software",
+    price: "₹79,999",
+    desc: "A cloud-based PMS to manage front desk operations, reservations, check-in/out, housekeeping, billing, and guest communications in a single platform.",
+    features: ["Reservation Dashboard","Front Desk Check-in/Check-out","Room Status & Housekeeping Module","Guest Profile & CRM","Invoicing & GST Billing","Restaurant POS Integration","Night Audit","Reports & Analytics"],
+    plans: [{"name":"PMS Core","price":"₹79,999","desc":"Essential hotel PMS","features":["Reservations","Front Desk","Housekeeping","Billing","8 Weeks Delivery"]},{"name":"PMS Enterprise","price":"₹1,49,999","desc":"Full-featured hotel management","features":["Restaurant POS","Night Audit","Analytics","Multi-property","14 Weeks Delivery"]}]
+  },
+  'restaurant-management-system': {
+    title: "Restaurant Management System",
+    category: "business-software",
+    price: "₹34,999",
+    desc: "A complete restaurant management system covering table reservations, digital menu, order management, kitchen display, billing, and daily sales analytics.",
+    features: ["Digital Menu & QR Code Ordering","Table Reservation Management","Order Management (Dine-in, Takeaway, Delivery)","Kitchen Display System (KDS)","Inventory & Recipe Management","GST-compliant POS Billing","Waiter App (Mobile)","Daily Sales Analytics"],
+    plans: [{"name":"Restaurant POS","price":"₹34,999","desc":"Core POS & billing system","features":["Digital Menu","POS Billing","Order Management","Basic Reports","4 Weeks Delivery"]},{"name":"Restaurant Suite","price":"₹64,999","desc":"Full restaurant management","features":["KDS","Table Reservations","Inventory","Waiter App","7 Weeks Delivery"]}]
+  },
+  'loyalty-program-app': {
+    title: "Guest Loyalty Program App",
+    category: "mobile-apps",
+    price: "₹74,999",
+    desc: "A branded mobile loyalty app for hotels to reward repeat guests with points, offer member-exclusive rates, and build long-term guest relationships.",
+    features: ["Points Earning & Redemption System","Membership Tier Management (Silver, Gold, Platinum)","Member-exclusive Rates & Offers","Mobile Key & Digital Room Upgrade","Push Notifications for Offers","Booking History & Stay Summary","F&B Loyalty Integration","In-app Feedback & Rating"],
+    plans: [{"name":"Loyalty App","price":"₹74,999","desc":"Core guest loyalty app","features":["Points System","Member Offers","Push Notifications","iOS & Android","8 Weeks Delivery"]},{"name":"Premium Loyalty","price":"₹1,29,999","desc":"Full loyalty & engagement platform","features":["Tiered Membership","Mobile Key","F&B Loyalty","Upgrade Engine","13 Weeks Delivery"]}]
+  },
+  'hospitality-crm': {
+    title: "Hospitality CRM",
+    category: "business-software",
+    price: "₹34,999",
+    desc: "A guest relationship management platform that consolidates stay history, preferences, and feedback to enable personalized marketing and service delivery.",
+    features: ["Guest Profile & Stay History","Preference & Special Request Tracking","Segmented Email Marketing Campaigns","Pre-arrival & Post-stay Emails","Feedback & Review Management","Birthday & Anniversary Campaigns","Corporate Account Management","Revenue Analytics by Segment"],
+    plans: [{"name":"Hotel CRM","price":"₹34,999","desc":"Core guest relationship management","features":["Guest Profiles","Email Campaigns","Feedback Tracking","Basic Analytics","4 Weeks Delivery"]},{"name":"Hospitality CRM Pro","price":"₹64,999","desc":"Advanced personalization platform","features":["Segmented Marketing","Pre/Post-stay Emails","Corporate Management","Revenue Analytics","7 Weeks Delivery"]}]
+  },
+  'revenue-management-system': {
+    title: "Revenue Management System",
+    category: "business-software",
+    price: "₹59,999",
+    desc: "A hospitality revenue management dashboard with competitor rate tracking, demand forecasting, and dynamic pricing recommendations to maximize RevPAR.",
+    features: ["Competitor Rate Intelligence","Demand Forecasting (Events, Seasons)","Dynamic Pricing Recommendations","OTA Performance Analytics","RevPAR & Occupancy Dashboard","Channel Revenue Attribution","Pickup & Pace Reports","Rate Parity Monitoring"],
+    plans: [{"name":"Revenue Dashboard","price":"₹59,999","desc":"Core revenue intelligence","features":["Competitor Rates","RevPAR Dashboard","Occupancy Reports","5 Weeks Delivery"]},{"name":"Dynamic Pricing Suite","price":"₹109,999","desc":"Full RMS with dynamic pricing","features":["Dynamic Pricing AI","Demand Forecasting","Rate Parity Alerts","Channel Analytics","9 Weeks Delivery"]}]
+  },
+  'media-company-website': {
+    title: "Media Company Website",
+    category: "websites",
+    price: "₹29,999",
+    desc: "A high-impact website for media companies, news portals, production houses, and creative agencies to showcase content, attract clients, and build audience.",
+    features: ["Content & News Publishing Platform","Portfolio & Showreel Showcases","Advertising & Sponsorship Pages","Media Kit & Rate Card Downloads","Team & Talent Profiles","Video Player Integration","Newsletter Signup","SEO-optimized News Pages"],
+    plans: [{"name":"Media Website","price":"₹29,999","desc":"Core media company presence","features":["Up to 15 Pages","Video Integration","Newsletter Signup","Media Kit","3 Weeks Delivery"]},{"name":"News Portal","price":"₹59,999","desc":"Full-featured news & media portal","features":["CMS for Journalists","SEO News Pages","Ad Network Integration","Email Newsletter","6 Weeks Delivery"]}]
+  },
+  'content-streaming-platform': {
+    title: "Content Streaming Platform",
+    category: "business-software",
+    price: "₹1,49,999",
+    desc: "A custom video or audio streaming platform with subscription tiers, paywall, content management, and analytics for media companies and content creators.",
+    features: ["Video/Audio Upload & Transcoding","Subscription & Paywall System","Content Library & Categorization","Adaptive Bitrate Streaming (HLS)","Offline Download (for Apps)","Creator/Publisher CMS","Viewer Analytics","Multi-device (Web, App, Smart TV)"],
+    plans: [{"name":"Streaming MVP","price":"₹1,49,999","desc":"Core content streaming platform","features":["Video Upload & Streaming","Subscription System","Content CMS","Analytics","12 Weeks Delivery"]},{"name":"OTT Platform","price":"₹2,99,999","desc":"Full multi-device OTT platform","features":["Adaptive Bitrate","Mobile App","Smart TV App","Offline Downloads","20 Weeks Delivery"]}]
+  },
+  'ott-app-development': {
+    title: "OTT App Development",
+    category: "mobile-apps",
+    price: "₹1,29,999",
+    desc: "Native OTT applications across all major platforms — iOS, Android, Android TV, Apple TV, and Amazon Firestick — for your streaming platform or content brand.",
+    features: ["iOS & Android Mobile Apps","Android TV & Apple TV Apps","Amazon Firestick App","User Authentication & Profiles","Subscription Plan Management","Offline Download","Chromecast Support","Parental Controls"],
+    plans: [{"name":"Mobile OTT Apps","price":"₹1,29,999","desc":"iOS & Android streaming apps","features":["iOS App","Android App","User Profiles","Subscription","12 Weeks Delivery"]},{"name":"Full OTT Suite","price":"₹2,49,999","desc":"Mobile + Smart TV apps","features":["Android TV App","Apple TV App","Firestick App","Chromecast","20 Weeks Delivery"]}]
+  },
+  'digital-magazine-portal': {
+    title: "Digital Magazine & News Portal",
+    category: "websites",
+    price: "₹44,999",
+    desc: "An engaging digital magazine or news portal with article publishing, subscription paywalls, digital flipbook magazines, push notifications, and advertising integration.",
+    features: ["Article & Issue Publishing (CMS)","Digital Flipbook Magazine Reader","Subscription & Paywall System","Category & Tag-based Navigation","Newsletter Integration","Native Advertising System","Push Notifications for New Issues","Offline Reading Mode (App)"],
+    plans: [{"name":"Digital Portal","price":"₹44,999","desc":"Web-based digital magazine","features":["CMS","Paywall","Newsletter","Ad Slots","5 Weeks Delivery"]},{"name":"Magazine App","price":"₹89,999","desc":"Full magazine app & portal","features":["iOS & Android App","Flipbook Reader","Push Notifications","Offline Mode","9 Weeks Delivery"]}]
+  },
+  'talent-artist-portal': {
+    title: "Talent & Artist Portfolio Portal",
+    category: "websites",
+    price: "₹34,999",
+    desc: "A marketplace-style portal to showcase and book artists, performers, speakers, and creative talent for events, productions, and brand collaborations.",
+    features: ["Talent Profile Pages (Video, Photos, Bio)","Searchable Talent Directory","Availability Calendar","Online Booking & Quote Request","Contract Management","Payment Processing","Rating & Review System","Talent Management Dashboard"],
+    plans: [{"name":"Talent Portfolio","price":"₹34,999","desc":"Agency talent showcase","features":["Talent Profiles","Booking Requests","Video Gallery","Admin Dashboard","4 Weeks Delivery"]},{"name":"Talent Marketplace","price":"₹74,999","desc":"Full booking marketplace","features":["Talent Directory","Online Booking","Payments","Commission Management","8 Weeks Delivery"]}]
+  },
+  'media-crm': {
+    title: "Media & Publisher CRM",
+    category: "business-software",
+    price: "₹39,999",
+    desc: "A specialized CRM for media companies to manage advertiser relationships, track ad sales pipelines, manage editorial content workflows, and subscriber engagement.",
+    features: ["Advertiser Account Management","Ad Sales Pipeline & Revenue Tracking","Editorial Content Calendar","Subscriber Database & Segmentation","Newsletter Campaign Management","Content Performance Analytics","Advertiser Report Generation","Freelancer & Contributor Management"],
+    plans: [{"name":"Media CRM","price":"₹39,999","desc":"Core advertiser & content management","features":["Advertiser Management","Ad Pipeline","Content Calendar","Basic Analytics","4 Weeks Delivery"]},{"name":"Publisher Suite","price":"₹74,999","desc":"Full media business management platform","features":["Subscriber Segmentation","Newsletter Automation","Revenue Reports","Freelancer Management","8 Weeks Delivery"]}]
+  },
+  'entertainment-marketing': {
+    title: "Entertainment Digital Marketing",
+    category: "digital-marketing",
+    price: "₹24,999/mo",
+    desc: "Performance-focused digital marketing for entertainment brands, OTT platforms, and event promoters to build massive audiences and drive ticket sales or subscriptions.",
+    features: ["YouTube Channel Growth Strategy","Instagram & Facebook Fan Page Growth","Trailer & Content Promotion Campaigns","Paid Ads for Ticket Sales & Subscriptions","Influencer & Celebrity Collaborations","Viral Content Campaign Design","PR & Media Coverage Coordination","Audience Analytics & Reporting"],
+    plans: [{"name":"Entertainment Buzz","price":"₹24,999/mo","desc":"Audience growth campaigns","features":["Social Media Mgt","Content Promotion","Basic Paid Ads","15 Posts/mo","Monthly Report"]},{"name":"Blockbuster Campaign","price":"₹49,999/mo","desc":"Full-scale launch marketing","features":["Influencer Collaborations","Multi-platform Ads","Viral Campaign Design","PR Outreach","Weekly Reports"]}]
+  },
+  'sports-club-website': {
+    title: "Sports Club & Academy Website",
+    category: "websites",
+    price: "₹19,999",
+    desc: "A dynamic website for sports clubs, academies, and federations to showcase teams, invite member registrations, publish match results, and engage fans.",
+    features: ["Team & Player Profiles","Match Fixtures & Results","Online Member Registration","Academy Coaching Programs","Achievement & Trophy Showcase","News & Match Reports","Fan Gallery & Videos","Mobile-Responsive Design"],
+    plans: [{"name":"Club Website","price":"₹19,999","desc":"Core sports club presence","features":["Team Profiles","Match Results","News","Member Registration Form","2 Weeks Delivery"]},{"name":"Academy Pro Site","price":"₹39,999","desc":"Full sports academy website","features":["Coaching Programs","Video Gallery","Fan Section","SEO Optimization","4 Weeks Delivery"]}]
+  },
+  'team-management-system': {
+    title: "Team Management System",
+    category: "business-software",
+    price: "₹29,999",
+    desc: "A comprehensive team management platform for coaches and team managers to manage squads, track attendance, schedule training, and analyze player performance.",
+    features: ["Squad & Player Management","Training Session Scheduler","Attendance Tracking","Fitness & Medical Records","Video Analysis Module","Coach Communication Hub","Performance Data Dashboard","Youth Academy Management"],
+    plans: [{"name":"Team Manager","price":"₹29,999","desc":"Core team management","features":["Squad Management","Training Schedule","Attendance","Basic Stats","4 Weeks Delivery"]},{"name":"Performance Suite","price":"₹59,999","desc":"Full-featured team & performance system","features":["Video Analysis","Fitness Records","Player App","Performance Dashboard","7 Weeks Delivery"]}]
+  },
+  'sports-booking-platform': {
+    title: "Sports Venue Booking Platform",
+    category: "websites",
+    price: "₹24,999",
+    desc: "An online booking platform for sports venues (cricket grounds, football pitches, badminton courts, swimming pools) to manage time-slot reservations and payments.",
+    features: ["Real-time Slot Availability Calendar","Multi-sport & Multi-court Booking","Online Payment Collection","Membership vs Pay-per-Use Pricing","Automated Booking Confirmation","QR Code Access Control","Corporate Group Booking","Revenue & Utilization Reports"],
+    plans: [{"name":"Venue Booking","price":"₹24,999","desc":"Core court booking system","features":["Slot Calendar","Online Booking","Payment Gateway","Booking Emails","3 Weeks Delivery"]},{"name":"Venue Pro","price":"₹49,999","desc":"Multi-court with QR access","features":["Multi-sport Courts","QR Access Control","Membership Management","Revenue Reports","6 Weeks Delivery"]}]
+  },
+  'athlete-performance-app': {
+    title: "Athlete Performance App",
+    category: "mobile-apps",
+    price: "₹79,999",
+    desc: "A mobile app for athletes and coaches to track physical performance metrics, training loads, nutrition, recovery, and mental wellness throughout the season.",
+    features: ["GPS Speed & Distance Tracking","Training Load Monitoring (RPE, HRV)","Nutrition & Hydration Logging","Sleep & Recovery Tracking","Injury Prevention Alerts","Coach Feedback Module","Performance Trend Analytics","Competition Preparation Mode"],
+    plans: [{"name":"Athlete App","price":"₹79,999","desc":"Core performance tracking app","features":["Training Logs","Nutrition Tracking","Coach Dashboard","Basic Analytics","8 Weeks Delivery"]},{"name":"Elite Performance","price":"₹1,39,999","desc":"Advanced sports science app","features":["Wearable Integration","HRV Monitoring","Injury Alerts","Periodization Planning","13 Weeks Delivery"]}]
+  },
+  'sports-ecommerce': {
+    title: "Sports Equipment E-commerce",
+    category: "websites",
+    price: "₹49,999",
+    desc: "A specialized e-commerce store for sports equipment retailers and sports brands to sell gear, apparel, and merchandise online with club/academy tie-ups.",
+    features: ["Sports Equipment & Apparel Catalog","Sport-based Product Filtering","Club & Team Kit Customization","Bulk B2B School / Club Orders","Product Reviews & Expert Ratings","Video Demonstrations","GST Invoicing","Shipping & Delivery Integration"],
+    plans: [{"name":"Sports Store","price":"₹49,999","desc":"Core sports e-commerce","features":["Product Catalog","Sports Filters","Payment Gateway","GST Invoicing","5 Weeks Delivery"]},{"name":"Sports Marketplace","price":"₹89,999","desc":"Full B2B + B2C sports platform","features":["Club Kit Customization","Bulk B2B Orders","Video Demos","Expert Reviews","9 Weeks Delivery"]}]
+  },
+  'sports-crm': {
+    title: "Sports CRM",
+    category: "business-software",
+    price: "₹34,999",
+    desc: "A CRM tailored for sports clubs, agencies, and events to manage sponsor relationships, track fan engagement, manage member renewals, and execute targeted communications.",
+    features: ["Sponsor Pipeline & Contract Tracking","Fan Database & Segmentation","Member Renewal Management","Season Ticket Sales Pipeline","Event & Match Communication","Merchandise Sales Tracking","Sponsor ROI Reporting","Fan Loyalty Program Integration"],
+    plans: [{"name":"Sports CRM","price":"₹34,999","desc":"Core sports commercial management","features":["Sponsor Management","Member Renewals","Fan Database","Basic Reports","4 Weeks Delivery"]},{"name":"Club CRM Pro","price":"₹64,999","desc":"Advanced sports business platform","features":["Season Ticket Pipeline","Sponsor ROI Reports","Loyalty Integration","Advanced Analytics","7 Weeks Delivery"]}]
+  },
+  'tournament-management': {
+    title: "Tournament Management System",
+    category: "websites",
+    price: "₹24,999",
+    desc: "A complete digital system to manage sports tournaments from team registration and draw creation to match scheduling, live scoring, and public leaderboards.",
+    features: ["Online Team Registration & Entry Fees","Automated Draw & Bracket Generation","Match Schedule & Venue Management","Live Score Input & Updates","Public Leaderboard & Points Table","Referee/Umpire Assignment","Online Result Publishing","Digital Certificates & Medals Tracking"],
+    plans: [{"name":"Tournament Manager","price":"₹24,999","desc":"Core tournament system","features":["Team Registration","Draw System","Match Schedule","Leaderboard","3 Weeks Delivery"]},{"name":"Tournament Pro","price":"₹49,999","desc":"Full tournament management suite","features":["Live Scoring","Referee Assignment","Online Results","Digital Certificates","6 Weeks Delivery"]}]
+  },
+  'saas-product-development': {
+    title: "SaaS Product Development",
+    category: "business-software",
+    price: "₹74,999",
+    desc: "We build production-ready SaaS platforms with multi-tenancy, subscription billing, onboarding flows, usage analytics, and enterprise security — ready to scale to thousands of users.",
+    features: ["Multi-tenant Architecture","Subscription Billing (Stripe)","User Onboarding Flows","Role-based Access Control","Usage Analytics & Metering","API & Webhook System","Admin Super Dashboard","Enterprise Security (SSO, 2FA)"],
+    plans: [{"name":"Silver Plan","price":"₹74,999","desc":"Basic SaaS (single tier)","features":["Single-tenant Architecture","Core Features","Stripe Billing","Admin Dashboard","8 Weeks Delivery"]},{"name":"Gold Plan","price":"₹1,49,999","desc":"Full multi-tenant SaaS","features":["Multi-tenant","Subscription Plans","Onboarding Flows","Analytics","API System","12 Weeks Delivery"]},{"name":"Platinum Plan","price":"₹2,49,999","desc":"Enterprise SaaS platform","features":["SSO/2FA","Usage Metering","Webhooks","White-label Option","DevOps Setup","18 Weeks Delivery"]}]
+  },
+  'mobile-app-development': {
+    title: "Mobile App Development",
+    category: "business-software",
+    price: "₹59,999",
+    desc: "From consumer apps to B2B tools, we build startup mobile apps with clean UX, fast performance, scalable backends, and app store optimization to get early adopters fast.",
+    features: ["React Native/Flutter Development","Backend API Development","User Auth & Profiles","Push Notifications","Analytics & Crash Reporting","App Store Optimization","In-app Purchases","Social Login"],
+    plans: [{"name":"Silver Plan","price":"₹59,999","desc":"MVP mobile app (Android)","features":["Android App","Core Features","Firebase Backend","Push Notifications","4 Weeks Delivery"]},{"name":"Gold Plan","price":"₹99,999","desc":"Full startup mobile app","features":["Android + iOS","Custom Backend","Analytics","In-app Purchases","Social Login","6 Weeks Delivery"]},{"name":"Platinum Plan","price":"₹1,69,999","desc":"Enterprise-grade startup app","features":["All Platforms","Scalable Architecture","Advanced Analytics","CI/CD","ASO Optimization","10 Weeks Delivery"]}]
+  },
+  'ai-integration-services': {
+    title: "AI Integration Services",
+    category: "business-software",
+    price: "₹29,999",
+    desc: "Add AI capabilities to your business — chatbots, recommendation engines, document processing, predictive analytics, image recognition, and NLP — built with the latest AI APIs and custom models.",
+    features: ["AI Chatbot Development","Recommendation Engine","Document OCR & Processing","Predictive Analytics","Image Recognition","Natural Language Processing","OpenAI API Integration","Custom ML Model Training"],
+    plans: [{"name":"Silver Plan","price":"₹29,999","desc":"Basic AI feature integration","features":["Chatbot or 1 AI Feature","OpenAI Integration","Basic Training","API Endpoint","2 Weeks Delivery"]},{"name":"Gold Plan","price":"₹74,999","desc":"Custom AI module","features":["Custom AI Feature","Data Pipeline","Model Fine-tuning","Dashboard","API + Documentation","4 Weeks Delivery"]},{"name":"Platinum Plan","price":"₹1,49,999","desc":"Enterprise AI platform","features":["Multiple AI Features","Custom ML Models","Real-time Inference","MLOps Pipeline","8 Weeks Delivery"]}]
+  },
+  'branding-services': {
+    title: "Branding Services",
+    category: "business-software",
+    price: "₹12,999",
+    desc: "Complete brand identity design for startups — from logo and color palette to brand guidelines, pitch decks, and marketing collateral.",
+    features: ["Logo Design & Variants","Brand Guidelines (Colors, Fonts)","Investor Pitch Deck Template","Business Cards & Letterheads","Social Media Templates","Website Brand Guidelines"],
+    plans: [{"name":"Silver Plan","price":"₹12,999","desc":"Core brand identity package","features":["Logo Design","Basic Color Palette","Typography Guide","1 Week Delivery"]},{"name":"Gold Plan","price":"₹24,999","desc":"Complete identity & pitch deck","features":["All Silver features","Brand Guidelines Book","Pitch Deck Template","Business Cards","2 Weeks Delivery"]},{"name":"Platinum Plan","price":"₹44,999","desc":"Full corporate brand system","features":["All Gold features","Social Media Templates","Letterhead & Invoice design","Stationery Pack","3 Weeks Delivery"]}]
+  },
+  'growth-consulting': {
+    title: "Growth Consulting",
+    category: "business-software",
+    price: "₹19,999/mo",
+    desc: "Work with a dedicated growth consultant to analyze your funnel, design product-led growth loops, run acquisition experiments, and optimize conversion rates.",
+    features: ["Funnel & Conversion Audit","North Star Metric Setup","Viral Referral Loops Design","Product-Led Growth (PLG) Strategy","User Retention Analysis","Weekly Growth Sprints","Analytics Dashboard Setup"],
+    plans: [{"name":"Silver Plan","price":"₹19,999/mo","desc":"Growth roadmap & advising","features":["Weekly 1-on-1 Consulting","Funnel Optimization Roadmap","Basic Analytics Setup","Cancel anytime"]},{"name":"Gold Plan","price":"₹39,999/mo","desc":"Active growth sprints execution","features":["All Silver features","PLG loops setup","2 A/B tests per month","Mixpanel dashboard setup","Cancel anytime"]},{"name":"Platinum Plan","price":"₹69,999/mo","desc":"Dedicated growth team integration","features":["All Gold features","Daily Slack coordination","Unlimited experiments execution","Custom tracking SDK build","Weekly funnel reviews"]}]
   }
 };
 
@@ -1694,7 +2918,7 @@ export const faqsDatabase = {
 
 export const testimonialsDatabase = {
   'websites': [
-    { name: 'Rajesh Kumar', role: 'Founder, OrganicBites', content: 'Tech Mart 24 built our e-commerce portal and it handles over 500 orders a day with zero lag. The checkout flow is extremely smooth!' },
+    { name: 'Rajesh Kumar', role: 'Founder, OrganicBites', content: 'Bubbles Media built our e-commerce portal and it handles over 500 orders a day with zero lag. The checkout flow is extremely smooth!' },
     { name: 'Sneha Patel', role: 'Marketing Dir, Apex Builders', content: 'Our company website looks incredibly professional. The loading speed on mobile is under 1.5 seconds, which improved our Google ranks.' }
   ],
   'mobile-apps': [

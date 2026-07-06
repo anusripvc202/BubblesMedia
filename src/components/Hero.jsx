@@ -246,8 +246,8 @@ export default function Hero({ activeCategory, onSearch, onExploreOffers }) {
         .hero-left-col {
           display: flex;
           flex-direction: column;
-          justify-content: center;
-          gap: 16px;
+          justify-content: space-evenly;
+          gap: 0;
           padding: 22px 24px;
           overflow: hidden;
           min-width: 0;

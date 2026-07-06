@@ -106,17 +106,16 @@ export default function Hero({ activeCategory, onSearch, onExploreOffers }) {
       <div className="hero-inner-grid" style={{ position: 'relative', zIndex: 2 }}>
         {/* ── LEFT ── */}
         <div className="hero-left-col">
-          {/* TOP — Animated badges */}
-          <div className="hero-badge-row">
-            <span className="hero-badge-primary">
-              <span className="hero-badge-dot" />
-              🚀 India's #1 Digital Agency
-            </span>
-            <span className="hero-badge-gold" style={{ color: accentColor, transition: 'color 0.5s ease' }}>⭐ 4.9/5 Rating</span>
-          </div>
 
-          {/* MIDDLE — Headline + sub + stats */}
-          <div>
+          {/* TOP GROUP — badges + headline + sub + bullets */}
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+            <div className="hero-badge-row">
+              <span className="hero-badge-primary">
+                <span className="hero-badge-dot" />
+                🚀 India's #1 Digital Agency
+              </span>
+              <span className="hero-badge-gold" style={{ color: accentColor, transition: 'color 0.5s ease' }}>⭐ 4.9/5 Rating</span>
+            </div>
             <h1 className="hero-headline">
               We Build <span className="hero-headline-accent">{displayed}</span>
               <span className="hero-cursor">|</span>
@@ -124,12 +123,16 @@ export default function Hero({ activeCategory, onSearch, onExploreOffers }) {
             <p className="hero-sub">
               Grow your business online with websites, mobile apps, SEO, and AI marketing.
             </p>
-            <div style={{ display: 'flex', gap: '10px', marginTop: '6px', fontSize: '0.68rem', color: 'rgba(15,30,60,0.75)', fontWeight: '700', flexWrap: 'wrap' }}>
+            <div style={{ display: 'flex', gap: '10px', fontSize: '0.68rem', color: 'rgba(15,30,60,0.75)', fontWeight: '700', flexWrap: 'wrap' }}>
               <span>✓ Free Consultation</span>
               <span>✓ 100% Satisfaction Guarantee</span>
               <span>✓ Dedicated Support</span>
             </div>
-            {/* Stats row */}
+          </div>
+
+          {/* BOTTOM GROUP — stats + search + CTA */}
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
+            {/* Stats row — compact width */}
             <div className="hero-stats-row">
               <div className="hero-stat">
                 <span className="hero-stat-num">500+</span>
@@ -151,10 +154,7 @@ export default function Hero({ activeCategory, onSearch, onExploreOffers }) {
                 <span className="hero-stat-label">Years Experience</span>
               </div>
             </div>
-          </div>
-
-          {/* BOTTOM — Search + CTA */}
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
+            {/* Search */}
             <form onSubmit={handleSubmit} className="hero-search-form">
               <span style={{ paddingLeft: '12px', display: 'flex', alignItems: 'center', color: '#bbb', flexShrink: 0 }}>
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
@@ -168,6 +168,7 @@ export default function Hero({ activeCategory, onSearch, onExploreOffers }) {
               />
               <button type="submit" className="hero-search-btn" style={{ color: accentColor, transition: 'color 0.5s ease' }}>Search</button>
             </form>
+            {/* CTA Buttons */}
             <div style={{ display: 'flex', gap: '10px', flexWrap: 'wrap' }}>
               <button onClick={onExploreOffers} className="hero-btn-primary">
                 🔥 Explore Mega Offers
@@ -175,7 +176,9 @@ export default function Hero({ activeCategory, onSearch, onExploreOffers }) {
               <button className="hero-btn-outline">Get Free Quote</button>
             </div>
           </div>
+
         </div>
+
 
         {/* ── RIGHT — Image ── */}
         <div className="hero-right-col">
@@ -246,8 +249,8 @@ export default function Hero({ activeCategory, onSearch, onExploreOffers }) {
           display: flex;
           align-items: center;
           gap: 12px;
-          margin-top: 14px;
-          padding: 10px 14px;
+          width: fit-content;
+          padding: 8px 14px;
           background: rgba(15,30,60,0.08);
           border-radius: 10px;
           border: 1px solid rgba(15,30,60,0.12);
@@ -307,8 +310,8 @@ export default function Hero({ activeCategory, onSearch, onExploreOffers }) {
 
         /* ── Headline ── */
         .hero-headline {
-          font-size: clamp(1.7rem, 3vw, 2.5rem);
-          font-weight: 900; line-height: 1.1; color: #0F1E3C; margin: 0 0 6px;
+          font-size: clamp(1.5rem, 2.8vw, 2.2rem);
+          font-weight: 900; line-height: 1.1; color: #0F1E3C; margin: 0 0 5px;
           text-shadow: 0 2px 8px rgba(255,255,255,0.3);
           animation: fadeInUp 0.6s ease both 0.1s;
         }

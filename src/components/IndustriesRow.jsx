@@ -294,6 +294,7 @@ const DEFAULT_VISIBLE_IND = 8; // 2 rows × 4
 
 export default function IndustriesRow({ onSelectIndustry }) {
   const [showAll, setShowAll] = React.useState(false);
+  const [hoveredIdx, setHoveredIdx] = React.useState(null);
 
   const visibleIndustries = showAll ? industries : industries.slice(0, DEFAULT_VISIBLE_IND);
   const hiddenCount = industries.length - DEFAULT_VISIBLE_IND;
@@ -355,59 +356,90 @@ export default function IndustriesRow({ onSelectIndustry }) {
           <button
             key={idx}
             onClick={() => onSelectIndustry && onSelectIndustry(ind.name)}
+            onMouseEnter={() => setHoveredIdx(idx)}
+            onMouseLeave={() => setHoveredIdx(null)}
             className="hover-card industries-card-desktop"
             style={{
               '--card-theme': ind.color,
               '--card-theme-light': ind.bg,
-              background: 'var(--bg-white)',
-              border: '1px solid var(--border-color)',
-              borderRadius: 'var(--radius-md)',
-              padding: '36px 20px',
+              background: '#fff',
+              border: hoveredIdx === idx ? `1.5px solid ${ind.color}` : '1px solid rgba(226, 232, 240, 0.8)',
+              borderRadius: '16px',
+              padding: '28px 20px',
               display: 'flex',
               flexDirection: 'column',
               alignItems: 'center',
               justifyContent: 'center',
               textAlign: 'center',
-              gap: '14px',
+              gap: '12px',
               cursor: 'pointer',
               minWidth: '0px',
-              minHeight: '240px',
-              transition: 'all 0.2s ease',
-            }}
-            onMouseEnter={e => {
-              e.currentTarget.style.borderColor = ind.color;
-              e.currentTarget.style.background = ind.bg;
-              e.currentTarget.style.transform = 'translateY(-3px)';
-              e.currentTarget.style.boxShadow = `0 6px 20px ${ind.color}22`;
-            }}
-            onMouseLeave={e => {
-              e.currentTarget.style.borderColor = 'var(--border-color)';
-              e.currentTarget.style.background = 'var(--bg-white)';
-              e.currentTarget.style.transform = 'translateY(0)';
-              e.currentTarget.style.boxShadow = 'none';
+              minHeight: '220px',
+              transition: 'all 0.3s cubic-bezier(0.16, 1, 0.3, 1)',
+              boxShadow: hoveredIdx === idx 
+                ? `0 20px 38px rgba(0, 0, 0, 0.04), 0 4px 18px ${ind.color}18` 
+                : '0 4px 12px rgba(0, 0, 0, 0.015)',
+              transform: hoveredIdx === idx ? 'translateY(-6px)' : 'translateY(0)',
             }}
           >
             <div className="industries-icon-container" style={{
               background: ind.bg,
               color: ind.color,
-              border: '1px solid var(--border-color-light)',
-              width: '64px',
-              height: '64px',
+              border: `1px solid ${ind.color}20`,
+              width: '56px',
+              height: '56px',
               borderRadius: '50%',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
               marginBottom: '4px',
-              flexShrink: 0
+              flexShrink: 0,
+              transition: 'transform 0.3s ease',
+              transform: hoveredIdx === idx ? 'scale(1.08)' : 'scale(1)'
             }}>
               {ind.icon}
             </div>
-            <span className="industries-card-text" style={{ fontSize: '1.05rem', fontWeight: '800', color: 'var(--secondary)', lineHeight: '1.25' }}>
+            <span className="industries-card-text" style={{ 
+              fontSize: '0.98rem', 
+              fontWeight: '800', 
+              color: hoveredIdx === idx ? ind.color : 'var(--secondary)', 
+              lineHeight: '1.25',
+              transition: 'color 0.2s ease'
+            }}>
               {ind.name}
             </span>
-            <span className="industries-card-sub" style={{ fontSize: '0.82rem', color: 'var(--text-light)', fontWeight: '500', display: 'block', marginTop: '2px', lineHeight: '1.4' }}>
+            <span className="industries-card-sub" style={{ 
+              fontSize: '0.76rem', 
+              color: 'var(--text-medium)', 
+              fontWeight: '500', 
+              display: 'block', 
+              lineHeight: '1.4',
+              flexGrow: 1
+            }}>
               {ind.desc}
             </span>
+            <div style={{
+              display: 'flex',
+              alignItems: 'center',
+              gap: '6px',
+              fontSize: '0.72rem',
+              fontWeight: '800',
+              color: ind.color,
+              opacity: hoveredIdx === idx ? 1 : 0.8,
+              transition: 'all 0.2s ease',
+              marginTop: '4px'
+            }}>
+              Explore Blueprints
+              <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"
+                style={{
+                  transition: 'transform 0.2s ease',
+                  transform: hoveredIdx === idx ? 'translateX(4px)' : 'translateX(0)'
+                }}
+              >
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </div>
           </button>
         ))}
       </div>

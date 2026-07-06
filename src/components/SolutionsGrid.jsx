@@ -93,6 +93,7 @@ const DEFAULT_VISIBLE = VISIBLE_ROWS * COLS; // 6
 
 export default function SolutionsGrid({ searchTerm, activeCategory, onEnquire }) {
   const [showAll, setShowAll] = React.useState(false);
+  const [hoveredSolId, setHoveredSolId] = React.useState(null);
 
   const categoryThemes = {
     'websites': { color: '#3b82f6', bg: '#eff6ff' },
@@ -187,9 +188,12 @@ export default function SolutionsGrid({ searchTerm, activeCategory, onEnquire })
           }}>
             {visibleSolutions.map((sol) => {
               const theme = categoryThemes[sol.category] || { color: 'var(--primary)', bg: 'var(--primary-light)' };
+              const isHovered = hoveredSolId === sol.id;
               return (
                 <div
                   key={sol.id}
+                  onMouseEnter={() => setHoveredSolId(sol.id)}
+                  onMouseLeave={() => setHoveredSolId(null)}
                   className={`glass-panel solutions-card-desktop hover-card ${sol.popular ? 'popular-highlight' : ''}`}
                   style={{
                     '--card-theme': theme.color,
@@ -199,12 +203,16 @@ export default function SolutionsGrid({ searchTerm, activeCategory, onEnquire })
                     flexDirection: 'column',
                     alignItems: 'center',
                     textAlign: 'center',
-                    borderRadius: '12px',
-                    background: 'var(--bg-white)',
-                    boxShadow: 'var(--shadow-sm)',
-                    border: '1px solid var(--border-color)',
+                    borderRadius: '16px',
+                    background: '#fff',
+                    boxShadow: isHovered 
+                      ? `0 20px 38px rgba(0, 0, 0, 0.04), 0 4px 18px ${theme.color}18` 
+                      : '0 4px 12px rgba(0, 0, 0, 0.015)',
+                    border: isHovered ? `1.5px solid ${theme.color}` : '1px solid rgba(226, 232, 240, 0.8)',
                     minWidth: '0px',
-                    minHeight: '220px'
+                    minHeight: '220px',
+                    transform: isHovered ? 'translateY(-6px)' : 'translateY(0)',
+                    transition: 'all 0.3s cubic-bezier(0.16, 1, 0.3, 1)',
                   }}
                 >
                   {sol.popular && (
@@ -214,8 +222,9 @@ export default function SolutionsGrid({ searchTerm, activeCategory, onEnquire })
                   )}
                   {/* Circular Icon */}
                   <div className="solutions-icon-container" style={{
-                    background: 'var(--card-theme-light)',
-                    color: 'var(--card-theme)',
+                    background: theme.bg,
+                    color: theme.color,
+                    border: `1px solid ${theme.color}20`,
                     width: '56px',
                     height: '56px',
                     borderRadius: '50%',
@@ -223,19 +232,34 @@ export default function SolutionsGrid({ searchTerm, activeCategory, onEnquire })
                     alignItems: 'center',
                     justifyContent: 'center',
                     marginBottom: '14px',
-                    flexShrink: 0
+                    flexShrink: 0,
+                    transition: 'transform 0.3s ease',
+                    transform: isHovered ? 'scale(1.08)' : 'scale(1)'
                   }}>
                     {sol.icon}
                   </div>
 
                   {/* Title */}
-                  <h3 style={{ fontSize: '0.95rem', fontWeight: '800', marginBottom: '8px', color: 'var(--secondary)', letterSpacing: '-0.01em', display: 'flex', alignItems: 'center', justifyContent: 'center', lineHeight: '1.3' }}>
+                  <h3 style={{ 
+                    fontSize: '0.95rem', 
+                    fontWeight: '800', 
+                    marginBottom: '8px', 
+                    color: isHovered ? theme.color : 'var(--secondary)', 
+                    letterSpacing: '-0.01em', 
+                    display: 'flex', 
+                    alignItems: 'center', 
+                    justifyContent: 'center', 
+                    lineHeight: '1.3',
+                    transition: 'color 0.2s ease'
+                  }}>
                     {sol.title}
                   </h3>
 
                   {/* Pricing */}
                   <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '0px', marginBottom: '16px' }}>
-                    <span style={{ fontSize: '1.1rem', fontWeight: '900', color: 'var(--primary)', fontFamily: 'var(--font-display)' }}>{sol.price}</span>
+                    <span style={{ fontSize: '1.1rem', fontWeight: '900', color: theme.color, fontFamily: 'var(--font-display)', transition: 'color 0.2s ease' }}>
+                      {sol.price}
+                    </span>
                   </div>
 
                   {/* View Details Button */}
@@ -245,15 +269,17 @@ export default function SolutionsGrid({ searchTerm, activeCategory, onEnquire })
                       width: '100%',
                       padding: '10px 16px',
                       fontSize: '0.82rem',
-                      fontWeight: '700',
-                      color: 'var(--card-theme)',
-                      background: 'var(--card-theme-light)',
+                      fontWeight: '800',
+                      color: isHovered ? '#fff' : theme.color,
+                      background: isHovered ? theme.color : theme.bg,
                       border: 'none',
-                      borderRadius: '6px',
+                      borderRadius: '8px',
                       textAlign: 'center',
                       display: 'block',
                       marginTop: 'auto',
-                      transition: 'all 0.2s ease'
+                      transition: 'all 0.3s cubic-bezier(0.16, 1, 0.3, 1)',
+                      boxShadow: isHovered ? `0 4px 10px ${theme.color}40` : 'none',
+                      transform: isHovered ? 'scale(1.02)' : 'scale(1)'
                     }}
                     className="solutions-view-btn"
                   >

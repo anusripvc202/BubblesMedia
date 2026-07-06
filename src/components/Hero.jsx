@@ -115,8 +115,8 @@ export default function Hero({ activeCategory, onSearch, onExploreOffers }) {
             <span className="hero-badge-gold" style={{ color: accentColor, transition: 'color 0.5s ease' }}>⭐ 4.9/5 Rating</span>
           </div>
 
-          {/* Headline with typewriter & content — grows to fill middle space */}
-          <div style={{ flex: 1, display: 'flex', flexDirection: 'column', justifyContent: 'center', paddingBlock: '12px' }}>
+          {/* Headline with typewriter & content */}
+          <div>
             <h1 className="hero-headline">
               We Build <span className="hero-headline-accent">{displayed}</span>
               <span className="hero-cursor">|</span>
@@ -208,7 +208,7 @@ export default function Hero({ activeCategory, onSearch, onExploreOffers }) {
         .hero-inner-grid {
           display: grid;
           grid-template-columns: 1.25fr 0.75fr;
-          min-height: 380px;
+          min-height: 360px;
           position: relative;
           z-index: 2;
         }
@@ -217,8 +217,8 @@ export default function Hero({ activeCategory, onSearch, onExploreOffers }) {
         .hero-left-col {
           display: flex;
           flex-direction: column;
-          justify-content: space-between;
-          gap: 0;
+          justify-content: center;
+          gap: 10px;
           padding: 22px 24px;
         }
 

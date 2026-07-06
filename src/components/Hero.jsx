@@ -106,7 +106,7 @@ export default function Hero({ activeCategory, onSearch, onExploreOffers }) {
       <div className="hero-inner-grid" style={{ position: 'relative', zIndex: 2 }}>
         {/* ── LEFT ── */}
         <div className="hero-left-col">
-          {/* Animated badge */}
+          {/* TOP — Animated badges */}
           <div className="hero-badge-row">
             <span className="hero-badge-primary">
               <span className="hero-badge-dot" />
@@ -115,7 +115,7 @@ export default function Hero({ activeCategory, onSearch, onExploreOffers }) {
             <span className="hero-badge-gold" style={{ color: accentColor, transition: 'color 0.5s ease' }}>⭐ 4.9/5 Rating</span>
           </div>
 
-          {/* Headline with typewriter & content */}
+          {/* MIDDLE — Headline + sub + stats */}
           <div>
             <h1 className="hero-headline">
               We Build <span className="hero-headline-accent">{displayed}</span>
@@ -124,15 +124,36 @@ export default function Hero({ activeCategory, onSearch, onExploreOffers }) {
             <p className="hero-sub">
               Grow your business online with websites, mobile apps, SEO, and AI marketing.
             </p>
-            {/* Added compact content bullets */}
             <div style={{ display: 'flex', gap: '10px', marginTop: '6px', fontSize: '0.68rem', color: 'rgba(15,30,60,0.75)', fontWeight: '700', flexWrap: 'wrap' }}>
               <span>✓ Free Consultation</span>
               <span>✓ 100% Satisfaction Guarantee</span>
               <span>✓ Dedicated Support</span>
             </div>
+            {/* Stats row */}
+            <div className="hero-stats-row">
+              <div className="hero-stat">
+                <span className="hero-stat-num">500+</span>
+                <span className="hero-stat-label">Projects Done</span>
+              </div>
+              <div className="hero-stat-divider" />
+              <div className="hero-stat">
+                <span className="hero-stat-num">50+</span>
+                <span className="hero-stat-label">Expert Team</span>
+              </div>
+              <div className="hero-stat-divider" />
+              <div className="hero-stat">
+                <span className="hero-stat-num">98%</span>
+                <span className="hero-stat-label">Client Satisfaction</span>
+              </div>
+              <div className="hero-stat-divider" />
+              <div className="hero-stat">
+                <span className="hero-stat-num">10+</span>
+                <span className="hero-stat-label">Years Experience</span>
+              </div>
+            </div>
           </div>
 
-          {/* Search + CTA Buttons — anchored to bottom */}
+          {/* BOTTOM — Search + CTA */}
           <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
             <form onSubmit={handleSubmit} className="hero-search-form">
               <span style={{ paddingLeft: '12px', display: 'flex', alignItems: 'center', color: '#bbb', flexShrink: 0 }}>
@@ -147,8 +168,6 @@ export default function Hero({ activeCategory, onSearch, onExploreOffers }) {
               />
               <button type="submit" className="hero-search-btn" style={{ color: accentColor, transition: 'color 0.5s ease' }}>Search</button>
             </form>
-
-            {/* CTA Buttons */}
             <div style={{ display: 'flex', gap: '10px', flexWrap: 'wrap' }}>
               <button onClick={onExploreOffers} className="hero-btn-primary">
                 🔥 Explore Mega Offers
@@ -208,7 +227,7 @@ export default function Hero({ activeCategory, onSearch, onExploreOffers }) {
         .hero-inner-grid {
           display: grid;
           grid-template-columns: 1.25fr 0.75fr;
-          min-height: 360px;
+          min-height: 400px;
           position: relative;
           z-index: 2;
         }
@@ -217,9 +236,46 @@ export default function Hero({ activeCategory, onSearch, onExploreOffers }) {
         .hero-left-col {
           display: flex;
           flex-direction: column;
-          justify-content: center;
-          gap: 10px;
+          justify-content: space-between;
+          gap: 0;
           padding: 22px 24px;
+        }
+
+        /* ── Stats row ── */
+        .hero-stats-row {
+          display: flex;
+          align-items: center;
+          gap: 12px;
+          margin-top: 14px;
+          padding: 10px 14px;
+          background: rgba(15,30,60,0.08);
+          border-radius: 10px;
+          border: 1px solid rgba(15,30,60,0.12);
+        }
+        .hero-stat {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: 1px;
+        }
+        .hero-stat-num {
+          font-size: 1.05rem;
+          font-weight: 900;
+          color: #0F1E3C;
+          line-height: 1;
+        }
+        .hero-stat-label {
+          font-size: 0.56rem;
+          font-weight: 700;
+          color: rgba(15,30,60,0.65);
+          text-align: center;
+          white-space: nowrap;
+        }
+        .hero-stat-divider {
+          width: 1px;
+          height: 28px;
+          background: rgba(15,30,60,0.2);
+          flex-shrink: 0;
         }
 
         /* ── Badges ── */
@@ -251,8 +307,8 @@ export default function Hero({ activeCategory, onSearch, onExploreOffers }) {
 
         /* ── Headline ── */
         .hero-headline {
-          font-size: clamp(1.4rem, 2.5vw, 2rem);
-          font-weight: 900; line-height: 1.1; color: #0F1E3C; margin: 0 0 4px;
+          font-size: clamp(1.7rem, 3vw, 2.5rem);
+          font-weight: 900; line-height: 1.1; color: #0F1E3C; margin: 0 0 6px;
           text-shadow: 0 2px 8px rgba(255,255,255,0.3);
           animation: fadeInUp 0.6s ease both 0.1s;
         }

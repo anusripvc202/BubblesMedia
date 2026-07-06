@@ -130,6 +130,13 @@ export default function Hero({ activeCategory, onSearch, onExploreOffers }) {
             </div>
           </div>
 
+          {/* MIDDLE — Service chips */}
+          <div className="hero-chips-row">
+            {['🌐 Web Design', '📱 Mobile Apps', '🔍 SEO & Marketing', '🤖 AI Solutions', '🎨 Branding'].map(chip => (
+              <span key={chip} className="hero-chip">{chip}</span>
+            ))}
+          </div>
+
           {/* BOTTOM GROUP — stats + search + CTA */}
           <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
             {/* Stats row — compact width */}
@@ -243,6 +250,33 @@ export default function Hero({ activeCategory, onSearch, onExploreOffers }) {
           gap: 0;
           padding: 22px 24px;
         }
+
+        /* ── Service chips ── */
+        .hero-chips-row {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 6px;
+        }
+        .hero-chip {
+          display: inline-flex;
+          align-items: center;
+          gap: 4px;
+          padding: 5px 11px;
+          background: rgba(15,30,60,0.1);
+          border: 1px solid rgba(15,30,60,0.18);
+          border-radius: 20px;
+          font-size: 0.65rem;
+          font-weight: 700;
+          color: #0F1E3C;
+          cursor: pointer;
+          transition: background 0.18s, transform 0.15s;
+          white-space: nowrap;
+        }
+        .hero-chip:hover {
+          background: rgba(15,30,60,0.2);
+          transform: translateY(-1px);
+        }
+
 
         /* ── Stats row ── */
         .hero-stats-row {

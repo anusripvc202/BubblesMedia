@@ -421,15 +421,17 @@ export default function IndustriesRow({ onSelectIndustry }) {
             <div style={{
               display: 'flex',
               alignItems: 'center',
+              justifyContent: 'center',
               gap: '6px',
               fontSize: '0.72rem',
               fontWeight: '800',
               color: ind.color,
               opacity: hoveredIdx === idx ? 1 : 0.8,
               transition: 'all 0.2s ease',
-              marginTop: '4px'
+              marginTop: '4px',
+              width: '100%'
             }}>
-              Explore Blueprints
+              View Details
               <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"
                 style={{
                   transition: 'transform 0.2s ease',

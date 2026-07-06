@@ -136,24 +136,26 @@ export default function Header({ cartCount = 0, wishlistCount = 0, onCartOpen, o
             .logo-bubble-colored {
               position: absolute;
               border-radius: 50%;
-              bottom: -15px;
+              bottom: -25px;
               z-index: 1;
               pointer-events: none;
               animation: logoBubbleRiseColored 3.5s ease-in infinite;
+              border: 1.5px solid rgba(15, 30, 60, 0.3); /* Distinct outline */
+              box-shadow: inset -2px -2px 6px rgba(255, 255, 255, 0.6), 0 2px 4px rgba(0, 0, 0, 0.08);
             }
-            /* Mix of green and dark blue/grey translucent bubbles */
-            .lbc1 { width: 8px;  height: 8px;  left: 15%; background: rgba(170,223,0,0.4);  animation-delay: 0s;   animation-duration: 2.8s; }
-            .lbc2 { width: 6px;  height: 6px;  left: 35%; background: rgba(15,30,60,0.2);    animation-delay: 0.7s; animation-duration: 3.5s; }
-            .lbc3 { width: 10px; height: 10px; left: 55%; background: rgba(170,223,0,0.3);  animation-delay: 1.4s; animation-duration: 3.0s; }
-            .lbc4 { width: 5px;  height: 5px;  left: 75%; background: rgba(15,30,60,0.15);   animation-delay: 2.0s; animation-duration: 4.0s; }
-            .lbc5 { width: 9px;  height: 9px;  left: 25%; background: rgba(170,223,0,0.35);  animation-delay: 2.5s; animation-duration: 2.5s; }
-            .lbc6 { width: 7px;  height: 7px;  left: 85%; background: rgba(170,223,0,0.5);   animation-delay: 1.0s; animation-duration: 3.2s; }
+            /* Thicker size and opacity */
+            .lbc1 { width: 14px; height: 14px; left: 12%; background: rgba(170,223,0,0.85); animation-delay: 0s;   animation-duration: 2.8s; }
+            .lbc2 { width: 12px; height: 12px; left: 32%; background: rgba(15,30,60,0.6);   animation-delay: 0.7s; animation-duration: 3.5s; border-color: rgba(170,223,0,0.5); }
+            .lbc3 { width: 18px; height: 18px; left: 52%; background: rgba(170,223,0,0.75); animation-delay: 1.4s; animation-duration: 3.0s; }
+            .lbc4 { width: 11px; height: 11px; left: 72%; background: rgba(15,30,60,0.5);   animation-delay: 2.0s; animation-duration: 4.0s; border-color: rgba(170,223,0,0.5); }
+            .lbc5 { width: 16px; height: 16px; left: 22%; background: rgba(170,223,0,0.8);  animation-delay: 2.5s; animation-duration: 2.5s; }
+            .lbc6 { width: 13px; height: 13px; left: 82%; background: rgba(170,223,0,0.9);  animation-delay: 1.0s; animation-duration: 3.2s; }
             
             @keyframes logoBubbleRiseColored {
-              0%   { transform: translateY(0) scale(0.3); opacity: 0; }
-              15%  { opacity: 0.8; }
-              85%  { opacity: 0.4; }
-              100% { transform: translateY(-85px) scale(1.2); opacity: 0; }
+              0%   { transform: translateY(0) scale(0.4); opacity: 0; }
+              15%  { opacity: 1; }
+              85%  { opacity: 0.8; }
+              100% { transform: translateY(-95px) scale(1.3); opacity: 0; }
             }
           `}</style>
 

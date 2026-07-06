@@ -237,7 +237,7 @@ export default function Hero({ activeCategory, onSearch, onExploreOffers }) {
         .hero-inner-grid {
           display: grid;
           grid-template-columns: 1.25fr 0.75fr;
-          min-height: 400px;
+          min-height: 310px;
           position: relative;
           z-index: 2;
         }
@@ -246,9 +246,9 @@ export default function Hero({ activeCategory, onSearch, onExploreOffers }) {
         .hero-left-col {
           display: flex;
           flex-direction: column;
-          justify-content: space-evenly;
+          justify-content: space-between;
           gap: 0;
-          padding: 22px 24px;
+          padding: 18px 24px;
           overflow: hidden;
           min-width: 0;
         }

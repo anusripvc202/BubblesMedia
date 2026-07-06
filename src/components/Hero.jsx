@@ -250,6 +250,7 @@ export default function Hero({ activeCategory, onSearch, onExploreOffers }) {
           gap: 0;
           padding: 22px 24px;
           overflow: hidden;
+          min-width: 0;
         }
 
         /* ── Service chips ── */
@@ -257,6 +258,8 @@ export default function Hero({ activeCategory, onSearch, onExploreOffers }) {
           display: flex;
           flex-wrap: wrap;
           gap: 6px;
+          width: 100%;
+          max-width: 100%;
         }
         .hero-chip {
           display: inline-flex;

@@ -115,8 +115,8 @@ export default function Hero({ activeCategory, onSearch, onExploreOffers }) {
             <span className="hero-badge-gold" style={{ color: accentColor, transition: 'color 0.5s ease' }}>⭐ 4.9/5 Rating</span>
           </div>
 
-          {/* Headline with typewriter & content */}
-          <div>
+          {/* Headline with typewriter & content — grows to fill middle space */}
+          <div style={{ flex: 1, display: 'flex', flexDirection: 'column', justifyContent: 'center', paddingBlock: '12px' }}>
             <h1 className="hero-headline">
               We Build <span className="hero-headline-accent">{displayed}</span>
               <span className="hero-cursor">|</span>
@@ -132,27 +132,29 @@ export default function Hero({ activeCategory, onSearch, onExploreOffers }) {
             </div>
           </div>
 
-          {/* Search */}
-          <form onSubmit={handleSubmit} className="hero-search-form">
-            <span style={{ paddingLeft: '12px', display: 'flex', alignItems: 'center', color: '#bbb', flexShrink: 0 }}>
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                <circle cx="11" cy="11" r="8" /><path d="m21 21-4.3-4.3" />
-              </svg>
-            </span>
-            <input
-              type="text" placeholder="What do you need today?"
-              value={inputVal} onChange={e => setInputVal(e.target.value)}
-              style={{ flex: 1, border: 'none', background: 'transparent', padding: '9px 8px', fontSize: '0.82rem', outline: 'none', color: '#333', minWidth: 0 }}
-            />
-            <button type="submit" className="hero-search-btn" style={{ color: accentColor, transition: 'color 0.5s ease' }}>Search</button>
-          </form>
+          {/* Search + CTA Buttons — anchored to bottom */}
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
+            <form onSubmit={handleSubmit} className="hero-search-form">
+              <span style={{ paddingLeft: '12px', display: 'flex', alignItems: 'center', color: '#bbb', flexShrink: 0 }}>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                  <circle cx="11" cy="11" r="8" /><path d="m21 21-4.3-4.3" />
+                </svg>
+              </span>
+              <input
+                type="text" placeholder="What do you need today?"
+                value={inputVal} onChange={e => setInputVal(e.target.value)}
+                style={{ flex: 1, border: 'none', background: 'transparent', padding: '9px 8px', fontSize: '0.82rem', outline: 'none', color: '#333', minWidth: 0 }}
+              />
+              <button type="submit" className="hero-search-btn" style={{ color: accentColor, transition: 'color 0.5s ease' }}>Search</button>
+            </form>
 
-          {/* CTA Buttons */}
-          <div style={{ display: 'flex', gap: '10px', flexWrap: 'wrap' }}>
-            <button onClick={onExploreOffers} className="hero-btn-primary">
-              🔥 Explore Mega Offers
-            </button>
-            <button className="hero-btn-outline">Get Free Quote</button>
+            {/* CTA Buttons */}
+            <div style={{ display: 'flex', gap: '10px', flexWrap: 'wrap' }}>
+              <button onClick={onExploreOffers} className="hero-btn-primary">
+                🔥 Explore Mega Offers
+              </button>
+              <button className="hero-btn-outline">Get Free Quote</button>
+            </div>
           </div>
         </div>
 
@@ -206,7 +208,7 @@ export default function Hero({ activeCategory, onSearch, onExploreOffers }) {
         .hero-inner-grid {
           display: grid;
           grid-template-columns: 1.25fr 0.75fr;
-          min-height: 340px;
+          min-height: 380px;
           position: relative;
           z-index: 2;
         }
@@ -215,9 +217,9 @@ export default function Hero({ activeCategory, onSearch, onExploreOffers }) {
         .hero-left-col {
           display: flex;
           flex-direction: column;
-          justify-content: center;
-          gap: 12px;
-          padding: 20px 24px;
+          justify-content: space-between;
+          gap: 0;
+          padding: 22px 24px;
         }
 
         /* ── Badges ── */

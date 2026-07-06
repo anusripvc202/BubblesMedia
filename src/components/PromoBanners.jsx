@@ -306,7 +306,7 @@ export default function PromoBanners({ onSelectPackage }) {
             cursor: 'pointer',
             color: '#white'
           }}
-          onClick={() => router.push('/offers')}
+          onClick={() => router.push('/contact?subject=Enterprise Solutions Suite')}
           onMouseEnter={e => {
             e.currentTarget.style.transform = 'translateY(-2px)';
             e.currentTarget.style.boxShadow = '0 8px 24px rgba(15, 30, 60, 0.2)';

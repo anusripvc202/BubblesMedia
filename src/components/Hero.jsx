@@ -12,11 +12,11 @@ function getHueRotateFilter(hexColor) {
   const r = parseInt(hex.substring(0, 2), 16) / 255;
   const g = parseInt(hex.substring(2, 4), 16) / 255;
   const b = parseInt(hex.substring(4, 6), 16) / 255;
-  
+
   const max = Math.max(r, g, b);
   const min = Math.min(r, g, b);
   let h = 0;
-  
+
   if (max !== min) {
     const d = max - min;
     switch (max) {
@@ -26,14 +26,14 @@ function getHueRotateFilter(hexColor) {
     }
     h /= 6;
   }
-  
+
   const targetHue = Math.round(h * 360);
   const defaultHue = 74; // Default hue of #AADF00 is 74deg
   const diff = targetHue - defaultHue;
-  
+
   const l = (max + min) / 2;
   const s = max === min ? 0 : (l > 0.5 ? (max - min) / (2 - max - min) : (max - min) / (max + min));
-  
+
   let filterStr = `hue-rotate(${diff}deg)`;
   if (s < 0.25) {
     filterStr += ` saturate(${Math.round(s * 100)}%)`;
@@ -136,7 +136,7 @@ export default function Hero({ activeCategory, onSearch, onExploreOffers }) {
           <form onSubmit={handleSubmit} className="hero-search-form">
             <span style={{ paddingLeft: '12px', display: 'flex', alignItems: 'center', color: '#bbb', flexShrink: 0 }}>
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                <circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/>
+                <circle cx="11" cy="11" r="8" /><path d="m21 21-4.3-4.3" />
               </svg>
             </span>
             <input
@@ -159,7 +159,7 @@ export default function Hero({ activeCategory, onSearch, onExploreOffers }) {
         {/* ── RIGHT — Image ── */}
         <div className="hero-right-col">
           <img
-            src="/image.png"
+            src="/hero-sec-logo.png"
             alt="Platform Showcase & Mega Offers"
             draggable={false}
             className="hero-img"

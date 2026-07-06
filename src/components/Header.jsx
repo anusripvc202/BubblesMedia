@@ -3,11 +3,13 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { useRouter } from 'next/navigation';
 import { categories } from '../data/servicesData';
+import SignInModal from './SignInModal';
 
 export default function Header({ cartCount = 0, wishlistCount = 0, onCartOpen, onQuoteOpen, onSearch }) {
   const router = useRouter();
   const [searchValue, setSearchValue] = useState('');
   const [menuOpen, setMenuOpen] = useState(false);
+  const [signInOpen, setSignInOpen] = useState(false);
   const [catOpen, setCatOpen] = useState(false);
   const [desktopCatOpen, setDesktopCatOpen] = useState(false);
   const [isMobileSearchOpen, setIsMobileSearchOpen] = useState(false);
@@ -213,7 +215,7 @@ export default function Header({ cartCount = 0, wishlistCount = 0, onCartOpen, o
             <div style={{ width: '1px', height: '24px', background: 'rgba(0,0,0,0.08)' }} />
 
             {/* Account */}
-            <div style={{ display: 'flex', alignItems: 'center', gap: '8px', cursor: 'pointer' }} onClick={onQuoteOpen}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '8px', cursor: 'pointer' }} onClick={() => setSignInOpen(true)}>
               <div style={{ background: 'rgba(170, 223, 0, 0.12)', color: 'var(--primary)', width: '32px', height: '32px', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                   <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/>
@@ -348,7 +350,7 @@ export default function Header({ cartCount = 0, wishlistCount = 0, onCartOpen, o
           <div style={{ background: 'var(--primary-light)', color: 'var(--primary)', width: '38px', height: '38px', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.1rem', flexShrink: 0 }}>👤</div>
           <div>
             <div style={{ fontSize: '0.7rem', color: 'var(--text-light)' }}>My Account</div>
-            <button onClick={() => { onQuoteOpen?.(); setMenuOpen(false); }}
+            <button onClick={() => { setSignInOpen(true); setMenuOpen(false); }}
               style={{ fontSize: '0.82rem', fontWeight: '700', color: 'var(--primary)', background: 'none', border: 'none', cursor: 'pointer', padding: 0 }}>
               Sign In / Register
             </button>
@@ -428,6 +430,7 @@ export default function Header({ cartCount = 0, wishlistCount = 0, onCartOpen, o
           </button>
         </div>
       </div>
+      <SignInModal isOpen={signInOpen} onClose={() => setSignInOpen(false)} />
     </>
   );
 }

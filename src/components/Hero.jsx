@@ -132,7 +132,7 @@ export default function Hero({ activeCategory, onSearch, onExploreOffers }) {
 
           {/* MIDDLE — Service chips */}
           <div className="hero-chips-row">
-            {['🌐 Web Design', '📱 Mobile Apps', '🔍 SEO & Marketing', '🤖 AI Solutions', '🎨 Branding'].map(chip => (
+            {['🌐 Web Design', '📱 Mobile Apps', '🔍 SEO', '🤖 AI Tools', '🎨 Branding', '📊 Analytics'].map(chip => (
               <span key={chip} className="hero-chip">{chip}</span>
             ))}
           </div>
@@ -249,6 +249,7 @@ export default function Hero({ activeCategory, onSearch, onExploreOffers }) {
           justify-content: space-between;
           gap: 0;
           padding: 22px 24px;
+          overflow: hidden;
         }
 
         /* ── Service chips ── */
@@ -261,16 +262,15 @@ export default function Hero({ activeCategory, onSearch, onExploreOffers }) {
           display: inline-flex;
           align-items: center;
           gap: 4px;
-          padding: 5px 11px;
+          padding: 4px 10px;
           background: rgba(15,30,60,0.1);
           border: 1px solid rgba(15,30,60,0.18);
           border-radius: 20px;
-          font-size: 0.65rem;
+          font-size: 0.63rem;
           font-weight: 700;
           color: #0F1E3C;
           cursor: pointer;
           transition: background 0.18s, transform 0.15s;
-          white-space: nowrap;
         }
         .hero-chip:hover {
           background: rgba(15,30,60,0.2);

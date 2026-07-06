@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
+import { useRouter } from 'next/navigation';
 
 export default function PromoBanners({ onSelectPackage }) {
+  const router = useRouter();
   // Countdown Timer state
   const [timeLeft, setTimeLeft] = useState({
     days: 2,
@@ -142,7 +144,7 @@ export default function PromoBanners({ onSelectPackage }) {
             transition: 'transform 0.2s ease',
             cursor: 'pointer'
           }}
-          onClick={() => onSelectPackage({ title: 'Mega Deals of the Day', price: 'Special Offer' })}
+          onClick={() => router.push('/offers')}
           onMouseEnter={e => e.currentTarget.style.transform = 'translateY(-2px)'}
           onMouseLeave={e => e.currentTarget.style.transform = 'translateY(0)'}
           >
@@ -224,7 +226,7 @@ export default function PromoBanners({ onSelectPackage }) {
             transition: 'transform 0.2s ease',
             cursor: 'pointer'
           }}
-          onClick={() => onSelectPackage({ title: 'Startup Special Pack', price: '₹14,999' })}
+          onClick={() => router.push('/offers')}
           onMouseEnter={e => e.currentTarget.style.transform = 'translateY(-2px)'}
           onMouseLeave={e => e.currentTarget.style.transform = 'translateY(0)'}
           >
@@ -304,7 +306,7 @@ export default function PromoBanners({ onSelectPackage }) {
             cursor: 'pointer',
             color: '#white'
           }}
-          onClick={() => onSelectPackage({ title: 'Enterprise Custom Solutions', price: 'Custom Quote' })}
+          onClick={() => router.push('/offers')}
           onMouseEnter={e => {
             e.currentTarget.style.transform = 'translateY(-2px)';
             e.currentTarget.style.boxShadow = '0 8px 24px rgba(15, 30, 60, 0.2)';

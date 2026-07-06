@@ -94,70 +94,81 @@ export default function Header({ cartCount = 0, wishlistCount = 0, onCartOpen, o
           gap: '20px',
         }}>
 
-          {/* Logo — diagonal + visible bubble effect (no solid background) */}
-          <a href="/" style={{ textDecoration: 'none', flexShrink: 0, display: 'flex', alignItems: 'center', position: 'relative' }}>
-            <div className="logo-bubble-container" style={{ position: 'relative', overflow: 'hidden', padding: '10px 15px' }}>
-              {/* Colored rising bubbles visible on white background */}
-              <span className="logo-bubble-colored lbc1" />
-              <span className="logo-bubble-colored lbc2" />
-              <span className="logo-bubble-colored lbc3" />
-              <span className="logo-bubble-colored lbc4" />
-              <span className="logo-bubble-colored lbc5" />
-              <span className="logo-bubble-colored lbc6" />
-              
-              <img
-                src="/techmart24-logo.png"
-                alt="Tech Mart 24"
-                className="header-logo-img"
-                style={{
-                  height: '68px',
-                  width: 'auto',
-                  objectFit: 'contain',
-                  display: 'block',
-                  transform: 'rotate(-10deg)',
-                  position: 'relative',
-                  zIndex: 2,
-                  transition: 'transform 0.3s ease',
-                }}
-                onMouseEnter={e => e.currentTarget.style.transform = 'rotate(0deg) scale(1.05)'}
-                onMouseLeave={e => e.currentTarget.style.transform = 'rotate(-10deg)'}
-              />
-            </div>
+          {/* Logo — diagonal tilt */}
+          <a href="/" style={{ textDecoration: 'none', flexShrink: 0, display: 'flex', alignItems: 'center', position: 'relative', zIndex: 10 }}>
+            <img
+              src="/techmart24-logo.png"
+              alt="Tech Mart 24"
+              className="header-logo-img"
+              style={{
+                height: '68px',
+                width: 'auto',
+                objectFit: 'contain',
+                display: 'block',
+                transform: 'rotate(-10deg)',
+                transition: 'transform 0.3s ease',
+              }}
+              onMouseEnter={e => e.currentTarget.style.transform = 'rotate(0deg) scale(1.05)'}
+              onMouseLeave={e => e.currentTarget.style.transform = 'rotate(-10deg)'}
+            />
           </a>
+
+          {/* Global Header Bubbles (floats up across the entire navbar background) */}
+          <div className="navbar-bubble-layer">
+            <span className="nav-bubble nb1" />
+            <span className="nav-bubble nb2" />
+            <span className="nav-bubble nb3" />
+            <span className="nav-bubble nb4" />
+            <span className="nav-bubble nb5" />
+            <span className="nav-bubble nb6" />
+            <span className="nav-bubble nb7" />
+            <span className="nav-bubble nb8" />
+            <span className="nav-bubble nb9" />
+            <span className="nav-bubble nb10" />
+            <span className="nav-bubble nb11" />
+            <span className="nav-bubble nb12" />
+          </div>
+
           <style>{`
-            .logo-bubble-container {
-              border-radius: 8px;
-              transition: background 0.3s;
+            .navbar-bubble-layer {
+              position: absolute;
+              inset: 0;
+              width: 100%;
+              height: 100%;
+              overflow: hidden;
+              pointer-events: none;
+              z-index: 1;
             }
-            .logo-bubble-container:hover {
-              background: rgba(170,223,0,0.05);
-            }
-            /* Colored bubbles visible on white background */
-            .logo-bubble-colored {
+            .nav-bubble {
               position: absolute;
               border-radius: 50%;
-              bottom: -25px;
-              z-index: 1;
-              pointer-events: none;
-              animation: logoBubbleRiseColored 3.5s ease-in infinite;
-              border: 1.5px solid rgba(15, 30, 60, 0.3); /* Distinct outline */
-              box-shadow: inset -2px -2px 6px rgba(255, 255, 255, 0.6), 0 2px 4px rgba(0, 0, 0, 0.08);
+              bottom: -20px;
+              animation: navBubbleRise 4s ease-in infinite;
+              border: 1.5px solid rgba(15, 30, 60, 0.2);
+              box-shadow: inset -2px -2px 6px rgba(255, 255, 255, 0.6), 0 2px 4px rgba(0, 0, 0, 0.05);
             }
-            /* Thicker size and opacity */
-            .lbc1 { width: 14px; height: 14px; left: 12%; background: rgba(170,223,0,0.85); animation-delay: 0s;   animation-duration: 2.8s; }
-            .lbc2 { width: 12px; height: 12px; left: 32%; background: rgba(15,30,60,0.6);   animation-delay: 0.7s; animation-duration: 3.5s; border-color: rgba(170,223,0,0.5); }
-            .lbc3 { width: 18px; height: 18px; left: 52%; background: rgba(170,223,0,0.75); animation-delay: 1.4s; animation-duration: 3.0s; }
-            .lbc4 { width: 11px; height: 11px; left: 72%; background: rgba(15,30,60,0.5);   animation-delay: 2.0s; animation-duration: 4.0s; border-color: rgba(170,223,0,0.5); }
-            .lbc5 { width: 16px; height: 16px; left: 22%; background: rgba(170,223,0,0.8);  animation-delay: 2.5s; animation-duration: 2.5s; }
-            .lbc6 { width: 13px; height: 13px; left: 82%; background: rgba(170,223,0,0.9);  animation-delay: 1.0s; animation-duration: 3.2s; }
-            
-            @keyframes logoBubbleRiseColored {
+            /* Colors & positioning distribution across full navbar */
+            .nb1  { width: 14px; height: 14px; left: 5%;   background: rgba(170,223,0,0.5);  animation-delay: 0s;   animation-duration: 3.2s; }
+            .nb2  { width: 11px; height: 11px; left: 14%;  background: rgba(15,30,60,0.25);  animation-delay: 0.8s; animation-duration: 4.1s; }
+            .nb3  { width: 18px; height: 18px; left: 23%;  background: rgba(170,223,0,0.4);  animation-delay: 1.5s; animation-duration: 3.5s; }
+            .nb4  { width: 10px; height: 10px; left: 32%;  background: rgba(15,30,60,0.2);   animation-delay: 2.2s; animation-duration: 4.5s; }
+            .nb5  { width: 15px; height: 15px; left: 41%;  background: rgba(170,223,0,0.45); animation-delay: 0.3s; animation-duration: 3.0s; }
+            .nb6  { width: 12px; height: 12px; left: 50%;  background: rgba(15,30,60,0.15);  animation-delay: 1.1s; animation-duration: 3.8s; }
+            .nb7  { width: 16px; height: 16px; left: 59%;  background: rgba(170,223,0,0.5);  animation-delay: 2.6s; animation-duration: 3.4s; }
+            .nb8  { width: 9px;  height: 9px;  left: 68%;  background: rgba(15,30,60,0.25);  animation-delay: 0.5s; animation-duration: 4.2s; }
+            .nb9  { width: 20px; height: 20px; left: 77%;  background: rgba(170,223,0,0.35); animation-delay: 1.8s; animation-duration: 3.1s; }
+            .nb10 { width: 13px; height: 13px; left: 85%;  background: rgba(15,30,60,0.2);   animation-delay: 2.9s; animation-duration: 3.9s; }
+            .nb11 { width: 15px; height: 15px; left: 92%;  background: rgba(170,223,0,0.4);  animation-delay: 1.0s; animation-duration: 3.6s; }
+            .nb12 { width: 11px; height: 11px; left: 97%;  background: rgba(15,30,60,0.15);  animation-delay: 2.1s; animation-duration: 4.3s; }
+
+            @keyframes navBubbleRise {
               0%   { transform: translateY(0) scale(0.4); opacity: 0; }
-              15%  { opacity: 1; }
-              85%  { opacity: 0.8; }
-              100% { transform: translateY(-95px) scale(1.3); opacity: 0; }
+              15%  { opacity: 0.9; }
+              85%  { opacity: 0.7; }
+              100% { transform: translateY(-110px) scale(1.3); opacity: 0; }
             }
           `}</style>
+
 
 
 

@@ -237,7 +237,7 @@ export default function Hero({ activeCategory, onSearch, onExploreOffers }) {
         .hero-inner-grid {
           display: grid;
           grid-template-columns: 1.25fr 0.75fr;
-          min-height: 310px;
+          min-height: 390px;
           position: relative;
           z-index: 2;
         }

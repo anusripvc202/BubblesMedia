@@ -39,7 +39,7 @@ export default function Header({ cartCount = 0, wishlistCount = 0, onCartOpen, o
   }, []);
 
   useEffect(() => {
-    const onResize = () => { if (window.innerWidth > 1024) setMenuOpen(false); };
+    const onResize = () => { if (window.innerWidth > 1023) setMenuOpen(false); };
     window.addEventListener('resize', onResize);
     return () => window.removeEventListener('resize', onResize);
   }, []);
@@ -97,6 +97,7 @@ export default function Header({ cartCount = 0, wishlistCount = 0, onCartOpen, o
             <img
               src="/techmart24-logo.png"
               alt="Tech Mart 24"
+              className="header-logo-img"
               style={{ height: '68px', width: 'auto', objectFit: 'contain', display: 'block' }}
             />
           </a>

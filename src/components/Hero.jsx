@@ -1,8 +1,47 @@
 import React, { useState, useEffect } from 'react';
+import { categories } from '../data/servicesData';
 
 const WORDS = ['Websites', 'Mobile Apps', 'SEO & Marketing', 'AI Solutions', 'Branding'];
 
-export default function Hero({ onSearch, onExploreOffers }) {
+function getHueRotateFilter(hexColor) {
+  if (!hexColor) return 'none';
+  let hex = hexColor.replace(/^#/, '');
+  if (hex.length === 3) {
+    hex = hex.split('').map(c => c + c).join('');
+  }
+  const r = parseInt(hex.substring(0, 2), 16) / 255;
+  const g = parseInt(hex.substring(2, 4), 16) / 255;
+  const b = parseInt(hex.substring(4, 6), 16) / 255;
+  
+  const max = Math.max(r, g, b);
+  const min = Math.min(r, g, b);
+  let h = 0;
+  
+  if (max !== min) {
+    const d = max - min;
+    switch (max) {
+      case r: h = (g - b) / d + (g < b ? 6 : 0); break;
+      case g: h = (b - r) / d + 2; break;
+      case b: h = (r - g) / d + 4; break;
+    }
+    h /= 6;
+  }
+  
+  const targetHue = Math.round(h * 360);
+  const defaultHue = 74; // Default hue of #AADF00 is 74deg
+  const diff = targetHue - defaultHue;
+  
+  const l = (max + min) / 2;
+  const s = max === min ? 0 : (l > 0.5 ? (max - min) / (2 - max - min) : (max - min) / (max + min));
+  
+  let filterStr = `hue-rotate(${diff}deg)`;
+  if (s < 0.25) {
+    filterStr += ` saturate(${Math.round(s * 100)}%)`;
+  }
+  return filterStr;
+}
+
+export default function Hero({ activeCategory, onSearch, onExploreOffers }) {
   const [inputVal, setInputVal] = useState('');
   const [wordIdx, setWordIdx] = useState(0);
   const [displayed, setDisplayed] = useState('');
@@ -31,17 +70,24 @@ export default function Hero({ onSearch, onExploreOffers }) {
     return () => clearTimeout(timeout);
   }, [displayed, typing, wordIdx]);
 
+  // Dynamic theme extraction
+  const categoryData = activeCategory ? categories.find(c => c.id === activeCategory) : null;
+  const heroBg = categoryData?.colorTheme || 'linear-gradient(135deg, #AADF00 0%, #C8F000 50%, #92C200 100%)';
+  const heroShadow = categoryData ? `0 12px 48px ${categoryData.accentColor}50` : '0 12px 48px rgba(170,223,0,0.5)';
+  const accentColor = categoryData?.accentColor || '#AADF00';
+
   return (
     <div style={{ width: '100%', marginBottom: '20px', position: 'relative' }}>
       {/* Background card with overflow hidden to clip orbs and gradient */}
       <div style={{
         position: 'absolute',
         inset: 0,
-        background: 'linear-gradient(135deg, #AADF00 0%, #C8F000 50%, #92C200 100%)',
+        background: heroBg,
         borderRadius: '14px',
-        boxShadow: '0 12px 48px rgba(170,223,0,0.5)',
+        boxShadow: heroShadow,
         overflow: 'hidden',
         zIndex: 1,
+        transition: 'all 0.5s cubic-bezier(0.16, 1, 0.3, 1)',
       }}>
         {/* Animated background orbs */}
         <div className="hero-orb hero-orb-1" />
@@ -66,7 +112,7 @@ export default function Hero({ onSearch, onExploreOffers }) {
               <span className="hero-badge-dot" />
               🚀 India's #1 Digital Agency
             </span>
-            <span className="hero-badge-gold">⭐ 4.9/5 Rating</span>
+            <span className="hero-badge-gold" style={{ color: accentColor, transition: 'color 0.5s ease' }}>⭐ 4.9/5 Rating</span>
           </div>
 
           {/* Headline with typewriter & content */}
@@ -98,7 +144,7 @@ export default function Hero({ onSearch, onExploreOffers }) {
               value={inputVal} onChange={e => setInputVal(e.target.value)}
               style={{ flex: 1, border: 'none', background: 'transparent', padding: '9px 8px', fontSize: '0.82rem', outline: 'none', color: '#333', minWidth: 0 }}
             />
-            <button type="submit" className="hero-search-btn">Search</button>
+            <button type="submit" className="hero-search-btn" style={{ color: accentColor, transition: 'color 0.5s ease' }}>Search</button>
           </form>
 
           {/* CTA Buttons */}
@@ -117,6 +163,10 @@ export default function Hero({ onSearch, onExploreOffers }) {
             alt="Platform Showcase & Mega Offers"
             draggable={false}
             className="hero-img"
+            style={{
+              filter: getHueRotateFilter(accentColor),
+              transition: 'filter 0.5s cubic-bezier(0.16, 1, 0.3, 1)',
+            }}
           />
         </div>
       </div>

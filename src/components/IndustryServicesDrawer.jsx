@@ -65,6 +65,8 @@ function ServiceTypeIcon({ category }) {
 function ServiceCard({ serviceEntry, industryColor, onClose }) {
   const { id: serviceId, label } = serviceEntry;
   const service = serviceDatabase[serviceId];
+  const [isHovered, setIsHovered] = React.useState(false);
+
   if (!service) return null;
 
   const catMeta = categoryColorMap[service.category] || { color: industryColor, bg: '#fff7ed', label: 'Service' };
@@ -72,78 +74,104 @@ function ServiceCard({ serviceEntry, industryColor, onClose }) {
   return (
     <Link href={`/services/${serviceId}`} onClick={onClose} style={{ textDecoration: 'none', display: 'block' }}>
       <div
+        onMouseEnter={() => setIsHovered(true)}
+        onMouseLeave={() => setIsHovered(false)}
         style={{
           background: '#fff',
-          border: '1.5px solid #e2e8f0',
-          borderRadius: '14px',
-          padding: '18px 16px',
+          border: isHovered ? `1px solid ${catMeta.color}` : '1px solid rgba(226, 232, 240, 0.8)',
+          borderRadius: '16px',
+          padding: '20px',
           display: 'flex',
           flexDirection: 'column',
-          gap: '10px',
+          gap: '12px',
           cursor: 'pointer',
-          transition: 'all 0.22s cubic-bezier(0.4,0,0.2,1)',
+          transition: 'all 0.3s cubic-bezier(0.16, 1, 0.3, 1)',
           height: '100%',
-        }}
-        onMouseEnter={e => {
-          e.currentTarget.style.borderColor = catMeta.color;
-          e.currentTarget.style.boxShadow = `0 8px 24px ${catMeta.color}22`;
-          e.currentTarget.style.transform = 'translateY(-4px)';
-          e.currentTarget.style.background = catMeta.bg;
-        }}
-        onMouseLeave={e => {
-          e.currentTarget.style.borderColor = '#e2e8f0';
-          e.currentTarget.style.boxShadow = 'none';
-          e.currentTarget.style.transform = 'translateY(0)';
-          e.currentTarget.style.background = '#fff';
+          boxShadow: isHovered 
+            ? `0 20px 38px rgba(0, 0, 0, 0.04), 0 4px 18px ${catMeta.color}18` 
+            : '0 4px 12px rgba(0, 0, 0, 0.015)',
+          transform: isHovered ? 'translateY(-5px)' : 'translateY(0)',
         }}
       >
         {/* Icon + badge row */}
         <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
           <div style={{
-            width: '38px', height: '38px',
-            borderRadius: '10px',
+            width: '42px', height: '42px',
+            borderRadius: '12px',
             background: catMeta.bg,
-            border: `1px solid ${catMeta.color}30`,
+            border: `1px solid ${catMeta.color}25`,
             display: 'flex', alignItems: 'center', justifyContent: 'center',
             color: catMeta.color, flexShrink: 0,
+            transition: 'all 0.3s ease',
+            transform: isHovered ? 'scale(1.05)' : 'scale(1)',
           }}>
             <ServiceTypeIcon category={service.category} />
           </div>
           <span style={{
-            fontSize: '0.58rem', fontWeight: '800',
+            fontSize: '0.6rem', fontWeight: '800',
             color: catMeta.color,
             background: catMeta.bg,
-            border: `1px solid ${catMeta.color}30`,
-            padding: '2px 7px', borderRadius: '999px',
-            textTransform: 'uppercase', letterSpacing: '0.04em',
+            border: `1px solid ${catMeta.color}25`,
+            padding: '3px 9px', borderRadius: '999px',
+            textTransform: 'uppercase', letterSpacing: '0.05em',
           }}>
             {catMeta.label}
           </span>
         </div>
 
-        {/* Title */}
-        <div>
-          <div style={{ fontSize: '0.82rem', fontWeight: '800', color: '#1e293b', lineHeight: '1.3', marginBottom: '4px' }}>
+        {/* Title & Desc */}
+        <div style={{ flexGrow: 1, display: 'flex', flexDirection: 'column', gap: '6px' }}>
+          <div style={{ 
+            fontSize: '0.88rem', 
+            fontWeight: '800', 
+            lineHeight: '1.3',
+            transition: 'color 0.2s ease',
+            color: isHovered ? catMeta.color : '#1e293b'
+          }}>
             {service.title}
           </div>
-          <div style={{ fontSize: '0.68rem', color: '#64748b', lineHeight: '1.45' }}>
-            {service.desc?.substring(0, 72)}{service.desc?.length > 72 ? '…' : ''}
+          <div style={{ 
+            fontSize: '0.72rem', 
+            color: '#64748b', 
+            lineHeight: '1.5',
+            display: '-webkit-box',
+            WebkitLineClamp: 3,
+            WebkitBoxOrient: 'vertical',
+            overflow: 'hidden',
+            textOverflow: 'ellipsis'
+          }}>
+            {service.desc}
           </div>
         </div>
 
         {/* Footer: price + arrow */}
-        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginTop: 'auto', paddingTop: '6px', borderTop: '1px solid #f1f5f9' }}>
-          <span style={{ fontSize: '0.72rem', fontWeight: '900', color: catMeta.color }}>
-            From {service.price}
-          </span>
+        <div style={{ 
+          display: 'flex', 
+          alignItems: 'center', 
+          justifyContent: 'space-between', 
+          marginTop: '8px', 
+          paddingTop: '10px', 
+          borderTop: '1px solid #f8fafc' 
+        }}>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '1px' }}>
+            <span style={{ fontSize: '0.55rem', fontWeight: '700', color: '#94a3b8', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
+              Starting From
+            </span>
+            <span style={{ fontSize: '0.85rem', fontWeight: '900', color: catMeta.color }}>
+              {service.price}
+            </span>
+          </div>
           <div style={{
-            width: '24px', height: '24px',
+            width: '26px', height: '26px',
             borderRadius: '50%',
             background: catMeta.color,
             display: 'flex', alignItems: 'center', justifyContent: 'center',
             color: '#fff',
+            transition: 'all 0.3s cubic-bezier(0.16, 1, 0.3, 1)',
+            transform: isHovered ? 'scale(1.1) rotate(-45deg)' : 'scale(1) rotate(0deg)',
+            boxShadow: isHovered ? `0 4px 10px ${catMeta.color}40` : 'none'
           }}>
-            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.8" strokeLinecap="round" strokeLinejoin="round">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.8" strokeLinecap="round" strokeLinejoin="round">
               <line x1="5" y1="12" x2="19" y2="12"></line>
               <polyline points="12 5 19 12 12 19"></polyline>
             </svg>

@@ -95,6 +95,7 @@ function HomeContent() {
           {/* Core Content Area */}
           <div className="main-content-col" style={{ display: 'flex', flexDirection: 'column', gap: '32px', minWidth: 0, maxWidth: '100%', overflow: 'hidden' }}>
             <Hero
+              activeCategory={activeCategory}
               onSearch={(term) => setSearchTerm(term)}
               onExploreOffers={() => router.push('/offers')}
             />

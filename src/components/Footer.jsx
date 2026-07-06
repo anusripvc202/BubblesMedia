@@ -160,7 +160,7 @@ export default function Footer() {
             <span>
               Powered by{' '}
               <span style={{ color: 'var(--primary)', fontWeight: '800', letterSpacing: '0.2px' }}>
-                The Patterns Company
+                Patterns Infotech Pvt Ltd
               </span>
             </span>
           </div>

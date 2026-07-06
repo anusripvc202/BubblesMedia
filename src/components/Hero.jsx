@@ -248,7 +248,7 @@ export default function Hero({ activeCategory, onSearch, onExploreOffers }) {
           flex-direction: column;
           justify-content: space-between;
           gap: 0;
-          padding: 18px 24px;
+          padding: 30px 24px 18px;
           overflow: hidden;
           min-width: 0;
         }

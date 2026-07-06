@@ -132,7 +132,7 @@ export default function Hero({ activeCategory, onSearch, onExploreOffers }) {
 
           {/* MIDDLE — Service chips */}
           <div className="hero-chips-row">
-            {['🌐 Web Design', '📱 Mobile Apps', '🔍 SEO', '🤖 AI Tools', '🎨 Branding', '📊 Analytics'].map(chip => (
+            {['🌐 Web Design', '📱 Mobile Apps', '🔍 SEO', '🤖 AI Tools', '🎨 Branding'].map(chip => (
               <span key={chip} className="hero-chip">{chip}</span>
             ))}
           </div>

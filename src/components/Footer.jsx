@@ -156,13 +156,13 @@ export default function Footer() {
           <div>
             <span>© {new Date().getFullYear()} Tech Mart 24. All Rights Reserved.</span>
           </div>
-          <div style={{ display: 'flex', gap: '8px', alignItems: 'center' }}>
-            <span>Made with ❤️ for Indian Businesses.</span>
-          </div>
-          <div style={{ display: 'flex', gap: '16px', alignItems: 'center' }}>
-            <span style={{ display: 'flex', alignItems: 'center', gap: '4px' }}>🔒 SSL Secured</span>
-            <span>|</span>
-            <span style={{ display: 'flex', alignItems: 'center', gap: '4px' }}>🛡️ 100% Satisfaction</span>
+          <div>
+            <span>
+              Powered by{' '}
+              <span style={{ color: 'var(--primary)', fontWeight: '800', letterSpacing: '0.2px' }}>
+                The Patterns Company
+              </span>
+            </span>
           </div>
         </div>
 

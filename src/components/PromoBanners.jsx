@@ -42,17 +42,17 @@ export default function PromoBanners({ onSelectPackage }) {
           onMouseEnter={() => setLeftHovered(true)}
           onMouseLeave={() => setLeftHovered(false)}
           style={{
-            background: 'linear-gradient(135deg, #0F1E3C 0%, #1e293b 100%)',
+            background: 'linear-gradient(135deg, var(--primary) 0%, #9bc200 100%)',
             borderRadius: '16px',
             padding: '32px',
-            color: 'white',
+            color: 'var(--secondary)',
             display: 'flex',
             flexDirection: 'column',
             gap: '16px',
             boxShadow: leftHovered 
-              ? '0 20px 40px rgba(15, 30, 60, 0.15), 0 0 30px rgba(170, 223, 0, 0.05)'
+              ? '0 20px 40px rgba(15, 30, 60, 0.12), 0 0 30px rgba(170, 223, 0, 0.1)'
               : 'var(--shadow-sm)',
-            border: '1px solid rgba(255, 255, 255, 0.06)',
+            border: '1px solid rgba(15, 30, 60, 0.08)',
             cursor: 'pointer',
             transition: 'all 0.3s cubic-bezier(0.16, 1, 0.3, 1)',
             transform: leftHovered ? 'translateY(-4px)' : 'translateY(0)',
@@ -64,27 +64,27 @@ export default function PromoBanners({ onSelectPackage }) {
           {/* Top category label & rosette */}
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
             <span style={{
-              background: 'rgba(170, 223, 0, 0.15)',
-              color: 'var(--primary)',
+              background: 'rgba(15, 30, 60, 0.07)',
+              color: 'var(--secondary)',
               fontSize: '0.68rem',
               fontWeight: '800',
               textTransform: 'uppercase',
               letterSpacing: '0.8px',
               padding: '4px 10px',
               borderRadius: '99px',
-              border: '1px solid rgba(170, 223, 0, 0.25)'
+              border: '1px solid rgba(15, 30, 60, 0.15)'
             }}>
               ⭐ Premium Blueprint
             </span>
-            <span style={{ fontSize: '0.7rem', color: 'rgba(255,255,255,0.4)', fontWeight: '600' }}>Custom Architectures</span>
+            <span style={{ fontSize: '0.7rem', color: 'rgba(15, 30, 60, 0.6)', fontWeight: '600' }}>Custom Architectures</span>
           </div>
 
           {/* Heading Content */}
           <div style={{ zIndex: 2 }}>
-            <h3 style={{ fontSize: '1.25rem', fontWeight: '900', color: '#fff', letterSpacing: '-0.02em', margin: '6px 0 8px 0', lineHeight: '1.3' }}>
+            <h3 style={{ fontSize: '1.25rem', fontWeight: '900', color: 'var(--secondary)', letterSpacing: '-0.02em', margin: '6px 0 8px 0', lineHeight: '1.3' }}>
               Launch Your Premium Platform 🚀
             </h3>
-            <p style={{ fontSize: '0.82rem', color: 'rgba(255, 255, 255, 0.7)', lineHeight: '1.5', margin: 0, fontWeight: '500' }}>
+            <p style={{ fontSize: '0.82rem', color: 'rgba(15, 30, 60, 0.8)', lineHeight: '1.5', margin: 0, fontWeight: '600' }}>
               From initial UI mockups to robust production-ready platforms, we build digital solutions engineered to scale your business.
             </p>
           </div>

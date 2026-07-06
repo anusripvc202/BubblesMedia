@@ -42,7 +42,7 @@ export default function Sidebar({ selectedCategory, onSelectCategory }) {
 
   return (
     <aside
-      style={{ position: 'sticky', top: '92px', alignSelf: 'start', zIndex: 100 }}
+      style={{ position: 'sticky', top: '138px', alignSelf: 'start', zIndex: 100 }}
       className="responsive-sidebar-container"
     >
       {/* ─── DESKTOP SIDEBAR (visible only on desktop > 1024px) ─── */}

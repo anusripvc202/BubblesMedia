@@ -298,24 +298,24 @@ export default function SolutionsGrid({ searchTerm, activeCategory, onEnquire })
                       href={`/services/${sol.id}`}
                       style={{
                         flex: 1,
-                        padding: '10px 12px',
-                        fontSize: '0.8rem',
+                        padding: '10px 8px',
+                        fontSize: '0.74rem',
                         fontWeight: '800',
                         color: isHovered ? '#fff' : theme.color,
                         background: isHovered ? theme.color : theme.bg,
                         border: 'none',
                         borderRadius: '8px',
                         textAlign: 'center',
-                        display: 'block',
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
                         transition: 'all 0.3s cubic-bezier(0.16, 1, 0.3, 1)',
                         boxShadow: isHovered ? `0 4px 10px ${theme.color}40` : 'none',
-                        transform: isHovered ? 'scale(1.02)' : 'scale(1)'
                       }}
                       className="solutions-view-btn"
                     >
-                      View Details →
+                      View Details
                     </Link>
-                    {/* Cart button */}
                     <button
                       onClick={(e) => {
                         e.stopPropagation();
@@ -325,33 +325,23 @@ export default function SolutionsGrid({ searchTerm, activeCategory, onEnquire })
                           addToCart({ id: sol.id, title: sol.title, price: sol.price, category: sol.category });
                         }
                       }}
-                      title={isInCart(sol.id) ? 'Remove from cart' : 'Add to cart'}
                       style={{
-                        flexShrink: 0,
-                        width: '38px',
-                        height: '38px',
+                        flex: 1,
+                        padding: '10px 8px',
+                        fontSize: '0.74rem',
+                        fontWeight: '800',
                         borderRadius: '8px',
-                        border: `1.5px solid ${isInCart(sol.id) ? '#10b981' : theme.color}`,
-                        background: isInCart(sol.id) ? '#ecfdf5' : 'transparent',
-                        color: isInCart(sol.id) ? '#10b981' : theme.color,
+                        border: isInCart(sol.id) ? '1.5px solid #10b981' : `1.5px solid ${theme.color}`,
+                        background: isInCart(sol.id) ? '#10b981' : 'transparent',
+                        color: isInCart(sol.id) ? '#fff' : theme.color,
                         cursor: 'pointer',
                         display: 'flex',
                         alignItems: 'center',
                         justifyContent: 'center',
                         transition: 'all 0.25s ease',
-                        flexShrink: 0,
                       }}
                     >
-                      {isInCart(sol.id) ? (
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
-                          <polyline points="20 6 9 17 4 12" />
-                        </svg>
-                      ) : (
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                          <circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/>
-                          <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
-                        </svg>
-                      )}
+                      {isInCart(sol.id) ? 'Added ✓' : 'Add to Cart'}
                     </button>
                   </div>
                 </div>

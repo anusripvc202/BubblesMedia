@@ -1,4 +1,5 @@
 import "./globals.css";
+import GlobalBubbles from "../components/GlobalBubbles";
 
 export const metadata = {
   title: "Tech Mart 24 - India's Largest Digital Solutions Marketplace",
@@ -12,6 +13,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body>
+        <GlobalBubbles />
         {children}
       </body>
     </html>

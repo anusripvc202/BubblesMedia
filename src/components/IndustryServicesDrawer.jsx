@@ -62,14 +62,66 @@ function ServiceTypeIcon({ category }) {
   return icons[category] || icons['websites'];
 }
 
-function ServiceCard({ serviceEntry, industryColor, onClose }) {
-  const { id: serviceId, label } = serviceEntry;
+// Helper to parse price string to number for sorting
+const parsePrice = (priceStr) => {
+  if (!priceStr) return 0;
+  // Remove currency symbol, commas, and "/mo" suffix
+  const cleanStr = priceStr.replace(/[₹,]/g, '').split('/')[0].trim();
+  const num = parseInt(cleanStr, 10);
+  return isNaN(num) ? 0 : num;
+};
+
+// Industry header image mapping
+const industryImageMap = {
+  'Doctors & Healthcare': 'https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=1000&q=80&v=3',
+  'Schools & Colleges': '/school-bg.jpg?v=3',
+  'Real Estate & Builders': 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=1000&q=80&v=3',
+  'E-commerce Stores': 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1000&q=80&v=3',
+  'Restaurants & Cafes': 'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1000&q=80&v=3',
+  'Salons & Wellness': 'https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1000&q=80&v=3',
+  'Travel & Tourism': 'https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?auto=format&fit=crop&w=1000&q=80&v=3',
+  'Law Firms & Advocates': 'https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=1000&q=80&v=3',
+  'Manufacturing & Industries': 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=1000&q=80&v=3',
+  'NGOs & Non Profits': 'https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=1000&q=80&v=3',
+  'Startups & Entrepreneurs': 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1000&q=80&v=3',
+  'Finance & Banking': 'https://images.unsplash.com/photo-1559526324-4b87b5e36e44?auto=format&fit=crop&w=1000&q=80&v=3',
+  'Insurance Solutions': 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1000&q=80&v=3',
+  'Logistics Solutions': 'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1000&q=80&v=3',
+  'Automobile Solutions': 'https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1000&q=80&v=3',
+  'Fitness Solutions': 'https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&fit=crop&w=1000&q=80&v=3',
+  'Event Management Solutions': 'https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&w=1000&q=80&v=3',
+  'Agriculture Solutions': 'https://images.unsplash.com/photo-1523348837708-15d4a09cfac2?auto=format&fit=crop&w=1000&q=80&v=3',
+  'Recruitment Solutions': 'https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=1000&q=80&v=3',
+  'Hospitality Solutions': 'https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1000&q=80&v=3',
+  'Media & Entertainment Solutions': 'https://images.unsplash.com/photo-1478737270239-2f02b77fc618?auto=format&fit=crop&w=1000&q=80&v=3',
+  'Sports Management Solutions': 'https://images.unsplash.com/photo-1461896836934-ffe607ba8211?auto=format&fit=crop&w=1000&q=80&v=3',
+  'More Industries': 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1000&q=80&v=3',
+};
+
+// Unique color palette array for card borders (ensuring non-repeating colors)
+const cardColors = [
+  { color: '#0284c7', bg: '#f0f9ff' }, // Sky Blue
+  { color: '#10b981', bg: '#ecfdf5' }, // Emerald
+  { color: '#8b5cf6', bg: '#f5f3ff' }, // Purple
+  { color: '#f97316', bg: '#fff7ed' }, // Orange
+  { color: '#ec4899', bg: '#fdf2f8' }, // Pink
+  { color: '#06b6d4', bg: '#ecfeff' }, // Cyan
+  { color: '#ea580c', bg: '#fff7ed' }, // Deep Orange
+  { color: '#14b8a6', bg: '#f0fdfa' }, // Teal
+];
+
+function ServiceCard({ serviceEntry, cardColorTheme, onClose }) {
+  const { id: serviceId } = serviceEntry;
   const service = serviceDatabase[serviceId];
   const [isHovered, setIsHovered] = React.useState(false);
 
   if (!service) return null;
 
-  const catMeta = categoryColorMap[service.category] || { color: industryColor, bg: '#fff7ed', label: 'Service' };
+  const catMeta = {
+    color: cardColorTheme.color,
+    bg: cardColorTheme.bg,
+    label: categoryColorMap[service.category]?.label || 'Service'
+  };
 
   return (
     <Link href={`/services/${serviceId}`} onClick={onClose} style={{ textDecoration: 'none', display: 'block' }}>
@@ -78,19 +130,22 @@ function ServiceCard({ serviceEntry, industryColor, onClose }) {
         onMouseLeave={() => setIsHovered(false)}
         style={{
           background: '#fff',
-          border: isHovered ? `1px solid ${catMeta.color}` : '1px solid rgba(226, 232, 240, 0.8)',
+          borderTop: `4px solid ${catMeta.color}`,
+          borderLeft: isHovered ? `1px solid ${catMeta.color}80` : '1px solid rgba(226, 232, 240, 0.8)',
+          borderRight: isHovered ? `1px solid ${catMeta.color}80` : '1px solid rgba(226, 232, 240, 0.8)',
+          borderBottom: isHovered ? `1px solid ${catMeta.color}80` : '1px solid rgba(226, 232, 240, 0.8)',
           borderRadius: '16px',
-          padding: '20px',
+          padding: '24px 20px 20px 20px',
           display: 'flex',
           flexDirection: 'column',
-          gap: '12px',
+          gap: '14px',
           cursor: 'pointer',
           transition: 'all 0.3s cubic-bezier(0.16, 1, 0.3, 1)',
           height: '100%',
           boxShadow: isHovered 
-            ? `0 20px 38px rgba(0, 0, 0, 0.04), 0 4px 18px ${catMeta.color}18` 
-            : '0 4px 12px rgba(0, 0, 0, 0.015)',
-          transform: isHovered ? 'translateY(-5px)' : 'translateY(0)',
+            ? `0 20px 40px rgba(15, 23, 42, 0.03), 0 8px 24px ${catMeta.color}15` 
+            : '0 4px 12px rgba(15, 23, 42, 0.012)',
+          transform: isHovered ? 'translateY(-6px)' : 'translateY(0)',
         }}
       >
         {/* Icon + badge row */}
@@ -103,37 +158,39 @@ function ServiceCard({ serviceEntry, industryColor, onClose }) {
             display: 'flex', alignItems: 'center', justifyContent: 'center',
             color: catMeta.color, flexShrink: 0,
             transition: 'all 0.3s ease',
-            transform: isHovered ? 'scale(1.05)' : 'scale(1)',
+            transform: isHovered ? 'scale(1.06)' : 'scale(1)',
           }}>
             <ServiceTypeIcon category={service.category} />
           </div>
           <span style={{
-            fontSize: '0.6rem', fontWeight: '800',
+            fontSize: '0.62rem', fontWeight: '800',
             color: catMeta.color,
             background: catMeta.bg,
             border: `1px solid ${catMeta.color}25`,
-            padding: '3px 9px', borderRadius: '999px',
-            textTransform: 'uppercase', letterSpacing: '0.05em',
+            padding: '3px 10px', borderRadius: '999px',
+            textTransform: 'uppercase', letterSpacing: '0.06em',
           }}>
             {catMeta.label}
           </span>
         </div>
 
         {/* Title & Desc */}
-        <div style={{ flexGrow: 1, display: 'flex', flexDirection: 'column', gap: '6px' }}>
+        <div style={{ flexGrow: 1, display: 'flex', flexDirection: 'column', gap: '8px' }}>
           <div style={{ 
-            fontSize: '0.88rem', 
-            fontWeight: '800', 
-            lineHeight: '1.3',
+            fontSize: '0.95rem', 
+            fontWeight: '900', 
+            lineHeight: '1.35',
             transition: 'color 0.2s ease',
-            color: isHovered ? catMeta.color : '#1e293b'
+            color: isHovered ? catMeta.color : '#0f172a',
+            letterSpacing: '-0.015em'
           }}>
             {service.title}
           </div>
           <div style={{ 
-            fontSize: '0.72rem', 
+            fontSize: '0.74rem', 
             color: '#64748b', 
-            lineHeight: '1.5',
+            lineHeight: '1.55',
+            fontWeight: '500',
             display: '-webkit-box',
             WebkitLineClamp: 3,
             WebkitBoxOrient: 'vertical',
@@ -144,32 +201,36 @@ function ServiceCard({ serviceEntry, industryColor, onClose }) {
           </div>
         </div>
 
-        {/* Footer: price + arrow */}
-        <div style={{ 
-          display: 'flex', 
-          alignItems: 'center', 
-          justifyContent: 'space-between', 
-          marginTop: '8px', 
-          paddingTop: '10px', 
-          borderTop: '1px solid #f8fafc' 
+        {/* Redesigned Premium Price block at the bottom */}
+        <div style={{
+          background: '#f8fafc',
+          padding: '10px 14px',
+          borderRadius: '12px',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'space-between',
+          marginTop: '6px',
+          border: isHovered ? `1px dashed ${catMeta.color}60` : '1px dashed #e2e8f0',
+          transition: 'all 0.2s ease'
         }}>
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '1px' }}>
-            <span style={{ fontSize: '0.55rem', fontWeight: '700', color: '#94a3b8', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
+          <div style={{ display: 'flex', flexDirection: 'column' }}>
+            <span style={{ fontSize: '0.58rem', fontWeight: '800', color: '#94a3b8', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
               Starting From
             </span>
-            <span style={{ fontSize: '0.85rem', fontWeight: '900', color: catMeta.color }}>
+            <span style={{ fontSize: '0.95rem', fontWeight: '900', color: catMeta.color, fontFamily: 'var(--font-display)', transition: 'color 0.2s ease' }}>
               {service.price}
             </span>
           </div>
           <div style={{
-            width: '26px', height: '26px',
+            width: '28px', height: '28px',
             borderRadius: '50%',
-            background: catMeta.color,
+            background: isHovered ? catMeta.color : '#fff',
+            border: `1.5px solid ${catMeta.color}`,
             display: 'flex', alignItems: 'center', justifyContent: 'center',
-            color: '#fff',
+            color: isHovered ? '#fff' : catMeta.color,
             transition: 'all 0.3s cubic-bezier(0.16, 1, 0.3, 1)',
-            transform: isHovered ? 'scale(1.1) rotate(-45deg)' : 'scale(1) rotate(0deg)',
-            boxShadow: isHovered ? `0 4px 10px ${catMeta.color}40` : 'none'
+            transform: isHovered ? 'rotate(-45deg)' : 'rotate(0deg)',
+            boxShadow: isHovered ? `0 4px 10px ${catMeta.color}30` : 'none'
           }}>
             <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.8" strokeLinecap="round" strokeLinejoin="round">
               <line x1="5" y1="12" x2="19" y2="12"></line>
@@ -185,7 +246,18 @@ function ServiceCard({ serviceEntry, industryColor, onClose }) {
 export default function IndustryServicesDrawer({ industryName, onClose }) {
   const isOpen = !!industryName;
   const meta = industryName ? industryServicesMap[industryName] : null;
-  const serviceEntries = meta?.services || [];
+  
+  // Sort the service entries from lowest price to highest price
+  const serviceEntries = React.useMemo(() => {
+    if (!meta?.services) return [];
+    return [...meta.services].sort((a, b) => {
+      const serviceA = serviceDatabase[a.id];
+      const serviceB = serviceDatabase[b.id];
+      const priceA = serviceA ? parsePrice(serviceA.price) : 0;
+      const priceB = serviceB ? parsePrice(serviceB.price) : 0;
+      return priceA - priceB;
+    });
+  }, [meta]);
 
   // Close on Escape key
   useEffect(() => {
@@ -201,6 +273,8 @@ export default function IndustryServicesDrawer({ industryName, onClose }) {
   }, [isOpen]);
 
   if (!isOpen) return null;
+
+  const headerBgImage = industryImageMap[industryName] || 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1000&q=80';
 
   return (
     <>
@@ -245,12 +319,15 @@ export default function IndustryServicesDrawer({ industryName, onClose }) {
             overflow: 'hidden',
           }}
         >
-          {/* Modal Header */}
+          {/* Modal Header with Industry Related Background Image */}
           <div style={{
-            background: meta?.bg || '#fff7ed',
-            padding: '24px 28px 20px',
-            borderBottom: '1px solid #e2e8f0',
+            backgroundImage: `linear-gradient(rgba(15, 23, 42, 0.76), rgba(15, 23, 42, 0.88)), url(${headerBgImage})`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            padding: '28px 28px 24px',
+            borderBottom: '1px solid rgba(255,255,255,0.08)',
             flexShrink: 0,
+            color: 'white',
           }}>
             <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', gap: '16px' }}>
               {/* Left: industry info */}
@@ -258,11 +335,11 @@ export default function IndustryServicesDrawer({ industryName, onClose }) {
                 <div style={{
                   width: '48px', height: '48px',
                   borderRadius: '14px',
-                  background: '#fff',
-                  border: `2px solid ${meta?.color || '#ff6b00'}30`,
+                  background: 'rgba(255, 255, 255, 0.15)',
+                  border: '1.5px solid rgba(255, 255, 255, 0.25)',
                   display: 'flex', alignItems: 'center', justifyContent: 'center',
-                  color: meta?.color || '#ff6b00',
-                  boxShadow: `0 4px 12px ${meta?.color || '#ff6b00'}18`,
+                  color: '#fff',
+                  boxShadow: '0 4px 12px rgba(0,0,0,0.1)',
                   flexShrink: 0,
                 }}>
                   <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
@@ -272,13 +349,13 @@ export default function IndustryServicesDrawer({ industryName, onClose }) {
                   </svg>
                 </div>
                 <div>
-                  <div style={{ fontSize: '0.65rem', fontWeight: '800', color: meta?.color, textTransform: 'uppercase', letterSpacing: '0.06em', marginBottom: '2px' }}>
+                  <div style={{ fontSize: '0.65rem', fontWeight: '800', color: meta?.color || 'var(--primary)', textTransform: 'uppercase', letterSpacing: '0.06em', marginBottom: '2px' }}>
                     Industry Solutions
                   </div>
-                  <h2 style={{ fontSize: '1.25rem', fontWeight: '900', color: '#1e293b', margin: 0, letterSpacing: '-0.02em' }}>
+                  <h2 style={{ fontSize: '1.35rem', fontWeight: '900', color: '#fff', margin: 0, letterSpacing: '-0.02em' }}>
                     {industryName}
                   </h2>
-                  <p style={{ fontSize: '0.78rem', color: '#64748b', margin: '4px 0 0', lineHeight: '1.5' }}>
+                  <p style={{ fontSize: '0.8rem', color: 'rgba(255, 255, 255, 0.85)', margin: '6px 0 0', lineHeight: '1.5', fontWeight: '500' }}>
                     {meta?.tagline}
                   </p>
                 </div>
@@ -287,16 +364,16 @@ export default function IndustryServicesDrawer({ industryName, onClose }) {
               <button
                 onClick={onClose}
                 style={{
-                  background: 'rgba(0,0,0,0.07)',
+                  background: 'rgba(255, 255, 255, 0.15)',
                   border: 'none',
                   borderRadius: '10px',
                   width: '36px', height: '36px',
                   display: 'flex', alignItems: 'center', justifyContent: 'center',
-                  cursor: 'pointer', color: '#475569',
+                  cursor: 'pointer', color: '#fff',
                   flexShrink: 0, transition: 'all 0.15s',
                 }}
-                onMouseEnter={e => { e.currentTarget.style.background = 'rgba(0,0,0,0.14)'; e.currentTarget.style.color = '#1e293b'; }}
-                onMouseLeave={e => { e.currentTarget.style.background = 'rgba(0,0,0,0.07)'; e.currentTarget.style.color = '#475569'; }}
+                onMouseEnter={e => { e.currentTarget.style.background = 'rgba(255, 255, 255, 0.28)'; }}
+                onMouseLeave={e => { e.currentTarget.style.background = 'rgba(255, 255, 255, 0.15)'; }}
               >
                 <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                   <line x1="18" y1="6" x2="6" y2="18"></line>
@@ -306,17 +383,19 @@ export default function IndustryServicesDrawer({ industryName, onClose }) {
             </div>
 
             {/* Sub count */}
-            <div style={{ marginTop: '14px', display: 'flex', gap: '8px', alignItems: 'center' }}>
+            <div style={{ marginTop: '16px', display: 'flex', gap: '8px', alignItems: 'center' }}>
               <span style={{
-                fontSize: '0.68rem', fontWeight: '700',
-                background: meta?.color + '15',
-                color: meta?.color,
-                border: `1px solid ${meta?.color}30`,
+                fontSize: '0.68rem', fontWeight: '800',
+                background: 'rgba(255, 255, 255, 0.18)',
+                color: '#fff',
+                border: '1.5px solid rgba(255, 255, 255, 0.25)',
                 padding: '3px 10px', borderRadius: '999px',
+                textTransform: 'uppercase',
+                letterSpacing: '0.02em'
               }}>
                 {serviceEntries.length} Services Available
               </span>
-              <span style={{ fontSize: '0.65rem', color: '#94a3b8', fontWeight: '600' }}>
+              <span style={{ fontSize: '0.65rem', color: 'rgba(255, 255, 255, 0.65)', fontWeight: '700' }}>
                 Click any service to view plans & pricing →
               </span>
             </div>
@@ -324,19 +403,25 @@ export default function IndustryServicesDrawer({ industryName, onClose }) {
 
           {/* Services Grid (Scrollable body) */}
           <div style={{ flex: 1, overflowY: 'auto', padding: '24px 28px' }}>
-            <div style={{
-              display: 'grid',
-              gridTemplateColumns: 'repeat(4, 1fr)',
-              gap: '14px',
-            }}>
-              {serviceEntries.map((entry, idx) => (
-                <ServiceCard
-                  key={`${entry.id}-${idx}`}
-                  serviceEntry={entry}
-                  industryColor={meta?.color}
-                  onClose={onClose}
-                />
-              ))}
+            <div 
+              className="industry-drawer-grid"
+              style={{
+                display: 'grid',
+                gridTemplateColumns: 'repeat(4, 1fr)',
+                gap: '14px',
+              }}
+            >
+              {serviceEntries.map((entry, idx) => {
+                const colorTheme = cardColors[idx % cardColors.length];
+                return (
+                  <ServiceCard
+                    key={`${entry.id}-${idx}`}
+                    serviceEntry={entry}
+                    cardColorTheme={colorTheme}
+                    onClose={onClose}
+                  />
+                );
+              })}
             </div>
           </div>
 

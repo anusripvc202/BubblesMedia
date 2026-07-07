@@ -11,6 +11,84 @@ import Link from 'next/link';
 // Load our centralized data
 import { categories, serviceDatabase, calculatorConfigs, faqsDatabase, testimonialsDatabase } from '../../../data/servicesData';
 
+// central graphic illustration image mappings for each category
+const categoryIllustrations = {
+  'websites': '/cat-websites.png',
+  'mobile-apps': '/cat-mobile-apps.png',
+  'digital-marketing': '/cat-digital-marketing.png',
+  'whatsapp-marketing': '/cat-whatsapp-marketing.png',
+  'gmb': '/cat-gmb.png',
+  'branding-graphics': '/cat-branding-graphics.png',
+  'ai-solutions': '/cat-ai-solutions.png',
+  'business-software': '/cat-business-software.png',
+  'industry-solutions': '/cat-industry-solutions.png',
+  'hosting-domain': '/cat-hosting-domain.png',
+};
+
+// Key highlights for each category shown in hero
+const categoryHighlights = {
+  'websites': [
+    'Custom responsive design for all devices',
+    'Lightning-fast load times under 2 seconds',
+    'SEO-ready structure from day one',
+    'Secure HTTPS & daily backups included',
+  ],
+  'mobile-apps': [
+    'Native Android & iOS development',
+    'Offline-first architecture support',
+    'Push notifications & in-app payments',
+    'App Store & Play Store submission',
+  ],
+  'digital-marketing': [
+    'Data-driven Google & Meta ad campaigns',
+    'Organic SEO ranking strategies',
+    'Weekly performance reports & analytics',
+    'Dedicated campaign manager assigned',
+  ],
+  'whatsapp-marketing': [
+    'Official WhatsApp Business API integration',
+    'AI chatbot for 24/7 auto-replies',
+    'Bulk broadcast to unlimited contacts',
+    'CRM & lead tracking built-in',
+  ],
+  'gmb': [
+    'Complete GMB profile setup & verification',
+    'Review management & reputation building',
+    'Local SEO optimization for map rankings',
+    'Monthly insights & competitor analysis',
+  ],
+  'branding-graphics': [
+    'Custom logo with unlimited revisions',
+    'Full brand identity kit included',
+    'Social media design templates',
+    'Print-ready files in all formats',
+  ],
+  'ai-solutions': [
+    'Custom GPT-4 agents for your workflow',
+    'WhatsApp & website chatbot integration',
+    'Automated lead capture & follow-up',
+    '99%+ task automation accuracy',
+  ],
+  'business-software': [
+    'Tailored ERP, CRM & billing systems',
+    'Cloud-based with role-based access',
+    'API integrations with 100+ platforms',
+    '24/7 support & free annual maintenance',
+  ],
+  'industry-solutions': [
+    'Sector-specific website & app packages',
+    'Pre-built templates for 50+ industries',
+    'Compliance-ready (HIPAA, GDPR etc.)',
+    'Quick 7-day launch guarantee',
+  ],
+  'hosting-domain': [
+    '99.9% uptime SLA guaranteed',
+    'Free SSL certificate & daily backups',
+    'One-click WordPress & app installers',
+    '24/7 technical support & monitoring',
+  ],
+};
+
 export default function CategoryPage() {
   const { id } = useParams();
   const router = useRouter();
@@ -138,7 +216,7 @@ export default function CategoryPage() {
       />
 
       {/* Main layout wrapper */}
-      <main className="container-layout" style={{ flex: 1, marginTop: '24px', marginBottom: '64px' }}>
+      <main className="container-layout" style={{ flex: 1, marginTop: '0px', marginBottom: '64px' }}>
         <div className="main-wrapper">
           {/* Left Sidebar */}
           <Sidebar selectedCategory={id} />
@@ -150,7 +228,7 @@ export default function CategoryPage() {
             <div style={{
               background: currentCategory.colorTheme || 'var(--bg-gradient-orange)',
               borderRadius: 'var(--radius-lg)',
-              padding: '40px 32px',
+              padding: '24px 28px',
               color: 'white',
               boxShadow: 'var(--shadow-md)',
               position: 'relative',
@@ -167,24 +245,87 @@ export default function CategoryPage() {
                 background: 'rgba(255, 255, 255, 0.08)',
                 pointerEvents: 'none'
               }}></div>
-              
+                          {/* Category graphic illustration */}
+              <div 
+                className="category-hero-illustration"
+                style={{
+                  position: 'absolute',
+                  top: '50%',
+                  right: '24px',
+                  transform: 'translateY(-50%)',
+                  width: id === 'industry-solutions' ? '230px' : '200px',
+                  height: id === 'industry-solutions' ? '160px' : '200px',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  pointerEvents: 'none',
+                  zIndex: 0,
+                }}
+              >
+                {categoryIllustrations[id] && (
+                  /* eslint-disable-next-line @next/next/no-img-element */
+                  <img 
+                    src={categoryIllustrations[id]} 
+                    alt=""
+                    style={{ 
+                      width: '100%', 
+                      height: '100%', 
+                      objectFit: 'contain',
+                    }}
+                  />
+                )}
+              </div>
+
               <div style={{ position: 'relative', zIndex: 1, maxWidth: '680px' }}>
-                <span className="badge badge-dark" style={{ marginBottom: '12px', display: 'inline-block', fontSize: '0.62rem', background: 'rgba(0,0,0,0.3)', color: 'white' }}>
+                <span 
+                  className="badge badge-dark" 
+                  style={{ 
+                    marginBottom: '8px', 
+                    display: 'inline-block', 
+                    fontSize: '0.62rem', 
+                    background: 'rgba(0,0,0,0.3)', 
+                    color: 'white',
+                    transition: 'transform 0.2s ease, background 0.2s ease',
+                    cursor: 'pointer',
+                  }}
+                  onMouseEnter={e => {
+                    e.currentTarget.style.transform = 'translateY(-3px)';
+                    e.currentTarget.style.background = 'rgba(0,0,0,0.5)';
+                  }}
+                  onMouseLeave={e => {
+                    e.currentTarget.style.transform = 'translateY(0)';
+                    e.currentTarget.style.background = 'rgba(0,0,0,0.3)';
+                  }}
+                >
                   Premium Category Solution
                 </span>
-                <h1 style={{ fontSize: '2.2rem', fontWeight: '900', color: 'white', lineHeight: '1.1', marginBottom: '12px', letterSpacing: '-0.03em' }}>
+                <h1 style={{ fontSize: '1.9rem', fontWeight: '900', color: 'white', lineHeight: '1.1', marginBottom: '8px', letterSpacing: '-0.03em' }}>
                   {currentCategory.name}
                 </h1>
-                <p style={{ fontSize: '0.92rem', opacity: 0.95, lineHeight: '1.6', marginBottom: '24px' }}>
+                <p style={{ fontSize: '0.88rem', opacity: 0.95, lineHeight: '1.5', marginBottom: '12px' }}>
                   {currentCategory.tagline}
                 </p>
+
+                {/* Key highlights bullet list */}
+                {categoryHighlights[id] && (
+                  <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '4px 16px', marginBottom: '14px' }}>
+                    {categoryHighlights[id].map((point, i) => (
+                      <div key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: '7px' }}>
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.9)" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: '2px' }}>
+                          <polyline points="20 6 9 17 4 12"></polyline>
+                        </svg>
+                        <span style={{ fontSize: '0.75rem', color: 'rgba(255,255,255,0.9)', lineHeight: '1.4', fontWeight: '500' }}>{point}</span>
+                      </div>
+                    ))}
+                  </div>
+                )}
 
                 {/* Category statistics */}
                 <div style={{ display: 'flex', gap: '24px', flexWrap: 'wrap' }}>
                   {currentCategory.stats && currentCategory.stats.map((st, i) => (
-                    <div key={i} style={{ background: 'rgba(255, 255, 255, 0.12)', backdropFilter: 'blur(4px)', padding: '10px 16px', borderRadius: 'var(--radius-md)', display: 'flex', flexDirection: 'column' }}>
-                      <span style={{ fontSize: '1.2rem', fontWeight: '900', color: 'white', fontFamily: 'var(--font-display)' }}>{st.value}</span>
-                      <span style={{ fontSize: '0.62rem', opacity: 0.8, textTransform: 'uppercase', fontWeight: '700', marginTop: '2px', letterSpacing: '0.2px' }}>{st.label}</span>
+                    <div key={i} style={{ background: 'rgba(255, 255, 255, 0.12)', backdropFilter: 'blur(4px)', padding: '6px 12px', borderRadius: 'var(--radius-md)', display: 'flex', flexDirection: 'column' }}>
+                      <span style={{ fontSize: '1.05rem', fontWeight: '900', color: 'white', fontFamily: 'var(--font-display)' }}>{st.value}</span>
+                      <span style={{ fontSize: '0.58rem', opacity: 0.8, textTransform: 'uppercase', fontWeight: '700', marginTop: '1px', letterSpacing: '0.2px' }}>{st.label}</span>
                     </div>
                   ))}
                 </div>

@@ -25,17 +25,14 @@ export default function Sidebar({ selectedCategory, onSelectCategory }) {
     setDropdownOpen(false);
     if (isActive) {
       router.push('/');
-      if (onSelectCategory) onSelectCategory(null);
     } else {
       router.push(`/category/${catId}`);
-      if (onSelectCategory) onSelectCategory(catId);
     }
   };
 
   const handleViewAll = () => {
     setDropdownOpen(false);
     router.push('/');
-    if (onSelectCategory) onSelectCategory(null);
   };
 
   const activeCategoryObj = categories.find(cat => cat.id === selectedCategory);
@@ -57,12 +54,12 @@ export default function Sidebar({ selectedCategory, onSelectCategory }) {
         <div style={{
           background: 'var(--primary)',
           color: 'white',
-          padding: '12px 16px',
+          padding: '10px 14px',
           display: 'flex',
           alignItems: 'center',
           gap: '8px'
         }}>
-          <span style={{ fontSize: '0.78rem', fontWeight: '800', letterSpacing: '0.5px', textTransform: 'uppercase', fontFamily: 'var(--font-display)' }}>
+          <span style={{ fontSize: '0.74rem', fontWeight: '800', letterSpacing: '0.5px', textTransform: 'uppercase', fontFamily: 'var(--font-display)' }}>
             ALL CATEGORIES
           </span>
         </div>
@@ -79,42 +76,40 @@ export default function Sidebar({ selectedCategory, onSelectCategory }) {
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'space-between',
-                  padding: '10px 16px',
+                  padding: '6px 12px',
                   textAlign: 'left',
                   borderBottom: '1px solid var(--border-color-light)',
                   background: isActive ? 'var(--primary-light)' : 'transparent',
-                  borderLeft: isActive ? '3.5px solid var(--primary)' : '3.5px solid transparent',
-                  transition: 'all 0.2s ease',
+                  borderLeft: isActive ? '3px solid var(--primary)' : '3px solid transparent',
+                  transition: 'all 0.15s ease',
                 }}
                 className={`category-item-btn ${isActive ? 'active' : ''}`}
               >
-                <div style={{ display: 'flex', gap: '12px', alignItems: 'center', flex: 1, minWidth: 0 }}>
+                <div style={{ display: 'flex', gap: '8px', alignItems: 'center', flex: 1, minWidth: 0 }}>
                   <div style={{
                     color: isActive ? 'var(--primary)' : 'var(--text-medium)',
                     background: isActive ? '#fff' : '#FAF9F6',
-                    width: '30px',
-                    height: '30px',
-                    borderRadius: '6px',
+                    width: '24px',
+                    height: '24px',
+                    borderRadius: '5px',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
                     flexShrink: 0,
-                    border: '1px solid rgba(0,0,0,0.03)',
+                    fontSize: '0.8rem',
+                    border: '1px solid rgba(0,0,0,0.02)',
                   }}>
                     {cat.icon}
                   </div>
                   <div style={{ overflow: 'hidden', flex: 1 }}>
-                    <span style={{ display: 'block', fontSize: '0.78rem', fontWeight: '700', color: isActive ? 'var(--primary)' : 'var(--text-dark)', lineHeight: '1.2' }}>
+                    <span style={{ display: 'block', fontSize: '0.74rem', fontWeight: '700', color: isActive ? 'var(--primary)' : 'var(--text-dark)', lineHeight: '1.2' }}>
                       {cat.name}
-                    </span>
-                    <span style={{ display: 'block', fontSize: '0.62rem', color: 'var(--text-light)', marginTop: '2px', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
-                      {cat.desc}
                     </span>
                   </div>
                 </div>
                 
-                <div style={{ color: isActive ? 'var(--primary)' : 'var(--text-light)', marginLeft: '6px', display: 'flex', alignItems: 'center', opacity: 0.7 }}>
-                  <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
+                <div style={{ color: isActive ? 'var(--primary)' : 'var(--text-light)', marginLeft: '4px', display: 'flex', alignItems: 'center', opacity: 0.6 }}>
+                  <svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3.2" strokeLinecap="round" strokeLinejoin="round">
                     <path d="m9 18 6-6-6-6"></path>
                   </svg>
                 </div>
@@ -130,20 +125,20 @@ export default function Sidebar({ selectedCategory, onSelectCategory }) {
             display: 'flex',
             alignItems: 'center',
             gap: '6px',
-            padding: '10px 16px',
+            padding: '8px 12px',
             width: '100%',
-            fontSize: '0.72rem',
+            fontSize: '0.7rem',
             fontWeight: '700',
             color: 'var(--primary)',
             justifyContent: 'center',
-            background: 'rgba(170, 223, 0, 0.04)',
+            background: 'rgba(170, 223, 0, 0.03)',
             borderTop: '1px solid var(--border-color)',
-            transition: 'all 0.2s',
+            transition: 'all 0.15s',
           }}
-          onMouseEnter={e => e.currentTarget.style.background = 'rgba(170, 223, 0, 0.1)'}
-          onMouseLeave={e => e.currentTarget.style.background = 'rgba(170, 223, 0, 0.04)'}
+          onMouseEnter={e => e.currentTarget.style.background = 'rgba(170, 223, 0, 0.08)'}
+          onMouseLeave={e => e.currentTarget.style.background = 'rgba(170, 223, 0, 0.03)'}
         >
-          <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+          <svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.8" strokeLinecap="round" strokeLinejoin="round">
             <rect x="3" y="3" width="7" height="7"></rect>
             <rect x="14" y="3" width="7" height="7"></rect>
             <rect x="14" y="14" width="7" height="7"></rect>

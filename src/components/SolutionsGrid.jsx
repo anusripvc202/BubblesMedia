@@ -2,6 +2,25 @@ import React from 'react';
 import Link from 'next/link';
 import { serviceDatabase, categories } from '../data/servicesData';
 
+// Helper to format and scale icons to be bold and professional (24px, 2.5px stroke)
+const renderIcon = (icon) => {
+  if (!icon) return null;
+  if (React.isValidElement(icon)) {
+    return React.cloneElement(icon, {
+      width: '24',
+      height: '24',
+      strokeWidth: '2.5',
+      style: { 
+        ...icon.props.style, 
+        width: '24px', 
+        height: '24px',
+        strokeWidth: '2.5px' 
+      }
+    });
+  }
+  return icon;
+};
+
 // Custom icons mapping for specific services, falling back to parent category icons if not mapped
 const getServiceIcon = (serviceId, categoryId) => {
   const categoryMeta = categories.find(c => c.id === categoryId);
@@ -88,8 +107,8 @@ const solutions = Object.entries(serviceDatabase).map(([key, val]) => ({
 })).sort((a, b) => parsePrice(a.price) - parsePrice(b.price));
 
 const VISIBLE_ROWS = 2;
-const COLS = 3;
-const DEFAULT_VISIBLE = VISIBLE_ROWS * COLS; // 6
+const COLS = 4;
+const DEFAULT_VISIBLE = VISIBLE_ROWS * COLS; // 8
 
 export default function SolutionsGrid({ searchTerm, activeCategory, onEnquire }) {
   const [showAll, setShowAll] = React.useState(false);
@@ -180,15 +199,17 @@ export default function SolutionsGrid({ searchTerm, activeCategory, onEnquire })
         <>
           <div className="solutions-row-desktop" style={{
             display: 'grid',
-            gridTemplateColumns: 'repeat(3, 1fr)',
-            gap: '18px',
+            gridTemplateColumns: 'repeat(4, 1fr)',
+            rowGap: '28px',
+            columnGap: '18px',
             width: '100%',
             padding: '6px 6px 12px',
             boxSizing: 'border-box'
           }}>
-            {visibleSolutions.map((sol) => {
+            {visibleSolutions.map((sol, index) => {
               const theme = categoryThemes[sol.category] || { color: 'var(--primary)', bg: 'var(--primary-light)' };
               const isHovered = hoveredSolId === sol.id;
+              const isGreenCard = index % 2 === 0;
               return (
                 <div
                   key={sol.id}
@@ -198,17 +219,24 @@ export default function SolutionsGrid({ searchTerm, activeCategory, onEnquire })
                   style={{
                     '--card-theme': theme.color,
                     '--card-theme-light': theme.bg,
+                    '--card-bg': isGreenCard ? '#f0fdf4' : 'var(--bg-white)',
+                    '--card-hover-border': theme.color,
+                    '--icon-hover-bg': 'var(--primary)',
+                    '--icon-hover-color': 'white',
+                    '--btn-hover-bg': theme.color,
+                    '--btn-hover-color': 'white',
+                    '--btn-hover-shadow': `color-mix(in srgb, ${theme.color} 25%, transparent)`,
                     padding: '28px 20px',
                     display: 'flex',
                     flexDirection: 'column',
                     alignItems: 'center',
                     textAlign: 'center',
                     borderRadius: '16px',
-                    background: '#fff',
+                    background: 'var(--card-bg)',
                     boxShadow: isHovered 
                       ? `0 20px 38px rgba(0, 0, 0, 0.04), 0 4px 18px ${theme.color}18` 
                       : '0 4px 12px rgba(0, 0, 0, 0.015)',
-                    border: isHovered ? `1.5px solid ${theme.color}` : '1px solid rgba(226, 232, 240, 0.8)',
+                    border: isHovered ? `1.5px solid ${theme.color}` : '1.5px solid var(--primary)',
                     minWidth: '0px',
                     minHeight: '220px',
                     transform: isHovered ? 'translateY(-6px)' : 'translateY(0)',
@@ -236,7 +264,7 @@ export default function SolutionsGrid({ searchTerm, activeCategory, onEnquire })
                     transition: 'transform 0.3s ease',
                     transform: isHovered ? 'scale(1.08)' : 'scale(1)'
                   }}>
-                    {sol.icon}
+                    {renderIcon(sol.icon)}
                   </div>
 
                   {/* Title */}

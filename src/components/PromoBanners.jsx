@@ -51,6 +51,7 @@ export default function PromoBanners({ onSelectPackage }) {
             display: 'flex',
             flexDirection: 'column',
             gap: '16px',
+            minHeight: '450px',
             boxShadow: leftHovered 
               ? '0 20px 40px rgba(15, 30, 60, 0.12), 0 0 30px rgba(170, 223, 0, 0.1)'
               : 'var(--shadow-sm)',
@@ -64,7 +65,7 @@ export default function PromoBanners({ onSelectPackage }) {
           onClick={() => onSelectPackage({ title: 'Premium Platform Blueprints', price: 'Custom Consultation' })}
         >
           {/* Top category label & rosette */}
-          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', zIndex: 2 }}>
             <span style={{
               background: 'rgba(15, 30, 60, 0.07)',
               color: 'var(--secondary)',
@@ -81,42 +82,71 @@ export default function PromoBanners({ onSelectPackage }) {
             <span style={{ fontSize: '0.7rem', color: 'rgba(15, 30, 60, 0.6)', fontWeight: '600' }}>Custom Architectures</span>
           </div>
 
-          {/* Heading Content */}
-          <div style={{ zIndex: 2 }}>
-            <h3 style={{ fontSize: '1.25rem', fontWeight: '900', color: 'var(--secondary)', letterSpacing: '-0.02em', margin: '6px 0 8px 0', lineHeight: '1.3' }}>
-              Launch Your Premium Platform 🚀
-            </h3>
-            <p style={{ fontSize: '0.82rem', color: 'rgba(15, 30, 60, 0.8)', lineHeight: '1.5', margin: 0, fontWeight: '600' }}>
-              From initial UI mockups to robust production-ready platforms, we build digital solutions engineered to scale your business.
-            </p>
-          </div>
+          {/* Grid Layout inside Left Card */}
+          <div 
+            className="promo-left-grid-inner" 
+            style={{ 
+              display: 'grid', 
+              gridTemplateColumns: '1.38fr 0.62fr', 
+              gap: '20px', 
+              alignItems: 'center', 
+              height: '100%',
+              marginTop: 'auto',
+              marginBottom: 'auto',
+              zIndex: 2
+            }}
+          >
+            {/* Left text column */}
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '14px' }}>
+              <h3 style={{ fontSize: '1.5rem', fontWeight: '900', color: 'var(--secondary)', letterSpacing: '-0.02em', margin: 0, lineHeight: '1.2' }}>
+                Launch Your Premium Platform 🚀
+              </h3>
+              <p style={{ fontSize: '0.82rem', color: 'rgba(15, 30, 60, 0.85)', lineHeight: '1.55', margin: 0, fontWeight: '600' }}>
+                From initial UI mockups to robust production-ready platforms, we build digital solutions engineered to scale your business.
+              </p>
+              
+              <div style={{
+                background: 'var(--secondary)',
+                color: 'white',
+                padding: '10px 18px',
+                borderRadius: '8px',
+                fontWeight: '800',
+                fontSize: '0.78rem',
+                width: 'fit-content',
+                marginTop: '6px',
+                boxShadow: '0 4px 12px rgba(15, 30, 60, 0.15)',
+                transition: 'transform 0.2s ease'
+              }}>
+                Enquire Platform →
+              </div>
+            </div>
 
-          {/* Centered Showcase Mockup Image with floating transition */}
-          <div style={{ 
-            marginTop: 'auto', 
-            width: '100%', 
-            display: 'flex', 
-            justifyContent: 'center', 
-            alignItems: 'center',
-            paddingTop: '20px'
-          }}>
-            <img 
-              src="/Screenshot 2026-07-01 125319.png" 
-              alt="Responsive Mockup Showcase" 
-              style={{
-                width: '100%',
-                maxWidth: '380px',
-                height: 'auto',
-                objectFit: 'contain',
-                borderRadius: '12px',
-                boxShadow: leftHovered 
-                  ? '0 15px 30px rgba(0, 0, 0, 0.25)' 
-                  : '0 8px 20px rgba(0, 0, 0, 0.15)',
-                transform: leftHovered ? 'translateY(-6px) scale(1.03)' : 'translateY(0) scale(1)',
-                transition: 'all 0.3s cubic-bezier(0.16, 1, 0.3, 1)',
-                filter: 'hue-rotate(55deg)'
-              }}
-            />
+            {/* Right illustration column */}
+            <div style={{ 
+              display: 'flex', 
+              justifyContent: 'center', 
+              alignItems: 'flex-end',
+              height: '100%',
+              minHeight: '260px',
+              position: 'relative'
+            }}>
+              <img 
+                src="/singing_woman.png" 
+                alt="Singing Woman Showcase" 
+                className="singing-woman-img"
+                style={{
+                  maxHeight: '330px',
+                  width: 'auto',
+                  objectFit: 'contain',
+                  position: 'absolute',
+                  right: '-48px',
+                  bottom: '15px',
+                  transform: leftHovered ? 'translateY(-10px) scale(1.04)' : 'translateY(0) scale(1)',
+                  transition: 'all 0.3s cubic-bezier(0.16, 1, 0.3, 1)',
+                  filter: 'drop-shadow(0 15px 25px rgba(15, 30, 60, 0.15))'
+                }}
+              />
+            </div>
           </div>
         </div>
 

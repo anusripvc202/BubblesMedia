@@ -69,7 +69,8 @@ export default function SignInModal({ isOpen, onClose }) {
       alignItems: 'center',
       justifyContent: 'center',
       zIndex: 110000,
-      padding: '20px',
+      padding: '40px 20px',
+      overflowY: 'auto',
       pointerEvents: 'auto',
     }}>
       {/* Backdrop closer click */}
@@ -83,6 +84,7 @@ export default function SignInModal({ isOpen, onClose }) {
         background: 'var(--bg-white)',
         borderRadius: '24px',
         boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.25), 0 0 40px rgba(170, 223, 0, 0.05)',
+        margin: 'auto',
         display: 'flex',
         overflow: 'hidden',
         zIndex: 2,
@@ -137,7 +139,7 @@ export default function SignInModal({ isOpen, onClose }) {
               🫧 Bubbles Media
             </span>
             
-            <h3 style={{ fontSize: '1.5rem', fontWeight: '900', lineHeight: '1.25', marginBottom: '24px', letterSpacing: '-0.02em' }}>
+            <h3 style={{ fontSize: '1.5rem', fontWeight: '900', lineHeight: '1.25', marginBottom: '24px', letterSpacing: '-0.02em', color: '#ffffff' }}>
               Accelerate Your Digital Presence
             </h3>
 

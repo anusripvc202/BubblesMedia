@@ -1,5 +1,7 @@
 import "./globals.css";
 import GlobalBubbles from "../components/GlobalBubbles";
+import { CartProvider } from "../context/CartContext";
+import CartDrawer from "../components/CartDrawer";
 
 export const metadata = {
   title: "Tech Mart 24 - India's Largest Digital Solutions Marketplace",
@@ -13,9 +15,13 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body>
-        <GlobalBubbles />
-        {children}
+        <CartProvider>
+          <GlobalBubbles />
+          <CartDrawer />
+          {children}
+        </CartProvider>
       </body>
     </html>
   );
 }
+

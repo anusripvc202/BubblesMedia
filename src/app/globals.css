@@ -1159,16 +1159,16 @@ a {
   height: 100vh;
   overflow: hidden;
   pointer-events: none;
-  z-index: -1;
+  z-index: 9999;
 }
 
 .gb-bubble {
   position: absolute;
   border-radius: 50%;
   bottom: -60px;
-  background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.75) 0%, rgba(170, 223, 0, 0.08) 50%, rgba(59, 130, 246, 0.04) 80%, rgba(170, 223, 0, 0.12) 100%);
-  border: 1px solid rgba(170, 223, 0, 0.12);
-  box-shadow: inset -3px -3px 8px rgba(255, 255, 255, 0.5), 0 4px 10px rgba(0, 0, 0, 0.02);
+  background: radial-gradient(circle at 30% 30%, rgba(255,255,255,0.45) 0%, rgba(170,223,0,0.18) 45%, rgba(170,223,0,0.08) 80%, transparent 100%);
+  border: 1.5px solid rgba(170, 223, 0, 0.35);
+  box-shadow: inset -3px -3px 8px rgba(255, 255, 255, 0.6), 0 4px 12px rgba(170, 223, 0, 0.08);
   animation: gbRise 15s linear infinite, gbSway 4s ease-in-out infinite alternate;
   will-change: transform, opacity;
 }
@@ -1176,17 +1176,17 @@ a {
 /* Animations using GPU compositor */
 @keyframes gbRise {
   0% {
-    transform: translateY(0) scale(0.6);
+    transform: translateY(0) scale(0.5);
     opacity: 0;
   }
-  10% {
-    opacity: 0.8;
+  8% {
+    opacity: 0.7;
   }
-  90% {
-    opacity: 0.8;
+  88% {
+    opacity: 0.6;
   }
   100% {
-    transform: translateY(-110vh) scale(1.2);
+    transform: translateY(-110vh) scale(1.1);
     opacity: 0;
   }
 }

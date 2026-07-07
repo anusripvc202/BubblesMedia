@@ -1,6 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import { serviceDatabase, categories } from '../data/servicesData';
+import { useCart } from '../context/CartContext';
 
 // Helper to format and scale icons to be bold and professional (24px, 2.5px stroke)
 const renderIcon = (icon) => {
@@ -113,6 +114,7 @@ const DEFAULT_VISIBLE = VISIBLE_ROWS * COLS; // 8
 export default function SolutionsGrid({ searchTerm, activeCategory, onEnquire }) {
   const [showAll, setShowAll] = React.useState(false);
   const [hoveredSolId, setHoveredSolId] = React.useState(null);
+  const { addToCart, removeFromCart, isInCart } = useCart();
 
   const categoryThemes = {
     'websites': { color: '#3b82f6', bg: '#eff6ff' },
@@ -290,29 +292,68 @@ export default function SolutionsGrid({ searchTerm, activeCategory, onEnquire })
                     </span>
                   </div>
 
-                  {/* View Details Button */}
-                  <Link
-                    href={`/services/${sol.id}`}
-                    style={{
-                      width: '100%',
-                      padding: '10px 16px',
-                      fontSize: '0.82rem',
-                      fontWeight: '800',
-                      color: isHovered ? '#fff' : theme.color,
-                      background: isHovered ? theme.color : theme.bg,
-                      border: 'none',
-                      borderRadius: '8px',
-                      textAlign: 'center',
-                      display: 'block',
-                      marginTop: 'auto',
-                      transition: 'all 0.3s cubic-bezier(0.16, 1, 0.3, 1)',
-                      boxShadow: isHovered ? `0 4px 10px ${theme.color}40` : 'none',
-                      transform: isHovered ? 'scale(1.02)' : 'scale(1)'
-                    }}
-                    className="solutions-view-btn"
-                  >
-                    View Details →
-                  </Link>
+                  {/* View Details + Add to Cart buttons */}
+                  <div style={{ display: 'flex', gap: '8px', width: '100%', marginTop: 'auto' }}>
+                    <Link
+                      href={`/services/${sol.id}`}
+                      style={{
+                        flex: 1,
+                        padding: '10px 12px',
+                        fontSize: '0.8rem',
+                        fontWeight: '800',
+                        color: isHovered ? '#fff' : theme.color,
+                        background: isHovered ? theme.color : theme.bg,
+                        border: 'none',
+                        borderRadius: '8px',
+                        textAlign: 'center',
+                        display: 'block',
+                        transition: 'all 0.3s cubic-bezier(0.16, 1, 0.3, 1)',
+                        boxShadow: isHovered ? `0 4px 10px ${theme.color}40` : 'none',
+                        transform: isHovered ? 'scale(1.02)' : 'scale(1)'
+                      }}
+                      className="solutions-view-btn"
+                    >
+                      View Details →
+                    </Link>
+                    {/* Cart button */}
+                    <button
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        if (isInCart(sol.id)) {
+                          removeFromCart(sol.id);
+                        } else {
+                          addToCart({ id: sol.id, title: sol.title, price: sol.price, category: sol.category });
+                        }
+                      }}
+                      title={isInCart(sol.id) ? 'Remove from cart' : 'Add to cart'}
+                      style={{
+                        flexShrink: 0,
+                        width: '38px',
+                        height: '38px',
+                        borderRadius: '8px',
+                        border: `1.5px solid ${isInCart(sol.id) ? '#10b981' : theme.color}`,
+                        background: isInCart(sol.id) ? '#ecfdf5' : 'transparent',
+                        color: isInCart(sol.id) ? '#10b981' : theme.color,
+                        cursor: 'pointer',
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        transition: 'all 0.25s ease',
+                        flexShrink: 0,
+                      }}
+                    >
+                      {isInCart(sol.id) ? (
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
+                          <polyline points="20 6 9 17 4 12" />
+                        </svg>
+                      ) : (
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                          <circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/>
+                          <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
+                        </svg>
+                      )}
+                    </button>
+                  </div>
                 </div>
               );
             })}

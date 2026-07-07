@@ -4,8 +4,10 @@ import React, { useState, useEffect, useRef } from 'react';
 import { useRouter } from 'next/navigation';
 import { categories } from '../data/servicesData';
 import SignInModal from './SignInModal';
+import { useCart } from '../context/CartContext';
 
-export default function Header({ cartCount = 0, wishlistCount = 0, onCartOpen, onQuoteOpen, onSearch }) {
+export default function Header({ wishlistCount = 0, onCartOpen, onQuoteOpen, onSearch }) {
+  const { cartCount, setIsCartOpen } = useCart();
   const router = useRouter();
   const [searchValue, setSearchValue] = useState('');
   const [menuOpen, setMenuOpen] = useState(false);
@@ -299,7 +301,7 @@ export default function Header({ cartCount = 0, wishlistCount = 0, onCartOpen, o
             <div style={{ width: '1px', height: '24px', background: 'rgba(0,0,0,0.08)' }} />
 
             {/* Cart */}
-            <button onClick={onCartOpen} style={{ position: 'relative', color: 'var(--secondary)', padding: '4px', background: 'none', border: 'none', cursor: 'pointer' }}>
+            <button onClick={() => setIsCartOpen(true)} style={{ position: 'relative', color: 'var(--secondary)', padding: '4px', background: 'none', border: 'none', cursor: 'pointer' }}>
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/>
                 <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
@@ -325,7 +327,7 @@ export default function Header({ cartCount = 0, wishlistCount = 0, onCartOpen, o
             </button>
 
             {/* Cart */}
-            <button onClick={onCartOpen} style={{ position: 'relative', padding: '4px', background: 'none', border: 'none', cursor: 'pointer', color: 'var(--secondary)' }}>
+            <button onClick={() => setIsCartOpen(true)} style={{ position: 'relative', padding: '4px', background: 'none', border: 'none', cursor: 'pointer', color: 'var(--secondary)' }}>
               <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/>
                 <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>

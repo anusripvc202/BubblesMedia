@@ -40,11 +40,11 @@ export default function Offers() {
   const formatNumber = (num) => String(num).padStart(2, '0');
 
   const offersList = [
-    { title: 'Business Websites Blueprint', normalPrice: '₹19,999', offerPrice: '₹9,999', discount: '50% OFF', category: 'Websites' },
-    { title: 'Mobile App Custom Development', normalPrice: '₹79,999', offerPrice: '₹49,999', discount: '38% OFF', category: 'Mobile Apps' },
-    { title: 'Local Business GMB Optimization', normalPrice: '₹5,999', offerPrice: '₹2,999', discount: '50% OFF', category: 'Google Profile' },
-    { title: 'Complete Brand Identity & Logo Kit', normalPrice: '₹5,999', offerPrice: '₹2,999', discount: '50% OFF', category: 'Branding' },
-    { title: 'Enterprise WhatsApp Chatbot Setup', normalPrice: '₹9,999', offerPrice: '₹4,999', discount: '50% OFF', category: 'WhatsApp API' }
+    { title: 'Business Websites Blueprint', normalPrice: '₹19,999', offerPrice: '₹9,999', discount: '50% OFF', category: 'Websites', img: '/cat-websites.png' },
+    { title: 'Mobile App Custom Development', normalPrice: '₹79,999', offerPrice: '₹49,999', discount: '38% OFF', category: 'Mobile Apps', img: '/cat-mobile-apps.png' },
+    { title: 'Local Business GMB Optimization', normalPrice: '₹5,999', offerPrice: '₹2,999', discount: '50% OFF', category: 'Google Profile', img: '/cat-gmb.png' },
+    { title: 'Complete Brand Identity & Logo Kit', normalPrice: '₹5,999', offerPrice: '₹2,999', discount: '50% OFF', category: 'Branding', img: '/cat-branding-graphics.png' },
+    { title: 'Enterprise WhatsApp Chatbot Setup', normalPrice: '₹9,999', offerPrice: '₹4,999', discount: '50% OFF', category: 'WhatsApp API', img: '/cat-whatsapp-marketing.png' }
   ];
 
   const handleClaim = (off) => {
@@ -75,50 +75,51 @@ export default function Offers() {
           <a href="/">Home</a> / <span style={{ color: 'var(--secondary)' }}>Mega Offers</span>
         </div>
 
-        {/* Hero Section with Large Ticking Clock */}
-        <div style={{
-          background: 'var(--bg-gradient-orange)',
-          borderRadius: 'var(--radius-lg)',
-          padding: '48px',
-          color: 'white',
-          display: 'grid',
-          gridTemplateColumns: '1.2fr 0.8fr',
-          alignItems: 'center',
-          gap: '32px',
-          marginBottom: '48px',
-          border: '1px solid rgba(255,255,255,0.1)'
-        }} className="offers-hero-responsive">
-          <div>
-            <span style={{ fontSize: '0.75rem', fontWeight: '800', background: 'white', color: 'var(--primary)', padding: '4px 12px', borderRadius: '4px', textTransform: 'uppercase', letterSpacing: '1px', display: 'inline-block', marginBottom: '14px' }}>
-              Flash Sale
-            </span>
-            <h2 style={{ fontSize: '2rem', fontWeight: '900', color: 'white', marginBottom: '10px', letterSpacing: '-0.02em' }}>
+        {/* Hero Section with Large Ticking Clock and Illustration */}
+        <div className="offers-hero-container">
+          <div className="offers-hero-left">
+            <span className="offers-hero-badge">🔥 FLASH SALE</span>
+            <h2 className="offers-hero-title">
               Limited Time Mega Offers
             </h2>
-            <p style={{ fontSize: '0.9rem', color: 'rgba(255, 255, 255, 0.9)', lineHeight: '1.5', marginBottom: '8px' }}>
+            <p className="offers-hero-desc">
               Get up to 50% discount on industry-leading digital services. Setup your business online with certified blueprints.
             </p>
+            <div className="offers-hero-bullets">
+              <span>✓ Instant Activations</span>
+              <span>✓ Verified Digital Workflows</span>
+              <span>✓ Complete Brand Toolkits</span>
+            </div>
           </div>
 
-          <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '10px' }}>
-            <span style={{ fontSize: '0.75rem', fontWeight: '800', textTransform: 'uppercase', color: 'rgba(255, 255, 255, 0.85)', letterSpacing: '0.5px' }}>
+          <div className="offers-hero-middle">
+            <img 
+              src="/offers_hero.png" 
+              alt="Exclusive Promo Deals" 
+              className="offers-hero-img"
+            />
+          </div>
+
+          <div className="offers-hero-right">
+            <span className="offers-timer-title">
               Countdown to Expiry:
             </span>
-            <div className="timer-container" style={{ gap: '16px' }}>
+            <div className="timer-container">
               {[
                 { val: formatNumber(timeLeft.days), label: 'Days' },
                 { val: formatNumber(timeLeft.hours), label: 'Hours' },
                 { val: formatNumber(timeLeft.minutes), label: 'Mins' },
                 { val: formatNumber(timeLeft.seconds), label: 'Secs' }
               ].map((time, idx) => (
-                <div key={idx} className="timer-box" style={{ width: '60px', height: '60px', borderRadius: '50%', background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.12)' }}>
-                  <span className="timer-num" style={{ fontSize: '1.25rem' }}>{time.val}</span>
-                  <span className="timer-label" style={{ fontSize: '0.55rem', opacity: 0.6 }}>{time.label}</span>
+                <div key={idx} className="timer-box-custom">
+                  <span className="timer-num-custom">{time.val}</span>
+                  <span className="timer-label-custom">{time.label}</span>
                 </div>
               ))}
             </div>
           </div>
         </div>
+
 
         {/* Special Discounts Grid */}
         <h3 style={{ fontSize: '1.3rem', fontWeight: '800', marginBottom: '24px', color: 'var(--secondary)' }}>Active Flash Deals</h3>
@@ -135,14 +136,37 @@ export default function Offers() {
                 justifyContent: 'space-between',
                 gap: '20px',
                 background: 'white',
-                flexWrap: 'wrap'
+                flexWrap: 'wrap',
+                transition: 'all 0.3s ease'
               }}
             >
-              <div style={{ display: 'flex', gap: '16px', alignItems: 'center' }}>
-                <span className="badge badge-orange" style={{ fontSize: '0.65rem' }}>{off.discount}</span>
+              <div style={{ display: 'flex', gap: '20px', alignItems: 'center', flex: 1, minWidth: '280px' }}>
+                {off.img && (
+                  <div style={{
+                    width: '64px',
+                    height: '64px',
+                    borderRadius: '12px',
+                    overflow: 'hidden',
+                    background: 'var(--bg-base)',
+                    border: '1px solid var(--border-color)',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    flexShrink: 0
+                  }}>
+                    <img 
+                      src={off.img} 
+                      alt={off.title} 
+                      style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                    />
+                  </div>
+                )}
                 <div>
-                  <span style={{ display: 'block', fontSize: '0.7rem', color: 'var(--text-light)', fontWeight: '700', textTransform: 'uppercase' }}>{off.category}</span>
-                  <span style={{ display: 'block', fontSize: '0.95rem', fontWeight: '800', color: 'var(--secondary)', marginTop: '2px' }}>{off.title}</span>
+                  <div style={{ display: 'flex', gap: '8px', alignItems: 'center', flexWrap: 'wrap', marginBottom: '4px' }}>
+                    <span className="badge badge-orange" style={{ fontSize: '0.65rem', margin: 0 }}>{off.discount}</span>
+                    <span style={{ fontSize: '0.7rem', color: 'var(--text-light)', fontWeight: '700', textTransform: 'uppercase' }}>{off.category}</span>
+                  </div>
+                  <span style={{ display: 'block', fontSize: '1rem', fontWeight: '800', color: 'var(--secondary)', marginTop: '2px' }}>{off.title}</span>
                 </div>
               </div>
 

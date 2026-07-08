@@ -26,23 +26,30 @@ export default function About() {
         </div>
 
         {/* Hero Section */}
-        <div style={{
-          background: 'var(--bg-gradient-orange)',
-          borderRadius: 'var(--radius-lg)',
-          padding: '48px',
-          color: 'white',
-          textAlign: 'center',
-          marginBottom: '48px',
-          position: 'relative',
-          overflow: 'hidden'
-        }}>
-          <h2 style={{ fontSize: '2.2rem', fontWeight: '900', color: 'white', marginBottom: '12px' }}>
-            Empowering Businesses Globally
-          </h2>
-          <p style={{ fontSize: '1rem', color: 'rgba(255, 255, 255, 0.9)', maxWidth: '600px', margin: '0 auto', lineHeight: '1.6' }}>
-            Tech Mart 24 is India's largest integrated digital marketplace, delivering premium web development, branding, SEO, and AI automation solutions.
-          </p>
+        <div className="about-hero-container">
+          <div className="about-hero-left">
+            <span className="about-hero-badge">✨ WHO WE ARE</span>
+            <h2 className="about-hero-title">
+              Empowering Businesses Globally
+            </h2>
+            <p className="about-hero-desc">
+              Tech Mart 24 is India's largest integrated digital marketplace, delivering premium web development, branding, SEO, and AI automation solutions. We transform complex engineering into growth catalysts for ambitious companies.
+            </p>
+            <div className="about-hero-bullets">
+              <span>✓ Certified Technical Workflows</span>
+              <span>✓ 24/7 Agency SLA Support</span>
+              <span>✓ Transparent Fixed Pricing</span>
+            </div>
+          </div>
+          <div className="about-hero-right">
+            <img 
+              src="/about_hero.png" 
+              alt="Tech Mart 24 Team Collaborating" 
+              className="about-hero-img"
+            />
+          </div>
         </div>
+
 
         {/* Grid Info */}
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '48px', marginBottom: '48px' }} className="about-grid">

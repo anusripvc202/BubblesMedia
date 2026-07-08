@@ -57,23 +57,30 @@ function ContactFormContent() {
         </div>
 
         {/* Hero Section */}
-        <div style={{
-          background: 'var(--bg-gradient-orange)',
-          borderRadius: 'var(--radius-lg)',
-          padding: '48px',
-          color: 'white',
-          textAlign: 'center',
-          marginBottom: '48px',
-          position: 'relative',
-          overflow: 'hidden'
-        }}>
-          <h2 style={{ fontSize: '2.2rem', fontWeight: '900', color: 'white', marginBottom: '12px' }}>
-            Get In Touch
-          </h2>
-          <p style={{ fontSize: '1rem', color: 'rgba(255, 255, 255, 0.9)', maxWidth: '600px', margin: '0 auto', lineHeight: '1.6' }}>
-            Have a project in mind? Fill out the form or reach out directly to our offices.
-          </p>
+        <div className="contact-hero-container">
+          <div className="contact-hero-left">
+            <span className="contact-hero-badge">✉️ LET'S TALK</span>
+            <h2 className="contact-hero-title">
+              Let's Launch Your Next Digital Venture
+            </h2>
+            <p className="contact-hero-desc">
+              Have a project in mind or need assistance with your existing website, application, or marketing campaign? Drop a line and our expert team will respond with a custom roadmap in less than 2 hours.
+            </p>
+            <div className="contact-hero-bullets">
+              <span>🔒 NDA Protected</span>
+              <span>⚡ 2-Hour Response</span>
+              <span>📊 Free Digital Audit</span>
+            </div>
+          </div>
+          <div className="contact-hero-right">
+            <img 
+              src="/contact_hero.png" 
+              alt="Get In Touch with Tech Mart 24" 
+              className="contact-hero-img"
+            />
+          </div>
         </div>
+
 
         {/* Contact Grid */}
         <div style={{ display: 'grid', gridTemplateColumns: '1.2fr 0.8fr', gap: '48px' }} className="contact-grid">

@@ -128,6 +128,13 @@ export default function Hero({ activeCategory, onSearch, onExploreOffers }) {
               <span>✓ 100% Satisfaction Guarantee</span>
               <span>✓ Dedicated Support</span>
             </div>
+            {/* CTA Buttons - Placed Upwards */}
+            <div style={{ display: 'flex', gap: '10px', flexWrap: 'wrap', marginTop: '6px', marginBottom: '4px' }}>
+              <button onClick={onExploreOffers} className="hero-btn-primary">
+                🔥 Explore Mega Offers
+              </button>
+              <button className="hero-btn-outline">Get Free Quote</button>
+            </div>
           </div>
 
           {/* MIDDLE — Service chips */}
@@ -137,7 +144,7 @@ export default function Hero({ activeCategory, onSearch, onExploreOffers }) {
             ))}
           </div>
 
-          {/* BOTTOM GROUP — stats + search + CTA */}
+          {/* BOTTOM GROUP — stats + search */}
           <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
             {/* Stats row — compact width */}
             <div className="hero-stats-row">
@@ -175,13 +182,6 @@ export default function Hero({ activeCategory, onSearch, onExploreOffers }) {
               />
               <button type="submit" className="hero-search-btn" style={{ color: accentColor, transition: 'color 0.5s ease' }}>Search</button>
             </form>
-            {/* CTA Buttons */}
-            <div style={{ display: 'flex', gap: '10px', flexWrap: 'wrap' }}>
-              <button onClick={onExploreOffers} className="hero-btn-primary">
-                🔥 Explore Mega Offers
-              </button>
-              <button className="hero-btn-outline">Get Free Quote</button>
-            </div>
           </div>
 
         </div>

@@ -90,6 +90,20 @@ const categoryHighlights = {
   ],
 };
 
+const loadRazorpayScript = () => {
+  return new Promise((resolve) => {
+    if (typeof window !== 'undefined' && window.Razorpay) {
+      resolve(true);
+      return;
+    }
+    const script = document.createElement('script');
+    script.src = 'https://checkout.razorpay.com/v1/checkout.js';
+    script.onload = () => resolve(true);
+    script.onerror = () => resolve(false);
+    document.body.appendChild(script);
+  });
+};
+
 export default function CategoryPage() {
   const { id } = useParams();
   const router = useRouter();
@@ -108,6 +122,32 @@ export default function CategoryPage() {
   // Modals Visibility
   const [isQuoteOpen, setIsQuoteOpen] = useState(false);
   const [quoteInitialData, setQuoteInitialData] = useState(null);
+  const [currentUser, setCurrentUser] = useState(null);
+
+  // Check active user session
+  useEffect(() => {
+    async function getUser() {
+      try {
+        const { data: { session } } = await supabase.auth.getSession();
+        if (session?.user) {
+          const { data: profile } = await supabase
+            .from('profiles')
+            .select('*')
+            .eq('id', session.user.id)
+            .single();
+          setCurrentUser({
+            id: session.user.id,
+            email: session.user.email,
+            name: profile?.name || 'Customer',
+            phone: profile?.phone || ''
+          });
+        }
+      } catch (err) {
+        console.warn('Session check failed:', err);
+      }
+    }
+    getUser();
+  }, []);
 
   // Calculator Inputs State
   const [sliderVals, setSliderVals] = useState({});
@@ -283,15 +323,177 @@ export default function CategoryPage() {
     router.push(`/contact?subject=${encodeURIComponent(subjectStr)}`);
   };
 
+  const handleCalculatorPay = async () => {
+    if (!estimatedPrice || estimatedPrice <= 0) return;
+
+    const isLoaded = await loadRazorpayScript();
+    if (!isLoaded) {
+      alert('Razorpay SDK failed to load. Please check your internet connection.');
+      return;
+    }
+
+    try {
+      const res = await fetch('/api/payment', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ amount: estimatedPrice })
+      });
+
+      const orderData = await res.json();
+      if (orderData.error) {
+        alert('Order creation failed: ' + orderData.error);
+        return;
+      }
+
+      // Format custom specs
+      const specDetails = [];
+      calcConfig.sliders.forEach(s => {
+        specDetails.push(`${s.label}: ${sliderVals[s.id] || s.defaultValue} ${s.unit}`);
+      });
+      calcConfig.checkboxes.forEach(c => {
+        if (checkedItems[c.id]) {
+          specDetails.push(`+ ${c.label}`);
+        }
+      });
+      const specStr = specDetails.join(', ');
+
+      const options = {
+        key: process.env.NEXT_PUBLIC_RAZORPAY_KEY_ID || 'rzp_test_M5pz720jkSvdDg',
+        amount: orderData.amount,
+        currency: orderData.currency,
+        name: 'BubblesMedia',
+        description: `Bespoke ${currentCategory.name} Plan`,
+        order_id: orderData.id,
+        handler: async function (response) {
+          try {
+            const { error: dbErr } = await supabase
+              .from('bubbles_bookings')
+              .insert({
+                user_id: currentUser?.id || null,
+                client_name: currentUser?.name || 'Walk-in Client',
+                client_email: currentUser?.email || 'guest@example.com',
+                client_phone: currentUser?.phone || 'N/A',
+                service_name: `Bespoke ${currentCategory.name} Setup`,
+                plan_name: `Custom Budget (Specs: ${specStr})`,
+                amount_paid: estimatedPrice,
+                razorpay_order_id: response.razorpay_order_id,
+                razorpay_payment_id: response.razorpay_payment_id
+              });
+
+            if (dbErr) {
+              console.error('Booking save failed:', dbErr);
+            }
+            alert(`Payment Successful! Your custom setup booking reference has been registered.`);
+          } catch (err) {
+            console.error('Logging custom booking failed:', err);
+          }
+        },
+        prefill: {
+          name: currentUser?.name || '',
+          email: currentUser?.email || '',
+          contact: currentUser?.phone || ''
+        },
+        theme: { color: accentColor },
+        modal: {
+          ondismiss: function () {
+            const subjectStr = `Pending Payment Estimate: ${currentCategory.name} (₹${estimatedPrice.toLocaleString('en-IN')}) - Specs: ${specStr}`;
+            router.push(`/contact?subject=${encodeURIComponent(subjectStr)}`);
+          }
+        }
+      };
+
+      const rzp = new window.Razorpay(options);
+      rzp.open();
+    } catch (paymentErr) {
+      console.error('Payment checkout failed:', paymentErr);
+      handleCalculatorEnquire();
+    }
+  };
+
   const handleEnquireService = (service) => {
     router.push(`/contact?subject=${encodeURIComponent(service.title + ' (' + service.price + ')')}`);
   };
 
-  const handleEnquirePlan = (serviceTitle, plan) => {
+  const handleEnquirePlan = async (serviceTitle, plan) => {
     const paymentLink = plan.payment_link || plan.paymentLink;
     if (paymentLink) {
       window.open(paymentLink, '_blank', 'noopener,noreferrer');
-    } else {
+      return;
+    }
+
+    const numericPrice = Number(plan.price.replace(/[^0-9]/g, ''));
+    if (!numericPrice || isNaN(numericPrice)) {
+      router.push(`/contact?subject=${encodeURIComponent(serviceTitle + ' - ' + plan.name + ' Plan (' + plan.price + ')')}`);
+      return;
+    }
+
+    const isLoaded = await loadRazorpayScript();
+    if (!isLoaded) {
+      alert('Razorpay SDK failed to load.');
+      return;
+    }
+
+    try {
+      const res = await fetch('/api/payment', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ amount: numericPrice })
+      });
+
+      const orderData = await res.json();
+      if (orderData.error) {
+        alert('Order creation failed: ' + orderData.error);
+        return;
+      }
+
+      const options = {
+        key: process.env.NEXT_PUBLIC_RAZORPAY_KEY_ID || 'rzp_test_M5pz720jkSvdDg',
+        amount: orderData.amount,
+        currency: orderData.currency,
+        name: 'BubblesMedia',
+        description: `${serviceTitle} - ${plan.name}`,
+        order_id: orderData.id,
+        handler: async function (response) {
+          try {
+            const { error: dbErr } = await supabase
+              .from('bubbles_bookings')
+              .insert({
+                user_id: currentUser?.id || null,
+                client_name: currentUser?.name || 'Walk-in Client',
+                client_email: currentUser?.email || 'guest@example.com',
+                client_phone: currentUser?.phone || 'N/A',
+                service_name: serviceTitle,
+                plan_name: plan.name,
+                amount_paid: numericPrice,
+                razorpay_order_id: response.razorpay_order_id,
+                razorpay_payment_id: response.razorpay_payment_id
+              });
+
+            if (dbErr) {
+              console.error('Booking logging failed:', dbErr);
+            }
+            alert(`Payment Successful! Booking reference saved successfully.`);
+          } catch (err) {
+            console.error('Booking save error:', err);
+          }
+        },
+        prefill: {
+          name: currentUser?.name || '',
+          email: currentUser?.email || '',
+          contact: currentUser?.phone || ''
+        },
+        theme: { color: accentColor },
+        modal: {
+          ondismiss: function () {
+            router.push(`/contact?subject=${encodeURIComponent('Pending Payment: ' + serviceTitle + ' - ' + plan.name + ' Plan (' + plan.price + ')')}`);
+          }
+        }
+      };
+
+      const rzp = new window.Razorpay(options);
+      rzp.open();
+    } catch (paymentErr) {
+      console.error('Payment checkout error:', paymentErr);
       router.push(`/contact?subject=${encodeURIComponent(serviceTitle + ' - ' + plan.name + ' Plan (' + plan.price + ')')}`);
     }
   };
@@ -589,20 +791,45 @@ export default function CategoryPage() {
                           ₹{estimatedPrice.toLocaleString('en-IN')}
                         </span>
                       </div>
-                      <button
-                        onClick={handleCalculatorEnquire}
-                        className="btn-primary"
-                        style={{
-                          width: '100%',
-                          background: accentColor,
-                          display: 'flex',
-                          alignItems: 'center',
-                          justifyContent: 'center',
-                          gap: '6px'
-                        }}
-                      >
-                        ⚡ Enquire with this Estimate
-                      </button>
+                      <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+                        <button
+                          onClick={handleCalculatorPay}
+                          className="btn-primary"
+                          style={{
+                            width: '100%',
+                            background: accentColor,
+                            display: 'flex',
+                            alignItems: 'center',
+                            justifyContent: 'center',
+                            gap: '6px',
+                            fontWeight: '800'
+                          }}
+                        >
+                          💳 Pay & Book Estimate
+                        </button>
+                        <button
+                          onClick={handleCalculatorEnquire}
+                          className="btn-secondary"
+                          style={{
+                            width: '100%',
+                            display: 'flex',
+                            alignItems: 'center',
+                            justifyContent: 'center',
+                            gap: '6px',
+                            border: `1.5px solid ${accentColor}`,
+                            background: 'transparent',
+                            color: accentColor,
+                            padding: '10px',
+                            borderRadius: 'var(--radius-sm)',
+                            cursor: 'pointer',
+                            fontSize: '0.75rem',
+                            fontWeight: '700',
+                            transition: 'all 0.15s ease'
+                          }}
+                        >
+                          ⚡ Get Consultation Quote
+                        </button>
+                      </div>
                     </div>
                   </div>
                 </div>

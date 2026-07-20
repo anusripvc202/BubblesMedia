@@ -8,6 +8,20 @@ import QuoteModal from '../../../components/QuoteModal';
 import { serviceDatabase } from '../../../data/servicesData';
 import { supabase } from '../../../lib/supabaseClient';
 
+const loadRazorpayScript = () => {
+  return new Promise((resolve) => {
+    if (typeof window !== 'undefined' && window.Razorpay) {
+      resolve(true);
+      return;
+    }
+    const script = document.createElement('script');
+    script.src = 'https://checkout.razorpay.com/v1/checkout.js';
+    script.onload = () => resolve(true);
+    script.onerror = () => resolve(false);
+    document.body.appendChild(script);
+  });
+};
+
 export default function ServiceDetails() {
   const { id } = useParams();
   const router = useRouter();
@@ -16,6 +30,32 @@ export default function ServiceDetails() {
 
   // State for dynamic service loaded from Supabase (falling back to local)
   const [service, setService] = useState(() => serviceDatabase[id] || null);
+  const [currentUser, setCurrentUser] = useState(null);
+
+  // Check active session
+  useEffect(() => {
+    async function getUser() {
+      try {
+        const { data: { session } } = await supabase.auth.getSession();
+        if (session?.user) {
+          const { data: profile } = await supabase
+            .from('profiles')
+            .select('*')
+            .eq('id', session.user.id)
+            .single();
+          setCurrentUser({
+            id: session.user.id,
+            email: session.user.email,
+            name: profile?.name || 'Customer',
+            phone: profile?.phone || ''
+          });
+        }
+      } catch (err) {
+        console.warn('Session check failed:', err);
+      }
+    }
+    getUser();
+  }, []);
 
   useEffect(() => {
     async function fetchService() {
@@ -60,11 +100,91 @@ export default function ServiceDetails() {
     );
   }
 
-  const handleBookPlan = (plan) => {
+  const handleBookPlan = async (plan) => {
+    // 1. Static Link Check
     const paymentLink = plan.payment_link || plan.paymentLink;
     if (paymentLink) {
       window.open(paymentLink, '_blank', 'noopener,noreferrer');
-    } else {
+      return;
+    }
+
+    // 2. Parse price to integer
+    const numericPrice = Number(plan.price.replace(/[^0-9]/g, ''));
+    if (!numericPrice || isNaN(numericPrice)) {
+      router.push(`/contact?subject=${encodeURIComponent('Book Plan: ' + service.title + ' - ' + plan.name + ' Plan (' + plan.price + ')')}`);
+      return;
+    }
+
+    // 3. Load script
+    const isLoaded = await loadRazorpayScript();
+    if (!isLoaded) {
+      alert('Razorpay SDK failed to load. Please verify your connection.');
+      return;
+    }
+
+    try {
+      const res = await fetch('/api/payment', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ amount: numericPrice })
+      });
+
+      const orderData = await res.json();
+      if (orderData.error) {
+        alert('Order creation failed: ' + orderData.error);
+        return;
+      }
+
+      // Initialize Razorpay Options
+      const options = {
+        key: process.env.NEXT_PUBLIC_RAZORPAY_KEY_ID || 'rzp_test_M5pz720jkSvdDg', // Fallback placeholder
+        amount: orderData.amount,
+        currency: orderData.currency,
+        name: 'BubblesMedia',
+        description: `${service.title} - ${plan.name}`,
+        order_id: orderData.id,
+        handler: async function (response) {
+          try {
+            const { error: dbErr } = await supabase
+              .from('bubbles_bookings')
+              .insert({
+                user_id: currentUser?.id || null,
+                client_name: currentUser?.name || 'Walk-in Client',
+                client_email: currentUser?.email || 'guest@example.com',
+                client_phone: currentUser?.phone || 'N/A',
+                service_name: service.title,
+                plan_name: plan.name,
+                amount_paid: numericPrice,
+                razorpay_order_id: response.razorpay_order_id,
+                razorpay_payment_id: response.razorpay_payment_id
+              });
+
+            if (dbErr) {
+              console.error('Logging booking failed:', dbErr);
+            }
+            alert(`Payment Successful! Booking references saved successfully.`);
+          } catch (err) {
+            console.error('Booking save error:', err);
+          }
+        },
+        prefill: {
+          name: currentUser?.name || '',
+          email: currentUser?.email || '',
+          contact: currentUser?.phone || ''
+        },
+        theme: { color: '#1a6cf7' },
+        modal: {
+          ondismiss: function () {
+            // Redirect to Contact page as a fallback for incomplete payment leads
+            router.push(`/contact?subject=${encodeURIComponent('Pending Payment Enquiry: ' + service.title + ' - ' + plan.name + ' Plan (' + plan.price + ')')}`);
+          }
+        }
+      };
+
+      const rzp = new window.Razorpay(options);
+      rzp.open();
+    } catch (paymentErr) {
+      console.error('Payment initialization error:', paymentErr);
       router.push(`/contact?subject=${encodeURIComponent('Book Plan: ' + service.title + ' - ' + plan.name + ' Plan (' + plan.price + ')')}`);
     }
   };

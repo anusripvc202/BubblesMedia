@@ -5,6 +5,7 @@ import { useSearchParams } from 'next/navigation';
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
 import QuoteModal from '../../components/QuoteModal';
+import { supabase } from '../../lib/supabaseClient';
 
 function ContactFormContent() {
   const searchParams = useSearchParams();
@@ -16,6 +17,34 @@ function ContactFormContent() {
   const [phone, setPhone] = useState('');
   const [message, setMessage] = useState('');
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [userId, setUserId] = useState(null);
+
+  // Auto-prefill if user is logged in
+  useEffect(() => {
+    async function getSession() {
+      try {
+        const { data: { session } } = await supabase.auth.getSession();
+        if (session?.user) {
+          setUserId(session.user.id);
+          setEmail(session.user.email || '');
+          
+          const { data: profile } = await supabase
+            .from('profiles')
+            .select('name, phone')
+            .eq('id', session.user.id)
+            .single();
+          if (profile) {
+            setName(profile.name || '');
+            setPhone(profile.phone || '');
+          }
+        }
+      } catch (err) {
+        console.warn('Authentication status check failed:', err);
+      }
+    }
+    getSession();
+  }, []);
 
   useEffect(() => {
     if (subject) {
@@ -23,17 +52,40 @@ function ContactFormContent() {
     }
   }, [subject]);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     if (name && email && phone && message) {
-      setIsSubmitted(true);
-      setTimeout(() => {
-        setName('');
-        setEmail('');
-        setPhone('');
-        setMessage('');
-        setIsSubmitted(false);
-      }, 3000);
+      setIsSubmitting(true);
+      try {
+        const { error } = await supabase
+          .from('contacts')
+          .insert({
+            user_id: userId,
+            name,
+            email,
+            phone,
+            message
+          });
+
+        if (error) {
+          alert('Failed to submit message: ' + error.message);
+          return;
+        }
+
+        setIsSubmitted(true);
+        setTimeout(() => {
+          setName('');
+          setEmail('');
+          setPhone('');
+          setMessage('');
+          setIsSubmitted(false);
+        }, 3000);
+      } catch (err) {
+        console.error('Submission error:', err);
+        alert('An unexpected error occurred. Please try again.');
+      } finally {
+        setIsSubmitting(false);
+      }
     } else {
       alert('Please fill out all the fields in the contact form.');
     }
@@ -165,8 +217,13 @@ function ContactFormContent() {
                   ></textarea>
                 </div>
 
-                <button type="submit" className="btn-primary" style={{ width: '100%', marginTop: '8px' }}>
-                  Submit Enquiry
+                <button 
+                  type="submit" 
+                  className="btn-primary" 
+                  style={{ width: '100%', marginTop: '8px', opacity: isSubmitting ? 0.7 : 1 }}
+                  disabled={isSubmitting}
+                >
+                  {isSubmitting ? 'Sending Enquiry...' : 'Submit Enquiry'}
                 </button>
               </form>
             )}

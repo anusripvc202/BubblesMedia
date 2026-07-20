@@ -57,7 +57,8 @@ function ContactFormContent() {
     if (name && email && phone && message) {
       setIsSubmitting(true);
       try {
-        const { error } = await supabase
+        // 1. Save to Supabase database
+        const { error: dbError } = await supabase
           .from('contacts')
           .insert({
             user_id: userId,
@@ -67,9 +68,20 @@ function ContactFormContent() {
             message
           });
 
-        if (error) {
-          alert('Failed to submit message: ' + error.message);
+        if (dbError) {
+          alert('Failed to submit message: ' + dbError.message);
           return;
+        }
+
+        // 2. Trigger serverless SMTP mail notification
+        try {
+          await fetch('/api/contact', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ name, email, phone, message })
+          });
+        } catch (emailErr) {
+          console.warn('Failed to send lead email alert:', emailErr);
         }
 
         setIsSubmitted(true);

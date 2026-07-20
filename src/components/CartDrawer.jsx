@@ -1,9 +1,11 @@
 'use client';
 import React, { useState } from 'react';
 import { useCart } from '../context/CartContext';
+import { supabase } from '../lib/supabaseClient';
 
 export default function CartDrawer() {
-  const { cartItems, removeFromCart, isCartOpen, setIsCartOpen, cartCount } = useCart();
+  const { cartItems, removeFromCart, clearCart, isCartOpen, setIsCartOpen, cartCount } = useCart();
+  const [submitError, setSubmitError] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [showCheckoutForm, setShowCheckoutForm] = useState(false);
   const [formData, setFormData] = useState({ name: '', email: '', phone: '', note: '' });
@@ -25,16 +27,37 @@ export default function CartDrawer() {
     setFormData(prev => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
+    setSubmitError('');
     
-    // Simulate API request
-    setTimeout(() => {
+    try {
+      const { data: { user } } = await supabase.auth.getUser();
+
+      const { error } = await supabase
+        .from('cart_proposals')
+        .insert({
+          user_id: user ? user.id : null,
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone,
+          note: formData.note,
+          items: cartItems,
+          total_estimated_price: totalPrice
+        });
+
+      if (error) {
+        setSubmitError(error.message);
+      } else {
+        setSubmitSuccess(true);
+        clearCart();
+      }
+    } catch (err) {
+      setSubmitError('Failed to submit proposal. Please try again.');
+    } finally {
       setIsSubmitting(false);
-      setSubmitSuccess(true);
-      // Success state, clear cart items logic can go here
-    }, 1500);
+    }
   };
 
   return (
@@ -181,11 +204,26 @@ export default function CartDrawer() {
                 <textarea name="note" value={formData.note} onChange={handleInputChange} rows={3} style={{ width: '100%', padding: '10px 12px', borderRadius: '8px', border: '1px solid var(--border-color)', fontSize: '0.82rem', background: 'var(--bg-white)', color: 'var(--text-dark)', resize: 'vertical' }} placeholder="Any specific feature or requests..." />
               </div>
 
+              {submitError && (
+                <div style={{
+                  padding: '8px 12px',
+                  background: '#fef2f2',
+                  border: '1px solid #fee2e2',
+                  borderRadius: '6px',
+                  color: '#b91c1c',
+                  fontSize: '0.72rem',
+                  fontWeight: '600',
+                  marginTop: '10px',
+                }}>
+                  ⚠️ {submitError}
+                </div>
+              )}
+
               <div style={{ marginTop: '10px', display: 'flex', gap: '10px' }}>
                 <button type="button" onClick={() => setShowCheckoutForm(false)} style={{ flex: 1, padding: '12px', fontSize: '0.82rem', fontWeight: '800', background: 'var(--bg-white)', border: '1px solid var(--border-color)', borderRadius: '8px', cursor: 'pointer', color: 'var(--secondary)' }}>
                   Back to List
                 </button>
-                <button type="submit" disabled={isSubmitting} className="btn-primary" style={{ flex: 1, padding: '12px', fontSize: '0.82rem', border: 'none' }}>
+                <button type="submit" disabled={isSubmitting} className="btn-primary" style={{ flex: 1, padding: '12px', fontSize: '0.82rem', border: 'none', opacity: isSubmitting ? 0.7 : 1, cursor: isSubmitting ? 'not-allowed' : 'pointer' }}>
                   {isSubmitting ? 'Sending Request...' : 'Send Request'}
                 </button>
               </div>

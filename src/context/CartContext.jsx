@@ -34,10 +34,14 @@ export function CartProvider({ children }) {
     setCartItems(prev => prev.filter(i => i.id !== id));
   };
 
+  const clearCart = () => {
+    setCartItems([]);
+  };
+
   const isInCart = (id) => cartItems.some(i => i.id === id);
 
   return (
-    <CartContext.Provider value={{ cartItems, addToCart, removeFromCart, isInCart, cartCount: cartItems.length, isCartOpen, setIsCartOpen }}>
+    <CartContext.Provider value={{ cartItems, addToCart, removeFromCart, clearCart, isInCart, cartCount: cartItems.length, isCartOpen, setIsCartOpen }}>
       {children}
     </CartContext.Provider>
   );

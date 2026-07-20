@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
 import QuoteModal from '../../components/QuoteModal';
+import { supabase } from '../../lib/supabaseClient';
 
 const mockOrders = {
   'BM-101': {
@@ -52,16 +53,51 @@ export default function Track() {
   const [orderId, setOrderId] = useState('');
   const [searchResult, setSearchResult] = useState(null);
   const [hasSearched, setHasSearched] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+  const [errorMsg, setErrorMsg] = useState('');
 
-  const handleTrackSubmit = (e) => {
+  const handleTrackSubmit = async (e) => {
     e.preventDefault();
     const id = orderId.trim().toUpperCase();
-    if (mockOrders[id]) {
-      setSearchResult(mockOrders[id]);
-    } else {
-      setSearchResult(null);
+    setIsLoading(true);
+    setErrorMsg('');
+    setSearchResult(null);
+
+    try {
+      const { data, error } = await supabase
+        .from('projects')
+        .select('*')
+        .eq('id', id)
+        .single();
+
+      if (error) {
+        // Fallback to mock data if table is empty or config is not setup
+        if (mockOrders[id]) {
+          setSearchResult(mockOrders[id]);
+        } else {
+          setSearchResult(null);
+          setErrorMsg(error.message || 'Order ID not found');
+        }
+      } else if (data) {
+        const mappedData = {
+          service: data.service,
+          customer: data.customer,
+          statusStep: data.status_step,
+          lastUpdate: data.last_update,
+          timeline: typeof data.timeline === 'string' ? JSON.parse(data.timeline) : data.timeline
+        };
+        setSearchResult(mappedData);
+      }
+    } catch (err) {
+      if (mockOrders[id]) {
+        setSearchResult(mockOrders[id]);
+      } else {
+        setErrorMsg('Failed to search tracking database.');
+      }
+    } finally {
+      setIsLoading(false);
+      setHasSearched(true);
     }
-    setHasSearched(true);
   };
 
   return (
@@ -114,8 +150,15 @@ export default function Track() {
           </span>
         </div>
 
+        {/* Loading Spinner */}
+        {isLoading && (
+          <div style={{ textAlign: 'center', padding: '20px' }}>
+            <span style={{ fontSize: '0.9rem', color: 'var(--text-medium)', fontWeight: '600' }}>Fetching database progress...</span>
+          </div>
+        )}
+
         {/* Result Container */}
-        {hasSearched && (
+        {hasSearched && !isLoading && (
           <div style={{ maxWidth: '640px', margin: '0 auto' }}>
             {searchResult ? (
               <div className="glass-panel" style={{ padding: '32px', background: 'white' }}>
@@ -219,8 +262,8 @@ export default function Track() {
                   <line x1="12" y1="8" x2="12" y2="12"></line>
                   <line x1="12" y1="16" x2="12.01" y2="16"></line>
                 </svg>
-                <p style={{ fontWeight: '700', color: 'var(--text-dark)' }}>Order ID Not Found</p>
-                <p style={{ fontSize: '0.8rem', marginTop: '4px' }}>No active blueprint match found for "{orderId}". Check for typos and try again.</p>
+                <p style={{ fontWeight: '700', color: 'var(--text-dark)' }}>Track ID Not Found</p>
+                <p style={{ fontSize: '0.8rem', marginTop: '4px' }}>{errorMsg || `No active blueprint match found for "${orderId}". Check for typos and try again.`}</p>
               </div>
             )}
           </div>

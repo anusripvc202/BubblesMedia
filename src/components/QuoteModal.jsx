@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { supabase } from '../lib/supabaseClient';
 
 export default function QuoteModal({ isOpen, onClose, initialData }) {
   const [name, setName] = useState('');
@@ -49,19 +50,46 @@ Calculated Estimate: ₹${initialData.estimatedPrice}`);
     return Object.keys(tempErrors).length === 0;
   };
 
-  const handleSubmit = (e) => {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState('');
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    if (validate()) {
-      setIsSubmitted(true);
-      setTimeout(() => {
-        // Reset form
-        setName('');
-        setEmail('');
-        setPhone('');
-        setDetails('');
-        setIsSubmitted(false);
-        onClose();
-      }, 3000);
+    setSubmitError('');
+    if (!validate()) return;
+    setIsSubmitting(true);
+
+    try {
+      const { data: { user } } = await supabase.auth.getUser();
+
+      const { error } = await supabase
+        .from('quotes')
+        .insert({
+          user_id: user ? user.id : null,
+          name,
+          email,
+          phone,
+          budget,
+          details
+        });
+
+      if (error) {
+        setSubmitError(error.message);
+      } else {
+        setIsSubmitted(true);
+        setTimeout(() => {
+          setName('');
+          setEmail('');
+          setPhone('');
+          setDetails('');
+          setIsSubmitted(false);
+          onClose();
+        }, 3000);
+      }
+    } catch (err) {
+      setSubmitError('Failed to submit quote. Please try again.');
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
@@ -190,8 +218,34 @@ Calculated Estimate: ₹${initialData.estimatedPrice}`);
               {errors.details && <span style={{ fontSize: '0.7rem', color: '#EF4444', marginTop: '2px', display: 'block' }}>{errors.details}</span>}
             </div>
 
-            <button type="submit" className="btn-primary" style={{ width: '100%', marginTop: '10px', padding: '12px' }}>
-              Request Custom Pricing Roadmap
+            {submitError && (
+              <div style={{
+                padding: '8px 12px',
+                background: '#fef2f2',
+                border: '1px solid #fee2e2',
+                borderRadius: '6px',
+                color: '#b91c1c',
+                fontSize: '0.72rem',
+                fontWeight: '600',
+                marginBottom: '10px',
+              }}>
+                ⚠️ {submitError}
+              </div>
+            )}
+
+            <button 
+              type="submit" 
+              className="btn-primary" 
+              disabled={isSubmitting}
+              style={{
+                width: '100%',
+                marginTop: '10px',
+                padding: '12px',
+                opacity: isSubmitting ? 0.7 : 1,
+                cursor: isSubmitting ? 'not-allowed' : 'pointer'
+              }}
+            >
+              {isSubmitting ? 'Submitting...' : 'Request Custom Pricing Roadmap'}
             </button>
           </form>
         )}

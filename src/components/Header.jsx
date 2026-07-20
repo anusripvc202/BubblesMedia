@@ -5,6 +5,7 @@ import { useRouter } from 'next/navigation';
 import { categories } from '../data/servicesData';
 import SignInModal from './SignInModal';
 import { useCart } from '../context/CartContext';
+import { supabase } from '../lib/supabaseClient';
 
 export default function Header({ wishlistCount = 0, onCartOpen, onQuoteOpen, onSearch }) {
   const { cartCount, setIsCartOpen } = useCart();
@@ -16,6 +17,47 @@ export default function Header({ wishlistCount = 0, onCartOpen, onQuoteOpen, onS
   const [desktopCatOpen, setDesktopCatOpen] = useState(false);
   const [isMobileSearchOpen, setIsMobileSearchOpen] = useState(false);
   const desktopCatRef = useRef(null);
+
+  const [user, setUser] = useState(null);
+  const [profile, setProfile] = useState(null);
+
+  useEffect(() => {
+    supabase.auth.getSession().then(({ data: { session } }) => {
+      setUser(session?.user ?? null);
+    });
+
+    const { data: { subscription } } = supabase.auth.onAuthStateChange((event, session) => {
+      setUser(session?.user ?? null);
+    });
+
+    return () => {
+      subscription.unsubscribe();
+    };
+  }, []);
+
+  useEffect(() => {
+    if (!user) {
+      setProfile(null);
+      return;
+    }
+
+    const fetchProfile = async () => {
+      const { data, error } = await supabase
+        .from('profiles')
+        .select('*')
+        .eq('id', user.id)
+        .single();
+      if (!error && data) {
+        setProfile(data);
+      }
+    };
+
+    fetchProfile();
+  }, [user]);
+
+  const handleSignOut = async () => {
+    await supabase.auth.signOut();
+  };
 
   const handleSearchSubmit = (e) => {
     e.preventDefault();
@@ -285,17 +327,31 @@ export default function Header({ wishlistCount = 0, onCartOpen, onQuoteOpen, onS
             <div style={{ width: '1px', height: '24px', background: 'rgba(0,0,0,0.08)' }} />
 
             {/* Account */}
-            <div style={{ display: 'flex', alignItems: 'center', gap: '8px', cursor: 'pointer' }} onClick={() => setSignInOpen(true)}>
-              <div style={{ background: 'rgba(170, 223, 0, 0.12)', color: 'var(--primary)', width: '32px', height: '32px', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/>
-                </svg>
+            {user ? (
+              <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <div style={{ background: 'rgba(170, 223, 0, 0.12)', color: 'var(--primary)', width: '32px', height: '32px', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: '800', fontSize: '0.8rem' }}>
+                  {(profile?.name?.[0] || user?.email?.[0] || 'U').toUpperCase()}
+                </div>
+                <div>
+                  <div style={{ fontSize: '0.6rem', color: 'var(--text-light)', fontWeight: '600', lineHeight: 1 }}>Hi, {profile?.name?.split(' ')[0] || user?.email?.split('@')[0]}</div>
+                  <button onClick={handleSignOut} style={{ fontSize: '0.75rem', fontWeight: '800', color: '#ef4444', background: 'none', border: 'none', cursor: 'pointer', padding: 0, marginTop: '2px', display: 'block', textAlign: 'left' }}>
+                    Sign Out
+                  </button>
+                </div>
               </div>
-              <div>
-                <div style={{ fontSize: '0.6rem', color: 'var(--text-light)', fontWeight: '600', lineHeight: 1 }}>My Account</div>
-                <div style={{ fontSize: '0.75rem', fontWeight: '800', color: 'var(--secondary)', marginTop: '2px' }}>Sign In</div>
+            ) : (
+              <div style={{ display: 'flex', alignItems: 'center', gap: '8px', cursor: 'pointer' }} onClick={() => setSignInOpen(true)}>
+                <div style={{ background: 'rgba(170, 223, 0, 0.12)', color: 'var(--primary)', width: '32px', height: '32px', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/>
+                  </svg>
+                </div>
+                <div>
+                  <div style={{ fontSize: '0.6rem', color: 'var(--text-light)', fontWeight: '600', lineHeight: 1 }}>My Account</div>
+                  <div style={{ fontSize: '0.75rem', fontWeight: '800', color: 'var(--secondary)', marginTop: '2px' }}>Sign In</div>
+                </div>
               </div>
-            </div>
+            )}
 
             {/* Divider */}
             <div style={{ width: '1px', height: '24px', background: 'rgba(0,0,0,0.08)' }} />
@@ -417,13 +473,24 @@ export default function Header({ wishlistCount = 0, onCartOpen, onQuoteOpen, onS
 
         {/* Account row */}
         <div style={{ padding: '12px 16px', borderBottom: '1px solid var(--border-color)', display: 'flex', alignItems: 'center', gap: '10px' }}>
-          <div style={{ background: 'var(--primary-light)', color: 'var(--primary)', width: '38px', height: '38px', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.1rem', flexShrink: 0 }}>👤</div>
+          <div style={{ background: 'var(--primary-light)', color: 'var(--primary)', width: '38px', height: '38px', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.1rem', flexShrink: 0 }}>
+            {user ? (profile?.name?.[0] || user?.email?.[0] || '👤').toUpperCase() : '👤'}
+          </div>
           <div>
-            <div style={{ fontSize: '0.7rem', color: 'var(--text-light)' }}>My Account</div>
-            <button onClick={() => { setSignInOpen(true); setMenuOpen(false); }}
-              style={{ fontSize: '0.82rem', fontWeight: '700', color: 'var(--primary)', background: 'none', border: 'none', cursor: 'pointer', padding: 0 }}>
-              Sign In / Register
-            </button>
+            <div style={{ fontSize: '0.7rem', color: 'var(--text-light)' }}>
+              {user ? `Hi, ${profile?.name || user.email}` : 'My Account'}
+            </div>
+            {user ? (
+              <button onClick={() => { handleSignOut(); setMenuOpen(false); }}
+                style={{ fontSize: '0.82rem', fontWeight: '700', color: '#ef4444', background: 'none', border: 'none', cursor: 'pointer', padding: 0 }}>
+                Sign Out
+              </button>
+            ) : (
+              <button onClick={() => { setSignInOpen(true); setMenuOpen(false); }}
+                style={{ fontSize: '0.82rem', fontWeight: '700', color: 'var(--primary)', background: 'none', border: 'none', cursor: 'pointer', padding: 0 }}>
+                Sign In / Register
+              </button>
+            )}
           </div>
         </div>
 

@@ -1,5 +1,6 @@
 'use client';
 import React, { useState } from 'react';
+import { supabase } from '../lib/supabaseClient';
 
 export default function SignInModal({ isOpen, onClose }) {
   const [tab, setTab] = useState('register'); // Default to register tab based on request
@@ -10,6 +11,8 @@ export default function SignInModal({ isOpen, onClose }) {
   const [confirmPassword, setConfirmPassword] = useState('');
   const [isSuccess, setIsSuccess] = useState(false);
   const [errors, setErrors] = useState({});
+  const [authError, setAuthError] = useState('');
+  const [isLoading, setIsLoading] = useState(false);
 
   if (!isOpen) return null;
 
@@ -41,19 +44,59 @@ export default function SignInModal({ isOpen, onClose }) {
     return Object.keys(tempErrors).length === 0;
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    if (validate()) {
-      setIsSuccess(true);
-      setTimeout(() => {
-        setIsSuccess(false);
-        setEmail('');
-        setPassword('');
-        setName('');
-        setPhone('');
-        setConfirmPassword('');
-        onClose();
-      }, 2000);
+    setAuthError('');
+    if (!validate()) return;
+    setIsLoading(true);
+
+    try {
+      if (tab === 'register') {
+        const { data, error } = await supabase.auth.signUp({
+          email,
+          password,
+          options: {
+            data: {
+              name,
+              phone,
+            }
+          }
+        });
+        if (error) {
+          setAuthError(error.message);
+        } else {
+          setIsSuccess(true);
+          setTimeout(() => {
+            setIsSuccess(false);
+            setEmail('');
+            setPassword('');
+            setName('');
+            setPhone('');
+            setConfirmPassword('');
+            onClose();
+          }, 2000);
+        }
+      } else {
+        const { data, error } = await supabase.auth.signInWithPassword({
+          email,
+          password,
+        });
+        if (error) {
+          setAuthError(error.message);
+        } else {
+          setIsSuccess(true);
+          setTimeout(() => {
+            setIsSuccess(false);
+            setEmail('');
+            setPassword('');
+            onClose();
+          }, 2000);
+        }
+      }
+    } catch (err) {
+      setAuthError('An unexpected error occurred during authentication.');
+    } finally {
+      setIsLoading(false);
     }
   };
 
@@ -476,10 +519,27 @@ export default function SignInModal({ isOpen, onClose }) {
                   </div>
                 )}
 
+                {/* Auth Error Message */}
+                {authError && (
+                  <div style={{
+                    padding: '8px 12px',
+                    background: '#fef2f2',
+                    border: '1px solid #fee2e2',
+                    borderRadius: '6px',
+                    color: '#b91c1c',
+                    fontSize: '0.72rem',
+                    fontWeight: '600',
+                    marginBottom: '10px',
+                  }}>
+                    ⚠️ {authError}
+                  </div>
+                )}
+
                 {/* Submit button */}
                 <button 
                   type="submit" 
                   className="btn-primary" 
+                  disabled={isLoading}
                   style={{
                     width: '100%',
                     marginTop: '4px',
@@ -489,9 +549,11 @@ export default function SignInModal({ isOpen, onClose }) {
                     fontSize: '0.82rem',
                     border: 'none',
                     borderRadius: '6px',
+                    opacity: isLoading ? 0.7 : 1,
+                    cursor: isLoading ? 'not-allowed' : 'pointer'
                   }}
                 >
-                  {tab === 'login' ? 'Sign In to Account' : 'Create Free Account'}
+                  {isLoading ? 'Processing...' : (tab === 'login' ? 'Sign In to Account' : 'Create Free Account')}
                 </button>
               </form>
 

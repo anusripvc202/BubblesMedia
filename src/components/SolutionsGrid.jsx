@@ -2,6 +2,7 @@ import React from 'react';
 import Link from 'next/link';
 import { serviceDatabase, categories } from '../data/servicesData';
 import { useCart } from '../context/CartContext';
+import { supabase } from '../lib/supabaseClient';
 
 // Helper to format and scale icons to be bold and professional (24px, 2.5px stroke)
 const renderIcon = (icon) => {
@@ -101,12 +102,6 @@ const parsePrice = (priceStr) => {
   return isNaN(num) ? 0 : num;
 };
 
-const solutions = Object.entries(serviceDatabase).map(([key, val]) => ({
-  id: key,
-  icon: getServiceIcon(key, val.category),
-  ...val
-})).sort((a, b) => parsePrice(a.price) - parsePrice(b.price));
-
 const VISIBLE_ROWS = 2;
 const COLS = 4;
 const DEFAULT_VISIBLE = VISIBLE_ROWS * COLS; // 8
@@ -115,6 +110,43 @@ export default function SolutionsGrid({ searchTerm, activeCategory, onEnquire })
   const [showAll, setShowAll] = React.useState(false);
   const [hoveredSolId, setHoveredSolId] = React.useState(null);
   const { addToCart, removeFromCart, isInCart } = useCart();
+  const [dbServices, setDbServices] = React.useState({});
+
+  React.useEffect(() => {
+    async function fetchServices() {
+      try {
+        const { data } = await supabase.from('services').select('*');
+        if (data && data.length > 0) {
+          const servicesMap = {};
+          data.forEach(s => {
+            servicesMap[s.id] = {
+              id: s.id,
+              category: s.category_id,
+              title: s.title,
+              tagline: s.tagline,
+              desc: s.desc,
+              price: s.price,
+              features: s.features || [],
+              plans: s.plans || [],
+              popular: s.popular || false
+            };
+          });
+          setDbServices(servicesMap);
+        }
+      } catch (err) {
+        console.warn('Failed to load solutions from database, using static fallback:', err);
+      }
+    }
+    fetchServices();
+  }, []);
+
+  const activeServices = { ...serviceDatabase, ...dbServices };
+
+  const solutionsList = Object.entries(activeServices).map(([key, val]) => ({
+    id: key,
+    icon: getServiceIcon(key, val.category),
+    ...val
+  })).sort((a, b) => parsePrice(a.price) - parsePrice(b.price));
 
   const categoryThemes = {
     'websites': { color: '#3b82f6', bg: '#eff6ff' },
@@ -125,7 +157,7 @@ export default function SolutionsGrid({ searchTerm, activeCategory, onEnquire })
     'branding-graphics': { color: '#ec4899', bg: '#fdf2f8' }
   };
 
-  const filteredSolutions = solutions.filter((sol) => {
+  const filteredSolutions = solutionsList.filter((sol) => {
     const matchesSearch = searchTerm
       ? sol.title.toLowerCase().includes(searchTerm.toLowerCase())
       : true;

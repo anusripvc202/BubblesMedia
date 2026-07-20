@@ -1,11 +1,12 @@
 "use client";
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useParams, useRouter } from 'next/navigation';
 import Header from '../../../components/Header';
 import Footer from '../../../components/Footer';
 import QuoteModal from '../../../components/QuoteModal';
 import { serviceDatabase } from '../../../data/servicesData';
+import { supabase } from '../../../lib/supabaseClient';
 
 export default function ServiceDetails() {
   const { id } = useParams();
@@ -13,7 +14,41 @@ export default function ServiceDetails() {
   const [isQuoteOpen, setIsQuoteOpen] = useState(false);
   const [quoteData, setQuoteData] = useState(null);
 
-  const service = serviceDatabase[id];
+  // State for dynamic service loaded from Supabase (falling back to local)
+  const [service, setService] = useState(() => serviceDatabase[id] || null);
+
+  useEffect(() => {
+    async function fetchService() {
+      try {
+        const { data, error } = await supabase
+          .from('services')
+          .select('*')
+          .eq('id', id)
+          .single();
+
+        if (error) {
+          console.warn('Supabase fetch failed for service, using local fallback:', error.message);
+          return;
+        }
+
+        if (data) {
+          setService({
+            id: data.id,
+            title: data.title,
+            tagline: data.tagline,
+            desc: data.desc,
+            price: data.price,
+            features: data.features || [],
+            plans: data.plans || [],
+            popular: data.popular || false
+          });
+        }
+      } catch (err) {
+        console.error('Error fetching service:', err);
+      }
+    }
+    fetchService();
+  }, [id]);
 
   if (!service) {
     return (

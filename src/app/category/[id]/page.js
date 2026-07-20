@@ -10,6 +10,7 @@ import Link from 'next/link';
 
 // Load our centralized data
 import { categories, serviceDatabase, calculatorConfigs, faqsDatabase, testimonialsDatabase } from '../../../data/servicesData';
+import { supabase } from '../../../lib/supabaseClient';
 
 // central graphic illustration image mappings for each category
 const categoryIllustrations = {
@@ -93,15 +94,22 @@ export default function CategoryPage() {
   const { id } = useParams();
   const router = useRouter();
 
-  // Find current category metadata
-  const currentCategory = categories.find(cat => cat.id === id);
+  // Dynamic Catalog States (falling back to static lists immediately)
+  const [currentCategory, setCurrentCategory] = useState(() => categories.find(cat => cat.id === id) || null);
+  const [calcConfig, setCalcConfig] = useState(() => calculatorConfigs[id] || null);
+  const [matchingServices, setMatchingServices] = useState(() => {
+    return Object.entries(serviceDatabase)
+      .filter(([_, service]) => service.category === id)
+      .map(([key, service]) => ({ id: key, ...service }));
+  });
+  const [faqs, setFaqs] = useState(() => faqsDatabase[id] || []);
+  const [testimonials, setTestimonials] = useState(() => testimonialsDatabase[id] || []);
 
   // Modals Visibility
   const [isQuoteOpen, setIsQuoteOpen] = useState(false);
   const [quoteInitialData, setQuoteInitialData] = useState(null);
 
-  // Calculator State
-  const calcConfig = calculatorConfigs[id] || null;
+  // Calculator Inputs State
   const [sliderVals, setSliderVals] = useState({});
   const [checkedItems, setCheckedItems] = useState({});
   const [estimatedPrice, setEstimatedPrice] = useState(0);
@@ -114,6 +122,94 @@ export default function CategoryPage() {
 
   // Hover states for services cards
   const [hoveredCard, setHoveredCard] = useState(null);
+
+  // Fetch full category catalog dynamically from Supabase
+  useEffect(() => {
+    async function fetchDatabaseCatalog() {
+      try {
+        // 1. Fetch category from database
+        const { data: catData } = await supabase
+          .from('categories')
+          .select('*')
+          .eq('id', id)
+          .single();
+        if (catData) {
+          setCurrentCategory({
+            id: catData.id,
+            name: catData.name,
+            desc: catData.desc,
+            tagline: catData.tagline,
+            colorTheme: catData.color_theme,
+            accentColor: catData.accent_color,
+            stats: catData.stats || [],
+            icon: null
+          });
+        }
+
+        // 2. Fetch services from database
+        const { data: srvData } = await supabase
+          .from('services')
+          .select('*')
+          .eq('category_id', id);
+        if (srvData && srvData.length > 0) {
+          setMatchingServices(srvData.map(s => ({
+            id: s.id,
+            title: s.title,
+            tagline: s.tagline,
+            desc: s.desc,
+            price: s.price,
+            features: s.features || [],
+            plans: s.plans || [],
+            popular: s.popular || false
+          })));
+        }
+
+        // 3. Fetch calculator config from database
+        const { data: calcData } = await supabase
+          .from('calculator_configs')
+          .select('*')
+          .eq('category_id', id)
+          .single();
+        if (calcData) {
+          setCalcConfig({
+            category_id: calcData.category_id,
+            title: calcData.title,
+            basePrice: Number(calcData.base_price),
+            sliders: calcData.sliders || [],
+            checkboxes: calcData.checkboxes || []
+          });
+        }
+
+        // 4. Fetch FAQs from database
+        const { data: faqData } = await supabase
+          .from('faqs')
+          .select('*')
+          .eq('category_id', id);
+        if (faqData && faqData.length > 0) {
+          setFaqs(faqData.map(f => ({
+            q: f.question,
+            a: f.answer
+          })));
+        }
+
+        // 5. Fetch Testimonials from database
+        const { data: testData } = await supabase
+          .from('testimonials')
+          .select('*')
+          .eq('category_id', id);
+        if (testData && testData.length > 0) {
+          setTestimonials(testData.map(t => ({
+            name: t.name,
+            role: t.role,
+            content: t.content
+          })));
+        }
+      } catch (err) {
+        console.error('Error fetching dynamic category catalog:', err);
+      }
+    }
+    fetchDatabaseCatalog();
+  }, [id]);
 
   // Initialize calculator defaults when config shifts
   useEffect(() => {
@@ -130,7 +226,7 @@ export default function CategoryPage() {
       });
       setCheckedItems(initialChecked);
     }
-  }, [id]);
+  }, [id, calcConfig]);
 
   // Recalculate price in real-time
   useEffect(() => {
@@ -151,7 +247,7 @@ export default function CategoryPage() {
     });
 
     setEstimatedPrice(Math.round(total));
-  }, [sliderVals, checkedItems, id]);
+  }, [sliderVals, checkedItems, id, calcConfig]);
 
   if (!currentCategory) {
     return (
@@ -162,11 +258,6 @@ export default function CategoryPage() {
       </div>
     );
   }
-
-  // Get matching services/solutions for this category
-  const matchingServices = Object.entries(serviceDatabase)
-    .filter(([_, service]) => service.category === id)
-    .map(([key, service]) => ({ id: key, ...service }));
 
   // Calculator helpers
   const handleSliderChange = (sliderId, val) => {
@@ -730,13 +821,13 @@ export default function CategoryPage() {
             )}
 
             {/* Custom Accordion FAQ list */}
-            {faqsDatabase[id] && (
+            {faqs && faqs.length > 0 && (
               <section>
                 <h2 style={{ fontSize: '1.25rem', fontWeight: '900', color: 'var(--secondary)', marginBottom: '18px', textAlign: 'center' }}>
                   Frequently Asked Questions
                 </h2>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '10px', maxWidth: '720px', margin: '0 auto', width: '100%' }}>
-                  {faqsDatabase[id].map((faq, index) => {
+                  {faqs.map((faq, index) => {
                     const isOpen = activeFaq === index;
                     return (
                       <div
@@ -790,7 +881,7 @@ export default function CategoryPage() {
             )}
 
             {/* Testimonials local to this category */}
-            {testimonialsDatabase[id] && testimonialsDatabase[id].length > 0 && (
+            {testimonials && testimonials.length > 0 && (
               <section style={{
                 background: lightBg,
                 border: `1px dashed ${accentColor}30`,
@@ -804,7 +895,7 @@ export default function CategoryPage() {
                 </h3>
                 
                 <div style={{ display: 'flex', justifyContent: 'center', gap: '20px', flexWrap: 'wrap' }}>
-                  {testimonialsDatabase[id].map((test, index) => (
+                  {testimonials.map((test, index) => (
                     <div key={index} style={{
                       background: 'var(--bg-white)',
                       border: '1px solid var(--border-color)',

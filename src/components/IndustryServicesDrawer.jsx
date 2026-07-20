@@ -4,6 +4,7 @@ import React, { useEffect } from 'react';
 import Link from 'next/link';
 import { serviceDatabase, categories } from '../data/servicesData';
 import { industryServicesMap } from '../data/industryServicesMap';
+import { supabase } from '../lib/supabaseClient';
 
 // Accent color map for service categories
 const categoryColorMap = {
@@ -110,9 +111,9 @@ const cardColors = [
   { color: '#14b8a6', bg: '#f0fdfa' }, // Teal
 ];
 
-function ServiceCard({ serviceEntry, cardColorTheme, onClose }) {
+function ServiceCard({ serviceEntry, cardColorTheme, onClose, activeServices }) {
   const { id: serviceId } = serviceEntry;
-  const service = serviceDatabase[serviceId];
+  const service = activeServices[serviceId];
   const [isHovered, setIsHovered] = React.useState(false);
 
   if (!service) return null;
@@ -246,18 +247,49 @@ function ServiceCard({ serviceEntry, cardColorTheme, onClose }) {
 export default function IndustryServicesDrawer({ industryName, onClose }) {
   const isOpen = !!industryName;
   const meta = industryName ? industryServicesMap[industryName] : null;
+  const [dbServices, setDbServices] = React.useState({});
+
+  useEffect(() => {
+    async function fetchServices() {
+      try {
+        const { data } = await supabase.from('services').select('*');
+        if (data && data.length > 0) {
+          const servicesMap = {};
+          data.forEach(s => {
+            servicesMap[s.id] = {
+              id: s.id,
+              category: s.category_id,
+              title: s.title,
+              tagline: s.tagline,
+              desc: s.desc,
+              price: s.price,
+              features: s.features || [],
+              plans: s.plans || [],
+              popular: s.popular || false
+            };
+          });
+          setDbServices(servicesMap);
+        }
+      } catch (err) {
+        console.warn('Failed to load dynamic services in drawer:', err);
+      }
+    }
+    fetchServices();
+  }, []);
+
+  const activeServices = { ...serviceDatabase, ...dbServices };
   
   // Sort the service entries from lowest price to highest price
   const serviceEntries = React.useMemo(() => {
     if (!meta?.services) return [];
     return [...meta.services].sort((a, b) => {
-      const serviceA = serviceDatabase[a.id];
-      const serviceB = serviceDatabase[b.id];
+      const serviceA = activeServices[a.id];
+      const serviceB = activeServices[b.id];
       const priceA = serviceA ? parsePrice(serviceA.price) : 0;
       const priceB = serviceB ? parsePrice(serviceB.price) : 0;
       return priceA - priceB;
     });
-  }, [meta]);
+  }, [meta, activeServices]);
 
   // Close on Escape key
   useEffect(() => {
@@ -419,6 +451,7 @@ export default function IndustryServicesDrawer({ industryName, onClose }) {
                     serviceEntry={entry}
                     cardColorTheme={colorTheme}
                     onClose={onClose}
+                    activeServices={activeServices}
                   />
                 );
               })}

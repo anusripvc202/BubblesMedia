@@ -11,6 +11,7 @@ import Link from 'next/link';
 // Load our centralized data
 import { categories, serviceDatabase, calculatorConfigs, faqsDatabase, testimonialsDatabase } from '../../../data/servicesData';
 import { supabase } from '../../../lib/supabaseClient';
+import PaymentModal from '../../../components/PaymentModal';
 
 // central graphic illustration image mappings for each category
 const categoryIllustrations = {
@@ -148,6 +149,12 @@ export default function CategoryPage() {
     }
     getUser();
   }, []);
+
+  // Payment Modal States
+  const [isPaymentOpen, setIsPaymentOpen] = useState(false);
+  const [paymentAmount, setPaymentAmount] = useState(0);
+  const [paymentServiceName, setPaymentServiceName] = useState('');
+  const [paymentPlanName, setPaymentPlanName] = useState('');
 
   // Calculator Inputs State
   const [sliderVals, setSliderVals] = useState({});
@@ -323,104 +330,32 @@ export default function CategoryPage() {
     router.push(`/contact?subject=${encodeURIComponent(subjectStr)}`);
   };
 
-  const handleCalculatorPay = async () => {
+  const handleCalculatorPay = () => {
     if (!estimatedPrice || estimatedPrice <= 0) return;
 
-    const isLoaded = await loadRazorpayScript();
-    if (!isLoaded) {
-      alert('Razorpay SDK failed to load. Please check your internet connection.');
-      return;
-    }
-
-    try {
-      let orderId = null;
-      try {
-        const res = await fetch('/api/payment', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ amount: estimatedPrice })
-        });
-
-        const orderData = await res.json();
-        if (orderData && !orderData.error) {
-          orderId = orderData.id;
-        } else {
-          console.warn('Using client-side sandbox payment (backend credentials unconfigured):', orderData?.error);
-        }
-      } catch (apiErr) {
-        console.warn('Using client-side sandbox payment (backend API offline):', apiErr);
+    // Format custom specs for order description
+    const specDetails = [];
+    calcConfig.sliders.forEach(s => {
+      specDetails.push(`${s.label}: ${sliderVals[s.id] || s.defaultValue} ${s.unit}`);
+    });
+    calcConfig.checkboxes.forEach(c => {
+      if (checkedItems[c.id]) {
+        specDetails.push(`+ ${c.label}`);
       }
+    });
+    const specStr = specDetails.join(', ');
 
-      // Format custom specs
-      const specDetails = [];
-      calcConfig.sliders.forEach(s => {
-        specDetails.push(`${s.label}: ${sliderVals[s.id] || s.defaultValue} ${s.unit}`);
-      });
-      calcConfig.checkboxes.forEach(c => {
-        if (checkedItems[c.id]) {
-          specDetails.push(`+ ${c.label}`);
-        }
-      });
-      const specStr = specDetails.join(', ');
-
-      const options = {
-        key: process.env.NEXT_PUBLIC_RAZORPAY_KEY_ID || 'rzp_test_M5pz720jkSvdDg',
-        amount: estimatedPrice * 100, // paise
-        currency: 'INR',
-        name: 'BubblesMedia',
-        description: `Bespoke ${currentCategory.name} Plan`,
-        order_id: orderId || undefined,
-        handler: async function (response) {
-          try {
-            const { error: dbErr } = await supabase
-              .from('bubbles_bookings')
-              .insert({
-                user_id: currentUser?.id || null,
-                client_name: currentUser?.name || 'Walk-in Client',
-                client_email: currentUser?.email || 'guest@example.com',
-                client_phone: currentUser?.phone || 'N/A',
-                service_name: `Bespoke ${currentCategory.name} Setup`,
-                plan_name: `Custom Budget (Specs: ${specStr})`,
-                amount_paid: estimatedPrice,
-                razorpay_order_id: response.razorpay_order_id || 'sandbox_order',
-                razorpay_payment_id: response.razorpay_payment_id
-              });
-
-            if (dbErr) {
-              console.error('Booking save failed:', dbErr);
-            }
-            alert(`Payment Successful! Your custom setup booking reference has been registered.`);
-          } catch (err) {
-            console.error('Logging custom booking failed:', err);
-          }
-        },
-        prefill: {
-          name: currentUser?.name || '',
-          email: currentUser?.email || '',
-          contact: currentUser?.phone || ''
-        },
-        theme: { color: accentColor },
-        modal: {
-          ondismiss: function () {
-            const subjectStr = `Pending Payment Estimate: ${currentCategory.name} (₹${estimatedPrice.toLocaleString('en-IN')}) - Specs: ${specStr}`;
-            router.push(`/contact?subject=${encodeURIComponent(subjectStr)}`);
-          }
-        }
-      };
-
-      const rzp = new window.Razorpay(options);
-      rzp.open();
-    } catch (paymentErr) {
-      console.error('Payment checkout failed:', paymentErr);
-      handleCalculatorEnquire();
-    }
+    setPaymentAmount(estimatedPrice);
+    setPaymentServiceName(`Bespoke ${currentCategory.name} Setup`);
+    setPaymentPlanName(`Custom Budget (Specs: ${specStr})`);
+    setIsPaymentOpen(true);
   };
 
   const handleEnquireService = (service) => {
     router.push(`/contact?subject=${encodeURIComponent(service.title + ' (' + service.price + ')')}`);
   };
 
-  const handleEnquirePlan = async (serviceTitle, plan) => {
+  const handleEnquirePlan = (serviceTitle, plan) => {
     const paymentLink = plan.payment_link || plan.paymentLink;
     if (paymentLink) {
       window.open(paymentLink, '_blank', 'noopener,noreferrer');
@@ -433,81 +368,10 @@ export default function CategoryPage() {
       return;
     }
 
-    const isLoaded = await loadRazorpayScript();
-    if (!isLoaded) {
-      alert('Razorpay SDK failed to load.');
-      return;
-    }
-
-    try {
-      let orderId = null;
-      try {
-        const res = await fetch('/api/payment', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ amount: numericPrice })
-        });
-
-        const orderData = await res.json();
-        if (orderData && !orderData.error) {
-          orderId = orderData.id;
-        } else {
-          console.warn('Using client-side sandbox payment (backend credentials unconfigured):', orderData?.error);
-        }
-      } catch (apiErr) {
-        console.warn('Using client-side sandbox payment (backend API offline):', apiErr);
-      }
-
-      const options = {
-        key: process.env.NEXT_PUBLIC_RAZORPAY_KEY_ID || 'rzp_test_M5pz720jkSvdDg',
-        amount: numericPrice * 100, // paise
-        currency: 'INR',
-        name: 'BubblesMedia',
-        description: `${serviceTitle} - ${plan.name}`,
-        order_id: orderId || undefined,
-        handler: async function (response) {
-          try {
-            const { error: dbErr } = await supabase
-              .from('bubbles_bookings')
-              .insert({
-                user_id: currentUser?.id || null,
-                client_name: currentUser?.name || 'Walk-in Client',
-                client_email: currentUser?.email || 'guest@example.com',
-                client_phone: currentUser?.phone || 'N/A',
-                service_name: serviceTitle,
-                plan_name: plan.name,
-                amount_paid: numericPrice,
-                razorpay_order_id: response.razorpay_order_id || 'sandbox_order',
-                razorpay_payment_id: response.razorpay_payment_id
-              });
-
-            if (dbErr) {
-              console.error('Booking logging failed:', dbErr);
-            }
-            alert(`Payment Successful! Booking reference saved successfully.`);
-          } catch (err) {
-            console.error('Booking save error:', err);
-          }
-        },
-        prefill: {
-          name: currentUser?.name || '',
-          email: currentUser?.email || '',
-          contact: currentUser?.phone || ''
-        },
-        theme: { color: accentColor },
-        modal: {
-          ondismiss: function () {
-            router.push(`/contact?subject=${encodeURIComponent('Pending Payment: ' + serviceTitle + ' - ' + plan.name + ' Plan (' + plan.price + ')')}`);
-          }
-        }
-      };
-
-      const rzp = new window.Razorpay(options);
-      rzp.open();
-    } catch (paymentErr) {
-      console.error('Payment checkout error:', paymentErr);
-      router.push(`/contact?subject=${encodeURIComponent(serviceTitle + ' - ' + plan.name + ' Plan (' + plan.price + ')')}`);
-    }
+    setPaymentAmount(numericPrice);
+    setPaymentServiceName(serviceTitle);
+    setPaymentPlanName(plan.name);
+    setIsPaymentOpen(true);
   };
 
   const accentColor = currentCategory.accentColor || 'var(--primary)';
@@ -1178,6 +1042,16 @@ export default function CategoryPage() {
         isOpen={isQuoteOpen}
         onClose={() => setIsQuoteOpen(false)}
         initialData={quoteInitialData}
+      />
+
+      {/* Payment Simulation Modal */}
+      <PaymentModal
+        isOpen={isPaymentOpen}
+        onClose={() => setIsPaymentOpen(false)}
+        amount={paymentAmount}
+        serviceName={paymentServiceName}
+        planName={paymentPlanName}
+        currentUser={currentUser}
       />
     </div>
   );

@@ -5,6 +5,7 @@ import { useParams, useRouter } from 'next/navigation';
 import Header from '../../../components/Header';
 import Footer from '../../../components/Footer';
 import QuoteModal from '../../../components/QuoteModal';
+import PaymentModal from '../../../components/PaymentModal';
 import { serviceDatabase } from '../../../data/servicesData';
 import { supabase } from '../../../lib/supabaseClient';
 
@@ -27,6 +28,11 @@ export default function ServiceDetails() {
   const router = useRouter();
   const [isQuoteOpen, setIsQuoteOpen] = useState(false);
   const [quoteData, setQuoteData] = useState(null);
+
+  // Payment Modal States
+  const [isPaymentOpen, setIsPaymentOpen] = useState(false);
+  const [paymentAmount, setPaymentAmount] = useState(0);
+  const [selectedPlan, setSelectedPlan] = useState(null);
 
   // State for dynamic service loaded from Supabase (falling back to local)
   const [service, setService] = useState(() => serviceDatabase[id] || null);
@@ -100,7 +106,7 @@ export default function ServiceDetails() {
     );
   }
 
-  const handleBookPlan = async (plan) => {
+  const handleBookPlan = (plan) => {
     // 1. Static Link Check
     const paymentLink = plan.payment_link || plan.paymentLink;
     if (paymentLink) {
@@ -115,84 +121,9 @@ export default function ServiceDetails() {
       return;
     }
 
-    // 3. Load script
-    const isLoaded = await loadRazorpayScript();
-    if (!isLoaded) {
-      alert('Razorpay SDK failed to load. Please verify your connection.');
-      return;
-    }
-
-    try {
-      let orderId = null;
-      try {
-        const res = await fetch('/api/payment', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ amount: numericPrice })
-        });
-
-        const orderData = await res.json();
-        if (orderData && !orderData.error) {
-          orderId = orderData.id;
-        } else {
-          console.warn('Using client-side sandbox payment (backend credentials unconfigured):', orderData?.error);
-        }
-      } catch (apiErr) {
-        console.warn('Using client-side sandbox payment (backend API offline):', apiErr);
-      }
-
-      // Initialize Razorpay Options
-      const options = {
-        key: process.env.NEXT_PUBLIC_RAZORPAY_KEY_ID || 'rzp_test_M5pz720jkSvdDg', // Fallback placeholder key
-        amount: numericPrice * 100, // amount in paise
-        currency: 'INR',
-        name: 'BubblesMedia',
-        description: `${service.title} - ${plan.name}`,
-        order_id: orderId || undefined,
-        handler: async function (response) {
-          try {
-            const { error: dbErr } = await supabase
-              .from('bubbles_bookings')
-              .insert({
-                user_id: currentUser?.id || null,
-                client_name: currentUser?.name || 'Walk-in Client',
-                client_email: currentUser?.email || 'guest@example.com',
-                client_phone: currentUser?.phone || 'N/A',
-                service_name: service.title,
-                plan_name: plan.name,
-                amount_paid: numericPrice,
-                razorpay_order_id: response.razorpay_order_id || 'sandbox_order',
-                razorpay_payment_id: response.razorpay_payment_id
-              });
-
-            if (dbErr) {
-              console.error('Logging booking failed:', dbErr);
-            }
-            alert(`Payment Successful! Booking references saved successfully.`);
-          } catch (err) {
-            console.error('Booking save error:', err);
-          }
-        },
-        prefill: {
-          name: currentUser?.name || '',
-          email: currentUser?.email || '',
-          contact: currentUser?.phone || ''
-        },
-        theme: { color: '#1a6cf7' },
-        modal: {
-          ondismiss: function () {
-            // Redirect to Contact page as a fallback for incomplete payment leads
-            router.push(`/contact?subject=${encodeURIComponent('Pending Payment Enquiry: ' + service.title + ' - ' + plan.name + ' Plan (' + plan.price + ')')}`);
-          }
-        }
-      };
-
-      const rzp = new window.Razorpay(options);
-      rzp.open();
-    } catch (paymentErr) {
-      console.error('Payment initialization error:', paymentErr);
-      router.push(`/contact?subject=${encodeURIComponent('Book Plan: ' + service.title + ' - ' + plan.name + ' Plan (' + plan.price + ')')}`);
-    }
+    setPaymentAmount(numericPrice);
+    setSelectedPlan(plan);
+    setIsPaymentOpen(true);
   };
 
   return (
@@ -303,6 +234,16 @@ export default function ServiceDetails() {
         isOpen={isQuoteOpen}
         onClose={() => setIsQuoteOpen(false)}
         initialData={quoteData}
+      />
+
+      {/* Payment Simulation Modal */}
+      <PaymentModal
+        isOpen={isPaymentOpen}
+        onClose={() => setIsPaymentOpen(false)}
+        amount={paymentAmount}
+        serviceName={service.title}
+        planName={selectedPlan?.name || 'Selected Plan'}
+        currentUser={currentUser}
       />
     </div>
   );

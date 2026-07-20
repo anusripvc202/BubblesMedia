@@ -61,7 +61,12 @@ export default function ServiceDetails() {
   }
 
   const handleBookPlan = (plan) => {
-    router.push(`/contact?subject=${encodeURIComponent('Book Plan: ' + service.title + ' - ' + plan.name + ' Plan (' + plan.price + ')')}`);
+    const paymentLink = plan.payment_link || plan.paymentLink;
+    if (paymentLink) {
+      window.open(paymentLink, '_blank', 'noopener,noreferrer');
+    } else {
+      router.push(`/contact?subject=${encodeURIComponent('Book Plan: ' + service.title + ' - ' + plan.name + ' Plan (' + plan.price + ')')}`);
+    }
   };
 
   return (

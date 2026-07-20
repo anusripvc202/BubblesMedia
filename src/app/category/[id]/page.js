@@ -288,7 +288,12 @@ export default function CategoryPage() {
   };
 
   const handleEnquirePlan = (serviceTitle, plan) => {
-    router.push(`/contact?subject=${encodeURIComponent(serviceTitle + ' - ' + plan.name + ' Plan (' + plan.price + ')')}`);
+    const paymentLink = plan.payment_link || plan.paymentLink;
+    if (paymentLink) {
+      window.open(paymentLink, '_blank', 'noopener,noreferrer');
+    } else {
+      router.push(`/contact?subject=${encodeURIComponent(serviceTitle + ' - ' + plan.name + ' Plan (' + plan.price + ')')}`);
+    }
   };
 
   const accentColor = currentCategory.accentColor || 'var(--primary)';

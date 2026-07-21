@@ -1,15 +1,20 @@
 import { NextResponse } from 'next/server';
 import nodemailer from 'nodemailer';
 
+const cleanEnvVar = (val) => {
+  if (!val) return '';
+  return val.trim().replace(/^["']|["']$/g, '');
+};
+
 export async function POST(request) {
   try {
     const { name, email, phone, message } = await request.json();
 
-    const host = process.env.SMTP_HOST || 'smtp.gmail.com';
-    const port = Number(process.env.SMTP_PORT) || 465;
-    const user = process.env.SMTP_USER;
-    const pass = process.env.SMTP_PASS;
-    const toEmail = process.env.NOTIFICATION_EMAIL || 'anusripvc202@gmail.com';
+    const host = cleanEnvVar(process.env.SMTP_HOST) || 'smtp.gmail.com';
+    const port = Number(cleanEnvVar(process.env.SMTP_PORT)) || 465;
+    const user = cleanEnvVar(process.env.SMTP_USER);
+    const pass = cleanEnvVar(process.env.SMTP_PASS);
+    const toEmail = cleanEnvVar(process.env.NOTIFICATION_EMAIL) || 'anusripvc202@gmail.com';
 
     if (!user || !pass) {
       console.warn('SMTP credentials are not configured in environment variables. Skipping email send.');
